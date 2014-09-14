@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="weeks">
+        <item>Lun.</item>
+        <item>Mar.</item>
+        <item>Mié.</item>
+        <item>Jue.</item>
+        <item>Vie.</item>
+        <item>Sáb.</item>
+        <item>Dom.</item>
+    </string-array>
+    <string-array name="weeks_short">
+        <item>Lun.</item>
+        <item>Mar.</item>
+        <item>Mié.</item>
+        <item>Jue.</item>
+        <item>Vie.</item>
+        <item>Sáb.</item>
+        <item>Dom.</item>
+    </string-array>
+    <string-array name="months">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+    <string-array name="select_days_simple">
+        <item>Una vez</item>
+        <item>Todos los días</item>
+        <item>De Lun. a Vie.</item>
+        <item>Personalizar</item>
+    </string-array>
+    <string-array name="fortune">
+        <item>Es fácil llegar a la meta un día pero es difícil hacerlo todos los días.</item>
+        <item>No es fácil lograr una meta cada día.</item>
+        <item>¡Está haciendo un nuevo récord todos los días!</item>
+        <item>¡Disfruta construyendo un mejor tu!</item>
+        <item>Nunca es un perdedor hasta que deja de intentarlo.</item>
+        <item>Somos lo que repetidamente hacemos. La excelencia, entonces, no es un acto, sino un hábito.</item>
+        <item>Alcanza una meta al día.</item>
+        <item>Siga desafiándose para ser mejor hoy.</item>
+        <item>Sólo hazlo.</item>
+        <item>Siga practicando, ganando cuidará de sí mismo.</item>
+    </string-array>
+</resources>

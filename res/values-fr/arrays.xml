@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="weeks">
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
+    </string-array>
+    <string-array name="weeks_short">
+        <item>Lun.</item>
+        <item>Mar.</item>
+        <item>Mer.</item>
+        <item>Jeu.</item>
+        <item>Ven.</item>
+        <item>Sam.</item>
+        <item>Dim.</item>
+    </string-array>
+    <string-array name="months">
+        <item>Janvier</item>
+        <item>Février</item>
+        <item>Mars</item>
+        <item>Avril</item>
+        <item>Mai</item>
+        <item>Juin</item>
+        <item>Juillet</item>
+        <item>Août</item>
+        <item>Septembre</item>
+        <item>Octobre</item>
+        <item>Novembre</item>
+        <item>Décembre</item>
+    </string-array>
+    <string-array name="select_days_simple">
+        <item>Une fois</item>
+        <item>Tous les jours</item>
+        <item>Du Lun. au Ven.</item>
+        <item>Personnaliser</item>
+    </string-array>
+    <string-array name="fortune">
+        <item>"Il est simple d'atteindre l'objectif pour une journée mais bon courage pour t'y tenir."</item>
+        <item>"Il n'est pas chose facile d'atteindre un objectif chaque jour."</item>
+        <item>Chaque jour, tu crées un nouveau record!</item>
+        <item>Réjouis toi de bâtir un meilleur toi!</item>
+        <item>"Tu n'es jamais un perdant tant que tu n'arrêtes pas d'essayer."</item>
+        <item>"Nous sommes ce que nous faisons régulièrement. L'excellence, alors, n'est pas un acte, mais une habitude."</item>
+        <item>Réalises un objectif par jour.</item>
+        <item>"Continues de te défier pour être meilleur aujourd'hui."</item>
+        <item>Just do it.</item>
+        <item>"Continues à t'entraîner, la victoire n'en sera que meilleure."</item>
+    </string-array>
+</resources>

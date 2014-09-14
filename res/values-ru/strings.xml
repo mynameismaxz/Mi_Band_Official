@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pull_to_refresh_pull_label">Потяните вниз для обновления</string>
+    <string name="pull_to_refresh_release_label">Отпустите для обновления</string>
+    <string name="pull_to_refresh_refreshing_label">Загрузка...</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">Загрузить еще</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="app_name">Mi Band</string>
+    <string name="action_exit">Выход</string>
+    <string name="register">Регистрация</string>
+    <string name="login">Войти</string>
+    <string name="logining">Вход ...</string>
+    <string name="welcome">Привет!</string>
+    <string name="login_failed">Неудачная попытка входа, попробуйте еще раз.</string>
+    <string name="failed_enable_bt">Пожалуйста, включите Bluetooth.</string>
+    <string name="search_bracelet">Поиск</string>
+    <string name="connect_bracelet_now">Подключение ...</string>
+    <string name="firmware_upgrade">Обновление прошивки</string>
+    <string name="bracelet_info_fw_version">"Прошивка: %1$s
+Соглашение: %2$s"</string>
+    <string name="bracelet_info_mac_address">"Имя: %1$s
+Адрес: %2$s"</string>
+    <string name="bracelet_info_deviceid">%s</string>
+    <string name="bracelet_info_battery">%s%%</string>
+    <string name="app_info_version">"Версия: %1$s
+Соглашение: %2$s"</string>
+    <string name="description_list_icon">Иконка предмета</string>
+    <string name="date_today">Сегодня</string>
+    <string name="date_yesterday">Вчера</string>
+    <string name="date_this_week">Текущая неделя</string>
+    <string name="date_last_week">Прошлая неделя</string>
+    <string name="date_this_month">Текущий месяц</string>
+    <string name="date_last_month">Прошлый месяц</string>
+    <string name="date_from_to">%1$s до %2$s</string>
+    <string name="date_from_to_short">%1$s-%2$s</string>
+    <string name="date_month_day">MMM d</string>
+    <string name="date_year_month_day">MMM d, yyyy</string>
+    <string name="date_month_day_short">%1$d/%2$d</string>
+    <string name="date_month_day_week">%1$s %2$s</string>
+    <string name="date_month_day_week_short">%1$d.%2$d %3$s</string>
+    <string name="date_month">MMMM</string>
+    <string name="date_year_month">MMM, yyyy</string>
+    <string name="network_error">Не удалось подключиться к сети, проверьте свое подключение.</string>
+    <string name="prev_step">Предыдущий</string>
+    <string name="next_step">Следующий</string>
+    <string name="cancel">Отменить</string>
+    <string name="accept">Согласен</string>
+    <string name="set_sport_goal">Установить цели</string>
+    <string name="alarm_once">Один раз</string>
+    <string name="goals_push_none">Без мгновенных уведомлений</string>
+    <string name="goals_push_five">Выполнить на 50%</string>
+    <string name="goals_push_nine">Выполнить на 90%</string>
+    <string name="goals_push_ten">Выполнить на 100%</string>
+    <string name="friends_search_tips">Аккаунт Mi/Имя/Телефон</string>
+    <string name="friends_search">Поиск</string>
+    <string name="friends_invite2">Пригласить</string>
+    <string name="statistic_total">Всего</string>
+    <string name="statistic_day_average">Средний результат</string>
+    <string name="statistic_detail">Детально</string>
+    <string name="day_active_detail">Детально за день</string>
+    <string name="alarm">Будильник</string>
+    <string name="unlock_screen">Разблокировка экрана</string>
+    <string name="about">Информация</string>
+    <string name="about_copyright" />
+    <string name="unit_kilometer">км</string>
+    <string name="unit_meter">м</string>
+    <string name="unit_calorie">ккал</string>
+    <string name="unit_step">шаги</string>
+    <string name="unit_hour">ч</string>
+    <string name="unit_min">мин</string>
+    <string name="unit_min_short">м</string>
+    <string name="upgrade_tip">Уведомление об обновлениях</string>
+    <string name="hot_des">Энергия</string>
+    <string name="noti_bracelet_low_battery_title">Низкий заряд</string>
+    <string name="noti_bracelet_low_battery_content">Осталось меньше 5% заряда. Зарядите устройство.</string>
+    <string name="noti_bracelet_low_battery_title_none">Mi Band отключился. Заряди устройство.</string>
+    <string name="noti_bracelet_low_battery_content_none">Подключите к зарядному устройству.</string>
+    <string name="bt_operation_failed_tips">Не соединен по Bluetooth , попробуйте позже.</string>
+    <string name="multi_devices_info">В радиусе действия несколько устройств Mi Band. Попробуйте убрать другие устройства Mi Band на расстояние 10 метров и попробовать снова.</string>
+    <string name="multi_devices_title">Невозможно установить сопряжение.</string>
+    <string name="search_bracelet_again">Обновить поиск</string>
+    <string name="search_devices_info">Пожалуйста, оденьте Mi Band и преподнесите его к телефону.</string>
+    <string name="search_bracelet_ok">Mi Band найден!</string>
+    <string name="found_bracelet_info">Для сопряжения Mi Band, тапните пару раз по устройству во время мигания индикаторов.</string>
+    <string name="bind_bracelet_ok">Успешное сопряжение.</string>
+    <string name="device_not_response">Почему индикаторы моего Mi Band не мигают?</string>
+    <string name="action_local_ota">Обновление с SD карты</string>
+    <string name="bracelet_not_found_title">Пожалуйста, зарядите устройство.</string>
+    <string name="bracelet_not_found_info">Попробуйте осуществить поиск еще раз, когда один из индикаторов Mi Band начнет мигать.</string>
+    <string name="get_help">Запрос помощи</string>
+    <string name="system_not_support_title">Система не поддерживается.</string>
+    <string name="system_not_support_info">"Для того, чтобы использовать Mi Band, вам нужно обновить операционную систему. 
+Mi Band поддерживает Android 4.4+."</string>
+    <string name="system_low_title">Пожалуйста, обновить свою систему.</string>
+    <string name="system_low_info">Обновите вашу систему до Android 4.4 и выше для поддержки Mi Band.</string>
+    <string name="bind_bracelet">Mi Band найден</string>
+    <string name="bracelet_login_title">Привет, я Mi Band.</string>
+    <string name="bracelet_login_info">Mi Cloud предоставит советы в зависимости от вашей активности и сна.</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="cm">см</string>
+    <string name="congrats">Поздравляем!</string>
+    <string name="start_use">Начать использование</string>
+    <string name="share">Поделиться</string>
+    <string name="person_info_finished_info">Mi Band успешно настроен.</string>
+    <string name="kg">кг</string>
+    <string name="new_friend_cancel">Отменить</string>
+    <string name="new_friend_accept">Принять</string>
+    <string name="search_devices_title">Найти Mi Band</string>
+    <string name="share_blog_cancel">Отменить</string>
+    <string name="share_blog_title">Опубликуйте событие</string>
+    <string name="share_blog_share">Опубликовать</string>
+    <string name="share_blog_message_hint">Скажите что-нибудь ...</string>
+    <string name="share_blog_other">Отправить в</string>
+    <string name="share_blog_weixin">Wechat</string>
+    <string name="share_blog_pengyouquan">Moment</string>
+    <string name="share_blog_qq_zone">QQ zone</string>
+    <string name="share_blog_qq">QQ</string>
+    <string name="share_blog_weibo">Weibo</string>
+    <string name="distance">Дистанция</string>
+    <string name="points_exchange">Обменять очки</string>
+    <string name="odo">Общая дистанция</string>
+    <string name="daily_sporty">Шагов в день</string>
+    <string name="unknown_location">Неизвестное местоположение</string>
+    <string name="km">км</string>
+    <string name="cal">ккал</string>
+    <string name="step">шагов</string>
+    <string name="point">очков</string>
+    <string name="unknown_mili">Мой</string>
+    <string name="s_mili">Mi Band</string>
+    <string name="rename_mili">Название</string>
+    <string name="reset_mili">Сброс Mi Band</string>
+    <string name="bind_new_mili">Установить сопряжение с новым Mi Band</string>
+    <string name="unbind_mili">Разорвать сопряжение</string>
+    <string name="smart_alarm_clock">Будильник</string>
+    <string name="exit_login">Выйти из аккаунта</string>
+    <string name="exit_login_1">Вы уверены, что хотите выйти из аккаунта?</string>
+    <string name="exit_app">Выход</string>
+    <string name="exit_app_continue">Продолжить</string>
+    <string name="exit_app_tips">"Вы уверены, что хотите выйти из аккаунта? 
+Связь будет потеряна после выхода."</string>
+    <string name="set_mili_name">Назовите свой Mi Band</string>
+    <string name="mili_name">Название Mi Band</string>
+    <string name="set_mili_name_ok">Установлено название Mi Band.</string>
+    <string name="set_mili_name_fail">Не удалось изменить название Mi Band.</string>
+    <string name="mili_name_too_long">Слишком длинное название.</string>
+    <string name="mili_rename_fail">Не удалось обновить название Mi Band.</string>
+    <string name="mili_unbind_question">Ваш телефон больше не сможет получать данные от Mi Band после отмены сопряжения.</string>
+    <string name="share_to_title">Mi Band</string>
+    <string name="share_to_content">Поделись своей жизнью с Mi Band</string>
+    <string name="share_goal_tips_succ">"Есть отличный план?
+Сделай свой первый шаг."</string>
+    <string name="share_goal_tips_fail">Уже не далеко от твоей цели.</string>
+    <string name="person_info_goal_info">"Согласно исследованиям, мы советуем вам заниматься тренировками минимум 40 минут в день. 
+Это приблизительно 8000 шагов."</string>
+    <string name="person_info_goal_info_young">"Согласно исследованиям, мы советуем вам заниматься тренировками минимум 60 минут в день.. 
+Это приблизительно 12000 шагов."</string>
+    <string name="set_person_goal">Задать цель</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="smart_wake_up">Умный будильник</string>
+    <string name="smart_wake_up_info">"Пожалуйста, разбуди меня за 30 минут до указанного времени. 
+Я хочу проснуться, когда мое тело будет в подходящем состоянии для этого."</string>
+    <string name="alarm_cycle">Повторить</string>
+    <string name="login_failed_check_sys_time">Неудачная попытка захода, проверьте настройки времени и даты на вашем устройстве.</string>
+    <string name="everyday">Каждый день</string>
+    <string name="mon_fri">Пн. - Пт.</string>
+    <string name="mon_sat">Пн. - Сб.</string>
+    <string name="device_not_found_not_knocked">Повторите поиск после тапа по Mi Band во время мигания синего индикатора.</string>
+    <string name="statistic">Статистика</string>
+    <string name="mili_unbind_question_content">Если вы отменили сопряжение со своим Mi Band, вы сможете подключить другой Mi Band.</string>
+    <string name="mili_unbind_question_content_1">Кроме того, вы не сможете разблокировать экран данным Mi Band после отмены сопряжения.</string>
+    <string name="mili_reset_info">"Информация с этого Mi Band будет удалена, браслет вернется к заводским настройка. 
+Вы уверены, что хотите продолжить?"</string>
+    <string name="mili_exit_login_info">"Вы собираетесь выйти с текущего Mi Аккаунта.
+Вы уверены, что хотите продолжить?"</string>
+    <string name="mili_exit_login_info_continue">"Неудачная попытка синхронизации, проверьте сетевое подключение. 
+Если вы выйдете, вы потеряете информацию, которая не была синхронизирована. Вы уверены, что хотите выйти?"</string>
+    <string name="modify_signiture">Изменить статус</string>
+    <string name="modify_signiture_hint">Статус</string>
+    <string name="modify_nickname">Изменить имя</string>
+    <string name="personal_info">Профиль</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="stat_steps">Шаги</string>
+    <string name="stat_steps_active_time">Продолжительность</string>
+    <string name="stat_steps_consecutive_active">Наибольшее</string>
+    <string name="stat_steps_achievement">Продвижение</string>
+    <string name="stat_step_total">Всего шагов</string>
+    <string name="stat_step_distance_total">Общая дистанция</string>
+    <string name="stat_step_calorie_total">Сожжено калорий</string>
+    <string name="stat_step_walk">Бег трусцой</string>
+    <string name="stat_step_run">Бег</string>
+    <string name="stat_step_daily">Всего шагов</string>
+    <string name="stat_step_distance_daily">Общая дистанция</string>
+    <string name="stat_step_calorie_daily">Сожжено калорий</string>
+    <string name="stat_step_active_total">Время активности</string>
+    <string name="stat_step_walk_total">Бег трусцой</string>
+    <string name="stat_step_run_total">Бег</string>
+    <string name="stat_step_average">Среднее кол-во шагов</string>
+    <string name="stat_step_distance_average">Средняя дистанция</string>
+    <string name="stat_step_calorie_average">Среднее кол-во калорий</string>
+    <string name="stat_step_active_average">Средняя активность</string>
+    <string name="stat_step_walk_average">Среднее кол-во шагов</string>
+    <string name="stat_step_run_average">Средний бег</string>
+    <string name="stat_sleep">Время сна</string>
+    <string name="stat_sleep_deep">Глубокий сон</string>
+    <string name="stat_sleep_shallow">Легкий сон</string>
+    <string name="stat_sleep_achievement">Прогресс</string>
+    <string name="stat_sleep_time">Лег спать в</string>
+    <string name="stat_sleep_rise_time">Проснулся</string>
+    <string name="stat_sleep_wake">Время пробуждения</string>
+    <string name="stat_sleep_average">Среднее время сна</string>
+    <string name="stat_sleep_deep_average">Среднее время глубокого сна</string>
+    <string name="stat_sleep_shallow_average">Среднее время легкого сна</string>
+    <string name="stat_sleep_time_average">Заснул в</string>
+    <string name="stat_sleep_rise_time_average">Время пробуждения</string>
+    <string name="stat_sleep_wake_average">Время бодрствования</string>
+    <string name="bmenu_dynamic">Обновления</string>
+    <string name="bmenu_device">Устройства</string>
+    <string name="bmenu_my">Я</string>
+    <string name="fw_upgrade_succ">Прошивка успешно обновлена, ожидание перезагрузки...</string>
+    <string name="fw_upgrade_failed">Не удалось обновить прошивку.</string>
+    <string name="user_agreement">Условия Использования и Политика Конфиденциальности</string>
+    <string name="error_code">Ошибка</string>
+    <string name="alarm_setting">Настройка будильника</string>
+    <string name="minute" />
+    <string name="modify_height">Рост</string>
+    <string name="modify_weight">Вес</string>
+    <string name="modify_gender">Пол</string>
+    <string name="day">День</string>
+    <string name="one_min">1 минуту назад</string>
+    <string name="before_min">%s минут назад</string>
+    <string name="today">Сегодня</string>
+    <string name="app_exit_press_again">Нажмите кнопку Назад еще раз для выхода</string>
+    <string name="set_goal_step">8000 шагов/день</string>
+    <string name="hour_1" />
+    <string name="wait">Подождите ...</string>
+    <string name="content_too_short">Содержание отсутствует.</string>
+    <string name="help">Справка</string>
+    <string name="unlock_screen_invalid_helper">Не можете разблокировать экран своим Mi Band?</string>
+    <string name="help_title_0">Ваш телефон поддерживает Bluetooth 4.0?</string>
+    <string name="help_info_0">Убедитесь в том, что ваш телефон поддерживает версию Bluetooth 4.0 или выше.Вы можете найти данную информацию в характеристиках телефона.</string>
+    <string name="help_title_1">Ваша система подходит под системные требования?</string>
+    <string name="help_info_1">Mi Band поддерживает только Android 4.4 и выше.</string>
+    <string name="help_title_2">Заряжен ли ваш Mi Band полностью?</string>
+    <string name="help_info_2">Убедитесь в том, что вы правильно зарядили Mi Band. Вы увидите 3 мигающих зеленых индикатора во время зарядки.</string>
+    <string name="help_info_3">Если вы хотите установить сопряжение вашего Mi Band на новом устройстве, отключите Bluetooth на старом и осуществите поиск браслета на новом.</string>
+    <string name="help_info_4">"Вы можете обратиться в нашу службу обслуживания клиентов для последующей поддержки.
+
+Номер обслуживания клиентов: 400-100-5678
+Мы доступны ежедневно с 8 утра до 6 вечера."</string>
+    <string name="get_image_file_fail">Не удалось получить изображение</string>
+    <string name="select_image">Изменить картинку профиля</string>
+    <string name="select_from_camera">Камера</string>
+    <string name="select_from_local">Выбрать из галереи</string>
+    <string name="fw_upgrade_failed_tips">Не удалось обновить прошивку. Вы не сможете воспользоваться новыми функциями.</string>
+    <string name="retry">Повторить</string>
+    <string name="fw_failed_help_title">ЧАВО по прошивке</string>
+    <string name="fw_failed_help_title0">Что такое прошивка?</string>
+    <string name="fw_failed_help_tips0">Прошивка - программное обеспечение, с помощью которого функционирует ваш браслет Mi Band.</string>
+    <string name="fw_failed_help_title1">Зачем мне нужно обновлять прошивку?</string>
+    <string name="fw_failed_help_tips1">Обновление прошивки Mi Band может улучшить его производительность. Также это позволит устройству получить новые возможности.</string>
+    <string name="fw_failed_help_title2">Что мне делать, если не удалось обновить прошивку?</string>
+    <string name="fw_failed_help_tips2">Для прошивки устройства, убедитесь, что браслет заряжен выше чем на 5% и он надежно подключен к телефону. Держите браслет в непосредственной близости к телефону.</string>
+    <string name="clock_closed">Выключен</string>
+    <string name="new_version_available">Обнаружена новая версия</string>
+    <string name="downloading_apk">Mi Band</string>
+    <string name="upgrade">Обновить</string>
+    <string name="download_failed">Не удалось загрузить APK.</string>
+    <string name="start_download">Загрузка обновления...</string>
+    <string name="apk_download_ok">Загрузка приложения Mi Band завершена.</string>
+    <string name="bracelet_login_info_2">Войдите если вы согласны с </string>
+    <string name="please_input_gender">Выберите пол</string>
+    <string name="input_precise_person_info">Введите свою персональную информацию. Чем детальнее она, тем точнее будут результаты.</string>
+    <string name="age">Возраст</string>
+    <string name="ages">лет</string>
+    <string name="check_upgrade">Проверить обновления</string>
+    <string name="visit_micom">Посетить официальный сайт</string>
+    <string name="apk_uptodate">Вы используете последнюю версию.</string>
+    <string name="local_app_failed">Не удалось получить текущую версию приложения.</string>
+    <string name="checking_new_apk">Проверяю наличие обновлений...</string>
+    <string name="please_knock_bracelet">Тапните по браслету Mi Band для сопряжения</string>
+    <string name="dynamic_title_sleep">Прошлой ночью</string>
+    <string name="dynamic_title_step">Сегодня</string>
+    <string name="dynamic_step_tip">Текущее кол-во шагов</string>
+    <string name="dynamic_sleep_tip">Всего</string>
+    <string name="dynamic_sleep_deep_title">Глубокий сон %s</string>
+    <string name="dynamic_detail_sleep_title">%s</string>
+    <string name="dynamic_detail_sleep_title_yesterday">Сон прошлой ночью</string>
+    <string name="dynamic_detail_step_title">%s</string>
+    <string name="dynamic_detail_step_share_title">%s активность</string>
+    <string name="dynamic_detail_step_title_today">Сегодня</string>
+    <string name="dynamic_sleep_deep">Глубокий сон</string>
+    <string name="dynamic_sleep_shallow">Легкий сон</string>
+    <string name="dynamic_sleep_active">Бодрствование</string>
+    <string name="dynamic_sleep_active_start">Готов ко сну</string>
+    <string name="dynamic_sleep_active_end">Готов встать</string>
+    <string name="dynamic_tip_unweared">Браслет не на руке</string>
+    <string name="dynamic_tip_sleep_unsynced">Не синхронизирован</string>
+    <string name="dynamic_tip_step_unsynced">Не синхронизирован</string>
+    <string name="dynamic_tip_step_sync_time_hour">%d часов назад</string>
+    <string name="dynamic_tip_step_sync_time_min">%d минут назад</string>
+    <string name="dynamic_tip_sync_progress">Синхронизация %d%%</string>
+    <string name="dynamic_tip_sync_time">%s синхронизирован</string>
+    <string name="dynamic_detail_modify_sleep_start_time">Укажите время начала сна</string>
+    <string name="dynamic_detail_modify_sleep_end_time">Укажите время окончания сна</string>
+    <string name="time_format_hour_min">%1$sч %2$sм</string>
+    <string name="time_format_min">%s минут</string>
+    <string name="action_pop_my_bracelet">Настройки Mi Band</string>
+    <string name="action_pop_smart_alarms">Будильник</string>
+    <string name="action_pop_person_info">Мой профиль</string>
+    <string name="action_pop_unlock_screen">Разблокировать Экран</string>
+    <string name="action_pop_weixin_enter">Синхронизировать с Wechat</string>
+    <string name="start_weixin">Открыть Wechat</string>
+    <string name="start_weixin_not_installed">Начать Wechat (не установлен)</string>
+    <string name="action_pop_about">Информация</string>
+    <string name="find_bracelet">Найти мой Mi Band</string>
+    <string name="light_color">Цвет индикаторов</string>
+    <string name="light_color_title">Цветные индикаторы показывают прогресс вашей тренировки</string>
+    <string name="wear_hand">Запястье</string>
+    <string name="left_hand">Левая</string>
+    <string name="right_hand">Правая</string>
+    <string name="unbind">Отменить сопряжение</string>
+    <string name="unbind_short">Отключить</string>
+    <string name="firmware_version">Версия прошивки</string>
+    <string name="step_per_day"> шагов/день</string>
+    <string name="remain_days_format">%s дней с последней зарядки устройства</string>
+    <string name="remain_days_today_format">Меньше одного дня с последней зарядки устройства</string>
+    <string name="blue">Синий</string>
+    <string name="red">Красный</string>
+    <string name="green">Зеленый</string>
+    <string name="orange">Оранжевый</string>
+    <string name="fw_upgrade_now">Обновляю прошивку ...</string>
+    <string name="please_input_age">Возраст</string>
+    <string name="your_height">Рост</string>
+    <string name="your_weight">Вес</string>
+    <string name="please_set_sport_goal">Задать свою цель</string>
+    <string name="your_gender">Пол</string>
+    <string name="donot_bind">Установить сопряжение позже</string>
+    <string name="welcom_back">Добро пожаловать</string>
+    <string name="bracelet_not_connected_bat_unknown">Браслет Mi Band не сопряжен</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="week">Неделя</string>
+    <string name="alarm_ring">Будильник</string>
+    <string name="alarm_repeat">Повторить</string>
+    <string name="alarm_repeat_title_format">Выбрано %s</string>
+    <string name="alarm_device_not_connect">Установите сопряжение с Mi Band перед там как задать будильник.</string>
+    <string name="unlock_screen_not_connect">Установите сопряжение с Mi Band перед там как задать разблокировку экрана.</string>
+    <string name="unlock_screen_help_tips">Всего-лишь в два шага, вы можете получить самую надежную разблокировку экрана.</string>
+    <string name="weared_days">Дней</string>
+    <string name="help_title_3">Mi Band сопряжен с другим устройством?</string>
+    <string name="look_device_list">Поиск ближайшего Mi Band.</string>
+    <string name="device_list">Ближайшие Mi Bands</string>
+    <string name="unbinding">Отменяю сопряжение ...</string>
+    <string name="share_sleep_title">Прошлая ночь</string>
+    <string name="share_sleep_title_average">Средняя длительность сна</string>
+    <string name="share_sleep_title_daily">Сон</string>
+    <string name="share_step_goal_succ_title_today">Сегодняшняя цель достигнута!</string>
+    <string name="share_step_goal_succ_title">Достигнуть Цели</string>
+    <string name="share_step_goal_failed_title_today">Сегодня</string>
+    <string name="share_step_goal_failed_title">Всего</string>
+    <string name="share_step_description">"Пройдено %1$s сожжено %2$s ккал.
+"</string>
+    <string name="share_step_description_run">"Пройдено %1$s, Пробежал %2$s
+Сожжено %3$s ккал.
+"</string>
+    <string name="share_step_description_weekly">"Всего %1$s%2$s
+сожжено %3$s ккал.
+Лучший рекорд был %4$s, пройдено %5$s шагов."</string>
+    <string name="share_step_description_weekly_run">"Всего %1$s, пробежал %2$s
+%3$s
+Лучший рекорд был %4$s, пройдено %5$s шагов."</string>
+    <string name="share_play_ground_format">Почти %1$s кругов трека.</string>
+    <string name="share_step_description_monthly">"%1$s%2$s
+ сожжено %3$s ккал, и ты сохранил %4$s галлонов бензина.
+(спасибо за защиту нашей планеты)
+Лучший рекорд был %5$s, пройдено %6$s шагов."</string>
+    <string name="share_step_description_monthly_run">"%1$s, пробежал %2$s
+ %3$s, и ты сохранил %4$s галлонов бензина.
+(спасибо за защиту нашей планеты)
+Лучший рекорд был %5$s, пройдено %6$s шагов."</string>
+    <string name="marathon_format_0">Примерно %1$s марафона.</string>
+    <string name="marathon_format_1">Больше чем %1$s марафона.</string>
+    <string name="half_marathon_format_0">Примерно %1$s полу-марафона.</string>
+    <string name="half_marathon_format_1">Больше чем %1$s полу-марафона.</string>
+    <string name="share_continue_goal_format">"Всего пройдено %1$s, %2$s шагов в день
+%3$s
+%4$s"</string>
+    <string name="share_continue_goal_format_run">"Всего пройдено %1$s, пробежал %2$s шагов
+%3$s
+%4$s"</string>
+    <string name="share_sleep_description">"В стадии глубокого сна %1$sч и %2$sм, 
+в стадии легкого сна %3$sч и %4$sм.
+Спал: %5$s. Бодрствовал: %6$s"</string>
+    <string name="share_sleep_description_average">"Провел в среднем %1$sч %2$sм в стадии глубокого сна и %3$sч %4$sм в стадии легкого сна.
+Ты спал в среднем %5$s, бодрствовал %6$s."</string>
+    <string name="smart_alarm_notify">Умный будильник</string>
+    <string name="battery_charge_full">Батарея заряжена</string>
+    <string name="battery_low_info">Низкий заряд, зарядите устройство.</string>
+    <string name="battery_charging">Заряжается...</string>
+    <string name="finding_bracelet">Поиск Mi Band ...</string>
+    <string name="unlock_screen_set_password_tips_set">Установить пароль экрана блокировки</string>
+    <string name="unlock_screen_set_password_tips_has_set">Пароль на экран блокировки успешно установлен.</string>
+    <string name="unlock_screen_set_password">Шаг 1) Установите свой пароль.</string>
+    <string name="unlock_screen_set_use_bracelet_tips">Подтвердить пароль.</string>
+    <string name="unlock_screen_set_use_bracelet">Шаг 2) Установить возможность разблокировки с помощью Mi Band.</string>
+    <string name="unlock_screen_set_success">Разблокирование с помощью браслета Mi Band установлено.</string>
+    <string name="unlock_screen_modify_unlock">"Если вы хотите изменить настройки,
+перейдите в Настройки->Безопасность->Блокировка Экрана."</string>
+    <string name="bind_weixin_title">Синхронизируй для того, чтобы делится и соревноваться с друзьями.</string>
+    <string name="step1">Шаг 1) </string>
+    <string name="step2">Шаг 2) </string>
+    <string name="bind_weixin_tips_1">Нажмите Сгенерировать QR Код, сгенерируйте и сохраните QR код в Галереи.</string>
+    <string name="bind_weixin_tips_2">Нажмите Открыть Wechat, войдите в сканер QR кода и нажмите Альбом, чтобы выбрать QR код.</string>
+    <string name="bind_weixin_now">Генерирую QR код ...</string>
+    <string name="bind_weixin_failed">Не удалось, попробуйте еще раз.</string>
+    <string name="bind_weixin_succ">Соединение удачно!</string>
+    <string name="bind_weixin_save">Сохранено в Галерее,</string>
+    <string name="incoming_call_notify">Входящий звонок</string>
+    <string name="incoming_call_notify_tips">Уведомить меня, если я пропустил звонок через %s сек.</string>
+    <string name="share_step_walk">Я прошел</string>
+    <string name="one_week">В течении этой недели, </string>
+    <string name="walked">прошел</string>
+    <string name="come_from_xiaomi_bracelet">От Mi Band</string>
+    <string name="unlock_screen_invalid">Что делать, если я не могу разблокировать?</string>
+    <string name="unlock_screen_help_title0">Был ли Mi Band достаточно близко к устройству?</string>
+    <string name="unlock_screen_help_title1">Перезапустить Bluetooth</string>
+    <string name="unlock_screen_help_title2">Перезапустить блокировку экрана</string>
+    <string name="unlock_screen_help_info0">Преподнесите ваш Mi Band близко к телефону.</string>
+    <string name="unlock_screen_help_info1">Если ваш телефон все еще заблокирован, вы можете попробовать перезапустить Bluetooth для проверки исправления проблемы.</string>
+    <string name="unlock_screen_help_info2">Если вы не можете перезапустить Bluetooth, зайдите в Настройки->Безопасность->Блокировка экрана->Разблокировка Bluetooth устройством и нажмите Отключить. Затем в приложении Mi Band переустановите блокировку.</string>
+    <string name="instruction_title">Сделай больше с Mi Band</string>
+    <string name="instruction_tip_1">"Взгляни 
+на прогресс 
+тренировки"</string>
+    <string name="instruction_tip_2_1">"Количество 
+шагов на 1/3 
+меньше твоей 
+цели"</string>
+    <string name="instruction_tip_2_2">"Более
+1/3 твоей 
+цели"</string>
+    <string name="instruction_tip_2_3">"Более
+2/3 твоей 
+цели"</string>
+    <string name="instruction_tip_2_4">"Отличная Работа!
+Ты достиг 
+своей цели 
+сегодня"</string>
+    <string name="instruction_tip_2_5">"Больше
+чем цель"</string>
+    <string name="instruction_tip_3">"Низкий 
+заряд. 
+Зарядите Mi Band."</string>
+    <string name="new_record_born">Отличная работа! Ты только что установил новый рекорд!</string>
+    <string name="new_record_format_str">"%1$s сожжено %2$s ккал.
+Каждый новый рекорд приближает тебя к лучшей версии себя.
+Не останавливайся, двигайся вперед."</string>
+    <string name="continue_reach_goal">Достигай целей</string>
+    <string name="continue_tips_format">Твой лучший рекорд - достичь цели за %1$s дней.</string>
+    <string name="gram">г</string>
+    <string name="kilogram">кг</string>
+    <string name="sync_to_server">Синхронизирую с Mi Cloud ...</string>
+    <string name="unlock_screen_miui_version_low">Пожалуйста, обновите версию MIUI.</string>
+    <string name="share_uninstall_client">Это приложение не установлено, невозможно поделиться.</string>
+    <string name="setting_feedback_send">Отправить</string>
+    <string name="setting_feedback_hint">Спасибо за ваше время. Ваше мнение очень важно для нас.</string>
+    <string name="setting_feedback_address">Как мы можем связаться с вами?</string>
+    <string name="bluetooth">Bluetooth </string>
+    <string name="setting_about_fw">Версия прошивки </string>
+    <string name="setting_about_app">"Версия приложения: 
+ Перевод dezmen3"</string>
+    <string name="stop">Закончить</string>
+    <string name="start">Начать</string>
+    <string name="no_wear_bracelet">На тебе не было Mi Band прошлой ночью.</string>
+    <string name="no_wear_user_modified">Добавить данные о моем сне вручную.</string>
+    <string name="dynamic_pull_connect_failed">Не удалось подключиться, потяните вниз, чтобы повторить.</string>
+    <string name="dynamic_pull_connect_failed_hint">Убедитесь в том, что у Mi Band достаточно заряда.</string>
+    <string name="dynamic_pull_not_sync_today">Не синхронизирован сегодня.</string>
+    <string name="dynamic_pull_last_sync_time">Последняя синхронизация %s</string>
+    <string name="dynamic_pull_connecting_bracelet">Подключаюсь к Mi Band ...</string>
+    <string name="dynamic_pull_sync_after_connected">Автоматически синхронизироваться после подключения.</string>
+    <string name="dynamic_pull_syncing">Синхронизация ...</string>
+    <string name="dynamic_pull_syncing_progress">Синхронизирован %s%%</string>
+    <string name="dynamic_pull_release_to_sync">Отпустите для синхронизации</string>
+    <string name="dynamic_pull_pull_to_sync">Потяните внизу для детальной синхронизации</string>
+    <string name="dynamic_pull_update_report">Обновлено %s записей</string>
+    <string name="dynamic_pull_sync_error">Не удалось синхронизировать, потяните вниз, чтобы повторить.</string>
+    <string name="bind_weixin_qrcode_name">Mi Band QR код</string>
+    <string name="mili_exit_login_info_unbind">Выход повлечет отключение Mi Band от телефона,</string>
+    <string name="mili_exit_login_info_unlock">возможность разблокировки будет недействительна.</string>
+    <string name="mili_exit_login_info_continue_tip">Вы хотите продолжить?</string>
+    <string name="mili_exit_login_info_exiting">Выхожу из аккаунта ...</string>
+    <string name="back">Назад</string>
+    <string name="enable_debug_log">Режим отладки открыт!</string>
+    <string name="disable_debug_log">Режим отладки закрыт!</string>
+    <string name="fw_upgrade">Обновление прошивки</string>
+    <string name="fw_upgrade_tips">Убедитесь в том, что Mi Band будет возле телефона во время прошивки.</string>
+    <string name="fw_upgrade_progress">Завершено на %s%%</string>
+    <string name="runed">Пробежал</string>
+    <string name="share_to_miliao_path">Поделится в</string>
+    <string name="share_to_miliao_target_feeds">Круги</string>
+    <string name="share_to_miliao_target_friends">Друзья</string>
+    <string name="share_to_miliao_target_union">Друзья по тренировке</string>
+    <string name="no_network_connection">Не подключено к интернету</string>
+    <string name="gen_qr_code">Сгенерировать QR код</string>
+    <string name="bin_weixin_device_not_connect">Mi Band не подключен.</string>
+    <string name="share_to_content_sleep">Моя информация о сне</string>
+    <string name="share_to_content_step">Моя информация о тренировках</string>
+    <string name="share_to_topic">\#Mi Band#</string>
+    <string name="month">Месяц</string>
+    <string name="year">Год</string>
+    <string name="find_bracelet_warning">Поиск браслета Mi Band потребляет много энергии.</string>
+    <string name="second">Секунд</string>
+    <string name="move_and_capture">Двигайся и записывай</string>
+    <string name="share_miliao_too_old">Версия MiTalk слишком старая.</string>
+    <string name="first_use_days_today_format">Меньше одного дня после первого использования.</string>
+    <string name="first_use_remain_days_format">%s дней после первого использования.</string>
+    <string name="until">до </string>
+    <string name="continue_reach_goal_new_record">Создал новый персональный рекорд</string>
+</resources>
