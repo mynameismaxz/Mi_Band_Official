@@ -1,4 +1,4 @@
-.class final Lorg/achartengine/b;
+.class Lorg/achartengine/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,15 +6,15 @@
 
 
 # instance fields
-.field private synthetic a:I
+.field final synthetic a:I
 
-.field private synthetic b:I
+.field final synthetic b:I
 
-.field private synthetic c:I
+.field final synthetic c:I
 
-.field private synthetic d:I
+.field final synthetic d:I
 
-.field private synthetic e:Lorg/achartengine/GraphicalView;
+.field final synthetic e:Lorg/achartengine/GraphicalView;
 
 
 # direct methods
@@ -38,7 +38,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     iget-object v0, p0, Lorg/achartengine/b;->e:Lorg/achartengine/GraphicalView;

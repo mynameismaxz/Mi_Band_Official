@@ -54,11 +54,11 @@
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;->getWidth()I
 
-    move-result v0
+    move-result v2
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;->getHeight()I
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p1}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;->getWidth()I
 
@@ -68,9 +68,9 @@
 
     move-result v5
 
-    div-int v3, v0, v4
+    div-int v3, v2, v4
 
-    div-int v6, v2, v5
+    div-int v6, v0, v5
 
     sget-object v7, Lcom/nostra13/universalimageloader/utils/a;->a:[I
 
@@ -86,7 +86,7 @@
 
     :cond_0
     :goto_0
-    if-gtz v0, :cond_4
+    if-ge v0, v1, :cond_4
 
     :goto_1
     return v1
@@ -101,20 +101,20 @@
     move v0, v1
 
     :goto_2
-    div-int/lit8 v6, v2, 0x2
+    div-int/lit8 v6, v3, 0x2
 
     if-ge v6, v4, :cond_1
 
-    div-int/lit8 v6, v3, 0x2
+    div-int/lit8 v6, v2, 0x2
 
     if-lt v6, v5, :cond_0
 
     :cond_1
-    div-int/lit8 v2, v2, 0x2
-
     div-int/lit8 v3, v3, 0x2
 
-    shl-int/lit8 v0, v0, 0x1
+    div-int/lit8 v2, v2, 0x2
+
+    mul-int/lit8 v0, v0, 0x2
 
     goto :goto_2
 
@@ -135,19 +135,19 @@
     move v0, v1
 
     :goto_3
-    div-int/lit8 v6, v2, 0x2
+    div-int/lit8 v6, v3, 0x2
 
     if-lt v6, v4, :cond_0
 
-    div-int/lit8 v6, v3, 0x2
+    div-int/lit8 v6, v2, 0x2
 
     if-lt v6, v5, :cond_0
 
-    div-int/lit8 v2, v2, 0x2
-
     div-int/lit8 v3, v3, 0x2
 
-    shl-int/lit8 v0, v0, 0x1
+    div-int/lit8 v2, v2, 0x2
+
+    mul-int/lit8 v0, v0, 0x2
 
     goto :goto_3
 
@@ -183,21 +183,21 @@
 
     invoke-virtual {p1}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;->getWidth()I
 
-    move-result v0
+    move-result v1
 
     invoke-virtual {p1}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;->getHeight()I
 
-    move-result v1
+    move-result v0
 
     int-to-float v2, v3
 
-    int-to-float v5, v0
+    int-to-float v5, v1
 
     div-float/2addr v2, v5
 
     int-to-float v5, v4
 
-    int-to-float v6, v1
+    int-to-float v6, v0
 
     div-float/2addr v5, v6
 
@@ -219,11 +219,11 @@
     if-gez v6, :cond_5
 
     :cond_1
-    int-to-float v1, v4
+    int-to-float v0, v4
 
-    div-float/2addr v1, v2
+    div-float/2addr v0, v2
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
     move v2, v1
 
@@ -234,19 +234,19 @@
 
     if-nez p3, :cond_2
 
-    if-ge v1, v3, :cond_2
+    if-ge v2, v3, :cond_2
 
-    if-lt v2, v4, :cond_3
+    if-lt v1, v4, :cond_3
 
     :cond_2
     if-eqz p3, :cond_4
 
-    if-eq v1, v3, :cond_4
+    if-eq v2, v3, :cond_4
 
-    if-eq v2, v4, :cond_4
+    if-eq v1, v4, :cond_4
 
     :cond_3
-    int-to-float v0, v1
+    int-to-float v0, v2
 
     int-to-float v1, v3
 
@@ -256,11 +256,11 @@
     return v0
 
     :cond_5
-    int-to-float v0, v3
+    int-to-float v1, v3
 
-    div-float/2addr v0, v5
+    div-float/2addr v1, v5
 
-    float-to-int v0, v0
+    float-to-int v1, v1
 
     move v2, v1
 

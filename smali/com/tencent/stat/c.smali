@@ -1,11 +1,11 @@
-.class final Lcom/tencent/stat/c;
+.class Lcom/tencent/stat/c;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field private static a:Lcom/tencent/stat/common/StatLogger;
+.field private static c:Lcom/tencent/stat/common/StatLogger;
 
-.field private static b:J
+.field private static d:J
 
 .field private static e:Lcom/tencent/stat/c;
 
@@ -13,26 +13,30 @@
 
 
 # instance fields
-.field private c:Lorg/apache/http/impl/client/DefaultHttpClient;
+.field a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
-.field private d:Landroid/os/Handler;
+.field b:Landroid/os/Handler;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     invoke-static {}, Lcom/tencent/stat/common/StatCommonHelper;->getLogger()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
-    sput-object v0, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sput-object v0, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
-    sput-object v1, Lcom/tencent/stat/c;->e:Lcom/tencent/stat/c;
+    const-wide/16 v0, -0x1
 
-    sput-object v1, Lcom/tencent/stat/c;->f:Landroid/content/Context;
+    sput-wide v0, Lcom/tencent/stat/c;->d:J
+
+    sput-object v2, Lcom/tencent/stat/c;->e:Lcom/tencent/stat/c;
+
+    sput-object v2, Lcom/tencent/stat/c;->f:Landroid/content/Context;
 
     return-void
 .end method
@@ -44,9 +48,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iput-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
-    iput-object v0, p0, Lcom/tencent/stat/c;->d:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/tencent/stat/c;->b:Landroid/os/Handler;
 
     :try_start_0
     new-instance v0, Landroid/os/HandlerThread;
@@ -59,6 +63,10 @@
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getId()J
 
+    move-result-wide v1
+
+    sput-wide v1, Lcom/tencent/stat/c;->d:J
+
     new-instance v1, Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -67,7 +75,7 @@
 
     invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v1, p0, Lcom/tencent/stat/c;->d:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/tencent/stat/c;->b:Landroid/os/Handler;
 
     new-instance v0, Lorg/apache/http/params/BasicHttpParams;
 
@@ -85,9 +93,9 @@
 
     invoke-direct {v1, v0}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/params/HttpParams;)V
 
-    iput-object v1, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iput-object v1, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     new-instance v1, Lcom/tencent/stat/d;
 
@@ -101,7 +109,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v0}, Lorg/apache/http/impl/client/DefaultHttpClient;->getParams()Lorg/apache/http/params/HttpParams;
 
@@ -124,7 +132,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     invoke-virtual {v1, v0}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Object;)V
 
@@ -172,7 +180,7 @@
 
 
 # virtual methods
-.method final a(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
+.method a(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
     .locals 3
 
     const/4 v0, 0x1
@@ -196,7 +204,7 @@
     return-void
 .end method
 
-.method final a(Ljava/util/List;Lcom/tencent/stat/b;)V
+.method a(Ljava/util/List;Lcom/tencent/stat/b;)V
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -269,13 +277,17 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "["
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -348,7 +360,7 @@
 
     if-eqz v4, :cond_2
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v0}, Lorg/apache/http/impl/client/DefaultHttpClient;->getParams()Lorg/apache/http/params/HttpParams;
 
@@ -428,7 +440,7 @@
 
     invoke-virtual {v1, v3}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v0, v1}, Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
@@ -436,7 +448,7 @@
 
     if-eqz v2, :cond_3
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->c:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/tencent/stat/c;->a:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v0}, Lorg/apache/http/impl/client/DefaultHttpClient;->getParams()Lorg/apache/http/params/HttpParams;
 
@@ -463,13 +475,17 @@
 
     move-result-wide v3
 
-    sget-object v5, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v5, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v7, "recv response status code:"
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -523,7 +539,7 @@
     move-exception v0
 
     :try_start_1
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     invoke-virtual {v1, v0}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Object;)V
 
@@ -579,13 +595,17 @@
 
     invoke-virtual {v3, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    sget-object v3, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v3, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "before Gzip:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -627,13 +647,17 @@
     goto :goto_3
 
     :cond_8
-    sget-object v0, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v0, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Server response error code:"
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -706,7 +730,7 @@
     if-ne v2, v8, :cond_10
 
     :try_start_3
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v2, Ljava/lang/String;
 
@@ -817,7 +841,7 @@
     :catch_1
     move-exception v0
 
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     invoke-virtual {v0}, Lorg/json/JSONException;->toString()Ljava/lang/String;
 
@@ -828,13 +852,17 @@
     goto :goto_5
 
     :cond_10
-    sget-object v1, Lcom/tencent/stat/c;->a:Lcom/tencent/stat/common/StatLogger;
+    sget-object v1, Lcom/tencent/stat/c;->c:Lcom/tencent/stat/common/StatLogger;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Server response error code:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -873,7 +901,7 @@
     goto/16 :goto_2
 .end method
 
-.method final b(Ljava/util/List;Lcom/tencent/stat/b;)V
+.method b(Ljava/util/List;Lcom/tencent/stat/b;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -893,7 +921,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/stat/c;->d:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/c;->b:Landroid/os/Handler;
 
     if-nez v0, :cond_1
 
@@ -902,7 +930,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/tencent/stat/c;->d:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/c;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/e;
 

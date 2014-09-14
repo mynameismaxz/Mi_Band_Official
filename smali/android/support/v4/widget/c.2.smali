@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/widget/c;
+.class Landroid/support/v4/widget/c;
 .super Landroid/database/DataSetObserver;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/CursorAdapter;
+.field final synthetic a:Landroid/support/v4/widget/CursorAdapter;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/support/v4/widget/CursorAdapter;B)V
+.method synthetic constructor <init>(Landroid/support/v4/widget/CursorAdapter;Landroid/support/v4/widget/a;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/support/v4/widget/c;-><init>(Landroid/support/v4/widget/CursorAdapter;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final onChanged()V
+.method public onChanged()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/c;->a:Landroid/support/v4/widget/CursorAdapter;
@@ -43,7 +43,7 @@
     return-void
 .end method
 
-.method public final onInvalidated()V
+.method public onInvalidated()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/c;->a:Landroid/support/v4/widget/CursorAdapter;

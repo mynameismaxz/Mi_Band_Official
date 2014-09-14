@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/analysis/b;
+.class Lcn/com/smartdevices/bracelet/analysis/b;
 .super Ljava/lang/Object;
 
 
@@ -60,7 +60,7 @@
 
     iput p6, p0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/b;->g:I
+    iput p7, p0, Lcn/com/smartdevices/bracelet/analysis/b;->g:I
 
     iput p8, p0, Lcn/com/smartdevices/bracelet/analysis/b;->h:I
 

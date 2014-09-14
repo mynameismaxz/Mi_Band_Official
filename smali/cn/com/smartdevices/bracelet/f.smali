@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/f;
+.class Lcn/com/smartdevices/bracelet/f;
 .super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final onFailed(Ljava/lang/Object;)V
+.method public onFailed(Ljava/lang/Object;)V
     .locals 2
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
@@ -27,7 +27,7 @@
     return-void
 .end method
 
-.method public final onFinish(Ljava/lang/Object;)V
+.method public onFinish(Ljava/lang/Object;)V
     .locals 2
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V

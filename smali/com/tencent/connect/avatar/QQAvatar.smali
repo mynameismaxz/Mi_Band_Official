@@ -34,102 +34,7 @@
 .method private a(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "appid"
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/QQAvatar;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/QQToken;->isSessionValid()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "keystr"
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/QQAvatar;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getAccessToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "keytype"
-
-    const-string v1, "0x80"
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/QQToken;->getOpenId()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "hopenid"
-
-    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    const-string v0, "platform"
-
-    const-string v1, "androidqz"
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :try_start_0
-    iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->mContext:Landroid/content/Context;
-
-    const-string v1, "pfStore"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "pf"
-
-    const-string v2, "openmobile_android"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "pf"
-
-    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_2
-    :goto_0
-    const-string v0, "sdkv"
-
-    const-string v1, "2.1"
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "sdkp"
-
-    const-string v1, "a"
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p2}, Lcom/tencent/connect/avatar/QQAvatar;->a(Landroid/os/Bundle;)V
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->mActivityIntent:Landroid/content/Intent;
 
@@ -150,19 +55,6 @@
     invoke-virtual {p0, p1, v0}, Lcom/tencent/connect/avatar/QQAvatar;->startAssitActivity(Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const-string v0, "pf"
-
-    const-string v1, "openmobile_android"
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
 .end method
 
 .method private a(Landroid/os/Bundle;)V
@@ -451,15 +343,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v1, Landroid/content/Intent;
+    invoke-direct {p0}, Lcom/tencent/connect/avatar/QQAvatar;->a()Landroid/content/Intent;
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/QQAvatar;->mContext:Landroid/content/Context;
-
-    const-class v3, Lcom/tencent/connect/avatar/ImageActivity;
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    move-result-object v1
 
     iput-object v1, p0, Lcom/tencent/connect/avatar/QQAvatar;->mActivityIntent:Landroid/content/Intent;
 
@@ -469,25 +355,7 @@
 
     if-eqz v1, :cond_1
 
-    invoke-direct {p0, v0}, Lcom/tencent/connect/avatar/QQAvatar;->a(Landroid/os/Bundle;)V
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/QQAvatar;->mActivityIntent:Landroid/content/Intent;
-
-    const-string v2, "key_action"
-
-    const-string v3, "action_avatar"
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/QQAvatar;->mActivityIntent:Landroid/content/Intent;
-
-    const-string v2, "key_params"
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
-
-    iget-object v0, p0, Lcom/tencent/connect/avatar/QQAvatar;->a:Lcom/tencent/tauth/IUiListener;
-
-    invoke-virtual {p0, p1, v0}, Lcom/tencent/connect/avatar/QQAvatar;->startAssitActivity(Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
+    invoke-direct {p0, p1, v0}, Lcom/tencent/connect/avatar/QQAvatar;->a(Landroid/app/Activity;Landroid/os/Bundle;)V
 
     :cond_1
     return-void

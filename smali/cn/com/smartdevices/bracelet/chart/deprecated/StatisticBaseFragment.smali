@@ -100,7 +100,7 @@
 .method private a(Landroid/view/View;)V
     .locals 1
 
-    const v0, 0x7f070120
+    const v0, 0x7f070126
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mActiveStatisticChart:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
 
-    const v0, 0x7f070122
+    const v0, 0x7f070128
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCount:Landroid/widget/TextView;
 
-    const v0, 0x7f070125
+    const v0, 0x7f07012b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistance:Landroid/widget/TextView;
 
-    const v0, 0x7f070124
+    const v0, 0x7f07012a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistanceUnit:Landroid/widget/TextView;
 
-    const v0, 0x7f070128
+    const v0, 0x7f07012e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCalorie:Landroid/widget/TextView;
 
-    const v0, 0x7f070130
+    const v0, 0x7f070136
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepAchievement:Landroid/widget/TextView;
 
-    const v0, 0x7f07012a
+    const v0, 0x7f070130
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveHour:Landroid/widget/TextView;
 
-    const v0, 0x7f07012b
+    const v0, 0x7f070131
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveMin:Landroid/widget/TextView;
 
-    const v0, 0x7f07012d
+    const v0, 0x7f070133
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueHour:Landroid/widget/TextView;
 
-    const v0, 0x7f07012e
+    const v0, 0x7f070134
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070132
+    const v0, 0x7f070138
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070133
+    const v0, 0x7f070139
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070135
+    const v0, 0x7f07013b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070136
+    const v0, 0x7f07013c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070138
+    const v0, 0x7f07013e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -250,7 +250,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070139
+    const v0, 0x7f07013f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -260,7 +260,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowMin:Landroid/widget/TextView;
 
-    const v0, 0x7f07013f
+    const v0, 0x7f070145
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -270,7 +270,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepAchievement:Landroid/widget/TextView;
 
-    const v0, 0x7f07013b
+    const v0, 0x7f070141
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -280,7 +280,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepStartTime:Landroid/widget/TextView;
 
-    const v0, 0x7f07013d
+    const v0, 0x7f070143
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -293,12 +293,12 @@
     return-void
 .end method
 
-.method private static a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+.method private a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
     .locals 4
 
     const/4 v3, 0x0
 
-    invoke-static {p2}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->formatTimeLengthHourMin(I)[Ljava/lang/String;
+    invoke-static {p3}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->formatTimeLengthHourMin(I)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -314,9 +314,9 @@
 
     aget-object v0, v1, v3
 
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
@@ -329,12 +329,12 @@
 
     aget-object v0, v1, v0
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p1}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
@@ -347,39 +347,7 @@
     goto :goto_0
 .end method
 
-.method private static a(I)[Ljava/lang/String;
-    .locals 5
-
-    const/4 v0, 0x2
-
-    new-array v1, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    const/16 v0, 0x64
-
-    if-ge p0, v0, :cond_0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    aput-object v0, v1, v2
-
-    return-object v1
-
-    :cond_0
-    int-to-long v3, p0
-
-    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private static a(Landroid/content/Context;I)[Ljava/lang/String;
+.method private a(Landroid/content/Context;I)[Ljava/lang/String;
     .locals 6
 
     const/4 v5, 0x1
@@ -392,11 +360,11 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    int-to-float v1, p1
+    int-to-float v1, p2
 
     const/16 v2, 0x3e8
 
-    if-lt p1, v2, :cond_0
+    if-lt p2, v2, :cond_0
 
     const/high16 v2, 0x447a
 
@@ -420,7 +388,7 @@
 
     const v1, 0x7f0c003c
 
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -430,7 +398,7 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -438,11 +406,43 @@
 
     const v1, 0x7f0c003d
 
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     aput-object v1, v0, v5
+
+    goto :goto_0
+.end method
+
+.method private b(Landroid/content/Context;I)[Ljava/lang/String;
+    .locals 5
+
+    const/4 v0, 0x2
+
+    new-array v1, v0, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    const/16 v0, 0x64
+
+    if-ge p2, v0, :cond_0
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    aput-object v0, v1, v2
+
+    return-object v1
+
+    :cond_0
+    int-to-long v3, p2
+
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
@@ -694,205 +694,17 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f030045
+    const v0, 0x7f030047
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
-
-    const v0, 0x7f070120
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
     move-result-object v0
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/view/View;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mActiveStatisticChart:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
-
-    const v0, 0x7f070122
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCount:Landroid/widget/TextView;
-
-    const v0, 0x7f070125
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistance:Landroid/widget/TextView;
-
-    const v0, 0x7f070124
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistanceUnit:Landroid/widget/TextView;
-
-    const v0, 0x7f070128
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCalorie:Landroid/widget/TextView;
-
-    const v0, 0x7f070130
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepAchievement:Landroid/widget/TextView;
-
-    const v0, 0x7f07012a
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveHour:Landroid/widget/TextView;
-
-    const v0, 0x7f07012b
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveMin:Landroid/widget/TextView;
-
-    const v0, 0x7f07012d
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueHour:Landroid/widget/TextView;
-
-    const v0, 0x7f07012e
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueMin:Landroid/widget/TextView;
-
-    const v0, 0x7f070132
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepHour:Landroid/widget/TextView;
-
-    const v0, 0x7f070133
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepMin:Landroid/widget/TextView;
-
-    const v0, 0x7f070135
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepHour:Landroid/widget/TextView;
-
-    const v0, 0x7f070136
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepMin:Landroid/widget/TextView;
-
-    const v0, 0x7f070138
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowHour:Landroid/widget/TextView;
-
-    const v0, 0x7f070139
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowMin:Landroid/widget/TextView;
-
-    const v0, 0x7f07013f
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepAchievement:Landroid/widget/TextView;
-
-    const v0, 0x7f07013b
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepStartTime:Landroid/widget/TextView;
-
-    const v0, 0x7f07013d
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepRiseTime:Landroid/widget/TextView;
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public onDestroy()V
@@ -1214,7 +1026,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepMin:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+    invoke-direct {p0, v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
 
     return-void
 .end method
@@ -1240,7 +1052,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowMin:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+    invoke-direct {p0, v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
 
     return-void
 .end method
@@ -1266,7 +1078,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepMin:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+    invoke-direct {p0, v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
 
     return-void
 .end method
@@ -1470,7 +1282,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveMin:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+    invoke-direct {p0, v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
 
     return-void
 .end method
@@ -1504,7 +1316,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueMin:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
+    invoke-direct {p0, v0, v1, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/widget/TextView;Landroid/widget/TextView;I)V
 
     return-void
 .end method
@@ -1532,85 +1344,31 @@
 .end method
 
 .method protected updateStepDistance(I)V
-    .locals 7
-
-    const/high16 v6, 0x42c8
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    .locals 3
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    int-to-float v2, p1
-
-    const/16 v3, 0x3e8
-
-    if-lt p1, v3, :cond_0
-
-    const/high16 v3, 0x447a
-
-    div-float/2addr v2, v3
-
-    mul-float/2addr v2, v6
-
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    div-float/2addr v2, v6
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v4
-
-    const v2, 0x7f0c003c
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-direct {p0, v0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->a(Landroid/content/Context;I)[Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v1, v5
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistance:Landroid/widget/TextView;
 
-    :goto_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistance:Landroid/widget/TextView;
+    const/4 v2, 0x0
 
-    aget-object v2, v1, v4
+    aget-object v2, v0, v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistanceUnit:Landroid/widget/TextView;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistanceUnit:Landroid/widget/TextView;
 
-    aget-object v1, v1, v5
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    aget-object v0, v0, v2
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
-
-    :cond_0
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v4
-
-    const v2, 0x7f0c003d
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v1, v5
-
-    goto :goto_0
 .end method

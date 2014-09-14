@@ -531,17 +531,7 @@
 .method public a(Lu/aly/bf;)V
     .locals 3
 
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Lu/aly/q;->f:Landroid/content/Context;
-
-    invoke-static {v0}, Lu/aly/u;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "session_id"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0}, Lu/aly/q;->i()Ljava/lang/String;
 
     move-result-object v1
 
@@ -635,8 +625,6 @@
     check-cast v0, Lu/aly/p;
 
     invoke-interface {v0, p1, v1}, Lu/aly/p;->a(Lu/aly/bf;Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
@@ -644,6 +632,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -714,14 +704,14 @@
 .end method
 
 .method public declared-synchronized c()Lu/aly/ai;
-    .locals 3
+    .locals 1
 
     monitor-enter p0
 
     :try_start_0
     iget-object v0, p0, Lu/aly/q;->c:Lu/aly/ai;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     new-instance v0, Lu/aly/ai;
 
@@ -730,128 +720,17 @@
     iput-object v0, p0, Lu/aly/q;->c:Lu/aly/ai;
 
     iget-object v0, p0, Lu/aly/q;->f:Landroid/content/Context;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :try_start_1
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    invoke-static {v0}, Lcom/umeng/analytics/AnalyticsConfig;->getAppkey(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->a(Ljava/lang/String;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    invoke-static {v0}, Lcom/umeng/analytics/AnalyticsConfig;->getChannel(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->e(Ljava/lang/String;)Lu/aly/ai;
-
-    sget-object v1, Lcom/umeng/analytics/AnalyticsConfig;->mWrapperType:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Lcom/umeng/analytics/AnalyticsConfig;->mWrapperVersion:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    sget-object v2, Lcom/umeng/analytics/AnalyticsConfig;->mWrapperType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->f(Ljava/lang/String;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    sget-object v2, Lcom/umeng/analytics/AnalyticsConfig;->mWrapperVersion:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->g(Ljava/lang/String;)Lu/aly/ai;
+    invoke-direct {p0, v0}, Lu/aly/q;->a(Landroid/content/Context;)V
 
     :cond_0
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    invoke-static {v0}, Lu/aly/bi;->u(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->c(Ljava/lang/String;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    sget-object v2, Lu/aly/bc;->a:Lu/aly/bc;
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->a(Lu/aly/bc;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    const-string v2, "5.2.4"
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->d(Ljava/lang/String;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    invoke-static {v0}, Lu/aly/bi;->d(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ai;->b(Ljava/lang/String;)Lu/aly/ai;
-
-    iget-object v1, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    invoke-static {v0}, Lu/aly/bi;->c(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lu/aly/ai;->a(I)Lu/aly/ai;
-
-    sget v0, Lcom/umeng/analytics/AnalyticsConfig;->mVerticalType:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
     iget-object v0, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    sget v1, Lcom/umeng/analytics/AnalyticsConfig;->mVerticalType:I
-
-    invoke-virtual {v0, v1}, Lu/aly/ai;->c(I)Lu/aly/ai;
-
-    iget-object v0, p0, Lu/aly/q;->c:Lu/aly/ai;
-
-    const-string v1, "5.2.4.1"
-
-    invoke-virtual {v0, v1}, Lu/aly/ai;->d(Ljava/lang/String;)Lu/aly/ai;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_1
-    :goto_0
-    :try_start_2
-    iget-object v0, p0, Lu/aly/q;->c:Lu/aly/ai;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_3
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
 
     :catchall_0
     move-exception v0
@@ -862,14 +741,14 @@
 .end method
 
 .method public declared-synchronized d()Lu/aly/ak;
-    .locals 5
+    .locals 1
 
     monitor-enter p0
 
     :try_start_0
     iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
     new-instance v0, Lu/aly/ak;
 
@@ -878,149 +757,17 @@
     iput-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
 
     iget-object v0, p0, Lu/aly/q;->f:Landroid/content/Context;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :try_start_1
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    invoke-static {}, Lu/aly/bi;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->f(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    invoke-static {v0}, Lu/aly/bi;->f(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->a(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    invoke-static {v0}, Lu/aly/bi;->g(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->b(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    invoke-static {v0}, Lu/aly/bi;->p(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->c(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->e(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    const-string v2, "Android"
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->g(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v2, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->h(Ljava/lang/String;)Lu/aly/ak;
-
-    invoke-static {v0}, Lu/aly/bi;->r(Landroid/content/Context;)[I
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    new-instance v2, Lu/aly/ba;
-
-    const/4 v3, 0x1
-
-    aget v3, v0, v3
-
-    const/4 v4, 0x0
-
-    aget v0, v0, v4
-
-    invoke-direct {v2, v3, v0}, Lu/aly/ba;-><init>(II)V
-
-    invoke-virtual {v1, v2}, Lu/aly/ak;->a(Lu/aly/ba;)Lu/aly/ak;
+    invoke-direct {p0, v0}, Lu/aly/q;->b(Landroid/content/Context;)V
 
     :cond_0
-    sget-object v0, Lcom/umeng/analytics/AnalyticsConfig;->GPU_RENDERER:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    sget-object v0, Lcom/umeng/analytics/AnalyticsConfig;->GPU_VENDER:Ljava/lang/String;
-
-    :cond_1
     iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v1, Landroid/os/Build;->BOARD:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/ak;->i(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v1, Landroid/os/Build;->BRAND:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/ak;->j(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-wide v1, Landroid/os/Build;->TIME:J
-
-    invoke-virtual {v0, v1, v2}, Lu/aly/ak;->a(J)Lu/aly/ak;
-
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/ak;->k(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v1, Landroid/os/Build;->ID:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/ak;->l(Ljava/lang/String;)Lu/aly/ak;
-
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-
-    sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/ak;->m(Ljava/lang/String;)Lu/aly/ak;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_2
-    :goto_0
-    :try_start_2
-    iget-object v0, p0, Lu/aly/q;->d:Lu/aly/ak;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_3
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
 
     :catchall_0
     move-exception v0
@@ -1031,14 +778,14 @@
 .end method
 
 .method public declared-synchronized e()Lu/aly/ax;
-    .locals 4
+    .locals 1
 
     monitor-enter p0
 
     :try_start_0
     iget-object v0, p0, Lu/aly/q;->e:Lu/aly/ax;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
     new-instance v0, Lu/aly/ax;
 
@@ -1047,183 +794,17 @@
     iput-object v0, p0, Lu/aly/q;->e:Lu/aly/ax;
 
     iget-object v0, p0, Lu/aly/q;->f:Landroid/content/Context;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :try_start_1
-    invoke-static {v0}, Lu/aly/bi;->j(Landroid/content/Context;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Wi-Fi"
-
-    const/4 v3, 0x0
-
-    aget-object v3, v1, v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    sget-object v3, Lu/aly/ag;->c:Lu/aly/ag;
-
-    invoke-virtual {v2, v3}, Lu/aly/ax;->a(Lu/aly/ag;)Lu/aly/ax;
-
-    :goto_0
-    const-string v2, ""
-
-    const/4 v3, 0x1
-
-    aget-object v3, v1, v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    const/4 v3, 0x1
-
-    aget-object v1, v1, v3
-
-    invoke-virtual {v2, v1}, Lu/aly/ax;->e(Ljava/lang/String;)Lu/aly/ax;
+    invoke-direct {p0, v0}, Lu/aly/q;->c(Landroid/content/Context;)V
 
     :cond_0
-    iget-object v1, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    invoke-static {v0}, Lu/aly/bi;->s(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lu/aly/ax;->c(Ljava/lang/String;)Lu/aly/ax;
-
-    invoke-static {v0}, Lu/aly/bi;->n(Landroid/content/Context;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    const/4 v3, 0x0
-
-    aget-object v3, v1, v3
-
-    invoke-virtual {v2, v3}, Lu/aly/ax;->b(Ljava/lang/String;)Lu/aly/ax;
-
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    const/4 v3, 0x1
-
-    aget-object v1, v1, v3
-
-    invoke-virtual {v2, v1}, Lu/aly/ax;->a(Ljava/lang/String;)Lu/aly/ax;
-
-    iget-object v1, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    invoke-static {v0}, Lu/aly/bi;->m(Landroid/content/Context;)I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lu/aly/ax;->a(I)Lu/aly/ax;
-
-    sget v0, Lcom/umeng/analytics/AnalyticsConfig;->sAge:I
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/umeng/analytics/AnalyticsConfig;->sGender:Lcom/umeng/analytics/Gender;
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/umeng/analytics/AnalyticsConfig;->sId:Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/umeng/analytics/AnalyticsConfig;->sSource:Ljava/lang/String;
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    new-instance v0, Lu/aly/bg;
-
-    invoke-direct {v0}, Lu/aly/bg;-><init>()V
-
-    sget v1, Lcom/umeng/analytics/AnalyticsConfig;->sAge:I
-
-    invoke-virtual {v0, v1}, Lu/aly/bg;->a(I)Lu/aly/bg;
-
-    sget-object v1, Lcom/umeng/analytics/AnalyticsConfig;->sGender:Lcom/umeng/analytics/Gender;
-
-    invoke-static {v1}, Lcom/umeng/analytics/Gender;->transGender(Lcom/umeng/analytics/Gender;)Lu/aly/ap;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lu/aly/bg;->a(Lu/aly/ap;)Lu/aly/bg;
-
-    sget-object v1, Lcom/umeng/analytics/AnalyticsConfig;->sId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/bg;->a(Ljava/lang/String;)Lu/aly/bg;
-
-    sget-object v1, Lcom/umeng/analytics/AnalyticsConfig;->sSource:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lu/aly/bg;->b(Ljava/lang/String;)Lu/aly/bg;
-
-    iget-object v1, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    invoke-virtual {v1, v0}, Lu/aly/ax;->a(Lu/aly/bg;)Lu/aly/ax;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_2
-    :goto_1
-    :try_start_2
     iget-object v0, p0, Lu/aly/q;->e:Lu/aly/ax;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
-
-    :cond_3
-    :try_start_3
-    const-string v2, "2G/3G"
-
-    const/4 v3, 0x0
-
-    aget-object v3, v1, v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    sget-object v3, Lu/aly/ag;->b:Lu/aly/ag;
-
-    invoke-virtual {v2, v3}, Lu/aly/ax;->a(Lu/aly/ag;)Lu/aly/ax;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-
-    goto/16 :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_4
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    goto :goto_1
 
     :catchall_0
     move-exception v0
@@ -1231,19 +812,6 @@
     monitor-exit p0
 
     throw v0
-
-    :cond_4
-    :try_start_5
-    iget-object v2, p0, Lu/aly/q;->e:Lu/aly/ax;
-
-    sget-object v3, Lu/aly/ag;->a:Lu/aly/ag;
-
-    invoke-virtual {v2, v3}, Lu/aly/ax;->a(Lu/aly/ag;)Lu/aly/ax;
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
-
-    goto/16 :goto_0
 .end method
 
 .method public f()Lu/aly/at;

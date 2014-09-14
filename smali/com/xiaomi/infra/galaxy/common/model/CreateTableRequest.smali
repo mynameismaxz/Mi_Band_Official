@@ -756,9 +756,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "user table can only be accessed by "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/xiaomi/infra/galaxy/common/model/AccessMethod;->LoginReadLoginWrite:Lcom/xiaomi/infra/galaxy/common/model/AccessMethod;
 
@@ -879,6 +883,8 @@
     throw v0
 
     :cond_3
+    const/4 v4, 0x0
+
     :try_start_2
     invoke-virtual {v0}, Lcom/xiaomi/infra/galaxy/common/model/AttributeDefinition;->getAttributeType()Ljava/lang/String;
 
@@ -913,9 +919,7 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 

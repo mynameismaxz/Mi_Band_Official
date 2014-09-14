@@ -208,11 +208,11 @@
 
     move-result-object v0
 
-    move-object v3, v0
+    move-object v3, v1
 
-    move-object v0, v1
+    move-object v1, v0
 
-    move-object v1, v3
+    move-object v0, v3
 
     :goto_1
     if-eqz v1, :cond_0
@@ -222,11 +222,11 @@
     goto :goto_0
 
     :cond_3
-    move-object v3, v0
+    move-object v3, v1
 
-    move-object v0, v1
+    move-object v1, v0
 
-    move-object v1, v3
+    move-object v0, v3
 
     goto :goto_1
 .end method

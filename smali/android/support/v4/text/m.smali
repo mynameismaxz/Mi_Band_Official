@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/text/m;
+.class Landroid/support/v4/text/m;
 .super Landroid/support/v4/text/k;
 
 
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method protected final a()Z
+.method protected a()Z
     .locals 2
 
     const/4 v0, 0x1

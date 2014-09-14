@@ -149,8 +149,13 @@
 
     iget-byte v1, v0, Lu/aly/ct;->b:B
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_1
 
+    invoke-virtual {p0}, Lu/aly/cy;->k()V
+
+    goto :goto_0
+
+    :cond_1
     iget-byte v0, v0, Lu/aly/ct;->b:B
 
     add-int/lit8 v1, p2, -0x1
@@ -160,11 +165,6 @@
     invoke-virtual {p0}, Lu/aly/cy;->m()V
 
     goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0}, Lu/aly/cy;->k()V
-
-    goto :goto_0
 
     :pswitch_9
     invoke-virtual {p0}, Lu/aly/cy;->n()Lu/aly/cv;

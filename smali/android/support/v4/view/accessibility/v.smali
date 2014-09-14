@@ -1,18 +1,23 @@
-.class final Landroid/support/v4/view/accessibility/v;
+.class Landroid/support/v4/view/accessibility/v;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/view/accessibility/z;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+.field final synthetic a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
-.field private synthetic b:Landroid/support/v4/view/accessibility/u;
+.field final synthetic b:Landroid/support/v4/view/accessibility/u;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/accessibility/u;Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)V
     .locals 0
 
-    iput-object p2, p0, Landroid/support/v4/view/accessibility/i;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+    iput-object p1, p0, Landroid/support/v4/view/accessibility/v;->b:Landroid/support/v4/view/accessibility/u;
+
+    iput-object p2, p0, Landroid/support/v4/view/accessibility/v;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -21,10 +26,10 @@
 
 
 # virtual methods
-.method public final a(I)Ljava/lang/Object;
+.method public a(I)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/i;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/v;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->createAccessibilityNodeInfo(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
@@ -45,7 +50,7 @@
     goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/String;I)Ljava/util/List;
+.method public a(Ljava/lang/String;I)Ljava/util/List;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -59,7 +64,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/i;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/v;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
 
@@ -102,10 +107,10 @@
     return-object v3
 .end method
 
-.method public final a(IILandroid/os/Bundle;)Z
+.method public a(IILandroid/os/Bundle;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/i;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/v;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->performAction(IILandroid/os/Bundle;)Z
 

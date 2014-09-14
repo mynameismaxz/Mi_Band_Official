@@ -1,13 +1,13 @@
-.class final Lcom/nineoldandroids/view/e;
+.class Lcom/nineoldandroids/view/e;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:I
+.field a:I
 
-.field private b:F
+.field b:F
 
-.field private c:F
+.field c:F
 
 
 # direct methods
@@ -16,11 +16,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/nineoldandroids/view/a;->a:I
+    iput p1, p0, Lcom/nineoldandroids/view/e;->a:I
 
-    iput p2, p0, Lcom/nineoldandroids/view/a;->b:F
+    iput p2, p0, Lcom/nineoldandroids/view/e;->b:F
 
-    iput p3, p0, Lcom/nineoldandroids/view/a;->c:F
+    iput p3, p0, Lcom/nineoldandroids/view/e;->c:F
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/auth/a;
+.class Lcom/tencent/connect/auth/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/auth/AuthAgent;
+.field final synthetic a:Lcom/tencent/connect/auth/AuthAgent;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 0
 
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 4
 
     if-nez p1, :cond_0
@@ -110,7 +110,7 @@
     goto :goto_0
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 2
 
     const-string v0, "openSDK_LOG"

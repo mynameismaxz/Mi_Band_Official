@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Class;
+.field final synthetic a:Ljava/lang/Class;
 
-.field private synthetic b:Ljava/lang/Class;
+.field final synthetic b:Ljava/lang/Class;
 
-.field private synthetic c:Lcom/google/gson/TypeAdapter;
+.field final synthetic c:Lcom/google/gson/TypeAdapter;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -69,14 +69,18 @@
     goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "Factory[type="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/google/gson/internal/bind/J;->b:Ljava/lang/Class;
 

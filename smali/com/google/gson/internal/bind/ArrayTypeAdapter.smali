@@ -81,7 +81,7 @@
 
 
 # virtual methods
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 4
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -161,7 +161,7 @@
     goto :goto_0
 .end method
 
-.method public final write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 4
 
     if-nez p2, :cond_0

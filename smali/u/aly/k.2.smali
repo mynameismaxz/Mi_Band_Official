@@ -85,7 +85,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 1
 
     new-instance v0, Lu/aly/cW;
@@ -97,7 +97,7 @@
     return-void
 .end method
 
-.method public final a(Lcom/umeng/analytics/onlineconfig/a;)V
+.method public a(Lcom/umeng/analytics/onlineconfig/a;)V
     .locals 1
 
     if-eqz p1, :cond_0
@@ -116,7 +116,7 @@
     return-void
 .end method
 
-.method public final a(Lu/aly/o;)V
+.method public a(Lu/aly/o;)V
     .locals 0
 
     iput-object p1, p0, Lu/aly/k;->a:Lu/aly/o;
@@ -124,7 +124,7 @@
     return-void
 .end method
 
-.method public final a(Lu/aly/p;)V
+.method public a(Lu/aly/p;)V
     .locals 1
 
     new-instance v0, Lu/aly/cV;
@@ -136,7 +136,7 @@
     return-void
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 1
 
     new-instance v0, Lu/aly/cX;
@@ -148,7 +148,7 @@
     return-void
 .end method
 
-.method public final b(Lu/aly/p;)V
+.method public b(Lu/aly/p;)V
     .locals 1
 
     iget-object v0, p0, Lu/aly/k;->a:Lu/aly/o;

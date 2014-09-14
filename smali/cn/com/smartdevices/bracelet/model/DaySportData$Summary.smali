@@ -36,6 +36,9 @@
 .method public abstract getStepDistance()I
 .end method
 
+.method public abstract getStepRunDistance()I
+.end method
+
 .method public abstract getStepRunTime()I
 .end method
 

@@ -46,7 +46,7 @@
 
 
 # virtual methods
-.method protected final bridge synthetic createQuery()Lde/greenrobot/dao/query/AbstractQuery;
+.method protected bridge synthetic createQuery()Lde/greenrobot/dao/query/AbstractQuery;
     .locals 1
 
     invoke-virtual {p0}, Lde/greenrobot/dao/query/CountQuery$QueryData;->createQuery()Lde/greenrobot/dao/query/CountQuery;
@@ -56,7 +56,7 @@
     return-object v0
 .end method
 
-.method protected final createQuery()Lde/greenrobot/dao/query/CountQuery;
+.method protected createQuery()Lde/greenrobot/dao/query/CountQuery;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {

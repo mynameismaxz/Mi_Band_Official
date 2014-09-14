@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/auth/f;
+.class Lcom/xiaomi/auth/f;
 .super Ljava/util/concurrent/FutureTask;
 
 
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
+.method public a(Ljava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

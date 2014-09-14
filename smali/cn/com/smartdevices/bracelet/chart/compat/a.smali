@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/compat/a;
+.class Lcn/com/smartdevices/bracelet/chart/compat/a;
 .super Ljava/lang/Object;
 
 
@@ -7,12 +7,6 @@
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static a()V
-    .locals 0
 
     return-void
 .end method
@@ -27,6 +21,12 @@
     const-wide/16 v1, 0xa
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+.end method
+
+.method static a(Landroid/view/View;F)V
+    .locals 0
 
     return-void
 .end method

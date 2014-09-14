@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static final a:Ljava/lang/String; = "LocalBroadcastManager"
+.field static final a:I = 0x1
 
-.field private static final b:Z = false
+.field private static final b:Ljava/lang/String; = "LocalBroadcastManager"
 
-.field private static g:I = 0x1
+.field private static final c:Z
 
 .field private static final i:Ljava/lang/Object;
 
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field private final c:Landroid/content/Context;
+.field private final d:Landroid/content/Context;
 
-.field private final d:Ljava/util/HashMap;
+.field private final e:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field private final e:Ljava/util/HashMap;
+.field private final f:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -45,12 +45,12 @@
     .end annotation
 .end field
 
-.field private final f:Ljava/util/ArrayList;
+.field private final g:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "Landroid/support/v4/content/c;",
+            "Landroid/support/v4/content/m;",
             ">;"
         }
     .end annotation
@@ -81,21 +81,21 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->g:Ljava/util/ArrayList;
 
-    iput-object p1, p0, Landroid/support/v4/content/LocalBroadcastManager;->c:Landroid/content/Context;
+    iput-object p1, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Landroid/content/Context;
 
     new-instance v0, Landroid/support/v4/content/l;
 
@@ -116,12 +116,12 @@
     const/4 v2, 0x0
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -134,13 +134,13 @@
     return-void
 
     :cond_1
-    new-array v4, v0, [Landroid/support/v4/content/c;
+    new-array v4, v0, [Landroid/support/v4/content/m;
 
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -160,7 +160,7 @@
     move v1, v2
 
     :goto_1
-    iget-object v0, v5, Landroid/support/v4/content/c;->b:Ljava/util/ArrayList;
+    iget-object v0, v5, Landroid/support/v4/content/m;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -168,7 +168,7 @@
 
     if-ge v1, v0, :cond_2
 
-    iget-object v0, v5, Landroid/support/v4/content/c;->b:Ljava/util/ArrayList;
+    iget-object v0, v5, Landroid/support/v4/content/m;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -178,9 +178,9 @@
 
     iget-object v0, v0, Landroid/support/v4/content/n;->b:Landroid/content/BroadcastReceiver;
 
-    iget-object v6, p0, Landroid/support/v4/content/LocalBroadcastManager;->c:Landroid/content/Context;
+    iget-object v6, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Landroid/content/Context;
 
-    iget-object v7, v5, Landroid/support/v4/content/c;->a:Landroid/content/Intent;
+    iget-object v7, v5, Landroid/support/v4/content/m;->a:Landroid/content/Intent;
 
     invoke-virtual {v0, v6, v7}, Landroid/content/BroadcastReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -193,7 +193,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
@@ -239,8 +242,6 @@
     sget-object v0, Landroid/support/v4/content/LocalBroadcastManager;->j:Landroid/support/v4/content/LocalBroadcastManager;
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
@@ -248,6 +249,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -257,7 +260,7 @@
 .method public registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
     .locals 6
 
-    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     monitor-enter v2
 
@@ -266,7 +269,7 @@
 
     invoke-direct {v3, p2, p1}, Landroid/support/v4/content/n;-><init>(Landroid/content/IntentFilter;Landroid/content/BroadcastReceiver;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -282,7 +285,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v1, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -304,7 +307,7 @@
 
     move-result-object v4
 
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     invoke-virtual {v0, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -320,7 +323,7 @@
 
     invoke-direct {v0, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v5, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iget-object v5, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     invoke-virtual {v5, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -335,8 +338,6 @@
 
     :cond_2
     monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -344,6 +345,8 @@
     move-exception v0
 
     monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -353,7 +356,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v13, v0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     monitor-enter v13
 
@@ -364,7 +367,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->c:Landroid/content/Context;
+    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->d:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -407,9 +410,13 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v8, "Resolving type "
 
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -446,7 +453,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -470,9 +477,13 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v9, "Action list: "
 
-    invoke-direct {v7, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -514,9 +525,13 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v14, "Matching against filter "
 
-    invoke-direct {v7, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     iget-object v14, v9, Landroid/support/v4/content/n;->a:Landroid/content/IntentFilter;
 
@@ -578,9 +593,13 @@
 
     new-instance v14, Ljava/lang/StringBuilder;
 
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v15, "  Filter matched!  match=0x"
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
@@ -609,8 +628,6 @@
     const/4 v7, 0x1
 
     iput-boolean v7, v9, Landroid/support/v4/content/n;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_2
 
@@ -618,6 +635,8 @@
     move-exception v1
 
     monitor-exit v13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 
@@ -634,9 +653,13 @@
 
     new-instance v9, Ljava/lang/StringBuilder;
 
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v14, "  Filter did not match: "
 
-    invoke-direct {v9, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
 
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -706,13 +729,13 @@
     :cond_9
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/ArrayList;
+    iget-object v1, v0, Landroid/support/v4/content/LocalBroadcastManager;->g:Ljava/util/ArrayList;
 
-    new-instance v2, Landroid/support/v4/content/c;
+    new-instance v2, Landroid/support/v4/content/m;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v2, v0, v10}, Landroid/support/v4/content/c;-><init>(Landroid/content/Intent;Ljava/util/ArrayList;)V
+    invoke-direct {v2, v0, v10}, Landroid/support/v4/content/m;-><init>(Landroid/content/Intent;Ljava/util/ArrayList;)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -740,14 +763,14 @@
     const/4 v1, 0x1
 
     monitor-exit v13
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_6
     return v1
 
     :cond_b
     monitor-exit v13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/4 v1, 0x0
 
@@ -789,12 +812,12 @@
 
     const/4 v5, 0x0
 
-    iget-object v8, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v8, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     monitor-enter v8
 
     :try_start_0
-    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->d:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -838,7 +861,7 @@
 
     move-result-object v9
 
-    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     invoke-virtual {v2, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -883,7 +906,7 @@
 
     if-gtz v2, :cond_2
 
-    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->e:Ljava/util/HashMap;
+    iget-object v2, p0, Landroid/support/v4/content/LocalBroadcastManager;->f:Ljava/util/HashMap;
 
     invoke-virtual {v2, v9}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -903,8 +926,6 @@
 
     :cond_4
     monitor-exit v8
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -912,6 +933,8 @@
     move-exception v0
 
     monitor-exit v8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 

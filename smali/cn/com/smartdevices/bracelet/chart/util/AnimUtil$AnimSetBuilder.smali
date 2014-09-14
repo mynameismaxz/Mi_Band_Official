@@ -121,13 +121,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
-
-    sput-object v0, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimSetBuilder;->a:Landroid/animation/Animator;
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimSetBuilder;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimSetBuilder;->a()V
 
     return-object v1
 

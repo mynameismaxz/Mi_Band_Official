@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/common/f;
+.class Lcom/tencent/stat/common/f;
 .super Ljava/lang/Object;
 
 
@@ -108,6 +108,8 @@
     move-result-object v5
 
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    if-eqz v4, :cond_3
 
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 

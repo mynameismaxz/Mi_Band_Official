@@ -1,4 +1,4 @@
-.class final Lcom/tencent/weiyun/o;
+.class Lcom/tencent/weiyun/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,14 +6,16 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/tauth/IUiListener;
+.field final synthetic a:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic b:Lcom/tencent/weiyun/RecordManager;
+.field final synthetic b:Lcom/tencent/weiyun/RecordManager;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/weiyun/RecordManager;Lcom/tencent/tauth/IUiListener;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/tencent/weiyun/o;->b:Lcom/tencent/weiyun/RecordManager;
 
     iput-object p2, p0, Lcom/tencent/weiyun/o;->a:Lcom/tencent/tauth/IUiListener;
 
@@ -24,7 +26,7 @@
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/weiyun/o;->a:Lcom/tencent/tauth/IUiListener;
@@ -34,7 +36,7 @@
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 5
 
     check-cast p1, Lorg/json/JSONObject;
@@ -90,7 +92,7 @@
     goto :goto_0
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/weiyun/o;->a:Lcom/tencent/tauth/IUiListener;

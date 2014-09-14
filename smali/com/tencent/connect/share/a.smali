@@ -12,113 +12,33 @@
 .end method
 
 .method public static final a(Landroid/graphics/BitmapFactory$Options;II)I
-    .locals 11
+    .locals 2
+
+    invoke-static {p0, p1, p2}, Lcom/tencent/connect/share/a;->b(Landroid/graphics/BitmapFactory$Options;II)I
+
+    move-result v1
+
+    const/16 v0, 0x8
+
+    if-gt v1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    const/4 v10, -0x1
-
-    iget v1, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    int-to-double v2, v1
-
-    iget v1, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    int-to-double v4, v1
-
-    if-ne p2, v10, :cond_1
-
-    move v1, v0
-
     :goto_0
-    if-ne p1, v10, :cond_2
-
-    const/16 v2, 0x80
-
-    :goto_1
-    if-ge v2, v1, :cond_3
-
-    :cond_0
-    :goto_2
-    const/16 v2, 0x8
-
-    if-gt v1, v2, :cond_5
-
-    :goto_3
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_1
 
     shl-int/lit8 v0, v0, 0x1
 
-    goto :goto_3
-
-    :cond_1
-    mul-double v6, v2, v4
-
-    int-to-double v8, p2
-
-    div-double/2addr v6, v8
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v6
-
-    double-to-int v1, v6
-
     goto :goto_0
 
-    :cond_2
-    int-to-double v6, p1
-
-    div-double/2addr v2, v6
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
-
-    move-result-wide v2
-
-    int-to-double v6, p1
-
-    div-double/2addr v4, v6
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
-
-    move-result-wide v4
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(DD)D
-
-    move-result-wide v2
-
-    double-to-int v2, v2
-
-    goto :goto_1
-
-    :cond_3
-    if-ne p2, v10, :cond_4
-
-    if-ne p1, v10, :cond_4
-
-    move v1, v0
-
-    goto :goto_2
-
-    :cond_4
-    if-eq p1, v10, :cond_0
-
-    move v1, v2
-
-    goto :goto_2
-
-    :cond_5
+    :cond_0
     add-int/lit8 v0, v1, 0x7
 
     div-int/lit8 v0, v0, 0x8
 
-    shl-int/lit8 v0, v0, 0x3
+    mul-int/lit8 v0, v0, 0x8
 
-    :cond_6
+    :cond_1
     return v0
 .end method
 
@@ -177,15 +97,11 @@
 .end method
 
 .method public static final a(Ljava/lang/String;I)Landroid/graphics/Bitmap;
-    .locals 8
+    .locals 6
 
-    const/4 v6, 0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v7, -0x1
+    const/4 v5, -0x1
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -193,136 +109,102 @@
 
     if-eqz v0, :cond_1
 
-    move-object v0, v3
+    move-object v0, v2
 
     :cond_0
     :goto_0
     return-object v0
 
     :cond_1
-    new-instance v4, Landroid/graphics/BitmapFactory$Options;
+    new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
-    invoke-direct {v4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    iput-boolean v6, v4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    const/4 v0, 0x1
 
-    invoke-static {p0, v4}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    iput-boolean v0, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    iget v0, v4, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+    invoke-static {p0, v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    iget v2, v4, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+    iget v0, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    iget-boolean v5, v4, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
+    iget v1, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    if-nez v5, :cond_2
+    iget-boolean v4, v3, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
 
-    iget v5, v4, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+    if-nez v4, :cond_2
 
-    if-eq v5, v7, :cond_2
+    iget v4, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    iget v5, v4, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+    if-eq v4, v5, :cond_2
 
-    if-ne v5, v7, :cond_3
+    iget v4, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    if-ne v4, v5, :cond_3
 
     :cond_2
-    move-object v0, v3
+    move-object v0, v2
 
     goto :goto_0
 
     :cond_3
-    if-le v0, v2, :cond_5
+    if-le v0, v1, :cond_5
 
     :goto_1
-    sget-object v2, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    iput-object v2, v4, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+    iput-object v1, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
     if-le v0, p1, :cond_4
 
     mul-int v0, p1, p1
 
-    invoke-static {v4, v7, v0}, Lcom/tencent/connect/share/a;->a(Landroid/graphics/BitmapFactory$Options;II)I
+    invoke-static {v3, v5, v0}, Lcom/tencent/connect/share/a;->a(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v0
 
-    iput v0, v4, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+    iput v0, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     :cond_4
-    iput-boolean v1, v4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    const/4 v0, 0x0
 
-    invoke-static {p0, v4}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    iput-boolean v0, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    invoke-static {p0, v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-nez v0, :cond_6
 
-    move-object v0, v3
+    move-object v0, v2
 
     goto :goto_0
 
     :cond_5
-    move v0, v2
+    move v0, v1
 
     goto :goto_1
 
     :cond_6
-    iget v2, v4, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+    iget v1, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    iget v3, v4, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+    iget v2, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    if-le v2, v3, :cond_7
+    if-le v1, v2, :cond_7
 
     :goto_2
-    if-le v2, p1, :cond_0
+    if-le v1, p1, :cond_0
 
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v2
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    if-le v2, v3, :cond_8
-
-    :goto_3
-    int-to-float v3, p1
-
-    int-to-float v2, v2
-
-    div-float v2, v3, v2
-
-    invoke-virtual {v5, v2, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    move v2, v1
-
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+    invoke-static {v0, p1}, Lcom/tencent/connect/share/a;->a(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_7
-    move v2, v3
+    move v1, v2
 
     goto :goto_2
-
-    :cond_8
-    move v2, v3
-
-    goto :goto_3
 .end method
 
 .method protected static final a(Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -537,114 +419,13 @@
 .end method
 
 .method static synthetic a(Ljava/lang/String;II)Z
-    .locals 8
+    .locals 1
 
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const/4 v6, -0x1
-
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, p1, p2}, Lcom/tencent/connect/share/a;->b(Ljava/lang/String;II)Z
 
     move-result v0
 
-    if-nez v0, :cond_5
-
-    new-instance v5, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    iput-boolean v2, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    invoke-static {p0, v5}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    iget v0, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    iget v1, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    iget-boolean v4, v5, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
-
-    if-nez v4, :cond_0
-
-    iget v4, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    if-eq v4, v6, :cond_0
-
-    iget v4, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    if-ne v4, v6, :cond_1
-
-    :cond_0
-    move v0, v3
-
-    :goto_0
     return v0
-
-    :cond_1
-    if-le v0, v1, :cond_3
-
-    move v4, v0
-
-    :goto_1
-    if-ge v0, v1, :cond_4
-
-    :goto_2
-    const-string v1, "AsynScaleCompressImage"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "longSide="
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "shortSide="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v1, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    iput-object v1, v5, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    if-gt v4, p2, :cond_2
-
-    if-le v0, p1, :cond_5
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    move v4, v1
-
-    goto :goto_1
-
-    :cond_4
-    move v0, v1
-
-    goto :goto_2
-
-    :cond_5
-    move v0, v3
-
-    goto :goto_0
 .end method
 
 .method private static b(Landroid/graphics/BitmapFactory$Options;II)I
@@ -802,9 +583,13 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v7, "longSide="
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

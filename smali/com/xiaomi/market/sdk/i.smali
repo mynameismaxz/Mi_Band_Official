@@ -5,12 +5,14 @@
 # instance fields
 .field protected S:Ljava/io/OutputStream;
 
-.field private synthetic a:Lcom/xiaomi/market/sdk/c;
+.field final synthetic b:Lcom/xiaomi/market/sdk/c;
 
 
 # direct methods
 .method public constructor <init>(Lcom/xiaomi/market/sdk/c;Ljava/io/OutputStream;)V
     .locals 2
+
+    iput-object p1, p0, Lcom/xiaomi/market/sdk/i;->b:Lcom/xiaomi/market/sdk/c;
 
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 

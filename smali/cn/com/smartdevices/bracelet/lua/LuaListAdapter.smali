@@ -614,6 +614,8 @@
 
     iget-object v3, v0, Lcn/com/smartdevices/bracelet/lua/c;->a:Lde/greenrobot/daobracelet/LuaList;
 
+    const-string v1, "1005"
+
     new-instance v4, Lcn/com/smartdevices/bracelet/lua/d;
 
     invoke-direct {v4, p0}, Lcn/com/smartdevices/bracelet/lua/d;-><init>(Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;)V
@@ -636,7 +638,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f03004d
+    const v2, 0x7f03004f
 
     invoke-virtual {v1, v2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -645,7 +647,7 @@
     move-object v2, v1
 
     :goto_0
-    const v1, 0x7f070156
+    const v1, 0x7f07015c
 
     invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -663,7 +665,7 @@
 
     invoke-virtual {v1, v5, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f070157
+    const v1, 0x7f07015d
 
     invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -741,7 +743,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f03004c
+    const v2, 0x7f03004e
 
     invoke-virtual {v1, v2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

@@ -100,6 +100,8 @@
 
     sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
+    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
     sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -254,7 +256,7 @@
 
 
 # virtual methods
-.method final a(I)I
+.method a(I)I
     .locals 1
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -266,7 +268,7 @@
     return v0
 .end method
 
-.method final a()Lcom/google/zxing/common/reedsolomon/a;
+.method a()Lcom/google/zxing/common/reedsolomon/a;
     .locals 1
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -276,7 +278,7 @@
     return-object v0
 .end method
 
-.method final a(II)Lcom/google/zxing/common/reedsolomon/a;
+.method a(II)Lcom/google/zxing/common/reedsolomon/a;
     .locals 2
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -313,7 +315,7 @@
     goto :goto_0
 .end method
 
-.method final b(I)I
+.method b(I)I
     .locals 1
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -334,7 +336,7 @@
     return v0
 .end method
 
-.method final b()Lcom/google/zxing/common/reedsolomon/a;
+.method b()Lcom/google/zxing/common/reedsolomon/a;
     .locals 1
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -344,7 +346,7 @@
     return-object v0
 .end method
 
-.method final c(I)I
+.method c(I)I
     .locals 3
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -375,7 +377,7 @@
     return v0
 .end method
 
-.method final c(II)I
+.method c(II)I
     .locals 4
 
     invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->d()V
@@ -434,7 +436,7 @@
     goto :goto_0
 .end method
 
-.method public final getSize()I
+.method public getSize()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->f:I

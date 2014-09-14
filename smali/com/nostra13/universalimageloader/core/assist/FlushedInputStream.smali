@@ -23,7 +23,7 @@
     :goto_0
     cmp-long v0, v2, p1
 
-    if-gez v0, :cond_1
+    if-gez v0, :cond_0
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/assist/FlushedInputStream;->in:Ljava/io/InputStream;
 
@@ -35,23 +35,24 @@
 
     cmp-long v6, v0, v4
 
-    if-nez v6, :cond_0
+    if-nez v6, :cond_2
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/core/assist/FlushedInputStream;->read()I
 
     move-result v0
 
-    if-ltz v0, :cond_1
-
-    const-wide/16 v0, 0x1
+    if-gez v0, :cond_1
 
     :cond_0
+    return-wide v2
+
+    :cond_1
+    const-wide/16 v0, 0x1
+
+    :cond_2
     add-long/2addr v0, v2
 
     move-wide v2, v0
 
     goto :goto_0
-
-    :cond_1
-    return-wide v2
 .end method

@@ -127,4 +127,6 @@
     <dimen name="select_item_padding_left">11.0dip</dimen>
     <dimen name="share_item_size">33.0dip</dimen>
     <dimen name="share_item_padding">11.0dip</dimen>
+    <dimen name="select_item_txt_padding_left">5.0dip</dimen>
+    <dimen name="single_button_padding">35.0dip</dimen>
 </resources>

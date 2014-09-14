@@ -172,7 +172,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IB)V
+.method synthetic constructor <init>(Ljava/lang/String;ILcom/umeng/analytics/social/UMPlatformData$UMedia;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/umeng/analytics/social/UMPlatformData$UMedia;-><init>(Ljava/lang/String;I)V

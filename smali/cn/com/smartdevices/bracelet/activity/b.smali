@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/activity/b;
+.class Lcn/com/smartdevices/bracelet/activity/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     const/4 v1, 0x1

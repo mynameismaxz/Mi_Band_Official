@@ -287,8 +287,6 @@
 .method public static update(Landroid/content/Context;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     if-nez p0, :cond_0
 
     :goto_0
@@ -301,7 +299,11 @@
 
     new-instance v0, Lcom/xiaomi/market/sdk/t;
 
-    invoke-direct {v0, v1}, Lcom/xiaomi/market/sdk/t;-><init>(B)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/xiaomi/market/sdk/t;-><init>(Lcom/xiaomi/market/sdk/t;)V
+
+    const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Void;
 

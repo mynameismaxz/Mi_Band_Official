@@ -18,23 +18,27 @@
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
+    move-result-object v1
+
+    const-string v0, "android.bluetooth.device.extra.DEVICE"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
     move-result-object v0
 
-    const-string v1, "android.bluetooth.device.extra.DEVICE"
+    check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    const-string v0, "com.xiaomi.hm.health.ACTION_DEVICE_BIND_APPLICATION"
 
-    const-string v1, "com.xiaomi.hm.health.ACTION_DEVICE_BIND_APPLICATION"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_0
 
-    if-nez v1, :cond_0
+    const-string v0, "com.xiaomi.hm.health.ACTION_DEVICE_UNBIND_APPLICATION"
 
-    const-string v1, "com.xiaomi.hm.health.ACTION_DEVICE_UNBIND_APPLICATION"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     :cond_0
     return-void

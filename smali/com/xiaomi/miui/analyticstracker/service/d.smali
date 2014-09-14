@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/miui/analyticstracker/service/d;
+.class Lcom/xiaomi/miui/analyticstracker/service/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;
+.field final synthetic a:Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;B)V
+.method synthetic constructor <init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;Lcom/xiaomi/miui/analyticstracker/service/a;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/xiaomi/miui/analyticstracker/service/d;-><init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;)V
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONArray;
+.method public a()Lorg/json/JSONArray;
     .locals 10
 
     const/4 v1, 0x0
@@ -107,9 +107,13 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v6, "get log config error: "
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 

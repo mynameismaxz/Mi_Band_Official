@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/s;
+.class Lcom/tencent/stat/s;
 .super Landroid/database/sqlite/SQLiteOpenHelper;
 
 
@@ -37,7 +37,7 @@
     return-void
 .end method
 
-.method private static a(Landroid/database/sqlite/SQLiteDatabase;)V
+.method private a(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 10
 
     const/4 v9, 0x1
@@ -48,7 +48,7 @@
 
     const-string v1, "user"
 
-    move-object v0, p0
+    move-object v0, p1
 
     move-object v3, v2
 
@@ -107,13 +107,13 @@
 
     aput-object v2, v4, v8
 
-    invoke-virtual {p0, v0, v1, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {p1, v0, v1, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     :cond_1
     return-void
 .end method
 
-.method private static b(Landroid/database/sqlite/SQLiteDatabase;)V
+.method private b(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 10
 
     const/4 v9, 0x1
@@ -124,7 +124,7 @@
 
     const-string v1, "events"
 
-    move-object v0, p0
+    move-object v0, p1
 
     move-object v3, v2
 
@@ -225,7 +225,7 @@
 
     aput-object v0, v5, v8
 
-    invoke-virtual {p0, v3, v1, v4, v5}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {p1, v3, v1, v4, v5}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     goto :goto_1
 
@@ -235,7 +235,7 @@
 
 
 # virtual methods
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
 
     const-string v0, "create table if not exists events(event_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, content TEXT, status INTEGER, send_count INTEGER, timestamp LONG)"
@@ -257,18 +257,22 @@
     return-void
 .end method
 
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .locals 3
 
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "upgrade DB from oldVersion "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -298,18 +302,18 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/tencent/stat/s;->a(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/tencent/stat/s;->a(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    invoke-static {p1}, Lcom/tencent/stat/s;->b(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/tencent/stat/s;->b(Landroid/database/sqlite/SQLiteDatabase;)V
 
     :cond_0
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_1
 
-    invoke-static {p1}, Lcom/tencent/stat/s;->a(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/tencent/stat/s;->a(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    invoke-static {p1}, Lcom/tencent/stat/s;->b(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/tencent/stat/s;->b(Landroid/database/sqlite/SQLiteDatabase;)V
 
     :cond_1
     return-void

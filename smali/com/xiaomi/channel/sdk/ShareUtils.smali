@@ -331,11 +331,14 @@
 
     move-result v0
 
+    if-eqz v1, :cond_1
+
     :try_start_2
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
+    :cond_1
     :goto_0
     return v0
 
@@ -343,14 +346,14 @@
     move-exception v1
 
     :goto_1
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     :try_start_3
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    :cond_1
+    :cond_2
     :goto_2
     const/4 v0, 0x0
 
@@ -366,14 +369,14 @@
     move-object v0, v3
 
     :goto_3
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    :cond_2
+    :cond_3
     :goto_4
     throw v0
 

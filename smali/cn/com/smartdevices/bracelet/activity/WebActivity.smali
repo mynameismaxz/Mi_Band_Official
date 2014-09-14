@@ -72,7 +72,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f07002e
+    .packed-switch 0x7f070033
         :pswitch_0
     .end packed-switch
 .end method
@@ -84,7 +84,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03002a
+    const v0, 0x7f03002c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->setContentView(I)V
 
@@ -258,7 +258,7 @@
 
     :cond_1
     :goto_1
-    const v0, 0x7f07002e
+    const v0, 0x7f070033
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_2
-    const v0, 0x7f0700d2
+    const v0, 0x7f0700d8
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->findViewById(I)Landroid/view/View;
 

@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static a:I = 0x96
+.field static final a:I = 0x96
 
 .field private static synthetic g:[I
 
@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f020073
+    const v5, 0x7f020076
 
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -93,7 +93,7 @@
 
     const v0, 0x7f040010
 
-    const v6, 0x7f020075
+    const v6, 0x7f020078
 
     invoke-virtual {p0, v6}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 
@@ -185,7 +185,7 @@
 
     const v0, 0x7f04000f
 
-    const v7, 0x7f020074
+    const v7, 0x7f020077
 
     invoke-virtual {p0, v7}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 
@@ -231,7 +231,7 @@
     .end packed-switch
 .end method
 
-.method private static synthetic a()[I
+.method static synthetic a()[I
     .locals 3
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->g:[I

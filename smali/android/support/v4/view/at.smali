@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/at;
+.class Landroid/support/v4/view/at;
 .super Landroid/support/v4/view/as;
 
 
@@ -13,10 +13,10 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
-    invoke-virtual {p1, p2, p3}, Landroid/view/ViewGroup;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-static {p1, p2, p3}, Landroid/support/v4/view/ax;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 

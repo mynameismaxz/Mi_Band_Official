@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/i;
+.class Landroid/support/v4/content/i;
 .super Landroid/support/v4/content/h;
 
 
@@ -13,10 +13,10 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+.method public a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
     .locals 1
 
-    invoke-static {p1, p2}, Landroid/content/Intent;->makeMainSelectorActivity(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {p1, p2}, Landroid/support/v4/content/k;->a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 

@@ -41,7 +41,7 @@
 
 
 # virtual methods
-.method public final a([BII)I
+.method public a([BII)I
     .locals 2
 
     invoke-virtual {p0}, Lu/aly/dl;->h()I
@@ -67,7 +67,7 @@
     return p3
 .end method
 
-.method public final a(I)V
+.method public a(I)V
     .locals 1
 
     iget v0, p0, Lu/aly/dl;->b:I
@@ -79,7 +79,7 @@
     return-void
 .end method
 
-.method public final a([B)V
+.method public a([B)V
     .locals 2
 
     const/4 v0, 0x0
@@ -91,7 +91,7 @@
     return-void
 .end method
 
-.method public final a()Z
+.method public a()Z
     .locals 1
 
     const/4 v0, 0x1
@@ -99,13 +99,13 @@
     return v0
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 0
 
     return-void
 .end method
 
-.method public final b([BII)V
+.method public b([BII)V
     .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -117,13 +117,13 @@
     throw v0
 .end method
 
-.method public final c()V
+.method public c()V
     .locals 0
 
     return-void
 .end method
 
-.method public final c([BII)V
+.method public c([BII)V
     .locals 1
 
     iput-object p1, p0, Lu/aly/dl;->a:[B
@@ -137,7 +137,7 @@
     return-void
 .end method
 
-.method public final e()V
+.method public e()V
     .locals 1
 
     const/4 v0, 0x0
@@ -147,7 +147,7 @@
     return-void
 .end method
 
-.method public final f()[B
+.method public f()[B
     .locals 1
 
     iget-object v0, p0, Lu/aly/dl;->a:[B
@@ -155,7 +155,7 @@
     return-object v0
 .end method
 
-.method public final g()I
+.method public g()I
     .locals 1
 
     iget v0, p0, Lu/aly/dl;->b:I
@@ -163,7 +163,7 @@
     return v0
 .end method
 
-.method public final h()I
+.method public h()I
     .locals 2
 
     iget v0, p0, Lu/aly/dl;->c:I

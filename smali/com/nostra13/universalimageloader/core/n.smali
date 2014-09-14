@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/core/n;
+.class Lcom/nostra13/universalimageloader/core/n;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/core/assist/FailReason$FailType;
+.field final synthetic a:Lcom/nostra13/universalimageloader/core/assist/FailReason$FailType;
 
-.field private synthetic b:Ljava/lang/Throwable;
+.field final synthetic b:Ljava/lang/Throwable;
 
-.field private synthetic c:Lcom/nostra13/universalimageloader/core/l;
+.field final synthetic c:Lcom/nostra13/universalimageloader/core/l;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 6
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/n;->c:Lcom/nostra13/universalimageloader/core/l;

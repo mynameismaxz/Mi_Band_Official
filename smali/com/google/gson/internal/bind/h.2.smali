@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/gson/internal/bind/h;
+.class synthetic Lcom/google/gson/internal/bind/h;
 .super Ljava/lang/Object;
 
 

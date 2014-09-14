@@ -7,14 +7,6 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/app/Notification;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/widget/RemoteViews;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/graphics/Bitmap;IIZZILjava/lang/CharSequence;)V
     .locals 7
 
@@ -219,19 +211,9 @@
     goto :goto_3
 .end method
 
-.method public static a(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .locals 1
-
-    invoke-static {p0}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/app/Notification;
+.method public a()Landroid/app/Notification;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/X;->a:Landroid/app/Notification$Builder;
@@ -243,7 +225,7 @@
     return-object v0
 .end method
 
-.method public final a(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+.method public a(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/X;->a:Landroid/app/Notification$Builder;
@@ -253,7 +235,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Z)V
+.method public a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Z)V
     .locals 2
 
     new-instance v0, Landroid/app/Notification$BigPictureStyle;
@@ -283,7 +265,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Ljava/lang/CharSequence;)V
+.method public a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 2
 
     new-instance v0, Landroid/app/Notification$BigTextStyle;
@@ -308,7 +290,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Ljava/util/ArrayList;)V
+.method public a(Ljava/lang/CharSequence;ZLjava/lang/CharSequence;Ljava/util/ArrayList;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {

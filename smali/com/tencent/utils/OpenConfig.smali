@@ -74,46 +74,19 @@
 
     iput-object p2, p0, Lcom/tencent/utils/OpenConfig;->d:Ljava/lang/String;
 
-    const-string v0, "com.tencent.open.config.json"
+    invoke-direct {p0}, Lcom/tencent/utils/OpenConfig;->a()V
 
-    invoke-direct {p0, v0}, Lcom/tencent/utils/OpenConfig;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :try_start_0
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    iput-object v1, p0, Lcom/tencent/utils/OpenConfig;->e:Lorg/json/JSONObject;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     invoke-direct {p0}, Lcom/tencent/utils/OpenConfig;->b()V
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
-
-    iput-object v0, p0, Lcom/tencent/utils/OpenConfig;->e:Lorg/json/JSONObject;
-
-    goto :goto_0
 .end method
 
 .method static synthetic a(Lcom/tencent/utils/OpenConfig;I)I
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    iput p1, p0, Lcom/tencent/utils/OpenConfig;->g:I
 
-    iput v0, p0, Lcom/tencent/utils/OpenConfig;->g:I
-
-    return v0
+    return p1
 .end method
 
 .method static synthetic a(Lcom/tencent/utils/OpenConfig;)Landroid/content/Context;
@@ -340,85 +313,11 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/utils/OpenConfig;Lorg/json/JSONObject;)V
-    .locals 4
+    .locals 0
 
-    const-string v0, "cgi back, do update"
-
-    invoke-direct {p0, v0}, Lcom/tencent/utils/OpenConfig;->b(Ljava/lang/String;)V
-
-    iput-object p1, p0, Lcom/tencent/utils/OpenConfig;->e:Lorg/json/JSONObject;
-
-    const-string v0, "com.tencent.open.config.json"
-
-    invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    :try_start_0
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->d:Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "."
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_0
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->c:Landroid/content/Context;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/Context;->openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/io/OutputStreamWriter;
-
-    invoke-direct {v2, v0}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v2, v1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->flush()V
-
-    invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/tencent/utils/OpenConfig;->f:J
+    invoke-direct {p0, p1}, Lcom/tencent/utils/OpenConfig;->a(Lorg/json/JSONObject;)V
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_0
 .end method
 
 .method private a(Ljava/lang/String;Ljava/lang/String;)V
@@ -486,7 +385,7 @@
 .end method
 
 .method private a(Lorg/json/JSONObject;)V
-    .locals 4
+    .locals 2
 
     const-string v0, "cgi back, do update"
 
@@ -500,57 +399,8 @@
 
     move-result-object v1
 
-    :try_start_0
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->d:Ljava/lang/String;
+    invoke-direct {p0, v0, v1}, Lcom/tencent/utils/OpenConfig;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v2, :cond_0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "."
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_0
-    iget-object v2, p0, Lcom/tencent/utils/OpenConfig;->c:Landroid/content/Context;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/Context;->openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/io/OutputStreamWriter;
-
-    invoke-direct {v2, v0}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v2, v1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->flush()V
-
-    invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -558,13 +408,6 @@
     iput-wide v0, p0, Lcom/tencent/utils/OpenConfig;->f:J
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_0
 .end method
 
 .method private b()V
@@ -783,9 +626,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "get "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -815,9 +662,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "get "
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -837,17 +688,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    return v0
+    if-nez v0, :cond_1
 
     :cond_0
+    :goto_0
+    return v1
+
+    :cond_1
     instance-of v2, v0, Ljava/lang/Integer;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -857,32 +707,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
+    :goto_1
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_3
     instance-of v2, v0, Ljava/lang/Boolean;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_0
 
     check-cast v0, Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v0
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
+    move-result v1
 
     goto :goto_0
 .end method
@@ -892,9 +740,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "get "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -924,9 +776,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "get "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -954,9 +810,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "get "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -984,9 +844,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "get "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

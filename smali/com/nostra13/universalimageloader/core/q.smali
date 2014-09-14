@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field private final b:Lcom/nostra13/universalimageloader/core/c;
+.field private final b:Lcom/nostra13/universalimageloader/core/i;
 
 .field private final c:Landroid/graphics/Bitmap;
 
@@ -20,12 +20,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/nostra13/universalimageloader/core/c;Landroid/graphics/Bitmap;Lcom/nostra13/universalimageloader/core/k;Landroid/os/Handler;)V
+.method public constructor <init>(Lcom/nostra13/universalimageloader/core/i;Landroid/graphics/Bitmap;Lcom/nostra13/universalimageloader/core/k;Landroid/os/Handler;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/c;
+    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/i;
 
     iput-object p2, p0, Lcom/nostra13/universalimageloader/core/q;->c:Landroid/graphics/Bitmap;
 
@@ -38,7 +38,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     const-string v0, "PostProcess image before displaying [%s]"
@@ -75,11 +75,11 @@
 
     iget-object v2, p0, Lcom/nostra13/universalimageloader/core/q;->d:Lcom/nostra13/universalimageloader/core/k;
 
-    iget-object v3, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v3, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/i;
 
     sget-object v4, Lcom/nostra13/universalimageloader/core/assist/LoadedFrom;->MEMORY_CACHE:Lcom/nostra13/universalimageloader/core/assist/LoadedFrom;
 
-    invoke-direct {v1, v0, v2, v3, v4}, Lcom/nostra13/universalimageloader/core/b;-><init>(Landroid/graphics/Bitmap;Lcom/nostra13/universalimageloader/core/k;Lcom/nostra13/universalimageloader/core/c;Lcom/nostra13/universalimageloader/core/assist/LoadedFrom;)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lcom/nostra13/universalimageloader/core/b;-><init>(Landroid/graphics/Bitmap;Lcom/nostra13/universalimageloader/core/k;Lcom/nostra13/universalimageloader/core/i;Lcom/nostra13/universalimageloader/core/assist/LoadedFrom;)V
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/q;->d:Lcom/nostra13/universalimageloader/core/k;
 
@@ -91,9 +91,9 @@
 
     iget-object v2, p0, Lcom/nostra13/universalimageloader/core/q;->e:Landroid/os/Handler;
 
-    iget-object v3, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v3, p0, Lcom/nostra13/universalimageloader/core/q;->b:Lcom/nostra13/universalimageloader/core/i;
 
-    invoke-static {v1, v0, v2, v3}, Lcom/nostra13/universalimageloader/core/l;->a(Ljava/lang/Runnable;ZLandroid/os/Handler;Lcom/nostra13/universalimageloader/core/c;)V
+    invoke-static {v1, v0, v2, v3}, Lcom/nostra13/universalimageloader/core/l;->a(Ljava/lang/Runnable;ZLandroid/os/Handler;Lcom/nostra13/universalimageloader/core/i;)V
 
     return-void
 .end method

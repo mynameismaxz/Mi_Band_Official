@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/ac;
+.class Landroid/support/v4/app/ac;
 .super Ljava/lang/Object;
 
 
@@ -33,9 +33,13 @@
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, ".sharecompat_"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

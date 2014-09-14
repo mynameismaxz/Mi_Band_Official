@@ -1,13 +1,13 @@
-.class final Lcom/nineoldandroids/animation/A;
+.class Lcom/nineoldandroids/animation/A;
 .super Lcom/nineoldandroids/animation/PropertyValuesHolder;
 
 
 # instance fields
-.field private e:Lcom/nineoldandroids/util/FloatProperty;
+.field g:Lcom/nineoldandroids/animation/f;
 
-.field private f:Lcom/nineoldandroids/animation/f;
+.field h:F
 
-.field private g:F
+.field private i:Lcom/nineoldandroids/util/FloatProperty;
 
 
 # direct methods
@@ -16,19 +16,19 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Lcom/nineoldandroids/util/Property;B)V
+    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Lcom/nineoldandroids/util/Property;Lcom/nineoldandroids/animation/PropertyValuesHolder;)V
 
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->b:Ljava/lang/Class;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->c:Ljava/lang/Class;
 
-    iput-object p2, p0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iput-object p2, p0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
     check-cast v0, Lcom/nineoldandroids/animation/f;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->g:Lcom/nineoldandroids/animation/f;
 
     instance-of v0, p1, Lcom/nineoldandroids/util/FloatProperty;
 
@@ -38,7 +38,7 @@
 
     check-cast v0, Lcom/nineoldandroids/util/FloatProperty;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->e:Lcom/nineoldandroids/util/FloatProperty;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->i:Lcom/nineoldandroids/util/FloatProperty;
 
     :cond_0
     return-void
@@ -49,7 +49,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Lcom/nineoldandroids/util/Property;B)V
+    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Lcom/nineoldandroids/util/Property;Lcom/nineoldandroids/animation/PropertyValuesHolder;)V
 
     invoke-virtual {p0, p2}, Lcom/nineoldandroids/animation/A;->setFloatValues([F)V
 
@@ -61,7 +61,7 @@
 
     check-cast v0, Lcom/nineoldandroids/util/FloatProperty;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->e:Lcom/nineoldandroids/util/FloatProperty;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->i:Lcom/nineoldandroids/util/FloatProperty;
 
     :cond_0
     return-void
@@ -72,19 +72,19 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Ljava/lang/String;Lcom/nineoldandroids/animation/PropertyValuesHolder;)V
 
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->b:Ljava/lang/Class;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->c:Ljava/lang/Class;
 
-    iput-object p2, p0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iput-object p2, p0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
     check-cast v0, Lcom/nineoldandroids/animation/f;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->g:Lcom/nineoldandroids/animation/f;
 
     return-void
 .end method
@@ -94,48 +94,30 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0, p1, v0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;-><init>(Ljava/lang/String;Lcom/nineoldandroids/animation/PropertyValuesHolder;)V
 
     invoke-virtual {p0, p2}, Lcom/nineoldandroids/animation/A;->setFloatValues([F)V
 
     return-void
 .end method
 
-.method private c()Lcom/nineoldandroids/animation/A;
-    .locals 2
-
-    invoke-super {p0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;->clone()Lcom/nineoldandroids/animation/PropertyValuesHolder;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/nineoldandroids/animation/A;
-
-    iget-object v1, v0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
-
-    check-cast v1, Lcom/nineoldandroids/animation/f;
-
-    iput-object v1, v0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method final a(F)V
+.method a(F)V
     .locals 1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->g:Lcom/nineoldandroids/animation/f;
 
     invoke-virtual {v0, p1}, Lcom/nineoldandroids/animation/f;->b(F)F
 
     move-result v0
 
-    iput v0, p0, Lcom/nineoldandroids/animation/A;->g:F
+    iput v0, p0, Lcom/nineoldandroids/animation/A;->h:F
 
     return-void
 .end method
 
-.method final a(Ljava/lang/Class;)V
+.method a(Ljava/lang/Class;)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/A;->mProperty:Lcom/nineoldandroids/util/Property;
@@ -151,10 +133,10 @@
     goto :goto_0
 .end method
 
-.method final b()Ljava/lang/Object;
+.method b()Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Lcom/nineoldandroids/animation/A;->g:F
+    iget v0, p0, Lcom/nineoldandroids/animation/A;->h:F
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -163,7 +145,7 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic clone()Lcom/nineoldandroids/animation/PropertyValuesHolder;
+.method public c()Lcom/nineoldandroids/animation/A;
     .locals 2
 
     invoke-super {p0}, Lcom/nineoldandroids/animation/PropertyValuesHolder;->clone()Lcom/nineoldandroids/animation/PropertyValuesHolder;
@@ -172,25 +154,35 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/A;
 
-    iget-object v1, v0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iget-object v1, v0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
     check-cast v1, Lcom/nineoldandroids/animation/f;
 
-    iput-object v1, v0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
+    iput-object v1, v0, Lcom/nineoldandroids/animation/A;->g:Lcom/nineoldandroids/animation/f;
 
     return-object v0
 .end method
 
-.method final d(Ljava/lang/Object;)V
+.method public synthetic clone()Lcom/nineoldandroids/animation/PropertyValuesHolder;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/nineoldandroids/animation/A;->c()Lcom/nineoldandroids/animation/A;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method d(Ljava/lang/Object;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->e:Lcom/nineoldandroids/util/FloatProperty;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->i:Lcom/nineoldandroids/util/FloatProperty;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->e:Lcom/nineoldandroids/util/FloatProperty;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->i:Lcom/nineoldandroids/util/FloatProperty;
 
-    iget v1, p0, Lcom/nineoldandroids/animation/A;->g:F
+    iget v1, p0, Lcom/nineoldandroids/animation/A;->h:F
 
     invoke-virtual {v0, p1, v1}, Lcom/nineoldandroids/util/FloatProperty;->setValue(Ljava/lang/Object;F)V
 
@@ -205,7 +197,7 @@
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/A;->mProperty:Lcom/nineoldandroids/util/Property;
 
-    iget v1, p0, Lcom/nineoldandroids/animation/A;->g:F
+    iget v1, p0, Lcom/nineoldandroids/animation/A;->h:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -216,16 +208,16 @@
     goto :goto_0
 
     :cond_2
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->a:Ljava/lang/reflect/Method;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->b:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->d:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->f:[Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    iget v2, p0, Lcom/nineoldandroids/animation/A;->g:F
+    iget v2, p0, Lcom/nineoldandroids/animation/A;->h:F
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -233,9 +225,9 @@
 
     aput-object v2, v0, v1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->a:Ljava/lang/reflect/Method;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->b:Ljava/lang/reflect/Method;
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/A;->d:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/A;->f:[Ljava/lang/Object;
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -271,16 +263,16 @@
     goto :goto_0
 .end method
 
-.method public final varargs setFloatValues([F)V
+.method public varargs setFloatValues([F)V
     .locals 1
 
     invoke-super {p0, p1}, Lcom/nineoldandroids/animation/PropertyValuesHolder;->setFloatValues([F)V
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->c:Lcom/nineoldandroids/animation/k;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/A;->d:Lcom/nineoldandroids/animation/k;
 
     check-cast v0, Lcom/nineoldandroids/animation/f;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->f:Lcom/nineoldandroids/animation/f;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/A;->g:Lcom/nineoldandroids/animation/f;
 
     return-void
 .end method

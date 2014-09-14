@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/gson/Gson;B)V
+.method synthetic constructor <init>(Lcom/google/gson/Gson;Lcom/google/gson/internal/bind/g;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;-><init>(Lcom/google/gson/Gson;)V
@@ -54,7 +54,7 @@
 
 
 # virtual methods
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 3
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -185,7 +185,7 @@
     .end packed-switch
 .end method
 
-.method public final write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 2
 
     if-nez p2, :cond_0

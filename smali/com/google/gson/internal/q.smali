@@ -26,26 +26,26 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+
+# virtual methods
+.method public a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
     .locals 1
 
-    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
 
-    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/q;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v0
 

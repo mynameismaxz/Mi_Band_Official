@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
+.field final synthetic a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -31,7 +31,7 @@
     return v0
 .end method
 
-.method public final getAccessibilityNodeProvider(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;
+.method public getAccessibilityNodeProvider(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -45,7 +45,7 @@
     return-object v0
 .end method
 
-.method public final onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public final onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -75,7 +75,7 @@
     return-void
 .end method
 
-.method public final onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -87,7 +87,7 @@
     return v0
 .end method
 
-.method public final performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+.method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -99,7 +99,7 @@
     return v0
 .end method
 
-.method public final sendAccessibilityEvent(Landroid/view/View;I)V
+.method public sendAccessibilityEvent(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;
@@ -109,7 +109,7 @@
     return-void
 .end method
 
-.method public final sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/h;->a:Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;

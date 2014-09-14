@@ -79,9 +79,9 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    const/16 v7, 0xa
-
     const/4 v3, 0x0
+
+    const/16 v7, 0xa
 
     const/4 v6, 0x4
 
@@ -129,11 +129,13 @@
 
     sput-object v0, Lu/aly/aw;->i:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/aw;->i:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/bB;
 
-    invoke-direct {v2, v3}, Lu/aly/bB;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/bB;-><init>(Lu/aly/bB;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -143,7 +145,7 @@
 
     new-instance v2, Lu/aly/bD;
 
-    invoke-direct {v2, v3}, Lu/aly/bD;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/bD;-><init>(Lu/aly/bD;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

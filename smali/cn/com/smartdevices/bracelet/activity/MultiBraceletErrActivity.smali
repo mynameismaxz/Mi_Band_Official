@@ -112,9 +112,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f07008e -> :sswitch_2
-        0x7f070161 -> :sswitch_1
-        0x7f070162 -> :sswitch_0
+        0x7f070093 -> :sswitch_2
+        0x7f070167 -> :sswitch_1
+        0x7f070168 -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -123,7 +123,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03004f
+    const v0, 0x7f030051
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->setContentView(I)V
 
@@ -159,7 +159,7 @@
 
     if-lez v1, :cond_0
 
-    const v0, 0x7f070160
+    const v0, 0x7f070166
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     :cond_0
-    const v0, 0x7f070162
+    const v0, 0x7f070168
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070161
+    const v0, 0x7f070167
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f07008e
+    const v0, 0x7f070093
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 

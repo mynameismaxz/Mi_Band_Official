@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/activity/d;
+.class Lcn/com/smartdevices/bracelet/activity/d;
 .super Landroid/text/style/ClickableSpan;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
 
     const-string v0, "file:///android_asset/useragreement.html"
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
+.method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V

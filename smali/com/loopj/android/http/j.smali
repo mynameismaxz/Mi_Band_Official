@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/j;
+.class Lcom/loopj/android/http/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -42,7 +42,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 7
 
     :try_start_0

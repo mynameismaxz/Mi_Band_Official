@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/U;
+.class Landroid/support/v4/app/U;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
+.method public a(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
     .locals 18
 
     new-instance v1, Landroid/support/v4/app/X;
@@ -143,11 +143,11 @@
 
     check-cast v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;
 
-    iget-object v3, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->d:Ljava/lang/CharSequence;
+    iget-object v3, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->e:Ljava/lang/CharSequence;
 
-    iget-boolean v4, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->f:Z
+    iget-boolean v4, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->g:Z
 
-    iget-object v5, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->e:Ljava/lang/CharSequence;
+    iget-object v5, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->f:Ljava/lang/CharSequence;
 
     iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->a:Ljava/lang/CharSequence;
 
@@ -176,11 +176,11 @@
 
     check-cast v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;
 
-    iget-object v3, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->d:Ljava/lang/CharSequence;
+    iget-object v3, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->e:Ljava/lang/CharSequence;
 
-    iget-boolean v4, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->f:Z
+    iget-boolean v4, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->g:Z
 
-    iget-object v5, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->e:Ljava/lang/CharSequence;
+    iget-object v5, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->f:Ljava/lang/CharSequence;
 
     iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$InboxStyle;->a:Ljava/util/ArrayList;
 
@@ -205,11 +205,11 @@
 
     check-cast v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
 
-    iget-object v2, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->d:Ljava/lang/CharSequence;
+    iget-object v2, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->e:Ljava/lang/CharSequence;
 
-    iget-boolean v3, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->f:Z
+    iget-boolean v3, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->g:Z
 
-    iget-object v4, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->e:Ljava/lang/CharSequence;
+    iget-object v4, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->f:Ljava/lang/CharSequence;
 
     iget-object v5, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->a:Landroid/graphics/Bitmap;
 

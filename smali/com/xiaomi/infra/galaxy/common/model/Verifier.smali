@@ -196,7 +196,6 @@
     move v2, v0
 
     :goto_0
-    :pswitch_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -248,47 +247,52 @@
 
     goto :goto_0
 
+    :pswitch_0
+    move v0, v2
+
+    goto :goto_1
+
     :pswitch_1
-    add-int/lit8 v0, v2, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_2
-    add-int/lit8 v0, v2, 0x2
+    add-int/lit8 v2, v2, 0x2
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_3
-    add-int/lit8 v0, v2, 0x4
+    add-int/lit8 v2, v2, 0x4
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_4
-    add-int/lit8 v0, v2, 0x8
+    add-int/lit8 v2, v2, 0x8
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_5
-    add-int/lit8 v0, v2, 0x4
+    add-int/lit8 v2, v2, 0x4
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_6
-    add-int/lit8 v0, v2, 0x8
+    add-int/lit8 v2, v2, 0x8
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_7
     :try_start_0
@@ -306,18 +310,20 @@
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    add-int/2addr v0, v2
+    add-int/2addr v2, v0
 
-    move v2, v0
+    move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
     invoke-virtual {v0}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V
 
-    goto :goto_0
+    move v0, v2
+
+    goto :goto_1
 
     :pswitch_8
     invoke-virtual {v0}, Lcom/xiaomi/infra/galaxy/common/model/AttributeValue;->getValue()Ljava/lang/String;
@@ -332,7 +338,9 @@
 
     div-int/lit8 v0, v0, 0x4
 
-    add-int/2addr v0, v2
+    add-int/2addr v2, v0
+
+    move v0, v2
 
     goto :goto_1
 
@@ -351,6 +359,12 @@
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -480,9 +494,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "unused attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -534,9 +552,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "expected \'true\' or \'false\' for boolean attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -580,9 +602,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "expected [-128,127] for int8 attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -623,9 +649,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "expected [-32768,32767] for int16 attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -666,9 +696,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "expected [-2147483648,2147483647] for int32 attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -709,9 +743,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "expected [-9223372036854775808,9223372036854775807] for int64 attribute type of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

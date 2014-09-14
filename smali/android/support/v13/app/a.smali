@@ -1,6 +1,9 @@
 .class Landroid/support/v13/app/a;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v13/app/b;
+
 
 # direct methods
 .method constructor <init>()V

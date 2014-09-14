@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/channel/sdk/g;
+.class Lcom/xiaomi/channel/sdk/g;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/channel/sdk/MLShareApiFactory;
+.field final synthetic a:Lcom/xiaomi/channel/sdk/MLShareApiFactory;
 
 .field private final synthetic b:Landroid/content/Intent;
 
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/channel/sdk/g;->a:Lcom/xiaomi/channel/sdk/MLShareApiFactory;

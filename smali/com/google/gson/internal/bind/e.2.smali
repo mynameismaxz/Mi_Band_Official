@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final close()V
+.method public close()V
     .locals 1
 
     new-instance v0, Ljava/lang/AssertionError;
@@ -23,7 +23,7 @@
     throw v0
 .end method
 
-.method public final flush()V
+.method public flush()V
     .locals 1
 
     new-instance v0, Ljava/lang/AssertionError;
@@ -33,7 +33,7 @@
     throw v0
 .end method
 
-.method public final write([CII)V
+.method public write([CII)V
     .locals 1
 
     new-instance v0, Ljava/lang/AssertionError;

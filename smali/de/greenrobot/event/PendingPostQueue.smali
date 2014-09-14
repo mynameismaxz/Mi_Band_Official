@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method final declared-synchronized enqueue(Lde/greenrobot/event/PendingPost;)V
+.method declared-synchronized enqueue(Lde/greenrobot/event/PendingPost;)V
     .locals 2
 
     monitor-enter p0
@@ -89,7 +89,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 .end method
 
-.method final declared-synchronized poll()Lde/greenrobot/event/PendingPost;
+.method declared-synchronized poll()Lde/greenrobot/event/PendingPost;
     .locals 2
 
     monitor-enter p0
@@ -130,7 +130,7 @@
     throw v0
 .end method
 
-.method final declared-synchronized poll(I)Lde/greenrobot/event/PendingPost;
+.method declared-synchronized poll(I)Lde/greenrobot/event/PendingPost;
     .locals 2
 
     monitor-enter p0

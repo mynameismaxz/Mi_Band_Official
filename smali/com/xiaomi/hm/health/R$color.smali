@@ -35,6 +35,10 @@
 
 .field public static final blue:I = 0x7f080038
 
+.field public static final btn_blue_color:I = 0x7f08004e
+
+.field public static final btn_blue_stroke_color:I = 0x7f08004f
+
 .field public static final button_cancel_color:I = 0x7f08004b
 
 .field public static final button_confirm_color:I = 0x7f08004c
@@ -53,17 +57,17 @@
 
 .field public static final counter_text_bg:I = 0x7f080002
 
-.field public static final default_circle_indicator_fill_color:I = 0x7f080051
+.field public static final default_circle_indicator_fill_color:I = 0x7f080053
 
-.field public static final default_circle_indicator_page_color:I = 0x7f080052
+.field public static final default_circle_indicator_page_color:I = 0x7f080054
 
-.field public static final default_circle_indicator_stroke_color:I = 0x7f080053
+.field public static final default_circle_indicator_stroke_color:I = 0x7f080055
 
-.field public static final default_title_indicator_footer_color:I = 0x7f08004e
+.field public static final default_title_indicator_footer_color:I = 0x7f080050
 
-.field public static final default_title_indicator_selected_color:I = 0x7f08004f
+.field public static final default_title_indicator_selected_color:I = 0x7f080051
 
-.field public static final default_title_indicator_text_color:I = 0x7f080050
+.field public static final default_title_indicator_text_color:I = 0x7f080052
 
 .field public static final disable_text_color_dark:I = 0x7f080045
 
@@ -163,13 +167,13 @@
 
 .field public static final statistic_data_item_value_step:I = 0x7f080032
 
-.field public static final tab_host_title:I = 0x7f080054
+.field public static final tab_host_title:I = 0x7f080056
 
 .field public static final title_color:I = 0x7f080004
 
 .field public static final trans:I = 0x7f080023
 
-.field public static final txt_with_drawable:I = 0x7f080055
+.field public static final txt_with_drawable:I = 0x7f080057
 
 .field public static final wheel_band_bg:I = 0x7f080049
 

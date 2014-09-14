@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/h;
+.class Lcom/tencent/stat/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -107,7 +107,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 8
 
     const/4 v3, 0x0
@@ -149,15 +149,19 @@
 
     if-le v0, v1, :cond_2
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event length exceed StatConfig.getMaxReportEventLength(): "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->getMaxReportEventLength()I
 
@@ -192,7 +196,7 @@
 
     if-lt v0, v1, :cond_3
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
@@ -206,15 +210,19 @@
     invoke-static {}, Lcom/tencent/stat/StatConfig;->c()V
 
     :cond_4
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Lauch stat task in thread:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -292,15 +300,19 @@
 
     packed-switch v1, :pswitch_data_0
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid stat strategy:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->getStatSendStrategy()Lcom/tencent/stat/StatReportStrategy;
 
@@ -476,7 +488,7 @@
     :catch_0
     move-exception v0
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v1
 

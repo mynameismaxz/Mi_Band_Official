@@ -99,11 +99,11 @@
 .method private a([BIIZ)V
     .locals 4
 
-    iget-object v1, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
-
     iget-object v0, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
 
-    iget-object v0, v0, Lcom/loopj/android/http/g;->a:[B
+    iget-object v1, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
+
+    iget-object v1, v1, Lcom/loopj/android/http/g;->a:[B
 
     iget-object v2, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
 
@@ -111,17 +111,11 @@
 
     move-result v2
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, v1, v2}, Lcom/loopj/android/http/Base64OutputStream;->a([BI)[B
 
-    array-length v3, v0
+    move-result-object v1
 
-    if-ge v3, v2, :cond_1
-
-    :cond_0
-    new-array v0, v2, [B
-
-    :cond_1
-    iput-object v0, v1, Lcom/loopj/android/http/g;->a:[B
+    iput-object v1, v0, Lcom/loopj/android/http/g;->a:[B
 
     iget-object v0, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
 
@@ -129,7 +123,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
     new-instance v0, Lcom/loopj/android/http/Base64DataException;
 
@@ -139,7 +133,7 @@
 
     throw v0
 
-    :cond_2
+    :cond_0
     iget-object v0, p0, Lcom/loopj/android/http/Base64OutputStream;->out:Ljava/io/OutputStream;
 
     iget-object v1, p0, Lcom/loopj/android/http/Base64OutputStream;->a:Lcom/loopj/android/http/g;
@@ -157,20 +151,20 @@
     return-void
 .end method
 
-.method private static a([BI)[B
+.method private a([BI)[B
     .locals 1
 
-    if-eqz p0, :cond_0
+    if-eqz p1, :cond_0
 
-    array-length v0, p0
+    array-length v0, p1
 
-    if-ge v0, p1, :cond_1
+    if-ge v0, p2, :cond_1
 
     :cond_0
-    new-array p0, p1, [B
+    new-array p1, p2, [B
 
     :cond_1
-    return-object p0
+    return-object p1
 .end method
 
 

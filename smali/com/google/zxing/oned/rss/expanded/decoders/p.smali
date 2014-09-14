@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static c:I = 0xa
+.field static final a:I = 0xa
 
 
 # instance fields
-.field private final a:I
-
 .field private final b:I
+
+.field private final c:I
 
 
 # direct methods
@@ -20,15 +20,15 @@
 
     invoke-direct {p0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/q;-><init>(I)V
 
-    iput p2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
+    iput p2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
 
-    iput p3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+    iput p3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
 
     if-ltz v0, :cond_0
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
 
     if-le v0, v1, :cond_1
 
@@ -37,9 +37,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid firstDigit: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -54,11 +58,11 @@
     throw v0
 
     :cond_1
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
 
     if-ltz v0, :cond_2
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
 
     if-le v0, v1, :cond_3
 
@@ -67,9 +71,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid secondDigit: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -87,30 +95,88 @@
     return-void
 .end method
 
-.method private f()I
+
+# virtual methods
+.method a()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+
+    return v0
+.end method
+
+.method b()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
+
+    return v0
+.end method
+
+.method c()I
     .locals 2
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
 
     mul-int/lit8 v0, v0, 0xa
 
-    iget v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+    iget v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
 
     add-int/2addr v0, v1
 
     return v0
 .end method
 
-.method private g()Z
+.method d()Z
+    .locals 2
+
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+
+    const/16 v1, 0xa
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method e()Z
+    .locals 2
+
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
+
+    const/16 v1, 0xa
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method f()Z
     .locals 2
 
     const/16 v1, 0xa
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
 
     if-eq v0, v1, :cond_0
 
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
+    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->c:I
 
     if-ne v0, v1, :cond_1
 
@@ -121,64 +187,6 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method final a()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
-
-    return v0
-.end method
-
-.method final b()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
-
-    return v0
-.end method
-
-.method final c()Z
-    .locals 2
-
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->a:I
-
-    const/16 v1, 0xa
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method final d()Z
-    .locals 2
-
-    iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/p;->b:I
-
-    const/16 v1, 0xa
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0

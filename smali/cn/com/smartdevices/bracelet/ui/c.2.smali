@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/ui/c;
+.class Lcn/com/smartdevices/bracelet/ui/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onFailure()V
+.method public onFailure()V
     .locals 2
 
     const-string v0, "AlarmActivity"
@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method public final onSuccess()V
+.method public onSuccess()V
     .locals 2
 
     const-string v0, "AlarmActivity"

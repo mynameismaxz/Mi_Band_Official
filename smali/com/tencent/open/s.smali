@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/s;
+.class Lcom/tencent/open/s;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/TaskGuide;
+.field final synthetic a:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/tencent/open/s;->a:Lcom/tencent/open/TaskGuide;

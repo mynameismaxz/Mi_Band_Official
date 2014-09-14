@@ -1,4 +1,4 @@
-.class final Landroid/support/v13/app/h;
+.class Landroid/support/v13/app/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final createTabContent(Ljava/lang/String;)Landroid/view/View;
+.method public createTabContent(Ljava/lang/String;)Landroid/view/View;
     .locals 3
 
     const/4 v2, 0x0

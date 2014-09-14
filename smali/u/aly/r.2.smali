@@ -32,6 +32,10 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x1
+
+    iput v0, p0, Lu/aly/r;->d:I
+
     const-string v0, "10.0.0.172"
 
     iput-object v0, p0, Lu/aly/r;->f:Ljava/lang/String;
@@ -48,7 +52,7 @@
 
     iput-object v0, p0, Lu/aly/r;->j:Lu/aly/f;
 
-    invoke-static {p1}, Lu/aly/r;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lu/aly/r;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -57,7 +61,7 @@
     return-void
 .end method
 
-.method private static a(Landroid/content/Context;)Ljava/lang/String;
+.method private a(Landroid/content/Context;)Ljava/lang/String;
     .locals 3
 
     new-instance v1, Ljava/lang/StringBuffer;
@@ -85,7 +89,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    invoke-static {p0}, Lu/aly/bi;->v(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lu/aly/bi;->v(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -95,7 +99,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-static {p0}, Lu/aly/bi;->d(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lu/aly/bi;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -121,7 +125,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-static {p0}, Lcom/umeng/analytics/AnalyticsConfig;->getAppkey(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/umeng/analytics/AnalyticsConfig;->getAppkey(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 

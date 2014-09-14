@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/activity/f;
+.class Lcn/com/smartdevices/bracelet/activity/f;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/e;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/e;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 4
 
     invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
     .locals 6
 
     const/4 v0, 0x1

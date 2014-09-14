@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/o;
+.class Lcn/com/smartdevices/bracelet/view/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onGlobalLayout()V
+.method public onGlobalLayout()V
     .locals 3
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I

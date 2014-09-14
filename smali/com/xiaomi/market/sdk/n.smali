@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/market/sdk/m;
+.field final synthetic a:Lcom/xiaomi/market/sdk/m;
 
 
 # direct methods
@@ -26,78 +26,13 @@
 .end method
 
 .method static synthetic a(Lcom/xiaomi/market/sdk/n;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Lcom/xiaomi/market/sdk/b;->a(Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {p0, p1, p2}, Lcom/xiaomi/market/sdk/n;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/n;->a:Lcom/xiaomi/market/sdk/m;
-
-    invoke-static {v0}, Lcom/xiaomi/market/sdk/m;->e(Lcom/xiaomi/market/sdk/m;)Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/xiaomi/market/sdk/n;->a:Lcom/xiaomi/market/sdk/m;
-
-    invoke-static {v1}, Lcom/xiaomi/market/sdk/m;->d(Lcom/xiaomi/market/sdk/m;)Lcom/xiaomi/market/sdk/q;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/market/sdk/n;->a:Lcom/xiaomi/market/sdk/m;
-
-    invoke-static {v1}, Lcom/xiaomi/market/sdk/m;->d(Lcom/xiaomi/market/sdk/m;)Lcom/xiaomi/market/sdk/q;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/xiaomi/market/sdk/q;->sourceDir:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/market/sdk/n;->a:Lcom/xiaomi/market/sdk/m;
-
-    invoke-static {v1}, Lcom/xiaomi/market/sdk/m;->d(Lcom/xiaomi/market/sdk/m;)Lcom/xiaomi/market/sdk/q;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/xiaomi/market/sdk/q;->sourceDir:Ljava/lang/String;
-
-    invoke-static {v1, v0, p1}, Lcom/xiaomi/market/sdk/Patcher;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
     return-object v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method private a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

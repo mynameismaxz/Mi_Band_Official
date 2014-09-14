@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Landroid/support/v13/app/b;
+.field static final a:Landroid/support/v13/app/b;
 
 
 # direct methods
@@ -41,9 +41,9 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v13/app/b;
+    new-instance v0, Landroid/support/v13/app/a;
 
-    invoke-direct {v0}, Landroid/support/v13/app/b;-><init>()V
+    invoke-direct {v0}, Landroid/support/v13/app/a;-><init>()V
 
     sput-object v0, Landroid/support/v13/app/FragmentCompat;->a:Landroid/support/v13/app/b;
 
@@ -63,7 +63,7 @@
 
     sget-object v0, Landroid/support/v13/app/FragmentCompat;->a:Landroid/support/v13/app/b;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v13/app/b;->c(Landroid/app/Fragment;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v13/app/b;->a(Landroid/app/Fragment;Z)V
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 
     sget-object v0, Landroid/support/v13/app/FragmentCompat;->a:Landroid/support/v13/app/b;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v13/app/b;->d(Landroid/app/Fragment;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v13/app/b;->b(Landroid/app/Fragment;Z)V
 
     return-void
 .end method

@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ISBNParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ISBNParsedResult;
     .locals 4
 
     const/4 v0, 0x0
@@ -67,7 +67,7 @@
     goto :goto_0
 .end method
 
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/ISBNResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ISBNParsedResult;

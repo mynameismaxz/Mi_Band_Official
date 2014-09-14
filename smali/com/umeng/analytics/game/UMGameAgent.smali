@@ -562,9 +562,9 @@
 
     invoke-static {p2}, Lcom/umeng/analytics/Gender;->getGender(I)Lcom/umeng/analytics/Gender;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {p0, p1, v0, p3}, Lcom/umeng/analytics/game/d;->a(Ljava/lang/String;ILcom/umeng/analytics/Gender;Ljava/lang/String;)V
+    invoke-virtual {v0, p0, p1, v1, p3}, Lcom/umeng/analytics/game/d;->a(Ljava/lang/String;ILcom/umeng/analytics/Gender;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -617,7 +617,7 @@
 
     sget-object v0, Lcom/umeng/analytics/game/UMGameAgent;->e:Lcom/umeng/analytics/game/d;
 
-    invoke-static {p0}, Lcom/umeng/analytics/game/d;->a(Z)V
+    invoke-virtual {v0, p0}, Lcom/umeng/analytics/game/d;->a(Z)V
 
     return-void
 .end method

@@ -28,9 +28,9 @@
 
     if-le v0, v1, :cond_0
 
-    new-instance v0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;
+    new-instance v0, Landroid/support/v4/view/l;
 
-    invoke-direct {v0, p1, p2, p3}, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
+    invoke-direct {v0, p1, p2, p3}, Landroid/support/v4/view/l;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
 
     iput-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat;->a:Landroid/support/v4/view/i;
 
@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat;->a:Landroid/support/v4/view/i;
 
-    invoke-interface {v0}, Landroid/support/v4/view/i;->b()Z
+    invoke-interface {v0}, Landroid/support/v4/view/i;->a()Z
 
     move-result v0
 

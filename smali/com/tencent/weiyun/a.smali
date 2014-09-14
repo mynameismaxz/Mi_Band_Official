@@ -1,4 +1,4 @@
-.class final Lcom/tencent/weiyun/a;
+.class Lcom/tencent/weiyun/a;
 .super Ljava/lang/Object;
 
 
@@ -161,46 +161,11 @@
 .method static synthetic a(Lcom/tencent/weiyun/a;Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
     .locals 1
 
-    sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->ImageFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
+    invoke-direct {p0, p1}, Lcom/tencent/weiyun/a;->a(Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
 
-    if-ne p1, v0, :cond_1
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/tencent/weiyun/a;->C:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "https://graph.qq.com/weiyun/get_photo_thumb"
-
-    :goto_0
     return-object v0
-
-    :cond_0
-    const-string v0, "https://graph.qq.com/weiyun/download_photo"
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->MusicFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
-
-    if-ne p1, v0, :cond_2
-
-    const-string v0, "https://graph.qq.com/weiyun/download_music"
-
-    goto :goto_0
-
-    :cond_2
-    sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->VideoFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
-
-    if-ne p1, v0, :cond_3
-
-    const-string v0, "https://graph.qq.com/weiyun/download_video"
-
-    goto :goto_0
-
-    :cond_3
-    const-string v0, "https://graph.qq.com/weiyun/download_photo"
-
-    goto :goto_0
 .end method
 
 .method static synthetic a(Lcom/tencent/weiyun/a;Ljava/lang/String;)Ljava/lang/String;
@@ -232,13 +197,9 @@
 .end method
 
 .method static synthetic b(Lcom/tencent/weiyun/a;)V
-    .locals 1
+    .locals 0
 
-    new-instance v0, Lcom/tencent/weiyun/d;
-
-    invoke-direct {v0, p0}, Lcom/tencent/weiyun/d;-><init>(Lcom/tencent/weiyun/a;)V
-
-    invoke-virtual {v0}, Lcom/tencent/weiyun/d;->start()V
+    invoke-direct {p0}, Lcom/tencent/weiyun/a;->c()V
 
     return-void
 .end method
@@ -377,7 +338,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 3
 
     iget-object v0, p0, Lcom/tencent/weiyun/a;->s:Ljava/lang/String;
@@ -472,16 +433,12 @@
 
     invoke-interface {v0}, Lcom/tencent/weiyun/IDownLoadFileCallBack;->onPrepareStart()V
 
-    new-instance v0, Lcom/tencent/weiyun/c;
-
-    invoke-direct {v0, p0}, Lcom/tencent/weiyun/c;-><init>(Lcom/tencent/weiyun/a;)V
-
-    invoke-virtual {v0}, Lcom/tencent/weiyun/c;->start()V
+    invoke-direct {p0}, Lcom/tencent/weiyun/a;->b()V
 
     goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/tencent/weiyun/a;->C:Ljava/lang/String;

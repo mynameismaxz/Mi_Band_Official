@@ -14,7 +14,7 @@
 .method public static enableDebugLogging(Z)V
     .locals 0
 
-    sput-boolean p0, Landroid/support/v4/app/J;->a:Z
+    sput-boolean p0, Landroid/support/v4/app/J;->b:Z
 
     return-void
 .end method

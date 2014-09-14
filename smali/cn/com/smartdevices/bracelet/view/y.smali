@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/y;
+.class Lcn/com/smartdevices/bracelet/view/y;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/view/y;)V
     .locals 0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/view/y;-><init>()V
@@ -24,7 +24,7 @@
 
 
 # virtual methods
-.method public final canScrollHorizontal(Landroid/view/View;I)Z
+.method public canScrollHorizontal(Landroid/view/View;I)Z
     .locals 6
 
     const/4 v1, 0x1
@@ -159,7 +159,7 @@
     goto :goto_1
 .end method
 
-.method public final canScrollVertical(Landroid/view/View;I)Z
+.method public canScrollVertical(Landroid/view/View;I)Z
     .locals 1
 
     const/4 v0, 0x0

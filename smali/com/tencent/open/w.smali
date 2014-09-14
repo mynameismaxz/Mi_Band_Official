@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/w;
+.class Lcom/tencent/open/w;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private a:Z
+.field a:Z
 
-.field private b:F
+.field b:F
 
-.field private synthetic c:Lcom/tencent/open/TaskGuide;
+.field final synthetic c:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -36,7 +36,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 6
 
     const/4 v1, 0x1
@@ -120,9 +120,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "mWinParams.y = "
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     iget-object v5, p0, Lcom/tencent/open/w;->c:Lcom/tencent/open/TaskGuide;
 

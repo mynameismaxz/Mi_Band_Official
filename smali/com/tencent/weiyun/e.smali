@@ -1,4 +1,4 @@
-.class final Lcom/tencent/weiyun/e;
+.class Lcom/tencent/weiyun/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,31 +6,33 @@
 
 
 # instance fields
-.field private a:Lcom/tencent/weiyun/IGetFileListListener;
+.field final synthetic a:Lcom/tencent/weiyun/FileManager;
 
-.field private synthetic b:Lcom/tencent/weiyun/FileManager;
+.field private b:Lcom/tencent/weiyun/IGetFileListListener;
 
 
 # direct methods
 .method public constructor <init>(Lcom/tencent/weiyun/FileManager;Lcom/tencent/weiyun/IGetFileListListener;)V
     .locals 0
 
+    iput-object p1, p0, Lcom/tencent/weiyun/e;->a:Lcom/tencent/weiyun/FileManager;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/tencent/weiyun/e;->a:Lcom/tencent/weiyun/IGetFileListListener;
+    iput-object p2, p0, Lcom/tencent/weiyun/e;->b:Lcom/tencent/weiyun/IGetFileListListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 0
 
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 9
 
     check-cast p1, Lorg/json/JSONObject;
@@ -114,7 +116,7 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/tencent/weiyun/e;->a:Lcom/tencent/weiyun/IGetFileListListener;
+    iget-object v0, p0, Lcom/tencent/weiyun/e;->b:Lcom/tencent/weiyun/IGetFileListListener;
 
     invoke-interface {v0, v7}, Lcom/tencent/weiyun/IGetFileListListener;->onComplete(Ljava/util/List;)V
     :try_end_0
@@ -126,7 +128,7 @@
     :catch_0
     move-exception v0
 
-    iget-object v0, p0, Lcom/tencent/weiyun/e;->a:Lcom/tencent/weiyun/IGetFileListListener;
+    iget-object v0, p0, Lcom/tencent/weiyun/e;->b:Lcom/tencent/weiyun/IGetFileListListener;
 
     new-instance v1, Lcom/tencent/tauth/UiError;
 
@@ -145,10 +147,10 @@
     goto :goto_1
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/weiyun/e;->a:Lcom/tencent/weiyun/IGetFileListListener;
+    iget-object v0, p0, Lcom/tencent/weiyun/e;->b:Lcom/tencent/weiyun/IGetFileListListener;
 
     invoke-interface {v0, p1}, Lcom/tencent/weiyun/IGetFileListListener;->onError(Lcom/tencent/tauth/UiError;)V
 

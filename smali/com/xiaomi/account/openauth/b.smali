@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/account/openauth/b;
+.class Lcom/xiaomi/account/openauth/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -26,32 +26,10 @@
     return-void
 .end method
 
-.method private static a(Lorg/apache/http/NameValuePair;Lorg/apache/http/NameValuePair;)I
-    .locals 2
-
-    invoke-interface {p0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public a(Lorg/apache/http/NameValuePair;Lorg/apache/http/NameValuePair;)I
     .locals 2
-
-    check-cast p1, Lorg/apache/http/NameValuePair;
-
-    check-cast p2, Lorg/apache/http/NameValuePair;
 
     invoke-interface {p1}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
 
@@ -62,6 +40,20 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Lorg/apache/http/NameValuePair;
+
+    check-cast p2, Lorg/apache/http/NameValuePair;
+
+    invoke-virtual {p0, p1, p2}, Lcom/xiaomi/account/openauth/b;->a(Lorg/apache/http/NameValuePair;Lorg/apache/http/NameValuePair;)I
 
     move-result v0
 

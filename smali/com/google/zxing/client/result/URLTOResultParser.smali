@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/URLTOResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/URIParsedResult;
@@ -23,7 +23,7 @@
     return-object v0
 .end method
 
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/URIParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/URIParsedResult;
     .locals 4
 
     const/4 v0, 0x0

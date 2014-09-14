@@ -1,11 +1,11 @@
-.class final Landroid/support/v4/widget/f;
+.class Landroid/support/v4/widget/f;
 .super Landroid/support/v4/view/AccessibilityDelegateCompat;
 
 
 # instance fields
-.field private final a:Landroid/graphics/Rect;
+.field final synthetic b:Landroid/support/v4/widget/DrawerLayout;
 
-.field private synthetic b:Landroid/support/v4/widget/DrawerLayout;
+.field private final c:Landroid/graphics/Rect;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/widget/f;->a:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/v4/widget/f;->c:Landroid/graphics/Rect;
 
     return-void
 .end method
@@ -28,7 +28,7 @@
 .method private a(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/widget/f;->a:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroid/support/v4/widget/f;->c:Landroid/graphics/Rect;
 
     invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getBoundsInParent(Landroid/graphics/Rect;)V
 
@@ -113,7 +113,9 @@
     return-void
 .end method
 
-.method private a(Landroid/view/View;)Z
+
+# virtual methods
+.method public a(Landroid/view/View;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/f;->b:Landroid/support/v4/widget/DrawerLayout;
@@ -137,9 +139,7 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
-.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 4
 
     invoke-static {p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->obtain(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
@@ -163,87 +163,7 @@
     invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setParent(Landroid/view/View;)V
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/widget/f;->a:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getBoundsInParent(Landroid/graphics/Rect;)V
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInParent(Landroid/graphics/Rect;)V
-
-    invoke-virtual {v1, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getBoundsInScreen(Landroid/graphics/Rect;)V
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInScreen(Landroid/graphics/Rect;)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isVisibleToUser()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setVisibleToUser(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getPackageName()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setPackageName(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getClassName()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setClassName(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getContentDescription()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isEnabled()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setEnabled(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isClickable()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setClickable(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isFocusable()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setFocusable(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isFocused()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setFocused(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isAccessibilityFocused()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setAccessibilityFocused(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isSelected()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setSelected(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isLongClickable()Z
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setLongClickable(Z)V
-
-    invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->getActions()I
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->addAction(I)V
+    invoke-direct {p0, p2, v1}, Landroid/support/v4/widget/f;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
 
     invoke-virtual {v1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->recycle()V
 
@@ -264,7 +184,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Landroid/support/v4/widget/f;->a(Landroid/view/View;)Z
+    invoke-virtual {p0, v2}, Landroid/support/v4/widget/f;->a(Landroid/view/View;)Z
 
     move-result v3
 
@@ -281,10 +201,10 @@
     return-void
 .end method
 
-.method public final onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
-    invoke-direct {p0, p2}, Landroid/support/v4/widget/f;->a(Landroid/view/View;)Z
+    invoke-virtual {p0, p2}, Landroid/support/v4/widget/f;->a(Landroid/view/View;)Z
 
     move-result v0
 

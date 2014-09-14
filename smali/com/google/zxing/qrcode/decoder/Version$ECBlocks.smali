@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
+.method public getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->b:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
@@ -31,7 +31,7 @@
     return-object v0
 .end method
 
-.method public final getECCodewordsPerBlock()I
+.method public getECCodewordsPerBlock()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->a:I
@@ -39,7 +39,7 @@
     return v0
 .end method
 
-.method public final getNumBlocks()I
+.method public getNumBlocks()I
     .locals 5
 
     const/4 v0, 0x0
@@ -69,7 +69,7 @@
     return v1
 .end method
 
-.method public final getTotalECCodewords()I
+.method public getTotalECCodewords()I
     .locals 2
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->a:I

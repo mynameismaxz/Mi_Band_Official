@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/t;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/t;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;
 
 
 # direct methods
@@ -22,24 +22,24 @@
 
 
 # virtual methods
-.method public final onPageScrollStateChanged(I)V
+.method public onPageScrollStateChanged(I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onPageScrolled(IFI)V
+.method public onPageScrolled(IFI)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onPageSelected(I)V
+.method public onPageSelected(I)V
     .locals 5
 
-    const v4, 0x7f070143
+    const v4, 0x7f070149
 
-    const v3, 0x7f070140
+    const v3, 0x7f070146
 
     const/4 v2, 0x4
 

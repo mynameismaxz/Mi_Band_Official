@@ -46,6 +46,10 @@
 
     sput-object v0, Lcom/umeng/analytics/g;->a:Lcom/umeng/analytics/g;
 
+    const-wide/32 v0, 0x48190800
+
+    sput-wide v0, Lcom/umeng/analytics/g;->d:J
+
     const-wide/32 v0, 0x200000
 
     sput-wide v0, Lcom/umeng/analytics/g;->e:J
@@ -121,7 +125,7 @@
     goto :goto_0
 .end method
 
-.method private static k()Landroid/content/SharedPreferences;
+.method private k()Landroid/content/SharedPreferences;
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
@@ -151,7 +155,7 @@
     return-object v0
 .end method
 
-.method private static l()Ljava/lang/String;
+.method private l()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -173,7 +177,7 @@
     return-object v0
 .end method
 
-.method private static m()Ljava/lang/String;
+.method private m()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -205,7 +209,7 @@
     return-object v0
 .end method
 
-.method private static n()Ljava/lang/String;
+.method private n()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -229,7 +233,7 @@
 
 
 # virtual methods
-.method public final a(II)V
+.method public a(II)V
     .locals 4
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
@@ -261,10 +265,10 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;II)V
+.method public a(Ljava/lang/String;Ljava/lang/String;II)V
     .locals 2
 
-    invoke-static {}, Lcom/umeng/analytics/g;->k()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->k()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -310,10 +314,10 @@
     return-void
 .end method
 
-.method public final a([B)V
+.method public a([B)V
     .locals 3
 
-    invoke-static {}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
 
     move-result-object v0
 
@@ -349,7 +353,7 @@
     goto :goto_0
 .end method
 
-.method public final a()[I
+.method public a()[I
     .locals 8
 
     const-wide/16 v6, 0x0
@@ -419,7 +423,7 @@
     goto :goto_0
 .end method
 
-.method public final b([B)V
+.method public b([B)V
     .locals 3
 
     :try_start_0
@@ -431,7 +435,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
 
     move-result-object v2
 
@@ -452,68 +456,48 @@
     goto :goto_0
 .end method
 
-.method public final b()[B
-    .locals 8
+.method public b()[B
+    .locals 4
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/io/File;
-
-    sget-object v1, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v3, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    new-instance v2, Ljava/io/File;
 
-    invoke-virtual {v3}, Ljava/io/File;->length()J
+    sget-object v3, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
 
-    move-result-wide v4
+    invoke-virtual {v3}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
+    move-result-object v3
 
-    move-result v1
+    invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_1
+    invoke-static {v2}, Lcom/umeng/analytics/g;->a(Ljava/io/File;)Z
 
-    sget-wide v6, Lcom/umeng/analytics/g;->e:J
+    move-result v3
 
-    cmp-long v1, v4, v6
+    if-eqz v3, :cond_1
 
-    if-lez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    :goto_0
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v3}, Ljava/io/File;->delete()Z
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
     :cond_0
-    :goto_1
+    :goto_0
     return-object v0
 
     :cond_1
-    const/4 v1, 0x0
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
-    goto :goto_0
+    move-result v2
 
-    :cond_2
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     :try_start_0
-    sget-object v1, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
+    sget-object v2, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->openFileInput(Ljava/lang/String;)Ljava/io/FileInputStream;
+    invoke-virtual {v2, v1}, Landroid/content/Context;->openFileInput(Ljava/lang/String;)Ljava/io/FileInputStream;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -530,14 +514,14 @@
 
     invoke-static {v2}, Lu/aly/bv;->c(Ljava/io/InputStream;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v1
 
     move-object v2, v0
 
-    :goto_2
+    :goto_1
     :try_start_2
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2
@@ -545,7 +529,7 @@
 
     invoke-static {v2}, Lu/aly/bv;->c(Ljava/io/InputStream;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception v1
@@ -554,7 +538,7 @@
 
     move-object v0, v1
 
-    :goto_3
+    :goto_2
     invoke-static {v2}, Lu/aly/bv;->c(Ljava/io/InputStream;)V
 
     throw v0
@@ -562,22 +546,22 @@
     :catchall_1
     move-exception v0
 
-    goto :goto_3
+    goto :goto_2
 
     :catch_1
     move-exception v1
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
-.method public final b(Landroid/content/Context;)[Ljava/lang/Object;
+.method public b(Landroid/content/Context;)[Ljava/lang/Object;
     .locals 6
 
     const/4 v5, 0x0
 
     const/4 v4, -0x1
 
-    invoke-static {}, Lcom/umeng/analytics/g;->k()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->k()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -672,24 +656,12 @@
     return-object v1
 .end method
 
-.method public final c()V
-    .locals 3
+.method public c()V
+    .locals 2
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "mobclick_agent_header_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Lcom/umeng/analytics/g;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -697,7 +669,7 @@
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
 
-    invoke-static {}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->m()Ljava/lang/String;
 
     move-result-object v1
 
@@ -706,12 +678,12 @@
     return-void
 .end method
 
-.method public final d()[B
+.method public d()[B
     .locals 8
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
 
     move-result-object v0
 
@@ -827,10 +799,10 @@
     goto :goto_2
 .end method
 
-.method public final e()V
+.method public e()V
     .locals 4
 
-    invoke-static {}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
 
     move-result-object v0
 
@@ -861,10 +833,10 @@
     return-void
 .end method
 
-.method public final f()Z
+.method public f()Z
     .locals 4
 
-    invoke-static {}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/umeng/analytics/g;->n()Ljava/lang/String;
 
     move-result-object v0
 
@@ -906,7 +878,7 @@
     goto :goto_0
 .end method
 
-.method public final g()Landroid/content/SharedPreferences;
+.method public g()Landroid/content/SharedPreferences;
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
@@ -936,7 +908,7 @@
     return-object v0
 .end method
 
-.method public final h()Landroid/content/SharedPreferences;
+.method public h()Landroid/content/SharedPreferences;
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
@@ -966,7 +938,7 @@
     return-object v0
 .end method
 
-.method public final i()Landroid/content/SharedPreferences;
+.method public i()Landroid/content/SharedPreferences;
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;
@@ -996,7 +968,7 @@
     return-object v0
 .end method
 
-.method public final j()Landroid/content/SharedPreferences;
+.method public j()Landroid/content/SharedPreferences;
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/g;->b:Landroid/content/Context;

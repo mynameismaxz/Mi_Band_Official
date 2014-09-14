@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
 
 
 # direct methods

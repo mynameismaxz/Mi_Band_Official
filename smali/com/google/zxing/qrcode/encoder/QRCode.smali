@@ -83,7 +83,7 @@
 
 
 # virtual methods
-.method public final at(II)I
+.method public at(II)I
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->j:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
@@ -110,7 +110,7 @@
     return v0
 .end method
 
-.method public final getECLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.method public getECLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->b:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
@@ -118,7 +118,7 @@
     return-object v0
 .end method
 
-.method public final getMaskPattern()I
+.method public getMaskPattern()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->e:I
@@ -126,7 +126,7 @@
     return v0
 .end method
 
-.method public final getMatrix()Lcom/google/zxing/qrcode/encoder/ByteMatrix;
+.method public getMatrix()Lcom/google/zxing/qrcode/encoder/ByteMatrix;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->j:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
@@ -134,7 +134,7 @@
     return-object v0
 .end method
 
-.method public final getMatrixWidth()I
+.method public getMatrixWidth()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->d:I
@@ -142,7 +142,7 @@
     return v0
 .end method
 
-.method public final getMode()Lcom/google/zxing/qrcode/decoder/Mode;
+.method public getMode()Lcom/google/zxing/qrcode/decoder/Mode;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->a:Lcom/google/zxing/qrcode/decoder/Mode;
@@ -150,7 +150,7 @@
     return-object v0
 .end method
 
-.method public final getNumDataBytes()I
+.method public getNumDataBytes()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->g:I
@@ -158,7 +158,7 @@
     return v0
 .end method
 
-.method public final getNumECBytes()I
+.method public getNumECBytes()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->h:I
@@ -166,7 +166,7 @@
     return v0
 .end method
 
-.method public final getNumRSBlocks()I
+.method public getNumRSBlocks()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->i:I
@@ -174,7 +174,7 @@
     return v0
 .end method
 
-.method public final getNumTotalBytes()I
+.method public getNumTotalBytes()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->f:I
@@ -182,7 +182,7 @@
     return v0
 .end method
 
-.method public final getVersion()I
+.method public getVersion()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->c:I
@@ -190,7 +190,7 @@
     return v0
 .end method
 
-.method public final isValid()Z
+.method public isValid()Z
     .locals 3
 
     const/4 v1, -0x1
@@ -288,7 +288,7 @@
     goto :goto_0
 .end method
 
-.method public final setECLevel(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)V
+.method public setECLevel(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->b:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
@@ -296,7 +296,7 @@
     return-void
 .end method
 
-.method public final setMaskPattern(I)V
+.method public setMaskPattern(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->e:I
@@ -304,7 +304,7 @@
     return-void
 .end method
 
-.method public final setMatrix(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+.method public setMatrix(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->j:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
@@ -312,7 +312,7 @@
     return-void
 .end method
 
-.method public final setMatrixWidth(I)V
+.method public setMatrixWidth(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->d:I
@@ -320,7 +320,7 @@
     return-void
 .end method
 
-.method public final setMode(Lcom/google/zxing/qrcode/decoder/Mode;)V
+.method public setMode(Lcom/google/zxing/qrcode/decoder/Mode;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->a:Lcom/google/zxing/qrcode/decoder/Mode;
@@ -328,7 +328,7 @@
     return-void
 .end method
 
-.method public final setNumDataBytes(I)V
+.method public setNumDataBytes(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->g:I
@@ -336,7 +336,7 @@
     return-void
 .end method
 
-.method public final setNumECBytes(I)V
+.method public setNumECBytes(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->h:I
@@ -344,7 +344,7 @@
     return-void
 .end method
 
-.method public final setNumRSBlocks(I)V
+.method public setNumRSBlocks(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->i:I
@@ -352,7 +352,7 @@
     return-void
 .end method
 
-.method public final setNumTotalBytes(I)V
+.method public setNumTotalBytes(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->f:I
@@ -360,7 +360,7 @@
     return-void
 .end method
 
-.method public final setVersion(I)V
+.method public setVersion(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->c:I
@@ -368,7 +368,7 @@
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

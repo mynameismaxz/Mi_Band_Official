@@ -26,7 +26,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/view/VerticalViewPager;->b()[I
+    invoke-static {}, Lcn/com/smartdevices/bracelet/view/VerticalViewPager;->f()[I
 
     move-result-object v0
 

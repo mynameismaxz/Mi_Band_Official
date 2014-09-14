@@ -34,7 +34,7 @@
 
     if-lt v1, v2, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivities([Landroid/content/Intent;Landroid/os/Bundle;)V
+    invoke-static {p0, p1, p2}, Landroid/support/v4/content/c;->a(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)V
 
     :goto_0
     return v0
@@ -44,7 +44,7 @@
 
     if-lt v1, v2, :cond_1
 
-    invoke-virtual {p0, p1}, Landroid/content/Context;->startActivities([Landroid/content/Intent;)V
+    invoke-static {p0, p1}, Landroid/support/v4/content/b;->a(Landroid/content/Context;[Landroid/content/Intent;)V
 
     goto :goto_0
 

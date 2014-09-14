@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
     return v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/event/Subscription;->subscriber:Ljava/lang/Object;

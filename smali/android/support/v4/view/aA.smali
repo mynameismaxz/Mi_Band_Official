@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/aA;
+.class Landroid/support/v4/view/aA;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/ViewPager;
+.field final synthetic a:Landroid/support/v4/view/ViewPager;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/view/aA;->a:Landroid/support/v4/view/ViewPager;
@@ -33,7 +33,7 @@
 
     iget-object v0, p0, Landroid/support/v4/view/aA;->a:Landroid/support/v4/view/ViewPager;
 
-    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->b()V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->c()V
 
     return-void
 .end method

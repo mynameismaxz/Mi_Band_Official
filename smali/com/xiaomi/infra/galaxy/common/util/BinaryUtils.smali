@@ -141,7 +141,7 @@
 
     array-length v0, p0
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 

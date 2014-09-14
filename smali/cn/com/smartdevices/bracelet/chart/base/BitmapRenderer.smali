@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private a:Landroid/graphics/Bitmap;
+.field a:Landroid/graphics/Bitmap;
 
-.field private b:Landroid/graphics/Shader;
+.field b:Landroid/graphics/Shader;
 
 
 # direct methods

@@ -63,6 +63,8 @@
 
     sget-object v0, Lcom/xiaomi/channel/openauth/utils/Base64Coder;->b:[C
 
+    add-int/lit8 v2, v3, 0x1
+
     const/16 v2, 0x2f
 
     aput-char v2, v0, v3
@@ -241,9 +243,9 @@
 
     const/4 v0, 0x0
 
-    move v3, p1
-
     move v5, v0
+
+    move v3, p1
 
     :goto_0
     if-lt v3, v8, :cond_3
@@ -509,7 +511,7 @@
 
     const/4 v1, 0x0
 
-    shl-int/lit8 v0, p2, 0x2
+    mul-int/lit8 v0, p2, 0x4
 
     add-int/lit8 v0, v0, 0x2
 
@@ -519,7 +521,7 @@
 
     div-int/lit8 v0, v0, 0x3
 
-    shl-int/lit8 v0, v0, 0x2
+    mul-int/lit8 v0, v0, 0x4
 
     new-array v7, v0, [C
 
@@ -619,9 +621,9 @@
 
     add-int/lit8 v0, v4, 0x1
 
-    move p1, v2
-
     move v5, v0
+
+    move p1, v2
 
     goto :goto_0
 
@@ -692,7 +694,7 @@
 
     div-int/lit8 v2, v2, 0x3
 
-    shl-int/lit8 v2, v2, 0x2
+    mul-int/lit8 v2, v2, 0x4
 
     invoke-virtual {p4}, Ljava/lang/String;->length()I
 

@@ -105,12 +105,12 @@
     return-void
 .end method
 
-.method private static a([B)Lu/aly/bf;
+.method private a([B)Lu/aly/bf;
     .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
     :goto_0
     return-object v0
@@ -125,7 +125,7 @@
 
     invoke-direct {v2}, Lu/aly/cc;-><init>()V
 
-    invoke-virtual {v2, v1, p0}, Lu/aly/cc;->a(Lu/aly/bz;[B)V
+    invoke-virtual {v2, v1, p1}, Lu/aly/cc;->a(Lu/aly/bz;[B)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -322,7 +322,7 @@
     goto :goto_0
 .end method
 
-.method private static a(Lu/aly/bf;)[B
+.method private a(Lu/aly/bf;)[B
     .locals 1
 
     :try_start_0
@@ -330,7 +330,7 @@
 
     invoke-direct {v0}, Lu/aly/ci;-><init>()V
 
-    invoke-virtual {v0, p0}, Lu/aly/ci;->a(Lu/aly/bz;)[B
+    invoke-virtual {v0, p1}, Lu/aly/ci;->a(Lu/aly/bz;)[B
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -374,7 +374,7 @@
 .end method
 
 .method private e()V
-    .locals 5
+    .locals 4
 
     :try_start_0
     iget-object v0, p0, Lu/aly/j;->e:Lu/aly/w;
@@ -400,148 +400,24 @@
     invoke-virtual {v0, v1}, Lu/aly/q;->a(Lu/aly/ah;)V
 
     :cond_0
-    iget-object v0, p0, Lu/aly/j;->h:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/umeng/analytics/g;->f()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v1}, Lcom/umeng/analytics/g;->d()[B
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v3, p0, Lu/aly/j;->b:Lu/aly/r;
-
-    invoke-virtual {v3, v0}, Lu/aly/r;->a([B)I
-
-    move-result v3
-
-    packed-switch v3, :pswitch_data_0
-
-    :cond_1
-    :goto_1
-    return-void
-
-    :cond_2
-    iget-object v0, p0, Lu/aly/j;->f:Lu/aly/d;
-
-    invoke-virtual {v0}, Lu/aly/d;->a()V
-
-    invoke-virtual {p0}, Lu/aly/j;->c()[B
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    const-string v0, "MobclickAgent"
-
-    const-string v1, "message is null"
-
-    invoke-static {v0, v1}, Lu/aly/bj;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0}, Lu/aly/j;->f()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    :cond_1
+    :goto_0
+    return-void
 
     :catch_0
     move-exception v0
 
+    instance-of v1, v0, Ljava/lang/OutOfMemoryError;
+
+    if-eqz v0, :cond_1
+
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto :goto_1
-
-    :cond_3
-    :try_start_1
-    iget-object v3, p0, Lu/aly/j;->h:Landroid/content/Context;
-
-    iget-object v4, p0, Lu/aly/j;->h:Landroid/content/Context;
-
-    invoke-static {v4}, Lcom/umeng/analytics/AnalyticsConfig;->getAppkey(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4, v0}, Lu/aly/c;->a(Landroid/content/Context;Ljava/lang/String;[B)Lu/aly/c;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lu/aly/c;->c()[B
-
-    move-result-object v0
-
-    invoke-virtual {v1}, Lcom/umeng/analytics/g;->c()V
-
     goto :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Lu/aly/j;->e:Lu/aly/w;
-
-    invoke-virtual {v0}, Lu/aly/w;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lu/aly/j;->e:Lu/aly/w;
-
-    invoke-virtual {v0}, Lu/aly/w;->h()V
-
-    :cond_4
-    iget-object v0, p0, Lu/aly/j;->f:Lu/aly/d;
-
-    invoke-virtual {v0}, Lu/aly/d;->d()V
-
-    iget-object v0, p0, Lu/aly/j;->e:Lu/aly/w;
-
-    invoke-virtual {v0}, Lu/aly/w;->g()V
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v1}, Lcom/umeng/analytics/g;->e()V
-
-    goto :goto_1
-
-    :pswitch_1
-    iget-object v0, p0, Lu/aly/j;->e:Lu/aly/w;
-
-    invoke-virtual {v0}, Lu/aly/w;->g()V
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v1}, Lcom/umeng/analytics/g;->e()V
-
-    goto :goto_1
-
-    :pswitch_2
-    if-nez v2, :cond_5
-
-    invoke-virtual {v1, v0}, Lcom/umeng/analytics/g;->b([B)V
-
-    :cond_5
-    const-string v0, "MobclickAgent"
-
-    const-string v1, "connection error"
-
-    invoke-static {v0, v1}, Lu/aly/bj;->b(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method private f()V
@@ -679,7 +555,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     iget-object v0, p0, Lu/aly/j;->h:Landroid/content/Context;
@@ -710,7 +586,7 @@
     goto :goto_0
 .end method
 
-.method public final a(IJ)V
+.method public a(IJ)V
     .locals 1
 
     long-to-int v0, p2
@@ -724,116 +600,43 @@
     return-void
 .end method
 
-.method public final a(Lu/aly/p;)V
-    .locals 4
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x1
+.method public a(Lu/aly/p;)V
+    .locals 1
 
     if-eqz p1, :cond_0
 
-    iget-object v2, p0, Lu/aly/j;->a:Lu/aly/q;
+    iget-object v0, p0, Lu/aly/j;->a:Lu/aly/q;
 
-    invoke-virtual {v2, p1}, Lu/aly/q;->a(Lu/aly/p;)V
+    invoke-virtual {v0, p1}, Lu/aly/q;->a(Lu/aly/p;)V
 
     :cond_0
-    instance-of v2, p1, Lu/aly/bd;
+    instance-of v0, p1, Lu/aly/bd;
 
-    iget-object v3, p0, Lu/aly/j;->h:Landroid/content/Context;
+    invoke-direct {p0, v0}, Lu/aly/j;->a(Z)Z
 
-    invoke-static {v3}, Lu/aly/bi;->l(Landroid/content/Context;)Z
+    move-result v0
 
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    sget-boolean v2, Lu/aly/bj;->a:Z
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "MobclickAgent"
-
-    const-string v3, "network is unavailable"
-
-    invoke-static {v2, v3}, Lu/aly/bj;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    move v2, v1
-
-    :goto_0
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_2
 
     invoke-direct {p0}, Lu/aly/j;->e()V
 
-    :cond_2
-    :goto_1
+    :cond_1
+    :goto_0
     return-void
 
-    :cond_3
-    iget-object v3, p0, Lu/aly/j;->e:Lu/aly/w;
+    :cond_2
+    invoke-direct {p0}, Lu/aly/j;->d()Z
 
-    invoke-virtual {v3}, Lu/aly/w;->b()Z
+    move-result v0
 
-    move-result v3
-
-    if-eqz v3, :cond_4
-
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_4
-    sget-boolean v3, Lu/aly/bj;->a:Z
-
-    if-eqz v3, :cond_5
-
-    iget-object v3, p0, Lu/aly/j;->h:Landroid/content/Context;
-
-    invoke-static {v3}, Lu/aly/bi;->w(Landroid/content/Context;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_5
-    iget-object v3, p0, Lu/aly/j;->c:Lcom/umeng/analytics/ReportPolicy$e;
-
-    invoke-virtual {v3, v2}, Lcom/umeng/analytics/ReportPolicy$e;->a(Z)Z
-
-    move-result v2
-
-    goto :goto_0
-
-    :cond_6
-    iget-object v2, p0, Lu/aly/j;->a:Lu/aly/q;
-
-    invoke-virtual {v2}, Lu/aly/q;->b()I
-
-    move-result v2
-
-    iget v3, p0, Lu/aly/j;->g:I
-
-    if-le v2, v3, :cond_7
-
-    :goto_2
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lu/aly/j;->b()V
 
-    goto :goto_1
-
-    :cond_7
-    move v0, v1
-
-    goto :goto_2
+    goto :goto_0
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 2
 
     iget-object v0, p0, Lu/aly/j;->a:Lu/aly/q;
@@ -873,12 +676,14 @@
     invoke-virtual {v1}, Lcom/umeng/analytics/g;->c()V
 
     :cond_1
+    if-eqz v0, :cond_0
+
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method
 
-.method public final b(Lu/aly/p;)V
+.method public b(Lu/aly/p;)V
     .locals 1
 
     iget-object v0, p0, Lu/aly/j;->a:Lu/aly/q;
@@ -888,7 +693,7 @@
     return-void
 .end method
 
-.method protected final c()[B
+.method protected c()[B
     .locals 5
 
     const/4 v1, 0x0
@@ -949,7 +754,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {v0}, Lu/aly/j;->a([B)Lu/aly/bf;
+    invoke-direct {p0, v0}, Lu/aly/j;->a([B)Lu/aly/bf;
 
     move-result-object v0
 
@@ -1011,7 +816,7 @@
 
     :cond_5
     :try_start_1
-    invoke-static {v3}, Lu/aly/j;->a(Lu/aly/bf;)[B
+    invoke-direct {p0, v3}, Lu/aly/j;->a(Lu/aly/bf;)[B
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 

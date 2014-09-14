@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Landroid/support/v4/view/Y;
+.field static final a:Landroid/support/v4/view/Y;
 
 
 # direct methods

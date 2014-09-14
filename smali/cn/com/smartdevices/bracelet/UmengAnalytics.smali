@@ -33,6 +33,8 @@
 
 .field public static final EVENT_BTACELET_CALL_NOTIFY:Ljava/lang/String; = "BraceletCallNotify"
 
+.field public static final EVENT_BTACELET_CALL_NOTIFY_TIME:Ljava/lang/String; = "BraceletCallNotifyTime"
+
 .field public static final EVENT_BTACELET_HAND:Ljava/lang/String; = "BraceletHand"
 
 .field public static final EVENT_BTACELET_LIGHT:Ljava/lang/String; = "BraceletLight"

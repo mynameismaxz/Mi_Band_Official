@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -53,7 +53,7 @@
     return-object v0
 .end method
 
-.method public final getNumber()Ljava/lang/String;
+.method public getNumber()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TelParsedResult;->a:Ljava/lang/String;
@@ -61,7 +61,7 @@
     return-object v0
 .end method
 
-.method public final getTelURI()Ljava/lang/String;
+.method public getTelURI()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TelParsedResult;->b:Ljava/lang/String;
@@ -69,7 +69,7 @@
     return-object v0
 .end method
 
-.method public final getTitle()Ljava/lang/String;
+.method public getTitle()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TelParsedResult;->c:Ljava/lang/String;

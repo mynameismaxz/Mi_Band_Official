@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/content/Context;
+.field final synthetic a:Landroid/content/Context;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 5
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->isEnableStatService()Z
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/tencent/stat/StatStore;->b(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
@@ -69,19 +69,19 @@
 
     invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->debug(Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Lcom/tencent/stat/common/StatLogger;->error(Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->b()Ljava/lang/Thread$UncaughtExceptionHandler;
+    invoke-static {}, Lcom/tencent/stat/StatService;->c()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->debug(Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/tencent/stat/StatService;->b()Ljava/lang/Thread$UncaughtExceptionHandler;
+    invoke-static {}, Lcom/tencent/stat/StatService;->c()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lcom/tencent/stat/StatService;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatService;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 

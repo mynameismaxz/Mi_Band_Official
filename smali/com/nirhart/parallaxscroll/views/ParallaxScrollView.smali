@@ -75,9 +75,9 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    const/4 v2, 0x0
+    const v2, 0x3ff33333
 
-    const v1, 0x3ff33333
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
@@ -85,9 +85,9 @@
 
     iput v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->e:I
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -95,9 +95,11 @@
 
     iput-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->h:Ljava/util/ArrayList;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->j:Landroid/view/View;
+
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
 
     const/4 v0, 0x0
 
@@ -109,9 +111,9 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    const/4 v2, 0x0
+    const v2, 0x3ff33333
 
-    const v1, 0x3ff33333
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -119,9 +121,9 @@
 
     iput v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->e:I
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -129,9 +131,11 @@
 
     iput-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->h:Ljava/util/ArrayList;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->j:Landroid/view/View;
+
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
 
     const/4 v0, 0x0
 
@@ -145,9 +149,9 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 3
 
-    const/4 v2, 0x0
+    const v2, 0x3ff33333
 
-    const v1, 0x3ff33333
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -155,9 +159,9 @@
 
     iput v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->e:I
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->f:F
 
-    iput v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
+    iput v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->g:F
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -165,9 +169,11 @@
 
     iput-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->h:Ljava/util/ArrayList;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->i:Landroid/graphics/drawable/Drawable;
 
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->j:Landroid/view/View;
+
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
 
     const/4 v0, 0x0
 
@@ -220,6 +226,10 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->j:Landroid/view/View;
+
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -249,7 +259,7 @@
     goto :goto_0
 .end method
 
-.method private static a(Landroid/view/View;Z)V
+.method private a(Landroid/view/View;Z)V
     .locals 2
 
     sget-boolean v0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->p:Z
@@ -261,12 +271,12 @@
     return-void
 
     :cond_1
-    if-eqz p1, :cond_2
+    if-eqz p2, :cond_2
 
     const/4 v0, 0x2
 
     :goto_1
-    invoke-virtual {p0}, Landroid/view/View;->getLayerType()I
+    invoke-virtual {p1}, Landroid/view/View;->getLayerType()I
 
     move-result v1
 
@@ -274,7 +284,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
     goto :goto_0
 
@@ -422,76 +432,13 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 6
-
-    const/4 v2, 0x0
+    .locals 0
 
     invoke-super {p0}, Landroid/widget/ScrollView;->onFinishInflate()V
 
-    invoke-virtual {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->getChildCount()I
+    invoke-direct {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->a()V
 
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    invoke-virtual {p0, v2}, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/view/ViewGroup;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v2}, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    iget v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->e:I
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v3
-
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result v3
-
-    move v1, v2
-
-    :goto_0
-    if-lt v1, v3, :cond_1
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->k:Landroid/view/View;
-
-    :cond_0
     return-void
-
-    :cond_1
-    new-instance v4, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView$ParallaxedScrollView;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-direct {v4, p0, v5}, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView$ParallaxedScrollView;-><init>(Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;Landroid/view/View;)V
-
-    iget-object v5, p0, Lcom/nirhart/parallaxscroll/views/ParallaxScrollView;->h:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
 .end method
 
 .method protected onScrollChanged(IIII)V

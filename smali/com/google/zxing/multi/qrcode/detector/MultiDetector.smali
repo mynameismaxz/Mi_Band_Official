@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final detectMulti(Ljava/util/Map;)[Lcom/google/zxing/common/DetectorResult;
+.method public detectMulti(Ljava/util/Map;)[Lcom/google/zxing/common/DetectorResult;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {

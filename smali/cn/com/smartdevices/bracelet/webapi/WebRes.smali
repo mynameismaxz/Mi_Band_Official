@@ -857,7 +857,7 @@
 .end method
 
 .method private static d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
-    .locals 8
+    .locals 7
 
     const/4 v1, 0x0
 
@@ -1196,96 +1196,24 @@
 
     move-result-object v4
 
-    sget-object v5, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    const-string v7, "parseComment:"
+    iget-object v5, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcn/com/smartdevices/bracelet/Debug;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v5, Lcn/com/smartdevices/bracelet/model/CommentItem;
-
-    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/model/CommentItem;-><init>()V
-
-    const-string v6, "cid"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    iput-wide v6, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->cid:J
-
-    const-string v6, "user"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v6
-
-    iget-object v7, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->userInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
-
-    invoke-static {v6, v7}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b(Lorg/json/JSONObject;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
-
-    const-string v6, "create_time"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    iput-wide v6, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->createTime:J
-
-    const-string v6, "message"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->message:Ljava/lang/String;
-
-    const-string v6, "source"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->source:Ljava/lang/String;
-
-    const-string v6, "status"
-
-    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    iput v4, v5, Lcn/com/smartdevices/bracelet/model/CommentItem;->status:I
-
-    iget-object v4, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v0, v0, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_8
     iget-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_9
     new-instance v3, Lcn/com/smartdevices/bracelet/model/PersonInfo;
@@ -1984,7 +1912,7 @@
 .end method
 
 .method public static parseFriendList(Ljava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-    .locals 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1997,15 +1925,13 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
-
     sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v3, "parseFriendList:"
+    const-string v2, "parseFriendList:"
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2022,11 +1948,11 @@
     invoke-direct {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;-><init>()V
 
     :try_start_0
-    new-instance v3, Lorg/json/JSONObject;
+    new-instance v2, Lorg/json/JSONObject;
 
-    invoke-direct {v3, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2046,336 +1972,59 @@
     :cond_1
     const-string v1, "data"
 
-    invoke-virtual {v3, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-virtual {v2, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    const-string v3, "list"
+    const-string v2, "list"
 
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {p1, v4}, Ljava/util/ArrayList;->ensureCapacity(I)V
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
-    move v1, v2
+    const/4 v1, 0x0
 
     :goto_1
-    if-ge v1, v4, :cond_0
+    if-ge v1, v3, :cond_0
 
-    invoke-virtual {v3, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {v2, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result-object v2
+    move-result-object v4
 
-    new-instance v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
+    move-result-object v4
 
-    const-string v6, "uid"
+    invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    sget-object v5, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
 
-    move-result v6
+    invoke-virtual {v4}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->toString()Ljava/lang/String;
 
-    if-eqz v6, :cond_2
+    move-result-object v4
 
-    const-string v6, "uid"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_2
-
-    const-string v6, "uid"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    iput-wide v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
-
-    :cond_2
-    const-string v6, "username"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->nickname:Ljava/lang/String;
-
-    const-string v6, "gender"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3
-
-    const-string v6, "gender"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_3
-
-    const-string v6, "gender"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gender:I
-
-    :cond_3
-    const-string v6, "height"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    const-string v6, "height"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_4
-
-    const-string v6, "height"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
-
-    :cond_4
-    const-string v6, "weight"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    const-string v6, "weight"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_5
-
-    const-string v6, "weight"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
-
-    :cond_5
-    const-string v6, "avatar"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->avatarUrl:Ljava/lang/String;
-
-    const-string v6, "birthday"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->birthday:Ljava/lang/String;
-
-    iget-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->birthday:Ljava/lang/String;
-
-    const-string v7, "-"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v7
-
-    const/4 v8, 0x1
-
-    invoke-virtual {v7, v8}, Ljava/util/Calendar;->get(I)I
-
-    move-result v7
-
-    const/4 v8, 0x0
-
-    aget-object v8, v6, v8
-
-    if-eqz v8, :cond_6
-
-    const/4 v8, 0x0
-
-    aget-object v8, v6, v8
-
-    invoke-virtual {v8}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-lez v8, :cond_6
-
-    const/4 v8, 0x0
-
-    aget-object v6, v6, v8
-
-    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    sub-int v6, v7, v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->age:I
-
-    :cond_6
-    const-string v6, "location"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lcn/com/smartdevices/bracelet/model/UserLocationData;->fromJsonStr(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/model/UserLocationData;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->location:Lcn/com/smartdevices/bracelet/model/UserLocationData;
-
-    const-string v6, "source"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->source:Ljava/lang/String;
-
-    const-string v6, "status"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_7
-
-    const-string v6, "status"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_7
-
-    const-string v6, "status"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->state:I
-
-    :cond_7
-    const-string v6, "gid"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_8
-
-    const-string v6, "gid"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-lez v6, :cond_8
-
-    const-string v6, "gid"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gid:I
-
-    :cond_8
-    const-string v6, "signature"
-
-    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->personSignature:Ljava/lang/String;
-
-    const-string v2, ""
-
-    iput-object v2, v5, Lcn/com/smartdevices/bracelet/model/PersonInfo;->pinyin:Ljava/lang/String;
-
-    invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
-
-    invoke-virtual {v5}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v2, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
-    move-object v9, v0
+    move-object v6, v0
 
     move-object v0, v1
 
-    move-object v1, v9
+    move-object v1, v6
 
     :goto_2
     const/4 v2, 0x2
@@ -2390,7 +2039,7 @@
 
     invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_1
     move-exception v1
@@ -2895,7 +2544,7 @@
 .end method
 
 .method public static parseUserTotalSportData(Ljava/lang/String;Lcn/com/smartdevices/bracelet/model/PersonInfo;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-    .locals 5
+    .locals 4
 
     new-instance v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;
 
@@ -2929,51 +2578,7 @@
 
     move-result-object v1
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;
-
-    invoke-direct {v2}, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;-><init>()V
-
-    const-string v3, "steps"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;->steps:Ljava/lang/String;
-
-    const-string v3, "distance"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;->distance:Ljava/lang/String;
-
-    const-string v3, "calories"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;->calories:Ljava/lang/String;
-
-    const-string v3, "averagesteps"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;->averageSteps:Ljava/lang/String;
-
-    const-string v3, "totalwearingdays"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v2, Lcn/com/smartdevices/bracelet/model/UserTotalSportData;->totalwearingdays:Ljava/lang/String;
-
-    iput-object v2, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->totalSportData:Lcn/com/smartdevices/bracelet/model/UserTotalSportData;
+    invoke-static {v1, p1}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a(Lorg/json/JSONObject;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -3000,11 +2605,11 @@
     :catch_1
     move-exception v0
 
-    move-object v4, v0
+    move-object v3, v0
 
     move-object v0, v1
 
-    move-object v1, v4
+    move-object v1, v3
 
     goto :goto_1
 .end method

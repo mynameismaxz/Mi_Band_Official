@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/chart/base/b;
+.class Lcn/com/smartdevices/bracelet/chart/base/b;
 .super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 10
 
     const/16 v6, 0x1518
@@ -77,7 +77,7 @@
     return v0
 .end method
 
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
     const/4 v0, 0x1

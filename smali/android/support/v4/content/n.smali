@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/n;
+.class Landroid/support/v4/content/n;
 .super Ljava/lang/Object;
 
 
@@ -25,7 +25,7 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

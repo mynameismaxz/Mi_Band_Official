@@ -6,18 +6,20 @@
 
 
 # instance fields
-.field a:Landroid/app/Dialog;
+.field d:Landroid/app/Dialog;
 
-.field private synthetic b:Lcom/tencent/connect/auth/c;
+.field final synthetic e:Lcom/tencent/connect/auth/c;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/connect/auth/c;Landroid/app/Dialog;)V
     .locals 0
 
+    iput-object p1, p0, Lcom/tencent/connect/auth/g;->e:Lcom/tencent/connect/auth/c;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/tencent/connect/auth/g;->a:Landroid/app/Dialog;
+    iput-object p2, p0, Lcom/tencent/connect/auth/g;->d:Landroid/app/Dialog;
 
     return-void
 .end method

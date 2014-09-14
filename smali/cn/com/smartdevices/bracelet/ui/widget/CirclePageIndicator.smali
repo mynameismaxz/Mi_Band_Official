@@ -95,6 +95,14 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->e:Landroid/graphics/Paint;
 
+    const/high16 v0, -0x4080
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->q:F
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->r:I
+
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->isInEditMode()Z
 
     move-result v0
@@ -109,13 +117,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f080052
+    const v1, 0x7f080054
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v1
 
-    const v2, 0x7f080051
+    const v2, 0x7f080053
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -127,7 +135,7 @@
 
     move-result v3
 
-    const v4, 0x7f080053
+    const v4, 0x7f080055
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -278,6 +286,10 @@
 
     invoke-static {v0}, Landroid/support/v4/view/ViewConfigurationCompat;->getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
 
+    move-result v0
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->p:I
+
     goto/16 :goto_0
 .end method
 
@@ -324,7 +336,7 @@
 
     int-to-float v3, v3
 
-    shl-int/lit8 v4, v0, 0x1
+    mul-int/lit8 v4, v0, 0x2
 
     int-to-float v4, v4
 
@@ -635,7 +647,7 @@
 
     if-eqz v7, :cond_4
 
-    shl-int/lit8 v7, v6, 0x1
+    mul-int/lit8 v7, v6, 0x2
 
     int-to-float v7, v7
 
@@ -744,18 +756,12 @@
 
     add-float/2addr v0, v1
 
-    move v11, v0
-
-    move v0, v4
-
-    move v4, v11
-
     :goto_4
     iget v1, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->b:F
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->e:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v4, v0, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v4, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto/16 :goto_0
 
@@ -797,7 +803,9 @@
 
     if-nez v3, :cond_b
 
-    move v3, v4
+    move v3, v2
+
+    move v2, v4
 
     :goto_5
     iget-object v7, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->c:Landroid/graphics/Paint;
@@ -810,7 +818,7 @@
 
     iget-object v7, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->c:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v2, v3, v1, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v2, v1, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     :cond_9
     iget v7, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->b:F
@@ -823,7 +831,7 @@
 
     iget-object v8, p0, Lcn/com/smartdevices/bracelet/ui/widget/CirclePageIndicator;->d:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v2, v3, v7, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v2, v7, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     :cond_a
     add-int/lit8 v2, v5, 0x1
@@ -833,9 +841,7 @@
     goto :goto_2
 
     :cond_b
-    move v3, v2
-
-    move v2, v4
+    move v3, v4
 
     goto :goto_5
 
@@ -846,6 +852,12 @@
 
     :cond_d
     add-float/2addr v0, v1
+
+    move v11, v0
+
+    move v0, v4
+
+    move v4, v11
 
     goto :goto_4
 .end method

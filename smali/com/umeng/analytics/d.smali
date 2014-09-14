@@ -79,21 +79,10 @@
 .end method
 
 .method static synthetic a(Lcom/umeng/analytics/d;Landroid/content/Context;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/umeng/analytics/d;->f:Lu/aly/v;
+    invoke-direct {p0, p1}, Lcom/umeng/analytics/d;->g(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p1}, Lu/aly/v;->c(Landroid/content/Context;)V
-
-    iget-object v0, p0, Lcom/umeng/analytics/d;->c:Lcom/umeng/analytics/c;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/umeng/analytics/d;->c:Lcom/umeng/analytics/c;
-
-    invoke-interface {v0}, Lcom/umeng/analytics/c;->a()V
-
-    :cond_0
     return-void
 .end method
 
@@ -198,7 +187,7 @@
     return-void
 .end method
 
-.method final a(Landroid/content/Context;)V
+.method a(Landroid/content/Context;)V
     .locals 2
 
     if-nez p1, :cond_0
@@ -236,7 +225,7 @@
     goto :goto_0
 .end method
 
-.method final a(Landroid/content/Context;Ljava/lang/String;)V
+.method a(Landroid/content/Context;Ljava/lang/String;)V
     .locals 3
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -298,7 +287,7 @@
     goto :goto_0
 .end method
 
-.method final a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+.method a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
     :try_start_0
@@ -416,7 +405,7 @@
     goto :goto_0
 .end method
 
-.method final a(Landroid/content/Context;Ljava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+.method a(Landroid/content/Context;Ljava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -464,7 +453,7 @@
     goto :goto_0
 .end method
 
-.method final a(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;J)V
+.method a(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;J)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -508,7 +497,7 @@
     goto :goto_0
 .end method
 
-.method final a(Landroid/content/Context;Ljava/lang/Throwable;)V
+.method a(Landroid/content/Context;Ljava/lang/Throwable;)V
     .locals 3
 
     if-eqz p1, :cond_0
@@ -566,7 +555,7 @@
     return-void
 .end method
 
-.method final a(Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;)V
+.method a(Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/d;->a:Lcom/umeng/analytics/onlineconfig/a;
@@ -576,7 +565,7 @@
     return-void
 .end method
 
-.method final a(Ljava/lang/String;)V
+.method a(Ljava/lang/String;)V
     .locals 1
 
     sget-boolean v0, Lcom/umeng/analytics/AnalyticsConfig;->ACTIVITY_DURATION_OPEN:Z
@@ -675,7 +664,7 @@
     goto :goto_0
 .end method
 
-.method final b(Landroid/content/Context;)V
+.method b(Landroid/content/Context;)V
     .locals 3
 
     if-nez p1, :cond_0
@@ -737,7 +726,34 @@
     goto :goto_0
 .end method
 
-.method final b(Ljava/lang/String;)V
+.method b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    :try_start_0
+    new-instance v0, Lcom/umeng/analytics/o;
+
+    invoke-direct {v0, p0, p2, p3}, Lcom/umeng/analytics/o;-><init>(Lcom/umeng/analytics/d;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/umeng/analytics/e;->a(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "MobclickAgent"
+
+    const-string v2, ""
+
+    invoke-static {v1, v2, v0}, Lu/aly/bj;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
+
+    goto :goto_0
+.end method
+
+.method b(Ljava/lang/String;)V
     .locals 1
 
     sget-boolean v0, Lcom/umeng/analytics/AnalyticsConfig;->ACTIVITY_DURATION_OPEN:Z
@@ -763,34 +779,7 @@
     goto :goto_0
 .end method
 
-.method final b(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-
-    :try_start_0
-    new-instance v0, Lcom/umeng/analytics/o;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/umeng/analytics/o;-><init>(Lcom/umeng/analytics/d;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lcom/umeng/analytics/e;->a(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "MobclickAgent"
-
-    const-string v2, ""
-
-    invoke-static {v1, v2, v0}, Lu/aly/bj;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
-
-    goto :goto_0
-.end method
-
-.method final c(Landroid/content/Context;)V
+.method c(Landroid/content/Context;)V
     .locals 3
 
     if-nez p1, :cond_0
@@ -852,13 +841,13 @@
     goto :goto_0
 .end method
 
-.method final c(Ljava/lang/String;Ljava/lang/String;)V
+.method c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
     :try_start_0
     new-instance v0, Lcom/umeng/analytics/q;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/umeng/analytics/q;-><init>(Lcom/umeng/analytics/d;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, p3}, Lcom/umeng/analytics/q;-><init>(Lcom/umeng/analytics/d;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/umeng/analytics/e;->a(Ljava/lang/Runnable;)V
     :try_end_0
@@ -879,7 +868,7 @@
     goto :goto_0
 .end method
 
-.method final d(Landroid/content/Context;)V
+.method d(Landroid/content/Context;)V
     .locals 3
 
     :try_start_0
@@ -911,7 +900,7 @@
     goto :goto_0
 .end method
 
-.method final e(Landroid/content/Context;)V
+.method e(Landroid/content/Context;)V
     .locals 1
 
     :try_start_0

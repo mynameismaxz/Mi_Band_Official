@@ -79,15 +79,21 @@
 
     shr-int/lit8 v0, v0, 0x10
 
+    and-int/lit16 v0, v0, 0xff
+
     int-to-byte v0, v0
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetColorThemeTask;->a:I
 
     shr-int/lit8 v1, v1, 0x8
 
+    and-int/lit16 v1, v1, 0xff
+
     int-to-byte v1, v1
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetColorThemeTask;->a:I
+
+    and-int/lit16 v2, v2, 0xff
 
     int-to-byte v2, v2
 

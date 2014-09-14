@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/Q;
+.class Landroid/support/v4/widget/Q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/ViewDragHelper;
+.field final synthetic a:Landroid/support/v4/widget/ViewDragHelper;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/Q;->a:Landroid/support/v4/widget/ViewDragHelper;

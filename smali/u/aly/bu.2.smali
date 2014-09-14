@@ -108,21 +108,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {v2}, Ljava/util/zip/Deflater;->end()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    if-eqz v1, :cond_2
+
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
 
+    :cond_2
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     :try_start_2
     invoke-virtual {v2, v3}, Ljava/util/zip/Deflater;->deflate([B)I
 
@@ -146,11 +149,11 @@
     move-exception v0
 
     :goto_2
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    :cond_3
+    :cond_4
     throw v0
 
     :catchall_1

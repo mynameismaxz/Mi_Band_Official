@@ -1,9 +1,9 @@
-.class final Lcom/tencent/weiyun/h;
+.class Lcom/tencent/weiyun/h;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/weiyun/f;
+.field final synthetic a:Lcom/tencent/weiyun/f;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 7
 
     iget-object v0, p0, Lcom/tencent/weiyun/h;->a:Lcom/tencent/weiyun/f;
@@ -105,6 +105,12 @@
     move-result-wide v5
 
     invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ""
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 

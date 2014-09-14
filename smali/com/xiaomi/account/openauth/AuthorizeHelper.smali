@@ -759,13 +759,9 @@
     throw v0
 
     :cond_2
-    new-instance v0, Landroid/content/Intent;
+    invoke-static {p0}, Lcom/xiaomi/account/openauth/AuthorizeHelper;->a(Landroid/content/Context;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    const-class v1, Lcom/xiaomi/account/openauth/AuthorizeActivity;
-
-    invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    move-result-object v0
 
     invoke-virtual {p0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 

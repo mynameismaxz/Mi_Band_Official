@@ -131,19 +131,18 @@
 
     invoke-direct {v1, v0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    :cond_4
-    :goto_2
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v3, "> "
 
     invoke-virtual {v0, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
+    :goto_2
     invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     const-string v0, "exit"
 
@@ -151,14 +150,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
-    :cond_5
+    :cond_4
     invoke-virtual {v2}, Lorg/keplerproject/luajava/LuaState;->close()V
 
     goto :goto_1
 
-    :cond_6
+    :cond_5
     invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v0
@@ -169,7 +168,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     const/4 v0, 0x0
 
@@ -181,8 +180,8 @@
 
     move-result v0
 
-    :cond_7
-    if-eqz v0, :cond_4
+    :cond_6
+    if-eqz v0, :cond_7
 
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
@@ -211,6 +210,13 @@
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    :cond_7
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    const-string v3, "> "
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

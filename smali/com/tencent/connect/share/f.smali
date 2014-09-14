@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/String;
 
-.field private synthetic b:Landroid/os/Handler;
+.field final synthetic b:Landroid/os/Handler;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 6
 
     const/16 v5, 0x8c
@@ -69,9 +69,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "share2qq_temp"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

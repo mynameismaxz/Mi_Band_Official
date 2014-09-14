@@ -1,9 +1,9 @@
-.class final Lu/aly/cX;
+.class Lu/aly/cX;
 .super Lcom/umeng/analytics/f;
 
 
 # instance fields
-.field private synthetic a:Lu/aly/k;
+.field final synthetic a:Lu/aly/k;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 1
 
     iget-object v0, p0, Lu/aly/cX;->a:Lu/aly/k;

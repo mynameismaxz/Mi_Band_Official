@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/l;
+.class Lcom/nineoldandroids/view/l;
 .super Ljava/lang/Object;
 
 

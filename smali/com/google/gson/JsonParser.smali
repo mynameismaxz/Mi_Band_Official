@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+.method public parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
     .locals 5
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->isLenient()Z
@@ -45,9 +45,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "Failed parsing JSON source: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -84,9 +88,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "Failed parsing JSON source: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -109,7 +117,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 .end method
 
-.method public final parse(Ljava/io/Reader;)Lcom/google/gson/JsonElement;
+.method public parse(Ljava/io/Reader;)Lcom/google/gson/JsonElement;
     .locals 3
 
     :try_start_0
@@ -178,7 +186,7 @@
     return-object v1
 .end method
 
-.method public final parse(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+.method public parse(Ljava/lang/String;)Lcom/google/gson/JsonElement;
     .locals 1
 
     new-instance v0, Ljava/io/StringReader;

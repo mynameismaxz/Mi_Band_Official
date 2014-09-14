@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/r;
+.class Lcom/tencent/stat/r;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/util/List;
+.field final synthetic a:Ljava/util/List;
 
-.field private synthetic b:I
+.field final synthetic b:I
 
-.field private synthetic c:Lcom/tencent/stat/q;
+.field final synthetic c:Lcom/tencent/stat/q;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 3
 
     const/4 v2, -0x1
@@ -84,20 +84,20 @@
     goto :goto_0
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 3
 
     iget-object v0, p0, Lcom/tencent/stat/r;->c:Lcom/tencent/stat/q;
 
     iget-object v0, v0, Lcom/tencent/stat/q;->b:Lcom/tencent/stat/StatStore;
 
-    iget v1, v0, Lcom/tencent/stat/StatStore;->a:I
+    iget v1, v0, Lcom/tencent/stat/StatStore;->b:I
 
     iget v2, p0, Lcom/tencent/stat/r;->b:I
 
     add-int/2addr v1, v2
 
-    iput v1, v0, Lcom/tencent/stat/StatStore;->a:I
+    iput v1, v0, Lcom/tencent/stat/StatStore;->b:I
 
     iget-object v0, p0, Lcom/tencent/stat/r;->c:Lcom/tencent/stat/q;
 

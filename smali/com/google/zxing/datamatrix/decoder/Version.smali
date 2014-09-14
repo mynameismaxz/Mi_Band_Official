@@ -24,1103 +24,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 15
+    .locals 1
 
-    const/16 v0, 0x1e
+    invoke-static {}, Lcom/google/zxing/datamatrix/decoder/Version;->b()[Lcom/google/zxing/datamatrix/decoder/Version;
 
-    new-array v7, v0, [Lcom/google/zxing/datamatrix/decoder/Version;
+    move-result-object v0
 
-    const/4 v8, 0x0
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x1
-
-    const/16 v2, 0xa
-
-    const/16 v3, 0xa
-
-    const/16 v4, 0x8
-
-    const/16 v5, 0x8
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/4 v9, 0x5
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/4 v12, 0x3
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x1
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x2
-
-    const/16 v2, 0xc
-
-    const/16 v3, 0xc
-
-    const/16 v4, 0xa
-
-    const/16 v5, 0xa
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/4 v9, 0x7
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/4 v12, 0x5
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x2
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x3
-
-    const/16 v2, 0xe
-
-    const/16 v3, 0xe
-
-    const/16 v4, 0xc
-
-    const/16 v5, 0xc
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0xa
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x8
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x3
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x4
-
-    const/16 v2, 0x10
-
-    const/16 v3, 0x10
-
-    const/16 v4, 0xe
-
-    const/16 v5, 0xe
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0xc
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0xc
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x4
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x5
-
-    const/16 v2, 0x12
-
-    const/16 v3, 0x12
-
-    const/16 v4, 0x10
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0xe
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x12
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x5
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x6
-
-    const/16 v2, 0x14
-
-    const/16 v3, 0x14
-
-    const/16 v4, 0x12
-
-    const/16 v5, 0x12
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x12
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x16
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x6
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/4 v1, 0x7
-
-    const/16 v2, 0x16
-
-    const/16 v3, 0x16
-
-    const/16 v4, 0x14
-
-    const/16 v5, 0x14
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x14
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x1e
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/4 v8, 0x7
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x8
-
-    const/16 v2, 0x18
-
-    const/16 v3, 0x18
-
-    const/16 v4, 0x16
-
-    const/16 v5, 0x16
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x18
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x24
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x8
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x9
-
-    const/16 v2, 0x1a
-
-    const/16 v3, 0x1a
-
-    const/16 v4, 0x18
-
-    const/16 v5, 0x18
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x1c
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x2c
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x9
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xa
-
-    const/16 v2, 0x20
-
-    const/16 v3, 0x20
-
-    const/16 v4, 0xe
-
-    const/16 v5, 0xe
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x24
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x3e
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xa
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xb
-
-    const/16 v2, 0x24
-
-    const/16 v3, 0x24
-
-    const/16 v4, 0x10
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x2a
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x56
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xb
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xc
-
-    const/16 v2, 0x28
-
-    const/16 v3, 0x28
-
-    const/16 v4, 0x12
-
-    const/16 v5, 0x12
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x30
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x72
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xc
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xd
-
-    const/16 v2, 0x2c
-
-    const/16 v3, 0x2c
-
-    const/16 v4, 0x14
-
-    const/16 v5, 0x14
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x38
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x90
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xd
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xe
-
-    const/16 v2, 0x30
-
-    const/16 v3, 0x30
-
-    const/16 v4, 0x16
-
-    const/16 v5, 0x16
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x44
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0xae
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xe
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0xf
-
-    const/16 v2, 0x34
-
-    const/16 v3, 0x34
-
-    const/16 v4, 0x18
-
-    const/16 v5, 0x18
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x2a
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x2
-
-    const/16 v12, 0x66
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0xf
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x10
-
-    const/16 v2, 0x40
-
-    const/16 v3, 0x40
-
-    const/16 v4, 0xe
-
-    const/16 v5, 0xe
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x38
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x2
-
-    const/16 v12, 0x8c
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x10
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x11
-
-    const/16 v2, 0x48
-
-    const/16 v3, 0x48
-
-    const/16 v4, 0x10
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x24
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x4
-
-    const/16 v12, 0x5c
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x11
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x12
-
-    const/16 v2, 0x50
-
-    const/16 v3, 0x50
-
-    const/16 v4, 0x12
-
-    const/16 v5, 0x12
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x30
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x4
-
-    const/16 v12, 0x72
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x12
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x13
-
-    const/16 v2, 0x58
-
-    const/16 v3, 0x58
-
-    const/16 v4, 0x14
-
-    const/16 v5, 0x14
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x38
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x4
-
-    const/16 v12, 0x90
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x13
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x14
-
-    const/16 v2, 0x60
-
-    const/16 v3, 0x60
-
-    const/16 v4, 0x16
-
-    const/16 v5, 0x16
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x44
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x4
-
-    const/16 v12, 0xae
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x14
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x15
-
-    const/16 v2, 0x68
-
-    const/16 v3, 0x68
-
-    const/16 v4, 0x18
-
-    const/16 v5, 0x18
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x38
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x6
-
-    const/16 v12, 0x88
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x15
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x16
-
-    const/16 v2, 0x78
-
-    const/16 v3, 0x78
-
-    const/16 v4, 0x12
-
-    const/16 v5, 0x12
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x44
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x6
-
-    const/16 v12, 0xaf
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x16
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x17
-
-    const/16 v2, 0x84
-
-    const/16 v3, 0x84
-
-    const/16 v4, 0x14
-
-    const/16 v5, 0x14
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x3e
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/16 v11, 0x8
-
-    const/16 v12, 0xa3
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x17
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x18
-
-    const/16 v2, 0x90
-
-    const/16 v3, 0x90
-
-    const/16 v4, 0x16
-
-    const/16 v5, 0x16
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x3e
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/16 v11, 0x8
-
-    const/16 v12, 0x9c
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    new-instance v11, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x9b
-
-    const/4 v14, 0x0
-
-    invoke-direct {v11, v12, v13, v14}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v12, 0x0
-
-    invoke-direct {v6, v9, v10, v11, v12}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x18
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x19
-
-    const/16 v2, 0x8
-
-    const/16 v3, 0x12
-
-    const/4 v4, 0x6
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/4 v9, 0x7
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/4 v12, 0x5
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x19
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x1a
-
-    const/16 v2, 0x8
-
-    const/16 v3, 0x20
-
-    const/4 v4, 0x6
-
-    const/16 v5, 0xe
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0xb
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0xa
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x1a
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x1b
-
-    const/16 v2, 0xc
-
-    const/16 v3, 0x1a
-
-    const/16 v4, 0xa
-
-    const/16 v5, 0x18
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0xe
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x10
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x1b
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x1c
-
-    const/16 v2, 0xc
-
-    const/16 v3, 0x24
-
-    const/16 v4, 0xa
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x12
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x16
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x1c
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x1d
-
-    const/16 v2, 0x10
-
-    const/16 v3, 0x24
-
-    const/16 v4, 0xe
-
-    const/16 v5, 0x10
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x18
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x20
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    const/16 v8, 0x1d
-
-    new-instance v0, Lcom/google/zxing/datamatrix/decoder/Version;
-
-    const/16 v1, 0x1e
-
-    const/16 v2, 0x10
-
-    const/16 v3, 0x30
-
-    const/16 v4, 0xe
-
-    const/16 v5, 0x16
-
-    new-instance v6, Lcom/google/zxing/datamatrix/decoder/h;
-
-    const/16 v9, 0x1c
-
-    new-instance v10, Lcom/google/zxing/datamatrix/decoder/g;
-
-    const/4 v11, 0x1
-
-    const/16 v12, 0x31
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
-
-    const/4 v11, 0x0
-
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
-
-    aput-object v0, v7, v8
-
-    sput-object v7, Lcom/google/zxing/datamatrix/decoder/Version;->a:[Lcom/google/zxing/datamatrix/decoder/Version;
+    sput-object v0, Lcom/google/zxing/datamatrix/decoder/Version;->a:[Lcom/google/zxing/datamatrix/decoder/Version;
 
     return-void
 .end method
@@ -1218,11 +128,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1254,11 +164,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1290,11 +200,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1326,11 +236,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1362,11 +272,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1398,11 +308,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1434,11 +344,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1470,11 +380,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1506,11 +416,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1542,11 +452,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1578,11 +488,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1614,11 +524,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1650,11 +560,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1686,11 +596,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1722,11 +632,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1758,11 +668,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1794,11 +704,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1830,11 +740,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1866,11 +776,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1902,11 +812,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1938,11 +848,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -1974,11 +884,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2010,11 +920,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2046,7 +956,7 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     new-instance v11, Lcom/google/zxing/datamatrix/decoder/g;
 
@@ -2056,11 +966,11 @@
 
     const/4 v14, 0x0
 
-    invoke-direct {v11, v12, v13, v14}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v11, v12, v13, v14}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v12, 0x0
 
-    invoke-direct {v6, v9, v10, v11, v12}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11, v12}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2092,11 +1002,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2128,11 +1038,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2164,11 +1074,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2200,11 +1110,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2236,11 +1146,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2272,11 +1182,11 @@
 
     const/4 v13, 0x0
 
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IIB)V
+    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(IILcom/google/zxing/datamatrix/decoder/f;)V
 
     const/4 v11, 0x0
 
-    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;B)V
+    invoke-direct {v6, v9, v10, v11}, Lcom/google/zxing/datamatrix/decoder/h;-><init>(ILcom/google/zxing/datamatrix/decoder/g;Lcom/google/zxing/datamatrix/decoder/f;)V
 
     invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/decoder/Version;-><init>(IIIIILcom/google/zxing/datamatrix/decoder/h;)V
 
@@ -2342,7 +1252,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/datamatrix/decoder/h;
+.method a()Lcom/google/zxing/datamatrix/decoder/h;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->g:Lcom/google/zxing/datamatrix/decoder/h;
@@ -2350,7 +1260,7 @@
     return-object v0
 .end method
 
-.method public final getDataRegionSizeColumns()I
+.method public getDataRegionSizeColumns()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->f:I
@@ -2358,7 +1268,7 @@
     return v0
 .end method
 
-.method public final getDataRegionSizeRows()I
+.method public getDataRegionSizeRows()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->e:I
@@ -2366,7 +1276,7 @@
     return v0
 .end method
 
-.method public final getSymbolSizeColumns()I
+.method public getSymbolSizeColumns()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->d:I
@@ -2374,7 +1284,7 @@
     return v0
 .end method
 
-.method public final getSymbolSizeRows()I
+.method public getSymbolSizeRows()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->c:I
@@ -2382,7 +1292,7 @@
     return v0
 .end method
 
-.method public final getTotalCodewords()I
+.method public getTotalCodewords()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->h:I
@@ -2390,7 +1300,7 @@
     return v0
 .end method
 
-.method public final getVersionNumber()I
+.method public getVersionNumber()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->b:I
@@ -2398,7 +1308,7 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version;->b:I

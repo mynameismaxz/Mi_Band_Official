@@ -11,7 +11,7 @@
 
 .field public static final START:I = 0x800003
 
-.field private static a:Landroid/support/v4/view/m;
+.field static final a:Landroid/support/v4/view/m;
 
 
 # direct methods

@@ -398,7 +398,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lcom/umeng/analytics/d;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0, p1, v1}, Lcom/umeng/analytics/d;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -408,7 +408,7 @@
 
     sget-object v0, Lcom/umeng/analytics/MobclickAgent;->b:Lcom/umeng/analytics/d;
 
-    invoke-virtual {v0, p1, p2}, Lcom/umeng/analytics/d;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0, p1, p2}, Lcom/umeng/analytics/d;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -508,7 +508,7 @@
 
     sget-object v0, Lcom/umeng/analytics/MobclickAgent;->b:Lcom/umeng/analytics/d;
 
-    invoke-virtual {v0, p1, p2}, Lcom/umeng/analytics/d;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0, p1, p2}, Lcom/umeng/analytics/d;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

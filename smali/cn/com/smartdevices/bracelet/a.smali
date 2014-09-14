@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/a;
+.class Lcn/com/smartdevices/bracelet/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/BraceletApp;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/BraceletApp;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/BraceletApp;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/a;->a:Lcn/com/smartdevices/bracelet/BraceletApp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 1
 
     instance-of v0, p2, Lcom/xiaomi/hm/bleservice/BLEService$BLEServiceBinder;
@@ -39,7 +41,7 @@
     return-void
 .end method
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 1
 
     const/4 v0, 0x0

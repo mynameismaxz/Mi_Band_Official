@@ -143,7 +143,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, ".VERSION: 2.0.0.20140514"
+    const-string v1, ".VERSION: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "2.0.0.20140514"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -521,13 +527,17 @@
 
     const/4 v0, 0x7
 
-    int-to-byte v1, p2
+    and-int/lit16 v1, p2, 0xff
+
+    int-to-byte v1, v1
 
     aput-byte v1, v7, v0
 
     const/16 v0, 0x8
 
     shr-int/lit8 v1, p2, 0x8
+
+    and-int/lit16 v1, v1, 0xff
 
     int-to-byte v1, v1
 
@@ -1641,7 +1651,7 @@
 
 
 # virtual methods
-.method public final _factoryReset()Z
+.method public _factoryReset()Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1665,7 +1675,7 @@
     return v0
 .end method
 
-.method public final _getBatteryInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+.method public _getBatteryInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
     .locals 7
 
     const/4 v6, 0x5
@@ -1792,7 +1802,7 @@
     goto :goto_1
 .end method
 
-.method public final _getDateTime()Landroid/util/Pair;
+.method public _getDateTime()Landroid/util/Pair;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1937,7 +1947,7 @@
     goto :goto_1
 .end method
 
-.method public final _getDeviceName()Ljava/lang/String;
+.method public _getDeviceName()Ljava/lang/String;
     .locals 2
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1963,7 +1973,7 @@
     goto :goto_0
 .end method
 
-.method public final _getLEParams()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;
+.method public _getLEParams()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;
     .locals 9
 
     const/4 v1, 0x1
@@ -2120,7 +2130,7 @@
     goto :goto_1
 .end method
 
-.method public final _getUsage()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Usage;
+.method public _getUsage()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Usage;
     .locals 6
 
     const/4 v1, 0x0
@@ -2200,7 +2210,7 @@
     goto :goto_1
 .end method
 
-.method public final _getUserInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
+.method public _getUserInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
     .locals 9
 
     const/4 v1, 0x0
@@ -2368,7 +2378,7 @@
     goto :goto_3
 .end method
 
-.method public final _notify(B)Z
+.method public _notify(B)Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2396,7 +2406,7 @@
     return v0
 .end method
 
-.method public final _reboot()Z
+.method public _reboot()Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2420,7 +2430,7 @@
     return v0
 .end method
 
-.method public final _remoteDisconnect()Z
+.method public _remoteDisconnect()Z
     .locals 4
 
     const/4 v3, 0x1
@@ -2442,7 +2452,7 @@
     return v0
 .end method
 
-.method public final _resetBatteryInfo()Z
+.method public _resetBatteryInfo()Z
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2452,7 +2462,7 @@
     return v0
 .end method
 
-.method public final _resetUsage()Z
+.method public _resetUsage()Z
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2462,7 +2472,7 @@
     return v0
 .end method
 
-.method public final _selfTest()Z
+.method public _selfTest()Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2486,7 +2496,7 @@
     return v0
 .end method
 
-.method public final _sendNotification(B)Z
+.method public _sendNotification(B)Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2514,7 +2524,7 @@
     return v0
 .end method
 
-.method public final _setDateTime(Ljava/util/Calendar;)Z
+.method public _setDateTime(Ljava/util/Calendar;)Z
     .locals 14
 
     const/16 v13, 0xb
@@ -2624,7 +2634,7 @@
     return v0
 .end method
 
-.method public final _setDeviceName(Ljava/lang/String;)Z
+.method public _setDeviceName(Ljava/lang/String;)Z
     .locals 2
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2642,7 +2652,7 @@
     return v0
 .end method
 
-.method public final _setLEParams(IIIII)Z
+.method public _setLEParams(IIIII)Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2655,7 +2665,9 @@
 
     const/4 v2, 0x0
 
-    int-to-byte v3, p1
+    and-int/lit16 v3, p1, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -2663,13 +2675,17 @@
 
     shr-int/lit8 v3, p1, 0x8
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/4 v2, 0x2
 
-    int-to-byte v3, p2
+    and-int/lit16 v3, p2, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -2677,13 +2693,17 @@
 
     shr-int/lit8 v3, p2, 0x8
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/4 v2, 0x4
 
-    int-to-byte v3, p3
+    and-int/lit16 v3, p3, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -2691,13 +2711,17 @@
 
     shr-int/lit8 v3, p3, 0x8
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/4 v2, 0x6
 
-    int-to-byte v3, p4
+    and-int/lit16 v3, p4, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -2705,19 +2729,25 @@
 
     shr-int/lit8 v3, p4, 0x8
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/16 v2, 0xa
 
-    int-to-byte v3, p5
+    and-int/lit16 v3, p5, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/16 v2, 0xb
 
     shr-int/lit8 v3, p5, 0x8
+
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -2730,7 +2760,7 @@
     return v0
 .end method
 
-.method public final _sync()Z
+.method public _sync()Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2754,7 +2784,7 @@
     return v0
 .end method
 
-.method public final _wirteMD5([B)Z
+.method public _wirteMD5([B)Z
     .locals 5
 
     const/16 v4, 0x10
@@ -2806,7 +2836,7 @@
     goto :goto_1
 .end method
 
-.method public final authenticate(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
+.method public authenticate(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
     .locals 2
 
     const/4 v0, 0x0
@@ -2843,7 +2873,7 @@
     goto :goto_0
 .end method
 
-.method public final cleanup()V
+.method public cleanup()V
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -2923,7 +2953,7 @@
     goto :goto_0
 .end method
 
-.method public final enableRealtimeStepNotification(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;)Z
+.method public enableRealtimeStepNotification(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;)Z
     .locals 5
 
     const/4 v1, 0x1
@@ -2962,7 +2992,7 @@
     return v0
 .end method
 
-.method public final getActivities()Ljava/util/List;
+.method public getActivities()Ljava/util/List;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3152,7 +3182,7 @@
     goto :goto_1
 .end method
 
-.method public final getActivitySyncingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
+.method public getActivitySyncingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -3162,7 +3192,7 @@
     return-object v0
 .end method
 
-.method public final getCachedBatteryInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+.method public getCachedBatteryInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CacheBatteryInfo:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
@@ -3170,7 +3200,7 @@
     return-object v0
 .end method
 
-.method public final getCachedDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
+.method public getCachedDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -3180,7 +3210,7 @@
     return-object v0
 .end method
 
-.method public final getDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
+.method public getDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
     .locals 9
 
     const/4 v8, 0x2
@@ -3428,7 +3458,7 @@
     goto/16 :goto_0
 .end method
 
-.method public final getFirmwareUpdatingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
+.method public getFirmwareUpdatingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -3438,7 +3468,7 @@
     return-object v0
 .end method
 
-.method public final getProfileState()I
+.method public getProfileState()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ProfileState:I
@@ -3446,7 +3476,7 @@
     return v0
 .end method
 
-.method public final getRealtimeSteps()I
+.method public getRealtimeSteps()I
     .locals 5
 
     const/4 v1, 0x1
@@ -3507,7 +3537,7 @@
     goto :goto_1
 .end method
 
-.method public final init()Z
+.method public init()Z
     .locals 4
 
     const/4 v0, 0x1
@@ -3542,7 +3572,10 @@
 
     invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
+
+    :cond_0
+    if-eqz v1, :cond_1
 
     const-string v1, "================================================="
 
@@ -3588,7 +3621,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const-string v0, "================================================="
 
     invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
@@ -3630,7 +3663,7 @@
     goto :goto_1
 .end method
 
-.method public final bridge synthetic refreshGatt()V
+.method public bridge synthetic refreshGatt()V
     .locals 0
 
     invoke-super {p0}, Lcom/xiaomi/hm/bleservice/gatt/GattPeripheral;->refreshGatt()V
@@ -3638,7 +3671,7 @@
     return-void
 .end method
 
-.method public final resetActivitySyncingProgress()V
+.method public resetActivitySyncingProgress()V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ActivitySyncingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
@@ -3656,7 +3689,7 @@
     return-void
 .end method
 
-.method public final resetFirmwareUpdatingProgress()V
+.method public resetFirmwareUpdatingProgress()V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
@@ -3674,7 +3707,7 @@
     return-void
 .end method
 
-.method public final sendFirmwareData([B)Z
+.method public sendFirmwareData([B)Z
     .locals 10
 
     const/16 v9, 0x14
@@ -3685,11 +3718,9 @@
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
 
-    new-array v5, v9, [B
+    array-length v5, p1
 
-    array-length v6, p1
-
-    div-int/lit8 v7, v6, 0x14
+    div-int/lit8 v6, v5, 0x14
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3697,7 +3728,7 @@
 
     invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -3709,7 +3740,7 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
-    iput v6, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->total:I
+    iput v5, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->total:I
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -3720,9 +3751,9 @@
     move v4, v1
 
     :goto_0
-    if-lt v3, v7, :cond_1
+    if-lt v3, v6, :cond_1
 
-    rem-int/lit8 v0, v6, 0x14
+    rem-int/lit8 v0, v5, 0x14
 
     if-nez v0, :cond_4
 
@@ -3739,6 +3770,8 @@
     return v1
 
     :cond_1
+    new-array v7, v9, [B
+
     move v0, v1
 
     :goto_2
@@ -3746,7 +3779,7 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {p0, v0, v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
+    invoke-virtual {p0, v0, v7}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
 
     move-result v0
 
@@ -3756,19 +3789,19 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
-    iget v8, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
+    iget v7, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
 
-    add-int/lit8 v8, v8, 0x14
+    add-int/lit8 v7, v7, 0x14
 
-    iput v8, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
+    iput v7, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
 
     add-int/lit8 v0, v4, 0x14
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v8, "transferedPackets = "
+    const-string v7, "transferedPackets = "
 
-    invoke-direct {v4, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3802,23 +3835,23 @@
 
     aget-byte v8, p1, v8
 
-    aput-byte v8, v5, v0
+    aput-byte v8, v7, v0
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     :cond_4
-    rem-int/lit8 v0, v6, 0x14
+    rem-int/lit8 v0, v5, 0x14
 
     new-array v3, v0, [B
 
     move v0, v1
 
     :goto_3
-    rem-int/lit8 v5, v6, 0x14
+    rem-int/lit8 v7, v5, 0x14
 
-    if-lt v0, v5, :cond_5
+    if-lt v0, v7, :cond_5
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -3834,13 +3867,13 @@
 
     iget v1, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
 
-    rem-int/lit8 v3, v6, 0x14
+    rem-int/lit8 v3, v5, 0x14
 
     add-int/2addr v1, v3
 
     iput v1, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
 
-    rem-int/lit8 v0, v6, 0x14
+    rem-int/lit8 v0, v5, 0x14
 
     add-int/2addr v0, v4
 
@@ -3871,20 +3904,20 @@
     goto :goto_1
 
     :cond_5
-    mul-int/lit8 v5, v7, 0x14
+    mul-int/lit8 v7, v6, 0x14
 
-    add-int/2addr v5, v0
+    add-int/2addr v7, v0
 
-    aget-byte v5, p1, v5
+    aget-byte v7, p1, v7
 
-    aput-byte v5, v3, v0
+    aput-byte v7, v3, v0
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 .end method
 
-.method public final sendFirmwareInfo(IIII)Z
+.method public sendFirmwareInfo(IIII)Z
     .locals 5
 
     const/4 v4, 0x7
@@ -3927,6 +3960,8 @@
 
     shr-int/lit8 v3, p1, 0x18
 
+    int-to-byte v3, v3
+
     aput-byte v3, v1, v2
 
     const/4 v2, 0x5
@@ -3952,6 +3987,8 @@
     const/16 v2, 0x8
 
     shr-int/lit8 v3, p2, 0x18
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -3990,7 +4027,7 @@
     return v0
 .end method
 
-.method public final setColorTheme(BBBB)Z
+.method public setColorTheme(BBBB)Z
     .locals 4
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
@@ -4028,7 +4065,7 @@
     return v0
 .end method
 
-.method public final setGoal(BI)Z
+.method public setGoal(BI)Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -4051,13 +4088,17 @@
 
     const/4 v2, 0x2
 
-    int-to-byte v3, p2
+    and-int/lit16 v3, p2, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/4 v2, 0x3
 
     shr-int/lit8 v3, p2, 0x8
+
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -4070,7 +4111,7 @@
     return v0
 .end method
 
-.method public final setRealtimeSteps(I)Z
+.method public setRealtimeSteps(I)Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -4089,13 +4130,17 @@
 
     const/4 v2, 0x1
 
-    int-to-byte v3, p1
+    and-int/lit16 v3, p1, 0xff
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     const/4 v2, 0x2
 
     shr-int/lit8 v3, p1, 0x8
+
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -4108,7 +4153,7 @@
     return v0
 .end method
 
-.method public final setTimer(BBLjava/util/Calendar;BB)Z
+.method public setTimer(BBLjava/util/Calendar;BB)Z
     .locals 10
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -4222,7 +4267,7 @@
     return v0
 .end method
 
-.method public final setUserInfo(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
+.method public setUserInfo(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
     .locals 6
 
     const/4 v0, 0x1
@@ -4239,6 +4284,8 @@
 
     iget v3, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->uid:I
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v2, v1
@@ -4246,6 +4293,8 @@
     iget v3, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->uid:I
 
     shr-int/lit8 v3, v3, 0x8
+
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -4257,6 +4306,8 @@
 
     shr-int/lit8 v4, v4, 0x10
 
+    and-int/lit16 v4, v4, 0xff
+
     int-to-byte v4, v4
 
     aput-byte v4, v2, v3
@@ -4265,7 +4316,9 @@
 
     iget v4, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->uid:I
 
-    ushr-int/lit8 v4, v4, 0x18
+    shr-int/lit8 v4, v4, 0x18
+
+    and-int/lit16 v4, v4, 0xff
 
     int-to-byte v4, v4
 
@@ -4416,7 +4469,7 @@
     goto :goto_2
 .end method
 
-.method public final setWearLocation(B)Z
+.method public setWearLocation(B)Z
     .locals 4
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
@@ -4442,7 +4495,7 @@
     return v0
 .end method
 
-.method public final stopGetActivities()V
+.method public stopGetActivities()V
     .locals 1
 
     :try_start_0
@@ -4477,7 +4530,7 @@
     goto :goto_0
 .end method
 
-.method public final stopSyncData()Z
+.method public stopSyncData()Z
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -4501,7 +4554,7 @@
     return v0
 .end method
 
-.method public final updateFirmware(III[B)Z
+.method public updateFirmware(III[B)Z
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V

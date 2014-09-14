@@ -26,44 +26,44 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Parcel;)Lcom/tencent/connect/dataprovider/DataType$TextOnly;
-    .locals 2
-
-    new-instance v0, Lcom/tencent/connect/dataprovider/DataType$TextOnly;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/tencent/connect/dataprovider/DataType$TextOnly;-><init>(Landroid/os/Parcel;B)V
-
-    return-object v0
-.end method
-
-.method private static a(I)[Lcom/tencent/connect/dataprovider/DataType$TextOnly;
-    .locals 1
-
-    new-array v0, p0, [Lcom/tencent/connect/dataprovider/DataType$TextOnly;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Lcom/tencent/connect/dataprovider/DataType$TextOnly;
     .locals 2
 
     new-instance v0, Lcom/tencent/connect/dataprovider/DataType$TextOnly;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, v1}, Lcom/tencent/connect/dataprovider/DataType$TextOnly;-><init>(Landroid/os/Parcel;B)V
+    invoke-direct {v0, p1, v1}, Lcom/tencent/connect/dataprovider/DataType$TextOnly;-><init>(Landroid/os/Parcel;Lcom/tencent/connect/dataprovider/a;)V
 
     return-object v0
 .end method
 
-.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Lcom/tencent/connect/dataprovider/DataType$TextOnly;
     .locals 1
 
     new-array v0, p1, [Lcom/tencent/connect/dataprovider/DataType$TextOnly;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcom/tencent/connect/dataprovider/c;->a(Landroid/os/Parcel;)Lcom/tencent/connect/dataprovider/DataType$TextOnly;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcom/tencent/connect/dataprovider/c;->a(I)[Lcom/tencent/connect/dataprovider/DataType$TextOnly;
+
+    move-result-object v0
 
     return-object v0
 .end method

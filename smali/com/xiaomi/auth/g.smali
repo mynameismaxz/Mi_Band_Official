@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/auth/g;
+.class Lcom/xiaomi/auth/g;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
+.method public call()Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

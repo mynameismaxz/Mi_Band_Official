@@ -242,7 +242,7 @@
 
     if-nez v7, :cond_2
 
-    if-eqz v13, :cond_b
+    if-eqz v13, :cond_9
 
     const/4 v2, 0x0
 
@@ -258,7 +258,7 @@
 
     cmpl-double v2, v10, v8
 
-    if-ltz v2, :cond_b
+    if-ltz v2, :cond_9
 
     :cond_0
     const/4 v2, 0x1
@@ -268,7 +268,7 @@
 
     iput-boolean v2, v0, Lorg/achartengine/tools/Zoom;->d:Z
 
-    if-eqz v13, :cond_c
+    if-eqz v13, :cond_a
 
     const/4 v2, 0x2
 
@@ -284,7 +284,7 @@
 
     cmpl-double v2, v20, v8
 
-    if-ltz v2, :cond_c
+    if-ltz v2, :cond_a
 
     :cond_1
     const/4 v2, 0x1
@@ -324,7 +324,7 @@
 
     iget-boolean v2, v0, Lorg/achartengine/tools/Zoom;->d:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_b
 
     move-object/from16 v0, p0
 
@@ -334,16 +334,9 @@
 
     cmpg-float v2, v2, v8
 
-    if-ltz v2, :cond_17
+    if-gez v2, :cond_b
 
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lorg/achartengine/tools/Zoom;->b:F
-
-    float-to-double v8, v2
-
-    div-double v2, v3, v8
+    move-wide v2, v3
 
     :goto_3
     move-object/from16 v0, p0
@@ -360,16 +353,16 @@
 
     move/from16 v0, p1
 
-    if-eq v0, v4, :cond_5
+    if-eq v0, v4, :cond_4
 
     if-nez p1, :cond_16
 
-    :cond_5
+    :cond_4
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lorg/achartengine/tools/Zoom;->e:Z
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_c
 
     move-object/from16 v0, p0
 
@@ -379,18 +372,9 @@
 
     cmpg-float v4, v4, v8
 
-    if-ltz v4, :cond_16
+    if-gez v4, :cond_c
 
-    :cond_6
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lorg/achartengine/tools/Zoom;->b:F
-
-    float-to-double v8, v4
-
-    div-double v4, v5, v8
-
-    move-wide v8, v4
+    move-wide v8, v5
 
     move-wide v10, v2
 
@@ -460,17 +444,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_6
 
     const/4 v2, 0x1
 
     move/from16 v0, p1
 
-    if-eq v0, v2, :cond_7
+    if-eq v0, v2, :cond_5
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_6
 
-    :cond_7
+    :cond_5
     const-wide/high16 v2, 0x4000
 
     div-double v2, v5, v2
@@ -487,7 +471,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/achartengine/tools/Zoom;->setXRange(DDI)V
 
-    :cond_8
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lorg/achartengine/tools/Zoom;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -496,17 +480,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_8
 
     const/4 v2, 0x2
 
     move/from16 v0, p1
 
-    if-eq v0, v2, :cond_9
+    if-eq v0, v2, :cond_7
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_8
 
-    :cond_9
+    :cond_7
     const-wide/high16 v2, 0x4000
 
     div-double v2, v8, v2
@@ -523,20 +507,46 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/achartengine/tools/Zoom;->setYRange(DDI)V
 
-    :cond_a
+    :cond_8
     add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_9
     const/4 v2, 0x0
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_a
     const/4 v2, 0x0
 
     goto/16 :goto_2
+
+    :cond_b
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lorg/achartengine/tools/Zoom;->b:F
+
+    float-to-double v8, v2
+
+    div-double v2, v3, v8
+
+    goto/16 :goto_3
+
+    :cond_c
+    move-object/from16 v0, p0
+
+    iget v4, v0, Lorg/achartengine/tools/Zoom;->b:F
+
+    float-to-double v8, v4
+
+    div-double v4, v5, v8
+
+    move-wide v8, v4
+
+    move-wide v10, v2
+
+    goto/16 :goto_4
 
     :cond_d
     move-object/from16 v0, p0

@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/h;
+.class Lcom/google/gson/internal/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,16 +16,18 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/google/gson/InstanceCreator;
+.field final synthetic a:Lcom/google/gson/InstanceCreator;
 
-.field private synthetic b:Ljava/lang/reflect/Type;
+.field final synthetic b:Ljava/lang/reflect/Type;
 
-.field private synthetic c:Lcom/google/gson/internal/ConstructorConstructor;
+.field final synthetic c:Lcom/google/gson/internal/ConstructorConstructor;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/InstanceCreator;Ljava/lang/reflect/Type;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/google/gson/internal/h;->c:Lcom/google/gson/internal/ConstructorConstructor;
 
     iput-object p2, p0, Lcom/google/gson/internal/h;->a:Lcom/google/gson/InstanceCreator;
 
@@ -38,7 +40,7 @@
 
 
 # virtual methods
-.method public final construct()Ljava/lang/Object;
+.method public construct()Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

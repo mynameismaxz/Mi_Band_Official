@@ -1,11 +1,11 @@
-.class final Lcom/tencent/connect/common/a;
+.class Lcom/tencent/connect/common/a;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/common/BaseApi;
+.field final synthetic a:Lcom/tencent/connect/common/BaseApi;
 
-.field private synthetic b:Lcom/tencent/connect/common/BaseApi$TempRequestListener;
+.field final synthetic b:Lcom/tencent/connect/common/BaseApi$TempRequestListener;
 
 
 # direct methods
@@ -14,6 +14,8 @@
 
     iput-object p1, p0, Lcom/tencent/connect/common/a;->b:Lcom/tencent/connect/common/BaseApi$TempRequestListener;
 
+    iput-object p3, p0, Lcom/tencent/connect/common/a;->a:Lcom/tencent/connect/common/BaseApi;
+
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -21,7 +23,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 5
 
     iget v0, p1, Landroid/os/Message;->what:I

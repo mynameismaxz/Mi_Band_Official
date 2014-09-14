@@ -1,14 +1,16 @@
-.class final Lcn/com/smartdevices/bracelet/b;
+.class Lcn/com/smartdevices/bracelet/b;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/DataManager;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/DataManager;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/DataManager;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/b;->a:Lcn/com/smartdevices/bracelet/DataManager;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
@@ -17,7 +19,7 @@
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 3
 
     invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
@@ -43,7 +45,7 @@
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
     .locals 4
 
     new-instance v0, Ljava/util/ArrayList;

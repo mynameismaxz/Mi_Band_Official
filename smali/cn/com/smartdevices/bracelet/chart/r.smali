@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/r;
+.class Lcn/com/smartdevices/bracelet/chart/r;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final hasData(I)Z
+.method public hasData(I)Z
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/r;->a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
@@ -38,7 +38,7 @@
     return v0
 .end method
 
-.method public final loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
+.method public loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/r;->a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
@@ -56,13 +56,13 @@
     return-object v0
 .end method
 
-.method public final onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
+.method public onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onOverScrolled()V
+.method public onOverScrolled()V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/r;->a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public final onToItem(I)V
+.method public onToItem(I)V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/r;->a:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;

@@ -108,7 +108,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/y;-><init>(Ljava/lang/Appendable;B)V
+    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/y;-><init>(Ljava/lang/Appendable;Lcom/google/gson/internal/x;)V
 
     move-object p0, v0
 

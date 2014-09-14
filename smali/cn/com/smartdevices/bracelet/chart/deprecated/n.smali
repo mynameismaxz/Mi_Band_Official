@@ -1,18 +1,18 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/n;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/n;
 .super Lcn/com/smartdevices/bracelet/chart/base/BarChart$XAxis;
 
 
 # instance fields
-.field private a:Landroid/graphics/Paint;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
 
-.field private synthetic b:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
+.field private b:Landroid/graphics/Paint;
 
 
 # direct methods
 .method public constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;)V
     .locals 3
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$XAxis;-><init>()V
 
@@ -22,15 +22,15 @@
 
     invoke-direct {v0, v1}, Landroid/text/TextPaint;-><init>(I)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     const/high16 v1, 0x4100
 
@@ -45,7 +45,7 @@
 
 
 # virtual methods
-.method protected final doScroll(F)V
+.method protected doScroll(F)V
     .locals 3
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->mScroll:F
@@ -87,7 +87,7 @@
     return-void
 .end method
 
-.method protected final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method protected draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
     .locals 11
 
     const/high16 v10, 0x4000
@@ -112,7 +112,7 @@
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;)Ljava/util/List;
 
@@ -121,7 +121,7 @@
     monitor-enter v2
 
     :try_start_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;)Ljava/util/List;
 
@@ -217,7 +217,7 @@
 
     if-gtz v6, :cond_2
 
-    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     const/high16 v7, 0x4100
 
@@ -228,7 +228,7 @@
     invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setTextSize(F)V
 
     :goto_1
-    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     iget-object v7, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;->b:Ljava/lang/String;
 
@@ -274,11 +274,9 @@
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;->b:Ljava/lang/String;
 
-    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v4, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
@@ -286,12 +284,14 @@
     move-exception v0
 
     monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
     :cond_2
     :try_start_2
-    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->a:Landroid/graphics/Paint;
+    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/n;->b:Landroid/graphics/Paint;
 
     const/high16 v7, 0x4120
 

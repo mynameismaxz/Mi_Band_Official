@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/StatisticChart;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/StatisticChart;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;Lcn/com/smartdevices/bracelet/chart/n;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/n;-><init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;)V
@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;C)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;Lcn/com/smartdevices/bracelet/chart/n;Lcn/com/smartdevices/bracelet/chart/n;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/n;-><init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;)V
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Canvas;FFFFF)V
+.method public a(Landroid/graphics/Canvas;FFFFF)V
     .locals 9
 
     iget-object v7, p0, Lcn/com/smartdevices/bracelet/chart/n;->mItems:Ljava/util/List;
@@ -87,8 +87,6 @@
     move v6, p6
 
     invoke-virtual/range {v0 .. v6}, Lcn/com/smartdevices/bracelet/chart/StatisticChart$StatisticBarItem;->draw(Landroid/graphics/Canvas;FFFFF)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -96,6 +94,8 @@
     move-exception v0
 
     monitor-exit v7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

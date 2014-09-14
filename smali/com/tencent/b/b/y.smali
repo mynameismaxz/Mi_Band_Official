@@ -128,7 +128,9 @@
 
     iget-object v0, p0, Lcom/tencent/b/b/y;->a:Lcom/tencent/b/b/n;
 
-    invoke-static {v0}, Lcom/tencent/b/b/n;->f(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/A;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/tencent/b/b/n;->a(Lcom/tencent/b/b/n;Lcom/tencent/b/b/A;)Lcom/tencent/b/b/A;
 
     goto :goto_0
 
@@ -150,7 +152,7 @@
     :cond_1
     iget-object v0, p0, Lcom/tencent/b/b/y;->a:Lcom/tencent/b/b/n;
 
-    invoke-static {v0}, Lcom/tencent/b/b/n;->g(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
+    invoke-static {v0}, Lcom/tencent/b/b/n;->f(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
 
     move-result-object v0
 
@@ -158,7 +160,7 @@
 
     iget-object v0, p0, Lcom/tencent/b/b/y;->a:Lcom/tencent/b/b/n;
 
-    invoke-static {v0}, Lcom/tencent/b/b/n;->g(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
+    invoke-static {v0}, Lcom/tencent/b/b/n;->f(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
 
     move-result-object v0
 
@@ -171,11 +173,9 @@
     :cond_2
     iget-object v0, p0, Lcom/tencent/b/b/y;->a:Lcom/tencent/b/b/n;
 
-    invoke-static {v0}, Lcom/tencent/b/b/n;->h(Lcom/tencent/b/b/n;)V
+    invoke-static {v0}, Lcom/tencent/b/b/n;->g(Lcom/tencent/b/b/n;)V
 
     goto/16 :goto_0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

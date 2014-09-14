@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/e;
+.class Lcom/loopj/android/http/e;
 .super Lorg/apache/http/entity/HttpEntityWrapper;
 
 
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final getContent()Ljava/io/InputStream;
+.method public getContent()Ljava/io/InputStream;
     .locals 2
 
     new-instance v0, Ljava/util/zip/GZIPInputStream;
@@ -29,7 +29,7 @@
     return-object v0
 .end method
 
-.method public final getContentLength()J
+.method public getContentLength()J
     .locals 2
 
     const-wide/16 v0, -0x1

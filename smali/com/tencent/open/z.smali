@@ -24,7 +24,7 @@
 
 .field public static final enum e:Lcom/tencent/open/z;
 
-.field private static enum f:Lcom/tencent/open/z;
+.field public static final enum f:Lcom/tencent/open/z;
 
 .field private static final synthetic g:[Lcom/tencent/open/z;
 

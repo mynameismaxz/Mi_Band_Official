@@ -1632,7 +1632,7 @@
 
 
 # virtual methods
-.method final a(Ljava/lang/String;)Ljava/lang/String;
+.method a(Ljava/lang/String;)Ljava/lang/String;
     .locals 9
 
     const/4 v1, 0x0

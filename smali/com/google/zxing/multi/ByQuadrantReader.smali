@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 1
 
     const/4 v0, 0x0
@@ -34,7 +34,7 @@
     return-object v0
 .end method
 
-.method public final decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -152,7 +152,7 @@
     goto :goto_0
 .end method
 
-.method public final reset()V
+.method public reset()V
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/multi/ByQuadrantReader;->a:Lcom/google/zxing/Reader;

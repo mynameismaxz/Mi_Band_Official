@@ -34,7 +34,7 @@
 
     array-length v0, v0
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     new-array v0, v0, [S
 
@@ -70,9 +70,7 @@
 .end method
 
 .method public a(S)V
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 2
 
     iget-object v0, p0, Lu/aly/bx;->a:[S
 
@@ -84,23 +82,7 @@
 
     if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lu/aly/bx;->a:[S
-
-    array-length v0, v0
-
-    shl-int/lit8 v0, v0, 0x1
-
-    new-array v0, v0, [S
-
-    iget-object v1, p0, Lu/aly/bx;->a:[S
-
-    iget-object v2, p0, Lu/aly/bx;->a:[S
-
-    array-length v2, v2
-
-    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iput-object v0, p0, Lu/aly/bx;->a:[S
+    invoke-direct {p0}, Lu/aly/bx;->d()V
 
     :cond_0
     iget-object v0, p0, Lu/aly/bx;->a:[S

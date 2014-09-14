@@ -214,7 +214,9 @@
 
     array-length v1, v0
 
-    if-lez v1, :cond_0
+    const/4 v2, 0x1
+
+    if-lt v1, v2, :cond_0
 
     const/4 v1, 0x0
 
@@ -248,6 +250,8 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x6

@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private a:Ljavax/net/ssl/SSLContext;
+.field a:Ljavax/net/ssl/SSLContext;
 
 
 # direct methods
@@ -149,11 +149,14 @@
 
     move-result-object v0
 
+    if-eqz v2, :cond_0
+
     :try_start_2
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
+    :cond_0
     :goto_0
     invoke-static {}, Ljava/security/KeyStore;->getDefaultType()Ljava/lang/String;
 
@@ -195,7 +198,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
@@ -219,14 +222,14 @@
     move-exception v0
 
     :goto_3
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     :try_start_7
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
-    :cond_0
+    :cond_1
     :goto_4
     throw v0
 
@@ -281,7 +284,7 @@
 
     goto :goto_2
 
-    :cond_1
+    :cond_2
     move-object v0, v1
 
     goto :goto_0

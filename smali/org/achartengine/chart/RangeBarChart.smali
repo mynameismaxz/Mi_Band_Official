@@ -103,7 +103,7 @@
 
     if-ne v1, v2, :cond_1
 
-    shl-int/lit8 v1, p6, 0x1
+    mul-int/lit8 v1, p6, 0x2
 
     int-to-float v1, v1
 

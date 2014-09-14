@@ -93,14 +93,14 @@
 
 
 # virtual methods
-.method public final build()Landroid/support/v4/text/BidiFormatter;
+.method public build()Landroid/support/v4/text/BidiFormatter;
     .locals 5
 
     iget v0, p0, Landroid/support/v4/text/BidiFormatter$Builder;->b:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroid/support/v4/text/BidiFormatter$Builder;->c:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
@@ -108,13 +108,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
     iget-boolean v0, p0, Landroid/support/v4/text/BidiFormatter$Builder;->a:Z
 
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Landroid/support/v4/text/BidiFormatter;->b()Landroid/support/v4/text/BidiFormatter;
+    invoke-static {v0}, Landroid/support/v4/text/BidiFormatter$Builder;->b(Z)Landroid/support/v4/text/BidiFormatter;
 
     move-result-object v0
 
@@ -122,13 +120,6 @@
     return-object v0
 
     :cond_0
-    invoke-static {}, Landroid/support/v4/text/BidiFormatter;->c()Landroid/support/v4/text/BidiFormatter;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
     new-instance v0, Landroid/support/v4/text/BidiFormatter;
 
     iget-boolean v1, p0, Landroid/support/v4/text/BidiFormatter$Builder;->a:Z
@@ -139,12 +130,12 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/text/BidiFormatter;-><init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;B)V
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/text/BidiFormatter;-><init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;Landroid/support/v4/text/a;)V
 
     goto :goto_0
 .end method
 
-.method public final setTextDirectionHeuristic(Landroid/support/v4/text/TextDirectionHeuristicCompat;)Landroid/support/v4/text/BidiFormatter$Builder;
+.method public setTextDirectionHeuristic(Landroid/support/v4/text/TextDirectionHeuristicCompat;)Landroid/support/v4/text/BidiFormatter$Builder;
     .locals 0
 
     iput-object p1, p0, Landroid/support/v4/text/BidiFormatter$Builder;->c:Landroid/support/v4/text/TextDirectionHeuristicCompat;
@@ -152,7 +143,7 @@
     return-object p0
 .end method
 
-.method public final stereoReset(Z)Landroid/support/v4/text/BidiFormatter$Builder;
+.method public stereoReset(Z)Landroid/support/v4/text/BidiFormatter$Builder;
     .locals 1
 
     if-eqz p1, :cond_0

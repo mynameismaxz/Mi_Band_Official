@@ -248,7 +248,7 @@
 
 
 # virtual methods
-.method final a()I
+.method a()I
     .locals 2
 
     invoke-super {p0}, Landroid/support/v4/view/PagerTitleStrip;->a()I
@@ -264,7 +264,7 @@
     return v0
 .end method
 
-.method final a(IFZ)V
+.method a(IFZ)V
     .locals 6
 
     iget-object v0, p0, Landroid/support/v4/view/PagerTabStrip;->u:Landroid/graphics/Rect;

@@ -9,13 +9,13 @@
 
 
 # instance fields
-.field volatile a:I
+.field a:Landroid/os/Handler;
 
-.field private b:Lcom/tencent/stat/s;
+.field volatile b:I
 
-.field private c:Landroid/os/Handler;
+.field c:Lcom/tencent/stat/common/User;
 
-.field private d:Lcom/tencent/stat/common/User;
+.field private d:Lcom/tencent/stat/s;
 
 .field private g:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -54,13 +54,13 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
-    iput-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iput-object v1, p0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -81,9 +81,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Launch store thread:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -103,7 +107,7 @@
 
     invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v1, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -113,29 +117,23 @@
 
     invoke-direct {v1, v0}, Lcom/tencent/stat/s;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iput-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {p0, v0}, Lcom/tencent/stat/StatStore;->getUser(Landroid/content/Context;)Lcom/tencent/stat/common/User;
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
-
-    new-instance v1, Lcom/tencent/stat/p;
-
-    invoke-direct {v1, p0}, Lcom/tencent/stat/p;-><init>(Lcom/tencent/stat/StatStore;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0}, Lcom/tencent/stat/StatStore;->a()V
 
     invoke-direct {p0}, Lcom/tencent/stat/StatStore;->d()V
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/k;
 
@@ -158,96 +156,10 @@
     goto :goto_0
 .end method
 
-.method static synthetic a()Lcom/tencent/stat/common/StatLogger;
-    .locals 1
-
-    sget-object v0, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
-
-    return-object v0
-.end method
-
 .method static synthetic a(Lcom/tencent/stat/StatStore;)V
-    .locals 8
+    .locals 0
 
-    const/4 v4, 0x1
-
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    const-string v1, "status"
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
-
-    invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    const-string v2, "events"
-
-    const-string v3, "status=?"
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    const-wide/16 v6, 0x2
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
-
-    invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string v1, "events"
-
-    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    long-to-int v0, v0
-
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
-
-    sget-object v0, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Total "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Lcom/tencent/stat/StatStore;->a:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " unsent events."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->i(Ljava/lang/Object;)V
+    invoke-direct {p0}, Lcom/tencent/stat/StatStore;->c()V
 
     return-void
 .end method
@@ -268,255 +180,28 @@
     return-void
 .end method
 
-.method static synthetic b(Lcom/tencent/stat/StatStore;)Lcom/tencent/stat/s;
+.method static synthetic b()Lcom/tencent/stat/common/StatLogger;
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    sget-object v0, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
 
     return-object v0
 .end method
 
-.method private b()V
-    .locals 8
+.method static synthetic b(Lcom/tencent/stat/StatStore;)Lcom/tencent/stat/s;
+    .locals 1
 
-    const/4 v4, 0x1
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    const-string v1, "status"
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
-
-    invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    const-string v2, "events"
-
-    const-string v3, "status=?"
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    const-wide/16 v6, 0x2
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
-
-    invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string v1, "events"
-
-    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    long-to-int v0, v0
-
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
-
-    sget-object v0, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Total "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Lcom/tencent/stat/StatStore;->a:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " unsent events."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->i(Ljava/lang/Object;)V
-
-    return-void
+    return-object v0
 .end method
 
 .method static synthetic b(Lcom/tencent/stat/StatStore;Ljava/util/List;I)V
-    .locals 10
+    .locals 0
 
-    const/4 v9, 0x0
+    invoke-direct {p0, p1, p2}, Lcom/tencent/stat/StatStore;->c(Ljava/util/List;I)V
 
-    :try_start_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
-
-    invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string v1, "events"
-
-    const/4 v2, 0x0
-
-    const-string v3, "status=?"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
-
-    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const-string v7, "event_id"
-
-    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual/range {v0 .. v8}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result-object v6
-
-    :goto_0
-    :try_start_1
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x0
-
-    invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v1
-
-    const/4 v0, 0x1
-
-    invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/tencent/stat/common/StatCommonHelper;->decode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v0, 0x2
-
-    invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    const/4 v0, 0x3
-
-    invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v5
-
-    new-instance v0, Lcom/tencent/stat/t;
-
-    invoke-direct/range {v0 .. v5}, Lcom/tencent/stat/t;-><init>(JLjava/lang/String;II)V
-
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    move-object v1, v6
-
-    :goto_1
-    :try_start_2
-    sget-object v2, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
-
-    invoke-virtual {v2, v0}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Exception;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_0
-    :goto_2
     return-void
-
-    :cond_1
-    if-eqz v6, :cond_0
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception v0
-
-    :goto_3
-    if-eqz v9, :cond_2
-
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    :cond_2
-    throw v0
-
-    :catchall_1
-    move-exception v0
-
-    move-object v9, v6
-
-    goto :goto_3
-
-    :catchall_2
-    move-exception v0
-
-    move-object v9, v1
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v0
-
-    move-object v1, v9
-
-    goto :goto_1
 .end method
 
 .method private b(Ljava/util/List;)V
@@ -535,9 +220,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Delete "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -568,7 +257,7 @@
     invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->i(Ljava/lang/Object;)V
 
     :try_start_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -593,9 +282,9 @@
 
     check-cast v0, Lcom/tencent/stat/t;
 
-    iget v2, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v2, p0, Lcom/tencent/stat/StatStore;->b:I
 
-    iget-object v3, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v3, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v3}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -625,7 +314,7 @@
 
     sub-int v0, v2, v0
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -643,7 +332,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -658,7 +347,7 @@
 
     :cond_0
     :try_start_3
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -666,7 +355,7 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -680,13 +369,13 @@
 
     long-to-int v0, v0
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_3} :catch_0
 
     :try_start_4
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -720,7 +409,7 @@
     move-exception v0
 
     :try_start_5
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -759,9 +448,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Update "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -814,7 +507,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -840,7 +533,7 @@
 
     check-cast v0, Lcom/tencent/stat/t;
 
-    iget v3, v0, Lcom/tencent/stat/t;->c:I
+    iget v3, v0, Lcom/tencent/stat/t;->d:I
 
     add-int/lit8 v3, v3, 0x1
 
@@ -850,9 +543,9 @@
 
     if-le v3, v4, :cond_1
 
-    iget v3, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v3, p0, Lcom/tencent/stat/StatStore;->b:I
 
-    iget-object v4, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v4, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v4}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -882,7 +575,7 @@
 
     sub-int v0, v3, v0
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -900,7 +593,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -917,7 +610,7 @@
     :try_start_3
     const-string v3, "send_count"
 
-    iget v4, v0, Lcom/tencent/stat/t;->c:I
+    iget v4, v0, Lcom/tencent/stat/t;->d:I
 
     add-int/lit8 v4, v4, 0x1
 
@@ -931,9 +624,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Update event:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     iget-wide v5, v0, Lcom/tencent/stat/t;->a:J
 
@@ -957,7 +654,7 @@
 
     invoke-virtual {v3, v4}, Lcom/tencent/stat/common/StatLogger;->i(Ljava/lang/Object;)V
 
-    iget-object v3, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v3, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v3}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -991,9 +688,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Failed to update db, error code:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -1018,7 +719,7 @@
     move-exception v0
 
     :try_start_4
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1033,7 +734,7 @@
 
     :cond_2
     :try_start_5
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1041,7 +742,7 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1055,13 +756,13 @@
 
     long-to-int v0, v0
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_5 .. :try_end_5} :catch_0
 
     :try_start_6
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1102,15 +803,91 @@
 .end method
 
 .method private c()V
-    .locals 2
+    .locals 8
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    const/4 v4, 0x1
 
-    new-instance v1, Lcom/tencent/stat/p;
+    new-instance v0, Landroid/content/ContentValues;
 
-    invoke-direct {v1, p0}, Lcom/tencent/stat/p;-><init>(Lcom/tencent/stat/StatStore;)V
+    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const-string v1, "status"
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
+
+    invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    const-string v2, "events"
+
+    const-string v3, "status=?"
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    const-wide/16 v6, 0x2
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v4, v5
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
+
+    invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    const-string v1, "events"
+
+    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
+
+    sget-object v0, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Total "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/tencent/stat/StatStore;->b:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " unsent events."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->i(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -1130,7 +907,7 @@
     const/4 v9, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1287,7 +1064,7 @@
     const/4 v8, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v0}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1424,10 +1201,24 @@
 
 
 # virtual methods
-.method final a(I)V
+.method a()V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
+
+    new-instance v1, Lcom/tencent/stat/p;
+
+    invoke-direct {v1, p0}, Lcom/tencent/stat/p;-><init>(Lcom/tencent/stat/StatStore;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method a(I)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/q;
 
@@ -1438,7 +1229,7 @@
     return-void
 .end method
 
-.method final a(Lcom/tencent/stat/a;)V
+.method a(Lcom/tencent/stat/a;)V
     .locals 2
 
     if-nez p1, :cond_0
@@ -1448,7 +1239,7 @@
 
     :cond_0
     :try_start_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/o;
 
@@ -1470,7 +1261,7 @@
     goto :goto_0
 .end method
 
-.method final a(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
+.method a(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
     .locals 6
 
     const/4 v5, 0x0
@@ -1486,7 +1277,7 @@
     return-void
 
     :cond_1
-    iget v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->getMaxStoreEventCount()I
 
@@ -1500,9 +1291,9 @@
 
     invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->warn(Ljava/lang/Object;)V
 
-    iget v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
-    iget-object v1, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1518,7 +1309,7 @@
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
     :cond_2
     new-instance v0, Landroid/content/ContentValues;
@@ -1565,7 +1356,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    iget-object v2, p0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v2, p0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v2}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1587,9 +1378,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Failed to store event:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1604,11 +1399,11 @@
     goto :goto_0
 
     :cond_3
-    iget v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iput v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
     if-eqz p2, :cond_0
 
@@ -1617,7 +1412,7 @@
     goto/16 :goto_0
 .end method
 
-.method final a(Ljava/util/List;)V
+.method a(Ljava/util/List;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1638,7 +1433,7 @@
 
     move-result-wide v0
 
-    iget-object v2, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
@@ -1662,7 +1457,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/m;
 
@@ -1684,7 +1479,7 @@
     goto :goto_0
 .end method
 
-.method final a(Ljava/util/List;I)V
+.method a(Ljava/util/List;I)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1705,7 +1500,7 @@
 
     move-result-wide v0
 
-    iget-object v2, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
@@ -1723,21 +1518,17 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Lcom/tencent/stat/StatStore;->b(Ljava/util/List;I)V
+    invoke-direct {p0, p1, p2}, Lcom/tencent/stat/StatStore;->b(Ljava/util/List;I)V
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/l;
 
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, p1, v2}, Lcom/tencent/stat/l;-><init>(Lcom/tencent/stat/StatStore;Ljava/util/List;I)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/tencent/stat/l;-><init>(Lcom/tencent/stat/StatStore;Ljava/util/List;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
@@ -1755,7 +1546,7 @@
     goto :goto_0
 .end method
 
-.method final b(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
+.method b(Lcom/tencent/stat/event/Event;Lcom/tencent/stat/b;)V
     .locals 4
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->isEnableStatService()Z
@@ -1777,7 +1568,7 @@
 
     move-result-wide v0
 
-    iget-object v2, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
@@ -1812,7 +1603,7 @@
 
     :cond_1
     :try_start_1
-    iget-object v0, p0, Lcom/tencent/stat/StatStore;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/stat/StatStore;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/tencent/stat/n;
 
@@ -1828,7 +1619,7 @@
 .method public getNumStoredEvents()I
     .locals 1
 
-    iget v0, p0, Lcom/tencent/stat/StatStore;->a:I
+    iget v0, p0, Lcom/tencent/stat/StatStore;->b:I
 
     return v0
 .end method
@@ -1838,13 +1629,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iget-object v1, v0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
 
     if-eqz v1, :cond_0
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iget-object v1, v0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
 
     :goto_0
     return-object v1
@@ -1855,7 +1646,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -1887,11 +1678,13 @@
     const/4 v1, 0x0
 
     :try_start_1
+    const-string v2, ""
+
     invoke-interface {v4}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     const/4 v1, 0x0
 
@@ -1981,36 +1774,36 @@
 
     move-result-object v10
 
+    const/4 v3, 0x0
+
+    if-eqz v10, :cond_7
+
+    array-length v1, v10
+
+    if-lez v1, :cond_7
+
     const/4 v1, 0x0
 
-    if-eqz v10, :cond_8
+    aget-object v2, v10, v1
 
-    array-length v2, v10
+    if-eqz v2, :cond_1
 
-    if-lez v2, :cond_8
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    const/4 v2, 0x0
-
-    aget-object v3, v10, v2
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v2
+    move-result v1
 
     const/16 v11, 0xb
 
-    if-ge v2, v11, :cond_d
+    if-ge v1, v11, :cond_d
 
     :cond_1
     invoke-static/range {p1 .. p1}, Lcom/tencent/stat/common/StatCommonHelper;->getDeviceID(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_c
+    if-eqz v1, :cond_c
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v11
 
@@ -2018,25 +1811,25 @@
 
     if-le v11, v14, :cond_c
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     :goto_3
     move-object v3, v6
 
-    move-object v6, v2
+    move-object v6, v1
 
     :goto_4
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_8
 
-    array-length v2, v10
+    array-length v1, v10
 
     const/4 v11, 0x2
 
-    if-lt v2, v11, :cond_9
+    if-lt v1, v11, :cond_8
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    aget-object v2, v10, v2
+    aget-object v1, v10, v1
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2052,7 +1845,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -2064,15 +1857,15 @@
     :goto_5
     new-instance v10, Lcom/tencent/stat/common/User;
 
-    invoke-direct {v10, v6, v2, v7}, Lcom/tencent/stat/common/User;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v10, v6, v1, v7}, Lcom/tencent/stat/common/User;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
 
     move-object/from16 v0, p0
 
-    iput-object v10, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iput-object v10, v0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
 
-    new-instance v2, Landroid/content/ContentValues;
+    new-instance v1, Landroid/content/ContentValues;
 
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
     invoke-static {v3}, Lcom/tencent/stat/common/StatCommonHelper;->encode(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2080,7 +1873,7 @@
 
     const-string v6, "uid"
 
-    invoke-virtual {v2, v6, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v6, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v3, "user_type"
 
@@ -2088,7 +1881,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v2, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v1, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     const-string v3, "app_ver"
 
@@ -2096,7 +1889,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v2, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v3, "ts"
 
@@ -2104,17 +1897,17 @@
 
     move-result-object v6
 
-    invoke-virtual {v2, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v1, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v2, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
-    invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v2}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "user"
 
@@ -2128,30 +1921,30 @@
 
     aput-object v9, v10, v11
 
-    invoke-virtual {v1, v3, v2, v6, v10}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v2, v3, v1, v6, v10}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     :cond_3
-    if-eq v7, v8, :cond_4
+    if-eq v7, v8, :cond_b
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v2, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
-    invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v2}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "user"
 
     const/4 v6, 0x0
 
-    invoke-virtual {v1, v3, v6, v2}, Landroid/database/sqlite/SQLiteDatabase;->replace(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    invoke-virtual {v2, v3, v6, v1}, Landroid/database/sqlite/SQLiteDatabase;->replace(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    :cond_4
     move v1, v5
 
-    :cond_5
-    if-nez v1, :cond_6
+    :cond_4
+    :goto_6
+    if-nez v1, :cond_5
 
     invoke-static/range {p1 .. p1}, Lcom/tencent/stat/common/StatCommonHelper;->getUserID(Landroid/content/Context;)Ljava/lang/String;
 
@@ -2161,13 +1954,13 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_a
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-lez v1, :cond_b
+    if-lez v1, :cond_a
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2191,144 +1984,148 @@
 
     move-result-object v1
 
-    :goto_6
+    :goto_7
+    const/4 v5, 0x0
+
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    const-wide/16 v7, 0x3e8
+    const-wide/16 v8, 0x3e8
 
-    div-long/2addr v5, v7
+    div-long/2addr v6, v8
 
     invoke-static/range {p1 .. p1}, Lcom/tencent/stat/common/StatCommonHelper;->getAppVersion(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    new-instance v8, Landroid/content/ContentValues;
+    new-instance v9, Landroid/content/ContentValues;
 
-    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
 
     invoke-static {v1}, Lcom/tencent/stat/common/StatCommonHelper;->encode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v9, "uid"
+    const-string v10, "uid"
 
-    invoke-virtual {v8, v9, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v10, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "user_type"
 
-    const/4 v9, 0x0
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v10
 
-    move-result-object v9
-
-    invoke-virtual {v8, v1, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v9, v1, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     const-string v1, "app_ver"
 
-    invoke-virtual {v8, v1, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v1, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "ts"
 
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v8, v1, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v9, v1, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->b:Lcom/tencent/stat/s;
+    iget-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/s;
 
     invoke-virtual {v1}, Lcom/tencent/stat/s;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
 
-    const-string v5, "user"
+    const-string v6, "user"
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    invoke-virtual {v1, v5, v6, v8}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    invoke-virtual {v1, v6, v7, v9}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
     new-instance v1, Lcom/tencent/stat/common/User;
-
-    const/4 v5, 0x0
 
     invoke-direct {v1, v2, v3, v5}, Lcom/tencent/stat/common/User;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
 
     move-object/from16 v0, p0
 
-    iput-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iput-object v1, v0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    :cond_6
-    if-eqz v4, :cond_7
+    :cond_5
+    if-eqz v4, :cond_6
 
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    :cond_7
-    :goto_7
+    :cond_6
+    :goto_8
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/tencent/stat/StatStore;->d:Lcom/tencent/stat/common/User;
+    iget-object v1, v0, Lcom/tencent/stat/StatStore;->c:Lcom/tencent/stat/common/User;
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_7
     :try_start_2
     invoke-static/range {p1 .. p1}, Lcom/tencent/stat/common/StatCommonHelper;->getUserID(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    move-object v6, v3
+    move-object v6, v2
+
+    move/from16 v16, v3
+
+    move-object v3, v2
+
+    move/from16 v2, v16
 
     goto/16 :goto_4
 
-    :cond_9
+    :cond_8
     invoke-static/range {p1 .. p1}, Lcom/tencent/stat/common/StatCommonHelper;->getMacId(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v10
 
     if-lez v10, :cond_2
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, ","
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
     move-result-object v3
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     goto/16 :goto_5
 
@@ -2337,7 +2134,7 @@
 
     move-object v2, v10
 
-    :goto_8
+    :goto_9
     :try_start_3
     sget-object v3, Lcom/tencent/stat/StatStore;->e:Lcom/tencent/stat/common/StatLogger;
 
@@ -2345,56 +2142,65 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    goto :goto_7
+    goto :goto_8
 
     :catchall_0
     move-exception v1
 
     move-object v4, v10
 
-    :goto_9
-    if-eqz v4, :cond_a
+    :goto_a
+    if-eqz v4, :cond_9
 
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    :cond_a
+    :cond_9
     throw v1
 
     :catchall_1
     move-exception v1
 
-    goto :goto_9
+    goto :goto_a
 
     :catchall_2
     move-exception v1
 
     move-object v4, v2
 
-    goto :goto_9
+    goto :goto_a
 
     :catch_1
     move-exception v1
 
     move-object v2, v4
 
-    goto :goto_8
+    goto :goto_9
+
+    :cond_a
+    move-object v1, v2
+
+    goto/16 :goto_7
 
     :cond_b
-    move-object v1, v2
+    move v1, v5
 
     goto/16 :goto_6
 
     :cond_c
-    move-object v2, v3
+    move-object v1, v2
+
+    move v2, v3
 
     goto/16 :goto_3
 
     :cond_d
-    move-object/from16 v16, v3
+    move-object/from16 v16, v2
+
+    move v2, v3
 
     move-object v3, v6
 

@@ -94,7 +94,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/BarcodeFormat;
+.method a()Lcom/google/zxing/BarcodeFormat;
     .locals 1
 
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
@@ -102,153 +102,116 @@
     return-object v0
 .end method
 
-.method protected final decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
-    .locals 9
+.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
+    .locals 12
 
-    iget-object v4, p0, Lcom/google/zxing/oned/EAN13Reader;->f:[I
+    const/4 v11, 0x6
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    aput v1, v4, v0
-
-    const/4 v0, 0x1
+    const/4 v10, 0x1
 
     const/4 v1, 0x0
 
-    aput v1, v4, v0
+    iget-object v5, p0, Lcom/google/zxing/oned/EAN13Reader;->f:[I
+
+    aput v1, v5, v1
+
+    aput v1, v5, v10
 
     const/4 v0, 0x2
 
-    const/4 v1, 0x0
-
-    aput v1, v4, v0
+    aput v1, v5, v0
 
     const/4 v0, 0x3
 
-    const/4 v1, 0x0
-
-    aput v1, v4, v0
+    aput v1, v5, v0
 
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v5
+    move-result v6
 
-    const/4 v0, 0x1
+    aget v2, p2, v10
 
-    aget v2, p2, v0
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
-
-    move v3, v0
+    move v4, v1
 
     move v0, v1
 
     :goto_0
-    const/4 v1, 0x6
+    if-ge v4, v11, :cond_2
 
-    if-ge v3, v1, :cond_2
+    if-ge v2, v6, :cond_2
 
-    if-ge v2, v5, :cond_2
+    sget-object v3, Lcom/google/zxing/oned/EAN13Reader;->e:[[I
 
-    sget-object v1, Lcom/google/zxing/oned/EAN13Reader;->e:[[I
+    invoke-static {p1, v5, v2, v3}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;[II[[I)I
 
-    invoke-static {p1, v4, v2, v1}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;[II[[I)I
+    move-result v7
 
-    move-result v6
+    rem-int/lit8 v3, v7, 0xa
 
-    rem-int/lit8 v1, v6, 0xa
+    add-int/lit8 v3, v3, 0x30
 
-    add-int/lit8 v1, v1, 0x30
+    int-to-char v3, v3
 
-    int-to-char v1, v1
+    invoke-virtual {p3, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    array-length v8, v5
 
-    array-length v7, v4
+    move v3, v2
 
-    const/4 v1, 0x0
+    move v2, v1
 
     :goto_1
-    if-ge v1, v7, :cond_0
+    if-ge v2, v8, :cond_0
 
-    aget v8, v4, v1
+    aget v9, v5, v2
 
-    add-int/2addr v2, v8
+    add-int/2addr v3, v9
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_0
-    const/16 v1, 0xa
+    const/16 v2, 0xa
 
-    if-lt v6, v1, :cond_1
+    if-lt v7, v2, :cond_1
 
-    const/4 v1, 0x1
+    rsub-int/lit8 v2, v4, 0x5
 
-    rsub-int/lit8 v6, v3, 0x5
+    shl-int v2, v10, v2
 
-    shl-int/2addr v1, v6
-
-    or-int/2addr v0, v1
+    or-int/2addr v0, v2
 
     :cond_1
-    add-int/lit8 v1, v3, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    move v3, v1
+    move v4, v2
+
+    move v2, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    invoke-static {p3, v0}, Lcom/google/zxing/oned/EAN13Reader;->a(Ljava/lang/StringBuilder;I)V
 
-    :goto_2
-    const/16 v3, 0xa
+    sget-object v0, Lcom/google/zxing/oned/EAN13Reader;->c:[I
 
-    if-ge v1, v3, :cond_4
-
-    sget-object v3, Lcom/google/zxing/oned/EAN13Reader;->a:[I
-
-    aget v3, v3, v1
-
-    if-ne v0, v3, :cond_3
-
-    const/4 v0, 0x0
-
-    add-int/lit8 v1, v1, 0x30
-
-    int-to-char v1, v1
-
-    invoke-virtual {p3, v0, v1}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
-
-    const/4 v0, 0x1
-
-    sget-object v1, Lcom/google/zxing/oned/EAN13Reader;->c:[I
-
-    invoke-static {p1, v2, v0, v1}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;IZ[I)[I
+    invoke-static {p1, v2, v10, v0}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;IZ[I)[I
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    aget v0, v0, v10
 
-    aget v1, v0, v1
+    move v3, v1
 
-    const/4 v0, 0x0
+    :goto_2
+    if-ge v3, v11, :cond_4
 
-    :goto_3
-    const/4 v2, 0x6
-
-    if-ge v0, v2, :cond_6
-
-    if-ge v1, v5, :cond_6
+    if-ge v0, v6, :cond_4
 
     sget-object v2, Lcom/google/zxing/oned/EAN13Reader;->d:[[I
 
-    invoke-static {p1, v4, v1, v2}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;[II[[I)I
+    invoke-static {p1, v5, v0, v2}, Lcom/google/zxing/oned/EAN13Reader;->a(Lcom/google/zxing/common/BitArray;[II[[I)I
 
     move-result v2
 
@@ -258,42 +221,32 @@
 
     invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    array-length v6, v4
+    array-length v4, v5
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    :goto_4
-    if-ge v2, v6, :cond_5
+    move v0, v1
 
-    aget v3, v4, v2
+    :goto_3
+    if-ge v0, v4, :cond_3
 
-    add-int/2addr v3, v1
+    aget v7, v5, v0
 
-    add-int/lit8 v1, v2, 0x1
+    add-int/2addr v2, v7
 
-    move v2, v1
-
-    move v1, v3
-
-    goto :goto_4
-
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_5
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    :cond_6
-    return v1
+    :cond_3
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    move v0, v2
+
+    goto :goto_2
+
+    :cond_4
+    return v0
 .end method

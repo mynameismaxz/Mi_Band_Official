@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/j;
+.class Lcom/tencent/stat/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/stat/h;
+.field final synthetic a:Lcom/tencent/stat/h;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/stat/h;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/tencent/stat/j;->a:Lcom/tencent/stat/h;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     invoke-static {}, Lcom/tencent/stat/StatStore;->getInstance()Lcom/tencent/stat/StatStore;
@@ -51,7 +53,7 @@
     return-void
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 0
 
     return-void

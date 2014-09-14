@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static a:I
+.field static final synthetic a:Z
 
-.field private static synthetic b:Z
+.field private static b:I
 
 .field public static sInstance:Lcom/tencent/connect/auth/AuthMap;
 
@@ -43,9 +43,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    sput-boolean v0, Lcom/tencent/connect/auth/AuthMap;->b:Z
+    sput-boolean v0, Lcom/tencent/connect/auth/AuthMap;->a:Z
 
-    sput v1, Lcom/tencent/connect/auth/AuthMap;->a:I
+    sput v1, Lcom/tencent/connect/auth/AuthMap;->b:I
 
     return-void
 
@@ -73,16 +73,16 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method private a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 7
 
     const/4 v0, 0x0
 
-    sget-boolean v1, Lcom/tencent/connect/auth/AuthMap;->b:Z
+    sget-boolean v1, Lcom/tencent/connect/auth/AuthMap;->a:Z
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
@@ -101,11 +101,11 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
@@ -116,13 +116,13 @@
     :goto_0
     if-ge v0, v4, :cond_1
 
-    shl-int/lit8 v5, v0, 0x1
+    mul-int/lit8 v5, v0, 0x2
 
-    shl-int/lit8 v6, v0, 0x1
+    mul-int/lit8 v6, v0, 0x2
 
     add-int/lit8 v6, v6, 0x2
 
-    invoke-virtual {p0, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v5
 
@@ -132,7 +132,7 @@
 
     move-result v5
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
@@ -180,11 +180,11 @@
 .method public static getSerial()I
     .locals 1
 
-    sget v0, Lcom/tencent/connect/auth/AuthMap;->a:I
+    sget v0, Lcom/tencent/connect/auth/AuthMap;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    sput v0, Lcom/tencent/connect/auth/AuthMap;->a:I
+    sput v0, Lcom/tencent/connect/auth/AuthMap;->b:I
 
     return v0
 .end method
@@ -192,84 +192,9 @@
 
 # virtual methods
 .method public decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
+    .locals 1
 
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lcom/tencent/connect/auth/AuthMap;->b:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    rem-int/lit8 v1, v1, 0x2
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    div-int/lit8 v4, v1, 0x2
-
-    move v1, v0
-
-    :goto_0
-    if-ge v0, v4, :cond_1
-
-    shl-int/lit8 v5, v0, 0x1
-
-    shl-int/lit8 v6, v0, 0x1
-
-    add-int/lit8 v6, v6, 0x2
-
-    invoke-virtual {p1, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x10
-
-    invoke-static {v5, v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result v5
-
-    invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    xor-int/2addr v5, v6
-
-    int-to-char v5, v5
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, v1, 0x1
-
-    rem-int/2addr v1, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {p0, p1, p2}, Lcom/tencent/connect/auth/AuthMap;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -365,7 +290,7 @@
 .end method
 
 .method public set(Lcom/tencent/connect/auth/AuthMap$Auth;)Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     invoke-static {}, Lcom/tencent/connect/auth/AuthMap;->getSerial()I
 
@@ -377,6 +302,12 @@
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -394,6 +325,12 @@
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

@@ -223,85 +223,7 @@
 
     sput-boolean p2, Lcom/xiaomi/hm/bleservice/util/Debug;->i:Z
 
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MM.:  .:\'   `:::  .:`MMMMMMMMMMM|`MMM\'|MMMMMMMMMMM\':  .:\'   `:::  .:\'.MM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMM.     :          `MMMMMMMMMM  :*\'  MMMMMMMMMM\'        :        .MMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMM.    ::    .     `MMMMMMMM\'  ::   `MMMMMMMM\'   .     ::   .  .MMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMM. :   :: ::\'  :   :: ::\'  :   :: ::\'      :: ::\'  :   :: ::.MMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMM    ;::         ;::         ;::         ;::         ;::   MMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMM .:\'   `:::  .:\'   `:::  .:\'   `:::  .:\'   `:::  .:\'   `::MMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMM\'     :           :           :           :           :    `MMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMM\'______::____      ::    .     ::    .     ::     ___._::____`MMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMM`---._ :: ::\'  :   :: ::\'  _.--::MMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMM::.         ::  .--MMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-.     ;::-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM. .:\' .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.   .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\\ /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMVMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM .:ZylvanaS:. MM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
-
-    const-string v0, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->a()V
 
     const-string v0, "         ENABLE_VERBOSE: TRUE"
 
@@ -608,7 +530,7 @@
 
     move-result-object v1
 
-    const/4 v2, 0x4
+    add-int/lit8 v2, p2, 0x4
 
     aget-object v1, v1, v2
 
@@ -646,7 +568,13 @@
 
     move-result-object v0
 
-    const-string v4, "]<"
+    const-string v4, "]"
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, "<"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -715,7 +643,7 @@
 
     invoke-static {p0, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :sswitch_1
     new-instance v2, Ljava/lang/StringBuilder;

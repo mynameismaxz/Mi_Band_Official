@@ -124,8 +124,6 @@
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     return-void
 
@@ -133,6 +131,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
@@ -175,8 +175,6 @@
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -184,6 +182,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -252,7 +252,7 @@
 
     array-length v0, v0
 
-    if-gtz v0, :cond_2
+    if-ge v0, v2, :cond_2
 
     :cond_1
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->TAG:Ljava/lang/String;
@@ -428,6 +428,8 @@
     invoke-static {}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->waiting()V
 
     :cond_4
+    const/16 v3, 0xc
+
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->e:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -435,8 +437,6 @@
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
-
-    const/16 v3, 0xc
 
     if-eq v0, v3, :cond_5
 

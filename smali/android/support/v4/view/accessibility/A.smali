@@ -1,358 +1,296 @@
 .class Landroid/support/v4/view/accessibility/A;
-.super Landroid/support/v4/view/accessibility/C;
+.super Landroid/support/v4/view/accessibility/E;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/support/v4/view/accessibility/C;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/view/accessibility/E;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public a()Ljava/lang/Object;
     .locals 1
 
-    invoke-static {}, Landroid/view/accessibility/AccessibilityRecord;->obtain()Landroid/view/accessibility/AccessibilityRecord;
+    invoke-static {}, Landroid/support/v4/view/accessibility/F;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-static {p1}, Landroid/view/accessibility/AccessibilityRecord;->obtain(Landroid/view/accessibility/AccessibilityRecord;)Landroid/view/accessibility/AccessibilityRecord;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;I)V
+.method public a(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setAddedCount(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;Landroid/os/Parcelable;)V
+.method public a(Ljava/lang/Object;Landroid/os/Parcelable;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setParcelableData(Landroid/os/Parcelable;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;Landroid/os/Parcelable;)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;Landroid/view/View;)V
+.method public a(Ljava/lang/Object;Landroid/view/View;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setSource(Landroid/view/View;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+.method public a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setBeforeText(Ljava/lang/CharSequence;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;Z)V
+.method public a(Ljava/lang/Object;Z)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setChecked(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->a(Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method public final b(Ljava/lang/Object;)I
+.method public b(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getAddedCount()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->b(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Ljava/lang/Object;I)V
+.method public b(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setCurrentItemIndex(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->b(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+.method public b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
-.method public final b(Ljava/lang/Object;Z)V
+.method public b(Ljava/lang/Object;Z)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setEnabled(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->b(Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method public final c(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public c(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getBeforeText()Ljava/lang/CharSequence;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->c(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final c(Ljava/lang/Object;I)V
+.method public c(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setFromIndex(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->c(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+.method public c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
-.method public final c(Ljava/lang/Object;Z)V
+.method public c(Ljava/lang/Object;Z)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setFullScreen(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->c(Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method public final d(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public d(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getClassName()Ljava/lang/CharSequence;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->d(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final d(Ljava/lang/Object;I)V
+.method public d(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setItemCount(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->d(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final d(Ljava/lang/Object;Z)V
+.method public d(Ljava/lang/Object;Z)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setPassword(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->d(Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method public final e(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public e(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getContentDescription()Ljava/lang/CharSequence;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->e(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final e(Ljava/lang/Object;I)V
+.method public e(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setRemovedCount(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->e(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final e(Ljava/lang/Object;Z)V
+.method public e(Ljava/lang/Object;Z)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->e(Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method public final f(Ljava/lang/Object;)I
+.method public f(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getCurrentItemIndex()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->f(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final f(Ljava/lang/Object;I)V
+.method public f(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setScrollX(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->f(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final g(Ljava/lang/Object;)I
+.method public g(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getFromIndex()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->g(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final g(Ljava/lang/Object;I)V
+.method public g(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setScrollY(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->g(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final h(Ljava/lang/Object;)I
+.method public h(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getItemCount()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->h(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final h(Ljava/lang/Object;I)V
+.method public h(Ljava/lang/Object;I)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityRecord;->setToIndex(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/F;->h(Ljava/lang/Object;I)V
 
     return-void
 .end method
 
-.method public final i(Ljava/lang/Object;)Landroid/os/Parcelable;
+.method public i(Ljava/lang/Object;)Landroid/os/Parcelable;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getParcelableData()Landroid/os/Parcelable;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->i(Ljava/lang/Object;)Landroid/os/Parcelable;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final j(Ljava/lang/Object;)I
+.method public j(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getRemovedCount()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->j(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final k(Ljava/lang/Object;)I
+.method public k(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getScrollX()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->k(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final l(Ljava/lang/Object;)I
+.method public l(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getScrollY()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->l(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final m(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.method public m(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getSource()Landroid/view/accessibility/AccessibilityNodeInfo;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->m(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -363,7 +301,7 @@
     return-object v0
 .end method
 
-.method public final n(Ljava/lang/Object;)Ljava/util/List;
+.method public n(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -377,105 +315,87 @@
         }
     .end annotation
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->n(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)I
+.method public o(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getToIndex()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->o(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final p(Ljava/lang/Object;)I
+.method public p(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getWindowId()I
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->p(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final q(Ljava/lang/Object;)Z
+.method public q(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->isChecked()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->q(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final r(Ljava/lang/Object;)Z
+.method public r(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->isEnabled()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->r(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final s(Ljava/lang/Object;)Z
+.method public s(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->isFullScreen()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->s(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final t(Ljava/lang/Object;)Z
+.method public t(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->isPassword()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->t(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final u(Ljava/lang/Object;)Z
+.method public u(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->isScrollable()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->u(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final v(Ljava/lang/Object;)V
+.method public v(Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityRecord;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->recycle()V
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/F;->v(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -567,6 +567,8 @@
 
     sput-object v0, Lcn/com/smartdevices/bracelet/view/Util;->b:Landroid/app/ProgressDialog;
 
+    sget-object v0, Lcn/com/smartdevices/bracelet/view/Util;->b:Landroid/app/ProgressDialog;
+
     invoke-virtual {v0, p3}, Landroid/app/ProgressDialog;->setCancelable(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0

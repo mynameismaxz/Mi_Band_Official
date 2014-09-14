@@ -22,17 +22,15 @@
 
     sput-object v0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->c:Lcn/com/smartdevices/bracelet/BraceletImageLoader;
 
+    sput-object v0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->d:Landroid/graphics/drawable/Drawable;
+
     return-void
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 1
 
     const/4 v0, 0x0
-
-    const/high16 v4, 0x40
-
-    const/4 v3, 0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,113 +38,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->b:Lcom/nostra13/universalimageloader/core/ImageLoader;
 
-    new-instance v1, Ljava/io/File;
-
-    move-object v0, p1
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/BraceletApp;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BraceletApp;->getStoragePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    invoke-direct {v0, p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;-><init>(Landroid/content/Context;)V
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v0, v2}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->threadPriority(I)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->denyCacheImageMultipleSizesInMemory()Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/nostra13/universalimageloader/cache/disc/naming/Md5FileNameGenerator;
-
-    invoke-direct {v2}, Lcom/nostra13/universalimageloader/cache/disc/naming/Md5FileNameGenerator;-><init>()V
-
-    invoke-virtual {v0, v2}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->discCacheFileNameGenerator(Lcom/nostra13/universalimageloader/cache/disc/naming/FileNameGenerator;)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;->LIFO:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
-
-    invoke-virtual {v0, v2}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->tasksProcessingOrder(Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/nostra13/universalimageloader/cache/memory/impl/LruMemoryCache;
-
-    invoke-direct {v2, v4}, Lcom/nostra13/universalimageloader/cache/memory/impl/LruMemoryCache;-><init>(I)V
-
-    invoke-virtual {v0, v2}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->memoryCache(Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->memoryCacheSize(I)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/nostra13/universalimageloader/cache/disc/impl/UnlimitedDiscCache;
-
-    invoke-direct {v2, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/UnlimitedDiscCache;-><init>(Ljava/io/File;)V
-
-    invoke-virtual {v0, v2}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->discCache(Lcom/nostra13/universalimageloader/cache/disc/DiskCache;)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    const/high16 v1, 0x320
-
-    invoke-virtual {v0, v1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->discCacheSize(I)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    const/16 v1, 0x3e8
-
-    invoke-virtual {v0, v1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->discCacheFileCount(I)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->writeDebugLogs()Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->build()Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/nostra13/universalimageloader/core/ImageLoader;->getInstance()Lcom/nostra13/universalimageloader/core/ImageLoader;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->b:Lcom/nostra13/universalimageloader/core/ImageLoader;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->b:Lcom/nostra13/universalimageloader/core/ImageLoader;
-
-    invoke-virtual {v1, v0}, Lcom/nostra13/universalimageloader/core/ImageLoader;->init(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;)V
-
-    new-instance v0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
-
-    invoke-direct {v0}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;-><init>()V
-
-    invoke-virtual {v0, v3}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->cacheInMemory(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->cacheOnDisc(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->build()Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->a:Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->a(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -290,9 +182,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f020056
+    const v1, 0x7f020058
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->d:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method

@@ -1234,7 +1234,9 @@
     add-int/lit8 v0, v3, -0x1
 
     :goto_1
-    if-lez v0, :cond_0
+    const/4 v7, 0x1
+
+    if-lt v0, v7, :cond_0
 
     sget-object v7, Lcom/google/zxing/pdf417/encoder/d;->a:[[I
 
@@ -1328,7 +1330,7 @@
     return-object v0
 .end method
 
-.method private static b(I)I
+.method static b(I)I
     .locals 2
 
     if-gtz p0, :cond_0

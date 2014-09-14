@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final getService()Lcom/xiaomi/hm/bleservice/BLEService;
+.method public getService()Lcom/xiaomi/hm/bleservice/BLEService;
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/BLEService$BLEServiceBinder;->a:Lcom/xiaomi/hm/bleservice/BLEService;

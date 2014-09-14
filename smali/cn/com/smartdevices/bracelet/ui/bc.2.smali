@@ -1,43 +1,73 @@
-.class final Lcn/com/smartdevices/bracelet/ui/bc;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.class Lcn/com/smartdevices/bracelet/ui/bc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bc;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
-    .locals 1
+.method public onLeftClicked(Landroid/app/DialogFragment;)V
+    .locals 3
 
-    if-eqz p3, :cond_0
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
 
-    new-instance v0, Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bc;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->c(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bc;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+    const-string v1, "UserLogout"
 
-    :cond_0
+    const-string v2, "Confirmed"
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onRightClicked(Landroid/app/DialogFragment;)V
+    .locals 3
+
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bc;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    const-string v1, "UserLogout"
+
+    const-string v2, "Canceled"
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
     return-void
 .end method

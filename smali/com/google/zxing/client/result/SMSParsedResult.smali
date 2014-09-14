@@ -63,7 +63,7 @@
 
 
 # virtual methods
-.method public final getBody()Ljava/lang/String;
+.method public getBody()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/SMSParsedResult;->d:Ljava/lang/String;
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -99,7 +99,7 @@
     return-object v0
 .end method
 
-.method public final getNumbers()[Ljava/lang/String;
+.method public getNumbers()[Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/SMSParsedResult;->a:[Ljava/lang/String;
@@ -107,7 +107,7 @@
     return-object v0
 .end method
 
-.method public final getSMSURI()Ljava/lang/String;
+.method public getSMSURI()Ljava/lang/String;
     .locals 6
 
     const/4 v3, 0x1
@@ -244,7 +244,7 @@
     goto :goto_3
 .end method
 
-.method public final getSubject()Ljava/lang/String;
+.method public getSubject()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/SMSParsedResult;->c:Ljava/lang/String;
@@ -252,7 +252,7 @@
     return-object v0
 .end method
 
-.method public final getVias()[Ljava/lang/String;
+.method public getVias()[Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/SMSParsedResult;->b:[Ljava/lang/String;

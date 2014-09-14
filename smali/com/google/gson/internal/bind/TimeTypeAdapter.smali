@@ -52,7 +52,7 @@
 
 
 # virtual methods
-.method public final bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TimeTypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/sql/Time;
@@ -62,7 +62,7 @@
     return-object v0
 .end method
 
-.method public final declared-synchronized read(Lcom/google/gson/stream/JsonReader;)Ljava/sql/Time;
+.method public declared-synchronized read(Lcom/google/gson/stream/JsonReader;)Ljava/sql/Time;
     .locals 3
 
     monitor-enter p0
@@ -132,7 +132,7 @@
     throw v0
 .end method
 
-.method public final bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Ljava/sql/Time;
@@ -142,7 +142,7 @@
     return-void
 .end method
 
-.method public final declared-synchronized write(Lcom/google/gson/stream/JsonWriter;Ljava/sql/Time;)V
+.method public declared-synchronized write(Lcom/google/gson/stream/JsonWriter;Ljava/sql/Time;)V
     .locals 1
 
     monitor-enter p0

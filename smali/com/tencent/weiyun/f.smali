@@ -1,4 +1,4 @@
-.class final Lcom/tencent/weiyun/f;
+.class Lcom/tencent/weiyun/f;
 .super Ljava/lang/Object;
 
 
@@ -79,34 +79,7 @@
     return-object v0
 .end method
 
-.method private static a(Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->ImageFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
-
-    if-ne p0, v0, :cond_0
-
-    const-string v0, "https://graph.qq.com/weiyun/upload_photo"
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->MusicFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
-
-    if-ne p0, v0, :cond_1
-
-    const-string v0, "https://graph.qq.com/weiyun/upload_music"
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, "https://graph.qq.com/weiyun/upload_video"
-
-    goto :goto_0
-.end method
-
-.method static synthetic a(Lcom/tencent/weiyun/f;Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
+.method private a(Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->ImageFile:Lcom/tencent/weiyun/FileManager$WeiyunFileType;
@@ -131,6 +104,16 @@
     const-string v0, "https://graph.qq.com/weiyun/upload_video"
 
     goto :goto_0
+.end method
+
+.method static synthetic a(Lcom/tencent/weiyun/f;Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/tencent/weiyun/f;->a(Lcom/tencent/weiyun/FileManager$WeiyunFileType;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method static synthetic a(Lcom/tencent/weiyun/f;Ljava/lang/String;)Ljava/lang/String;
@@ -207,7 +190,7 @@
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0x0
+    add-int/2addr v2, v4
 
     const/16 v3, 0x3e8
 
@@ -285,6 +268,10 @@
 
     invoke-static {p1, p2, v0, v1}, Lcom/tencent/utils/DataConvert;->putBytes2Bytes([BI[BI)I
 
+    move-result v2
+
+    add-int/2addr v1, v2
+
     :goto_0
     return-object v0
 
@@ -329,13 +316,9 @@
 .end method
 
 .method static synthetic b(Lcom/tencent/weiyun/f;)V
-    .locals 1
+    .locals 0
 
-    new-instance v0, Lcom/tencent/weiyun/i;
-
-    invoke-direct {v0, p0}, Lcom/tencent/weiyun/i;-><init>(Lcom/tencent/weiyun/f;)V
-
-    invoke-virtual {v0}, Lcom/tencent/weiyun/i;->start()V
+    invoke-direct {p0}, Lcom/tencent/weiyun/f;->c()V
 
     return-void
 .end method
@@ -418,10 +401,10 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 6
+.method public a()V
+    .locals 7
 
-    const/4 v5, -0x2
+    const/4 v6, -0x2
 
     iget-object v0, p0, Lcom/tencent/weiyun/f;->j:Ljava/lang/String;
 
@@ -482,79 +465,77 @@
 
     iput-wide v1, p0, Lcom/tencent/weiyun/f;->m:J
 
-    :try_start_0
-    const-string v1, "SHA-1"
-
-    invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    new-instance v3, Ljava/security/DigestInputStream;
-
-    invoke-direct {v3, v2, v1}, Ljava/security/DigestInputStream;-><init>(Ljava/io/InputStream;Ljava/security/MessageDigest;)V
-
     const/high16 v1, 0x8
 
-    new-array v1, v1, [B
+    :try_start_0
+    const-string v2, "SHA-1"
+
+    invoke-static {v2}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/io/FileInputStream;
+
+    invoke-direct {v3, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    new-instance v4, Ljava/security/DigestInputStream;
+
+    invoke-direct {v4, v3, v2}, Ljava/security/DigestInputStream;-><init>(Ljava/io/InputStream;Ljava/security/MessageDigest;)V
+
+    new-array v2, v1, [B
 
     :cond_2
-    invoke-virtual {v3, v1}, Ljava/security/DigestInputStream;->read([B)I
+    invoke-virtual {v4, v2}, Ljava/security/DigestInputStream;->read([B)I
 
-    move-result v4
+    move-result v5
 
-    if-gtz v4, :cond_2
+    if-gtz v5, :cond_2
 
-    invoke-virtual {v3}, Ljava/security/DigestInputStream;->getMessageDigest()Ljava/security/MessageDigest;
+    invoke-virtual {v4}, Ljava/security/DigestInputStream;->getMessageDigest()Ljava/security/MessageDigest;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/security/MessageDigest;->digest()[B
+    invoke-virtual {v2}, Ljava/security/MessageDigest;->digest()[B
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Lcom/tencent/utils/DataConvert;->toHexString([B)Ljava/lang/String;
+    invoke-static {v5}, Lcom/tencent/utils/DataConvert;->toHexString([B)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, p0, Lcom/tencent/weiyun/f;->n:Ljava/lang/String;
+    iput-object v5, p0, Lcom/tencent/weiyun/f;->n:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/security/MessageDigest;->reset()V
+    invoke-virtual {v2}, Ljava/security/MessageDigest;->reset()V
 
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    invoke-virtual {v3}, Ljava/security/DigestInputStream;->close()V
+    invoke-virtual {v4}, Ljava/security/DigestInputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    const-string v1, "MD5"
+    const-string v2, "MD5"
 
-    invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+    invoke-static {v2}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    move-result-object v1
+    move-result-object v2
 
-    new-instance v2, Ljava/io/FileInputStream;
+    new-instance v3, Ljava/io/FileInputStream;
 
-    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v3, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     new-instance v0, Ljava/security/DigestInputStream;
 
-    invoke-direct {v0, v2, v1}, Ljava/security/DigestInputStream;-><init>(Ljava/io/InputStream;Ljava/security/MessageDigest;)V
-
-    const/high16 v1, 0x8
+    invoke-direct {v0, v3, v2}, Ljava/security/DigestInputStream;-><init>(Ljava/io/InputStream;Ljava/security/MessageDigest;)V
 
     new-array v1, v1, [B
 
     :cond_3
     invoke-virtual {v0, v1}, Ljava/security/DigestInputStream;->read([B)I
 
-    move-result v3
+    move-result v2
 
-    if-gtz v3, :cond_3
+    if-gtz v2, :cond_3
 
     invoke-virtual {v0}, Ljava/security/DigestInputStream;->getMessageDigest()Ljava/security/MessageDigest;
 
@@ -562,27 +543,23 @@
 
     invoke-virtual {v1}, Ljava/security/MessageDigest;->digest()[B
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Lcom/tencent/utils/DataConvert;->toHexString([B)Ljava/lang/String;
+    invoke-static {v2}, Lcom/tencent/utils/DataConvert;->toHexString([B)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    iput-object v3, p0, Lcom/tencent/weiyun/f;->o:Ljava/lang/String;
+    iput-object v2, p0, Lcom/tencent/weiyun/f;->o:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/security/MessageDigest;->reset()V
 
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
     invoke-virtual {v0}, Ljava/security/DigestInputStream;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    new-instance v0, Lcom/tencent/weiyun/h;
-
-    invoke-direct {v0, p0}, Lcom/tencent/weiyun/h;-><init>(Lcom/tencent/weiyun/f;)V
-
-    invoke-virtual {v0}, Lcom/tencent/weiyun/h;->start()V
+    invoke-direct {p0}, Lcom/tencent/weiyun/f;->b()V
 
     goto :goto_0
 
@@ -595,7 +572,7 @@
 
     move-result-object v0
 
-    iput v5, v0, Landroid/os/Message;->what:I
+    iput v6, v0, Landroid/os/Message;->what:I
 
     new-instance v1, Ljava/lang/String;
 
@@ -620,7 +597,7 @@
 
     move-result-object v0
 
-    iput v5, v0, Landroid/os/Message;->what:I
+    iput v6, v0, Landroid/os/Message;->what:I
 
     new-instance v1, Ljava/lang/String;
 

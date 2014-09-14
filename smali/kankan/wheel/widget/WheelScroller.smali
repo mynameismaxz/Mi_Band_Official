@@ -34,7 +34,9 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lkankan/wheel/widget/WheelScroller$ScrollingListener;)V
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,6 +45,12 @@
     invoke-direct {v0, p0}, Lkankan/wheel/widget/a;-><init>(Lkankan/wheel/widget/WheelScroller;)V
 
     iput-object v0, p0, Lkankan/wheel/widget/WheelScroller;->i:Landroid/view/GestureDetector$SimpleOnGestureListener;
+
+    iput v2, p0, Lkankan/wheel/widget/WheelScroller;->j:I
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lkankan/wheel/widget/WheelScroller;->k:I
 
     new-instance v0, Lkankan/wheel/widget/b;
 
@@ -60,9 +68,7 @@
 
     iget-object v0, p0, Lkankan/wheel/widget/WheelScroller;->d:Landroid/view/GestureDetector;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
+    invoke-virtual {v0, v2}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
 
     new-instance v0, Landroid/widget/Scroller;
 
@@ -132,11 +138,9 @@
 .end method
 
 .method static synthetic b(Lkankan/wheel/widget/WheelScroller;I)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lkankan/wheel/widget/WheelScroller;->a(I)V
+    invoke-direct {p0, p1}, Lkankan/wheel/widget/WheelScroller;->a(I)V
 
     return-void
 .end method
@@ -200,7 +204,7 @@
 
 
 # virtual methods
-.method final a()V
+.method a()V
     .locals 1
 
     iget-boolean v0, p0, Lkankan/wheel/widget/WheelScroller;->h:Z

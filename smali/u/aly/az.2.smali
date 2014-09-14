@@ -235,7 +235,7 @@
     throw v1
 .end method
 
-.method private static synthetic i()[I
+.method static synthetic i()[I
     .locals 3
 
     sget-object v0, Lu/aly/az;->g:[I
@@ -598,8 +598,12 @@
     :pswitch_0
     instance-of v0, p2, Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
+    :cond_0
+    return-void
+
+    :cond_1
     new-instance v0, Ljava/lang/ClassCastException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -660,9 +664,6 @@
     invoke-direct {v0, v1}, Ljava/lang/ClassCastException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_0
-    return-void
 
     nop
 

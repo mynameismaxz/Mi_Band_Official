@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/aK;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/aJ;
+
 
 # direct methods
 .method constructor <init>()V

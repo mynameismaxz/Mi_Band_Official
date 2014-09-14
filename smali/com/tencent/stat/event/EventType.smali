@@ -133,6 +133,8 @@
 
     aput-object v2, v0, v1
 
+    sput-object v0, Lcom/tencent/stat/event/EventType;->b:[Lcom/tencent/stat/event/EventType;
+
     return-void
 .end method
 
@@ -153,7 +155,7 @@
 
 
 # virtual methods
-.method public final GetIntValue()I
+.method public GetIntValue()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/stat/event/EventType;->a:I

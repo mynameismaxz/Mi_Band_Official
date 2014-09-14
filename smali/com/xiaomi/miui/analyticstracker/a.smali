@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/miui/analyticstracker/a;
+.class Lcom/xiaomi/miui/analyticstracker/a;
 .super Landroid/database/sqlite/SQLiteOpenHelper;
 
 
@@ -12,13 +12,11 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x2
-
-    invoke-direct {p0, p1, p2, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    invoke-direct {p0, p1, p2, v0, p4}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
     iput-object p3, p0, Lcom/xiaomi/miui/analyticstracker/a;->b:Ljava/lang/String;
 
@@ -27,7 +25,7 @@
 
 
 # virtual methods
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 4
 
     const-string v0, "create table %s(_id integer primary key autoincrement, type integer, event_id text, param text, time text, value text)"
@@ -51,7 +49,7 @@
     return-void
 .end method
 
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .locals 0
 
     return-void

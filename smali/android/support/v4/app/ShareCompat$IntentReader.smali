@@ -297,7 +297,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/support/v4/app/Y;->a(Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-interface {v1, v0}, Landroid/support/v4/app/Y;->a(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -384,9 +384,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Stream items available: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Landroid/support/v4/app/ShareCompat$IntentReader;->getStreamCount()I
 

@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -57,7 +57,7 @@
     return-object v0
 .end method
 
-.method public final getNetworkEncryption()Ljava/lang/String;
+.method public getNetworkEncryption()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/WifiParsedResult;->b:Ljava/lang/String;
@@ -65,7 +65,7 @@
     return-object v0
 .end method
 
-.method public final getPassword()Ljava/lang/String;
+.method public getPassword()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/WifiParsedResult;->c:Ljava/lang/String;
@@ -73,7 +73,7 @@
     return-object v0
 .end method
 
-.method public final getSsid()Ljava/lang/String;
+.method public getSsid()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/WifiParsedResult;->a:Ljava/lang/String;

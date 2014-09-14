@@ -53,22 +53,22 @@
     return-void
 .end method
 
-.method private static a(IIF)I
+.method private a(IIF)I
     .locals 6
 
     const/high16 v5, 0x3f80
 
-    invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
+    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    mul-float/2addr v0, p2
+    mul-float/2addr v0, p3
 
-    sub-float v1, v5, p2
+    sub-float v1, v5, p3
 
-    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
+    invoke-static {p2}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
 
@@ -82,17 +82,17 @@
 
     move-result v0
 
-    invoke-static {p0}, Landroid/graphics/Color;->red(I)I
+    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float/2addr v1, p2
+    mul-float/2addr v1, p3
 
-    sub-float v2, v5, p2
+    sub-float v2, v5, p3
 
-    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
+    invoke-static {p2}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
 
@@ -106,17 +106,17 @@
 
     move-result v1
 
-    invoke-static {p0}, Landroid/graphics/Color;->green(I)I
+    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    mul-float/2addr v2, p2
+    mul-float/2addr v2, p3
 
-    sub-float v3, v5, p2
+    sub-float v3, v5, p3
 
-    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
+    invoke-static {p2}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
 
@@ -130,17 +130,17 @@
 
     move-result v2
 
-    invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
+    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    mul-float/2addr v3, p2
+    mul-float/2addr v3, p3
 
-    sub-float v4, v5, p2
+    sub-float v4, v5, p3
 
-    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
+    invoke-static {p2}, Landroid/graphics/Color;->blue(I)I
 
     move-result v5
 
@@ -402,7 +402,7 @@
 
     div-float/2addr v2, v3
 
-    invoke-static {v10, v8, v2}, Lorg/achartengine/chart/BarChart;->a(IIF)I
+    invoke-direct {p0, v10, v8, v2}, Lorg/achartengine/chart/BarChart;->a(IIF)I
 
     move-result v2
 
@@ -417,7 +417,7 @@
 
     div-float/2addr v2, v3
 
-    invoke-static {v8, v10, v2}, Lorg/achartengine/chart/BarChart;->a(IIF)I
+    invoke-direct {p0, v8, v10, v2}, Lorg/achartengine/chart/BarChart;->a(IIF)I
 
     move-result v2
 
@@ -618,7 +618,7 @@
 
     sub-float v0, v2, v0
 
-    shl-int/lit8 v1, p4, 0x1
+    mul-int/lit8 v1, p4, 0x2
 
     int-to-float v1, v1
 
@@ -731,7 +731,7 @@
 
     sub-float v1, p2, v1
 
-    shl-int/lit8 v2, p8, 0x1
+    mul-int/lit8 v2, p8, 0x2
 
     int-to-float v2, v2
 
@@ -833,7 +833,7 @@
 
     if-ne v1, v5, :cond_0
 
-    shl-int/lit8 v1, p6, 0x1
+    mul-int/lit8 v1, p6, 0x2
 
     int-to-float v1, v1
 
@@ -962,15 +962,15 @@
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
     .locals 6
 
-    const/high16 v1, 0x40c0
+    const/high16 v0, 0x40c0
 
-    sub-float v2, p4, v1
+    sub-float v2, p4, v0
 
-    const/high16 v0, 0x4140
+    const/high16 v1, 0x4140
 
-    add-float v3, p3, v0
+    add-float v3, p3, v1
 
-    add-float v4, p4, v1
+    add-float v4, p4, v0
 
     move-object v0, p1
 

@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static final a:I = 0x5
+.field private static final b:I = 0x5
 
-.field private static final b:I = 0xf
+.field private static final c:I = 0xf
 
 
 # direct methods

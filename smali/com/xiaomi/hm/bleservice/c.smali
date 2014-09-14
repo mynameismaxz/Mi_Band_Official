@@ -1,9 +1,9 @@
-.class final Lcom/xiaomi/hm/bleservice/c;
+.class Lcom/xiaomi/hm/bleservice/c;
 .super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;

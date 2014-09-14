@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/t;
+.class Lcom/tencent/open/t;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:I
+.field final synthetic a:I
 
-.field private synthetic b:Lcom/tencent/open/TaskGuide;
+.field final synthetic b:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 4
 
     const/4 v3, 0x2

@@ -56,7 +56,7 @@
     goto :goto_0
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcel;B)V
+.method synthetic constructor <init>(Landroid/os/Parcel;Landroid/support/v4/widget/G;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;-><init>(Landroid/os/Parcel;)V

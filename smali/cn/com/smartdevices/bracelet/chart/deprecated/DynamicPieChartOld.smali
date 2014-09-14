@@ -345,6 +345,7 @@
     packed-switch v0, :pswitch_data_0
 
     :goto_2
+    :pswitch_0
     return-void
 
     :cond_2
@@ -389,35 +390,6 @@
 
     goto :goto_1
 
-    :pswitch_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
-
-    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->erase(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
-
-    invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
-
-    invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
-
-    move-result v2
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensityScale:F
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p1
-
-    invoke-static/range {v0 .. v5}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->drawBitmapCenter(Landroid/graphics/Canvas;FFFLandroid/graphics/Bitmap;Landroid/graphics/Paint;)V
-
-    goto :goto_2
-
     :pswitch_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
 
@@ -437,7 +409,7 @@
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensityScale:F
 
-    const/4 v4, 0x0
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->e:Landroid/graphics/Bitmap;
 
     const/4 v5, 0x0
 
@@ -466,7 +438,7 @@
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensityScale:F
 
-    const/4 v4, 0x0
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->f:Landroid/graphics/Bitmap;
 
     const/4 v5, 0x0
 
@@ -476,6 +448,37 @@
 
     goto :goto_2
 
+    :pswitch_3
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
+
+    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->erase(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->p:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v2
+
+    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensityScale:F
+
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->g:Landroid/graphics/Bitmap;
+
+    const/4 v5, 0x0
+
+    move-object v0, p1
+
+    invoke-static/range {v0 .. v5}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->drawBitmapCenter(Landroid/graphics/Canvas;FFFLandroid/graphics/Bitmap;Landroid/graphics/Paint;)V
+
+    goto :goto_2
+
+    nop
+
     :array_0
     .array-data 0x4
         0xfft 0xfft 0xfft 0x0t
@@ -484,10 +487,11 @@
     .end array-data
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
         :pswitch_0
         :pswitch_1
         :pswitch_2
+        :pswitch_3
     .end packed-switch
 .end method
 

@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/BraceletImageLoader;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/BraceletImageLoader;
 
 
 # direct methods
 .method public constructor <init>(Lcn/com/smartdevices/bracelet/BraceletImageLoader;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/BraceletImageLoader$RoundBitmapDisplayer;->a:Lcn/com/smartdevices/bracelet/BraceletImageLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

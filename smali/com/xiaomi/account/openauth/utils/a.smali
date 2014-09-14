@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/account/openauth/utils/a;
+.class Lcom/xiaomi/account/openauth/utils/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final verify(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
+.method public verify(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
     .locals 2
 
     const-string v0, "openauth"

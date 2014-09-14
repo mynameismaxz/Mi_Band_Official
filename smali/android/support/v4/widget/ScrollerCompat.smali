@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static b:Landroid/support/v4/widget/p;
+.field static final b:Landroid/support/v4/widget/p;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field a:Ljava/lang/Object;
 
 
 # direct methods
@@ -52,7 +52,7 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
+.method constructor <init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -45,15 +45,15 @@
 .method private static a(Landroid/view/View;)Lcn/com/smartdevices/bracelet/view/ScrollDetectors$ScrollDetector;
     .locals 3
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
     sget-object v0, Lcn/com/smartdevices/bracelet/view/ScrollDetectors;->a:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v0, v1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -71,12 +71,12 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/view/x;
 
-    invoke-direct {v0, v2}, Lcn/com/smartdevices/bracelet/view/x;-><init>(B)V
+    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/view/x;-><init>(Lcn/com/smartdevices/bracelet/view/x;)V
 
     :goto_1
-    sget-object v2, Lcn/com/smartdevices/bracelet/view/ScrollDetectors;->a:Ljava/util/WeakHashMap;
+    sget-object v1, Lcn/com/smartdevices/bracelet/view/ScrollDetectors;->a:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v2, v1, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -87,7 +87,7 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/view/w;
 
-    invoke-direct {v0, v2}, Lcn/com/smartdevices/bracelet/view/w;-><init>(B)V
+    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/view/w;-><init>(Lcn/com/smartdevices/bracelet/view/w;)V
 
     goto :goto_1
 
@@ -98,7 +98,7 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/view/y;
 
-    invoke-direct {v0, v2}, Lcn/com/smartdevices/bracelet/view/y;-><init>(B)V
+    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/view/y;-><init>(Lcn/com/smartdevices/bracelet/view/y;)V
 
     goto :goto_1
 
@@ -116,7 +116,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move-object v0, v1
 
     goto :goto_0
 .end method

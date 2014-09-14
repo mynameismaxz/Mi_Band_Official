@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/n;
+.class Lcom/tencent/stat/n;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/stat/event/Event;
+.field final synthetic a:Lcom/tencent/stat/event/Event;
 
-.field private synthetic b:Lcom/tencent/stat/b;
+.field final synthetic b:Lcom/tencent/stat/b;
 
-.field private synthetic c:Lcom/tencent/stat/StatStore;
+.field final synthetic c:Lcom/tencent/stat/StatStore;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/tencent/stat/n;->c:Lcom/tencent/stat/StatStore;

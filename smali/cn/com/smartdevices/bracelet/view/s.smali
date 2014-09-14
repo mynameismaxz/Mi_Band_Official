@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/s;
+.class Lcn/com/smartdevices/bracelet/view/s;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/RoundProgressBar;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/RoundProgressBar;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/s;->a:Lcn/com/smartdevices/bracelet/view/RoundProgressBar;
@@ -107,13 +107,13 @@
     return-void
 .end method
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
 
     return-void

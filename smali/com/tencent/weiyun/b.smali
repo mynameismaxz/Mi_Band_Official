@@ -1,11 +1,11 @@
-.class final Lcom/tencent/weiyun/b;
+.class Lcom/tencent/weiyun/b;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/weiyun/FileManager;
+.field final synthetic a:Lcom/tencent/weiyun/FileManager;
 
-.field private synthetic b:Lcom/tencent/weiyun/a;
+.field final synthetic b:Lcom/tencent/weiyun/a;
 
 
 # direct methods
@@ -14,6 +14,8 @@
 
     iput-object p1, p0, Lcom/tencent/weiyun/b;->b:Lcom/tencent/weiyun/a;
 
+    iput-object p3, p0, Lcom/tencent/weiyun/b;->a:Lcom/tencent/weiyun/FileManager;
+
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -21,7 +23,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 6
 
     const/4 v5, 0x0

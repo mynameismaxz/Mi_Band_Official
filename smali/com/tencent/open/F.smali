@@ -1,11 +1,11 @@
-.class final Lcom/tencent/open/F;
+.class Lcom/tencent/open/F;
 .super Landroid/widget/RelativeLayout;
 
 
 # instance fields
-.field private a:I
+.field a:I
 
-.field private synthetic b:Lcom/tencent/open/TaskGuide;
+.field final synthetic b:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -25,7 +25,7 @@
 
 
 # virtual methods
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
@@ -38,9 +38,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "onInterceptTouchEvent-- action = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -123,7 +127,7 @@
     .end packed-switch
 .end method
 
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -138,9 +142,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, " onTouchEvent-----startY = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget v3, p0, Lcom/tencent/open/F;->a:I
 

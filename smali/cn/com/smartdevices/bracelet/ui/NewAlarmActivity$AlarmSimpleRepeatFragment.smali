@@ -36,7 +36,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03003e
+    const v0, 0x7f030040
 
     return v0
 .end method
@@ -48,7 +48,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f070089
+    const v0, 0x7f07008e
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -90,9 +90,9 @@
 
     invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->setAdapter(Lcn/com/smartdevices/bracelet/view/WeekAdapter;)V
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/aQ;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/aY;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/aQ;-><init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity$AlarmSimpleRepeatFragment;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/aY;-><init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity$AlarmSimpleRepeatFragment;)V
 
     invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 

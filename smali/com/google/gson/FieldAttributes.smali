@@ -19,7 +19,9 @@
     return-void
 .end method
 
-.method private a(Ljava/lang/Object;)Ljava/lang/Object;
+
+# virtual methods
+.method a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/FieldAttributes;->a:Ljava/lang/reflect/Field;
@@ -31,7 +33,7 @@
     return-object v0
 .end method
 
-.method private a()Z
+.method a()Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/FieldAttributes;->a:Ljava/lang/reflect/Field;
@@ -43,9 +45,7 @@
     return v0
 .end method
 
-
-# virtual methods
-.method public final getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+.method public getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -66,7 +66,7 @@
     return-object v0
 .end method
 
-.method public final getAnnotations()Ljava/util/Collection;
+.method public getAnnotations()Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -91,7 +91,7 @@
     return-object v0
 .end method
 
-.method public final getDeclaredClass()Ljava/lang/Class;
+.method public getDeclaredClass()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -110,7 +110,7 @@
     return-object v0
 .end method
 
-.method public final getDeclaredType()Ljava/lang/reflect/Type;
+.method public getDeclaredType()Ljava/lang/reflect/Type;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/FieldAttributes;->a:Ljava/lang/reflect/Field;
@@ -122,7 +122,7 @@
     return-object v0
 .end method
 
-.method public final getDeclaringClass()Ljava/lang/Class;
+.method public getDeclaringClass()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -141,7 +141,7 @@
     return-object v0
 .end method
 
-.method public final getName()Ljava/lang/String;
+.method public getName()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/FieldAttributes;->a:Ljava/lang/reflect/Field;
@@ -153,7 +153,7 @@
     return-object v0
 .end method
 
-.method public final hasModifier(I)Z
+.method public hasModifier(I)Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/FieldAttributes;->a:Ljava/lang/reflect/Field;

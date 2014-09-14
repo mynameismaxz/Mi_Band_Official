@@ -98,8 +98,6 @@
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     return-void
 
@@ -107,6 +105,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
@@ -149,8 +149,6 @@
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -158,6 +156,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -171,9 +171,9 @@
 
     const/4 v13, 0x0
 
-    const/4 v9, 0x1
-
     const/4 v12, -0x1
+
+    const/4 v9, 0x1
 
     const/4 v10, 0x0
 
@@ -587,10 +587,6 @@
     goto/16 :goto_2
 
     :cond_c
-    iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
-
-    if-eq v0, v12, :cond_10
-
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
     invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_getDateTime()Landroid/util/Pair;
@@ -704,6 +700,10 @@
     invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_3
+    iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
+
+    if-eq v0, v12, :cond_10
+
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getDaySportGoalSteps()I
@@ -798,11 +798,17 @@
     :goto_6
     shr-int/lit8 v1, v0, 0x10
 
+    and-int/lit16 v1, v1, 0xff
+
     int-to-byte v1, v1
 
     shr-int/lit8 v2, v0, 0x8
 
+    and-int/lit16 v2, v2, 0xff
+
     int-to-byte v2, v2
+
+    and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
@@ -991,7 +997,7 @@
     :cond_11
     iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
-    if-gtz v0, :cond_1e
+    if-ge v0, v9, :cond_1e
 
     :goto_a
     if-nez v9, :cond_12

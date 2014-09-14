@@ -99,7 +99,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/HorizontalScrollView;
 
@@ -109,7 +109,7 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/HorizontalScrollView;
 
@@ -148,7 +148,7 @@
 .method protected isReadyForPullStart()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/HorizontalScrollView;
 

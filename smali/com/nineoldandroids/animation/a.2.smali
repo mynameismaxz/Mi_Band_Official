@@ -1,11 +1,11 @@
-.class final Lcom/nineoldandroids/animation/a;
+.class Lcom/nineoldandroids/animation/a;
 .super Lcom/nineoldandroids/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field private a:Z
+.field a:Z
 
-.field private synthetic b:Lcom/nineoldandroids/animation/AnimatorSet;
+.field final synthetic b:Lcom/nineoldandroids/animation/AnimatorSet;
 
 .field private final synthetic c:Ljava/util/ArrayList;
 
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public final onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
     .locals 4
 
     iget-boolean v0, p0, Lcom/nineoldandroids/animation/a;->a:Z

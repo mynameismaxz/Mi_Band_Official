@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/net/ConnectivityManager;)Z
+.method public a(Landroid/net/ConnectivityManager;)Z
     .locals 2
 
     const/4 v0, 0x1

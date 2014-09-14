@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;)Z
+.method public accept(Ljava/io/File;)Z
     .locals 5
 
     const/4 v0, 0x0

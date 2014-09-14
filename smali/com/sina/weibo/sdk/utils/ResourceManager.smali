@@ -115,6 +115,8 @@
 
     sput-object v0, Lcom/sina/weibo/sdk/utils/ResourceManager;->sLayoutMap:Landroid/util/SparseIntArray;
 
+    sget-object v0, Lcom/sina/weibo/sdk/utils/ResourceManager;->sLayoutMap:Landroid/util/SparseIntArray;
+
     invoke-virtual {v0, v3, v2}, Landroid/util/SparseIntArray;->put(II)V
 
     sget-object v0, Lcom/sina/weibo/sdk/utils/ResourceManager;->sLayoutMap:Landroid/util/SparseIntArray;
@@ -170,6 +172,8 @@
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Lcom/sina/weibo/sdk/utils/ResourceManager;->sDrawableMap:Landroid/util/SparseArray;
+
+    sget-object v0, Lcom/sina/weibo/sdk/utils/ResourceManager;->sDrawableMap:Landroid/util/SparseArray;
 
     const-string v1, "weibosdk_dialog_bg.9.png"
 
@@ -738,6 +742,7 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
+    :goto_3
     move-object v0, v6
 
     goto :goto_1
@@ -747,16 +752,14 @@
 
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    move-object v0, v6
-
-    goto :goto_1
+    goto :goto_3
 
     :catchall_0
     move-exception v0
 
     move-object v7, v6
 
-    :goto_3
+    :goto_4
     if-eqz v7, :cond_2
 
     :try_start_6
@@ -765,7 +768,7 @@
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
     :cond_2
-    :goto_4
+    :goto_5
     throw v0
 
     :catch_2
@@ -773,7 +776,7 @@
 
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_4
+    goto :goto_5
 
     :catch_3
     move-exception v1
@@ -785,14 +788,14 @@
     :catchall_1
     move-exception v0
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_2
     move-exception v0
 
     move-object v7, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :catch_4
     move-exception v0

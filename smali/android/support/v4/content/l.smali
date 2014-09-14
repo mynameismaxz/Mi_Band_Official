@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/content/l;
+.class Landroid/support/v4/content/l;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/content/LocalBroadcastManager;
+.field final synthetic a:Landroid/support/v4/content/LocalBroadcastManager;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 1
 
     iget v0, p1, Landroid/os/Message;->what:I

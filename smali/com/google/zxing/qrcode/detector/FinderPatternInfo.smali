@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final getBottomLeft()Lcom/google/zxing/qrcode/detector/FinderPattern;
+.method public getBottomLeft()Lcom/google/zxing/qrcode/detector/FinderPattern;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternInfo;->a:Lcom/google/zxing/qrcode/detector/FinderPattern;
@@ -47,7 +47,7 @@
     return-object v0
 .end method
 
-.method public final getTopLeft()Lcom/google/zxing/qrcode/detector/FinderPattern;
+.method public getTopLeft()Lcom/google/zxing/qrcode/detector/FinderPattern;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternInfo;->b:Lcom/google/zxing/qrcode/detector/FinderPattern;
@@ -55,7 +55,7 @@
     return-object v0
 .end method
 
-.method public final getTopRight()Lcom/google/zxing/qrcode/detector/FinderPattern;
+.method public getTopRight()Lcom/google/zxing/qrcode/detector/FinderPattern;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternInfo;->c:Lcom/google/zxing/qrcode/detector/FinderPattern;

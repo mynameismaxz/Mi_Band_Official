@@ -411,7 +411,7 @@
 
     const/4 v1, 0x1
 
-    if-gtz p1, :cond_0
+    if-ge p1, v1, :cond_0
 
     const/4 p1, 0x5
 
@@ -554,7 +554,7 @@
 
     array-length v1, p0
 
-    shl-int/lit8 v1, v1, 0x1
+    mul-int/lit8 v1, v1, 0x2
 
     invoke-direct {v4, v1}, Ljava/lang/StringBuffer;-><init>(I)V
 
@@ -1412,6 +1412,8 @@
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, ""
 
     const/4 v0, 0x1
 

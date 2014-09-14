@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/o;
+.class Lcom/tencent/open/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,11 @@
 
 
 # instance fields
-.field private a:Ljava/lang/ref/WeakReference;
+.field a:Ljava/lang/String;
+
+.field b:Ljava/lang/String;
+
+.field private c:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -16,10 +20,6 @@
         }
     .end annotation
 .end field
-
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/lang/String;
 
 .field private d:Ljava/lang/String;
 
@@ -36,13 +36,13 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/tencent/open/o;->a:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/tencent/open/o;->c:Ljava/lang/ref/WeakReference;
 
-    iput-object p2, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
+    iput-object p2, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/tencent/open/o;->c:Ljava/lang/String;
+    iput-object p3, p0, Lcom/tencent/open/o;->a:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
+    iput-object p4, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
 
     iput-object p5, p0, Lcom/tencent/open/o;->e:Lcom/tencent/tauth/IUiListener;
 
@@ -50,36 +50,11 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/open/o;Ljava/lang/String;)V
-    .locals 3
+    .locals 0
 
-    :try_start_0
-    invoke-static {p1}, Lcom/tencent/utils/Util;->parseJson(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-direct {p0, p1}, Lcom/tencent/open/o;->a(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/tencent/open/o;->onComplete(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
-
-    new-instance v0, Lcom/tencent/tauth/UiError;
-
-    const/4 v1, -0x4
-
-    const-string v2, "\u670d\u52a1\u5668\u8fd4\u56de\u6570\u636e\u683c\u5f0f\u6709\u8bef!"
-
-    invoke-direct {v0, v1, v2, p1}, Lcom/tencent/tauth/UiError;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Lcom/tencent/open/o;->onError(Lcom/tencent/tauth/UiError;)V
-
-    goto :goto_0
 .end method
 
 .method private a(Ljava/lang/String;)V
@@ -117,7 +92,7 @@
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/open/o;->e:Lcom/tencent/tauth/IUiListener;
@@ -136,7 +111,7 @@
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 13
 
     const-wide/16 v5, 0x0
@@ -147,7 +122,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/tencent/open/o;->a:Ljava/lang/ref/WeakReference;
+    iget-object v1, p0, Lcom/tencent/open/o;->c:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -159,7 +134,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
+    iget-object v3, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -187,9 +162,9 @@
 
     move-result v9
 
-    iget-object v10, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
+    iget-object v10, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
 
-    iget-object v11, p0, Lcom/tencent/open/o;->c:Ljava/lang/String;
+    iget-object v11, p0, Lcom/tencent/open/o;->a:Ljava/lang/String;
 
     const-string v12, "1000067"
 
@@ -213,7 +188,7 @@
     return-void
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 13
 
     const-wide/16 v5, 0x0
@@ -232,7 +207,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/tencent/open/o;->c:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/open/o;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -247,7 +222,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/tencent/open/o;->a:Ljava/lang/ref/WeakReference;
+    iget-object v1, p0, Lcom/tencent/open/o;->c:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -259,7 +234,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
+    iget-object v3, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -281,7 +256,7 @@
 
     iget v9, p1, Lcom/tencent/tauth/UiError;->errorCode:I
 
-    iget-object v10, p0, Lcom/tencent/open/o;->d:Ljava/lang/String;
+    iget-object v10, p0, Lcom/tencent/open/o;->b:Ljava/lang/String;
 
     const-string v12, "1000067"
 
@@ -305,7 +280,7 @@
     return-void
 
     :cond_1
-    iget-object v11, p0, Lcom/tencent/open/o;->c:Ljava/lang/String;
+    iget-object v11, p0, Lcom/tencent/open/o;->a:Ljava/lang/String;
 
     goto :goto_0
 .end method

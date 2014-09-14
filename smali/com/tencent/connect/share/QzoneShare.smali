@@ -144,6 +144,8 @@
 
     invoke-virtual {p2, v6, v7}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v6, "..."
+
     invoke-static {v4}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
 
     move-result v6
@@ -280,9 +282,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "&"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     const-string v2, "\\+"
 
@@ -422,9 +428,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "openId:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     move-object/from16 v0, v17
 
@@ -507,9 +517,13 @@
     :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&image_url="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -544,9 +558,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&title="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v8}, Ljava/lang/String;->getBytes()[B
 
@@ -577,9 +595,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&description="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v9}, Ljava/lang/String;->getBytes()[B
 
@@ -610,9 +632,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&share_id="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     move-object/from16 v0, v16
 
@@ -635,9 +661,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&url="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v10}, Ljava/lang/String;->getBytes()[B
 
@@ -668,9 +698,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&app_name="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v13}, Ljava/lang/String;->getBytes()[B
 
@@ -701,9 +735,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&open_id="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->getBytes()[B
 
@@ -734,9 +772,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&audioUrl="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v11}, Ljava/lang/String;->getBytes()[B
 
@@ -761,9 +803,13 @@
     :cond_a
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&req_type="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-static {v12}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -797,9 +843,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&share_qq_ext_str="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v15}, Ljava/lang/String;->getBytes()[B
 
@@ -824,9 +874,13 @@
     :cond_b
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "&cflag="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-static {v14}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -1067,667 +1121,11 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/connect/share/QzoneShare;Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
-    .locals 19
+    .locals 0
 
-    const-string v3, "openSDK_LOG"
-
-    const-string v4, "doShareToQQ() --start"
-
-    invoke-static {v3, v4}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v6, Ljava/lang/StringBuffer;
-
-    const-string v3, "mqqapi://share/to_qzone?src_type=app&version=1&file_type=news"
-
-    invoke-direct {v6, v3}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
-
-    const-string v3, "imageUrl"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v7
-
-    const-string v3, "title"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v3, "summary"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v3, "targetUrl"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v10
-
-    const-string v3, "audio_url"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v3, "req_type"
-
-    const/4 v4, 0x1
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
-
-    move-result v12
-
-    const-string v3, "appName"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v13
-
-    const-string v3, "cflag"
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
-
-    move-result v14
-
-    const-string v3, "share_qq_ext_str"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v15
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v3}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v3}, Lcom/tencent/connect/auth/QQToken;->getOpenId()Ljava/lang/String;
-
-    move-result-object v17
-
-    const-string v3, "shareToQQ"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "openId:"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-eqz v7, :cond_3
-
-    new-instance v18, Ljava/lang/StringBuffer;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuffer;-><init>()V
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    const/16 v4, 0x9
-
-    if-le v3, v4, :cond_1
-
-    const/16 v3, 0x9
-
-    move v4, v3
-
-    :goto_0
-    const/4 v3, 0x0
-
-    move v5, v3
-
-    :goto_1
-    if-ge v5, v4, :cond_2
-
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    add-int/lit8 v3, v4, -0x1
-
-    if-eq v5, v3, :cond_0
-
-    const-string v3, ";"
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_0
-    add-int/lit8 v3, v5, 0x1
-
-    move v5, v3
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    move v4, v3
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&image_url="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_3
-    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&title="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_4
-    invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&description="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_5
-    invoke-static/range {v16 .. v16}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&share_id="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_6
-    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_7
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&url="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_7
-    invoke-static {v13}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_8
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&app_name="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v13}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_8
-    invoke-static/range {v17 .. v17}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_9
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&open_id="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_9
-    invoke-static {v11}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_a
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&audioUrl="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v11}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_a
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&req_type="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v12}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    invoke-static {v15}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_b
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&share_qq_ext_str="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v15}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    :cond_b
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "&cflag="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v14}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-static {v4, v5}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    const-string v3, "shareToQQ"
-
-    invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mContext:Landroid/content/Context;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/tencent/connect/share/QzoneShare;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    const-string v5, "requireApi"
-
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/String;
-
-    const/4 v8, 0x0
-
-    const-string v9, "shareToNativeQQ"
-
-    aput-object v9, v7, v8
-
-    invoke-static {v3, v4, v5, v7}, Lcom/tencent/connect/a/a;->a(Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;Ljava/lang/String;[Ljava/lang/String;)V
-
-    new-instance v3, Landroid/content/Intent;
-
-    const-string v4, "android.intent.action.VIEW"
-
-    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p0
-
-    iput-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mActivityIntent:Landroid/content/Intent;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mActivityIntent:Landroid/content/Intent;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-
-    const-string v3, "4.6.0"
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v3}, Lcom/tencent/utils/SystemUtils;->compareQQVersion(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v3
-
-    if-gez v3, :cond_d
-
-    invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/share/QzoneShare;->hasActivityForIntent()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p3
-
-    invoke-virtual {v0, v1, v2}, Lcom/tencent/connect/share/QzoneShare;->startAssitActivity(Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
-
-    :cond_c
-    :goto_2
-    const-string v3, "openSDK_LOG"
-
-    const-string v4, "doShareToQQ() --end"
-
-    invoke-static {v3, v4}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/tencent/connect/share/QzoneShare;->a(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
 
     return-void
-
-    :cond_d
-    const-string v3, "shareToQzone"
-
-    move-object/from16 v0, p3
-
-    invoke-static {v3, v0}, Lcom/tencent/utils/TemporaryStorage;->set(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_e
-
-    check-cast v3, Lcom/tencent/tauth/IUiListener;
-
-    invoke-interface {v3}, Lcom/tencent/tauth/IUiListener;->onCancel()V
-
-    :cond_e
-    invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/share/QzoneShare;->hasActivityForIntent()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/tencent/connect/share/QzoneShare;->mActivityIntent:Landroid/content/Intent;
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto :goto_2
 .end method
 
 
@@ -1840,6 +1238,7 @@
 
     iput-boolean v2, p0, Lcom/tencent/connect/share/QzoneShare;->d:Z
 
+    :goto_3
     invoke-static {}, Lcom/tencent/utils/Util;->hasSDCard()Z
 
     move-result v7
@@ -1900,7 +1299,13 @@
     :sswitch_0
     iput-boolean v10, p0, Lcom/tencent/connect/share/QzoneShare;->a:Z
 
-    goto :goto_2
+    iput-boolean v2, p0, Lcom/tencent/connect/share/QzoneShare;->b:Z
+
+    iput-boolean v10, p0, Lcom/tencent/connect/share/QzoneShare;->c:Z
+
+    iput-boolean v2, p0, Lcom/tencent/connect/share/QzoneShare;->d:Z
+
+    goto :goto_3
 
     :sswitch_1
     new-instance v0, Lcom/tencent/tauth/UiError;
@@ -1922,9 +1327,13 @@
     :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v7, "\u6765\u81ea"
 
-    invoke-direct {v1, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1939,6 +1348,10 @@
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
+
+    iput-boolean v10, p0, Lcom/tencent/connect/share/QzoneShare;->a:Z
+
+    goto :goto_2
 
     :cond_4
     iput-boolean v10, p0, Lcom/tencent/connect/share/QzoneShare;->a:Z
@@ -1996,15 +1409,76 @@
     goto/16 :goto_0
 
     :cond_7
+    iget-boolean v4, p0, Lcom/tencent/connect/share/QzoneShare;->b:Z
+
+    if-eqz v4, :cond_b
+
+    const-string v1, ""
+
+    const-string v3, ""
+
+    const-string v4, "title"
+
+    invoke-virtual {p2, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "summary"
+
+    invoke-virtual {p2, v1, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_8
+    :goto_4
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_9
+
+    const-string v1, "appName"
+
+    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_9
+    if-eqz v5, :cond_a
+
+    if-eqz v5, :cond_e
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    :cond_a
+    iget-boolean v0, p0, Lcom/tencent/connect/share/QzoneShare;->d:Z
+
+    if-eqz v0, :cond_12
+
+    new-instance v0, Lcom/tencent/tauth/UiError;
+
+    const-string v1, "\u7eaf\u56fe\u5206\u4eab\uff0cimageUrl \u4e0d\u80fd\u4e3a\u7a7a"
+
+    invoke-direct {v0, v9, v1, v8}, Lcom/tencent/tauth/UiError;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {p3, v0}, Lcom/tencent/tauth/IUiListener;->onError(Lcom/tencent/tauth/UiError;)V
+
+    const-string v0, "openSDK_LOG"
+
+    const-string v1, "shareToQzone() imageUrl is null--end"
+
+    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_b
     iget-boolean v4, p0, Lcom/tencent/connect/share/QzoneShare;->c:Z
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_c
 
     invoke-static {v1}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_c
 
     new-instance v0, Lcom/tencent/tauth/UiError;
 
@@ -2022,12 +1496,12 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_c
     invoke-static {v1}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_d
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -2035,7 +1509,7 @@
 
     const/16 v7, 0xc8
 
-    if-le v4, v7, :cond_9
+    if-le v4, v7, :cond_d
 
     const/16 v4, 0xc8
 
@@ -2047,12 +1521,12 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_9
+    :cond_d
     invoke-static {v3}, Lcom/tencent/utils/Util;->isEmpty(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_8
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -2060,7 +1534,7 @@
 
     const/16 v4, 0x258
 
-    if-le v1, v4, :cond_a
+    if-le v1, v4, :cond_8
 
     const/16 v1, 0x258
 
@@ -2072,54 +1546,9 @@
 
     invoke-virtual {p2, v3, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_a
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    goto :goto_4
 
-    move-result v1
-
-    if-nez v1, :cond_b
-
-    const-string v1, "appName"
-
-    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_b
-    if-eqz v5, :cond_c
-
-    if-eqz v5, :cond_d
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    :cond_c
-    :goto_3
-    const-string v0, "4.6.0"
-
-    invoke-static {p1, v0}, Lcom/tencent/utils/SystemUtils;->compareQQVersion(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v0
-
-    if-ltz v0, :cond_11
-
-    new-instance v0, Lcom/tencent/connect/share/d;
-
-    invoke-direct {v0, p0, p2, p1, p3}, Lcom/tencent/connect/share/d;-><init>(Lcom/tencent/connect/share/QzoneShare;Landroid/os/Bundle;Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
-
-    invoke-static {p1, v5, v0}, Lcom/tencent/connect/share/a;->a(Landroid/content/Context;Ljava/util/ArrayList;Lcom/tencent/utils/AsynLoadImgBack;)V
-
-    :goto_4
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "shareToQzone() --end"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :cond_d
+    :cond_e
     move v1, v2
 
     :goto_5
@@ -2127,7 +1556,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_f
+    if-ge v1, v0, :cond_10
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -2139,29 +1568,29 @@
 
     move-result v3
 
-    if-nez v3, :cond_e
+    if-nez v3, :cond_f
 
     invoke-static {v0}, Lcom/tencent/utils/Util;->isValidPath(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    :cond_e
+    :cond_f
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_5
 
-    :cond_f
+    :cond_10
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_11
 
     new-instance v0, Lcom/tencent/tauth/UiError;
 
@@ -2179,21 +1608,43 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_11
     const-string v0, "imageUrl"
 
     invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    :cond_12
+    const-string v0, "4.6.0"
 
-    :cond_11
+    invoke-static {p1, v0}, Lcom/tencent/utils/SystemUtils;->compareQQVersion(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_13
+
+    new-instance v0, Lcom/tencent/connect/share/d;
+
+    invoke-direct {v0, p0, p2, p1, p3}, Lcom/tencent/connect/share/d;-><init>(Lcom/tencent/connect/share/QzoneShare;Landroid/os/Bundle;Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
+
+    invoke-static {p1, v5, v0}, Lcom/tencent/connect/share/a;->a(Landroid/content/Context;Ljava/util/ArrayList;Lcom/tencent/utils/AsynLoadImgBack;)V
+
+    :goto_6
+    const-string v0, "openSDK_LOG"
+
+    const-string v1, "shareToQzone() --end"
+
+    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_13
     const-string v0, "4.2.0"
 
     invoke-static {p1, v0}, Lcom/tencent/utils/SystemUtils;->compareQQVersion(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_17
 
     const-string v0, "4.6.0"
 
@@ -2201,7 +1652,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_15
+    if-gez v0, :cond_17
 
     new-instance v1, Lcom/tencent/connect/share/QQShare;
 
@@ -2209,13 +1660,13 @@
 
     invoke-direct {v1, p1, v0}, Lcom/tencent/connect/share/QQShare;-><init>(Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;)V
 
-    if-eqz v5, :cond_13
+    if-eqz v5, :cond_15
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_13
+    if-lez v0, :cond_15
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -2225,13 +1676,13 @@
 
     const/4 v2, 0x5
 
-    if-ne v6, v2, :cond_12
+    if-ne v6, v2, :cond_14
 
     invoke-static {v0}, Lcom/tencent/utils/Util;->fileExists(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_14
 
     new-instance v0, Lcom/tencent/tauth/UiError;
 
@@ -2249,110 +1700,33 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_14
     const-string v2, "imageLocalUrl"
 
     invoke-virtual {p2, v2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_13
+    :cond_15
     const-string v0, "4.5.0"
 
     invoke-static {p1, v0}, Lcom/tencent/utils/SystemUtils;->compareQQVersion(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_14
+    if-ltz v0, :cond_16
 
     const-string v0, "cflag"
 
     invoke-virtual {p2, v0, v10}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_14
+    :cond_16
     invoke-virtual {v1, p1, p2, p3}, Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
 
-    goto/16 :goto_4
-
-    :cond_15
-    const-string v0, "shareToQzone"
-
-    invoke-static {v0, p3}, Lcom/tencent/utils/TemporaryStorage;->set(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_16
-
-    check-cast v0, Lcom/tencent/tauth/IUiListener;
-
-    invoke-interface {v0}, Lcom/tencent/tauth/IUiListener;->onCancel()V
-
-    :cond_16
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "shareToH5Qzone() --start"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/StringBuffer;
-
-    const-string v1, "http://openmobile.qq.com/api/check2?page=qzshare.html&loginpage=loginindex.html&logintype=qzone"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
-
-    if-nez p2, :cond_17
-
-    new-instance p2, Landroid/os/Bundle;
-
-    invoke-direct {p2}, Landroid/os/Bundle;-><init>()V
+    goto :goto_6
 
     :cond_17
-    invoke-direct {p0, v0, p2}, Lcom/tencent/connect/share/QzoneShare;->a(Ljava/lang/StringBuffer;Landroid/os/Bundle;)Ljava/lang/StringBuffer;
+    invoke-direct {p0, p1, p2, p3}, Lcom/tencent/connect/share/QzoneShare;->a(Landroid/content/Context;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/tencent/connect/share/QzoneShare;->mContext:Landroid/content/Context;
-
-    iget-object v3, p0, Lcom/tencent/connect/share/QzoneShare;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    const-string v4, "requireApi"
-
-    new-array v5, v10, [Ljava/lang/String;
-
-    const-string v6, "shareToH5QQ"
-
-    aput-object v6, v5, v2
-
-    invoke-static {v1, v3, v4, v5}, Lcom/tencent/connect/a/a;->a(Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;Ljava/lang/String;[Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lcom/tencent/utils/Util;->openBrowser(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_18
-
-    if-eqz p3, :cond_18
-
-    new-instance v0, Lcom/tencent/tauth/UiError;
-
-    const-string v1, "\u6253\u5f00\u6d4f\u89c8\u5668\u5931\u8d25!"
-
-    invoke-direct {v0, v9, v1, v8}, Lcom/tencent/tauth/UiError;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {p3, v0}, Lcom/tencent/tauth/IUiListener;->onError(Lcom/tencent/tauth/UiError;)V
-
-    :cond_18
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "shareToH5QQ() --end"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_4
-
-    nop
+    goto :goto_6
 
     :sswitch_data_0
     .sparse-switch

@@ -1,4 +1,4 @@
-.class final Lcom/handmark/pulltorefresh/library/m;
+.class Lcom/handmark/pulltorefresh/library/m;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -28,7 +28,7 @@
 
 
 # virtual methods
-.method public final onRefresh(Lcom/handmark/pulltorefresh/library/PullToRefreshBase;)V
+.method public onRefresh(Lcom/handmark/pulltorefresh/library/PullToRefreshBase;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

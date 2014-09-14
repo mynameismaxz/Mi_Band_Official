@@ -34,9 +34,9 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleResetTask;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bE;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bM;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bE;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bM;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)V
 
     invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleResetTask;-><init>(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
 
@@ -94,15 +94,15 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f030042
+    const v0, 0x7f030044
 
     return v0
 .end method
 
 .method protected onLeftButtonClicked()V
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
 
@@ -120,21 +120,13 @@
     return-void
 
     :cond_0
-    invoke-virtual {v0, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setAutoReconnect(Z)V
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setAutoReconnect(Z)V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleResetTask;
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bE;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bE;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)V
-
-    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleResetTask;-><init>(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleResetTask;->work()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a()V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->mRightButton:Landroid/view/View;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     goto :goto_0
 .end method

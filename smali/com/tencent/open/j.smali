@@ -1,17 +1,17 @@
-.class final Lcom/tencent/open/j;
+.class Lcom/tencent/open/j;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:Landroid/content/Intent;
+.field a:Landroid/content/Intent;
 
-.field private b:Ljava/lang/String;
+.field b:Ljava/lang/String;
 
-.field private c:Landroid/os/Bundle;
+.field c:Landroid/os/Bundle;
 
-.field private d:Ljava/lang/String;
+.field d:Ljava/lang/String;
 
-.field private e:Lcom/tencent/tauth/IUiListener;
+.field e:Lcom/tencent/tauth/IUiListener;
 
 
 # direct methods

@@ -87,8 +87,8 @@
 
 
 # virtual methods
-.method public final decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
-    .locals 11
+.method public decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
+    .locals 10
 
     const/4 v1, 0x0
 
@@ -135,7 +135,7 @@
     move v2, v1
 
     :goto_1
-    if-ge v2, v4, :cond_4
+    if-ge v2, v4, :cond_2
 
     aget-object v0, v3, v2
 
@@ -147,66 +147,12 @@
 
     move-result v7
 
-    array-length v8, v6
-
-    new-array v9, v8, [I
+    invoke-direct {p0, v6, v7}, Lcom/google/zxing/datamatrix/decoder/Decoder;->a([BI)V
 
     move v0, v1
 
     :goto_2
-    if-ge v0, v8, :cond_1
-
-    aget-byte v10, v6, v0
-
-    and-int/lit16 v10, v10, 0xff
-
-    aput v10, v9, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_1
-    array-length v0, v6
-
-    sub-int/2addr v0, v7
-
-    :try_start_0
-    iget-object v8, p0, Lcom/google/zxing/datamatrix/decoder/Decoder;->a:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
-
-    invoke-virtual {v8, v9, v0}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
-    :try_end_0
-    .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move v0, v1
-
-    :goto_3
-    if-ge v0, v7, :cond_2
-
-    aget v8, v9, v0
-
-    int-to-byte v8, v8
-
-    aput-byte v8, v6, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_2
-    move v0, v1
-
-    :goto_4
-    if-ge v0, v7, :cond_3
+    if-ge v0, v7, :cond_1
 
     mul-int v8, v0, v4
 
@@ -218,16 +164,16 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_3
+    :cond_1
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_1
 
-    :cond_4
+    :cond_2
     invoke-static {v5}, Lcom/google/zxing/datamatrix/decoder/c;->a([B)Lcom/google/zxing/common/DecoderResult;
 
     move-result-object v0
@@ -235,7 +181,7 @@
     return-object v0
 .end method
 
-.method public final decode([[Z)Lcom/google/zxing/common/DecoderResult;
+.method public decode([[Z)Lcom/google/zxing/common/DecoderResult;
     .locals 6
 
     const/4 v1, 0x0

@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method private static a(I)I
+.method static a(I)I
     .locals 3
 
     const/4 v2, 0x1
@@ -110,9 +110,9 @@
 .method private static a([IIII)I
     .locals 4
 
-    add-int/lit8 v2, p2, 0x0
+    add-int v2, p1, p2
 
-    const/4 v0, -0x1
+    add-int/lit8 v0, p1, -0x1
 
     move v1, v0
 
@@ -143,11 +143,11 @@
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v1, p2, 0x0
+    add-int v1, p1, p2
 
     if-ne v0, v1, :cond_3
 
-    add-int/lit8 v0, p2, 0x0
+    add-int v0, p1, p2
 
     xor-int/lit8 v0, v0, -0x1
 
@@ -213,39 +213,18 @@
     return-void
 .end method
 
-.method private static b(I)I
-    .locals 4
+.method static b(I)I
+    .locals 1
 
-    const/4 v3, 0x1
+    mul-int/lit8 v0, p0, 0x4
 
-    shl-int/lit8 v0, p0, 0x2
+    invoke-static {v0}, Landroid/support/v4/util/SparseArrayCompat;->a(I)I
 
-    const/4 v1, 0x4
+    move-result v0
 
-    :goto_0
-    const/16 v2, 0x20
-
-    if-ge v1, v2, :cond_0
-
-    shl-int v2, v3, v1
-
-    add-int/lit8 v2, v2, -0xc
-
-    if-gt v0, v2, :cond_1
-
-    shl-int v0, v3, v1
-
-    add-int/lit8 v0, v0, -0xc
-
-    :cond_0
     div-int/lit8 v0, v0, 0x4
 
     return v0
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
 .end method
 
 

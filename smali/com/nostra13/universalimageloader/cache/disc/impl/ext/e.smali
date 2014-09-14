@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
+.class Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/io/InputStream;ILjava/nio/charset/Charset;)V
+.method public constructor <init>(Ljava/io/InputStream;ILjava/nio/charset/Charset;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,24 @@
     throw v0
 
     :cond_1
+    if-gez p2, :cond_2
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "capacity <= 0"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
     sget-object v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a:Ljava/nio/charset/Charset;
 
     invoke-virtual {p3, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -57,14 +68,12 @@
 
     throw v0
 
-    :cond_2
+    :cond_3
     iput-object p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->c:Ljava/io/InputStream;
 
     iput-object p3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->d:Ljava/nio/charset/Charset;
 
-    const/16 v0, 0x2000
-
-    new-array v0, v0, [B
+    new-array v0, p2, [B
 
     iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->e:[B
 
@@ -126,7 +135,7 @@
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .locals 7
 
     const/16 v6, 0xa
@@ -147,13 +156,13 @@
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :catchall_0
     move-exception v0
 
     monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
@@ -317,7 +326,7 @@
     goto :goto_3
 .end method
 
-.method public final close()V
+.method public close()V
     .locals 2
 
     iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->c:Ljava/io/InputStream;
@@ -339,8 +348,6 @@
 
     :cond_0
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -348,6 +355,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

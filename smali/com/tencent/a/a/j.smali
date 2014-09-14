@@ -1,4 +1,4 @@
-.class final Lcom/tencent/a/a/j;
+.class Lcom/tencent/a/a/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/a/a/h;
+.field final synthetic a:Lcom/tencent/a/a/h;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;)Z
+.method public accept(Ljava/io/File;)Z
     .locals 3
 
     const/4 v0, 0x0

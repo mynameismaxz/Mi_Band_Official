@@ -200,8 +200,12 @@
 
     invoke-direct {v2, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    :cond_0
     :try_start_0
+    const-string v3, "__luaVersion="
+
+    const-string v3, ""
+
+    :cond_0
     invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v3
@@ -226,7 +230,11 @@
 
     if-eqz v4, :cond_0
 
-    const/16 v2, 0xd
+    const-string v2, "__luaVersion="
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 

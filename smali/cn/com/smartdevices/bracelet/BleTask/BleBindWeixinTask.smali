@@ -40,6 +40,8 @@
     invoke-virtual {p1, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->sendOnFinishMessage(Ljava/lang/Object;)V
 
     :cond_1
+    const-string v1, "gh_f65f9f1aa87a"
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v3, "gh_f65f9f1aa87a"
@@ -84,7 +86,7 @@
 
     array-length v5, v3
 
-    shl-int/lit8 v5, v5, 0x1
+    mul-int/lit8 v5, v5, 0x2
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 

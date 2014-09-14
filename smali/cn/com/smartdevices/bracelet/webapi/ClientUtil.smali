@@ -472,7 +472,9 @@
 .end method
 
 .method public static isValidEmailAndPassword(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 3
+    .locals 4
+
+    const/4 v1, 0x1
 
     const/4 v0, 0x0
 
@@ -480,9 +482,9 @@
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    if-gtz v1, :cond_1
+    if-ge v2, v1, :cond_1
 
     :cond_0
     :goto_0
@@ -493,37 +495,37 @@
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x6
+    const/4 v3, 0x6
 
-    if-lt v1, v2, :cond_0
+    if-lt v2, v3, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x19
+    const/16 v3, 0x19
 
-    if-gt v1, v2, :cond_0
+    if-gt v2, v3, :cond_0
 
-    sget-object v1, Lcn/com/smartdevices/bracelet/webapi/ClientUtil;->a:Ljava/lang/String;
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/ClientUtil;->a:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -555,7 +557,7 @@
 
     array-length v0, v1
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 

@@ -30,9 +30,37 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
+    const/4 v1, 0x0
+
     const/4 v2, 0x1
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    const/16 v0, 0x190
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->a:I
+
+    const/16 v0, 0x320
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->b:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->c:I
+
+    const/16 v0, 0x64
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->d:I
+
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->e:I
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->f:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->g:I
+
+    const/16 v0, 0x32
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->h:I
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -49,6 +77,8 @@
     new-instance v0, Landroid/text/TextPaint;
 
     invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->k:Landroid/text/TextPaint;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->i:Landroid/graphics/Paint;
 
@@ -88,29 +118,29 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 6
+    .locals 7
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
 
-    move-result v0
+    move-result v6
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getHeight()I
 
-    move-result v4
+    move-result v0
 
-    mul-int/lit8 v1, v0, 0x2
+    mul-int/lit8 v1, v6, 0x2
 
     div-int/lit8 v1, v1, 0x3
 
     int-to-float v1, v1
 
-    div-int/lit8 v2, v4, 0x2
+    div-int/lit8 v2, v0, 0x2
 
     int-to-float v2, v2
 
-    int-to-float v3, v0
+    int-to-float v3, v6
 
-    div-int/lit8 v0, v4, 0x2
+    div-int/lit8 v0, v0, 0x2
 
     int-to-float v4, v0
 
@@ -119,6 +149,12 @@
     move-object v0, p1
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    mul-int/lit8 v0, v6, 0x9
+
+    div-int/lit8 v0, v0, 0xa
+
+    div-int/lit8 v0, v0, 0x2
 
     return-void
 .end method

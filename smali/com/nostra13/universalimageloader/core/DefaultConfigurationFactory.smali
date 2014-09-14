@@ -68,43 +68,19 @@
 .method public static createDiskCache(Landroid/content/Context;Lcom/nostra13/universalimageloader/cache/disc/naming/FileNameGenerator;JI)Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
     .locals 7
 
-    const/4 v0, 0x0
+    invoke-static {p0}, Lcom/nostra13/universalimageloader/core/DefaultConfigurationFactory;->a(Landroid/content/Context;)Ljava/io/File;
 
-    invoke-static {p0, v0}, Lcom/nostra13/universalimageloader/utils/StorageUtils;->getCacheDirectory(Landroid/content/Context;Z)Ljava/io/File;
+    move-result-object v6
 
-    move-result-object v0
-
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "uil-images"
-
-    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Ljava/io/File;->mkdir()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    :cond_0
-    move-object v6, v1
-
-    :goto_0
     const-wide/16 v0, 0x0
 
     cmp-long v0, p2, v0
 
-    if-gtz v0, :cond_1
+    if-gtz v0, :cond_0
 
-    if-lez p4, :cond_2
+    if-lez p4, :cond_1
 
-    :cond_1
+    :cond_0
     invoke-static {p0}, Lcom/nostra13/universalimageloader/utils/StorageUtils;->getIndividualCacheDirectory(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v1
@@ -121,10 +97,10 @@
 
     invoke-virtual {v0, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/LruDiscCache;->setReserveCacheDir(Ljava/io/File;)V
 
-    :goto_1
+    :goto_0
     return-object v0
 
-    :cond_2
+    :cond_1
     invoke-static {p0}, Lcom/nostra13/universalimageloader/utils/StorageUtils;->getCacheDirectory(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v1
@@ -132,11 +108,6 @@
     new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/UnlimitedDiscCache;
 
     invoke-direct {v0, v1, v6, p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/UnlimitedDiscCache;-><init>(Ljava/io/File;Ljava/io/File;Lcom/nostra13/universalimageloader/cache/disc/naming/FileNameGenerator;)V
-
-    goto :goto_1
-
-    :cond_3
-    move-object v6, v0
 
     goto :goto_0
 .end method

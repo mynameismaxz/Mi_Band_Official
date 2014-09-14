@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/x;
+.class Landroid/support/v4/view/x;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public a(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
@@ -24,7 +24,7 @@
     return v0
 .end method
 
-.method public final a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public final b(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public b(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
@@ -40,7 +40,7 @@
     return v0
 .end method
 
-.method public final b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
@@ -48,13 +48,13 @@
     return-void
 .end method
 
-.method public final c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final c(Landroid/view/ViewGroup$MarginLayoutParams;)Z
+.method public c(Landroid/view/ViewGroup$MarginLayoutParams;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -62,7 +62,7 @@
     return v0
 .end method
 
-.method public final d(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public d(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
     return v0
 .end method
 
-.method public final d(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public d(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
     return-void

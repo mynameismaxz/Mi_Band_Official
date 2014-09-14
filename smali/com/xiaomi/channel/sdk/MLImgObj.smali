@@ -3,15 +3,15 @@
 
 
 # static fields
-.field private static b:I = 0x200000
+.field static final a:I = 0x200000
 
 
 # instance fields
-.field private final a:Landroid/graphics/Bitmap;
+.field final b:I
 
-.field private c:I
+.field final c:I
 
-.field private d:I
+.field private final d:Landroid/graphics/Bitmap;
 
 .field public filePath:Ljava/lang/String;
 
@@ -22,13 +22,19 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 2
 
+    const/16 v0, 0x164
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->b:I
+
+    iput v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->c:I
 
     const-wide/32 v0, 0x200000
 
     iput-wide v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->mImgSize:J
 
-    iput-object p1, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     return-void
 .end method
@@ -38,7 +44,7 @@
 .method public getCompressBmp()Landroid/graphics/Bitmap;
     .locals 7
 
-    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
 
@@ -48,13 +54,13 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -70,7 +76,7 @@
 
     if-gtz v4, :cond_1
 
-    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     goto :goto_0
 
@@ -85,7 +91,7 @@
 
     move-result-wide v2
 
-    iget-object v4, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v4, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     int-to-double v5, v0
 
@@ -111,7 +117,7 @@
 .method public getImgBmp()Landroid/graphics/Bitmap;
     .locals 1
 
-    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->a:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLImgObj;->d:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method

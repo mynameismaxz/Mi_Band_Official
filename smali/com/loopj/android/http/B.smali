@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/B;
+.class Lcom/loopj/android/http/B;
 .super Ljava/lang/Object;
 
 
@@ -100,7 +100,7 @@
 
 
 # virtual methods
-.method public final a()J
+.method public a()J
     .locals 4
 
     iget-object v0, p0, Lcom/loopj/android/http/B;->a:Ljava/io/File;
@@ -130,7 +130,7 @@
     return-wide v0
 .end method
 
-.method public final a(Ljava/io/OutputStream;)V
+.method public a(Ljava/io/OutputStream;)V
     .locals 4
 
     iget-object v0, p0, Lcom/loopj/android/http/B;->b:[B

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/e;
+.class Lcom/tencent/stat/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/util/List;
+.field final synthetic a:Ljava/util/List;
 
-.field private synthetic b:Lcom/tencent/stat/b;
+.field final synthetic b:Lcom/tencent/stat/b;
 
-.field private synthetic c:Lcom/tencent/stat/c;
+.field final synthetic c:Lcom/tencent/stat/c;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/tencent/stat/e;->c:Lcom/tencent/stat/c;

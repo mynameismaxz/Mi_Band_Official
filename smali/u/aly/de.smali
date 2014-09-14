@@ -23,7 +23,7 @@
     :goto_0
     array-length v2, p0
 
-    shl-int/lit8 v2, v2, 0x3
+    mul-int/lit8 v2, v2, 0x8
 
     if-lt v0, v2, :cond_0
 
@@ -123,7 +123,7 @@
 
 
 # virtual methods
-.method public final D()Ljava/lang/Class;
+.method public D()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -140,7 +140,7 @@
     return-object v0
 .end method
 
-.method public final a(Ljava/util/BitSet;I)V
+.method public a(Ljava/util/BitSet;I)V
     .locals 4
 
     invoke-static {p1, p2}, Lu/aly/de;->b(Ljava/util/BitSet;I)[B
@@ -166,7 +166,7 @@
     goto :goto_0
 .end method
 
-.method public final b(I)Ljava/util/BitSet;
+.method public b(I)Ljava/util/BitSet;
     .locals 4
 
     int-to-double v0, p1

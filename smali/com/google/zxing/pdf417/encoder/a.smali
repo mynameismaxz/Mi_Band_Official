@@ -67,67 +67,9 @@
     return-void
 .end method
 
-.method private a(IIB)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/a;->a:[Lcom/google/zxing/pdf417/encoder/b;
-
-    aget-object v0, v0, p2
-
-    invoke-virtual {v0, p1, p3}, Lcom/google/zxing/pdf417/encoder/b;->a(IB)V
-
-    return-void
-.end method
-
-.method private a(IIZ)V
-    .locals 2
-
-    if-eqz p3, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    int-to-byte v0, v0
-
-    iget-object v1, p0, Lcom/google/zxing/pdf417/encoder/a;->a:[Lcom/google/zxing/pdf417/encoder/b;
-
-    aget-object v1, v1, p2
-
-    invoke-virtual {v1, p1, v0}, Lcom/google/zxing/pdf417/encoder/b;->a(IB)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private a(I)[[B
-    .locals 1
-
-    invoke-virtual {p0, p1, p1}, Lcom/google/zxing/pdf417/encoder/a;->a(II)[[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private c()[[B
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0, v0}, Lcom/google/zxing/pdf417/encoder/a;->a(II)[[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method final a()V
+.method a()V
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/pdf417/encoder/a;->b:I
@@ -139,7 +81,49 @@
     return-void
 .end method
 
-.method final a(II)[[B
+.method a(IIB)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/a;->a:[Lcom/google/zxing/pdf417/encoder/b;
+
+    aget-object v0, v0, p2
+
+    invoke-virtual {v0, p1, p3}, Lcom/google/zxing/pdf417/encoder/b;->a(IB)V
+
+    return-void
+.end method
+
+.method a(IIZ)V
+    .locals 1
+
+    if-eqz p3, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    int-to-byte v0, v0
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/zxing/pdf417/encoder/a;->a(IIB)V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method a(I)[[B
+    .locals 1
+
+    invoke-virtual {p0, p1, p1}, Lcom/google/zxing/pdf417/encoder/a;->a(II)[[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method a(II)[[B
     .locals 6
 
     iget v0, p0, Lcom/google/zxing/pdf417/encoder/a;->c:I
@@ -195,7 +179,7 @@
     return-object v0
 .end method
 
-.method final b()Lcom/google/zxing/pdf417/encoder/b;
+.method b()Lcom/google/zxing/pdf417/encoder/b;
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/a;->a:[Lcom/google/zxing/pdf417/encoder/b;
@@ -203,6 +187,18 @@
     iget v1, p0, Lcom/google/zxing/pdf417/encoder/a;->b:I
 
     aget-object v0, v0, v1
+
+    return-object v0
+.end method
+
+.method c()[[B
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0, v0}, Lcom/google/zxing/pdf417/encoder/a;->a(II)[[B
+
+    move-result-object v0
 
     return-object v0
 .end method

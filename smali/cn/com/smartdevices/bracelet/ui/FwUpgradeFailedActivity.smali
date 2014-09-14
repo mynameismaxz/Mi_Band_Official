@@ -34,8 +34,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f07002b
-        :pswitch_0
+    .packed-switch 0x7f07002f
         :pswitch_0
     .end packed-switch
 .end method
@@ -45,19 +44,11 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030001
+    const v0, 0x7f030002
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeFailedActivity;->setContentView(I)V
 
-    const v0, 0x7f07002b
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeFailedActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v0, 0x7f07002c
+    const v0, 0x7f07002f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeFailedActivity;->findViewById(I)Landroid/view/View;
 

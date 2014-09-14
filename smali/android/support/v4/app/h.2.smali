@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/h;
+.class Landroid/support/v4/app/h;
 .super Ljava/lang/Object;
 
 
@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method private static a(Landroid/app/Activity;Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.method static a(Landroid/app/Activity;Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 0
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/app/Activity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V

@@ -307,118 +307,17 @@
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;I)V
-    .locals 3
+    .locals 0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->b(I)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onDeviceStatusChanged:"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onDeviceStatusChanged:"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    packed-switch p1, :pswitch_data_0
-
-    :goto_0
-    :pswitch_0
     return-void
-
-    :pswitch_1
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onDeviceSetLatencySuccess()V
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onFwUpgradeFailed()V
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onFwUpgradeSuccess()V
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onAuthenticationFailed()V
-
-    goto :goto_0
-
-    :pswitch_5
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onAuthenticationSuccess()V
-
-    goto :goto_0
-
-    :pswitch_6
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onSendFwInfoFailed()V
-
-    goto :goto_0
-
-    :pswitch_7
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onSendFwInfoSuccess()V
-
-    goto :goto_0
-
-    :pswitch_8
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onResetAuthenticationFailed()V
-
-    goto :goto_0
-
-    :pswitch_9
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onResetAuthentiacationSuccess()V
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_0
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_0
-        :pswitch_1
-        :pswitch_8
-        :pswitch_9
-        :pswitch_6
-        :pswitch_7
-    .end packed-switch
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;J)V
-    .locals 2
+    .locals 0
 
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->k:J
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->k:J
 
     return-void
 .end method
@@ -767,7 +666,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -777,73 +676,7 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/j;
-
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/j;-><init>(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->l:Landroid/os/Handler;
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/k;
-
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/k;-><init>(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->m:Landroid/content/BroadcastReceiver;
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_ACTION_DEVICE_FOUND:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_DEVICE_STATUS_CHANGED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_ACTION_DEVICE_CONNECTED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_INITIALIZATION_SUCCESS:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_INITIALIZATION_FAILED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_ACTION_DEVICE_DISCONNECTED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_ACTION_DEVICE_CONNECTION_FAILED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_DEVICE_BATTERY_STATUS_CHANGED:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    invoke-static {p0}, Landroid/support/v4/content/LocalBroadcastManager;->getInstance(Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->m:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/content/LocalBroadcastManager;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string v1, "android.bluetooth.adapter.action.STATE_CHANGED"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->m:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v1, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->a()V
 
     return-void
 .end method
@@ -889,9 +722,7 @@
 .end method
 
 .method public onDeviceBatteryStatusChanged(BI)V
-    .locals 6
-
-    const/4 v5, 0x1
+    .locals 3
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
 
@@ -949,151 +780,24 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-ne p1, v5, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onBatteryLowNotification:"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->r:I
-
-    if-eq v0, p2, :cond_1
-
-    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->r:I
-
-    const-string v0, "notification"
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    const v1, 0x7f0c0045
-
-    invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const v1, 0x7f0c0046
-
-    invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez p2, :cond_0
-
-    const v1, 0x7f0c0047
-
-    invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const v1, 0x7f0c0048
-
-    invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_0
-    new-instance v3, Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-direct {v3, p0}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
-
-    const v4, 0x7f020004
-
-    invoke-virtual {v3, v4}, Landroid/support/v4/app/NotificationCompat$Builder;->setSmallIcon(I)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Landroid/support/v4/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/support/v4/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5}, Landroid/support/v4/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    move-result-object v1
-
-    const/4 v2, 0x4
-
-    new-array v2, v2, [J
-
-    fill-array-data v2, :array_0
-
-    invoke-virtual {v1, v2}, Landroid/support/v4/app/NotificationCompat$Builder;->setVibrate([J)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "ACTION_BATTERY_LOW"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const/4 v3, 0x0
-
-    const/high16 v4, 0x1000
-
-    invoke-static {p0, v3, v2, v4}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/support/v4/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->q:I
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :cond_2
-    const/4 v0, 0x2
+    const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    const-string v0, "notification"
+    invoke-direct {p0, p2}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->a(I)V
 
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    :cond_0
+    :goto_0
+    return-void
 
-    move-result-object v0
+    :cond_1
+    const/4 v0, 0x2
 
-    check-cast v0, Landroid/app/NotificationManager;
+    if-ne p1, v0, :cond_0
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->q:I
-
-    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->b()V
 
     goto :goto_0
-
-    :array_0
-    .array-data 0x8
-        0x64t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
-        0xf4t 0x1t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
-        0xf4t 0x1t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
-        0xf4t 0x1t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
-    .end array-data
 .end method
 
 .method public onDeviceConnected()V
@@ -1208,7 +912,7 @@
 .end method
 
 .method public onInitializationSuccess()V
-    .locals 3
+    .locals 1
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->p:Z
 
@@ -1222,19 +926,7 @@
 
     sput v0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->o:I
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
-
-    move-result-object v1
-
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/l;
-
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/l;-><init>(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)V
-
-    invoke-direct {v0, v1, v2}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;-><init>(Lcn/com/smartdevices/bracelet/model/PersonInfo;Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->work()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->c()V
 
     :cond_0
     return-void

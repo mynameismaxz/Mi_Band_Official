@@ -3,66 +3,132 @@
 
 
 # static fields
-.field private static a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
+.field private static final a:Ljava/lang/String; = "MicroMsg.PaySdk.WXFactory"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
-
-    return-void
-.end method
-
 .method private constructor <init>()V
-    .locals 0
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " should not be instantiated"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static createMsgListenerAPI(Landroid/content/Context;Ljava/lang/String;Z)Lcom/tencent/mm/sdk/openapi/IWXMsgListenAPI;
+    .locals 3
+
+    const-string v0, "MicroMsg.PaySdk.WXFactory"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "createMsgListenerAPI, appId = "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", checkSignature = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/tencent/mm/sdk/b/a;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/tencent/mm/sdk/openapi/WXMsgListenerApiImplV10;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/tencent/mm/sdk/openapi/WXMsgListenerApiImplV10;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    return-object v0
 .end method
 
 .method public static createWXAPI(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/mm/sdk/openapi/IWXAPI;
     .locals 1
 
-    sget-object v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
+    const/4 v0, 0x0
 
-    if-nez v0, :cond_0
+    invoke-static {p0, p1, v0}, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->createWXAPI(Landroid/content/Context;Ljava/lang/String;Z)Lcom/tencent/mm/sdk/openapi/IWXAPI;
 
-    new-instance v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
-
-    invoke-direct {v0}, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;-><init>()V
-
-    sput-object v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
-
-    :cond_0
-    new-instance v0, Lcom/tencent/mm/sdk/openapi/a;
-
-    invoke-direct {v0, p0, p1}, Lcom/tencent/mm/sdk/openapi/a;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public static createWXAPI(Landroid/content/Context;Ljava/lang/String;Z)Lcom/tencent/mm/sdk/openapi/IWXAPI;
-    .locals 1
+    .locals 3
 
-    sget-object v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
+    const-string v0, "MicroMsg.PaySdk.WXFactory"
 
-    if-nez v0, :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
+    const-string v2, "createWXAPI, appId = "
 
-    invoke-direct {v0}, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;-><init>()V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/tencent/mm/sdk/openapi/WXAPIFactory;->a:Lcom/tencent/mm/sdk/openapi/WXAPIFactory;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    new-instance v0, Lcom/tencent/mm/sdk/openapi/a;
+    move-result-object v1
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/tencent/mm/sdk/openapi/a;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V
+    const-string v2, ", checkSignature = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/tencent/mm/sdk/b/a;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/tencent/mm/sdk/openapi/d;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/tencent/mm/sdk/openapi/d;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V
 
     return-object v0
 .end method

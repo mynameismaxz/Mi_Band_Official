@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/share/d;
+.class Lcom/tencent/connect/share/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/os/Bundle;
+.field final synthetic a:Landroid/os/Bundle;
 
-.field private synthetic b:Landroid/app/Activity;
+.field final synthetic b:Landroid/app/Activity;
 
-.field private synthetic c:Lcom/tencent/tauth/IUiListener;
+.field final synthetic c:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic d:Lcom/tencent/connect/share/QzoneShare;
+.field final synthetic d:Lcom/tencent/connect/share/QzoneShare;
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final batchSaved(ILjava/util/ArrayList;)V
+.method public batchSaved(ILjava/util/ArrayList;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public final saved(ILjava/lang/String;)V
+.method public saved(ILjava/lang/String;)V
     .locals 0
 
     return-void

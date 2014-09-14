@@ -82,7 +82,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, ".VERSION: 1.9.6.20140519"
+    const-string v1, ".VERSION: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "1.9.6.20140519"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -113,6 +119,8 @@
     move-result-object v0
 
     sput-object v0, Lcom/xiaomi/hm/bleservice/BLEService;->CLASS_NAME:Ljava/lang/String;
+
+    sget-object v0, Lcom/xiaomi/hm/bleservice/BLEService;->CLASS_NAME:Ljava/lang/String;
 
     sput-object v0, Lcom/xiaomi/hm/bleservice/BLEService;->HANDLER_THREAD_NAME:Ljava/lang/String;
 
@@ -1062,7 +1070,7 @@
 
 
 # virtual methods
-.method public final getBondedDevices()Ljava/util/Set;
+.method public getBondedDevices()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1085,7 +1093,7 @@
     return-object v0
 .end method
 
-.method public final getConnectedDevices()Ljava/util/List;
+.method public getConnectedDevices()Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1116,7 +1124,7 @@
     return-object v0
 .end method
 
-.method public final getDefaultPeripheral()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+.method public getDefaultPeripheral()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1130,7 +1138,7 @@
     return-object v0
 .end method
 
-.method public final newConnection(Landroid/bluetooth/BluetoothDevice;Ljava/lang/Class;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+.method public newConnection(Landroid/bluetooth/BluetoothDevice;Ljava/lang/Class;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1420,7 +1428,7 @@
     .end packed-switch
 .end method
 
-.method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
+.method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1430,7 +1438,7 @@
     return-object v0
 .end method
 
-.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
+.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1440,7 +1448,7 @@
     return-void
 .end method
 
-.method public final onCreate()V
+.method public onCreate()V
     .locals 2
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1506,7 +1514,7 @@
     return-void
 .end method
 
-.method public final onDestroy()V
+.method public onDestroy()V
     .locals 2
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1543,7 +1551,7 @@
     return-void
 .end method
 
-.method public final onLowMemory()V
+.method public onLowMemory()V
     .locals 0
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1553,7 +1561,7 @@
     return-void
 .end method
 
-.method public final onRebind(Landroid/content/Intent;)V
+.method public onRebind(Landroid/content/Intent;)V
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1567,7 +1575,7 @@
     return-void
 .end method
 
-.method public final onStartCommand(Landroid/content/Intent;II)I
+.method public onStartCommand(Landroid/content/Intent;II)I
     .locals 3
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1602,7 +1610,7 @@
     return v0
 .end method
 
-.method public final onTaskRemoved(Landroid/content/Intent;)V
+.method public onTaskRemoved(Landroid/content/Intent;)V
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1618,7 +1626,7 @@
     return-void
 .end method
 
-.method public final onTrimMemory(I)V
+.method public onTrimMemory(I)V
     .locals 0
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1628,7 +1636,7 @@
     return-void
 .end method
 
-.method public final onUnbind(Landroid/content/Intent;)Z
+.method public onUnbind(Landroid/content/Intent;)Z
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1640,7 +1648,7 @@
     return v0
 .end method
 
-.method public final setServiceFilter([Ljava/util/UUID;)V
+.method public setServiceFilter([Ljava/util/UUID;)V
     .locals 1
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
@@ -1662,7 +1670,7 @@
     return-void
 .end method
 
-.method public final startScan(I)V
+.method public startScan(I)V
     .locals 6
 
     const/4 v1, 0x0
@@ -1782,7 +1790,7 @@
     goto :goto_1
 .end method
 
-.method public final stopScan()V
+.method public stopScan()V
     .locals 3
 
     const/4 v2, 0x0

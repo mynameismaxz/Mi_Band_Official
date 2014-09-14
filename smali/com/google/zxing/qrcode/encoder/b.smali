@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/zxing/qrcode/encoder/b;
+.class synthetic Lcom/google/zxing/qrcode/encoder/b;
 .super Ljava/lang/Object;
 
 

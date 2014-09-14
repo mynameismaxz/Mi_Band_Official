@@ -1,22 +1,24 @@
-.class final Lcom/tencent/connect/auth/e;
+.class Lcom/tencent/connect/auth/e;
 .super Lcom/tencent/connect/auth/g;
 
 
 # instance fields
-.field private synthetic b:Lcom/tencent/tauth/IUiListener;
+.field final synthetic a:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic c:Ljava/lang/Object;
+.field final synthetic b:Ljava/lang/Object;
 
-.field private synthetic d:Lcom/tencent/connect/auth/c;
+.field final synthetic c:Lcom/tencent/connect/auth/c;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/connect/auth/c;Landroid/app/Dialog;Lcom/tencent/tauth/IUiListener;Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p3, p0, Lcom/tencent/connect/auth/e;->b:Lcom/tencent/tauth/IUiListener;
+    iput-object p1, p0, Lcom/tencent/connect/auth/e;->c:Lcom/tencent/connect/auth/c;
 
-    iput-object p4, p0, Lcom/tencent/connect/auth/e;->c:Ljava/lang/Object;
+    iput-object p3, p0, Lcom/tencent/connect/auth/e;->a:Lcom/tencent/tauth/IUiListener;
+
+    iput-object p4, p0, Lcom/tencent/connect/auth/e;->b:Ljava/lang/Object;
 
     invoke-direct {p0, p1, p2}, Lcom/tencent/connect/auth/g;-><init>(Lcom/tencent/connect/auth/c;Landroid/app/Dialog;)V
 
@@ -25,14 +27,14 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/e;->a:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/tencent/connect/auth/e;->d:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/e;->a:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/tencent/connect/auth/e;->d:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
@@ -40,18 +42,18 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/e;->a:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/tencent/connect/auth/e;->d:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_0
-    iget-object v0, p0, Lcom/tencent/connect/auth/e;->b:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, p0, Lcom/tencent/connect/auth/e;->a:Lcom/tencent/tauth/IUiListener;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/e;->b:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, p0, Lcom/tencent/connect/auth/e;->a:Lcom/tencent/tauth/IUiListener;
 
-    iget-object v1, p0, Lcom/tencent/connect/auth/e;->c:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/tencent/connect/auth/e;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1}, Lcom/tencent/tauth/IUiListener;->onComplete(Ljava/lang/Object;)V
 

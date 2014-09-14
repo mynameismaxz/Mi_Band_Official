@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/s;
+.class Landroid/support/v4/view/s;
 .super Landroid/support/v4/view/r;
 
 
@@ -13,30 +13,30 @@
 
 
 # virtual methods
-.method public final a(I)I
+.method public a(I)I
     .locals 1
 
-    invoke-static {p1}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
+    invoke-static {p1}, Landroid/support/v4/view/v;->a(I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final a(II)Z
+.method public a(II)Z
     .locals 1
 
-    invoke-static {p1, p2}, Landroid/view/KeyEvent;->metaStateHasModifiers(II)Z
+    invoke-static {p1, p2}, Landroid/support/v4/view/v;->a(II)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(I)Z
+.method public b(I)Z
     .locals 1
 
-    invoke-static {p1}, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z
+    invoke-static {p1}, Landroid/support/v4/view/v;->b(I)Z
 
     move-result v0
 

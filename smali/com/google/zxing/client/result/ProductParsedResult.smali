@@ -9,7 +9,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1, p1}, Lcom/google/zxing/client/result/ProductParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/ProductParsedResult;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     return-object v0
 .end method
 
-.method public final getNormalizedProductID()Ljava/lang/String;
+.method public getNormalizedProductID()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/ProductParsedResult;->b:Ljava/lang/String;
@@ -49,7 +49,7 @@
     return-object v0
 .end method
 
-.method public final getProductID()Ljava/lang/String;
+.method public getProductID()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/ProductParsedResult;->a:Ljava/lang/String;

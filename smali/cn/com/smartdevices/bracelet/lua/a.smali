@@ -9,7 +9,7 @@
 
 .field public c:Ljava/lang/Boolean;
 
-.field private synthetic d:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
+.field final synthetic d:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
 
 
 # direct methods
@@ -17,6 +17,8 @@
     .locals 2
 
     const/4 v1, 0x1
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/a;->d:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

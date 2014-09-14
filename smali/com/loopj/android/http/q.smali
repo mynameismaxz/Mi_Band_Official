@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/q;
+.class Lcom/loopj/android/http/q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/p;
+.field final synthetic a:Lcom/loopj/android/http/p;
 
 .field private final synthetic b:Ljava/lang/Object;
 
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 6
 
     iget-object v0, p0, Lcom/loopj/android/http/q;->b:Ljava/lang/Object;
@@ -45,7 +45,9 @@
 
     iget-object v0, p0, Lcom/loopj/android/http/q;->a:Lcom/loopj/android/http/p;
 
-    iget-object v1, v0, Lcom/loopj/android/http/p;->a:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    invoke-static {v0}, Lcom/loopj/android/http/p;->a(Lcom/loopj/android/http/p;)Lcom/loopj/android/http/JsonHttpResponseHandler;
+
+    move-result-object v1
 
     iget v2, p0, Lcom/loopj/android/http/q;->c:I
 
@@ -69,7 +71,9 @@
 
     iget-object v0, p0, Lcom/loopj/android/http/q;->a:Lcom/loopj/android/http/p;
 
-    iget-object v1, v0, Lcom/loopj/android/http/p;->a:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    invoke-static {v0}, Lcom/loopj/android/http/p;->a(Lcom/loopj/android/http/p;)Lcom/loopj/android/http/JsonHttpResponseHandler;
+
+    move-result-object v1
 
     iget v2, p0, Lcom/loopj/android/http/q;->c:I
 
@@ -92,7 +96,9 @@
 
     iget-object v0, p0, Lcom/loopj/android/http/q;->a:Lcom/loopj/android/http/p;
 
-    iget-object v1, v0, Lcom/loopj/android/http/p;->a:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    invoke-static {v0}, Lcom/loopj/android/http/p;->a(Lcom/loopj/android/http/p;)Lcom/loopj/android/http/JsonHttpResponseHandler;
+
+    move-result-object v1
 
     iget v2, p0, Lcom/loopj/android/http/q;->c:I
 
@@ -115,7 +121,9 @@
     :cond_2
     iget-object v0, p0, Lcom/loopj/android/http/q;->a:Lcom/loopj/android/http/p;
 
-    iget-object v0, v0, Lcom/loopj/android/http/p;->a:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    invoke-static {v0}, Lcom/loopj/android/http/p;->a(Lcom/loopj/android/http/p;)Lcom/loopj/android/http/JsonHttpResponseHandler;
+
+    move-result-object v0
 
     iget v1, p0, Lcom/loopj/android/http/q;->c:I
 

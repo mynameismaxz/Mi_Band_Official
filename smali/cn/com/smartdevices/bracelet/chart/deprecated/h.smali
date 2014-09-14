@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/h;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onDown(Landroid/view/MotionEvent;)Z
+.method public onDown(Landroid/view/MotionEvent;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -30,7 +30,7 @@
     return v0
 .end method
 
-.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 5
 
     const/4 v1, 0x1
@@ -158,13 +158,13 @@
     goto :goto_0
 .end method
 
-.method public final onLongPress(Landroid/view/MotionEvent;)V
+.method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -172,13 +172,13 @@
     return v0
 .end method
 
-.method public final onShowPress(Landroid/view/MotionEvent;)V
+.method public onShowPress(Landroid/view/MotionEvent;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
+.method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 1
 
     const/4 v0, 0x0

@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;
+.class Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;
+.field final synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;
 
 
 # direct methods
@@ -32,7 +32,9 @@
     return-void
 .end method
 
-.method private a()Ljava/lang/Void;
+
+# virtual methods
+.method public a()Ljava/lang/Void;
     .locals 4
 
     const/4 v3, 0x0
@@ -84,8 +86,6 @@
 
     :cond_1
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -93,16 +93,16 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-
-# virtual methods
-.method public final synthetic call()Ljava/lang/Object;
+.method public synthetic call()Ljava/lang/Object;
     .locals 1
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;->a()Ljava/lang/Void;
+    invoke-virtual {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;->a()Ljava/lang/Void;
 
     move-result-object v0
 

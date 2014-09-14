@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/ag;
+.class Landroid/support/v4/view/ag;
 .super Landroid/support/v4/view/af;
 
 
@@ -13,44 +13,44 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;Landroid/graphics/Paint;)V
+.method public a(Landroid/view/View;Landroid/graphics/Paint;)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setLayerPaint(Landroid/graphics/Paint;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/an;->a(Landroid/view/View;Landroid/graphics/Paint;)V
 
     return-void
 .end method
 
-.method public final e(Landroid/view/View;I)V
+.method public e(Landroid/view/View;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setLabelFor(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/an;->a(Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public final f(Landroid/view/View;I)V
+.method public f(Landroid/view/View;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutDirection(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/an;->b(Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public final j(Landroid/view/View;)I
+.method public h(Landroid/view/View;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getLabelFor()I
+    invoke-static {p1}, Landroid/support/v4/view/an;->a(Landroid/view/View;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final k(Landroid/view/View;)I
+.method public i(Landroid/view/View;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutDirection()I
+    invoke-static {p1}, Landroid/support/v4/view/an;->b(Landroid/view/View;)I
 
     move-result v0
 

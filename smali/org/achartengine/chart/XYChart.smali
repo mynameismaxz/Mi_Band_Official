@@ -86,22 +86,22 @@
     return-void
 .end method
 
-.method private static a(Landroid/graphics/Paint$Align;)I
+.method private a(Landroid/graphics/Paint$Align;)I
     .locals 2
 
     const/4 v0, 0x4
 
     sget-object v1, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
-    if-ne p0, v1, :cond_0
+    if-ne p1, v1, :cond_0
 
-    const/4 v0, -0x4
+    neg-int v0, v0
 
     :cond_0
     return v0
 .end method
 
-.method private static a(Ljava/util/List;)Ljava/util/List;
+.method private a(Ljava/util/List;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -119,9 +119,9 @@
 
     new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v1, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -229,18 +229,18 @@
     goto :goto_0
 .end method
 
-.method private static a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
+.method private a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
     .locals 0
 
-    invoke-virtual {p5, p0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+    invoke-virtual {p6, p1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    invoke-virtual {p5, p1}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
+    invoke-virtual {p6, p2}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    invoke-virtual {p5, p2}, Landroid/graphics/Paint;->setStrokeMiter(F)V
+    invoke-virtual {p6, p3}, Landroid/graphics/Paint;->setStrokeMiter(F)V
 
-    invoke-virtual {p5, p4}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
+    invoke-virtual {p6, p5}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    invoke-virtual {p5, p3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    invoke-virtual {p6, p4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     return-void
 .end method
@@ -373,7 +373,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_37
 
     move-object/from16 v0, p0
 
@@ -383,7 +383,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_37
 
     move-object/from16 v0, p0
 
@@ -579,7 +579,7 @@
 
     move-object/from16 v0, v18
 
-    if-ne v0, v5, :cond_35
+    if-ne v0, v5, :cond_36
 
     sub-int v9, v9, v33
 
@@ -649,7 +649,9 @@
 
     iget v4, v0, Lorg/achartengine/chart/XYChart;->b:F
 
-    neg-float v4, v4
+    const/high16 v5, -0x4080
+
+    mul-float/2addr v4, v5
 
     move-object/from16 v0, p0
 
@@ -944,7 +946,7 @@
     :goto_8
     move/from16 v0, v30
 
-    if-ge v5, v0, :cond_12
+    if-ge v5, v0, :cond_13
 
     move-object/from16 v0, p0
 
@@ -962,11 +964,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_11
+    if-nez v4, :cond_f
 
+    :cond_e
+    :goto_9
+    add-int/lit8 v4, v5, 0x1
+
+    move v5, v4
+
+    goto :goto_8
+
+    :cond_f
     aget-boolean v4, v6, v13
 
-    if-nez v4, :cond_e
+    if-nez v4, :cond_10
 
     invoke-virtual {v12}, Lorg/achartengine/model/XYSeries;->getMinX()D
 
@@ -1002,10 +1013,10 @@
 
     aput-wide v15, v4, v14
 
-    :cond_e
+    :cond_10
     aget-boolean v4, v9, v13
 
-    if-nez v4, :cond_f
+    if-nez v4, :cond_11
 
     invoke-virtual {v12}, Lorg/achartengine/model/XYSeries;->getMaxX()D
 
@@ -1041,10 +1052,10 @@
 
     aput-wide v15, v4, v14
 
-    :cond_f
+    :cond_11
     aget-boolean v4, v10, v13
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_12
 
     invoke-virtual {v12}, Lorg/achartengine/model/XYSeries;->getMinY()D
 
@@ -1084,10 +1095,10 @@
 
     aput-wide v15, v4, v14
 
-    :cond_10
+    :cond_12
     aget-boolean v4, v11, v13
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_e
 
     invoke-virtual {v12}, Lorg/achartengine/model/XYSeries;->getMaxY()D
 
@@ -1127,20 +1138,15 @@
 
     aput-wide v13, v4, v12
 
-    :cond_11
-    add-int/lit8 v4, v5, 0x1
+    goto/16 :goto_9
 
-    move v5, v4
-
-    goto/16 :goto_8
-
-    :cond_12
+    :cond_13
     const/4 v4, 0x0
 
-    :goto_9
+    :goto_a
     move/from16 v0, v39
 
-    if-ge v4, v0, :cond_15
+    if-ge v4, v0, :cond_16
 
     aget-wide v5, v32, v4
 
@@ -1152,7 +1158,7 @@
 
     cmpl-double v5, v5, v9
 
-    if-eqz v5, :cond_13
+    if-eqz v5, :cond_14
 
     sub-int v5, v35, v8
 
@@ -1168,7 +1174,7 @@
 
     aput-wide v5, v42, v4
 
-    :cond_13
+    :cond_14
     aget-wide v5, v41, v4
 
     aget-wide v9, v40, v4
@@ -1179,7 +1185,7 @@
 
     cmpl-double v5, v5, v9
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_15
 
     sub-int v5, v34, v37
 
@@ -1199,12 +1205,12 @@
 
     aput-wide v5, v43, v4
 
-    :cond_14
+    :cond_15
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_15
+    :cond_16
     const/4 v4, 0x0
 
     new-instance v5, Ljava/util/HashMap;
@@ -1217,12 +1223,12 @@
 
     const/16 v17, 0x0
 
-    :goto_a
+    :goto_b
     move/from16 v0, v17
 
     move/from16 v1, v30
 
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_21
 
     move-object/from16 v0, p0
 
@@ -1242,8 +1248,14 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-nez v5, :cond_17
 
+    :goto_c
+    add-int/lit8 v17, v17, 0x1
+
+    goto :goto_b
+
+    :cond_17
     const/4 v6, 0x1
 
     move-object/from16 v0, p0
@@ -1327,12 +1339,12 @@
 
     move-result-object v26
 
-    :goto_b
+    :goto_d
     invoke-interface/range {v26 .. v26}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_1d
 
     invoke-interface/range {v26 .. v26}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1360,7 +1372,7 @@
 
     move-result-wide v12
 
-    if-gez v19, :cond_17
+    if-gez v19, :cond_19
 
     move-object/from16 v0, p0
 
@@ -1368,20 +1380,20 @@
 
     move-result v5
 
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_18
 
     invoke-virtual/range {p0 .. p0}, Lorg/achartengine/chart/XYChart;->isRenderNullValues()Z
 
     move-result v5
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_19
 
-    :cond_16
+    :cond_18
     invoke-virtual {v9, v10, v11}, Lorg/achartengine/model/XYSeries;->getIndexForKey(D)I
 
     move-result v19
 
-    :cond_17
+    :cond_19
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
@@ -1404,7 +1416,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_18
+    if-nez v4, :cond_1a
 
     int-to-double v4, v8
 
@@ -1451,25 +1463,25 @@
     move-object/from16 v0, v21
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_b
+    goto :goto_d
 
     :catchall_0
     move-exception v4
 
     monitor-exit v9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v4
 
-    :cond_18
+    :cond_1a
     :try_start_1
     invoke-virtual/range {p0 .. p0}, Lorg/achartengine/chart/XYChart;->isRenderNullValues()Z
 
     move-result v4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_1b
 
     int-to-double v4, v8
 
@@ -1517,14 +1529,14 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_b
+    goto/16 :goto_d
 
-    :cond_19
+    :cond_1b
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-lez v4, :cond_1a
+    if-lez v4, :cond_1c
 
     move-object/from16 v10, p0
 
@@ -1564,21 +1576,21 @@
 
     const/16 v19, -0x1
 
-    :cond_1a
+    :cond_1c
     const/4 v4, 0x0
 
     move-object/from16 v0, v45
 
     invoke-virtual {v0, v4}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_b
+    goto/16 :goto_d
 
-    :cond_1b
+    :cond_1d
     invoke-virtual {v9}, Lorg/achartengine/model/XYSeries;->getAnnotationCount()I
 
     move-result v5
 
-    if-lez v5, :cond_1d
+    if-lez v5, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -1598,8 +1610,8 @@
 
     const/4 v4, 0x0
 
-    :goto_c
-    if-ge v4, v5, :cond_1d
+    :goto_e
+    if-ge v4, v5, :cond_1f
 
     int-to-double v11, v8
 
@@ -1671,7 +1683,7 @@
 
     cmpg-float v11, v26, v11
 
-    if-gez v11, :cond_1c
+    if-gez v11, :cond_1e
 
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getHeight()I
 
@@ -1681,7 +1693,7 @@
 
     cmpg-float v11, v27, v11
 
-    if-gez v11, :cond_1c
+    if-gez v11, :cond_1e
 
     invoke-virtual {v9, v4}, Lorg/achartengine/model/XYSeries;->getAnnotationAt(I)Ljava/lang/String;
 
@@ -1695,17 +1707,17 @@
 
     invoke-virtual/range {v23 .. v28}, Lorg/achartengine/chart/XYChart;->drawString(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    :cond_1c
+    :cond_1e
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_c
+    goto :goto_e
 
-    :cond_1d
+    :cond_1f
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-lez v4, :cond_1e
+    if-lez v4, :cond_20
 
     move-object/from16 v10, p0
 
@@ -1739,19 +1751,16 @@
 
     invoke-virtual {v0, v4}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
 
-    :cond_1e
+    :cond_20
     monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move v4, v6
 
-    :cond_1f
-    add-int/lit8 v17, v17, 0x1
+    goto/16 :goto_c
 
-    goto/16 :goto_a
-
-    :cond_20
+    :cond_21
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -1822,7 +1831,7 @@
 
     move-object/from16 v0, v18
 
-    if-ne v0, v5, :cond_25
+    if-ne v0, v5, :cond_26
 
     move-object/from16 v0, p0
 
@@ -1890,8 +1899,8 @@
 
     invoke-virtual/range {v19 .. v28}, Lorg/achartengine/chart/XYChart;->drawBackground(Lorg/achartengine/renderer/DefaultRenderer;Landroid/graphics/Canvas;IIIILandroid/graphics/Paint;ZI)V
 
-    :cond_21
-    :goto_d
+    :cond_22
+    :goto_f
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -1900,13 +1909,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_27
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_27
 
     const/4 v4, 0x1
 
-    :goto_e
+    :goto_10
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -1923,11 +1932,11 @@
 
     move-result v15
 
-    if-nez v4, :cond_22
+    if-nez v4, :cond_23
 
-    if-eqz v5, :cond_2d
+    if-eqz v5, :cond_2e
 
-    :cond_22
+    :cond_23
     const/4 v5, 0x0
 
     aget-wide v10, v31, v5
@@ -1950,7 +1959,9 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lorg/achartengine/chart/XYChart;->a(Ljava/util/List;)Ljava/util/List;
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v5}, Lorg/achartengine/chart/XYChart;->a(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v20
 
@@ -1966,7 +1977,7 @@
 
     move-result-object v5
 
-    if-eqz v4, :cond_23
+    if-eqz v4, :cond_24
 
     move-object/from16 v0, p0
 
@@ -2004,7 +2015,7 @@
 
     invoke-virtual {v0, v6}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    :cond_23
+    :cond_24
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -2061,7 +2072,7 @@
 
     invoke-virtual/range {v19 .. v28}, Lorg/achartengine/chart/XYChart;->drawYLabels(Ljava/util/Map;Landroid/graphics/Canvas;Landroid/graphics/Paint;IIII[D[D)V
 
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_2b
 
     move-object/from16 v0, p0
 
@@ -2079,10 +2090,10 @@
 
     move v6, v5
 
-    :goto_f
+    :goto_11
     move/from16 v0, v39
 
-    if-ge v6, v0, :cond_2a
+    if-ge v6, v0, :cond_2b
 
     move-object/from16 v0, p0
 
@@ -2108,10 +2119,10 @@
 
     const/4 v5, 0x0
 
-    :goto_10
+    :goto_12
     move/from16 v0, v26
 
-    if-ge v5, v0, :cond_29
+    if-ge v5, v0, :cond_2a
 
     aget-object v9, v17, v5
 
@@ -2123,7 +2134,7 @@
 
     cmpg-double v10, v10, v12
 
-    if-gtz v10, :cond_24
+    if-gtz v10, :cond_25
 
     invoke-virtual {v9}, Ljava/lang/Double;->doubleValue()D
 
@@ -2133,7 +2144,7 @@
 
     cmpg-double v10, v10, v12
 
-    if-gtz v10, :cond_24
+    if-gtz v10, :cond_25
 
     move/from16 v0, v34
 
@@ -2191,15 +2202,19 @@
 
     move-object/from16 v0, v18
 
-    if-ne v0, v9, :cond_28
+    if-ne v0, v9, :cond_29
 
     sget-object v9, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
     move-object/from16 v0, v16
 
-    if-ne v0, v9, :cond_27
+    if-ne v0, v9, :cond_28
 
-    invoke-static/range {v16 .. v16}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v0, v1}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v9
 
@@ -2247,8 +2262,8 @@
 
     invoke-virtual/range {v19 .. v25}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    :goto_11
-    if-eqz v15, :cond_24
+    :goto_13
+    if-eqz v15, :cond_25
 
     move-object/from16 v0, p0
 
@@ -2276,18 +2291,18 @@
 
     invoke-virtual/range {v9 .. v14}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_24
-    :goto_12
+    :cond_25
+    :goto_14
     add-int/lit8 v5, v5, 0x1
 
-    goto/16 :goto_10
+    goto/16 :goto_12
 
-    :cond_25
+    :cond_26
     sget-object v5, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->VERTICAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v5, :cond_21
+    if-ne v0, v5, :cond_22
 
     move-object/from16 v0, p0
 
@@ -2353,19 +2368,23 @@
 
     invoke-virtual/range {v19 .. v28}, Lorg/achartengine/chart/XYChart;->drawBackground(Lorg/achartengine/renderer/DefaultRenderer;Landroid/graphics/Canvas;IIIILandroid/graphics/Paint;ZI)V
 
-    goto/16 :goto_d
-
-    :cond_26
-    const/4 v4, 0x0
-
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_27
+    const/4 v4, 0x0
+
+    goto/16 :goto_10
+
+    :cond_28
     move/from16 v0, v35
 
     int-to-float v10, v0
 
-    invoke-static/range {v16 .. v16}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v0, v1}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v9
 
@@ -2413,10 +2432,14 @@
 
     invoke-virtual/range {v19 .. v25}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    goto/16 :goto_11
+    goto/16 :goto_13
 
-    :cond_28
-    invoke-static/range {v16 .. v16}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    :cond_29
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v0, v1}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v9
 
@@ -2468,7 +2491,7 @@
 
     invoke-virtual/range {v19 .. v25}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    if-eqz v15, :cond_24
+    if-eqz v15, :cond_25
 
     move-object/from16 v0, p0
 
@@ -2496,17 +2519,17 @@
 
     invoke-virtual/range {v9 .. v14}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    goto/16 :goto_12
+    goto/16 :goto_14
 
-    :cond_29
+    :cond_2a
     add-int/lit8 v5, v6, 0x1
 
     move v6, v5
 
-    goto/16 :goto_f
+    goto/16 :goto_11
 
-    :cond_2a
-    if-eqz v4, :cond_2d
+    :cond_2b
+    if-eqz v4, :cond_2e
 
     move-object/from16 v0, p0
 
@@ -2542,7 +2565,7 @@
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_2f
+    if-ne v0, v4, :cond_30
 
     move-object/from16 v0, p0
 
@@ -2604,10 +2627,10 @@
 
     const/4 v4, 0x0
 
-    :goto_13
+    :goto_15
     move/from16 v0, v39
 
-    if-ge v4, v0, :cond_2c
+    if-ge v4, v0, :cond_2d
 
     move-object/from16 v0, p0
 
@@ -2619,7 +2642,7 @@
 
     sget-object v9, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
-    if-ne v6, v9, :cond_2b
+    if-ne v6, v9, :cond_2c
 
     move-object/from16 v0, p0
 
@@ -2651,12 +2674,12 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    :goto_14
+    :goto_16
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_13
+    goto :goto_15
 
-    :cond_2b
+    :cond_2c
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -2685,9 +2708,9 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    goto :goto_14
+    goto :goto_16
 
-    :cond_2c
+    :cond_2d
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -2738,13 +2761,13 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    :cond_2d
-    :goto_15
+    :cond_2e
+    :goto_17
     sget-object v4, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->HORIZONTAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_30
+    if-ne v0, v4, :cond_31
 
     move-object/from16 v0, p0
 
@@ -2780,8 +2803,8 @@
 
     invoke-virtual/range {v4 .. v15}, Lorg/achartengine/chart/XYChart;->drawLegend(Landroid/graphics/Canvas;Lorg/achartengine/renderer/DefaultRenderer;[Ljava/lang/String;IIIIIILandroid/graphics/Paint;Z)I
 
-    :cond_2e
-    :goto_16
+    :cond_2f
+    :goto_18
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lorg/achartengine/chart/XYChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
@@ -2790,7 +2813,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_34
 
     move-object/from16 v0, p0
 
@@ -2824,18 +2847,20 @@
 
     invoke-virtual/range {v9 .. v14}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    const/4 v4, 0x0
-
     const/4 v5, 0x0
 
-    move v10, v4
+    const/4 v4, 0x0
 
-    :goto_17
+    move v10, v5
+
+    move v5, v4
+
+    :goto_19
     move/from16 v0, v39
 
-    if-ge v5, v0, :cond_32
+    if-ge v5, v0, :cond_33
 
-    if-nez v10, :cond_32
+    if-nez v10, :cond_33
 
     move-object/from16 v0, p0
 
@@ -2847,23 +2872,23 @@
 
     sget-object v6, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
 
-    if-ne v4, v6, :cond_31
+    if-ne v4, v6, :cond_32
 
     const/4 v4, 0x1
 
-    :goto_18
+    :goto_1a
     add-int/lit8 v5, v5, 0x1
 
     move v10, v4
 
-    goto :goto_17
+    goto :goto_19
 
-    :cond_2f
+    :cond_30
     sget-object v4, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->VERTICAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_2d
+    if-ne v0, v4, :cond_2e
 
     move-object/from16 v0, p0
 
@@ -2975,14 +3000,14 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/achartengine/chart/XYChart;->drawText(Landroid/graphics/Canvas;Ljava/lang/String;FFLandroid/graphics/Paint;F)V
 
-    goto/16 :goto_15
+    goto/16 :goto_17
 
-    :cond_30
+    :cond_31
     sget-object v4, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->VERTICAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_2e
+    if-ne v0, v4, :cond_2f
 
     move/from16 v0, v38
 
@@ -3042,19 +3067,19 @@
 
     invoke-direct {v0, v1, v4, v5}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Canvas;FZ)V
 
-    goto/16 :goto_16
-
-    :cond_31
-    const/4 v4, 0x0
-
     goto/16 :goto_18
 
     :cond_32
+    const/4 v4, 0x0
+
+    goto/16 :goto_1a
+
+    :cond_33
     sget-object v4, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->HORIZONTAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_34
+    if-ne v0, v4, :cond_35
 
     int-to-float v5, v8
 
@@ -3074,7 +3099,7 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    if-eqz v10, :cond_33
+    if-eqz v10, :cond_34
 
     move/from16 v0, v35
 
@@ -3098,8 +3123,8 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_33
-    :goto_19
+    :cond_34
+    :goto_1b
     if-eqz v36, :cond_a
 
     move/from16 v0, v38
@@ -3116,12 +3141,12 @@
 
     goto/16 :goto_6
 
-    :cond_34
+    :cond_35
     sget-object v4, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->VERTICAL:Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;
 
     move-object/from16 v0, v18
 
-    if-ne v0, v4, :cond_33
+    if-ne v0, v4, :cond_34
 
     move/from16 v0, v35
 
@@ -3145,16 +3170,16 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    goto :goto_19
+    goto :goto_1b
 
-    :cond_35
+    :cond_36
     move/from16 v34, v4
 
     move/from16 v35, v9
 
     goto/16 :goto_3
 
-    :cond_36
+    :cond_37
     move/from16 v33, v13
 
     goto/16 :goto_1
@@ -3717,7 +3742,7 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     invoke-virtual {v9}, Lorg/achartengine/renderer/BasicStroke;->getIntervals()[F
 
@@ -3725,7 +3750,7 @@
 
     if-eqz v1, :cond_0
 
-    new-instance v5, Landroid/graphics/DashPathEffect;
+    new-instance v6, Landroid/graphics/DashPathEffect;
 
     invoke-virtual {v9}, Lorg/achartengine/renderer/BasicStroke;->getIntervals()[F
 
@@ -3735,26 +3760,28 @@
 
     move-result v2
 
-    invoke-direct {v5, v1, v2}, Landroid/graphics/DashPathEffect;-><init>([FF)V
+    invoke-direct {v6, v1, v2}, Landroid/graphics/DashPathEffect;-><init>([FF)V
 
     :cond_0
     invoke-virtual {v9}, Lorg/achartengine/renderer/BasicStroke;->getCap()Landroid/graphics/Paint$Cap;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-virtual {v9}, Lorg/achartengine/renderer/BasicStroke;->getJoin()Landroid/graphics/Paint$Join;
 
-    move-result-object v2
+    move-result-object v3
 
     invoke-virtual {v9}, Lorg/achartengine/renderer/BasicStroke;->getMiter()F
 
-    move-result v3
+    move-result v4
 
-    sget-object v4, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
+    sget-object v5, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
-    move-object/from16 v6, p3
+    move-object v1, p0
 
-    invoke-static/range {v1 .. v6}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
+    move-object/from16 v7, p3
+
+    invoke-direct/range {v1 .. v7}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
 
     :cond_1
     move-object v1, p0
@@ -3862,19 +3889,21 @@
     :cond_3
     if-eqz v9, :cond_4
 
-    move-object v1, v10
+    move-object v1, p0
 
-    move-object v2, v11
+    move-object v2, v10
 
-    move v3, v12
+    move-object v3, v11
 
-    move-object v4, v14
+    move v4, v12
 
-    move-object v5, v13
+    move-object v5, v14
 
-    move-object/from16 v6, p3
+    move-object v6, v13
 
-    invoke-static/range {v1 .. v6}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
+    move-object/from16 v7, p3
+
+    invoke-direct/range {v1 .. v7}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLandroid/graphics/Paint$Style;Landroid/graphics/PathEffect;Landroid/graphics/Paint;)V
 
     :cond_4
     return-void
@@ -4500,7 +4529,9 @@
 
     if-ne v4, v1, :cond_3
 
-    invoke-static {v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v1
 
@@ -4624,7 +4655,9 @@
 
     int-to-float v2, v0
 
-    invoke-static {v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v1
 
@@ -4717,7 +4750,9 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-static {v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v4}, Lorg/achartengine/chart/XYChart;->a(Landroid/graphics/Paint$Align;)I
 
     move-result v1
 
@@ -5075,7 +5110,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lorg/achartengine/chart/XYChart;->a(Ljava/util/List;)Ljava/util/List;
+    invoke-direct {p0, v3}, Lorg/achartengine/chart/XYChart;->a(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v3
 

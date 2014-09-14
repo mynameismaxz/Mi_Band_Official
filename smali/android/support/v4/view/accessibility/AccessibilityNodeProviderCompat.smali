@@ -30,9 +30,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/view/accessibility/t;
+    new-instance v0, Landroid/support/v4/view/accessibility/w;
 
-    invoke-direct {v0}, Landroid/support/v4/view/accessibility/t;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/view/accessibility/w;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/t;
 
@@ -46,7 +46,7 @@
 
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/accessibility/t;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Landroid/support/v4/view/accessibility/t;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
 
     move-result-object v0
 

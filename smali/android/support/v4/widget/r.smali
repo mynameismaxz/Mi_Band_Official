@@ -16,168 +16,88 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
+.method public a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p1, p2}, Landroid/support/v4/widget/t;->a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
 
-    new-instance v0, Landroid/widget/OverScroller;
+    move-result-object v0
 
-    invoke-direct {v0, p1, p2}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-
-    :goto_0
     return-object v0
-
-    :cond_0
-    new-instance v0, Landroid/widget/OverScroller;
-
-    invoke-direct {v0, p1}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;)V
-
-    goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/Object;III)V
+.method public a(Ljava/lang/Object;III)V
     .locals 0
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1, p2, p3, p4}, Landroid/widget/OverScroller;->notifyHorizontalEdgeReached(III)V
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;III)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIII)V
+.method public a(Ljava/lang/Object;IIII)V
     .locals 0
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/widget/OverScroller;->startScroll(IIII)V
+    invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;IIII)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIII)V
-    .locals 6
+.method public a(Ljava/lang/Object;IIIII)V
+    .locals 0
 
-    move-object v0, p1
-
-    check-cast v0, Landroid/widget/OverScroller;
-
-    move v1, p2
-
-    move v2, p3
-
-    move v3, p4
-
-    move v4, p5
-
-    move v5, p6
-
-    invoke-virtual/range {v0 .. v5}, Landroid/widget/OverScroller;->startScroll(IIIII)V
+    invoke-static/range {p1 .. p6}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;IIIII)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIIIIII)V
-    .locals 9
+.method public a(Ljava/lang/Object;IIIIIIII)V
+    .locals 0
 
-    move-object v0, p1
-
-    check-cast v0, Landroid/widget/OverScroller;
-
-    move v1, p2
-
-    move v2, p3
-
-    move v3, p4
-
-    move v4, p5
-
-    move v5, p6
-
-    move/from16 v6, p7
-
-    move/from16 v7, p8
-
-    move/from16 v8, p9
-
-    invoke-virtual/range {v0 .. v8}, Landroid/widget/OverScroller;->fling(IIIIIIII)V
+    invoke-static/range {p1 .. p9}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;IIIIIIII)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIIIIIIII)V
-    .locals 11
+.method public a(Ljava/lang/Object;IIIIIIIIII)V
+    .locals 0
 
-    move-object v0, p1
-
-    check-cast v0, Landroid/widget/OverScroller;
-
-    move v1, p2
-
-    move v2, p3
-
-    move v3, p4
-
-    move/from16 v4, p5
-
-    move/from16 v5, p6
-
-    move/from16 v6, p7
-
-    move/from16 v7, p8
-
-    move/from16 v8, p9
-
-    move/from16 v9, p10
-
-    move/from16 v10, p11
-
-    invoke-virtual/range {v0 .. v10}, Landroid/widget/OverScroller;->fling(IIIIIIIIII)V
+    invoke-static/range {p1 .. p11}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;IIIIIIIIII)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;)Z
+.method public a(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->isFinished()Z
+    invoke-static {p1}, Landroid/support/v4/widget/t;->a(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Ljava/lang/Object;)I
+.method public b(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->getCurrX()I
+    invoke-static {p1}, Landroid/support/v4/widget/t;->b(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Ljava/lang/Object;III)V
+.method public b(Ljava/lang/Object;III)V
     .locals 0
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1, p2, p3, p4}, Landroid/widget/OverScroller;->notifyVerticalEdgeReached(III)V
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/widget/t;->b(Ljava/lang/Object;III)V
 
     return-void
 .end method
 
-.method public final c(Ljava/lang/Object;)I
+.method public c(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->getCurrY()I
+    invoke-static {p1}, Landroid/support/v4/widget/t;->c(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -192,58 +112,48 @@
     return v0
 .end method
 
-.method public final e(Ljava/lang/Object;)Z
+.method public e(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->computeScrollOffset()Z
+    invoke-static {p1}, Landroid/support/v4/widget/t;->d(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final f(Ljava/lang/Object;)V
+.method public f(Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->abortAnimation()V
+    invoke-static {p1}, Landroid/support/v4/widget/t;->e(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final g(Ljava/lang/Object;)Z
+.method public g(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->isOverScrolled()Z
+    invoke-static {p1}, Landroid/support/v4/widget/t;->f(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final h(Ljava/lang/Object;)I
+.method public h(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->getFinalX()I
+    invoke-static {p1}, Landroid/support/v4/widget/t;->g(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final i(Ljava/lang/Object;)I
+.method public i(Ljava/lang/Object;)I
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->getFinalY()I
+    invoke-static {p1}, Landroid/support/v4/widget/t;->h(Ljava/lang/Object;)I
 
     move-result v0
 

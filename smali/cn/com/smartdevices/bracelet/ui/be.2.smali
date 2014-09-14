@@ -1,28 +1,41 @@
-.class final Lcn/com/smartdevices/bracelet/ui/be;
+.class Lcn/com/smartdevices/bracelet/ui/be;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field a:Landroid/bluetooth/BluetoothDevice;
-
-.field b:I
-
-.field private synthetic c:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
-    .locals 1
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/be;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/be;->a:Landroid/bluetooth/BluetoothDevice;
 
-    const/4 v0, 0x0
+# virtual methods
+.method public run()V
+    .locals 1
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/be;->b:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/be;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Utils;->hideProgressDialog(Landroid/app/Activity;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/be;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->e(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/n;
+.class Lcn/com/smartdevices/bracelet/view/n;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -35,21 +35,23 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/n;->a:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
+    const v1, 0x3e478084
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;->a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;)F
+    const/high16 v2, 0x3f80
 
-    move-result v1
+    sub-float/2addr v2, v1
 
-    const v2, 0x3e478084
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/view/n;->a:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
 
-    const v3, 0x3f4e1fdf
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;->a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;)F
+
+    move-result v3
+
+    mul-float/2addr v0, v2
+
+    add-float/2addr v0, v1
 
     mul-float/2addr v0, v3
-
-    add-float/2addr v0, v2
-
-    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

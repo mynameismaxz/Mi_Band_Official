@@ -1,16 +1,19 @@
-.class final Landroid/support/v4/media/a;
+.class Landroid/support/v4/media/a;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/media/c;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/TransportMediator;
+.field final synthetic a:Landroid/support/v4/media/TransportMediator;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/TransportMediator;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/media/c;->a:Landroid/support/v4/media/TransportMediator;
+    iput-object p1, p0, Landroid/support/v4/media/a;->a:Landroid/support/v4/media/TransportMediator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -19,12 +22,12 @@
 
 
 # virtual methods
-.method public final a()J
+.method public a()J
     .locals 2
 
-    iget-object v0, p0, Landroid/support/v4/media/c;->a:Landroid/support/v4/media/TransportMediator;
+    iget-object v0, p0, Landroid/support/v4/media/a;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->a:Landroid/support/v4/media/TransportPerformer;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/support/v4/media/TransportPerformer;
 
     invoke-virtual {v0}, Landroid/support/v4/media/TransportPerformer;->onGetCurrentPosition()J
 
@@ -33,36 +36,36 @@
     return-wide v0
 .end method
 
-.method public final a(I)V
+.method public a(I)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/media/c;->a:Landroid/support/v4/media/TransportMediator;
+    iget-object v0, p0, Landroid/support/v4/media/a;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->a:Landroid/support/v4/media/TransportPerformer;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/support/v4/media/TransportPerformer;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/media/TransportPerformer;->onAudioFocusChange(I)V
 
     return-void
 .end method
 
-.method public final a(J)V
+.method public a(J)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/media/c;->a:Landroid/support/v4/media/TransportMediator;
+    iget-object v0, p0, Landroid/support/v4/media/a;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->a:Landroid/support/v4/media/TransportPerformer;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/support/v4/media/TransportPerformer;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/TransportPerformer;->onSeekTo(J)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/KeyEvent;)V
+.method public a(Landroid/view/KeyEvent;)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/media/c;->a:Landroid/support/v4/media/TransportMediator;
+    iget-object v0, p0, Landroid/support/v4/media/a;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/view/KeyEvent$Callback;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->i:Landroid/view/KeyEvent$Callback;
 
     invoke-virtual {p1, v0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;)Z
 

@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method private constructor <init>(FFFI)V
+.method constructor <init>(FFFI)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
@@ -31,21 +31,9 @@
     return-void
 .end method
 
-.method private b()V
-    .locals 1
-
-    iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
-
-    return-void
-.end method
-
 
 # virtual methods
-.method final a()I
+.method a()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
@@ -53,7 +41,7 @@
     return v0
 .end method
 
-.method final a(FFF)Z
+.method a(FFF)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -113,7 +101,7 @@
     return v0
 .end method
 
-.method final b(FFF)Lcom/google/zxing/qrcode/detector/FinderPattern;
+.method b(FFF)Lcom/google/zxing/qrcode/detector/FinderPattern;
     .locals 5
 
     iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
@@ -173,7 +161,19 @@
     return-object v4
 .end method
 
-.method public final getEstimatedModuleSize()F
+.method b()V
+    .locals 1
+
+    iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->b:I
+
+    return-void
+.end method
+
+.method public getEstimatedModuleSize()F
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->a:F

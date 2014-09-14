@@ -1,4 +1,4 @@
-.class final Lu/aly/aL;
+.class Lu/aly/aL;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lu/aly/aL;)V
     .locals 0
 
     invoke-direct {p0}, Lu/aly/aL;-><init>()V
@@ -22,28 +22,26 @@
     return-void
 .end method
 
-.method private static a()Lu/aly/aK;
+
+# virtual methods
+.method public a()Lu/aly/aK;
     .locals 2
 
     new-instance v0, Lu/aly/aK;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lu/aly/aK;-><init>(B)V
+    invoke-direct {v0, v1}, Lu/aly/aK;-><init>(Lu/aly/aK;)V
 
     return-object v0
 .end method
 
+.method public synthetic b()Lu/aly/dg;
+    .locals 1
 
-# virtual methods
-.method public final synthetic b()Lu/aly/dg;
-    .locals 2
+    invoke-virtual {p0}, Lu/aly/aL;->a()Lu/aly/aK;
 
-    new-instance v0, Lu/aly/aK;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lu/aly/aK;-><init>(B)V
+    move-result-object v0
 
     return-object v0
 .end method

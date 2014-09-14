@@ -14,11 +14,9 @@
 
 
 # instance fields
-.field a:Z
+.field o:I
 
-.field private b:I
-
-.field private c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+.field p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/content/Loader$OnLoadCompleteListener",
@@ -27,15 +25,17 @@
     .end annotation
 .end field
 
-.field private d:Landroid/content/Context;
+.field q:Landroid/content/Context;
 
-.field private e:Z
+.field r:Z
 
-.field private f:Z
+.field s:Z
 
-.field private g:Z
+.field t:Z
 
-.field private h:Z
+.field u:Z
+
+.field v:Z
 
 
 # direct methods
@@ -46,23 +46,23 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->e:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->r:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->f:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->s:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->g:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->t:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->a:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->u:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->h:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->v:Z
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v4/content/Loader;->d:Landroid/content/Context;
+    iput-object v0, p0, Landroid/support/v4/content/Loader;->q:Landroid/content/Context;
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->f:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->s:Z
 
     invoke-virtual {p0}, Landroid/support/v4/content/Loader;->onAbandon()V
 
@@ -86,7 +86,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->h:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->v:Z
 
     return-void
 .end method
@@ -127,11 +127,11 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/content/Loader$OnLoadCompleteListener;->onLoadComplete(Landroid/support/v4/content/Loader;Ljava/lang/Object;)V
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget v0, p0, Landroid/support/v4/content/Loader;->b:I
+    iget v0, p0, Landroid/support/v4/content/Loader;->o:I
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(I)V
 
@@ -156,19 +156,19 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->a:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->u:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->h:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->v:Z
 
     if-eqz v0, :cond_1
 
@@ -179,7 +179,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -187,7 +187,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->a:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->u:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -195,16 +195,16 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->h:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->v:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_1
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->f:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->s:Z
 
     if-nez v0, :cond_2
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->g:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->t:Z
 
     if-eqz v0, :cond_3
 
@@ -215,7 +215,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->f:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->s:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -223,7 +223,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->g:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->t:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
@@ -242,7 +242,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->d:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->q:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -250,7 +250,7 @@
 .method public getId()I
     .locals 1
 
-    iget v0, p0, Landroid/support/v4/content/Loader;->b:I
+    iget v0, p0, Landroid/support/v4/content/Loader;->o:I
 
     return v0
 .end method
@@ -258,7 +258,7 @@
 .method public isAbandoned()Z
     .locals 1
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->f:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->s:Z
 
     return v0
 .end method
@@ -266,7 +266,7 @@
 .method public isReset()Z
     .locals 1
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->g:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->t:Z
 
     return v0
 .end method
@@ -274,7 +274,7 @@
 .method public isStarted()Z
     .locals 1
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
     return v0
 .end method
@@ -288,7 +288,7 @@
 .method public onContentChanged()V
     .locals 1
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
     if-eqz v0, :cond_0
 
@@ -300,7 +300,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->a:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->u:Z
 
     goto :goto_0
 .end method
@@ -339,7 +339,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-eqz v0, :cond_0
 
@@ -352,9 +352,9 @@
     throw v0
 
     :cond_0
-    iput-object p2, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iput-object p2, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
-    iput p1, p0, Landroid/support/v4/content/Loader;->b:I
+    iput p1, p0, Landroid/support/v4/content/Loader;->o:I
 
     return-void
 .end method
@@ -368,15 +368,15 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->g:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->t:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->e:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->r:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->f:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->s:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->a:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->u:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->h:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->v:Z
 
     return-void
 .end method
@@ -384,13 +384,13 @@
 .method public rollbackContentChanged()V
     .locals 1
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->h:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->v:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->a:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->u:Z
 
     :cond_0
     return-void
@@ -403,11 +403,11 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->g:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->t:Z
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->f:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->s:Z
 
     invoke-virtual {p0}, Landroid/support/v4/content/Loader;->onStartLoading()V
 
@@ -419,7 +419,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->e:Z
+    iput-boolean v0, p0, Landroid/support/v4/content/Loader;->r:Z
 
     invoke-virtual {p0}, Landroid/support/v4/content/Loader;->onStopLoading()V
 
@@ -429,17 +429,17 @@
 .method public takeContentChanged()Z
     .locals 2
 
-    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->a:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/Loader;->u:Z
 
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->a:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->u:Z
 
-    iget-boolean v1, p0, Landroid/support/v4/content/Loader;->h:Z
+    iget-boolean v1, p0, Landroid/support/v4/content/Loader;->v:Z
 
     or-int/2addr v1, v0
 
-    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->h:Z
+    iput-boolean v1, p0, Landroid/support/v4/content/Loader;->v:Z
 
     return v0
 .end method
@@ -459,7 +459,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Landroid/support/v4/content/Loader;->b:I
+    iget v1, p0, Landroid/support/v4/content/Loader;->o:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -484,7 +484,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-nez v0, :cond_0
 
@@ -497,7 +497,7 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iget-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-eq v0, p1, :cond_1
 
@@ -512,7 +512,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/content/Loader;->c:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+    iput-object v0, p0, Landroid/support/v4/content/Loader;->p:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     return-void
 .end method

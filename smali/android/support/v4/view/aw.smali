@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/aw;
+.class Landroid/support/v4/view/aw;
 .super Ljava/lang/Object;
 
 

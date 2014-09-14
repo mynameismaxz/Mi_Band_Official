@@ -1,14 +1,19 @@
-.class final Lcom/xiaomi/miui/analyticstracker/service/c;
+.class Lcom/xiaomi/miui/analyticstracker/service/c;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/xiaomi/miui/analyticstracker/service/b;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;
+.field final synthetic a:Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;
 
 
 # direct methods
 .method private constructor <init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/xiaomi/miui/analyticstracker/service/c;->a:Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,7 +22,7 @@
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONArray;
+.method public a()Lorg/json/JSONArray;
     .locals 3
 
     const-string v2, "[{\"app_name\": \"com.example.android_for_test\",\"servers\": [{\"server_name\": \"xiaomi\", \"app_id\": \"Example\"}],\"items\": [{\"id_regex\": \".*\", \"policy\": \"normal\"}]}]"

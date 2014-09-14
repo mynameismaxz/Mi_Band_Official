@@ -5668,72 +5668,24 @@
 .end method
 
 .method private static a(J)I
-    .locals 8
+    .locals 4
 
     const/4 v0, -0x1
 
     const-wide/32 v1, 0x3ffff
 
-    and-long v4, p0, v1
+    and-long/2addr v1, p0
 
-    const/4 v2, 0x0
+    invoke-static {v1, v2}, Lcom/google/zxing/pdf417/decoder/a;->b(J)I
 
-    sget-object v1, Lcom/google/zxing/pdf417/decoder/a;->m:[I
+    move-result v1
 
-    array-length v1, v1
-
-    move v3, v2
-
-    move v2, v1
+    if-ne v1, v0, :cond_0
 
     :goto_0
-    if-ge v3, v2, :cond_1
-
-    add-int v1, v3, v2
-
-    ushr-int/lit8 v1, v1, 0x1
-
-    sget-object v6, Lcom/google/zxing/pdf417/decoder/a;->m:[I
-
-    aget v6, v6, v1
-
-    int-to-long v6, v6
-
-    cmp-long v6, v4, v6
-
-    if-gez v6, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/a;->m:[I
-
-    aget v3, v3, v1
-
-    int-to-long v6, v3
-
-    cmp-long v3, v4, v6
-
-    if-lez v3, :cond_2
-
-    add-int/lit8 v1, v1, 0x1
-
-    move v3, v1
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v0
-
-    :cond_2
-    if-ne v1, v0, :cond_3
-
-    :goto_1
     return v0
 
-    :cond_3
+    :cond_0
     sget-object v0, Lcom/google/zxing/pdf417/decoder/a;->n:[I
 
     aget v0, v0, v1
@@ -5748,10 +5700,104 @@
 
     long-to-int v0, v0
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
-.method private a([III[II)I
+.method private static a([II)[I
+    .locals 2
+
+    const/4 v1, 0x0
+
+    if-gez p1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    sget-object v0, Lcom/google/zxing/pdf417/decoder/a;->a:[I
+
+    :goto_0
+    return-object v0
+
+    :cond_1
+    new-array v0, p1, [I
+
+    invoke-static {p0, v1, v0, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    goto :goto_0
+.end method
+
+.method private static b(J)I
+    .locals 6
+
+    const/4 v2, 0x0
+
+    sget-object v0, Lcom/google/zxing/pdf417/decoder/a;->m:[I
+
+    array-length v1, v0
+
+    :goto_0
+    if-ge v2, v1, :cond_1
+
+    add-int v0, v2, v1
+
+    ushr-int/lit8 v0, v0, 0x1
+
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/a;->m:[I
+
+    aget v3, v3, v0
+
+    int-to-long v3, v3
+
+    cmp-long v3, p0, v3
+
+    if-gez v3, :cond_0
+
+    move v1, v2
+
+    :goto_1
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/a;->m:[I
+
+    aget v2, v2, v0
+
+    int-to-long v2, v2
+
+    cmp-long v2, p0, v2
+
+    if-lez v2, :cond_2
+
+    add-int/lit8 v0, v0, 0x1
+
+    move v5, v1
+
+    move v1, v0
+
+    move v0, v5
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, -0x1
+
+    :cond_2
+    return v0
+.end method
+
+
+# virtual methods
+.method a([III[II)I
     .locals 11
 
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/a;->f:Lcom/google/zxing/common/BitMatrix;
@@ -5898,7 +5944,6 @@
     packed-switch v1, :pswitch_data_0
 
     :cond_6
-    :goto_3
     move v0, v2
 
     goto :goto_2
@@ -5911,7 +5956,9 @@
     :pswitch_1
     iput v0, p0, Lcom/google/zxing/pdf417/decoder/a;->h:I
 
-    goto :goto_3
+    move v0, v2
+
+    goto :goto_2
 
     :cond_7
     const/4 v0, 0x1
@@ -5929,7 +5976,7 @@
     packed-switch v0, :pswitch_data_1
 
     :cond_8
-    :goto_4
+    :goto_3
     :pswitch_2
     const/4 v0, 0x0
 
@@ -5967,7 +6014,9 @@
 
     iput v0, p0, Lcom/google/zxing/pdf417/decoder/a;->l:I
 
-    goto :goto_4
+    goto :goto_3
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -5983,97 +6032,8 @@
     .end packed-switch
 .end method
 
-.method private static a([II)[I
-    .locals 2
-
-    const/4 v1, 0x0
-
-    if-gez p1, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    sget-object v0, Lcom/google/zxing/pdf417/decoder/a;->a:[I
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    new-array v0, p1, [I
-
-    invoke-static {p0, v1, v0, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    goto :goto_0
-.end method
-
-.method private static b(J)I
-    .locals 5
-
-    const/4 v1, 0x0
-
-    sget-object v0, Lcom/google/zxing/pdf417/decoder/a;->m:[I
-
-    array-length v0, v0
-
-    move v2, v1
-
-    move v1, v0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    add-int v0, v2, v1
-
-    ushr-int/lit8 v0, v0, 0x1
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/a;->m:[I
-
-    aget v3, v3, v0
-
-    int-to-long v3, v3
-
-    cmp-long v3, p0, v3
-
-    if-gez v3, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/a;->m:[I
-
-    aget v2, v2, v0
-
-    int-to-long v2, v2
-
-    cmp-long v2, p0, v2
-
-    if-lez v2, :cond_2
-
-    add-int/lit8 v0, v0, 0x1
-
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, -0x1
-
-    :cond_2
-    return v0
-.end method
-
-
-# virtual methods
-.method final a()[I
-    .locals 17
+.method a()[I
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -6098,6 +6058,8 @@
     move-object/from16 v0, p0
 
     iput-object v1, v0, Lcom/google/zxing/pdf417/decoder/a;->k:[I
+
+    const/high16 v13, 0x3f80
 
     new-array v2, v11, [I
 
@@ -6141,34 +6103,36 @@
 
     const/4 v1, 0x0
 
-    move/from16 v16, v1
+    move/from16 v17, v1
 
     move v1, v8
 
-    move/from16 v8, v16
+    move/from16 v8, v17
 
     :goto_1
     if-ge v8, v11, :cond_2
 
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/google/zxing/pdf417/decoder/a;->f:Lcom/google/zxing/common/BitMatrix;
-
-    invoke-virtual {v13, v8, v9}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
-
-    move-result v13
-
-    move-object/from16 v0, p0
-
     iget-object v14, v0, Lcom/google/zxing/pdf417/decoder/a;->f:Lcom/google/zxing/common/BitMatrix;
 
-    add-int/lit8 v15, v9, -0x1
-
-    invoke-virtual {v14, v8, v15}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v14, v8, v9}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v14
 
-    if-eq v13, v14, :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcom/google/zxing/pdf417/decoder/a;->f:Lcom/google/zxing/common/BitMatrix;
+
+    add-int/lit8 v16, v9, -0x1
+
+    move/from16 v0, v16
+
+    invoke-virtual {v15, v8, v0}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+
+    move-result v15
+
+    if-eq v14, v15, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
@@ -6181,6 +6145,8 @@
     int-to-float v1, v1
 
     const/high16 v8, 0x40c0
+
+    mul-float/2addr v8, v13
 
     cmpg-float v1, v1, v8
 
@@ -6219,6 +6185,8 @@
 
     const/high16 v10, 0x4000
 
+    mul-float/2addr v10, v13
+
     cmpl-float v1, v1, v10
 
     if-ltz v1, :cond_c
@@ -6251,7 +6219,7 @@
 
     move-object/from16 v1, p0
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/zxing/pdf417/decoder/a;->a([III[II)I
+    invoke-virtual/range {v1 .. v6}, Lcom/google/zxing/pdf417/decoder/a;->a([III[II)I
 
     move-result v6
 
@@ -6291,11 +6259,11 @@
 
     const/4 v1, 0x0
 
-    move/from16 v16, v7
+    move/from16 v17, v7
 
     move v7, v6
 
-    move/from16 v6, v16
+    move/from16 v6, v17
 
     goto :goto_3
 
@@ -6315,7 +6283,7 @@
     :cond_a
     move-object/from16 v1, p0
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/zxing/pdf417/decoder/a;->a([III[II)I
+    invoke-virtual/range {v1 .. v6}, Lcom/google/zxing/pdf417/decoder/a;->a([III[II)I
 
     move-result v6
 
@@ -6358,7 +6326,7 @@
     goto :goto_3
 .end method
 
-.method public final b()[I
+.method public b()[I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/a;->k:[I
@@ -6366,7 +6334,7 @@
     return-object v0
 .end method
 
-.method public final c()I
+.method public c()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/pdf417/decoder/a;->l:I

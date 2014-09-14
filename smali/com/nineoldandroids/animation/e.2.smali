@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/animation/e;
+.class Lcom/nineoldandroids/animation/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -82,7 +82,7 @@
 
 
 # virtual methods
-.method public final a()Lcom/nineoldandroids/animation/e;
+.method public a()Lcom/nineoldandroids/animation/e;
     .locals 2
 
     :try_start_0
@@ -114,7 +114,7 @@
     throw v0
 .end method
 
-.method public final a(Lcom/nineoldandroids/animation/c;)V
+.method public a(Lcom/nineoldandroids/animation/c;)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/e;->b:Ljava/util/ArrayList;
@@ -140,7 +140,7 @@
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/e;->d:Ljava/util/ArrayList;
 
-    iget-object v1, p1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v1, p1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -150,12 +150,12 @@
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/e;->d:Ljava/util/ArrayList;
 
-    iget-object v1, p1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v1, p1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    iget-object v0, p1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v0, p1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     iget-object v1, v0, Lcom/nineoldandroids/animation/e;->e:Ljava/util/ArrayList;
 
@@ -175,7 +175,7 @@
     return-void
 .end method
 
-.method public final synthetic clone()Ljava/lang/Object;
+.method public synthetic clone()Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0}, Lcom/nineoldandroids/animation/e;->a()Lcom/nineoldandroids/animation/e;

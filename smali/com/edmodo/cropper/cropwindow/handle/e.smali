@@ -1,4 +1,4 @@
-.class final Lcom/edmodo/cropper/cropwindow/handle/e;
+.class Lcom/edmodo/cropper/cropwindow/handle/e;
 .super Lcom/edmodo/cropper/cropwindow/handle/c;
 
 
@@ -21,7 +21,7 @@
 
 
 # virtual methods
-.method final a(FFFLandroid/graphics/Rect;F)V
+.method a(FFFLandroid/graphics/Rect;F)V
     .locals 6
 
     iget-object v0, p0, Lcom/edmodo/cropper/cropwindow/handle/e;->a:Lcom/edmodo/cropper/cropwindow/edge/Edge;

@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/y;
+.class Lcom/loopj/android/http/y;
 .super Ljava/util/HashMap;
 
 

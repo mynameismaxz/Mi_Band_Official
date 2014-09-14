@@ -86,8 +86,14 @@
 
     move-result v5
 
-    if-nez v5, :cond_2
+    if-eqz v5, :cond_3
 
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_3
     invoke-virtual {v4}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
 
     move-result-object v5
@@ -124,9 +130,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "["
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -196,17 +206,12 @@
 
     move-result-object v0
 
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
+    goto/16 :goto_0
 .end method
 
 
 # virtual methods
-.method public final d(Ljava/lang/Object;)V
+.method public d(Ljava/lang/Object;)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/stat/common/StatLogger;->isDebugEnable()Z
@@ -221,7 +226,7 @@
     return-void
 .end method
 
-.method public final debug(Ljava/lang/Object;)V
+.method public debug(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -274,7 +279,7 @@
     goto :goto_0
 .end method
 
-.method public final e(Ljava/lang/Exception;)V
+.method public e(Ljava/lang/Exception;)V
     .locals 1
 
     invoke-static {}, Lcom/tencent/stat/StatConfig;->isDebugEnable()Z
@@ -289,7 +294,7 @@
     return-void
 .end method
 
-.method public final e(Ljava/lang/Object;)V
+.method public e(Ljava/lang/Object;)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/stat/common/StatLogger;->isDebugEnable()Z
@@ -304,7 +309,7 @@
     return-void
 .end method
 
-.method public final error(Ljava/lang/Exception;)V
+.method public error(Ljava/lang/Exception;)V
     .locals 7
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -377,9 +382,13 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v6, "[ "
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v4}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
@@ -456,7 +465,7 @@
     return-void
 .end method
 
-.method public final error(Ljava/lang/Object;)V
+.method public error(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -509,7 +518,7 @@
     goto :goto_0
 .end method
 
-.method public final getLogLevel()I
+.method public getLogLevel()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -517,7 +526,7 @@
     return v0
 .end method
 
-.method public final i(Ljava/lang/Object;)V
+.method public i(Ljava/lang/Object;)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/stat/common/StatLogger;->isDebugEnable()Z
@@ -532,7 +541,7 @@
     return-void
 .end method
 
-.method public final info(Ljava/lang/Object;)V
+.method public info(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -585,7 +594,7 @@
     goto :goto_0
 .end method
 
-.method public final isDebugEnable()Z
+.method public isDebugEnable()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/tencent/stat/common/StatLogger;->b:Z
@@ -593,7 +602,7 @@
     return v0
 .end method
 
-.method public final setDebugEnable(Z)V
+.method public setDebugEnable(Z)V
     .locals 0
 
     iput-boolean p1, p0, Lcom/tencent/stat/common/StatLogger;->b:Z
@@ -601,7 +610,7 @@
     return-void
 .end method
 
-.method public final setLogLevel(I)V
+.method public setLogLevel(I)V
     .locals 0
 
     iput p1, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -609,7 +618,7 @@
     return-void
 .end method
 
-.method public final setTag(Ljava/lang/String;)V
+.method public setTag(Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/tencent/stat/common/StatLogger;->a:Ljava/lang/String;
@@ -617,7 +626,7 @@
     return-void
 .end method
 
-.method public final v(Ljava/lang/Object;)V
+.method public v(Ljava/lang/Object;)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/stat/common/StatLogger;->isDebugEnable()Z
@@ -632,7 +641,7 @@
     return-void
 .end method
 
-.method public final verbose(Ljava/lang/Object;)V
+.method public verbose(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I
@@ -685,7 +694,7 @@
     goto :goto_0
 .end method
 
-.method public final w(Ljava/lang/Object;)V
+.method public w(Ljava/lang/Object;)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/stat/common/StatLogger;->isDebugEnable()Z
@@ -700,7 +709,7 @@
     return-void
 .end method
 
-.method public final warn(Ljava/lang/Object;)V
+.method public warn(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lcom/tencent/stat/common/StatLogger;->c:I

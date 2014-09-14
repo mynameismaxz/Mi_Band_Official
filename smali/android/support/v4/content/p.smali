@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/p;
+.class Landroid/support/v4/content/p;
 .super Landroid/support/v4/content/u;
 
 
@@ -12,25 +12,25 @@
 
 
 # instance fields
-.field private synthetic b:Landroid/support/v4/content/ModernAsyncTask;
+.field final synthetic a:Landroid/support/v4/content/ModernAsyncTask;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/content/ModernAsyncTask;)V
     .locals 1
 
-    iput-object p1, p0, Landroid/support/v4/content/p;->b:Landroid/support/v4/content/ModernAsyncTask;
+    iput-object p1, p0, Landroid/support/v4/content/p;->a:Landroid/support/v4/content/ModernAsyncTask;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Landroid/support/v4/content/u;-><init>(B)V
+    invoke-direct {p0, v0}, Landroid/support/v4/content/u;-><init>(Landroid/support/v4/content/o;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
+.method public call()Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -38,7 +38,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/content/p;->b:Landroid/support/v4/content/ModernAsyncTask;
+    iget-object v0, p0, Landroid/support/v4/content/p;->a:Landroid/support/v4/content/ModernAsyncTask;
 
     invoke-static {v0}, Landroid/support/v4/content/ModernAsyncTask;->a(Landroid/support/v4/content/ModernAsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -52,11 +52,11 @@
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    iget-object v0, p0, Landroid/support/v4/content/p;->b:Landroid/support/v4/content/ModernAsyncTask;
+    iget-object v0, p0, Landroid/support/v4/content/p;->a:Landroid/support/v4/content/ModernAsyncTask;
 
-    iget-object v1, p0, Landroid/support/v4/content/p;->b:Landroid/support/v4/content/ModernAsyncTask;
+    iget-object v1, p0, Landroid/support/v4/content/p;->a:Landroid/support/v4/content/ModernAsyncTask;
 
-    iget-object v2, p0, Landroid/support/v4/content/p;->a:[Ljava/lang/Object;
+    iget-object v2, p0, Landroid/support/v4/content/p;->b:[Ljava/lang/Object;
 
     invoke-virtual {v1, v2}, Landroid/support/v4/content/ModernAsyncTask;->a([Ljava/lang/Object;)Ljava/lang/Object;
 

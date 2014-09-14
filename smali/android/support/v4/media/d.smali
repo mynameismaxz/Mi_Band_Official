@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/media/d;
+.class Landroid/support/v4/media/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -7,37 +7,37 @@
 
 
 # instance fields
-.field final a:Landroid/support/v4/media/c;
+.field final a:Landroid/content/Context;
 
-.field private b:Landroid/content/Context;
+.field final b:Landroid/media/AudioManager;
 
-.field private c:Landroid/media/AudioManager;
+.field final c:Landroid/view/View;
 
-.field private d:Landroid/view/View;
+.field final d:Landroid/support/v4/media/c;
 
-.field private e:Ljava/lang/String;
+.field final e:Ljava/lang/String;
 
-.field private f:Landroid/content/IntentFilter;
+.field final f:Landroid/content/IntentFilter;
 
-.field private g:Landroid/content/Intent;
+.field final g:Landroid/content/Intent;
 
-.field private h:Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+.field final h:Landroid/view/ViewTreeObserver$OnWindowAttachListener;
 
-.field private i:Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+.field final i:Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
 
-.field private j:Landroid/content/BroadcastReceiver;
+.field final j:Landroid/content/BroadcastReceiver;
 
-.field private k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
+.field k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
-.field private l:Landroid/app/PendingIntent;
+.field l:Landroid/app/PendingIntent;
 
-.field private m:Landroid/media/RemoteControlClient;
+.field m:Landroid/media/RemoteControlClient;
 
-.field private n:Z
+.field n:Z
 
-.field private o:I
+.field o:I
 
-.field private p:Z
+.field p:Z
 
 
 # direct methods
@@ -74,13 +74,13 @@
 
     iput v0, p0, Landroid/support/v4/media/d;->o:I
 
-    iput-object p1, p0, Landroid/support/v4/media/d;->b:Landroid/content/Context;
+    iput-object p1, p0, Landroid/support/v4/media/d;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
+    iput-object p2, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
 
-    iput-object p3, p0, Landroid/support/v4/media/d;->d:Landroid/view/View;
+    iput-object p3, p0, Landroid/support/v4/media/d;->c:Landroid/view/View;
 
-    iput-object p4, p0, Landroid/support/v4/media/d;->a:Landroid/support/v4/media/c;
+    iput-object p4, p0, Landroid/support/v4/media/d;->d:Landroid/support/v4/media/c;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnWindowAttachListener(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -165,53 +165,9 @@
     return-void
 .end method
 
-.method private j()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    iget-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
-
-    if-nez v0, :cond_0
-
-    iput-boolean v3, p0, Landroid/support/v4/media/d;->p:Z
-
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
-
-    iget-object v1, p0, Landroid/support/v4/media/d;->k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
-
-    :cond_0
-    return-void
-.end method
-
-.method private k()V
-    .locals 2
-
-    iget-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
-
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
-
-    iget-object v1, p0, Landroid/support/v4/media/d;->k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
-
-    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
-
-    :cond_0
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public a()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/d;->m:Landroid/media/RemoteControlClient;
@@ -219,7 +175,7 @@
     return-object v0
 .end method
 
-.method public final a(ZJI)V
+.method public a(ZJI)V
     .locals 3
 
     iget-object v0, p0, Landroid/support/v4/media/d;->m:Landroid/media/RemoteControlClient;
@@ -262,12 +218,12 @@
     goto :goto_1
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 2
 
-    invoke-virtual {p0}, Landroid/support/v4/media/d;->i()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->k()V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -277,7 +233,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnWindowAttachListener(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -290,10 +246,10 @@
     return-void
 .end method
 
-.method final c()V
+.method c()V
     .locals 4
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v4/media/d;->a:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->j:Landroid/content/BroadcastReceiver;
 
@@ -301,7 +257,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v4/media/d;->a:Landroid/content/Context;
 
     const/4 v1, 0x0
 
@@ -334,7 +290,7 @@
     return-void
 .end method
 
-.method final d()V
+.method d()V
     .locals 2
 
     iget-boolean v0, p0, Landroid/support/v4/media/d;->n:Z
@@ -345,13 +301,13 @@
 
     iput-boolean v0, p0, Landroid/support/v4/media/d;->n:Z
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->l:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->registerMediaButtonEventReceiver(Landroid/app/PendingIntent;)V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->m:Landroid/media/RemoteControlClient;
 
@@ -363,13 +319,36 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-direct {p0}, Landroid/support/v4/media/d;->j()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->e()V
 
     :cond_0
     return-void
 .end method
 
-.method public final e()V
+.method e()V
+    .locals 4
+
+    const/4 v3, 0x1
+
+    iget-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
+
+    if-nez v0, :cond_0
+
+    iput-boolean v3, p0, Landroid/support/v4/media/d;->p:Z
+
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
+
+    iget-object v1, p0, Landroid/support/v4/media/d;->k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
+
+    :cond_0
+    return-void
+.end method
+
+.method public f()V
     .locals 2
 
     const/4 v1, 0x3
@@ -389,13 +368,13 @@
 
     if-eqz v0, :cond_1
 
-    invoke-direct {p0}, Landroid/support/v4/media/d;->j()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->e()V
 
     :cond_1
     return-void
 .end method
 
-.method public final f()V
+.method public g()V
     .locals 3
 
     const/4 v2, 0x2
@@ -413,12 +392,12 @@
     invoke-virtual {v0, v2}, Landroid/media/RemoteControlClient;->setPlaybackState(I)V
 
     :cond_0
-    invoke-direct {p0}, Landroid/support/v4/media/d;->k()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->i()V
 
     return-void
 .end method
 
-.method public final g()V
+.method public h()V
     .locals 2
 
     const/4 v1, 0x1
@@ -434,15 +413,36 @@
     invoke-virtual {v0, v1}, Landroid/media/RemoteControlClient;->setPlaybackState(I)V
 
     :cond_0
-    invoke-direct {p0}, Landroid/support/v4/media/d;->k()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->i()V
 
     return-void
 .end method
 
-.method final h()V
+.method i()V
     .locals 2
 
-    invoke-direct {p0}, Landroid/support/v4/media/d;->k()V
+    iget-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/support/v4/media/d;->p:Z
+
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
+
+    iget-object v1, p0, Landroid/support/v4/media/d;->k:Landroid/media/AudioManager$OnAudioFocusChangeListener;
+
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
+
+    :cond_0
+    return-void
+.end method
+
+.method j()V
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->i()V
 
     iget-boolean v0, p0, Landroid/support/v4/media/d;->n:Z
 
@@ -452,13 +452,13 @@
 
     iput-boolean v0, p0, Landroid/support/v4/media/d;->n:Z
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->m:Landroid/media/RemoteControlClient;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->unregisterRemoteControlClient(Landroid/media/RemoteControlClient;)V
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->c:Landroid/media/AudioManager;
+    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/media/AudioManager;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->l:Landroid/app/PendingIntent;
 
@@ -468,18 +468,18 @@
     return-void
 .end method
 
-.method final i()V
+.method k()V
     .locals 3
 
     const/4 v2, 0x0
 
-    invoke-virtual {p0}, Landroid/support/v4/media/d;->h()V
+    invoke-virtual {p0}, Landroid/support/v4/media/d;->j()V
 
     iget-object v0, p0, Landroid/support/v4/media/d;->l:Landroid/app/PendingIntent;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->b:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v4/media/d;->a:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/support/v4/media/d;->j:Landroid/content/BroadcastReceiver;
 
@@ -497,24 +497,24 @@
     return-void
 .end method
 
-.method public final onGetPlaybackPosition()J
+.method public onGetPlaybackPosition()J
     .locals 2
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->a:Landroid/support/v4/media/c;
+    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/support/v4/media/c;
 
-    invoke-virtual {v0}, Landroid/support/v4/media/c;->b()J
+    invoke-interface {v0}, Landroid/support/v4/media/c;->a()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public final onPlaybackPositionUpdate(J)V
+.method public onPlaybackPositionUpdate(J)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/media/d;->a:Landroid/support/v4/media/c;
+    iget-object v0, p0, Landroid/support/v4/media/d;->d:Landroid/support/v4/media/c;
 
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/c;->b(J)V
+    invoke-interface {v0, p1, p2}, Landroid/support/v4/media/c;->a(J)V
 
     return-void
 .end method

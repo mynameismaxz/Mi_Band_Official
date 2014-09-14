@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method private static a([B)[B
+.method private a([B)[B
     .locals 2
 
     const/4 v0, 0x0
@@ -32,7 +32,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p0}, Ljava/security/MessageDigest;->update([B)V
+    invoke-virtual {v1, p1}, Ljava/security/MessageDigest;->update([B)V
 
     invoke-virtual {v1}, Ljava/security/MessageDigest;->digest()[B
     :try_end_0
@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/naming/Md5FileNameGenerator;->a([B)[B
+    invoke-direct {p0, v0}, Lcom/nostra13/universalimageloader/cache/disc/naming/Md5FileNameGenerator;->a([B)[B
 
     move-result-object v0
 

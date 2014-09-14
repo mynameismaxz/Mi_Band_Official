@@ -1,9 +1,9 @@
-.class final Lkankan/wheel/widget/d;
+.class Lkankan/wheel/widget/d;
 .super Landroid/database/DataSetObserver;
 
 
 # instance fields
-.field private synthetic a:Lkankan/wheel/widget/WheelView;
+.field final synthetic a:Lkankan/wheel/widget/WheelView;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onChanged()V
+.method public onChanged()V
     .locals 2
 
     iget-object v0, p0, Lkankan/wheel/widget/d;->a:Lkankan/wheel/widget/WheelView;
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public final onInvalidated()V
+.method public onInvalidated()V
     .locals 2
 
     iget-object v0, p0, Lkankan/wheel/widget/d;->a:Lkankan/wheel/widget/WheelView;

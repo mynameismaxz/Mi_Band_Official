@@ -149,6 +149,8 @@
 
     invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
+    if-eqz v2, :cond_6
+
     iget-object v3, v2, Landroid/graphics/BitmapFactory$Options;->outMimeType:Ljava/lang/String;
 
     if-eqz v3, :cond_6
@@ -418,6 +420,8 @@
 
     invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
+    if-eqz v3, :cond_9
+
     iget-object v2, v3, Landroid/graphics/BitmapFactory$Options;->outMimeType:Ljava/lang/String;
 
     if-eqz v2, :cond_9
@@ -620,7 +624,7 @@
 
     iget v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    shl-int/lit8 v1, v1, 0x1
+    mul-int/lit8 v1, v1, 0x2
 
     iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 

@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/G;
+.class Landroid/support/v4/view/G;
 .super Ljava/lang/Object;
 
 
@@ -11,12 +11,12 @@
     return-void
 .end method
 
-.method public static a(Landroid/view/MenuItem;Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean;)Landroid/view/MenuItem;
+.method public static a(Landroid/view/MenuItem;Landroid/support/v4/view/I;)Landroid/view/MenuItem;
     .locals 1
 
     new-instance v0, Landroid/support/v4/view/H;
 
-    invoke-direct {v0, p1}, Landroid/support/v4/view/H;-><init>(Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean;)V
+    invoke-direct {v0, p1}, Landroid/support/v4/view/H;-><init>(Landroid/support/v4/view/I;)V
 
     invoke-interface {p0, v0}, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
 

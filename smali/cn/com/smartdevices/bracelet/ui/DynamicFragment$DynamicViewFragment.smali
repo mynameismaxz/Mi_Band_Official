@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method private a(Lcn/com/smartdevices/bracelet/view/DynamicView;)V
+.method private a(Lcn/com/smartdevices/bracelet/view/DynamicView;Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;)V
     .locals 3
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->c:I
@@ -175,7 +175,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->b:Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
 
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a(Lcn/com/smartdevices/bracelet/view/DynamicView;)V
+    invoke-direct {p0, v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a(Lcn/com/smartdevices/bracelet/view/DynamicView;Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a:Lcn/com/smartdevices/bracelet/view/DynamicView;
 
@@ -255,7 +255,7 @@
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->b:Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
 
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a(Lcn/com/smartdevices/bracelet/view/DynamicView;)V
+    invoke-direct {p0, v0, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a(Lcn/com/smartdevices/bracelet/view/DynamicView;Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->a:Lcn/com/smartdevices/bracelet/view/DynamicView;
 

@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/widget/o;
+.class Landroid/support/v4/widget/o;
 .super Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/ExploreByTouchHelper;
+.field final synthetic a:Landroid/support/v4/widget/ExploreByTouchHelper;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/support/v4/widget/ExploreByTouchHelper;B)V
+.method synthetic constructor <init>(Landroid/support/v4/widget/ExploreByTouchHelper;Landroid/support/v4/widget/n;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/support/v4/widget/o;-><init>(Landroid/support/v4/widget/ExploreByTouchHelper;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final createAccessibilityNodeInfo(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.method public createAccessibilityNodeInfo(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/o;->a:Landroid/support/v4/widget/ExploreByTouchHelper;
@@ -39,7 +39,7 @@
     return-object v0
 .end method
 
-.method public final performAction(IILandroid/os/Bundle;)Z
+.method public performAction(IILandroid/os/Bundle;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/o;->a:Landroid/support/v4/widget/ExploreByTouchHelper;

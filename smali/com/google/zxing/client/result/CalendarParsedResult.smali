@@ -208,7 +208,7 @@
 
 
 # virtual methods
-.method public final getAttendee()Ljava/lang/String;
+.method public getAttendee()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->e:Ljava/lang/String;
@@ -216,7 +216,7 @@
     return-object v0
 .end method
 
-.method public final getDescription()Ljava/lang/String;
+.method public getDescription()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->f:Ljava/lang/String;
@@ -224,7 +224,7 @@
     return-object v0
 .end method
 
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -264,7 +264,7 @@
     return-object v0
 .end method
 
-.method public final getEnd()Ljava/lang/String;
+.method public getEnd()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->c:Ljava/lang/String;
@@ -272,7 +272,7 @@
     return-object v0
 .end method
 
-.method public final getLatitude()D
+.method public getLatitude()D
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->g:D
@@ -280,7 +280,7 @@
     return-wide v0
 .end method
 
-.method public final getLocation()Ljava/lang/String;
+.method public getLocation()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->d:Ljava/lang/String;
@@ -288,7 +288,7 @@
     return-object v0
 .end method
 
-.method public final getLongitude()D
+.method public getLongitude()D
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->h:D
@@ -296,7 +296,7 @@
     return-wide v0
 .end method
 
-.method public final getStart()Ljava/lang/String;
+.method public getStart()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->b:Ljava/lang/String;
@@ -304,7 +304,7 @@
     return-object v0
 .end method
 
-.method public final getSummary()Ljava/lang/String;
+.method public getSummary()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->a:Ljava/lang/String;

@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/zxing/pdf417/decoder/c;
+.class synthetic Lcom/google/zxing/pdf417/decoder/c;
 .super Ljava/lang/Object;
 
 

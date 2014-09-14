@@ -1,114 +1,45 @@
-.class final Lcn/com/smartdevices/bracelet/ui/U;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.class Lcn/com/smartdevices/bracelet/ui/U;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+
+.field private final synthetic b:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/U;->b:Landroid/view/View;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
-    .locals 4
+.method public run()V
+    .locals 3
 
-    invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    move-result-object v0
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/U;->b:Landroid/view/View;
 
-    const-string v1, "Dynamic.Detail.SleepModify"
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Sync Summary To Server Failed : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;
-
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;)Lcn/com/smartdevices/bracelet/model/SportDay;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->j(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Landroid/view/View;
 
     move-result-object v2
 
-    const-string v3, " \n "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
-    .locals 4
-
-    invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
-
-    const-string v1, "Dynamic.Detail.SleepModify"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Sync Summary To Server Success : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;
-
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;)Lcn/com/smartdevices/bracelet/model/SportDay;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " \n "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;Landroid/view/View;)V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/miui/analyticstracker/b;
+.class Lcom/xiaomi/miui/analyticstracker/b;
 .super Ljava/util/HashMap;
 
 
@@ -15,14 +15,16 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/String;
 
-.field private synthetic b:Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker;
+.field final synthetic b:Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker;
 
 
 # direct methods
 .method constructor <init>(Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker;Ljava/lang/String;)V
     .locals 2
+
+    iput-object p1, p0, Lcom/xiaomi/miui/analyticstracker/b;->b:Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker;
 
     iput-object p2, p0, Lcom/xiaomi/miui/analyticstracker/b;->a:Ljava/lang/String;
 

@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/graphics/drawable/c;
+.class Landroid/support/v4/graphics/drawable/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,10 +16,10 @@
 
 
 # virtual methods
-.method public final a(Landroid/graphics/drawable/Drawable;)V
+.method public a(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/d;->a(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

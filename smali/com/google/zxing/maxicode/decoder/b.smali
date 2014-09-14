@@ -173,77 +173,49 @@
 .end method
 
 .method private static a([B[B)I
-    .locals 6
+    .locals 4
 
-    const/4 v4, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    move v0, v1
-
-    move v2, v1
+    move v1, v0
 
     :goto_0
+    array-length v2, p1
+
+    if-ge v0, v2, :cond_0
+
+    aget-byte v2, p1, v0
+
+    invoke-static {v2, p0}, Lcom/google/zxing/maxicode/decoder/b;->a(I[B)I
+
+    move-result v2
+
     array-length v3, p1
 
-    if-ge v0, v3, :cond_1
-
-    aget-byte v3, p1, v0
+    sub-int/2addr v3, v0
 
     add-int/lit8 v3, v3, -0x1
 
-    div-int/lit8 v5, v3, 0x6
+    shl-int/2addr v2, v3
 
-    aget-byte v5, p0, v5
-
-    rem-int/lit8 v3, v3, 0x6
-
-    rsub-int/lit8 v3, v3, 0x5
-
-    shl-int v3, v4, v3
-
-    and-int/2addr v3, v5
-
-    if-nez v3, :cond_0
-
-    move v3, v1
-
-    :goto_1
-    array-length v5, p1
-
-    sub-int/2addr v5, v0
-
-    add-int/lit8 v5, v5, -0x1
-
-    shl-int/2addr v3, v5
-
-    add-int/2addr v2, v3
+    add-int/2addr v1, v2
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v3, v4
-
-    goto :goto_1
-
-    :cond_1
-    return v2
+    return v1
 .end method
 
 .method static a([BI)Lcom/google/zxing/common/DecoderResult;
-    .locals 9
+    .locals 8
 
-    const/16 v8, 0xa
+    const/4 v2, 0x1
 
-    const/4 v4, 0x1
+    const/4 v7, 0x0
 
-    const/16 v7, 0x1d
-
-    const/4 v5, 0x6
-
-    const/4 v6, 0x0
+    const/16 v6, 0x1d
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -275,13 +247,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const/16 v0, 0x1e
-
-    new-array v0, v0, [B
-
-    fill-array-data v0, :array_0
-
-    invoke-static {p0, v0}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
+    invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/b;->d([B)I
 
     move-result v0
 
@@ -289,15 +255,11 @@
 
     const-string v3, "0000000000"
 
-    new-array v4, v5, [B
-
-    fill-array-data v4, :array_1
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
+    invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/b;->c([B)I
 
     move-result v4
 
-    invoke-virtual {v3, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v3, v7, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
@@ -312,11 +274,7 @@
     :goto_1
     sget-object v2, Lcom/google/zxing/maxicode/decoder/b;->r:Ljava/text/NumberFormat;
 
-    new-array v3, v8, [B
-
-    fill-array-data v3, :array_2
-
-    invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
+    invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/b;->a([B)I
 
     move-result v3
 
@@ -328,11 +286,7 @@
 
     sget-object v3, Lcom/google/zxing/maxicode/decoder/b;->r:Ljava/text/NumberFormat;
 
-    new-array v4, v8, [B
-
-    fill-array-data v4, :array_3
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
+    invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/b;->b([B)I
 
     move-result v4
 
@@ -342,9 +296,11 @@
 
     move-result-object v3
 
-    const/16 v4, 0x54
+    const/16 v4, 0xa
 
-    invoke-static {p0, v8, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
+    const/16 v5, 0x54
+
+    invoke-static {p0, v4, v5}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
 
     move-result-object v4
 
@@ -372,7 +328,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -380,7 +336,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -388,7 +344,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -398,132 +354,14 @@
 
     invoke-virtual {v1, v4, v0}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_0
-    new-array v0, v5, [C
-
-    sget-object v2, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v2, v2, v6
-
-    new-array v3, v5, [B
-
-    fill-array-data v3, :array_4
-
-    invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    aput-char v2, v0, v6
-
-    sget-object v2, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v2, v2, v6
-
-    new-array v3, v5, [B
-
-    fill-array-data v3, :array_5
-
-    invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    aput-char v2, v0, v4
-
-    const/4 v2, 0x2
-
-    sget-object v3, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v3, v3, v6
-
-    new-array v4, v5, [B
-
-    fill-array-data v4, :array_6
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    aput-char v3, v0, v2
-
-    const/4 v2, 0x3
-
-    sget-object v3, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v3, v3, v6
-
-    new-array v4, v5, [B
-
-    fill-array-data v4, :array_7
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    aput-char v3, v0, v2
-
-    const/4 v2, 0x4
-
-    sget-object v3, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v3, v3, v6
-
-    new-array v4, v5, [B
-
-    fill-array-data v4, :array_8
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    aput-char v3, v0, v2
-
-    const/4 v2, 0x5
-
-    sget-object v3, Lcom/google/zxing/maxicode/decoder/b;->s:[Ljava/lang/String;
-
-    aget-object v3, v3, v6
-
-    new-array v4, v5, [B
-
-    fill-array-data v4, :array_9
-
-    invoke-static {p0, v4}, Lcom/google/zxing/maxicode/decoder/b;->a([B[B)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    aput-char v3, v0, v2
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/b;->e([B)Ljava/lang/String;
 
     move-result-object v0
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -534,7 +372,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -542,7 +380,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -550,7 +388,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -558,14 +396,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v1, v6, v0}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7, v0}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_0
 
     :pswitch_1
     const/16 v0, 0x5d
 
-    invoke-static {p0, v4, v0}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
+    invoke-static {p0, v2, v0}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
 
     move-result-object v0
 
@@ -576,13 +414,15 @@
     :pswitch_2
     const/16 v0, 0x4d
 
-    invoke-static {p0, v4, v0}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
+    invoke-static {p0, v2, v0}, Lcom/google/zxing/maxicode/decoder/b;->a([BII)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2
@@ -591,156 +431,6 @@
         :pswitch_1
         :pswitch_2
     .end packed-switch
-
-    :array_0
-    .array-data 0x1
-        0x21t
-        0x22t
-        0x23t
-        0x24t
-        0x19t
-        0x1at
-        0x1bt
-        0x1ct
-        0x1dt
-        0x1et
-        0x13t
-        0x14t
-        0x15t
-        0x16t
-        0x17t
-        0x18t
-        0xdt
-        0xet
-        0xft
-        0x10t
-        0x11t
-        0x12t
-        0x7t
-        0x8t
-        0x9t
-        0xat
-        0xbt
-        0xct
-        0x1t
-        0x2t
-    .end array-data
-
-    nop
-
-    :array_1
-    .array-data 0x1
-        0x27t
-        0x28t
-        0x29t
-        0x2at
-        0x1ft
-        0x20t
-    .end array-data
-
-    nop
-
-    :array_2
-    .array-data 0x1
-        0x35t
-        0x36t
-        0x2bt
-        0x2ct
-        0x2dt
-        0x2et
-        0x2ft
-        0x30t
-        0x25t
-        0x26t
-    .end array-data
-
-    nop
-
-    :array_3
-    .array-data 0x1
-        0x37t
-        0x38t
-        0x39t
-        0x3at
-        0x3bt
-        0x3ct
-        0x31t
-        0x32t
-        0x33t
-        0x34t
-    .end array-data
-
-    nop
-
-    :array_4
-    .array-data 0x1
-        0x27t
-        0x28t
-        0x29t
-        0x2at
-        0x1ft
-        0x20t
-    .end array-data
-
-    nop
-
-    :array_5
-    .array-data 0x1
-        0x21t
-        0x22t
-        0x23t
-        0x24t
-        0x19t
-        0x1at
-    .end array-data
-
-    nop
-
-    :array_6
-    .array-data 0x1
-        0x1bt
-        0x1ct
-        0x1dt
-        0x1et
-        0x13t
-        0x14t
-    .end array-data
-
-    nop
-
-    :array_7
-    .array-data 0x1
-        0x15t
-        0x16t
-        0x17t
-        0x18t
-        0xdt
-        0xet
-    .end array-data
-
-    nop
-
-    :array_8
-    .array-data 0x1
-        0xft
-        0x10t
-        0x11t
-        0x12t
-        0x7t
-        0x8t
-    .end array-data
-
-    nop
-
-    :array_9
-    .array-data 0x1
-        0x9t
-        0xat
-        0xbt
-        0xct
-        0x1t
-        0x2t
-    .end array-data
 .end method
 
 .method private static a([BII)Ljava/lang/String;

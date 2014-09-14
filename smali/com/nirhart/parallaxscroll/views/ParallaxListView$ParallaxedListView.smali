@@ -3,12 +3,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nirhart/parallaxscroll/views/ParallaxListView;
+.field final synthetic a:Lcom/nirhart/parallaxscroll/views/ParallaxListView;
 
 
 # direct methods
 .method public constructor <init>(Lcom/nirhart/parallaxscroll/views/ParallaxListView;Landroid/view/View;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView$ParallaxedListView;->a:Lcom/nirhart/parallaxscroll/views/ParallaxListView;
 
     invoke-direct {p0, p2}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;-><init>(Landroid/view/View;)V
 

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/G;
+.class Lcom/tencent/open/G;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/TaskGuide;
+.field final synthetic a:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;Lcom/tencent/open/t;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/G;-><init>(Lcom/tencent/open/TaskGuide;)V
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/open/G;->a:Lcom/tencent/open/TaskGuide;

@@ -6,22 +6,22 @@
 
 
 # instance fields
-.field private a:Z
+.field final synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
 
-.field private synthetic b:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
+.field private b:Z
 
 
 # direct methods
 .method public constructor <init>(Lcom/handmark/pulltorefresh/library/PullToRefreshListView;Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
+    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
 
     invoke-direct {p0, p2, p3}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Z
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 .method public setAdapter(Landroid/widget/ListAdapter;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
 
     invoke-static {v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a(Lcom/handmark/pulltorefresh/library/PullToRefreshListView;)Landroid/widget/FrameLayout;
 
@@ -81,11 +81,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Z
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
 
     invoke-static {v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a(Lcom/handmark/pulltorefresh/library/PullToRefreshListView;)Landroid/widget/FrameLayout;
 
@@ -99,7 +99,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Z
 
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
@@ -110,7 +110,7 @@
 .method public setEmptyView(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView$InternalListView;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshListView;
 
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->setEmptyView(Landroid/view/View;)V
 

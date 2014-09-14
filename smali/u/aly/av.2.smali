@@ -104,9 +104,9 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    const/4 v6, 0x1
+    const/16 v6, 0xb
 
-    const/4 v3, 0x0
+    const/4 v5, 0x1
 
     const/16 v9, 0xc
 
@@ -126,9 +126,7 @@
 
     const-string v1, "id"
 
-    const/16 v2, 0xb
-
-    invoke-direct {v0, v1, v2, v6}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
+    invoke-direct {v0, v1, v6, v5}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
 
     sput-object v0, Lu/aly/av;->g:Lu/aly/ct;
 
@@ -166,11 +164,15 @@
 
     sput-object v0, Lu/aly/av;->k:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/av;->k:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/aX;
 
-    invoke-direct {v2, v3}, Lu/aly/aX;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/aX;-><init>(Lu/aly/aX;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -180,7 +182,9 @@
 
     new-instance v2, Lu/aly/aZ;
 
-    invoke-direct {v2, v3}, Lu/aly/aZ;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/aZ;-><init>(Lu/aly/aZ;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -198,11 +202,9 @@
 
     new-instance v4, Lu/aly/cm;
 
-    const/16 v5, 0xb
+    invoke-direct {v4, v6}, Lu/aly/cm;-><init>(B)V
 
-    invoke-direct {v4, v5}, Lu/aly/cm;-><init>(B)V
-
-    invoke-direct {v2, v3, v6, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
+    invoke-direct {v2, v3, v5, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -308,6 +310,8 @@
 
     aput-object v2, v0, v1
 
+    iput-object v0, p0, Lu/aly/av;->l:[Lu/aly/av$e;
+
     return-void
 .end method
 
@@ -347,6 +351,8 @@
     sget-object v2, Lu/aly/av$e;->d:Lu/aly/av$e;
 
     aput-object v2, v0, v1
+
+    iput-object v0, p0, Lu/aly/av;->l:[Lu/aly/av$e;
 
     invoke-virtual {p1}, Lu/aly/av;->e()Z
 

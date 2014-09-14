@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/c;
+.class Lcn/com/smartdevices/bracelet/view/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 7
 
     const/high16 v6, 0x43c8
@@ -111,7 +111,7 @@
 
     move-result-object v1
 
-    mul-float v2, v0, v3
+    mul-float v2, v3, v0
 
     div-float/2addr v2, v5
 
@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    mul-float v2, v0, v3
+    mul-float v2, v3, v0
 
     div-float/2addr v2, v5
 

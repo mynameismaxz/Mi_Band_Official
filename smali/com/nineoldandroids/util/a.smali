@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/util/a;
+.class Lcom/nineoldandroids/util/a;
 .super Lcom/nineoldandroids/util/Property;
 
 
@@ -113,7 +113,7 @@
 
     move-result-object v1
 
-    invoke-static {p2, v1}, Lcom/nineoldandroids/util/a;->a(Ljava/lang/Class;Ljava/lang/Class;)Z
+    invoke-direct {p0, p2, v1}, Lcom/nineoldandroids/util/a;->a(Ljava/lang/Class;Ljava/lang/Class;)Z
 
     move-result v2
 
@@ -131,7 +131,13 @@
 
     move-result-object v1
 
-    const-string v2, ") does not match Property type ("
+    const-string v2, ") "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "does not match Property type ("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -245,7 +251,7 @@
 
     move-result-object v0
 
-    invoke-static {p2, v0}, Lcom/nineoldandroids/util/a;->a(Ljava/lang/Class;Ljava/lang/Class;)Z
+    invoke-direct {p0, p2, v0}, Lcom/nineoldandroids/util/a;->a(Ljava/lang/Class;Ljava/lang/Class;)Z
 
     move-result v1
 
@@ -263,7 +269,13 @@
 
     move-result-object v0
 
-    const-string v2, ") does not match Property type ("
+    const-string v2, ") "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "does not match Property type ("
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -360,7 +372,7 @@
     goto :goto_1
 .end method
 
-.method private static a(Ljava/lang/Class;Ljava/lang/Class;)Z
+.method private a(Ljava/lang/Class;Ljava/lang/Class;)Z
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -376,9 +388,9 @@
 
     const/4 v0, 0x0
 
-    if-eq p1, p0, :cond_9
+    if-eq p2, p1, :cond_9
 
-    invoke-virtual {p1}, Ljava/lang/Class;->isPrimitive()Z
+    invoke-virtual {p2}, Ljava/lang/Class;->isPrimitive()Z
 
     move-result v2
 
@@ -386,74 +398,74 @@
 
     sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_0
+    if-ne p2, v2, :cond_0
 
     const-class v2, Ljava/lang/Float;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_0
     sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_1
+    if-ne p2, v2, :cond_1
 
     const-class v2, Ljava/lang/Integer;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_1
     sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_2
+    if-ne p2, v2, :cond_2
 
     const-class v2, Ljava/lang/Boolean;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_2
     sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_3
+    if-ne p2, v2, :cond_3
 
     const-class v2, Ljava/lang/Long;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_3
     sget-object v2, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_4
+    if-ne p2, v2, :cond_4
 
     const-class v2, Ljava/lang/Double;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_4
     sget-object v2, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_5
+    if-ne p2, v2, :cond_5
 
     const-class v2, Ljava/lang/Short;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_5
     sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_6
+    if-ne p2, v2, :cond_6
 
     const-class v2, Ljava/lang/Byte;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_6
     sget-object v2, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
-    if-ne p1, v2, :cond_7
+    if-ne p2, v2, :cond_7
 
     const-class v2, Ljava/lang/Character;
 
-    if-eq p0, v2, :cond_8
+    if-eq p1, v2, :cond_8
 
     :cond_7
     :goto_0
@@ -472,7 +484,7 @@
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -554,7 +566,7 @@
     throw v0
 .end method
 
-.method public final isReadOnly()Z
+.method public isReadOnly()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/util/a;->d:Ljava/lang/reflect/Method;
@@ -576,7 +588,7 @@
     goto :goto_0
 .end method
 
-.method public final set(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {

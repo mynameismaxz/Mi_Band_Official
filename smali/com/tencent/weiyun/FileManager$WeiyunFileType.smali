@@ -127,7 +127,7 @@
 
 
 # virtual methods
-.method public final value()I
+.method public value()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/weiyun/FileManager$WeiyunFileType;->a:I

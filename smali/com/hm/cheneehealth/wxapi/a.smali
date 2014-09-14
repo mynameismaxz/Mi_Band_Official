@@ -1,4 +1,4 @@
-.class final Lcom/hm/cheneehealth/wxapi/a;
+.class Lcom/hm/cheneehealth/wxapi/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/hm/cheneehealth/wxapi/WXEntryActivity;
+.field final synthetic a:Lcom/hm/cheneehealth/wxapi/WXEntryActivity;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
     iget-object v0, p0, Lcom/hm/cheneehealth/wxapi/a;->a:Lcom/hm/cheneehealth/wxapi/WXEntryActivity;

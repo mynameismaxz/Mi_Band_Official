@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/app/q;
+.class Landroid/support/v4/app/q;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/app/FragmentActivity;
+.field final synthetic a:Landroid/support/v4/app/FragmentActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
     iget v0, p1, Landroid/os/Message;->what:I
@@ -35,7 +35,7 @@
     :pswitch_0
     iget-object v0, p0, Landroid/support/v4/app/q;->a:Landroid/support/v4/app/FragmentActivity;
 
-    iget-boolean v0, v0, Landroid/support/v4/app/FragmentActivity;->c:Z
+    iget-boolean v0, v0, Landroid/support/v4/app/FragmentActivity;->i:Z
 
     if-eqz v0, :cond_0
 
@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Landroid/support/v4/app/q;->a:Landroid/support/v4/app/FragmentActivity;
 
-    iget-object v0, v0, Landroid/support/v4/app/FragmentActivity;->b:Landroid/support/v4/app/v;
+    iget-object v0, v0, Landroid/support/v4/app/FragmentActivity;->e:Landroid/support/v4/app/v;
 
     invoke-virtual {v0}, Landroid/support/v4/app/v;->b()Z
 

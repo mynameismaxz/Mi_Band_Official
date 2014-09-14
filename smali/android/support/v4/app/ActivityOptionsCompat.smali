@@ -22,11 +22,11 @@
 
     new-instance v0, Landroid/support/v4/app/j;
 
-    invoke-static {p0, p1, p2}, Landroid/support/v4/app/i;->a(Landroid/content/Context;II)Landroid/support/v4/app/i;
+    invoke-static {p0, p1, p2}, Landroid/support/v4/app/k;->a(Landroid/content/Context;II)Landroid/support/v4/app/k;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/i;)V
+    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/k;)V
 
     :goto_0
     return-object v0
@@ -50,11 +50,11 @@
 
     new-instance v0, Landroid/support/v4/app/j;
 
-    invoke-static {p0, p1, p2, p3, p4}, Landroid/support/v4/app/i;->a(Landroid/view/View;IIII)Landroid/support/v4/app/i;
+    invoke-static {p0, p1, p2, p3, p4}, Landroid/support/v4/app/k;->a(Landroid/view/View;IIII)Landroid/support/v4/app/k;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/i;)V
+    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/k;)V
 
     :goto_0
     return-object v0
@@ -78,11 +78,11 @@
 
     new-instance v0, Landroid/support/v4/app/j;
 
-    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/app/i;->a(Landroid/view/View;Landroid/graphics/Bitmap;II)Landroid/support/v4/app/i;
+    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/app/k;->a(Landroid/view/View;Landroid/graphics/Bitmap;II)Landroid/support/v4/app/k;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/i;)V
+    invoke-direct {v0, v1}, Landroid/support/v4/app/j;-><init>(Landroid/support/v4/app/k;)V
 
     :goto_0
     return-object v0

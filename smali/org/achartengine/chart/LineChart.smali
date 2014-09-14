@@ -227,7 +227,7 @@
 .end method
 
 .method public drawSeries(Landroid/graphics/Canvas;Landroid/graphics/Paint;Ljava/util/List;Lorg/achartengine/renderer/SimpleSeriesRenderer;FII)V
-    .locals 19
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -331,13 +331,13 @@
 
     aget v5, v4, v5
 
-    shl-int/lit8 v5, v5, 0x1
+    mul-int/lit8 v5, v5, 0x2
 
     const/4 v6, 0x1
 
     aget v4, v4, v6
 
-    shl-int/lit8 v4, v4, 0x1
+    mul-int/lit8 v4, v4, 0x2
 
     move-object/from16 v0, p3
 
@@ -572,20 +572,23 @@
     :cond_7
     add-int/lit8 v6, v6, 0x2
 
-    const/4 v7, 0x0
-
-    move v4, v6
-
-    move v6, v7
+    const/4 v4, 0x0
 
     :goto_5
+    move/from16 v19, v6
+
+    move v6, v4
+
+    move/from16 v4, v19
+
+    :goto_6
     add-int/lit8 v4, v4, 0x2
 
     move v7, v6
 
     move v6, v4
 
-    goto :goto_4
+    goto/16 :goto_4
 
     :pswitch_1
     move/from16 v5, p5
@@ -628,11 +631,7 @@
 
     invoke-interface {v14, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x1
-
-    move v4, v6
-
-    move v6, v7
+    const/4 v4, 0x1
 
     goto :goto_5
 
@@ -684,7 +683,7 @@
 
     move v6, v7
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_d
     invoke-interface {v13}, Ljava/util/List;->clear()V
@@ -754,7 +753,7 @@
 
     move v5, v4
 
-    :goto_6
+    :goto_7
     add-int/lit8 v4, v6, 0x4
 
     if-ge v5, v4, :cond_10
@@ -792,7 +791,7 @@
 
     move v5, v4
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_10
     sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/B;
+.class Lcom/tencent/open/B;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private a:I
+.field a:I
 
-.field private synthetic b:Lcom/tencent/open/TaskGuide;
+.field final synthetic b:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
@@ -26,8 +26,10 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
+
+    check-cast p1, Landroid/widget/Button;
 
     iget-object v0, p0, Lcom/tencent/open/B;->b:Lcom/tencent/open/TaskGuide;
 

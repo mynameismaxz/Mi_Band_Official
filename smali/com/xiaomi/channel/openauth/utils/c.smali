@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/channel/openauth/utils/c;
+.class Lcom/xiaomi/channel/openauth/utils/c;
 .super Landroid/os/AsyncTask;
 
 
@@ -66,7 +66,9 @@
     return-void
 .end method
 
-.method private varargs a()Ljava/lang/Boolean;
+
+# virtual methods
+.method protected varargs a([Ljava/lang/Void;)Ljava/lang/Boolean;
     .locals 4
 
     iget-object v0, p0, Lcom/xiaomi/channel/openauth/utils/c;->a:Ljava/lang/String;
@@ -88,7 +90,7 @@
     return-object v0
 .end method
 
-.method private a(Ljava/lang/Boolean;)V
+.method protected a(Ljava/lang/Boolean;)V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/channel/openauth/utils/c;->c:Lcom/xiaomi/channel/openauth/utils/Network$PostDownloadHandler;
@@ -102,42 +104,24 @@
     return-void
 .end method
 
+.method protected varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-# virtual methods
-.method protected final varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    check-cast p1, [Ljava/lang/Void;
 
-    iget-object v0, p0, Lcom/xiaomi/channel/openauth/utils/c;->a:Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/xiaomi/channel/openauth/utils/c;->b:Ljava/io/OutputStream;
-
-    iget-boolean v2, p0, Lcom/xiaomi/channel/openauth/utils/c;->d:Z
-
-    iget-object v3, p0, Lcom/xiaomi/channel/openauth/utils/c;->e:Landroid/content/Context;
-
-    invoke-static {v0, v1, v2, v3}, Lcom/xiaomi/channel/openauth/utils/Network;->downloadFile(Ljava/lang/String;Ljava/io/OutputStream;ZLandroid/content/Context;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0, p1}, Lcom/xiaomi/channel/openauth/utils/c;->a([Ljava/lang/Void;)Ljava/lang/Boolean;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final synthetic onPostExecute(Ljava/lang/Object;)V
-    .locals 2
+.method protected synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
 
     check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lcom/xiaomi/channel/openauth/utils/c;->c:Lcom/xiaomi/channel/openauth/utils/Network$PostDownloadHandler;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    invoke-interface {v0, v1}, Lcom/xiaomi/channel/openauth/utils/Network$PostDownloadHandler;->OnPostDownload(Z)V
+    invoke-virtual {p0, p1}, Lcom/xiaomi/channel/openauth/utils/c;->a(Ljava/lang/Boolean;)V
 
     return-void
 .end method

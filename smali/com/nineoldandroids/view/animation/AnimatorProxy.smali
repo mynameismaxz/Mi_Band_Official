@@ -510,7 +510,7 @@
 
 
 # virtual methods
-.method protected final applyTransformation(FLandroid/view/animation/Transformation;)V
+.method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -537,7 +537,7 @@
     return-void
 .end method
 
-.method public final getAlpha()F
+.method public getAlpha()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->e:F
@@ -545,7 +545,7 @@
     return v0
 .end method
 
-.method public final getPivotX()F
+.method public getPivotX()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->f:F
@@ -553,7 +553,7 @@
     return v0
 .end method
 
-.method public final getPivotY()F
+.method public getPivotY()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->g:F
@@ -561,7 +561,7 @@
     return v0
 .end method
 
-.method public final getRotation()F
+.method public getRotation()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->j:F
@@ -569,7 +569,7 @@
     return v0
 .end method
 
-.method public final getRotationX()F
+.method public getRotationX()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->h:F
@@ -577,7 +577,7 @@
     return v0
 .end method
 
-.method public final getRotationY()F
+.method public getRotationY()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->i:F
@@ -585,7 +585,7 @@
     return v0
 .end method
 
-.method public final getScaleX()F
+.method public getScaleX()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->k:F
@@ -593,7 +593,7 @@
     return v0
 .end method
 
-.method public final getScaleY()F
+.method public getScaleY()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->l:F
@@ -601,7 +601,7 @@
     return v0
 .end method
 
-.method public final getScrollX()I
+.method public getScrollX()I
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -627,7 +627,7 @@
     goto :goto_0
 .end method
 
-.method public final getScrollY()I
+.method public getScrollY()I
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -653,7 +653,7 @@
     goto :goto_0
 .end method
 
-.method public final getTranslationX()F
+.method public getTranslationX()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->m:F
@@ -661,7 +661,7 @@
     return v0
 .end method
 
-.method public final getTranslationY()F
+.method public getTranslationY()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->n:F
@@ -669,7 +669,7 @@
     return v0
 .end method
 
-.method public final getX()F
+.method public getX()F
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -701,7 +701,7 @@
     goto :goto_0
 .end method
 
-.method public final getY()F
+.method public getY()F
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -733,7 +733,7 @@
     goto :goto_0
 .end method
 
-.method public final setAlpha(F)V
+.method public setAlpha(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->e:F
@@ -760,7 +760,7 @@
     return-void
 .end method
 
-.method public final setPivotX(F)V
+.method public setPivotX(F)V
     .locals 1
 
     iget-boolean v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->d:Z
@@ -788,7 +788,7 @@
     return-void
 .end method
 
-.method public final setPivotY(F)V
+.method public setPivotY(F)V
     .locals 1
 
     iget-boolean v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->d:Z
@@ -816,7 +816,7 @@
     return-void
 .end method
 
-.method public final setRotation(F)V
+.method public setRotation(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->j:F
@@ -835,7 +835,7 @@
     return-void
 .end method
 
-.method public final setRotationX(F)V
+.method public setRotationX(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->h:F
@@ -854,7 +854,7 @@
     return-void
 .end method
 
-.method public final setRotationY(F)V
+.method public setRotationY(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->i:F
@@ -873,7 +873,7 @@
     return-void
 .end method
 
-.method public final setScaleX(F)V
+.method public setScaleX(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->k:F
@@ -892,7 +892,7 @@
     return-void
 .end method
 
-.method public final setScaleY(F)V
+.method public setScaleY(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->l:F
@@ -911,7 +911,7 @@
     return-void
 .end method
 
-.method public final setScrollX(I)V
+.method public setScrollX(I)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -934,7 +934,7 @@
     return-void
 .end method
 
-.method public final setScrollY(I)V
+.method public setScrollY(I)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -957,7 +957,7 @@
     return-void
 .end method
 
-.method public final setTranslationX(F)V
+.method public setTranslationX(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->m:F
@@ -976,7 +976,7 @@
     return-void
 .end method
 
-.method public final setTranslationY(F)V
+.method public setTranslationY(F)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->n:F
@@ -995,7 +995,7 @@
     return-void
 .end method
 
-.method public final setX(F)V
+.method public setX(F)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;
@@ -1022,7 +1022,7 @@
     return-void
 .end method
 
-.method public final setY(F)V
+.method public setY(F)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/animation/AnimatorProxy;->b:Ljava/lang/ref/WeakReference;

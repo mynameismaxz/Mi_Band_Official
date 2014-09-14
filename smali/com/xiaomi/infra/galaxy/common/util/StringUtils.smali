@@ -332,9 +332,9 @@
 
     const/16 v0, 0x40
 
-    const/4 v6, -0x1
-
     const/4 v2, 0x0
+
+    const/4 v6, -0x1
 
     invoke-static {p0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -378,7 +378,7 @@
     move v3, v2
 
     :cond_2
-    if-gez p3, :cond_4
+    if-gez p3, :cond_5
 
     const/16 v0, 0x10
 
@@ -399,7 +399,7 @@
     move v0, v2
 
     :goto_2
-    if-eq v1, v6, :cond_5
+    if-eq v1, v6, :cond_4
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -415,22 +415,9 @@
 
     add-int/lit8 p3, p3, -0x1
 
-    if-eqz p3, :cond_5
-
-    invoke-virtual {p0, p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
-
-    move-result v1
-
-    goto :goto_2
+    if-nez p3, :cond_6
 
     :cond_4
-    if-gt p3, v0, :cond_3
-
-    move v0, p3
-
-    goto :goto_1
-
-    :cond_5
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
@@ -442,6 +429,20 @@
     move-result-object p0
 
     goto :goto_0
+
+    :cond_5
+    if-gt p3, v0, :cond_3
+
+    move v0, p3
+
+    goto :goto_1
+
+    :cond_6
+    invoke-virtual {p0, p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v1
+
+    goto :goto_2
 .end method
 
 .method public static toBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal;

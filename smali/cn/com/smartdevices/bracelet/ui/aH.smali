@@ -1,23 +1,19 @@
-.class final Lcn/com/smartdevices/bracelet/ui/aH;
+.class Lcn/com/smartdevices/bracelet/ui/aH;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-.field private final synthetic b:Ljava/lang/String;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;Ljava/lang/String;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aH;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/aH;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +22,24 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aH;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->w(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Lcn/com/smartdevices/bracelet/location/LocationManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aH;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/location/LocationManager;->cancelLocation()V
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->downloadApkFile(Landroid/content/Context;Ljava/lang/String;)Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aH;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->w(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Lcn/com/smartdevices/bracelet/location/LocationManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/location/LocationManager;->requestLocation()V
 
     return-void
 .end method

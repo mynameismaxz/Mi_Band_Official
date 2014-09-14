@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/o;
+.class Lcom/tencent/stat/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/stat/a;
+.field final synthetic a:Lcom/tencent/stat/a;
 
-.field private synthetic b:Lcom/tencent/stat/StatStore;
+.field final synthetic b:Lcom/tencent/stat/StatStore;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 13
 
     const/4 v10, 0x1
@@ -37,9 +37,7 @@
 
     iget-object v0, p0, Lcom/tencent/stat/o;->a:Lcom/tencent/stat/a;
 
-    iget-object v0, v0, Lcom/tencent/stat/a;->b:Lorg/json/JSONObject;
-
-    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/tencent/stat/a;->a()Ljava/lang/String;
 
     move-result-object v11
 
@@ -198,15 +196,19 @@
 
     if-nez v0, :cond_5
 
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Failed to store cfg:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -229,7 +231,7 @@
 
     :goto_4
     :try_start_2
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v2
 
@@ -290,15 +292,19 @@
     goto :goto_2
 
     :cond_5
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Sucessed to store cfg:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

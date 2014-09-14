@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/hardware/display/a;
+.class Landroid/support/v4/hardware/display/a;
 .super Landroid/support/v4/hardware/display/DisplayManagerCompat;
 
 
@@ -12,9 +12,7 @@
 
     invoke-direct {p0}, Landroid/support/v4/hardware/display/DisplayManagerCompat;-><init>()V
 
-    const-string v0, "display"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1}, Landroid/support/v4/hardware/display/c;->a(Landroid/content/Context;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -25,42 +23,36 @@
 
 
 # virtual methods
-.method public final getDisplay(I)Landroid/view/Display;
+.method public getDisplay(I)Landroid/view/Display;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/hardware/display/a;->a:Ljava/lang/Object;
 
-    check-cast v0, Landroid/hardware/display/DisplayManager;
-
-    invoke-virtual {v0, p1}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
+    invoke-static {v0, p1}, Landroid/support/v4/hardware/display/c;->a(Ljava/lang/Object;I)Landroid/view/Display;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final getDisplays()[Landroid/view/Display;
+.method public getDisplays()[Landroid/view/Display;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/hardware/display/a;->a:Ljava/lang/Object;
 
-    check-cast v0, Landroid/hardware/display/DisplayManager;
-
-    invoke-virtual {v0}, Landroid/hardware/display/DisplayManager;->getDisplays()[Landroid/view/Display;
+    invoke-static {v0}, Landroid/support/v4/hardware/display/c;->a(Ljava/lang/Object;)[Landroid/view/Display;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+.method public getDisplays(Ljava/lang/String;)[Landroid/view/Display;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/hardware/display/a;->a:Ljava/lang/Object;
 
-    check-cast v0, Landroid/hardware/display/DisplayManager;
-
-    invoke-virtual {v0, p1}, Landroid/hardware/display/DisplayManager;->getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+    invoke-static {v0, p1}, Landroid/support/v4/hardware/display/c;->a(Ljava/lang/Object;Ljava/lang/String;)[Landroid/view/Display;
 
     move-result-object v0
 

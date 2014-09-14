@@ -100,7 +100,7 @@
 
     array-length v0, v0
 
-    shl-int/lit8 v1, v0, 0x1
+    mul-int/lit8 v1, v0, 0x2
 
     new-array v2, v1, [Ljava/lang/Object;
 
@@ -208,7 +208,7 @@
 
 
 # virtual methods
-.method public final findDuplicate(Ljava/lang/Object;)Z
+.method public findDuplicate(Ljava/lang/Object;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -227,7 +227,7 @@
     return v0
 .end method
 
-.method public final get(I)Ljava/lang/Object;
+.method public get(I)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -242,7 +242,7 @@
     return-object v0
 .end method
 
-.method public final getCycleString()Ljava/lang/String;
+.method public getCycleString()Ljava/lang/String;
     .locals 4
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -283,7 +283,7 @@
     return-object v0
 .end method
 
-.method public final getLatestPushResult()Z
+.method public getLatestPushResult()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->latestPushResult:Z
@@ -291,7 +291,7 @@
     return v0
 .end method
 
-.method public final getUseIdentity()Z
+.method public getUseIdentity()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->useIdentity:Z
@@ -299,7 +299,7 @@
     return v0
 .end method
 
-.method public final peek()Ljava/lang/Object;
+.method public peek()Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -318,7 +318,7 @@
     return-object v0
 .end method
 
-.method public final pop()Ljava/lang/Object;
+.method public pop()Ljava/lang/Object;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -352,15 +352,19 @@
 
     aget v1, v1, v2
 
-    if-ltz v1, :cond_1
+    if-gez v1, :cond_0
 
+    :goto_0
+    return-object v0
+
+    :cond_0
     invoke-direct {p0, v0}, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->hash(Ljava/lang/Object;)I
 
     move-result v2
 
     sget-boolean v3, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->$assertionsDisabled:Z
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
     iget-object v3, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->initialHash:[I
 
@@ -370,7 +374,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    if-eq v3, v4, :cond_0
+    if-eq v3, v4, :cond_1
 
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -378,16 +382,15 @@
 
     throw v0
 
-    :cond_0
+    :cond_1
     iget-object v3, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->initialHash:[I
 
     aput v1, v3, v2
 
-    :cond_1
-    return-object v0
+    goto :goto_0
 .end method
 
-.method public final push(Ljava/lang/Object;)Z
+.method public push(Ljava/lang/Object;)Z
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -451,7 +454,7 @@
     return v0
 .end method
 
-.method public final pushNocheck(Ljava/lang/Object;)V
+.method public pushNocheck(Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -493,7 +496,7 @@
     return-void
 .end method
 
-.method public final reset()V
+.method public reset()V
     .locals 2
 
     const/4 v1, 0x0
@@ -512,7 +515,7 @@
     return-void
 .end method
 
-.method public final setUseIdentity(Z)V
+.method public setUseIdentity(Z)V
     .locals 0
 
     iput-boolean p1, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->useIdentity:Z
@@ -520,7 +523,7 @@
     return-void
 .end method
 
-.method public final size()I
+.method public size()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/infra/galaxy/common/model/CollisionCheckStack;->size:I

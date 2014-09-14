@@ -1,9 +1,9 @@
-.class final Lcom/xiaomi/miui/analyticstracker/h;
+.class Lcom/xiaomi/miui/analyticstracker/h;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/miui/analyticstracker/g;
+.field final synthetic a:Lcom/xiaomi/miui/analyticstracker/g;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
     iget v0, p1, Landroid/os/Message;->what:I

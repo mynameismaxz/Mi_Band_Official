@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/hm/view/a;
+.class Lcom/xiaomi/hm/view/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/view/GifAnimation;
+.field final synthetic a:Lcom/xiaomi/hm/view/GifAnimation;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/xiaomi/hm/view/GifAnimation;B)V
+.method synthetic constructor <init>(Lcom/xiaomi/hm/view/GifAnimation;Lcom/xiaomi/hm/view/a;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/xiaomi/hm/view/a;-><init>(Lcom/xiaomi/hm/view/GifAnimation;)V
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/xiaomi/hm/view/a;->a:Lcom/xiaomi/hm/view/GifAnimation;
@@ -91,8 +91,6 @@
 
     :cond_1
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_2
     return-void
@@ -101,6 +99,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

@@ -53,9 +53,9 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v4/content/f;
+    new-instance v0, Landroid/support/v4/content/g;
 
-    invoke-direct {v0}, Landroid/support/v4/content/f;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/content/g;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/IntentCompat;->a:Landroid/support/v4/content/f;
 
@@ -75,7 +75,7 @@
 
     sget-object v0, Landroid/support/v4/content/IntentCompat;->a:Landroid/support/v4/content/f;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/content/f;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-interface {v0, p0}, Landroid/support/v4/content/f;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
 
     sget-object v0, Landroid/support/v4/content/IntentCompat;->a:Landroid/support/v4/content/f;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/content/f;->a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/content/f;->a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -99,7 +99,7 @@
 
     sget-object v0, Landroid/support/v4/content/IntentCompat;->a:Landroid/support/v4/content/f;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/content/f;->b(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-interface {v0, p0}, Landroid/support/v4/content/f;->b(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 

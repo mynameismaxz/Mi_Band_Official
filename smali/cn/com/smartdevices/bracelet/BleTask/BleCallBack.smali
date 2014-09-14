@@ -3,19 +3,19 @@
 
 
 # static fields
-.field private static final a:I
+.field private static final b:I
 
 
 # instance fields
-.field private final b:I
+.field a:Landroid/os/Handler;
 
 .field private final c:I
 
 .field private final d:I
 
-.field private final e:Ljava/lang/String;
+.field private final e:I
 
-.field private f:Landroid/os/Handler;
+.field private final f:Ljava/lang/String;
 
 
 # direct methods
@@ -24,11 +24,27 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->c:I
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->d:I
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->e:I
+
+    const-string v0, "BleCallBack"
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Ljava/lang/String;
+
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/a;
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/BleTask/a;-><init>(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     return-void
 .end method
@@ -122,7 +138,7 @@
 .method public sendOnFailedMessage(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     const/4 v1, 0x3
 
@@ -132,7 +148,7 @@
 
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -142,7 +158,7 @@
 .method public sendOnFinishMessage(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
@@ -152,7 +168,7 @@
 
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -162,7 +178,7 @@
 .method public sendOnProgressMessage(I)V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
@@ -172,7 +188,7 @@
 
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -182,7 +198,7 @@
 .method public sendOnStartMessage()V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
@@ -190,7 +206,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->f:Landroid/os/Handler;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->a:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 

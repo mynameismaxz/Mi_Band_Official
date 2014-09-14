@@ -97,7 +97,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcel;B)V
+.method synthetic constructor <init>(Landroid/os/Parcel;Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;-><init>(Landroid/os/Parcel;)V

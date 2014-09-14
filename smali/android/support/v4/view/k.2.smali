@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/view/k;
+.class Landroid/support/v4/view/k;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/j;
+.field final synthetic a:Landroid/support/v4/view/j;
 
 
 # direct methods
@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
     iget v0, p1, Landroid/os/Message;->what:I
@@ -44,9 +44,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Unknown message "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/account/openauth/d;
+.class Lcom/xiaomi/account/openauth/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/account/openauth/c;
+.field final synthetic a:Lcom/xiaomi/account/openauth/c;
 
 .field private final synthetic b:Landroid/os/Bundle;
 
@@ -14,6 +14,8 @@
 # direct methods
 .method constructor <init>(Lcom/xiaomi/account/openauth/c;Landroid/os/Bundle;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/xiaomi/account/openauth/d;->a:Lcom/xiaomi/account/openauth/c;
 
     iput-object p2, p0, Lcom/xiaomi/account/openauth/d;->b:Landroid/os/Bundle;
 
@@ -24,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 4
 
     new-instance v0, Landroid/os/Bundle;

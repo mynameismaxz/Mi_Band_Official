@@ -26,27 +26,9 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
-    .locals 1
-
-    new-instance v0, Landroid/support/v4/view/ViewPager$SavedState;
-
-    invoke-direct {v0, p0, p1}, Landroid/support/v4/view/ViewPager$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-.end method
-
-.method private static a(I)[Landroid/support/v4/view/ViewPager$SavedState;
-    .locals 1
-
-    new-array v0, p0, [Landroid/support/v4/view/ViewPager$SavedState;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
     .locals 1
 
     new-instance v0, Landroid/support/v4/view/ViewPager$SavedState;
@@ -56,10 +38,30 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/view/ViewPager$SavedState;
     .locals 1
 
     new-array v0, p1, [Landroid/support/v4/view/ViewPager$SavedState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/aG;->a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/aG;->a(I)[Landroid/support/v4/view/ViewPager$SavedState;
+
+    move-result-object v0
 
     return-object v0
 .end method

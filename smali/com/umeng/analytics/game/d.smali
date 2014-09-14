@@ -1,4 +1,4 @@
-.class final Lcom/umeng/analytics/game/d;
+.class Lcom/umeng/analytics/game/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -73,9 +73,89 @@
 
     iput-object v0, p0, Lcom/umeng/analytics/game/d;->b:Lcom/umeng/analytics/game/b;
 
+    const/16 v0, 0x64
+
+    iput v0, p0, Lcom/umeng/analytics/game/d;->c:I
+
+    iput v1, p0, Lcom/umeng/analytics/game/d;->d:I
+
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->a:Lcom/umeng/analytics/d;
 
     invoke-virtual {v0, v1}, Lcom/umeng/analytics/d;->a(I)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/umeng/analytics/game/d;->e:I
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/umeng/analytics/game/d;->f:I
+
+    iput v1, p0, Lcom/umeng/analytics/game/d;->g:I
+
+    const-string v0, "level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->h:Ljava/lang/String;
+
+    const-string v0, "pay"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->i:Ljava/lang/String;
+
+    const-string v0, "buy"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->j:Ljava/lang/String;
+
+    const-string v0, "use"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->k:Ljava/lang/String;
+
+    const-string v0, "bonus"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->l:Ljava/lang/String;
+
+    const-string v0, "item"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->m:Ljava/lang/String;
+
+    const-string v0, "cash"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->n:Ljava/lang/String;
+
+    const-string v0, "coin"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->o:Ljava/lang/String;
+
+    const-string v0, "source"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->p:Ljava/lang/String;
+
+    const-string v0, "amount"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->q:Ljava/lang/String;
+
+    const-string v0, "user_level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->r:Ljava/lang/String;
+
+    const-string v0, "bonus_source"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->s:Ljava/lang/String;
+
+    const-string v0, "level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->t:Ljava/lang/String;
+
+    const-string v0, "status"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->u:Ljava/lang/String;
+
+    const-string v0, "duration"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->v:Ljava/lang/String;
+
+    const-string v0, "UMGameAgent.init(Context) should be called before any game api"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/d;->w:Ljava/lang/String;
 
     sput-boolean v1, Lcom/umeng/analytics/game/a;->a:Z
 
@@ -116,50 +196,6 @@
     goto :goto_0
 .end method
 
-.method static a(Ljava/lang/String;ILcom/umeng/analytics/Gender;Ljava/lang/String;)V
-    .locals 0
-
-    sput-object p0, Lcom/umeng/analytics/AnalyticsConfig;->sId:Ljava/lang/String;
-
-    sput p1, Lcom/umeng/analytics/AnalyticsConfig;->sAge:I
-
-    sput-object p2, Lcom/umeng/analytics/AnalyticsConfig;->sGender:Lcom/umeng/analytics/Gender;
-
-    sput-object p3, Lcom/umeng/analytics/AnalyticsConfig;->sSource:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method static a(Z)V
-    .locals 5
-
-    const-string v0, "MobclickAgent"
-
-    const-string v1, "Trace sleep time : %b"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lu/aly/bj;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    sput-boolean p0, Lcom/umeng/analytics/game/a;->a:Z
-
-    return-void
-.end method
-
 .method static synthetic b(Lcom/umeng/analytics/game/d;)Lcom/umeng/analytics/d;
     .locals 1
 
@@ -178,7 +214,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     const-string v0, "MobclickAgent"
@@ -213,7 +249,7 @@
     goto :goto_0
 .end method
 
-.method final a(DDI)V
+.method a(DDI)V
     .locals 6
 
     const-wide/high16 v4, 0x4059
@@ -309,7 +345,7 @@
     goto :goto_0
 .end method
 
-.method final a(DI)V
+.method a(DI)V
     .locals 4
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -393,7 +429,7 @@
     goto :goto_0
 .end method
 
-.method final a(DLjava/lang/String;IDI)V
+.method a(DLjava/lang/String;IDI)V
     .locals 6
 
     int-to-double v0, p4
@@ -413,7 +449,7 @@
     return-void
 .end method
 
-.method final a(Landroid/content/Context;)V
+.method a(Landroid/content/Context;)V
     .locals 2
 
     if-nez p1, :cond_0
@@ -449,7 +485,7 @@
     goto :goto_0
 .end method
 
-.method final a(Ljava/lang/String;)V
+.method a(Ljava/lang/String;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->b:Lcom/umeng/analytics/game/b;
@@ -459,7 +495,7 @@
     return-void
 .end method
 
-.method final a(Ljava/lang/String;ID)V
+.method a(Ljava/lang/String;ID)V
     .locals 6
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -551,7 +587,7 @@
     goto :goto_0
 .end method
 
-.method final a(Ljava/lang/String;IDI)V
+.method a(Ljava/lang/String;IDI)V
     .locals 2
 
     int-to-double v0, p2
@@ -565,7 +601,51 @@
     return-void
 .end method
 
-.method public final b()V
+.method a(Ljava/lang/String;ILcom/umeng/analytics/Gender;Ljava/lang/String;)V
+    .locals 0
+
+    sput-object p1, Lcom/umeng/analytics/AnalyticsConfig;->sId:Ljava/lang/String;
+
+    sput p2, Lcom/umeng/analytics/AnalyticsConfig;->sAge:I
+
+    sput-object p3, Lcom/umeng/analytics/AnalyticsConfig;->sGender:Lcom/umeng/analytics/Gender;
+
+    sput-object p4, Lcom/umeng/analytics/AnalyticsConfig;->sSource:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method a(Z)V
+    .locals 5
+
+    const-string v0, "MobclickAgent"
+
+    const-string v1, "Trace sleep time : %b"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lu/aly/bj;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-boolean p1, Lcom/umeng/analytics/game/a;->a:Z
+
+    return-void
+.end method
+
+.method public b()V
     .locals 2
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -594,7 +674,7 @@
     goto :goto_0
 .end method
 
-.method final b(Ljava/lang/String;)V
+.method b(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -624,7 +704,7 @@
     goto :goto_0
 .end method
 
-.method final b(Ljava/lang/String;ID)V
+.method b(Ljava/lang/String;ID)V
     .locals 6
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -716,7 +796,7 @@
     goto :goto_0
 .end method
 
-.method final c(Ljava/lang/String;)V
+.method c(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
@@ -740,7 +820,7 @@
     goto :goto_0
 .end method
 
-.method final d(Ljava/lang/String;)V
+.method d(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;

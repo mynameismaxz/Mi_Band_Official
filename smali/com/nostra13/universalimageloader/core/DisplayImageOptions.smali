@@ -165,7 +165,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;B)V
+.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;Lcom/nostra13/universalimageloader/core/c;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;-><init>(Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;)V
@@ -341,7 +341,7 @@
 
 
 # virtual methods
-.method final a()Z
+.method a()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->s:Z
@@ -349,7 +349,7 @@
     return v0
 .end method
 
-.method public final getDecodingOptions()Landroid/graphics/BitmapFactory$Options;
+.method public getDecodingOptions()Landroid/graphics/BitmapFactory$Options;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->k:Landroid/graphics/BitmapFactory$Options;
@@ -357,7 +357,7 @@
     return-object v0
 .end method
 
-.method public final getDelayBeforeLoading()I
+.method public getDelayBeforeLoading()I
     .locals 1
 
     iget v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->l:I
@@ -365,7 +365,7 @@
     return v0
 .end method
 
-.method public final getDisplayer()Lcom/nostra13/universalimageloader/core/display/BitmapDisplayer;
+.method public getDisplayer()Lcom/nostra13/universalimageloader/core/display/BitmapDisplayer;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->q:Lcom/nostra13/universalimageloader/core/display/BitmapDisplayer;
@@ -373,7 +373,7 @@
     return-object v0
 .end method
 
-.method public final getExtraForDownloader()Ljava/lang/Object;
+.method public getExtraForDownloader()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->n:Ljava/lang/Object;
@@ -381,7 +381,7 @@
     return-object v0
 .end method
 
-.method public final getHandler()Landroid/os/Handler;
+.method public getHandler()Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->r:Landroid/os/Handler;
@@ -389,7 +389,7 @@
     return-object v0
 .end method
 
-.method public final getImageForEmptyUri(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+.method public getImageForEmptyUri(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     iget v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->b:I
@@ -411,7 +411,7 @@
     goto :goto_0
 .end method
 
-.method public final getImageOnFail(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+.method public getImageOnFail(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     iget v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->c:I
@@ -433,7 +433,7 @@
     goto :goto_0
 .end method
 
-.method public final getImageOnLoading(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+.method public getImageOnLoading(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     iget v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->a:I
@@ -455,7 +455,7 @@
     goto :goto_0
 .end method
 
-.method public final getImageScaleType()Lcom/nostra13/universalimageloader/core/assist/ImageScaleType;
+.method public getImageScaleType()Lcom/nostra13/universalimageloader/core/assist/ImageScaleType;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->j:Lcom/nostra13/universalimageloader/core/assist/ImageScaleType;
@@ -463,7 +463,7 @@
     return-object v0
 .end method
 
-.method public final getPostProcessor()Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
+.method public getPostProcessor()Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->p:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
@@ -471,7 +471,7 @@
     return-object v0
 .end method
 
-.method public final getPreProcessor()Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
+.method public getPreProcessor()Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->o:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
@@ -479,7 +479,7 @@
     return-object v0
 .end method
 
-.method public final isCacheInMemory()Z
+.method public isCacheInMemory()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->h:Z
@@ -487,7 +487,7 @@
     return v0
 .end method
 
-.method public final isCacheOnDisk()Z
+.method public isCacheOnDisk()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->i:Z
@@ -495,7 +495,7 @@
     return v0
 .end method
 
-.method public final isConsiderExifParams()Z
+.method public isConsiderExifParams()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->m:Z
@@ -503,7 +503,7 @@
     return v0
 .end method
 
-.method public final isResetViewBeforeLoading()Z
+.method public isResetViewBeforeLoading()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->g:Z
@@ -511,7 +511,7 @@
     return v0
 .end method
 
-.method public final shouldDelayBeforeLoading()Z
+.method public shouldDelayBeforeLoading()Z
     .locals 1
 
     iget v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->l:I
@@ -529,7 +529,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldPostProcess()Z
+.method public shouldPostProcess()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->p:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
@@ -547,7 +547,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldPreProcess()Z
+.method public shouldPreProcess()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->o:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
@@ -565,7 +565,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldShowImageForEmptyUri()Z
+.method public shouldShowImageForEmptyUri()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->e:Landroid/graphics/drawable/Drawable;
@@ -588,7 +588,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldShowImageOnFail()Z
+.method public shouldShowImageOnFail()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->f:Landroid/graphics/drawable/Drawable;
@@ -611,7 +611,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldShowImageOnLoading()Z
+.method public shouldShowImageOnLoading()Z
     .locals 1
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;->d:Landroid/graphics/drawable/Drawable;

@@ -22,10 +22,12 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigDecimal;
+
+# virtual methods
+.method public a(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigDecimal;
     .locals 2
 
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
 
@@ -33,7 +35,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 v0, 0x0
 
@@ -44,7 +46,7 @@
     :try_start_0
     new-instance v0, Ljava/math/BigDecimal;
 
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -64,32 +66,30 @@
     throw v1
 .end method
 
-.method private static a(Lcom/google/gson/stream/JsonWriter;Ljava/math/BigDecimal;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/math/BigDecimal;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 1
 
-    invoke-static {p1}, Lcom/google/gson/internal/bind/s;->a(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigDecimal;
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/s;->a(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigDecimal;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Ljava/math/BigDecimal;
 
-    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/s;->a(Lcom/google/gson/stream/JsonWriter;Ljava/math/BigDecimal;)V
 
     return-void
 .end method

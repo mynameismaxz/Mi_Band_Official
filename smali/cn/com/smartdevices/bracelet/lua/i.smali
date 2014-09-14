@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/lua/i;
+.class Lcn/com/smartdevices/bracelet/lua/i;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaManager;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 2
 
     const-string v0, "chenee"
@@ -31,8 +31,10 @@
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
-    .locals 4
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 5
+
+    const/4 v3, 0x1
 
     invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
 
@@ -47,23 +49,161 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
-    const-string v0, "chenee"
+    move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    check-cast v0, Lcn/com/smartdevices/bracelet/lua/j;
 
-    const-string v2, "get latest luaZipFile error (message:"
+    iget v1, v0, Lcn/com/smartdevices/bracelet/lua/j;->a:I
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-eq v1, v3, :cond_0
 
-    const/4 v2, 0x0
+    const-string v1, "chenee"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    const-string v3, "get latest luaZipFile error (message:"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/lua/j;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     const-string v2, ")"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v1, v0, Lcn/com/smartdevices/bracelet/lua/j;->c:Lcn/com/smartdevices/bracelet/lua/k;
+
+    iget-object v1, v1, Lcn/com/smartdevices/bracelet/lua/k;->b:Ljava/lang/String;
+
+    const/4 v2, 0x2
+
+    invoke-static {v1, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v1
+
+    new-instance v2, Lde/greenrobot/daobracelet/LuaZipFile;
+
+    invoke-direct {v2}, Lde/greenrobot/daobracelet/LuaZipFile;-><init>()V
+
+    iget-object v3, v0, Lcn/com/smartdevices/bracelet/lua/j;->c:Lcn/com/smartdevices/bracelet/lua/k;
+
+    iget-object v3, v3, Lcn/com/smartdevices/bracelet/lua/k;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lde/greenrobot/daobracelet/LuaZipFile;->setVersion(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Lde/greenrobot/daobracelet/LuaZipFile;->setZipFile([B)V
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/DaoManager;->getInstance()Lcn/com/smartdevices/bracelet/DaoManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/DaoManager;->getLuaZipFileDao()Lde/greenrobot/daobracelet/LuaZipFileDao;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Lde/greenrobot/daobracelet/LuaZipFileDao;->insertOrReplace(Ljava/lang/Object;)J
+
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/lua/j;->c:Lcn/com/smartdevices/bracelet/lua/k;
+
+    iget-object v2, v2, Lcn/com/smartdevices/bracelet/lua/k;->c:Ljava/lang/String;
+
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Keeper;->keepLatestDBLuaVersion(Ljava/lang/String;)V
+
+    const-string v2, "chenee"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "save DB luaZipFile onSuccess====(version:"
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/lua/j;->c:Lcn/com/smartdevices/bracelet/lua/k;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/lua/k;->c:Ljava/lang/String;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, ")"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/i;->a:Lcn/com/smartdevices/bracelet/lua/LuaManager;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->resetLuaState()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/i;->a:Lcn/com/smartdevices/bracelet/lua/LuaManager;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getLuaState()Lorg/keplerproject/luajava/LuaState;
+
+    move-result-object v0
+
+    sget-object v2, Lorg/keplerproject/luajava/LuaState;->LUA_GLOBALSINDEX:Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    const-string v3, "setLocale"
+
+    invoke-virtual {v0, v2, v3}, Lorg/keplerproject/luajava/LuaState;->getField(ILjava/lang/String;)V
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Locale;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/keplerproject/luajava/LuaState;->pushString(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/i;->a:Lcn/com/smartdevices/bracelet/lua/LuaManager;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v2, v3}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->callLua(II)V
+
+    const-string v0, "chenee"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "zipfile count:"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Lde/greenrobot/daobracelet/LuaZipFileDao;->count()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -75,8 +215,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
-    return-void
+    goto/16 :goto_0
 
     :catch_0
     move-exception v0
@@ -103,5 +242,5 @@
 
     invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method

@@ -1,15 +1,5 @@
-.class Lcom/google/zxing/oned/rss/expanded/a;
+.class final Lcom/google/zxing/oned/rss/expanded/a;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:Z
-
-.field private final b:Lcom/google/zxing/oned/rss/DataCharacter;
-
-.field private final c:Lcom/google/zxing/oned/rss/DataCharacter;
-
-.field private final d:Lcom/google/zxing/oned/rss/FinderPattern;
 
 
 # direct methods
@@ -21,22 +11,6 @@
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/zxing/oned/rss/DataCharacter;Lcom/google/zxing/oned/rss/DataCharacter;Lcom/google/zxing/oned/rss/FinderPattern;Z)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/zxing/oned/rss/expanded/a;->b:Lcom/google/zxing/oned/rss/DataCharacter;
-
-    iput-object p2, p0, Lcom/google/zxing/oned/rss/expanded/a;->c:Lcom/google/zxing/oned/rss/DataCharacter;
-
-    iput-object p3, p0, Lcom/google/zxing/oned/rss/expanded/a;->d:Lcom/google/zxing/oned/rss/FinderPattern;
-
-    iput-boolean p4, p0, Lcom/google/zxing/oned/rss/expanded/a;->a:Z
-
-    return-void
-.end method
-
 .method static a(Ljava/util/List;)Lcom/google/zxing/common/BitArray;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
@@ -44,17 +18,17 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/zxing/oned/rss/expanded/a;",
+            "Lcom/google/zxing/oned/rss/expanded/b;",
             ">;)",
             "Lcom/google/zxing/common/BitArray;"
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     const/16 v4, 0xb
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -74,13 +48,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/zxing/oned/rss/expanded/a;
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/b;
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/a;->c()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/b;->c()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
     add-int/lit8 v0, v1, -0x1
 
@@ -91,13 +65,13 @@
 
     invoke-direct {v7, v0}, Lcom/google/zxing/common/BitArray;-><init>(I)V
 
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/zxing/oned/rss/expanded/a;
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/b;
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/a;->c()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/b;->c()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v0
 
@@ -107,49 +81,49 @@
 
     move v1, v4
 
-    move v0, v2
+    move v0, v3
 
     :goto_1
     if-ltz v1, :cond_1
 
-    shl-int v2, v3, v1
+    shl-int v3, v2, v1
 
-    and-int/2addr v2, v5
+    and-int/2addr v3, v5
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     invoke-virtual {v7, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     :cond_0
-    add-int/lit8 v2, v0, 0x1
+    add-int/lit8 v3, v0, 0x1
 
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
-    move v0, v2
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
-    move v1, v0
+    move v3, v0
 
     :goto_2
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v2, v0, :cond_7
+    if-ge v1, v0, :cond_6
 
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/zxing/oned/rss/expanded/a;
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/b;
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/a;->b()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/b;->b()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v5
 
@@ -162,135 +136,72 @@
     :goto_3
     if-ltz v5, :cond_3
 
-    shl-int v6, v3, v5
+    shl-int v6, v2, v5
 
     and-int/2addr v6, v8
 
     if-eqz v6, :cond_2
 
-    invoke-virtual {v7, v1}, Lcom/google/zxing/common/BitArray;->set(I)V
+    invoke-virtual {v7, v3}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     :cond_2
-    add-int/lit8 v6, v1, 0x1
+    add-int/lit8 v6, v3, 0x1
 
-    add-int/lit8 v1, v5, -0x1
+    add-int/lit8 v3, v5, -0x1
 
-    move v5, v1
+    move v5, v3
 
-    move v1, v6
+    move v3, v6
 
     goto :goto_3
 
     :cond_3
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/a;->c()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/b;->c()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v5
 
     if-eqz v5, :cond_5
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/a;->c()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/b;->c()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
 
-    move-result v6
+    move-result v5
 
-    move v0, v1
-
-    move v1, v4
+    move v0, v4
 
     :goto_4
-    if-ltz v1, :cond_6
+    if-ltz v0, :cond_5
 
-    shl-int v5, v3, v1
+    shl-int v6, v2, v0
 
-    and-int/2addr v5, v6
+    and-int/2addr v6, v5
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
-    invoke-virtual {v7, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
+    invoke-virtual {v7, v3}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     :cond_4
-    add-int/lit8 v5, v0, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    add-int/lit8 v0, v1, -0x1
-
-    move v1, v0
-
-    move v0, v5
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_4
 
     :cond_5
-    move v0, v1
-
-    :cond_6
-    add-int/lit8 v1, v2, 0x1
-
-    move v2, v1
+    add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_2
 
-    :cond_7
+    :cond_6
     return-object v7
 
-    :cond_8
+    :cond_7
     move v0, v1
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method a()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/google/zxing/oned/rss/expanded/a;->a:Z
-
-    return v0
-.end method
-
-.method b()Lcom/google/zxing/oned/rss/DataCharacter;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/a;->b:Lcom/google/zxing/oned/rss/DataCharacter;
-
-    return-object v0
-.end method
-
-.method c()Lcom/google/zxing/oned/rss/DataCharacter;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/a;->c:Lcom/google/zxing/oned/rss/DataCharacter;
-
-    return-object v0
-.end method
-
-.method d()Lcom/google/zxing/oned/rss/FinderPattern;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/a;->d:Lcom/google/zxing/oned/rss/FinderPattern;
-
-    return-object v0
-.end method
-
-.method public e()Z
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/a;->c:Lcom/google/zxing/oned/rss/DataCharacter;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
 
     goto :goto_0
 .end method

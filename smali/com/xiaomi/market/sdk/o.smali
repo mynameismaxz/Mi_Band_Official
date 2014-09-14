@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/market/sdk/o;
+.class Lcom/xiaomi/market/sdk/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/market/sdk/n;
+.field final synthetic a:Lcom/xiaomi/market/sdk/n;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     const/4 v0, 0x1
@@ -182,6 +182,8 @@
     move-result-object v2
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 

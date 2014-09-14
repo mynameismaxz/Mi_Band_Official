@@ -27,17 +27,9 @@
     return-void
 .end method
 
-.method private static c()Lcom/google/gson/JsonNull;
-    .locals 1
-
-    sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method final bridge synthetic a()Lcom/google/gson/JsonElement;
+.method a()Lcom/google/gson/JsonNull;
     .locals 1
 
     sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
@@ -45,7 +37,17 @@
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method synthetic b()Lcom/google/gson/JsonElement;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/gson/JsonNull;->a()Lcom/google/gson/JsonNull;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .locals 1
 
     if-eq p0, p1, :cond_0
@@ -66,7 +68,7 @@
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 1
 
     const-class v0, Lcom/google/gson/JsonNull;

@@ -16,17 +16,19 @@
 
     new-array v0, v0, [Lcom/google/zxing/qrcode/decoder/c;
 
-    new-instance v1, Lcom/google/zxing/qrcode/decoder/e;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/e;-><init>(B)V
+    new-instance v2, Lcom/google/zxing/qrcode/decoder/e;
 
-    aput-object v1, v0, v3
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/e;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
+
+    aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/f;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/f;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/f;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -34,7 +36,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/g;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/g;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/g;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -42,7 +44,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/h;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/h;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/h;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -50,7 +52,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/i;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/i;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/i;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -58,7 +60,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/j;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/j;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/j;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -66,7 +68,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/k;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/k;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/k;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -74,7 +76,7 @@
 
     new-instance v2, Lcom/google/zxing/qrcode/decoder/l;
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/l;-><init>(B)V
+    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/l;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     aput-object v2, v0, v1
 
@@ -91,7 +93,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/d;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/zxing/qrcode/decoder/c;-><init>()V

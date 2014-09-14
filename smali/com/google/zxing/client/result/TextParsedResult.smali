@@ -25,7 +25,7 @@
 
 
 # virtual methods
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TextParsedResult;->a:Ljava/lang/String;
@@ -33,7 +33,7 @@
     return-object v0
 .end method
 
-.method public final getLanguage()Ljava/lang/String;
+.method public getLanguage()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TextParsedResult;->b:Ljava/lang/String;
@@ -41,7 +41,7 @@
     return-object v0
 .end method
 
-.method public final getText()Ljava/lang/String;
+.method public getText()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/TextParsedResult;->a:Ljava/lang/String;

@@ -40,16 +40,16 @@
     return-void
 .end method
 
-.method private static a([D)D
+.method private a([D)D
     .locals 6
 
     const/4 v0, 0x1
 
-    aget-wide v0, p0, v0
+    aget-wide v0, p1, v0
 
     const/4 v2, 0x0
 
-    aget-wide v2, p0, v2
+    aget-wide v2, p1, v2
 
     sub-double/2addr v0, v2
 
@@ -59,11 +59,11 @@
 
     const/4 v2, 0x3
 
-    aget-wide v2, p0, v2
+    aget-wide v2, p1, v2
 
     const/4 v4, 0x2
 
-    aget-wide v4, p0, v4
+    aget-wide v4, p1, v4
 
     sub-double/2addr v2, v4
 
@@ -147,7 +147,7 @@
 .end method
 
 .method public apply(FFFF)V
-    .locals 25
+    .locals 23
 
     const/4 v15, 0x1
 
@@ -336,35 +336,13 @@
 
     sub-double v2, v4, v2
 
-    const/4 v4, 0x1
+    move-object/from16 v0, p0
 
-    aget-wide v4, v18, v4
+    move-object/from16 v1, v18
 
-    const/4 v6, 0x0
-
-    aget-wide v19, v18, v6
-
-    sub-double v4, v4, v19
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v4
-
-    const/4 v6, 0x3
-
-    aget-wide v19, v18, v6
-
-    const/4 v6, 0x2
-
-    aget-wide v21, v18, v6
-
-    sub-double v19, v19, v21
-
-    invoke-static/range {v19 .. v20}, Ljava/lang/Math;->abs(D)D
+    invoke-direct {v0, v1}, Lorg/achartengine/tools/Pan;->a([D)D
 
     move-result-wide v19
-
-    div-double v19, v4, v19
 
     move-object/from16 v0, p0
 
@@ -384,9 +362,9 @@
 
     move-wide v10, v2
 
-    move-wide/from16 v23, v4
+    move-wide/from16 v21, v4
 
-    move-wide/from16 v5, v23
+    move-wide/from16 v5, v21
 
     :goto_3
     move-object/from16 v0, p0

@@ -437,49 +437,55 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/ArrayList;IIIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
-    .locals 35
+.method private static a(Ljava/util/ArrayList;IILandroid/content/SharedPreferences;ZIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
+    .locals 37
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/ArrayList",
             "<",
             "Lcn/com/smartdevices/bracelet/model/SportData;",
-            ">;IIIZZ",
+            ">;II",
+            "Landroid/content/SharedPreferences;",
+            "ZIZZ",
             "Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;",
             "I)",
             "Lcn/com/smartdevices/bracelet/analysis/b;"
         }
     .end annotation
 
+    const/4 v13, 0x0
+
+    const/4 v12, 0x0
+
+    const/16 v24, 0x0
+
+    const/16 v23, 0x0
+
     const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/16 v22, 0x0
-
-    const/16 v21, 0x0
 
     const/4 v7, 0x0
 
-    const/16 v16, 0x0
+    const/16 v22, 0x0
 
-    new-instance v24, Ljava/util/ArrayList;
+    new-instance v26, Ljava/util/ArrayList;
 
-    invoke-direct/range {v24 .. v24}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v26 .. v26}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v4, 0x0
 
-    if-eqz p5, :cond_21
+    if-eqz p7, :cond_1f
 
     const/16 v5, 0x5a0
 
     :goto_0
+    const/16 v27, 0x0
+
     const/4 v3, 0x0
 
-    if-eqz p6, :cond_a5
+    if-eqz p8, :cond_a8
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v6, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
@@ -487,7 +493,7 @@
 
     if-lt v6, v8, :cond_0
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v6, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
@@ -495,47 +501,47 @@
 
     if-gt v6, v8, :cond_0
 
-    if-eqz p5, :cond_23
+    if-eqz p7, :cond_21
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    if-ltz v3, :cond_22
+    if-ltz v3, :cond_20
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
     :goto_1
     const/4 v4, 0x1
 
-    move/from16 v34, v4
+    move/from16 v36, v4
 
     move v4, v3
 
-    move/from16 v3, v34
+    move/from16 v3, v36
 
     :cond_0
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v6, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
     const/16 v8, -0x5a0
 
-    if-lt v6, v8, :cond_a5
+    if-lt v6, v8, :cond_a8
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v6, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
     const/16 v8, 0x5a0
 
-    if-gt v6, v8, :cond_a5
+    if-gt v6, v8, :cond_a8
 
-    if-eqz p5, :cond_25
+    if-eqz p7, :cond_23
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v5, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
@@ -543,16 +549,16 @@
 
     move-result v6
 
-    if-ge v5, v6, :cond_24
+    if-ge v5, v6, :cond_22
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p8
 
     iget v5, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
     :goto_2
     add-int/lit8 v3, v3, 0x2
 
-    if-lez v5, :cond_a5
+    if-lez v5, :cond_a8
 
     add-int/lit8 v5, v5, -0x1
 
@@ -606,34 +612,34 @@
 
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v14
+    move-result v15
 
-    add-int/lit8 v3, v14, -0x1
+    add-int/lit8 v3, v15, -0x1
 
-    move v13, v3
+    move v14, v3
 
     :goto_4
     move/from16 v0, p1
 
-    if-gt v13, v0, :cond_26
+    if-gt v14, v0, :cond_24
 
     :cond_2
     const/4 v9, 0x0
 
     move/from16 v8, p1
 
-    move v12, v7
+    move v11, v7
 
     move/from16 v7, p1
 
     :goto_5
-    if-lt v7, v13, :cond_27
+    if-lt v7, v14, :cond_25
 
     const/16 v3, 0x9
 
-    if-le v12, v3, :cond_2b
+    if-le v11, v3, :cond_29
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v3, v3, -0x1
 
@@ -641,7 +647,7 @@
 
     invoke-static {v0, v8, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v8, v7, -0x1
 
@@ -652,14 +658,14 @@
     move v9, v7
 
     :goto_6
-    if-eqz p4, :cond_4
+    if-eqz p6, :cond_4
 
     const/4 v7, 0x0
 
     move v8, v9
 
     :goto_7
-    if-lt v8, v13, :cond_2c
+    if-lt v8, v14, :cond_2a
 
     move v3, v7
 
@@ -671,7 +677,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v9, v13}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
+    invoke-static {v0, v9, v14}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
 
     :cond_4
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
@@ -685,19 +691,16 @@
     invoke-static {v3, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_5
-    move/from16 v12, p1
+    add-int/lit8 v9, p1, 0x1
 
-    move/from16 v9, p1
+    move/from16 v11, p1
 
-    :cond_6
     :goto_9
-    add-int/lit8 v9, v9, 0x1
-
-    if-lt v9, v14, :cond_2f
+    if-lt v9, v15, :cond_2d
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_6
 
     const-string v3, "sleepAnalyze"
 
@@ -707,7 +710,7 @@
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
@@ -721,38 +724,38 @@
 
     invoke-static {v3, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_7
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    :cond_6
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-lez v3, :cond_a1
+    if-lez v3, :cond_a4
+
+    const/16 v21, 0x0
 
     const/16 v20, 0x0
 
-    const/16 v18, 0x0
-
     const/16 v19, 0x0
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
-    move/from16 v0, p3
+    move/from16 v0, p5
 
     add-int/lit16 v0, v0, 0x780
 
-    move/from16 v25, v0
+    move/from16 v28, v0
 
-    move/from16 v0, p3
+    move/from16 v0, p5
 
     add-int/lit16 v3, v0, 0x564
 
-    move/from16 v0, p3
+    move/from16 v0, p5
 
     add-int/lit16 v0, v0, 0x5a0
 
-    move/from16 v26, v0
+    move/from16 v29, v0
 
-    if-gez v3, :cond_a0
+    if-gez v3, :cond_a3
 
     const/4 v3, 0x0
 
@@ -761,7 +764,7 @@
     :goto_a
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_7
 
     const-string v3, "sleepAnalyze"
 
@@ -791,7 +794,7 @@
 
     invoke-static {v3, v8}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_8
+    :cond_7
     const-string v3, "sleepAnalyze"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -814,9 +817,15 @@
 
     move-result-object v8
 
-    const-string v9, ", hasRef=0"
+    const-string v9, ", hasRef="
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    move/from16 v0, v27
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
@@ -826,17 +835,17 @@
 
     invoke-static {v3, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v12, 0x55
+    const/16 v13, 0x55
 
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
     const/4 v8, 0x2
 
-    if-ge v3, v8, :cond_3f
+    if-ge v3, v8, :cond_3e
 
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -845,25 +854,27 @@
     :goto_b
     const/4 v3, 0x0
 
-    move v15, v3
+    move/from16 v16, v3
 
     :goto_c
-    if-lt v15, v8, :cond_40
+    move/from16 v0, v16
 
-    move v8, v12
+    if-lt v0, v8, :cond_3f
+
+    move v8, v13
 
     :goto_d
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_8
 
     const-string v3, "sleepAnalyze"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "quality ref="
+    const-string v11, "quality ref="
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -875,29 +886,29 @@
 
     invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_9
-    new-instance v27, Ljava/util/ArrayList;
+    :cond_8
+    new-instance v30, Ljava/util/ArrayList;
 
-    invoke-direct/range {v27 .. v27}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v30 .. v30}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v3, 0x0
 
-    move v14, v3
+    move v9, v3
 
     :goto_e
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-lt v14, v3, :cond_4a
+    if-lt v9, v3, :cond_49
 
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v30 .. v30}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-lez v3, :cond_a
+    if-lez v3, :cond_9
 
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v30 .. v30}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -906,27 +917,27 @@
     move v8, v3
 
     :goto_f
-    if-gez v8, :cond_66
+    if-gez v8, :cond_69
 
-    :cond_a
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    :cond_9
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
-    move-result v13
+    move-result v14
 
     const/4 v3, 0x1
 
-    if-le v13, v3, :cond_c
+    if-le v14, v3, :cond_b
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     const/4 v9, 0x0
 
     const/4 v8, 0x0
 
     :goto_10
-    if-lt v8, v13, :cond_67
+    if-lt v8, v14, :cond_6a
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -948,29 +959,29 @@
 
     move-result v3
 
-    move/from16 v0, v25
+    move/from16 v0, v28
 
-    if-le v3, v0, :cond_b
+    if-le v3, v0, :cond_a
 
     const/16 v3, 0xb4
 
-    if-ge v10, v3, :cond_b
+    if-ge v11, v3, :cond_a
+
+    const/4 v12, 0x0
 
     const/4 v11, 0x0
-
-    const/4 v10, 0x0
 
     const/4 v8, 0x0
 
     :goto_11
-    if-lt v8, v13, :cond_68
+    if-lt v8, v14, :cond_6b
 
-    if-lez v11, :cond_b
+    if-lez v12, :cond_a
 
-    move v9, v10
+    move v9, v11
 
-    :cond_b
-    move-object/from16 v0, v24
+    :cond_a
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -990,18 +1001,18 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v12
 
     const/4 v8, 0x0
 
     add-int/lit8 v3, v9, 0x1
 
-    move v12, v3
+    move v13, v3
 
     :goto_12
-    if-lt v12, v13, :cond_69
+    if-lt v13, v14, :cond_6c
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1009,9 +1020,9 @@
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v10, "start"
+    const-string v11, "start"
 
-    invoke-virtual {v3, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -1021,21 +1032,25 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v11
 
     add-int/lit8 v3, v9, -0x1
 
-    move v11, v3
+    move v12, v3
+
+    move v9, v11
+
+    move v11, v8
 
     :goto_13
-    if-gez v11, :cond_6e
+    if-gez v12, :cond_71
 
     const/16 v3, 0x1f
 
     :goto_14
-    if-gez v3, :cond_73
+    if-gez v3, :cond_76
 
-    :cond_c
+    :cond_b
     const/4 v7, 0x0
 
     const/4 v3, 0x0
@@ -1045,27 +1060,27 @@
     move v7, v3
 
     :goto_15
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-lt v7, v3, :cond_76
+    if-lt v7, v3, :cond_79
 
     const/16 v3, 0x5a
 
-    if-le v8, v3, :cond_d
+    if-le v8, v3, :cond_c
 
     const/16 v3, 0x96
 
-    if-gt v8, v3, :cond_f
+    if-gt v8, v3, :cond_e
 
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
     add-int/lit8 v3, v3, -0x1
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1087,14 +1102,14 @@
 
     move-result v3
 
-    move/from16 v0, v26
+    move/from16 v0, v29
 
-    if-ge v3, v0, :cond_f
+    if-ge v3, v0, :cond_e
 
-    :cond_d
+    :cond_c
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_d
 
     const-string v3, "sleepAnalyze"
 
@@ -1102,8 +1117,8 @@
 
     invoke-static {v3, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_e
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    :cond_d
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -1112,16 +1127,16 @@
     move v7, v3
 
     :goto_16
-    if-gez v7, :cond_77
+    if-gez v7, :cond_7a
 
-    :cond_f
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    :cond_e
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
-    move-result v13
+    move-result v14
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
     const-string v3, "sleepAnalyze"
 
@@ -1131,7 +1146,7 @@
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -1141,12 +1156,12 @@
 
     invoke-static {v3, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_10
-    if-lez v13, :cond_97
+    :cond_f
+    if-lez v14, :cond_9b
 
     const/4 v3, 0x0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1166,11 +1181,11 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v12
 
-    add-int/lit8 v3, v13, -0x1
+    add-int/lit8 v3, v14, -0x1
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1190,11 +1205,11 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v11
 
     const/4 v3, 0x0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1214,11 +1229,11 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v9
 
-    add-int/lit8 v3, v13, -0x1
+    add-int/lit8 v3, v14, -0x1
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1242,132 +1257,69 @@
 
     const/4 v3, 0x1
 
-    move/from16 v7, v16
+    move v13, v3
 
-    move v12, v3
+    move/from16 v7, v22
 
     :goto_17
-    if-lt v12, v13, :cond_78
+    if-lt v13, v14, :cond_7b
+
+    move/from16 v36, v8
+
+    move v8, v9
+
+    move v9, v11
+
+    move v11, v12
+
+    move v12, v7
+
+    move/from16 v7, v36
 
     :goto_18
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_10
 
     const-string v3, "sleepAnalyze"
 
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "sleepanalyze "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, "->"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ", OnBed="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, "->"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v3, v12}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_11
-    if-ge v11, v9, :cond_95
-
-    const/16 v3, 0x1e
-
-    if-le v11, v3, :cond_7c
-
-    add-int/lit8 v3, v11, -0x1e
-
-    move v14, v3
-
-    :goto_19
-    const/16 v3, 0xf
-
-    if-le v11, v3, :cond_7d
-
-    add-int/lit8 v3, v11, -0xf
-
-    :goto_1a
-    const/4 v13, 0x1
-
-    add-int/lit8 v12, v11, -0x1
-
-    invoke-static {v10, v14}, Ljava/lang/Math;->max(II)I
-
-    move-result v14
-
-    invoke-static {v10, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v15
-
-    move v3, v13
-
-    :goto_1b
-    if-ge v12, v15, :cond_7e
-
-    :cond_12
-    add-int/lit8 v15, v12, 0x1
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_13
-
-    const-string v3, "DataAnalysis"
-
     new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v16, "k="
+    const-string v14, "sleepanalyze "
 
-    move-object/from16 v0, v16
-
-    invoke-direct {v13, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string v16, ",start="
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, "->"
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, ", OnBed="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, "->"
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v13
 
@@ -1377,65 +1329,146 @@
 
     invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_13
-    sub-int v3, v11, v15
+    :cond_10
+    if-ge v11, v9, :cond_99
 
-    add-int/lit8 v3, v3, 0x1
+    const/16 v3, 0x1e
 
-    const/16 v13, 0xf
+    if-le v11, v3, :cond_7f
 
-    if-lt v3, v13, :cond_80
+    add-int/lit8 v3, v11, -0x1e
 
-    const/4 v3, 0x5
+    move v15, v3
 
-    move-object/from16 v0, p0
+    :goto_19
+    const/16 v3, 0xf
 
-    invoke-static {v0, v15, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+    if-le v11, v3, :cond_80
 
-    :goto_1c
-    const/4 v3, 0x1
+    add-int/lit8 v3, v11, -0xf
 
-    :goto_1d
-    if-ge v12, v14, :cond_81
+    :goto_1a
+    const/4 v14, 0x1
 
-    :cond_14
-    add-int/lit8 v13, v12, 0x1
+    add-int/lit8 v13, v11, -0x1
+
+    invoke-static {v8, v15}, Ljava/lang/Math;->max(II)I
+
+    move-result v15
+
+    invoke-static {v8, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v16
+
+    move v3, v14
+
+    :goto_1b
+    move/from16 v0, v16
+
+    if-ge v13, v0, :cond_81
+
+    :cond_11
+    add-int/lit8 v16, v13, 0x1
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_12
 
     const-string v3, "DataAnalysis"
 
     new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v16, "k="
+    const-string v17, "k="
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
     invoke-direct {v14, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    const-string v14, ",start="
+    const-string v17, ",start="
 
-    invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v17
 
-    move-result-object v12
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v14
+
+    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v3, v14}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_12
+    sub-int v3, v11, v16
+
+    add-int/lit8 v3, v3, 0x1
+
+    const/16 v14, 0xf
+
+    if-lt v3, v14, :cond_83
+
+    const/4 v3, 0x5
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    invoke-static {v0, v1, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    :goto_1c
+    const/4 v3, 0x1
+
+    :goto_1d
+    if-ge v13, v15, :cond_84
+
+    :cond_13
+    add-int/lit8 v14, v13, 0x1
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_14
+
+    const-string v3, "DataAnalysis"
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    const-string v17, "k="
+
+    move-object/from16 v0, v17
+
+    invoke-direct {v15, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v15, ",start="
+
+    invoke-virtual {v13, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
-    const-string v12, ",startNREM="
+    const-string v13, ",startNREM="
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
-    invoke-virtual {v11, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v0, v16
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
@@ -1445,61 +1478,61 @@
 
     invoke-static {v3, v11}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_15
-    add-int/lit8 v3, v15, -0x1
+    :cond_14
+    add-int/lit8 v3, v16, -0x1
 
     const/4 v11, 0x4
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v13, v3, v11}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+    invoke-static {v0, v14, v3, v11}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
     const/4 v3, 0x0
 
     sget-boolean v11, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v11, :cond_16
+    if-eqz v11, :cond_15
 
     const-string v11, "sleepAnalyze"
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v14, "prev stop at "
+    const-string v15, "prev stop at "
 
-    invoke-direct {v12, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-static {v11, v12}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v11, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_16
-    add-int/lit8 v12, v9, 0x1
+    :cond_15
+    add-int/lit8 v13, v9, 0x1
 
     move v11, v9
 
     move v9, v3
 
     :goto_1e
-    if-le v12, v8, :cond_83
+    if-le v13, v7, :cond_86
 
     :goto_1f
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_96
 
     const-string v3, "sleepAnalyze"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v12, "now stop at "
+    const-string v13, "now stop at "
 
-    invoke-direct {v9, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1511,64 +1544,59 @@
 
     invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_17
-    move v3, v10
+    move v3, v8
 
-    move v9, v13
-
-    move/from16 v34, v7
-
-    move v7, v8
+    move v9, v14
 
     move v8, v11
 
-    move/from16 v11, v34
+    move v11, v12
 
     :goto_20
     const/4 v12, 0x0
 
-    if-ge v9, v8, :cond_18
+    if-ge v9, v8, :cond_16
 
     const/4 v12, 0x1
 
-    :cond_18
-    const-string v10, "sleepM"
+    :cond_16
+    const-string v13, "sleepM"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v14, ">>>>>>analyze: "
+    const-string v15, ">>>>>>analyze: "
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    const-string v14, "->"
+    const-string v15, "->"
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-static {v10, v13}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v10, 0x1
+    const/4 v13, 0x1
 
-    if-ne v10, v4, :cond_88
+    if-ne v13, v4, :cond_8b
 
     move v5, v8
 
-    :cond_19
+    :cond_17
     :goto_21
-    if-eqz v4, :cond_92
+    if-eqz v4, :cond_90
 
     const-string v3, "sleepM"
 
@@ -1598,7 +1626,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v12, :cond_89
+    if-nez v12, :cond_8c
 
     const/16 v3, 0x64
 
@@ -1606,11 +1634,11 @@
 
     invoke-static {v0, v6, v5, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    :cond_1a
+    :cond_18
     :goto_22
-    if-eqz v12, :cond_1c
+    if-eqz v12, :cond_1a
 
-    if-ge v9, v6, :cond_1b
+    if-ge v9, v6, :cond_19
 
     add-int/lit8 v3, v6, -0x1
 
@@ -1618,8 +1646,8 @@
 
     invoke-static {v0, v9, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    :cond_1b
-    if-le v8, v5, :cond_1c
+    :cond_19
+    if-le v8, v5, :cond_1a
 
     add-int/lit8 v3, v5, 0x1
 
@@ -1627,17 +1655,17 @@
 
     invoke-static {v0, v3, v8}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    :cond_1c
-    if-eqz v12, :cond_91
+    :cond_1a
+    if-eqz v12, :cond_95
 
     move v4, v6
 
     :goto_23
     move/from16 v0, p1
 
-    if-ge v4, v0, :cond_8b
+    if-ge v4, v0, :cond_8e
 
-    :cond_1d
+    :cond_1b
     add-int/lit8 v4, v4, 0x1
 
     move v7, v5
@@ -1645,9 +1673,9 @@
     :goto_24
     move/from16 v0, p2
 
-    if-le v7, v0, :cond_8c
+    if-le v7, v0, :cond_8f
 
-    :cond_1e
+    :cond_1c
     add-int/lit8 v3, v7, -0x1
 
     :goto_25
@@ -1681,39 +1709,41 @@
 
     move v7, v3
 
-    move/from16 v34, v4
+    move/from16 v36, v4
 
     move v4, v6
 
-    move/from16 v6, v34
+    move/from16 v6, v36
 
     :goto_26
+    const/4 v9, 0x0
+
     const/4 v8, 0x0
 
-    move v9, v4
+    move v13, v4
 
     :goto_27
-    if-le v9, v5, :cond_8d
+    if-le v13, v5, :cond_91
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1d
 
     const-string v3, "DataAnalyze"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "total="
+    const-string v13, "total="
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    const-string v10, ",sleep="
+    const-string v13, ",sleep="
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -1721,9 +1751,9 @@
 
     move-result-object v9
 
-    const-string v10, "->"
+    const-string v13, "->"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -1731,23 +1761,23 @@
 
     move-result-object v9
 
-    const-string v10, ","
+    const-string v13, ","
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    int-to-float v10, v8
+    int-to-float v13, v8
 
-    sub-int v13, v5, v4
+    sub-int v14, v5, v4
 
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v14, v14, 0x1
 
-    int-to-float v13, v13
+    int-to-float v14, v14
 
-    div-float/2addr v10, v13
+    div-float/2addr v13, v14
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -1757,54 +1787,52 @@
 
     invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1f
-    if-ge v4, v5, :cond_20
+    :cond_1d
+    if-ge v4, v5, :cond_1e
 
     move v9, v6
 
     :goto_28
-    if-lt v9, v4, :cond_8f
+    if-lt v9, v4, :cond_93
 
     add-int/lit8 v3, v5, 0x1
 
     move v9, v3
 
     :goto_29
-    if-le v9, v7, :cond_90
+    if-le v9, v7, :cond_94
 
-    :cond_20
+    :cond_1e
     new-instance v3, Lcn/com/smartdevices/bracelet/analysis/b;
 
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v9
-
-    const/4 v10, 0x0
 
     invoke-direct/range {v3 .. v12}, Lcn/com/smartdevices/bracelet/analysis/b;-><init>(IIIIIIIIZ)V
 
     return-object v3
 
-    :cond_21
+    :cond_1f
     const/16 v5, 0xb40
 
     goto/16 :goto_0
 
-    :cond_22
+    :cond_20
     const/4 v3, 0x0
 
     goto/16 :goto_1
 
-    :cond_23
-    move-object/from16 v0, p6
+    :cond_21
+    move-object/from16 v0, p8
 
     iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    add-int v3, v3, p7
+    add-int v3, v3, p9
 
     goto/16 :goto_1
 
-    :cond_24
+    :cond_22
     invoke-virtual/range {p0 .. p0}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -1813,19 +1841,19 @@
 
     goto/16 :goto_2
 
-    :cond_25
-    move-object/from16 v0, p6
+    :cond_23
+    move-object/from16 v0, p8
 
     iget v5, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    add-int v5, v5, p7
+    add-int v5, v5, p9
 
     goto/16 :goto_2
 
-    :cond_26
+    :cond_24
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -1839,13 +1867,13 @@
 
     if-ne v3, v8, :cond_2
 
-    add-int/lit8 v3, v13, -0x1
+    add-int/lit8 v3, v14, -0x1
 
-    move v13, v3
+    move v14, v3
 
     goto/16 :goto_4
 
-    :cond_27
+    :cond_25
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1856,50 +1884,54 @@
 
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
 
-    move-result v15
+    move-result v16
 
-    if-lez v15, :cond_28
+    if-lez v16, :cond_26
 
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
 
-    move-result v15
+    move-result v16
 
     const/16 v17, 0x3c
 
-    move/from16 v0, v17
+    move/from16 v0, v16
 
-    if-lt v15, v0, :cond_28
+    move/from16 v1, v17
 
-    add-int/lit8 v3, v12, 0x1
+    if-lt v0, v1, :cond_26
+
+    add-int/lit8 v3, v11, 0x1
 
     move v9, v7
 
     :goto_2a
     add-int/lit8 v7, v7, 0x1
 
-    move v12, v3
+    move v11, v3
 
     goto/16 :goto_5
 
-    :cond_28
+    :cond_26
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
 
     move-result v3
 
-    const/4 v15, 0x6
+    const/16 v16, 0x6
 
-    if-lt v3, v15, :cond_29
+    move/from16 v0, v16
 
-    add-int/lit8 v3, v12, 0x1
+    if-lt v3, v0, :cond_27
+
+    add-int/lit8 v3, v11, 0x1
 
     goto :goto_2a
 
-    :cond_29
+    :cond_27
     const/16 v3, 0x9
 
-    if-le v12, v3, :cond_2a
+    if-le v11, v3, :cond_28
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v3, v3, -0x1
 
@@ -1907,7 +1939,7 @@
 
     invoke-static {v0, v8, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v8, v7, -0x1
 
@@ -1924,20 +1956,20 @@
     :goto_2b
     const/4 v9, 0x0
 
-    move/from16 v34, v3
+    move/from16 v36, v3
 
     move v3, v9
 
     move v9, v8
 
-    move/from16 v8, v34
+    move/from16 v8, v36
 
     goto :goto_2a
 
-    :cond_2a
-    if-lez v9, :cond_a4
+    :cond_28
+    if-lez v9, :cond_a7
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v3, v3, -0x1
 
@@ -1945,7 +1977,7 @@
 
     invoke-static {v0, v8, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v8, v7, -0x1
 
@@ -1961,10 +1993,10 @@
 
     goto :goto_2b
 
-    :cond_2b
-    if-lez v9, :cond_a3
+    :cond_29
+    if-lez v9, :cond_a6
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v3, v3, -0x1
 
@@ -1972,7 +2004,7 @@
 
     invoke-static {v0, v8, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->b(Ljava/util/ArrayList;II)V
 
-    sub-int v3, v7, v12
+    sub-int v3, v7, v11
 
     add-int/lit8 v8, v7, -0x1
 
@@ -1984,7 +2016,7 @@
 
     goto/16 :goto_6
 
-    :cond_2c
+    :cond_2a
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1995,30 +2027,32 @@
 
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
 
-    move-result v12
+    move-result v11
 
-    if-lez v12, :cond_2d
+    if-lez v11, :cond_2b
 
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
 
-    move-result v12
+    move-result v11
 
-    const/16 v15, 0x3c
+    const/16 v16, 0x3c
 
-    if-lt v12, v15, :cond_2d
+    move/from16 v0, v16
+
+    if-lt v11, v0, :cond_2b
 
     const/16 v3, 0xa
 
     goto/16 :goto_8
 
-    :cond_2d
+    :cond_2b
     invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
 
     move-result v3
 
-    const/4 v12, 0x6
+    const/4 v11, 0x6
 
-    if-lt v3, v12, :cond_2e
+    if-lt v3, v11, :cond_2c
 
     add-int/lit8 v3, v7, 0x1
 
@@ -2035,12 +2069,12 @@
 
     goto/16 :goto_7
 
-    :cond_2e
+    :cond_2c
     const/4 v3, 0x0
 
     goto :goto_2c
 
-    :cond_2f
+    :cond_2d
     add-int/lit8 v3, v9, -0x1
 
     move-object/from16 v0, p0
@@ -2069,71 +2103,76 @@
 
     const/4 v8, 0x5
 
-    if-eq v7, v8, :cond_31
+    if-eq v7, v8, :cond_2f
 
     const/4 v8, 0x4
 
-    if-eq v7, v8, :cond_31
+    if-eq v7, v8, :cond_2f
 
     const/4 v8, 0x5
 
-    if-eq v3, v8, :cond_30
+    if-eq v3, v8, :cond_2e
 
     const/4 v8, 0x4
 
-    if-ne v3, v8, :cond_31
+    if-ne v3, v8, :cond_2f
 
-    :cond_30
-    move v12, v9
+    :cond_2e
+    move v3, v9
+
+    :goto_2d
+    add-int/lit8 v9, v9, 0x1
+
+    move v11, v3
 
     goto/16 :goto_9
 
-    :cond_31
+    :cond_2f
     const/4 v8, 0x5
 
-    if-eq v7, v8, :cond_32
+    if-eq v7, v8, :cond_30
 
     const/4 v8, 0x4
 
-    if-ne v7, v8, :cond_6
+    if-ne v7, v8, :cond_3d
 
-    :cond_32
+    :cond_30
     const/4 v7, 0x4
 
-    if-eq v3, v7, :cond_6
+    if-eq v3, v7, :cond_3d
 
     const/4 v7, 0x5
 
-    if-eq v3, v7, :cond_6
+    if-eq v3, v7, :cond_3d
 
     const/4 v7, 0x0
 
-    move v8, v12
+    move v8, v11
 
-    :goto_2d
+    :goto_2e
     add-int/lit8 v3, v9, -0x1
 
-    if-lt v8, v3, :cond_38
+    if-lt v8, v3, :cond_36
 
     move v3, v7
 
-    :cond_33
+    :cond_31
     sub-int v3, v8, v3
 
     add-int/lit8 v3, v3, 0x1
 
-    if-gez v3, :cond_a2
+    if-gez v3, :cond_a5
 
     const/4 v3, 0x0
 
     move v7, v3
 
-    :goto_2e
+    :goto_2f
     add-int/lit8 v3, v7, -0x1
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v12, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-static {v0, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
     add-int/lit8 v3, v9, -0x1
 
@@ -2141,44 +2180,44 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    const/16 v13, 0x78
+    const/16 v14, 0x78
 
-    if-lt v8, v13, :cond_35
+    if-lt v8, v14, :cond_33
 
     const/4 v8, 0x0
 
-    move v13, v3
+    move v14, v3
 
-    :goto_2f
-    if-ge v13, v7, :cond_3a
+    :goto_30
+    if-ge v14, v7, :cond_38
 
     move v3, v8
 
-    :cond_34
-    add-int/2addr v3, v13
+    :cond_32
+    add-int/2addr v3, v14
 
     add-int/lit8 v3, v3, -0x1
 
     add-int/lit8 v8, v3, 0x1
 
-    add-int/lit8 v13, v9, -0x1
+    add-int/lit8 v14, v9, -0x1
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v8, v13}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-static {v0, v8, v14}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    :cond_35
-    move v13, v3
+    :cond_33
+    move v14, v3
 
-    sub-int v3, v13, v7
+    sub-int v3, v14, v7
 
     const/16 v8, 0xf
 
-    if-lt v3, v8, :cond_3e
+    if-lt v3, v8, :cond_3c
 
-    new-instance v15, Ljava/util/HashMap;
+    new-instance v16, Ljava/util/HashMap;
 
-    invoke-direct {v15}, Ljava/util/HashMap;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/util/HashMap;-><init>()V
 
     const-string v3, "start"
 
@@ -2186,15 +2225,19 @@
 
     move-result-object v8
 
-    invoke-virtual {v15, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v3, "stop"
 
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
-    invoke-virtual {v15, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v3, "reset"
 
@@ -2204,16 +2247,18 @@
 
     move-result-object v8
 
-    invoke-virtual {v15, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
 
-    move v8, v12
+    invoke-virtual {v0, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_30
+    move v8, v11
+
+    :goto_31
     move/from16 v0, p1
 
-    if-ge v8, v0, :cond_3c
+    if-ge v8, v0, :cond_3a
 
-    :cond_36
+    :cond_34
     const-string v3, "startBed"
 
     add-int/lit8 v8, v8, 0x1
@@ -2222,16 +2267,18 @@
 
     move-result-object v8
 
-    invoke-virtual {v15, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move v8, v9
 
-    :goto_31
+    :goto_32
     move/from16 v0, p2
 
-    if-le v8, v0, :cond_3d
+    if-le v8, v0, :cond_3b
 
-    :cond_37
+    :cond_35
     const-string v3, "stopBed"
 
     add-int/lit8 v8, v8, -0x1
@@ -2240,23 +2287,29 @@
 
     move-result-object v8
 
-    invoke-virtual {v15, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
 
-    move-object/from16 v0, v24
+    invoke-virtual {v0, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_3d
 
     const-string v3, "sleepAnalyze"
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    const-string v15, "item:"
+    const-string v16, "item:"
 
-    invoke-direct {v8, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v16
+
+    invoke-direct {v8, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2268,7 +2321,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -2278,9 +2331,11 @@
 
     invoke-static {v3, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_9
+    move v3, v11
 
-    :cond_38
+    goto/16 :goto_2d
+
+    :cond_36
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2293,34 +2348,34 @@
 
     move-result v3
 
-    const/4 v13, 0x6
+    const/4 v14, 0x6
 
-    if-ge v3, v13, :cond_39
+    if-ge v3, v14, :cond_37
 
     add-int/lit8 v3, v7, 0x1
 
     const/4 v7, 0x5
 
-    if-ge v3, v7, :cond_33
+    if-ge v3, v7, :cond_31
 
-    :goto_32
+    :goto_33
     add-int/lit8 v7, v8, 0x1
 
     move v8, v7
 
     move v7, v3
 
-    goto/16 :goto_2d
+    goto/16 :goto_2e
 
-    :cond_39
+    :cond_37
     const/4 v3, 0x0
 
-    goto :goto_32
+    goto :goto_33
 
-    :cond_3a
+    :cond_38
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2330,70 +2385,33 @@
 
     move-result v3
 
-    const/4 v15, 0x6
+    const/16 v16, 0x6
 
-    if-ge v3, v15, :cond_3b
+    move/from16 v0, v16
+
+    if-ge v3, v0, :cond_39
 
     add-int/lit8 v3, v8, 0x1
 
     const/4 v8, 0x5
 
-    if-ge v3, v8, :cond_34
+    if-ge v3, v8, :cond_32
 
-    :goto_33
-    add-int/lit8 v8, v13, -0x1
+    :goto_34
+    add-int/lit8 v8, v14, -0x1
 
-    move v13, v8
-
-    move v8, v3
-
-    goto/16 :goto_2f
-
-    :cond_3b
-    const/4 v3, 0x0
-
-    goto :goto_33
-
-    :cond_3c
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
-
-    move-result v3
-
-    if-gtz v3, :cond_36
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/16 v17, 0x7e
-
-    move/from16 v0, v17
-
-    if-eq v3, v0, :cond_36
-
-    add-int/lit8 v3, v8, -0x1
+    move v14, v8
 
     move v8, v3
 
     goto/16 :goto_30
 
-    :cond_3d
+    :cond_39
+    const/4 v3, 0x0
+
+    goto :goto_34
+
+    :cond_3a
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2406,7 +2424,7 @@
 
     move-result v3
 
-    if-gtz v3, :cond_37
+    if-gtz v3, :cond_34
 
     move-object/from16 v0, p0
 
@@ -2424,92 +2442,140 @@
 
     move/from16 v0, v17
 
-    if-eq v3, v0, :cond_37
+    if-eq v3, v0, :cond_34
 
-    add-int/lit8 v3, v8, 0x1
+    add-int/lit8 v3, v8, -0x1
 
     move v8, v3
 
     goto/16 :goto_31
 
-    :cond_3e
-    sub-int v3, v13, v7
+    :cond_3b
+    move-object/from16 v0, p0
 
-    if-ltz v3, :cond_6
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
+
+    move-result v3
+
+    if-gtz v3, :cond_35
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v7, v13}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    goto/16 :goto_9
+    move-result-object v3
 
-    :cond_3f
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    const/16 v17, 0x7e
+
+    move/from16 v0, v17
+
+    if-eq v3, v0, :cond_35
+
+    add-int/lit8 v3, v8, 0x1
+
+    move v8, v3
+
+    goto/16 :goto_32
+
+    :cond_3c
+    sub-int v3, v14, v7
+
+    if-ltz v3, :cond_3d
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v7, v14}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+
+    :cond_3d
+    move v3, v11
+
+    goto/16 :goto_2d
+
+    :cond_3e
     const/4 v3, 0x2
 
     move v8, v3
 
     goto/16 :goto_b
 
-    :cond_40
+    :cond_3f
     const/4 v11, 0x0
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/4 v3, 0x0
 
-    :goto_34
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
+    move v12, v11
+
+    move v11, v9
+
+    move v9, v3
+
+    :goto_35
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-lt v10, v3, :cond_45
+    if-lt v9, v3, :cond_44
 
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_40
 
     const-string v3, "sleepAnalyze"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v14, "maxSec="
+    const-string v15, "maxSec="
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    const-string v14, ",maxS="
+    const-string v15, ",maxS="
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v14}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_41
-    move-object/from16 v0, v24
+    :cond_40
+    move-object/from16 v0, v26
 
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v13, "start"
+    const-string v14, "start"
 
-    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2519,157 +2585,15 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v14
+    move-result v15
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v13, "stop"
-
-    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v23
-
-    move v13, v14
-
-    :goto_35
-    move/from16 v0, v23
-
-    if-le v13, v0, :cond_46
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_42
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    const-string v27, "maxSec:"
-
-    move-object/from16 v0, v27
-
-    invoke-direct {v13, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string v27, "->"
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    move/from16 v0, v23
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string v27, ",nrem="
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_42
-    int-to-double v0, v10
-
-    move-wide/from16 v27, v0
-
-    int-to-double v0, v9
-
-    move-wide/from16 v29, v0
-
-    const-wide v31, 0x3fef5c28f5c28f5cL
-
-    mul-double v29, v29, v31
-
-    cmpl-double v3, v27, v29
-
-    if-gez v3, :cond_43
-
-    int-to-double v0, v10
-
-    move-wide/from16 v27, v0
-
-    int-to-double v0, v9
-
-    move-wide/from16 v29, v0
-
-    const-wide v31, 0x3fe4cccccccccccdL
-
-    mul-double v29, v29, v31
-
-    cmpg-double v3, v27, v29
-
-    if-gtz v3, :cond_44
-
-    :cond_43
-    if-gtz v9, :cond_47
-
-    :cond_44
-    if-lez v9, :cond_49
-
-    mul-int/lit8 v3, v10, 0x64
-
-    div-int/2addr v3, v9
-
-    :goto_36
-    move v8, v3
-
-    goto/16 :goto_d
-
-    :cond_45
-    move-object/from16 v0, v24
-
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
-
-    const-string v13, "start"
-
-    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v13
 
     const-string v14, "stop"
 
@@ -2683,73 +2607,114 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v17
 
-    sub-int/2addr v3, v13
+    move v14, v15
 
-    add-int/lit8 v3, v3, 0x1
+    :goto_36
+    move/from16 v0, v17
 
-    if-le v3, v9, :cond_9f
+    if-le v14, v0, :cond_46
 
-    move/from16 v0, v25
-
-    if-ge v13, v0, :cond_9f
-
-    move v9, v10
-
-    :goto_37
-    add-int/lit8 v10, v10, 0x1
-
-    move v11, v9
-
-    move v9, v3
-
-    goto/16 :goto_34
-
-    :cond_46
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/16 v27, 0x5
-
-    move/from16 v0, v27
-
-    if-ne v3, v0, :cond_9e
-
-    add-int/lit8 v3, v10, 0x1
-
-    :goto_38
-    add-int/lit8 v10, v13, 0x1
-
-    move v13, v10
-
-    move v10, v3
-
-    goto/16 :goto_35
-
-    :cond_47
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_41
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    const-string v25, "maxSec:"
+
+    move-object/from16 v0, v25
+
+    invoke-direct {v14, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string v25, "->"
+
+    move-object/from16 v0, v25
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    move/from16 v0, v17
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string v25, ",nrem="
+
+    move-object/from16 v0, v25
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v3, v14}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_41
+    int-to-double v0, v9
+
+    move-wide/from16 v30, v0
+
+    int-to-double v0, v11
+
+    move-wide/from16 v32, v0
+
+    const-wide v34, 0x3fef5c28f5c28f5cL
+
+    mul-double v32, v32, v34
+
+    cmpl-double v3, v30, v32
+
+    if-gez v3, :cond_42
+
+    int-to-double v0, v9
+
+    move-wide/from16 v30, v0
+
+    int-to-double v0, v11
+
+    move-wide/from16 v32, v0
+
+    const-wide v34, 0x3fe4cccccccccccdL
+
+    mul-double v32, v32, v34
+
+    cmpg-double v3, v30, v32
+
+    if-gtz v3, :cond_47
+
+    :cond_42
+    if-lez v11, :cond_47
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_43
 
     const-string v3, "sleepAnalyze"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "del MAX "
+    const-string v11, "del MAX "
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -2759,54 +2724,49 @@
 
     invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_48
+    :cond_43
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v17
 
-    invoke-static {v0, v14, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-static {v0, v15, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    add-int/lit8 v3, v15, 0x1
+    add-int/lit8 v3, v16, 0x1
 
-    move v15, v3
+    move/from16 v16, v3
 
     goto/16 :goto_c
 
-    :cond_49
-    const/16 v3, 0x55
+    :cond_44
+    move-object/from16 v0, v26
 
-    goto :goto_36
-
-    :cond_4a
-    move-object/from16 v0, v24
-
-    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v9, "start"
+    const-string v14, "start"
 
-    invoke-virtual {v3, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v14
 
-    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v14
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v14
 
-    const-string v9, "stop"
+    const-string v15, "stop"
 
-    invoke-virtual {v3, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2816,383 +2776,33 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v28
-
-    sub-int v3, v28, v23
-
-    add-int/lit8 v29, v3, 0x1
-
-    const/16 v3, 0xf
-
-    move/from16 v0, v29
-
-    if-ge v0, v3, :cond_4d
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_4b
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v10, "del "
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_4b
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_4c
-    :goto_39
-    add-int/lit8 v3, v14, 0x1
-
-    move v14, v3
-
-    goto/16 :goto_e
-
-    :cond_4d
-    move-object/from16 v0, v24
-
-    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v9, "refmode"
-
-    const/4 v10, 0x0
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    invoke-virtual {v3, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v10, "hasRef=0"
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v10, ",refMode=0"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v23 .. v23}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v10, "->"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    move/from16 v0, v28
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ",hasRef=0"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ",refMode=0"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v3, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v15, 0x0
-
-    const/4 v9, 0x0
-
-    move/from16 v10, v23
-
-    :goto_3a
-    move/from16 v0, v28
-
-    if-le v10, v0, :cond_52
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_4e
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    const-string v11, "Sec"
-
-    invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ":"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    move/from16 v0, v23
-
-    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, "->"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    move/from16 v0, v28
-
-    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " nrem="
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " quality="
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    mul-int/lit8 v11, v9, 0x64
-
-    div-int v11, v11, v29
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ",activeNum="
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v3, v10}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_4e
-    const/16 v3, 0x55
-
-    if-ge v8, v3, :cond_54
-
-    const/16 v3, 0x46
-
-    :goto_3b
-    mul-int/lit8 v9, v9, 0x64
-
-    div-int v30, v9, v29
-
-    const/16 v9, 0x64
-
-    move/from16 v0, v29
-
-    if-lt v0, v9, :cond_4f
-
-    move/from16 v0, v30
-
-    if-lt v0, v3, :cond_50
-
-    const/16 v9, 0x62
-
-    move/from16 v0, v30
-
-    if-ge v0, v9, :cond_50
-
-    :cond_4f
-    const/16 v9, 0x64
-
-    move/from16 v0, v29
-
-    if-ge v0, v9, :cond_55
-
-    move/from16 v0, v30
-
-    if-lt v0, v3, :cond_50
-
-    const/16 v3, 0x62
-
-    move/from16 v0, v30
-
-    if-lt v0, v3, :cond_55
-
-    :cond_50
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
-
     move-result v3
 
-    add-int/lit8 v3, v3, -0x1
+    sub-int/2addr v3, v14
 
-    if-eq v14, v3, :cond_55
+    add-int/lit8 v3, v3, 0x1
 
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    if-le v3, v11, :cond_45
 
-    if-eqz v3, :cond_51
+    move/from16 v0, v28
 
-    const-string v3, "sleepAnalyze"
+    if-ge v14, v0, :cond_45
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    move v11, v3
 
-    const-string v10, "del "
+    move v12, v9
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_51
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_39
-
-    :cond_52
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/4 v11, 0x5
-
-    if-ne v3, v11, :cond_53
-
+    :cond_45
     add-int/lit8 v3, v9, 0x1
 
     move v9, v3
 
-    :cond_53
+    goto/16 :goto_35
+
+    :cond_46
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
-
-    move-result v3
-
-    const/16 v11, 0xf
-
-    if-lt v3, v11, :cond_9b
-
-    add-int/lit8 v3, v15, 0x1
-
-    :goto_3c
-    add-int/lit8 v10, v10, 0x1
-
-    move v15, v3
-
-    goto/16 :goto_3a
-
-    :cond_54
-    add-int/lit8 v3, v8, -0xf
-
-    goto :goto_3b
-
-    :cond_55
-    new-instance v11, Ljava/util/ArrayList;
-
-    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
-
-    add-int/lit8 v9, v23, 0x1
-
-    move/from16 v10, v23
-
-    :goto_3d
-    move/from16 v0, v28
-
-    if-le v9, v0, :cond_5d
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3202,839 +2812,42 @@
 
     move-result v3
 
-    const/4 v9, 0x5
+    const/16 v25, 0x5
 
-    if-ne v3, v9, :cond_56
+    move/from16 v0, v25
 
-    add-int/lit8 v9, v28, 0x1
+    if-ne v3, v0, :cond_a2
 
-    sub-int/2addr v9, v10
+    add-int/lit8 v3, v9, 0x1
 
-    const/16 v12, 0xa
+    :goto_37
+    add-int/lit8 v9, v14, 0x1
 
-    if-ge v9, v12, :cond_56
-
-    const/4 v3, 0x4
-
-    const/4 v9, 0x4
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v28
-
-    invoke-static {v0, v10, v1, v9}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    :cond_56
-    new-instance v9, Ljava/util/HashMap;
-
-    invoke-direct {v9}, Ljava/util/HashMap;-><init>()V
-
-    const-string v12, "start"
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v12, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "stop"
-
-    invoke-static/range {v28 .. v28}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    invoke-virtual {v9, v10, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "mode"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v9, v10, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v11, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const/4 v9, 0x0
-
-    const/4 v3, 0x0
-
-    move v10, v3
-
-    :goto_3e
-    invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    if-lt v10, v3, :cond_5f
-
-    new-instance v31, Ljava/util/ArrayList;
-
-    invoke-direct/range {v31 .. v31}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v11, 0x0
-
-    const/4 v10, 0x0
-
-    add-int/lit8 v12, v23, 0x1
-
-    move/from16 v13, v23
-
-    :goto_3f
-    move/from16 v0, v28
-
-    if-le v12, v0, :cond_63
-
-    new-instance v12, Ljava/util/HashMap;
-
-    invoke-direct {v12}, Ljava/util/HashMap;-><init>()V
-
-    const-string v3, "start"
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v32
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v12, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "stop"
-
-    invoke-static/range {v28 .. v28}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v32
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v12, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v32, "mode"
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v12, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/4 v12, 0x5
-
-    if-ne v3, v12, :cond_57
-
-    add-int/lit8 v11, v11, 0x1
-
-    sub-int v3, v28, v13
-
-    add-int/lit8 v3, v3, 0x1
-
-    if-le v3, v10, :cond_57
-
-    sub-int v3, v28, v13
-
-    add-int/lit8 v10, v3, 0x1
-
-    :cond_57
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_58
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "total="
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->size()I
-
-    move-result v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ",maxnrem="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ",nremNum="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ",size="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move/from16 v0, v29
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ",quality="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move/from16 v0, v30
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, ",maxnrem2="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v3, v10}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_58
-    invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    const/4 v10, 0x1
-
-    if-le v3, v10, :cond_5c
-
-    const/16 v3, 0x96
-
-    if-gt v9, v3, :cond_5c
-
-    const/16 v3, 0x78
-
-    if-le v9, v3, :cond_59
-
-    const/4 v3, 0x1
-
-    if-le v11, v3, :cond_5c
-
-    :cond_59
-    const/4 v3, 0x1
-
-    if-gt v11, v3, :cond_5a
-
-    const/16 v3, 0x78
-
-    move/from16 v0, v29
-
-    if-lt v0, v3, :cond_5a
-
-    const/16 v3, 0x5f
-
-    move/from16 v0, v30
-
-    if-gt v0, v3, :cond_5c
-
-    :cond_5a
-    div-int/lit8 v3, v29, 0x14
-
-    if-le v11, v3, :cond_5b
-
-    const/16 v3, 0x3c
-
-    move/from16 v0, v29
-
-    if-ge v0, v3, :cond_5c
-
-    :cond_5b
-    mul-int/lit8 v3, v15, 0x64
-
-    div-int v3, v3, v29
-
-    const/16 v9, 0x28
-
-    if-ge v3, v9, :cond_5c
-
-    mul-int/lit8 v3, v15, 0x64
-
-    div-int v3, v3, v29
-
-    const/4 v9, 0x1
-
-    if-gt v3, v9, :cond_4c
-
-    const/16 v3, 0x3c
-
-    move/from16 v0, v29
-
-    if-lt v0, v3, :cond_4c
-
-    :cond_5c
-    invoke-virtual/range {v24 .. v24}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    if-ne v14, v3, :cond_64
-
-    const/16 v3, 0x78
-
-    move/from16 v0, v29
-
-    if-ge v0, v3, :cond_64
-
-    const/16 v3, 0x3c
-
-    move/from16 v0, v30
-
-    if-le v0, v3, :cond_64
-
-    move/from16 v0, v23
-
-    move/from16 v1, v25
-
-    if-ge v0, v1, :cond_64
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_4c
-
-    const-string v3, "sleepAnalyze"
-
-    const-string v9, "not del last"
-
-    invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_39
-
-    :cond_5d
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v12
-
-    add-int/lit8 v3, v9, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    if-eq v12, v3, :cond_9a
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/4 v12, 0x5
-
-    if-ne v3, v12, :cond_5e
-
-    sub-int v12, v9, v10
-
-    const/16 v13, 0xa
-
-    if-ge v12, v13, :cond_5e
-
-    const/4 v3, 0x4
-
-    add-int/lit8 v12, v9, -0x1
-
-    const/4 v13, 0x4
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v10, v12, v13}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    :cond_5e
-    new-instance v12, Ljava/util/HashMap;
-
-    invoke-direct {v12}, Ljava/util/HashMap;-><init>()V
-
-    const-string v13, "start"
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    invoke-virtual {v12, v13, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "stop"
-
-    add-int/lit8 v13, v9, -0x1
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v10, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "mode"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v12, v10, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v11, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move v3, v9
-
-    :goto_40
-    add-int/lit8 v9, v9, 0x1
-
-    move v10, v3
-
-    goto/16 :goto_3d
-
-    :cond_5f
-    invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v12, "start"
-
-    invoke-virtual {v3, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v12
-
-    invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v13, "stop"
-
-    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v13
-
-    invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v31, "mode"
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v31
-
-    sub-int v3, v13, v12
-
-    add-int/lit8 v3, v3, 0x1
-
-    const/16 v32, 0x7
-
-    move/from16 v0, v31
-
-    move/from16 v1, v32
-
-    if-eq v0, v1, :cond_62
-
-    const/16 v32, 0x5
-
-    move/from16 v0, v31
-
-    move/from16 v1, v32
-
-    if-ne v0, v1, :cond_60
-
-    if-le v3, v9, :cond_60
+    move v14, v9
 
     move v9, v3
 
-    :cond_60
-    const/16 v32, 0x4
+    goto/16 :goto_36
 
-    move/from16 v0, v31
+    :cond_47
+    if-lez v11, :cond_48
 
-    move/from16 v1, v32
+    mul-int/lit8 v3, v9, 0x64
 
-    if-eq v0, v1, :cond_61
+    div-int/2addr v3, v11
 
-    const/16 v32, 0x5
+    :goto_38
+    move v8, v3
 
-    move/from16 v0, v31
+    goto/16 :goto_d
 
-    move/from16 v1, v32
+    :cond_48
+    const/16 v3, 0x55
 
-    if-ne v0, v1, :cond_62
+    goto :goto_38
 
-    :cond_61
-    const/16 v32, 0x4
-
-    move/from16 v0, v31
-
-    move/from16 v1, v32
-
-    if-ne v0, v1, :cond_62
-
-    const/16 v31, 0xa
-
-    move/from16 v0, v31
-
-    if-ge v3, v0, :cond_62
-
-    if-lez v10, :cond_62
-
-    invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    if-ge v10, v3, :cond_62
-
-    add-int/lit8 v3, v10, -0x1
-
-    invoke-virtual {v11, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v31, "mode"
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v31
-
-    add-int/lit8 v3, v10, 0x1
-
-    invoke-virtual {v11, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v32, "mode"
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    const/16 v32, 0x5
-
-    move/from16 v0, v31
-
-    move/from16 v1, v32
-
-    if-ne v0, v1, :cond_62
-
-    const/16 v31, 0x5
-
-    move/from16 v0, v31
-
-    if-ne v3, v0, :cond_62
-
-    const/4 v3, 0x5
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v12, v13, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    :cond_62
-    move v3, v9
-
-    add-int/lit8 v9, v10, 0x1
-
-    move v10, v9
-
-    move v9, v3
-
-    goto/16 :goto_3e
-
-    :cond_63
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v32
-
-    add-int/lit8 v3, v12, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    move/from16 v0, v32
-
-    if-eq v0, v3, :cond_9d
-
-    new-instance v32, Ljava/util/HashMap;
-
-    invoke-direct/range {v32 .. v32}, Ljava/util/HashMap;-><init>()V
-
-    const-string v3, "start"
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v33
-
-    move-object/from16 v0, v32
-
-    move-object/from16 v1, v33
-
-    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "stop"
-
-    add-int/lit8 v33, v12, -0x1
-
-    invoke-static/range {v33 .. v33}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v33
-
-    move-object/from16 v0, v32
-
-    move-object/from16 v1, v33
-
-    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v33, "mode"
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v32
-
-    move-object/from16 v1, v33
-
-    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual/range {v31 .. v32}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/16 v32, 0x5
-
-    move/from16 v0, v32
-
-    if-ne v3, v0, :cond_9c
-
-    add-int/lit8 v11, v11, 0x1
-
-    sub-int v3, v12, v13
-
-    if-le v3, v10, :cond_9c
-
-    sub-int v3, v12, v13
-
-    move v10, v11
-
-    :goto_41
-    move v11, v12
-
-    :goto_42
-    add-int/lit8 v12, v12, 0x1
-
-    move v13, v11
-
-    move v11, v10
-
-    move v10, v3
-
-    goto/16 :goto_3f
-
-    :cond_64
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_65
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v10, "del "
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v3, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_65
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_39
-
-    :cond_66
-    move-object/from16 v0, v27
-
-    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v9
-
-    move-object/from16 v0, v24
+    :cond_49
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4042,19 +2855,19 @@
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v10, "start"
+    const-string v11, "start"
 
-    invoke-virtual {v3, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v25
 
     const-string v11, "stop"
 
@@ -4068,26 +2881,1339 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
+    move-result v31
+
+    sub-int v3, v31, v25
+
+    add-int/lit8 v32, v3, 0x1
+
+    const/4 v3, 0x0
+
+    const/16 v11, 0xf
+
+    move/from16 v0, v32
+
+    if-ge v0, v11, :cond_4c
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_4a
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    const-string v12, "del "
+
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v3, v11}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_4a
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v30
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_4b
+    :goto_39
+    add-int/lit8 v3, v9, 0x1
+
+    move v9, v3
+
+    goto/16 :goto_e
+
+    :cond_4c
+    move v11, v3
+
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v12, "refmode"
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    invoke-virtual {v3, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    const-string v13, "hasRef="
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move/from16 v0, v27
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ",refMode="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v3, v12}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v25 .. v25}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v13, "->"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    move/from16 v0, v31
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ",hasRef="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    move/from16 v0, v27
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ",refMode="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v3, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v3, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v11, 0x0
+
+    move/from16 v13, v25
+
+    :goto_3a
+    move/from16 v0, v31
+
+    if-le v13, v0, :cond_51
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_4d
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "Sec"
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, ":"
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    move/from16 v0, v25
+
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, "->"
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    move/from16 v0, v31
+
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, " nrem="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, " quality="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    mul-int/lit8 v14, v11, 0x64
+
+    div-int v14, v14, v32
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, ",activeNum="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_4d
+    const/16 v3, 0x4b
+
+    if-ge v8, v3, :cond_53
+
+    :goto_3b
+    const/16 v3, 0x5c
+
+    if-le v8, v3, :cond_54
+
+    :goto_3c
+    const/16 v3, 0x55
+
+    if-ge v8, v3, :cond_55
+
+    const/16 v3, 0x46
+
+    move v13, v3
+
+    :goto_3d
+    const/16 v3, 0x57
+
+    if-le v8, v3, :cond_56
+
+    :goto_3e
+    mul-int/lit8 v3, v11, 0x64
+
+    div-int v3, v3, v32
+
+    const/16 v11, 0x64
+
+    move/from16 v0, v32
+
+    if-lt v0, v11, :cond_4e
+
+    if-lt v3, v13, :cond_4f
+
+    const/16 v11, 0x62
+
+    if-ge v3, v11, :cond_4f
+
+    :cond_4e
+    const/16 v11, 0x64
+
+    move/from16 v0, v32
+
+    if-ge v0, v11, :cond_57
+
+    if-lt v3, v13, :cond_4f
+
+    const/16 v11, 0x62
+
+    if-lt v3, v11, :cond_57
+
+    :cond_4f
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v11
+
+    add-int/lit8 v11, v11, -0x1
+
+    if-eq v9, v11, :cond_57
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_50
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    const-string v12, "del "
+
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v3, v11}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_50
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v30
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_39
+
+    :cond_51
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
     move-result v3
+
+    const/4 v14, 0x5
+
+    if-ne v3, v14, :cond_52
+
+    add-int/lit8 v3, v11, 0x1
+
+    move v11, v3
+
+    :cond_52
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
+
+    move-result v3
+
+    const/16 v14, 0xf
+
+    if-lt v3, v14, :cond_a1
+
+    add-int/lit8 v3, v12, 0x1
+
+    :goto_3f
+    add-int/lit8 v12, v13, 0x1
+
+    move v13, v12
+
+    move v12, v3
+
+    goto/16 :goto_3a
+
+    :cond_53
+    add-int/lit8 v3, v8, -0x5
+
+    goto/16 :goto_3b
+
+    :cond_54
+    add-int/lit8 v3, v8, 0x5
+
+    goto/16 :goto_3c
+
+    :cond_55
+    add-int/lit8 v3, v8, -0xf
+
+    move v13, v3
+
+    goto :goto_3d
+
+    :cond_56
+    add-int/lit8 v3, v8, 0xa
+
+    goto :goto_3e
+
+    :cond_57
+    move v11, v3
+
+    new-instance v15, Ljava/util/ArrayList;
+
+    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+
+    add-int/lit8 v13, v25, 0x1
+
+    move/from16 v14, v25
+
+    :goto_40
+    move/from16 v0, v31
+
+    if-le v13, v0, :cond_5f
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v10, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-object/from16 v0, v24
+    move-result-object v3
 
-    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    add-int/lit8 v3, v8, -0x1
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    move v8, v3
+    move-result v3
 
-    goto/16 :goto_f
+    const/4 v13, 0x5
+
+    if-ne v3, v13, :cond_58
+
+    add-int/lit8 v13, v31, 0x1
+
+    sub-int/2addr v13, v14
+
+    const/16 v16, 0xa
+
+    move/from16 v0, v16
+
+    if-ge v13, v0, :cond_58
+
+    const/4 v3, 0x4
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v31
+
+    invoke-static {v0, v14, v1, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    :cond_58
+    new-instance v13, Ljava/util/HashMap;
+
+    invoke-direct {v13}, Ljava/util/HashMap;-><init>()V
+
+    const-string v16, "start"
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v14
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v13, v0, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v14, "stop"
+
+    invoke-static/range {v31 .. v31}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v13, v14, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v14, "mode"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v13, v14, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v15, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const/4 v13, 0x0
+
+    const/4 v3, 0x0
+
+    move v14, v13
+
+    move v13, v3
+
+    :goto_41
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lt v13, v3, :cond_61
+
+    new-instance v33, Ljava/util/ArrayList;
+
+    invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v15, 0x0
+
+    const/4 v13, 0x0
+
+    add-int/lit8 v16, v25, 0x1
+
+    move/from16 v17, v25
+
+    :goto_42
+    move/from16 v0, v16
+
+    move/from16 v1, v31
+
+    if-le v0, v1, :cond_66
+
+    new-instance v16, Ljava/util/HashMap;
+
+    invoke-direct/range {v16 .. v16}, Ljava/util/HashMap;-><init>()V
+
+    const-string v3, "start"
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v34
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "stop"
+
+    invoke-static/range {v31 .. v31}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v34
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v34, "mode"
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object/from16 v0, v33
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    const/16 v16, 0x5
+
+    move/from16 v0, v16
+
+    if-ne v3, v0, :cond_59
+
+    add-int/lit8 v15, v15, 0x1
+
+    sub-int v3, v31, v17
+
+    add-int/lit8 v3, v3, 0x1
+
+    if-le v3, v13, :cond_59
+
+    sub-int v3, v31, v17
+
+    add-int/lit8 v13, v3, 0x1
+
+    :cond_59
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_5a
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v16, Ljava/lang/StringBuilder;
+
+    const-string v17, "total="
+
+    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual/range {v33 .. v33}, Ljava/util/ArrayList;->size()I
+
+    move-result v17
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const-string v17, ",maxnrem="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const-string v17, ",nremNum="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const-string v17, ",size="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const-string v17, ",quality="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const-string v17, ",maxnrem2="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_5a
+    invoke-virtual/range {v33 .. v33}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    const/4 v13, 0x1
+
+    if-le v3, v13, :cond_5e
+
+    const/16 v3, 0x96
+
+    if-gt v14, v3, :cond_5e
+
+    const/16 v3, 0x78
+
+    if-le v14, v3, :cond_5b
+
+    const/4 v3, 0x1
+
+    if-le v15, v3, :cond_5e
+
+    :cond_5b
+    const/4 v3, 0x1
+
+    if-gt v15, v3, :cond_5c
+
+    const/16 v3, 0x78
+
+    move/from16 v0, v32
+
+    if-lt v0, v3, :cond_5c
+
+    const/16 v3, 0x5f
+
+    if-gt v11, v3, :cond_5e
+
+    :cond_5c
+    div-int/lit8 v3, v32, 0x14
+
+    if-le v15, v3, :cond_5d
+
+    const/16 v3, 0x3c
+
+    move/from16 v0, v32
+
+    if-ge v0, v3, :cond_5e
+
+    :cond_5d
+    mul-int/lit8 v3, v12, 0x64
+
+    div-int v3, v3, v32
+
+    const/16 v13, 0x28
+
+    if-ge v3, v13, :cond_5e
+
+    mul-int/lit8 v3, v12, 0x64
+
+    div-int v3, v3, v32
+
+    const/4 v12, 0x1
+
+    if-gt v3, v12, :cond_4b
+
+    const/16 v3, 0x3c
+
+    move/from16 v0, v32
+
+    if-lt v0, v3, :cond_4b
+
+    :cond_5e
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x1
+
+    if-ne v9, v3, :cond_67
+
+    const/16 v3, 0x78
+
+    move/from16 v0, v32
+
+    if-ge v0, v3, :cond_67
+
+    const/16 v3, 0x3c
+
+    if-le v11, v3, :cond_67
+
+    move/from16 v0, v25
+
+    move/from16 v1, v28
+
+    if-ge v0, v1, :cond_67
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_4b
+
+    const-string v3, "sleepAnalyze"
+
+    const-string v11, "not del last"
+
+    invoke-static {v3, v11}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_39
+
+    :cond_5f
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v16
+
+    add-int/lit8 v3, v13, -0x1
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    move/from16 v0, v16
+
+    if-eq v0, v3, :cond_a0
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    const/16 v16, 0x5
+
+    move/from16 v0, v16
+
+    if-ne v3, v0, :cond_60
+
+    sub-int v16, v13, v14
+
+    const/16 v17, 0xa
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    if-ge v0, v1, :cond_60
+
+    const/4 v3, 0x4
+
+    add-int/lit8 v16, v13, -0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    invoke-static {v0, v14, v1, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    :cond_60
+    new-instance v16, Ljava/util/HashMap;
+
+    invoke-direct/range {v16 .. v16}, Ljava/util/HashMap;-><init>()V
+
+    const-string v17, "start"
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v14
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v1, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v14, "stop"
+
+    add-int/lit8 v17, v13, -0x1
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v17
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v14, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v14, "mode"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v14, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual/range {v15 .. v16}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v3, v13
+
+    :goto_43
+    add-int/lit8 v13, v13, 0x1
+
+    move v14, v3
+
+    goto/16 :goto_40
+
+    :cond_61
+    invoke-virtual {v15, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v16, "start"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v16
+
+    invoke-virtual {v15, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v17, "stop"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v17
+
+    invoke-virtual {v15, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v33, "mode"
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v33
+
+    sub-int v3, v17, v16
+
+    add-int/lit8 v3, v3, 0x1
+
+    const/16 v34, 0x7
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-ne v0, v1, :cond_63
+
+    :cond_62
+    :goto_44
+    add-int/lit8 v3, v13, 0x1
+
+    move v13, v3
+
+    goto/16 :goto_41
+
+    :cond_63
+    const/16 v34, 0x5
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-ne v0, v1, :cond_64
+
+    if-le v3, v14, :cond_64
+
+    move v14, v3
+
+    :cond_64
+    const/16 v34, 0x4
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-eq v0, v1, :cond_65
+
+    const/16 v34, 0x5
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-ne v0, v1, :cond_62
+
+    :cond_65
+    const/16 v34, 0x4
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-ne v0, v1, :cond_62
+
+    const/16 v33, 0xa
+
+    move/from16 v0, v33
+
+    if-ge v3, v0, :cond_62
+
+    if-lez v13, :cond_62
+
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x1
+
+    if-ge v13, v3, :cond_62
+
+    add-int/lit8 v3, v13, -0x1
+
+    invoke-virtual {v15, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v33, "mode"
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v33
+
+    add-int/lit8 v3, v13, 0x1
+
+    invoke-virtual {v15, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v34, "mode"
+
+    move-object/from16 v0, v34
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    const/16 v34, 0x5
+
+    move/from16 v0, v33
+
+    move/from16 v1, v34
+
+    if-ne v0, v1, :cond_62
+
+    const/16 v33, 0x5
+
+    move/from16 v0, v33
+
+    if-ne v3, v0, :cond_62
+
+    const/4 v3, 0x5
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    move/from16 v2, v17
+
+    invoke-static {v0, v1, v2, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    goto :goto_44
+
+    :cond_66
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v34
+
+    add-int/lit8 v3, v16, -0x1
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    move/from16 v0, v34
+
+    if-eq v0, v3, :cond_9f
+
+    new-instance v34, Ljava/util/HashMap;
+
+    invoke-direct/range {v34 .. v34}, Ljava/util/HashMap;-><init>()V
+
+    const-string v3, "start"
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v35
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, v35
+
+    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "stop"
+
+    add-int/lit8 v35, v16, -0x1
+
+    invoke-static/range {v35 .. v35}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v35
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, v35
+
+    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v35, "mode"
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, v35
+
+    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual/range {v33 .. v34}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    const/16 v34, 0x5
+
+    move/from16 v0, v34
+
+    if-ne v3, v0, :cond_9e
+
+    add-int/lit8 v15, v15, 0x1
+
+    sub-int v3, v16, v17
+
+    if-le v3, v13, :cond_9e
+
+    sub-int v3, v16, v17
+
+    move v13, v15
+
+    :goto_45
+    move/from16 v15, v16
+
+    :goto_46
+    add-int/lit8 v16, v16, 0x1
+
+    move/from16 v17, v15
+
+    move v15, v13
+
+    move v13, v3
+
+    goto/16 :goto_42
 
     :cond_67
-    move-object/from16 v0, v24
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_68
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    const-string v12, "del "
+
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v3, v11}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_68
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    move-object/from16 v0, v30
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_39
+
+    :cond_69
+    move-object/from16 v0, v30
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v9
+
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4121,27 +4247,22 @@
 
     move-result v3
 
-    sub-int/2addr v3, v11
+    move-object/from16 v0, p0
 
-    add-int/lit8 v3, v3, 0x1
+    invoke-static {v0, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    if-le v3, v10, :cond_99
+    move-object/from16 v0, v26
 
-    move v9, v3
+    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    move v3, v8
+    add-int/lit8 v3, v8, -0x1
 
-    :goto_43
-    add-int/lit8 v8, v8, 0x1
+    move v8, v3
 
-    move v10, v9
+    goto/16 :goto_f
 
-    move v9, v3
-
-    goto/16 :goto_10
-
-    :cond_68
-    move-object/from16 v0, v24
+    :cond_6a
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4163,9 +4284,9 @@
 
     move-result v12
 
-    const-string v14, "stop"
+    const-string v13, "stop"
 
-    invoke-virtual {v3, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4181,63 +4302,45 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    if-le v3, v11, :cond_98
+    if-le v3, v11, :cond_9d
 
-    move/from16 v0, v25
-
-    if-ge v12, v0, :cond_98
-
-    move v10, v3
+    move v9, v3
 
     move v3, v8
 
-    :goto_44
+    :goto_47
     add-int/lit8 v8, v8, 0x1
 
-    move v11, v10
+    move v11, v9
 
-    move v10, v3
+    move v9, v3
 
-    goto/16 :goto_11
+    goto/16 :goto_10
 
-    :cond_69
-    move-object/from16 v0, v24
+    :cond_6b
+    move-object/from16 v0, v26
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v10, "start"
+    const-string v13, "start"
 
-    invoke-virtual {v3, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v13
 
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v13
 
-    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v14
+    move-result v13
 
-    const-string v10, "stop"
-
-    invoke-virtual {v3, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v10
-
-    const-string v15, "refmode"
+    const-string v15, "stop"
 
     invoke-virtual {v3, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4251,129 +4354,71 @@
 
     move-result v3
 
-    sub-int v15, v14, v11
+    sub-int/2addr v3, v13
 
-    add-int/lit8 v15, v15, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    sub-int v23, v10, v14
+    if-le v3, v12, :cond_9c
 
-    add-int/lit8 v23, v23, 0x1
+    move/from16 v0, v28
 
-    move/from16 v0, v23
+    if-ge v13, v0, :cond_9c
 
-    if-le v15, v0, :cond_6a
+    move v11, v3
 
-    move/from16 v0, v25
-
-    if-ge v10, v0, :cond_6b
-
-    if-le v14, v7, :cond_6b
-
-    :cond_6a
-    mul-int/lit8 v23, v23, 0x2
-
-    move/from16 v0, v23
-
-    if-lt v15, v0, :cond_6d
-
-    :cond_6b
-    if-nez v3, :cond_6d
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_6c
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    const-string v23, "delta > size, del "
-
-    move-object/from16 v0, v23
-
-    invoke-direct {v15, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-static {v3, v15}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_6c
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v14, v10}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
-
-    const/4 v3, 0x1
-
-    shl-int/2addr v3, v12
-
-    or-int/2addr v3, v8
-
-    move v8, v11
-
-    :goto_45
-    add-int/lit8 v10, v12, 0x1
-
-    move v11, v8
-
-    move v12, v10
-
-    move v8, v3
-
-    goto/16 :goto_12
-
-    :cond_6d
     move v3, v8
 
-    move v8, v10
+    :goto_48
+    add-int/lit8 v8, v8, 0x1
 
-    goto :goto_45
+    move v12, v11
 
-    :cond_6e
-    move-object/from16 v0, v24
+    move v11, v3
 
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    goto/16 :goto_11
+
+    :cond_6c
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v9, "start"
+    const-string v11, "start"
 
-    invoke-virtual {v3, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v15
 
-    const-string v12, "stop"
+    const-string v11, "stop"
 
-    invoke-virtual {v3, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v11
 
-    invoke-virtual {v12}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v11
 
-    invoke-static {v12}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v12
+    move-result v11
 
-    const-string v13, "refmode"
+    const-string v16, "refmode"
 
-    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4385,126 +4430,268 @@
 
     move-result v3
 
-    add-int/lit8 v13, v10, 0x1
+    sub-int v16, v15, v12
 
-    sub-int/2addr v13, v12
+    add-int/lit8 v16, v16, 0x1
 
-    sub-int v14, v12, v9
+    sub-int v17, v11, v15
 
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v17, v17, 0x1
 
-    if-le v13, v14, :cond_6f
+    move/from16 v0, v16
 
-    move/from16 v0, v25
+    move/from16 v1, v17
 
-    if-ge v12, v0, :cond_70
+    if-le v0, v1, :cond_6d
 
-    if-le v9, v7, :cond_70
+    move/from16 v0, v28
 
-    :cond_6f
-    mul-int/lit8 v14, v14, 0x2
+    if-ge v11, v0, :cond_6e
 
-    if-lt v13, v14, :cond_72
+    if-le v15, v7, :cond_6e
 
-    :cond_70
-    if-nez v3, :cond_72
+    :cond_6d
+    mul-int/lit8 v17, v17, 0x2
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    if-lt v0, v1, :cond_70
+
+    :cond_6e
+    if-nez v3, :cond_70
 
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_71
+    if-eqz v3, :cond_6f
 
     const-string v3, "sleepAnalyze"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    const-string v14, "delta2 > size, del "
+    const-string v17, "delta > size, del "
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v16
 
-    move-result-object v13
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v16
 
-    move-result-object v13
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v3, v13}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v16
 
-    :cond_71
+    move-object/from16 v0, v16
+
+    invoke-static {v3, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_6f
     move-object/from16 v0, p0
 
-    invoke-static {v0, v9, v12}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-static {v0, v15, v11}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
     const/4 v3, 0x1
 
-    shl-int/2addr v3, v11
+    shl-int/2addr v3, v13
 
     or-int/2addr v3, v8
 
-    move v8, v10
+    move v8, v12
 
-    :goto_46
-    add-int/lit8 v9, v11, -0x1
+    :goto_49
+    add-int/lit8 v11, v13, 0x1
 
-    move v11, v9
+    move v13, v11
 
-    move v10, v8
+    move v12, v8
 
     move v8, v3
 
-    goto/16 :goto_13
+    goto/16 :goto_12
 
-    :cond_72
+    :cond_70
     move v3, v8
 
-    move v8, v9
+    move v8, v11
 
-    goto :goto_46
+    goto :goto_49
+
+    :cond_71
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v8, "start"
+
+    invoke-virtual {v3, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v8
+
+    const-string v13, "stop"
+
+    invoke-virtual {v3, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v13
+
+    const-string v14, "refmode"
+
+    invoke-virtual {v3, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    add-int/lit8 v14, v9, 0x1
+
+    sub-int/2addr v14, v13
+
+    sub-int v15, v13, v8
+
+    add-int/lit8 v15, v15, 0x1
+
+    if-le v14, v15, :cond_72
+
+    move/from16 v0, v28
+
+    if-ge v13, v0, :cond_73
+
+    if-le v8, v7, :cond_73
+
+    :cond_72
+    mul-int/lit8 v15, v15, 0x2
+
+    if-lt v14, v15, :cond_75
 
     :cond_73
+    if-nez v3, :cond_75
+
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_74
+
+    const-string v3, "sleepAnalyze"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    const-string v15, "delta2 > size, del "
+
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v3, v14}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_74
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v8, v13}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+
+    const/4 v3, 0x1
+
+    shl-int/2addr v3, v12
+
+    or-int/2addr v3, v11
+
+    move v8, v3
+
+    move v3, v9
+
+    :goto_4a
+    add-int/lit8 v9, v12, -0x1
+
+    move v12, v9
+
+    move v11, v8
+
+    move v9, v3
+
+    goto/16 :goto_13
+
+    :cond_75
+    move v3, v8
+
+    move v8, v11
+
+    goto :goto_4a
+
+    :cond_76
     const/4 v7, 0x1
 
     shl-int/2addr v7, v3
 
-    and-int/2addr v7, v8
+    and-int/2addr v7, v11
 
-    if-eqz v7, :cond_75
+    if-eqz v7, :cond_78
 
     sget-boolean v7, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v7, :cond_74
+    if-eqz v7, :cond_77
 
     const-string v7, "sleepAnalyze"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    const-string v10, "del "
+    const-string v9, "del "
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v7, v9}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_74
-    move-object/from16 v0, v24
+    :cond_77
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    :cond_75
+    :cond_78
     add-int/lit8 v3, v3, -0x1
 
     goto/16 :goto_14
 
-    :cond_76
-    move-object/from16 v0, v24
+    :cond_79
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4526,9 +4713,9 @@
 
     move-result v9
 
-    const-string v10, "stop"
+    const-string v11, "stop"
 
-    invoke-virtual {v3, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4552,8 +4739,8 @@
 
     goto/16 :goto_15
 
-    :cond_77
-    move-object/from16 v0, v24
+    :cond_7a
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4593,7 +4780,7 @@
 
     invoke-static {v0, v8, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -4603,10 +4790,10 @@
 
     goto/16 :goto_16
 
-    :cond_78
-    add-int/lit8 v3, v12, -0x1
+    :cond_7b
+    add-int/lit8 v3, v13, -0x1
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4614,29 +4801,7 @@
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v14, "stop"
-
-    invoke-virtual {v3, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v14
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v15, "start"
+    const-string v15, "stop"
 
     invoke-virtual {v3, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4650,15 +4815,15 @@
 
     move-result v15
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/HashMap;
 
-    const-string v16, "startBed"
+    const-string v16, "start"
 
     move-object/from16 v0, v16
 
@@ -4674,11 +4839,99 @@
 
     move-result v16
 
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/HashMap;
+
+    const-string v17, "startBed"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v17
+
+    move/from16 v0, v17
+
+    if-le v0, v15, :cond_7d
+
+    sub-int v3, v17, v15
+
+    add-int/lit8 v3, v3, -0x1
+
+    const/16 v18, 0x1e
+
+    move/from16 v0, v18
+
+    if-gt v3, v0, :cond_7c
+
+    add-int/lit8 v15, v15, 0x1
+
+    add-int/lit8 v18, v17, -0x1
+
+    const/16 v19, 0x7
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-static {v0, v15, v1, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    :goto_4b
+    add-int/2addr v3, v7
+
+    add-int/lit8 v7, v16, -0x1
+
+    const/4 v15, 0x4
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-static {v0, v1, v7, v15}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    :goto_4c
+    add-int/lit8 v7, v13, 0x1
+
+    move v13, v7
+
+    move v7, v3
+
+    goto/16 :goto_17
+
+    :cond_7c
+    add-int/lit8 v15, v15, 0x1
+
+    add-int/lit8 v18, v17, -0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-static {v0, v15, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
+
+    goto :goto_4b
+
+    :cond_7d
     move/from16 v0, v16
 
-    if-le v0, v14, :cond_7a
+    if-le v0, v15, :cond_9a
 
-    sub-int v3, v16, v14
+    sub-int v3, v16, v15
 
     add-int/lit8 v3, v3, -0x1
 
@@ -4686,240 +4939,58 @@
 
     move/from16 v0, v17
 
-    if-gt v3, v0, :cond_79
+    if-gt v3, v0, :cond_7e
 
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v15, v15, 0x1
 
-    add-int/lit8 v17, v16, -0x1
+    add-int/lit8 v16, v16, -0x1
 
-    const/16 v18, 0x7
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    move/from16 v2, v18
-
-    invoke-static {v0, v14, v1, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    :goto_47
-    add-int/2addr v3, v7
-
-    add-int/lit8 v7, v15, -0x1
-
-    const/4 v14, 0x4
+    const/16 v17, 0x7
 
     move-object/from16 v0, p0
 
     move/from16 v1, v16
 
-    invoke-static {v0, v1, v7, v14}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+    move/from16 v2, v17
 
-    :goto_48
-    add-int/lit8 v7, v12, 0x1
+    invoke-static {v0, v15, v1, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    move v12, v7
-
-    move v7, v3
-
-    goto/16 :goto_17
-
-    :cond_79
-    add-int/lit8 v14, v14, 0x1
-
-    add-int/lit8 v17, v16, -0x1
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    invoke-static {v0, v14, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
-
-    goto :goto_47
-
-    :cond_7a
-    if-le v15, v14, :cond_96
-
-    sub-int v3, v15, v14
-
-    add-int/lit8 v3, v3, -0x1
-
-    const/16 v16, 0x1e
-
-    move/from16 v0, v16
-
-    if-gt v3, v0, :cond_7b
-
-    add-int/lit8 v14, v14, 0x1
-
-    add-int/lit8 v15, v15, -0x1
-
-    const/16 v16, 0x7
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-static {v0, v14, v15, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    :goto_49
+    :goto_4d
     add-int/2addr v3, v7
 
-    goto :goto_48
-
-    :cond_7b
-    add-int/lit8 v14, v14, 0x1
-
-    add-int/lit8 v15, v15, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v14, v15}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
-
-    goto :goto_49
-
-    :cond_7c
-    const/4 v3, 0x0
-
-    move v14, v3
-
-    goto/16 :goto_19
-
-    :cond_7d
-    const/4 v3, 0x0
-
-    goto/16 :goto_1a
+    goto :goto_4c
 
     :cond_7e
-    if-eqz v3, :cond_7f
+    add-int/lit8 v15, v15, 0x1
+
+    add-int/lit8 v16, v16, -0x1
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move/from16 v1, v16
 
-    move-result-object v3
+    invoke-static {v0, v15, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
-
-    move-result v3
-
-    const/4 v13, 0x6
-
-    if-ge v3, v13, :cond_7f
-
-    const/4 v3, 0x1
-
-    :goto_4a
-    if-eqz v3, :cond_12
-
-    add-int/lit8 v12, v12, -0x1
-
-    goto/16 :goto_1b
+    goto :goto_4d
 
     :cond_7f
     const/4 v3, 0x0
 
-    goto :goto_4a
+    move v15, v3
+
+    goto/16 :goto_19
 
     :cond_80
-    const/4 v3, 0x4
+    const/4 v3, 0x0
 
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v15, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    goto/16 :goto_1c
+    goto/16 :goto_1a
 
     :cond_81
     if-eqz v3, :cond_82
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
-
-    move-result v3
-
-    const/16 v13, 0x1e
-
-    if-ge v3, v13, :cond_82
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
-
-    move-result v3
-
-    if-nez v3, :cond_82
-
-    const/4 v3, 0x1
-
-    :goto_4b
-    if-eqz v3, :cond_14
-
-    add-int/lit8 v12, v12, -0x1
-
-    goto/16 :goto_1d
-
-    :cond_82
-    const/4 v3, 0x0
-
-    goto :goto_4b
-
-    :cond_83
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    const/4 v14, 0x2
-
-    if-eq v3, v14, :cond_84
-
-    const/4 v14, 0x1
-
-    if-eq v3, v14, :cond_84
-
-    const/16 v14, 0x7e
-
-    if-ne v3, v14, :cond_85
-
-    :cond_84
-    add-int/lit8 v11, v12, -0x1
-
-    goto/16 :goto_1f
-
-    :cond_85
-    if-eqz v3, :cond_86
-
-    const/4 v14, 0x3
-
-    if-ne v3, v14, :cond_94
-
-    :cond_86
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4931,11 +5002,137 @@
 
     const/4 v14, 0x6
 
-    if-ge v3, v14, :cond_87
+    if-ge v3, v14, :cond_82
+
+    const/4 v3, 0x1
+
+    :goto_4e
+    if-eqz v3, :cond_11
+
+    add-int/lit8 v13, v13, -0x1
+
+    goto/16 :goto_1b
+
+    :cond_82
+    const/4 v3, 0x0
+
+    goto :goto_4e
+
+    :cond_83
+    const/4 v3, 0x4
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move/from16 v1, v16
+
+    invoke-static {v0, v1, v11, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+
+    goto/16 :goto_1c
+
+    :cond_84
+    if-eqz v3, :cond_85
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
+
+    move-result v3
+
+    const/16 v14, 0x1e
+
+    if-ge v3, v14, :cond_85
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
+
+    move-result v3
+
+    if-nez v3, :cond_85
+
+    const/4 v3, 0x1
+
+    :goto_4f
+    if-eqz v3, :cond_13
+
+    add-int/lit8 v13, v13, -0x1
+
+    goto/16 :goto_1d
+
+    :cond_85
+    const/4 v3, 0x0
+
+    goto :goto_4f
+
+    :cond_86
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v3
+
+    const/4 v15, 0x2
+
+    if-eq v3, v15, :cond_87
+
+    const/4 v15, 0x1
+
+    if-eq v3, v15, :cond_87
+
+    const/16 v15, 0x7e
+
+    if-ne v3, v15, :cond_88
+
+    :cond_87
+    add-int/lit8 v11, v13, -0x1
+
+    goto/16 :goto_1f
+
+    :cond_88
+    if-eqz v3, :cond_89
+
+    const/4 v15, 0x3
+
+    if-ne v3, v15, :cond_98
+
+    :cond_89
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getActivity()I
+
+    move-result v3
+
+    const/4 v15, 0x6
+
+    if-ge v3, v15, :cond_8a
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4947,10 +5144,10 @@
 
     const/4 v3, 0x0
 
-    move v9, v12
+    move v9, v13
 
-    :goto_4c
-    add-int/lit8 v12, v12, 0x1
+    :goto_50
+    add-int/lit8 v13, v13, 0x1
 
     move v11, v9
 
@@ -4958,52 +5155,52 @@
 
     goto/16 :goto_1e
 
-    :cond_87
+    :cond_8a
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    const/4 v14, 0x4
+    const/4 v15, 0x4
 
-    invoke-virtual {v3, v14}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
+    invoke-virtual {v3, v15}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
     add-int/lit8 v3, v9, 0x1
 
-    const/4 v14, 0x4
+    const/4 v15, 0x4
 
-    if-lt v9, v14, :cond_93
+    if-lt v9, v15, :cond_97
 
-    add-int/lit8 v11, v12, -0x4
+    add-int/lit8 v11, v13, -0x4
 
-    add-int/lit8 v3, v12, -0x3
+    add-int/lit8 v3, v13, -0x3
 
     const/4 v9, 0x0
 
     move-object/from16 v0, p0
 
-    invoke-static {v0, v3, v12, v9}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
+    invoke-static {v0, v3, v13, v9}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
     goto/16 :goto_1f
 
-    :cond_88
-    const/4 v10, 0x2
+    :cond_8b
+    const/4 v13, 0x2
 
-    if-ne v10, v4, :cond_19
+    if-ne v13, v4, :cond_17
 
     move v6, v9
 
     goto/16 :goto_21
 
-    :cond_89
-    if-ne v9, v6, :cond_8a
+    :cond_8c
+    if-ne v9, v6, :cond_8d
 
-    if-eq v8, v5, :cond_1a
+    if-eq v8, v5, :cond_18
 
-    :cond_8a
+    :cond_8d
     move-object/from16 v0, p0
 
     invoke-static {v0, v6, v5}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
@@ -5012,7 +5209,7 @@
 
     goto/16 :goto_22
 
-    :cond_8b
+    :cond_8e
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5025,7 +5222,7 @@
 
     move-result v3
 
-    if-gtz v3, :cond_1d
+    if-gtz v3, :cond_1b
 
     move-object/from16 v0, p0
 
@@ -5041,7 +5238,7 @@
 
     const/16 v7, 0x7e
 
-    if-eq v3, v7, :cond_1d
+    if-eq v3, v7, :cond_1b
 
     move-object/from16 v0, p0
 
@@ -5057,7 +5254,7 @@
 
     const/4 v7, 0x6
 
-    if-eq v3, v7, :cond_1d
+    if-eq v3, v7, :cond_1b
 
     add-int/lit8 v3, v4, -0x1
 
@@ -5065,7 +5262,7 @@
 
     goto/16 :goto_23
 
-    :cond_8c
+    :cond_8f
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5078,7 +5275,7 @@
 
     move-result v3
 
-    if-gtz v3, :cond_1e
+    if-gtz v3, :cond_1c
 
     move-object/from16 v0, p0
 
@@ -5094,7 +5291,7 @@
 
     const/16 v8, 0x7e
 
-    if-eq v3, v8, :cond_1e
+    if-eq v3, v8, :cond_1c
 
     move-object/from16 v0, p0
 
@@ -5110,7 +5307,7 @@
 
     const/4 v8, 0x6
 
-    if-eq v3, v8, :cond_1e
+    if-eq v3, v8, :cond_1c
 
     add-int/lit8 v3, v7, 0x1
 
@@ -5118,12 +5315,27 @@
 
     goto/16 :goto_24
 
-    :cond_8d
-    const/4 v10, 0x4
+    :cond_90
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v9, v8}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->c(Ljava/util/ArrayList;II)I
+
+    move-result v11
+
+    move v6, v3
+
+    move v5, v8
+
+    move v4, v9
+
+    goto/16 :goto_26
+
+    :cond_91
+    const/4 v14, 0x4
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -5133,18 +5345,27 @@
 
     move-result v3
 
-    if-eq v10, v3, :cond_8e
+    if-ne v14, v3, :cond_92
 
-    add-int/lit8 v8, v8, 0x1
-
-    :cond_8e
     add-int/lit8 v3, v9, 0x1
+
+    :goto_51
+    add-int/lit8 v9, v13, 0x1
+
+    move v13, v9
 
     move v9, v3
 
     goto/16 :goto_27
 
-    :cond_8f
+    :cond_92
+    add-int/lit8 v8, v8, 0x1
+
+    move v3, v9
+
+    goto :goto_51
+
+    :cond_93
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5153,9 +5374,9 @@
 
     check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    const/4 v10, 0x7
+    const/4 v13, 0x7
 
-    invoke-virtual {v3, v10}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
+    invoke-virtual {v3, v13}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
     add-int/lit8 v3, v9, 0x1
 
@@ -5163,7 +5384,7 @@
 
     goto/16 :goto_28
 
-    :cond_90
+    :cond_94
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5172,9 +5393,9 @@
 
     check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    const/4 v10, 0x7
+    const/4 v13, 0x7
 
-    invoke-virtual {v3, v10}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
+    invoke-virtual {v3, v13}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
     add-int/lit8 v3, v9, 0x1
 
@@ -5182,153 +5403,148 @@
 
     goto/16 :goto_29
 
-    :cond_91
+    :cond_95
     move v3, v5
 
     move v4, v6
 
     goto/16 :goto_25
 
-    :cond_92
-    move v6, v3
+    :cond_96
+    move v3, v8
 
-    move v5, v8
+    move v9, v14
 
-    move v4, v9
+    move v8, v11
 
-    goto/16 :goto_26
+    move v11, v12
 
-    :cond_93
+    goto/16 :goto_20
+
+    :cond_97
     move v9, v11
 
-    goto/16 :goto_4c
+    goto/16 :goto_50
 
-    :cond_94
+    :cond_98
     move v3, v9
 
     move v9, v11
 
-    goto/16 :goto_4c
+    goto/16 :goto_50
 
-    :cond_95
-    move/from16 v3, v22
+    :cond_99
+    move/from16 v7, v23
+
+    move/from16 v3, v24
 
     move v8, v9
 
     move v9, v11
 
-    move v11, v7
-
-    move/from16 v7, v21
+    move v11, v12
 
     goto/16 :goto_20
 
-    :cond_96
+    :cond_9a
     move v3, v7
 
-    goto/16 :goto_48
+    goto/16 :goto_4c
 
-    :cond_97
-    move/from16 v7, v16
+    :cond_9b
+    move/from16 v7, v18
 
-    move/from16 v8, v17
+    move/from16 v8, v19
 
-    move/from16 v9, v18
+    move/from16 v9, v20
 
-    move/from16 v10, v19
+    move/from16 v11, v21
 
-    move/from16 v11, v20
+    move/from16 v12, v22
 
     goto/16 :goto_18
 
-    :cond_98
-    move v3, v10
-
-    move v10, v11
-
-    goto/16 :goto_44
-
-    :cond_99
-    move v3, v9
-
-    move v9, v10
-
-    goto/16 :goto_43
-
-    :cond_9a
-    move v3, v10
-
-    goto/16 :goto_40
-
-    :cond_9b
-    move v3, v15
-
-    goto/16 :goto_3c
-
     :cond_9c
-    move v3, v10
+    move v3, v11
 
-    move v10, v11
+    move v11, v12
 
-    goto/16 :goto_41
+    goto/16 :goto_48
 
     :cond_9d
-    move v3, v10
-
-    move v10, v11
-
-    move v11, v13
-
-    goto/16 :goto_42
-
-    :cond_9e
-    move v3, v10
-
-    goto/16 :goto_38
-
-    :cond_9f
     move v3, v9
 
     move v9, v11
 
-    goto/16 :goto_37
+    goto/16 :goto_47
+
+    :cond_9e
+    move v3, v13
+
+    move v13, v15
+
+    goto/16 :goto_45
+
+    :cond_9f
+    move v3, v13
+
+    move v13, v15
+
+    move/from16 v15, v17
+
+    goto/16 :goto_46
 
     :cond_a0
+    move v3, v14
+
+    goto/16 :goto_43
+
+    :cond_a1
+    move v3, v12
+
+    goto/16 :goto_3f
+
+    :cond_a2
+    move v3, v9
+
+    goto/16 :goto_37
+
+    :cond_a3
     move v7, v3
 
     goto/16 :goto_a
 
-    :cond_a1
-    move/from16 v7, v21
+    :cond_a4
+    move/from16 v11, v22
 
-    move/from16 v3, v22
+    move/from16 v7, v23
 
-    move v8, v11
+    move/from16 v3, v24
 
-    move v9, v10
+    move v8, v12
 
-    move/from16 v11, v16
+    move v9, v13
 
     goto/16 :goto_20
 
-    :cond_a2
+    :cond_a5
     move v7, v3
 
-    goto/16 :goto_2e
+    goto/16 :goto_2f
 
-    :cond_a3
+    :cond_a6
     move v9, v8
 
     goto/16 :goto_6
 
-    :cond_a4
+    :cond_a7
     move v3, v8
 
     move v8, v9
 
     goto/16 :goto_2b
 
-    :cond_a5
+    :cond_a8
     move v6, v4
 
     move v4, v3
@@ -5339,15 +5555,15 @@
 .method private static a(Landroid/content/SharedPreferences;ZIIIII)V
     .locals 9
 
-    const/16 v2, 0x780
+    const/16 v3, 0x780
 
     const/16 v1, 0x5a0
 
-    const/16 v7, 0x55
+    const/16 v2, 0x55
 
-    const/16 v6, 0x3c
+    const/16 v7, 0x3c
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -5369,75 +5585,75 @@
 
     add-int/2addr v0, p2
 
-    div-int/lit8 v1, v0, 0x2
+    div-int/lit8 v4, v0, 0x2
 
     const-string v0, "stop1"
 
-    invoke-interface {p0, v0, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {p0, v0, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     add-int/2addr v0, p3
 
+    div-int/lit8 v3, v0, 0x2
+
+    mul-int/lit8 v0, p4, 0x64
+
+    sub-int v1, p3, p2
+
+    add-int/lit8 v1, v1, 0x1
+
+    div-int/2addr v0, v1
+
+    const-string v1, "quality1"
+
+    invoke-interface {p0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    div-int/lit8 v2, v0, 0x2
+
+    const-string v0, "wakecnt1"
+
+    invoke-interface {p0, v0, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    add-int/2addr v0, p5
+
+    div-int/lit8 v1, v0, 0x2
+
+    const-string v0, "maxnrem"
+
+    invoke-interface {p0, v0, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    add-int/2addr v0, p6
+
     div-int/lit8 v0, v0, 0x2
-
-    mul-int/lit8 v2, p4, 0x64
-
-    sub-int v3, p3, p2
-
-    add-int/lit8 v3, v3, 0x1
-
-    div-int/2addr v2, v3
-
-    const-string v3, "quality1"
-
-    invoke-interface {p0, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    div-int/lit8 v3, v2, 0x2
-
-    const-string v2, "wakecnt1"
-
-    invoke-interface {p0, v2, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    add-int/2addr v2, p5
-
-    div-int/lit8 v2, v2, 0x2
-
-    const-string v4, "maxnrem"
-
-    invoke-interface {p0, v4, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v4
-
-    add-int/2addr v4, p6
-
-    div-int/lit8 v4, v4, 0x2
 
     const-string v6, "start1"
 
-    invoke-interface {v5, v6, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "stop1"
 
-    invoke-interface {v5, v6, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "quality1"
 
-    invoke-interface {v5, v6, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "wakecnt1"
 
-    invoke-interface {v5, v6, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "maxnrem"
 
-    invoke-interface {v5, v6, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     :goto_1
     sget-boolean v6, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
@@ -5452,47 +5668,47 @@
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
     const-string v7, "->"
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ",quality="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ",wakecnt="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ",maxnrem="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ",quality="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ",wakecnt="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ",maxnrem="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -5526,75 +5742,75 @@
 
     add-int/2addr v0, p2
 
-    div-int/lit8 v1, v0, 0x2
+    div-int/lit8 v4, v0, 0x2
 
     const-string v0, "stop2"
 
-    invoke-interface {p0, v0, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {p0, v0, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     add-int/2addr v0, p3
 
+    div-int/lit8 v3, v0, 0x2
+
+    mul-int/lit8 v0, p4, 0x64
+
+    sub-int v1, p3, p2
+
+    add-int/lit8 v1, v1, 0x1
+
+    div-int/2addr v0, v1
+
+    const-string v1, "quality2"
+
+    invoke-interface {p0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    div-int/lit8 v2, v0, 0x2
+
+    const-string v0, "wakecnt2"
+
+    invoke-interface {p0, v0, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    add-int/2addr v0, p5
+
+    div-int/lit8 v1, v0, 0x2
+
+    const-string v0, "maxnrem"
+
+    invoke-interface {p0, v0, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    add-int/2addr v0, p6
+
     div-int/lit8 v0, v0, 0x2
-
-    mul-int/lit8 v2, p4, 0x64
-
-    sub-int v3, p3, p2
-
-    add-int/lit8 v3, v3, 0x1
-
-    div-int/2addr v2, v3
-
-    const-string v3, "quality2"
-
-    invoke-interface {p0, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    div-int/lit8 v3, v2, 0x2
-
-    const-string v2, "wakecnt2"
-
-    invoke-interface {p0, v2, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    add-int/2addr v2, p5
-
-    div-int/lit8 v2, v2, 0x2
-
-    const-string v4, "maxnrem"
-
-    invoke-interface {p0, v4, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v4
-
-    add-int/2addr v4, p6
-
-    div-int/lit8 v4, v4, 0x2
 
     const-string v6, "start2"
 
-    invoke-interface {v5, v6, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "stop2"
 
-    invoke-interface {v5, v6, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "quality2"
 
-    invoke-interface {v5, v6, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "wakecnt2"
 
-    invoke-interface {v5, v6, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "maxnrem"
 
-    invoke-interface {v5, v6, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v5, v6, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto/16 :goto_1
 .end method
@@ -5717,12 +5933,17 @@
 
     const/4 v3, 0x5
 
-    if-ne v0, v3, :cond_4
+    if-eq v0, v3, :cond_3
+
+    :goto_1
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_0
 
     :cond_3
     const/16 v0, 0x82
 
-    if-lt v2, v0, :cond_5
+    if-lt v2, v0, :cond_4
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -5734,16 +5955,12 @@
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
+    goto :goto_1
+
     :cond_4
-    :goto_1
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    :cond_5
     const/16 v0, 0xf
 
-    if-le v2, v0, :cond_6
+    if-le v2, v0, :cond_5
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -5755,8 +5972,8 @@
 
     goto :goto_1
 
-    :cond_6
-    if-gt v1, v4, :cond_7
+    :cond_5
+    if-gt v1, v4, :cond_6
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -5770,7 +5987,7 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_6
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -5890,8 +6107,14 @@
 
     const/4 v1, 0x6
 
-    if-eq v0, v1, :cond_3
+    if-ne v0, v1, :cond_3
 
+    :goto_1
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_0
+
+    :cond_3
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -5900,10 +6123,7 @@
 
     invoke-virtual {v0, p3}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
-    :cond_3
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private static a(Ljava/util/ArrayList;IILjava/util/ArrayList;Z)V
@@ -6243,7 +6463,7 @@
     goto/16 :goto_1
 
     :cond_8
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
@@ -6253,35 +6473,35 @@
 
     move v7, v2
 
-    move/from16 v3, p2
+    move/from16 v4, p2
 
-    move/from16 v4, p1
+    move/from16 v5, p1
 
     :goto_4
     if-lt v7, v9, :cond_9
 
-    if-nez v5, :cond_17
+    if-nez v3, :cond_17
 
-    sub-int v2, v3, v4
+    sub-int v2, v4, v5
 
     add-int/lit8 v2, v2, 0x1
 
-    const/16 v5, 0xa
+    const/16 v3, 0xa
 
-    if-lt v2, v5, :cond_16
+    if-lt v2, v3, :cond_16
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     move v2, v6
 
-    move v6, v4
+    move v6, v5
 
     :goto_5
-    if-le v6, v3, :cond_13
+    if-le v6, v4, :cond_13
 
-    move/from16 p2, v3
+    move/from16 p2, v4
 
-    move/from16 p1, v4
+    move/from16 p1, v5
 
     goto/16 :goto_2
 
@@ -6499,7 +6719,7 @@
     if-lt v2, v12, :cond_19
 
     :cond_a
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     if-ne v10, v11, :cond_b
 
@@ -6790,13 +7010,9 @@
     :cond_10
     const/4 v2, 0x1
 
-    move v15, v3
-
     move v3, v4
 
-    move v4, v2
-
-    move v2, v15
+    move v4, v5
 
     goto/16 :goto_6
 
@@ -6815,40 +7031,7 @@
 
     check-cast v2, Ljava/util/HashMap;
 
-    const-string v3, "stop"
-
-    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    move v3, v4
-
-    move v4, v5
-
-    goto/16 :goto_6
-
-    :cond_12
-    if-nez v7, :cond_19
-
-    add-int/lit8 v2, v7, 0x1
-
-    if-ge v2, v9, :cond_19
-
-    add-int/lit8 v2, v7, 0x1
-
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/HashMap;
-
-    const-string v4, "start"
+    const-string v4, "stop"
 
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6867,6 +7050,43 @@
     move v2, v3
 
     move v3, v15
+
+    goto/16 :goto_6
+
+    :cond_12
+    if-nez v7, :cond_19
+
+    add-int/lit8 v2, v7, 0x1
+
+    if-ge v2, v9, :cond_19
+
+    add-int/lit8 v2, v7, 0x1
+
+    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/HashMap;
+
+    const-string v5, "start"
+
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move v15, v3
+
+    move v3, v4
+
+    move v4, v2
+
+    move v2, v15
 
     goto/16 :goto_6
 
@@ -6892,55 +7112,55 @@
     if-ne v2, v7, :cond_18
 
     :cond_14
-    add-int/lit8 v2, v5, 0x1
+    add-int/lit8 v2, v3, 0x1
 
     :goto_7
-    sub-int v5, v3, v4
+    sub-int v3, v4, v5
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    div-int/lit8 v5, v5, 0x2
+    div-int/lit8 v3, v3, 0x2
 
-    if-lt v2, v5, :cond_15
+    if-lt v2, v3, :cond_15
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     :goto_8
     add-int/lit8 v6, v6, 0x1
 
     move v15, v2
 
-    move v2, v5
+    move v2, v3
 
-    move v5, v15
+    move v3, v15
 
     goto/16 :goto_5
 
     :cond_15
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     goto :goto_8
 
     :cond_16
     const/4 v2, 0x0
 
-    move/from16 p2, v3
+    move/from16 p2, v4
 
-    move/from16 p1, v4
+    move/from16 p1, v5
 
     goto/16 :goto_2
 
     :cond_17
     const/4 v2, 0x1
 
-    move/from16 p2, v3
+    move/from16 p2, v4
 
-    move/from16 p1, v4
+    move/from16 p1, v5
 
     goto/16 :goto_2
 
     :cond_18
-    move v2, v5
+    move v2, v3
 
     goto :goto_7
 
@@ -7070,9 +7290,16 @@
 
     const/16 v2, 0x7e
 
-    if-eq v0, v2, :cond_3
+    if-ne v0, v2, :cond_4
 
-    if-ge v1, v3, :cond_4
+    :cond_3
+    :goto_1
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    if-ge v1, v3, :cond_5
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7084,13 +7311,9 @@
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
 
-    :cond_3
-    :goto_1
-    add-int/lit8 p1, p1, 0x1
+    goto :goto_1
 
-    goto :goto_0
-
-    :cond_4
+    :cond_5
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7116,9 +7339,9 @@
         }
     .end annotation
 
-    const/4 v6, 0x0
+    const/16 v12, 0xf
 
-    const/16 v12, 0xa
+    const/4 v6, 0x0
 
     const/4 v11, 0x5
 
@@ -7148,7 +7371,7 @@
     move v3, p1
 
     :goto_0
-    if-le v3, p2, :cond_4
+    if-le v3, p2, :cond_5
 
     new-instance v7, Ljava/util/ArrayList;
 
@@ -7161,7 +7384,7 @@
     move v3, v6
 
     :goto_1
-    if-le v4, p2, :cond_9
+    if-le v4, p2, :cond_a
 
     invoke-virtual {p0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7173,13 +7396,13 @@
 
     move-result v0
 
-    if-ne v0, v11, :cond_d
+    if-ne v0, v11, :cond_e
 
     add-int/lit8 v4, p2, 0x1
 
     sub-int/2addr v4, v5
 
-    if-ge v4, v12, :cond_d
+    if-ge v4, v12, :cond_e
 
     invoke-static {p0, v5, p2, v1}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
@@ -7224,7 +7447,7 @@
 
     move-result v0
 
-    if-lt v4, v0, :cond_f
+    if-lt v4, v0, :cond_10
 
     new-instance v7, Ljava/util/ArrayList;
 
@@ -7235,7 +7458,7 @@
     move v5, p1
 
     :goto_4
-    if-le v4, p2, :cond_12
+    if-le v4, p2, :cond_14
 
     invoke-virtual {p0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7342,11 +7565,11 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_4
 
-    if-ge v8, v12, :cond_15
+    if-ge v8, v12, :cond_4
 
-    if-lez v6, :cond_15
+    if-lez v6, :cond_4
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -7354,7 +7577,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    if-ge v6, v0, :cond_15
+    if-ge v6, v0, :cond_4
 
     add-int/lit8 v0, v6, -0x1
 
@@ -7396,22 +7619,21 @@
 
     move-result v0
 
-    if-ne v9, v0, :cond_13
+    if-ne v9, v0, :cond_15
 
     invoke-static {p0, v4, v5, v9}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    if-ne v9, v2, :cond_15
+    if-ne v9, v2, :cond_4
 
-    add-int v0, v3, v8
+    add-int/2addr v3, v8
 
+    :cond_4
     :goto_6
     add-int/lit8 v6, v6, 0x1
 
-    move v3, v0
+    goto :goto_5
 
-    goto/16 :goto_5
-
-    :cond_4
+    :cond_5
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7434,33 +7656,8 @@
 
     const/4 v5, 0x6
 
-    if-eq v0, v5, :cond_5
-
-    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v0
-
-    const/16 v5, 0x7e
-
     if-ne v0, v5, :cond_6
 
-    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    const/16 v4, 0x64
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
-
-    :cond_5
     :goto_7
     add-int/lit8 v0, v3, 0x1
 
@@ -7475,15 +7672,42 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/model/SportData;
 
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v0
+
+    const/16 v5, 0x7e
+
+    if-ne v0, v5, :cond_7
+
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    const/16 v4, 0x64
+
+    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/model/SportData;->setMode(I)V
+
+    goto :goto_7
+
+    :cond_7
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/model/SportData;
+
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
 
     move-result v0
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_8
 
     const/16 v0, 0x3c
 
-    if-lt v4, v0, :cond_7
+    if-lt v4, v0, :cond_8
 
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7495,10 +7719,10 @@
 
     goto :goto_7
 
-    :cond_7
+    :cond_8
     const/4 v0, 0x6
 
-    if-ge v4, v0, :cond_8
+    if-ge v4, v0, :cond_9
 
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7510,7 +7734,7 @@
 
     goto :goto_7
 
-    :cond_8
+    :cond_9
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7521,7 +7745,7 @@
 
     goto :goto_7
 
-    :cond_9
+    :cond_a
     invoke-virtual {p0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7544,7 +7768,7 @@
 
     move-result v0
 
-    if-eq v8, v0, :cond_17
+    if-eq v8, v0, :cond_18
 
     invoke-virtual {p0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7556,11 +7780,11 @@
 
     move-result v0
 
-    if-ne v0, v11, :cond_b
+    if-ne v0, v11, :cond_c
 
     sub-int v8, v4, v5
 
-    if-ge v8, v12, :cond_b
+    if-ge v8, v12, :cond_c
 
     add-int/lit8 v0, v4, -0x1
 
@@ -7568,7 +7792,7 @@
 
     move v0, v1
 
-    :cond_a
+    :cond_b
     :goto_8
     new-instance v8, Ljava/util/HashMap;
 
@@ -7611,12 +7835,14 @@
 
     goto/16 :goto_1
 
-    :cond_b
-    if-ne v0, v1, :cond_c
+    :cond_c
+    if-ne v0, v1, :cond_d
 
     sub-int v8, v4, v5
 
-    if-lt v8, v12, :cond_c
+    const/16 v9, 0xa
+
+    if-lt v8, v9, :cond_d
 
     sub-int v0, v4, v5
 
@@ -7632,8 +7858,8 @@
 
     goto :goto_8
 
-    :cond_c
-    if-ne v0, v2, :cond_a
+    :cond_d
+    if-ne v0, v2, :cond_b
 
     sub-int v8, v4, v5
 
@@ -7641,14 +7867,16 @@
 
     goto :goto_8
 
-    :cond_d
-    if-ne v0, v1, :cond_e
+    :cond_e
+    if-ne v0, v1, :cond_f
 
     add-int/lit8 v4, p2, 0x1
 
     sub-int/2addr v4, v5
 
-    if-lt v4, v12, :cond_e
+    const/16 v8, 0xa
+
+    if-lt v4, v8, :cond_f
 
     add-int/lit8 v0, p2, 0x1
 
@@ -7662,7 +7890,7 @@
 
     goto/16 :goto_2
 
-    :cond_e
+    :cond_f
     if-ne v0, v2, :cond_3
 
     add-int/lit8 v4, p2, 0x1
@@ -7673,7 +7901,7 @@
 
     goto/16 :goto_2
 
-    :cond_f
+    :cond_10
     invoke-virtual {v7, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7732,13 +7960,22 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    if-eq v0, v2, :cond_11
+    if-ne v0, v2, :cond_12
 
-    if-eq v0, v1, :cond_10
+    :cond_11
+    :goto_a
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    goto/16 :goto_3
+
+    :cond_12
+    if-eq v0, v1, :cond_13
 
     if-ne v0, v11, :cond_11
 
-    :cond_10
+    :cond_13
     if-ne v0, v1, :cond_11
 
     if-ge v9, v12, :cond_11
@@ -7799,14 +8036,9 @@
 
     invoke-static {p0, v5, v8, v11}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    :cond_11
-    add-int/lit8 v0, v4, 0x1
+    goto :goto_a
 
-    move v4, v0
-
-    goto/16 :goto_3
-
-    :cond_12
+    :cond_14
     invoke-virtual {p0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -7829,7 +8061,7 @@
 
     move-result v0
 
-    if-eq v8, v0, :cond_16
+    if-eq v8, v0, :cond_17
 
     invoke-virtual {p0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7875,121 +8107,103 @@
 
     move v0, v4
 
-    :goto_a
+    :goto_b
     add-int/lit8 v4, v4, 0x1
 
     move v5, v0
 
     goto/16 :goto_4
 
-    :cond_13
-    if-eq v9, v2, :cond_14
-
-    if-ne v0, v2, :cond_15
-
-    :cond_14
-    invoke-static {p0, v4, v5, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    add-int v0, v3, v8
-
-    goto/16 :goto_6
-
     :cond_15
-    move v0, v3
+    if-eq v9, v2, :cond_16
 
-    goto/16 :goto_6
+    if-ne v0, v2, :cond_4
 
     :cond_16
-    move v0, v5
+    invoke-static {p0, v4, v5, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    goto :goto_a
+    add-int/2addr v3, v8
+
+    goto/16 :goto_6
 
     :cond_17
+    move v0, v5
+
+    goto :goto_b
+
+    :cond_18
     move v0, v5
 
     goto/16 :goto_9
 .end method
 
 .method public static dataPostProcess(Landroid/content/Context;Lcn/com/smartdevices/bracelet/model/DaySportData;Lcn/com/smartdevices/bracelet/model/DaySportData;Lcn/com/smartdevices/bracelet/model/DaySportData;)V
-    .locals 58
+    .locals 63
 
-    const/16 v34, 0x0
+    const/16 v40, 0x0
 
-    const/16 v30, 0x0
+    const/16 v39, 0x0
 
-    const/16 v29, 0x0
+    const/16 v36, 0x0
 
-    const/16 v33, 0x0
+    const-wide/16 v33, 0x0
 
-    const-wide/16 v27, 0x0
+    const-wide/16 v31, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v5, 0x0
-
     const/4 v4, 0x0
 
-    const/4 v15, 0x0
+    const/4 v5, 0x0
 
-    const/4 v14, 0x0
+    const/4 v3, 0x0
 
-    sget-object v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
+    const/4 v8, 0x0
 
-    array-length v3, v3
+    sget-object v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
+
+    array-length v2, v2
 
     const/4 v7, 0x3
 
-    filled-new-array {v3, v7}, [I
+    filled-new-array {v2, v7}, [I
 
-    move-result-object v3
+    move-result-object v2
 
     sget-object v7, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v7, v3}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
+    invoke-static {v7, v2}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    move-object/from16 v18, v3
+    move-object/from16 v21, v2
 
-    check-cast v18, [[D
+    check-cast v21, [[D
 
-    const-wide/16 v25, 0x0
+    const-wide/16 v29, 0x0
 
-    const/16 v32, 0x0
+    const/16 v35, 0x0
 
-    const/16 v16, 0x0
+    const/16 v19, 0x0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v38
+    move-result-wide v41
 
     if-eqz p1, :cond_72
 
     invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->data()Ljava/util/ArrayList;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Utils;->copy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Utils;->copy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    move-result-object v3
+    move-result-object v2
 
     :goto_0
-    if-eqz p2, :cond_71
+    if-eqz p2, :cond_0
 
     invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->data()Ljava/util/ArrayList;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcn/com/smartdevices/bracelet/Utils;->copy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
-
-    move-result-object v5
-
-    move-object/from16 v37, v5
-
-    :goto_1
-    if-eqz p3, :cond_0
-
-    invoke-virtual/range {p3 .. p3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->data()Ljava/util/ArrayList;
 
     move-result-object v4
 
@@ -7998,724 +8212,109 @@
     move-result-object v4
 
     :cond_0
-    if-eqz v37, :cond_1
+    if-eqz p3, :cond_1
 
-    invoke-virtual/range {v37 .. v37}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {p3 .. p3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->data()Ljava/util/ArrayList;
 
-    move-result v5
+    move-result-object v5
 
-    if-gtz v5, :cond_2
+    invoke-static {v5}, Lcn/com/smartdevices/bracelet/Utils;->copy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+
+    move-result-object v5
 
     :cond_1
-    :goto_2
-    return-void
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    const/4 v7, 0x1
+
+    if-ge v6, v7, :cond_3
 
     :cond_2
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    if-gtz v5, :cond_70
+    :goto_1
+    return-void
 
     :cond_3
-    const/4 v15, 0x1
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    const/4 v7, 0x1
+
+    if-ge v6, v7, :cond_71
+
+    :cond_4
+    const/4 v2, 0x1
 
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    move-object/from16 v22, v3
+    :goto_2
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    :goto_3
-    move-object/from16 v0, v22
+    if-eqz v5, :cond_5
 
-    move-object/from16 v1, v37
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    if-eqz v4, :cond_4
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    if-gtz v3, :cond_e
-
-    :cond_4
-    const/4 v14, 0x1
-
-    :goto_4
-    invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->getDynamicData()Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
-
-    move-result-object v3
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getSportDay()Lcn/com/smartdevices/bracelet/model/SportDay;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;->getUserSleepModify(Lcn/com/smartdevices/bracelet/model/SportDay;)Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_7
-
-    const-string v3, "sleepM"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "####ref="
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v5, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget v3, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    const/16 v4, -0x5a0
-
-    if-lt v3, v4, :cond_5
-
-    iget v3, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    const/16 v4, 0x5a0
-
-    if-lt v3, v4, :cond_7
-
-    :cond_5
-    iget v3, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    const/16 v4, -0x5a0
-
-    if-lt v3, v4, :cond_6
-
-    iget v3, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    const/16 v4, 0x5a0
-
-    if-lt v3, v4, :cond_7
-
-    :cond_6
-    const-string v3, "sleepAnalyze"
-
-    const-string v4, "sleepReference not valid!!!"
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v9, 0x0
-
-    :cond_7
-    if-nez v14, :cond_a
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->getDynamicData()Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
-
-    move-result-object v3
-
-    invoke-virtual/range {p3 .. p3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getSportDay()Lcn/com/smartdevices/bracelet/model/SportDay;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;->getUserSleepModify(Lcn/com/smartdevices/bracelet/model/SportDay;)Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;
-
-    move-result-object v16
-
-    if-eqz v16, :cond_a
-
-    const-string v3, "sleepM"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "####ref2="
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v16
-
-    iget v5, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    move-object/from16 v0, v16
-
-    iget v5, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object/from16 v0, v16
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    const/16 v4, -0x5a0
-
-    if-lt v3, v4, :cond_8
-
-    move-object/from16 v0, v16
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    const/16 v4, 0x5a0
-
-    if-lt v3, v4, :cond_a
-
-    :cond_8
-    move-object/from16 v0, v16
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    const/16 v4, -0x5a0
-
-    if-lt v3, v4, :cond_9
-
-    move-object/from16 v0, v16
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    const/16 v4, 0x5a0
-
-    if-lt v3, v4, :cond_a
-
-    :cond_9
-    const-string v3, "sleepAnalyze"
-
-    const-string v4, "sleepReference2 not valid!!!"
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/16 v16, 0x0
-
-    :cond_a
-    new-instance v40, Ljava/util/ArrayList;
-
-    invoke-direct/range {v40 .. v40}, Ljava/util/ArrayList;-><init>()V
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_b
-
-    const-string v3, "DataAnalysis"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "last="
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ",curr="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ",next="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_b
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_c
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, ">>Analyze "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ":"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ":"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_c
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
-
-    move-result-object v41
-
-    if-eqz v41, :cond_d
-
-    move-object/from16 v0, v41
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
-
-    if-gtz v3, :cond_f
-
-    :cond_d
-    new-instance v3, Ljava/lang/NullPointerException;
-
-    const-string v4, "Keeper.readPersonInfo"
-
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    :cond_e
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    goto/16 :goto_4
-
-    :cond_f
-    move-object/from16 v0, v41
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
-
-    int-to-double v3, v3
-
-    const-wide v5, 0x3fdae147ae147ae1L
-
-    mul-double/2addr v3, v5
-
-    const-wide/high16 v5, 0x4059
-
-    div-double v42, v3, v5
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getDaySportGoalSteps()I
-
-    move-result v44
-
-    const/16 v19, -0x1
-
-    if-gez v44, :cond_10
-
-    new-instance v3, Ljava/lang/NullPointerException;
-
-    const-string v4, "Keeper.readDaySportGoals"
-
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    :cond_10
-    const/4 v3, 0x0
-
-    if-eqz p0, :cond_6f
-
-    move-object/from16 v0, v41
-
-    iget-wide v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
-
-    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    move-object v11, v3
-
-    :goto_5
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/util/Calendar;->clear()V
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
-
-    move-result v4
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
-
-    move-result v5
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    const/4 v7, 0x0
+    const/4 v7, 0x1
 
-    const/4 v8, 0x0
+    if-ge v6, v7, :cond_f
 
-    invoke-virtual/range {v3 .. v8}, Ljava/util/Calendar;->set(IIIII)V
+    :cond_5
+    const/4 v8, 0x1
 
-    const/4 v4, 0x7
+    move v9, v2
 
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
+    move-object/from16 v22, v4
 
-    move-result v4
+    move-object/from16 v23, v3
 
-    const/4 v3, 0x1
+    :goto_3
+    invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->getDynamicData()Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
 
-    const/4 v5, 0x7
+    move-result-object v2
 
-    if-eq v4, v5, :cond_11
-
-    const/4 v5, 0x1
-
-    if-ne v4, v5, :cond_6e
-
-    :cond_11
-    const/4 v3, 0x0
-
-    move v12, v3
-
-    :goto_6
-    if-eqz v15, :cond_24
-
-    const/4 v4, 0x0
-
-    :goto_7
-    if-eqz v15, :cond_25
-
-    const/16 v5, 0x4b0
-
-    :goto_8
-    if-eqz v15, :cond_26
-
-    const/16 v6, -0x5a0
-
-    :goto_9
-    const/16 v10, 0x5a0
-
-    move-object/from16 v3, v22
-
-    move v7, v14
-
-    move v8, v15
-
-    invoke-static/range {v3 .. v10}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IIIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
-
-    move-result-object v45
-
-    move-object/from16 v0, v45
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
-
-    if-lez v3, :cond_27
-
-    move-object/from16 v0, v45
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    move/from16 v23, v3
-
-    :goto_a
-    move-object/from16 v0, v45
-
-    iget v0, v0, Lcn/com/smartdevices/bracelet/analysis/b;->h:I
-
-    move/from16 v35, v0
-
-    if-nez v15, :cond_13
-
-    move-object/from16 v0, v45
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
-
-    move-object/from16 v0, v45
-
-    iget v4, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
-
-    if-ge v3, v4, :cond_13
-
-    move-object/from16 v0, v45
-
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
-
-    move-object/from16 v0, v45
-
-    iget v4, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
-
-    move-object/from16 v0, v45
-
-    iget v6, v0, Lcn/com/smartdevices/bracelet/analysis/b;->e:I
-
-    move-object/from16 v0, v45
-
-    iget v10, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
-
-    move-object/from16 v0, v45
-
-    iget v13, v0, Lcn/com/smartdevices/bracelet/analysis/b;->g:I
-
-    invoke-interface {v11}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v17
-
-    if-eqz v11, :cond_13
-
-    if-eqz v12, :cond_28
-
-    const-string v7, "start1"
-
-    const/16 v8, 0x5a0
-
-    invoke-interface {v11, v7, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v7
-
-    add-int/2addr v7, v3
-
-    div-int/lit8 v8, v7, 0x2
-
-    const-string v7, "stop1"
-
-    const/16 v20, 0x780
-
-    move/from16 v0, v20
-
-    invoke-interface {v11, v7, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v7
-
-    add-int/2addr v7, v4
-
-    div-int/lit8 v7, v7, 0x2
-
-    mul-int/lit8 v6, v6, 0x64
-
-    sub-int v3, v4, v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    div-int v3, v6, v3
-
-    const-string v4, "quality1"
-
-    const/16 v6, 0x55
-
-    invoke-interface {v11, v4, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    div-int/lit8 v6, v3, 0x2
-
-    const-string v3, "wakecnt1"
-
-    const/4 v4, 0x1
-
-    invoke-interface {v11, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    add-int/2addr v3, v10
-
-    div-int/lit8 v4, v3, 0x2
-
-    const-string v3, "maxnrem"
-
-    const/16 v10, 0x3c
-
-    invoke-interface {v11, v3, v10}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    add-int/2addr v3, v13
-
-    div-int/lit8 v3, v3, 0x2
-
-    const-string v10, "start1"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v8}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "stop1"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "quality1"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "wakecnt1"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "maxnrem"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    :goto_b
-    sget-boolean v10, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v10, :cond_12
-
-    const-string v10, "sleepAnalyze"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    const-string v13, "storeRef: "
-
-    invoke-direct {v11, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v11, "->"
-
-    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ",quality="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ",wakecnt="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v6, ",maxnrem="
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getSportDay()Lcn/com/smartdevices/bracelet/model/SportDay;
 
     move-result-object v3
 
-    const-string v4, ",store1="
+    invoke-virtual {v2, v3}, Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;->getUserSleepModify(Lcn/com/smartdevices/bracelet/model/SportDay;)Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_8
+
+    const-string v2, "sleepM"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "####ref="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v4, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget v4, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -8723,171 +8322,573 @@
 
     move-result-object v3
 
-    invoke-static {v10, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_12
-    invoke-interface/range {v17 .. v17}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    iget v2, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    :cond_13
-    move-object/from16 v0, v45
+    const/16 v3, -0x5a0
 
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+    if-lt v2, v3, :cond_6
 
-    add-int/lit8 v3, v3, 0x1
+    iget v2, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    move-object/from16 v0, v45
+    const/16 v3, 0x5a0
 
-    iget v4, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
+    if-lt v2, v3, :cond_8
 
-    move-object/from16 v0, v45
+    :cond_6
+    iget v2, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    iget v6, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+    const/16 v3, -0x5a0
 
-    if-ne v4, v6, :cond_14
+    if-lt v2, v3, :cond_7
 
-    if-eqz v15, :cond_29
+    iget v2, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    const/4 v3, 0x0
+    const/16 v3, 0x5a0
 
-    :cond_14
-    :goto_c
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
+    if-lt v2, v3, :cond_8
 
-    move-result v4
+    :cond_7
+    const-string v2, "sleepAnalyze"
 
-    invoke-static {v5, v4}, Ljava/lang/Math;->min(II)I
+    const-string v3, "sleepReference not valid!!!"
 
-    move-result v4
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    add-int/lit8 v4, v4, -0x1
+    const/4 v10, 0x0
 
-    move-object/from16 v0, v22
+    :cond_8
+    if-nez v8, :cond_b
 
-    invoke-static {v0, v3, v4}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/ChartData;->getDynamicData()Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;
 
-    if-eqz v15, :cond_2a
+    move-result-object v2
 
-    const/16 v11, 0x438
-
-    :goto_d
-    if-eqz v15, :cond_2b
-
-    const/16 v3, 0xa50
-
-    :goto_e
-    if-eqz v14, :cond_15
-
-    add-int/lit16 v3, v11, -0x438
-
-    invoke-virtual/range {v37 .. v37}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    :cond_15
-    if-eqz v15, :cond_2c
-
-    const/4 v13, 0x0
-
-    :goto_f
-    add-int/lit8 v12, v3, -0x1
-
-    const/16 v17, 0xb40
-
-    move-object/from16 v10, v22
-
-    invoke-static/range {v10 .. v17}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IIIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
+    invoke-virtual/range {p3 .. p3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getSportDay()Lcn/com/smartdevices/bracelet/model/SportDay;
 
     move-result-object v3
 
-    if-eqz v14, :cond_17
+    invoke-virtual {v2, v3}, Lcn/com/smartdevices/bracelet/chart/util/ChartData$DynamicData;->getUserSleepModify(Lcn/com/smartdevices/bracelet/model/SportDay;)Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;
 
-    sget-boolean v4, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    move-result-object v19
 
-    if-eqz v4, :cond_16
+    if-eqz v19, :cond_b
 
-    const-string v4, "DataAnalysis"
+    const-string v2, "sleepM"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v6, "no next day, so reset "
+    const-string v4, "####ref2="
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v6, v3, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+    move-object/from16 v0, v19
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v4, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    move-result-object v5
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v6, "->"
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, ", "
 
-    move-result-object v5
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v6, v3, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v19
 
-    move-result-object v5
+    iget v4, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-static {v4, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_16
-    iget v4, v3, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+    move-result-object v3
 
-    iget v5, v3, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-ge v4, v5, :cond_17
+    move-object/from16 v0, v19
 
-    iget v4, v3, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    iget v3, v3, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+    const/16 v3, -0x5a0
 
-    move-object/from16 v0, v22
+    if-lt v2, v3, :cond_9
 
-    invoke-static {v0, v4, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+    move-object/from16 v0, v19
 
-    :cond_17
-    move-object/from16 v0, v45
+    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    iget v4, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
+    const/16 v3, 0x5a0
 
-    move-object/from16 v0, v45
+    if-lt v2, v3, :cond_b
 
-    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+    :cond_9
+    move-object/from16 v0, v19
 
-    if-ne v4, v3, :cond_6d
+    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    if-eqz v15, :cond_2d
+    const/16 v3, -0x5a0
+
+    if-lt v2, v3, :cond_a
+
+    move-object/from16 v0, v19
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
+
+    const/16 v3, 0x5a0
+
+    if-lt v2, v3, :cond_b
+
+    :cond_a
+    const-string v2, "sleepAnalyze"
+
+    const-string v3, "sleepReference2 not valid!!!"
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/16 v19, 0x0
+
+    :cond_b
+    new-instance v43, Ljava/util/ArrayList;
+
+    invoke-direct/range {v43 .. v43}, Ljava/util/ArrayList;-><init>()V
+
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_c
+
+    const-string v2, "DataAnalysis"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "last="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ",curr="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ",next="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_c
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_d
+
+    const-string v2, "sleepAnalyze"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, ">>Analyze "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ":"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ":"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_d
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    move-result-object v44
+
+    if-eqz v44, :cond_e
+
+    move-object/from16 v0, v44
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
+
+    if-gtz v2, :cond_10
+
+    :cond_e
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    const-string v3, "Keeper.readPersonInfo"
+
+    invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_f
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    move v9, v2
+
+    move-object/from16 v22, v4
+
+    move-object/from16 v23, v3
+
+    goto/16 :goto_3
+
+    :cond_10
+    move-object/from16 v0, v44
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
+
+    int-to-double v2, v2
+
+    const-wide v4, 0x3fdae147ae147ae1L
+
+    mul-double/2addr v2, v4
+
+    const-wide/high16 v4, 0x4059
+
+    div-double v45, v2, v4
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getDaySportGoalSteps()I
+
+    move-result v47
+
+    const/16 v28, -0x1
+
+    if-gez v47, :cond_11
+
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    const-string v3, "Keeper.readDaySportGoals"
+
+    invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_11
+    const/4 v2, 0x0
+
+    if-eqz p0, :cond_70
+
+    move-object/from16 v0, v44
+
+    iget-wide v2, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
+
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    :goto_10
-    move v10, v3
+    move-object/from16 v0, p0
 
-    move v11, v3
+    invoke-virtual {v0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    :goto_11
+    move-result-object v2
+
+    move-object/from16 v18, v2
+
+    :goto_4
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->clear()V
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
+
+    move-result v3
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+
+    move-result v4
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Ljava/util/Calendar;->set(IIIII)V
+
+    const/4 v3, 0x7
+
+    invoke-virtual {v2, v3}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    const/4 v6, 0x1
+
+    const/4 v3, 0x7
+
+    if-eq v2, v3, :cond_12
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_13
+
+    :cond_12
+    const/4 v6, 0x0
+
+    :cond_13
+    if-eqz v9, :cond_26
+
+    const/4 v3, 0x0
+
+    :goto_5
+    if-eqz v9, :cond_27
+
+    const/16 v4, 0x4b0
+
+    :goto_6
+    if-eqz v9, :cond_28
+
+    const/16 v7, -0x5a0
+
+    :goto_7
+    const/16 v11, 0x5a0
+
+    move-object/from16 v2, v23
+
+    move-object/from16 v5, v18
+
+    invoke-static/range {v2 .. v11}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILandroid/content/SharedPreferences;ZIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
+
+    move-result-object v48
+
+    move-object/from16 v0, v48
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
+
+    if-lez v2, :cond_29
+
+    move-object/from16 v0, v48
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    move/from16 v24, v2
+
+    :goto_8
+    move-object/from16 v0, v48
+
+    iget v0, v0, Lcn/com/smartdevices/bracelet/analysis/b;->h:I
+
+    move/from16 v37, v0
+
+    move-object/from16 v0, v48
+
+    iget v0, v0, Lcn/com/smartdevices/bracelet/analysis/b;->e:I
+
+    move/from16 v49, v0
+
+    if-nez v9, :cond_14
+
+    move-object/from16 v0, v48
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
+
+    move-object/from16 v0, v48
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+
+    if-ge v2, v3, :cond_14
+
+    move-object/from16 v0, v48
+
+    iget v13, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
+
+    move-object/from16 v0, v48
+
+    iget v14, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+
+    move-object/from16 v0, v48
+
+    iget v15, v0, Lcn/com/smartdevices/bracelet/analysis/b;->e:I
+
+    move-object/from16 v0, v48
+
+    iget v0, v0, Lcn/com/smartdevices/bracelet/analysis/b;->f:I
+
+    move/from16 v16, v0
+
+    move-object/from16 v0, v48
+
+    iget v0, v0, Lcn/com/smartdevices/bracelet/analysis/b;->g:I
+
+    move/from16 v17, v0
+
+    move-object/from16 v11, v18
+
+    move v12, v6
+
+    invoke-static/range {v11 .. v17}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Landroid/content/SharedPreferences;ZIIIII)V
+
+    :cond_14
+    move-object/from16 v0, v48
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    move-object/from16 v0, v48
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
+
+    move-object/from16 v0, v48
+
+    iget v5, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+
+    if-ne v3, v5, :cond_15
+
+    if-eqz v9, :cond_2a
+
+    const/4 v2, 0x0
+
+    :cond_15
+    :goto_9
+    invoke-virtual/range {v23 .. v23}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    invoke-static {v4, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x1
+
+    move-object/from16 v0, v23
+
+    invoke-static {v0, v2, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+
+    if-eqz v9, :cond_2b
+
+    const/16 v12, 0x438
+
+    :goto_a
+    if-eqz v9, :cond_2c
+
+    const/16 v2, 0xa50
+
+    :goto_b
+    if-eqz v8, :cond_16
+
+    add-int/lit16 v2, v12, -0x438
+
+    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    :cond_16
+    if-eqz v9, :cond_2d
+
+    const/16 v16, 0x0
+
+    :goto_c
+    add-int/lit8 v13, v2, -0x1
+
+    const/16 v20, 0xb40
+
+    move-object/from16 v11, v23
+
+    move-object/from16 v14, v18
+
+    move v15, v6
+
+    move/from16 v17, v8
+
+    move/from16 v18, v9
+
+    invoke-static/range {v11 .. v20}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILandroid/content/SharedPreferences;ZIZZLcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;I)Lcn/com/smartdevices/bracelet/analysis/b;
+
+    move-result-object v2
+
+    if-eqz v8, :cond_18
+
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_17
 
-    const-string v3, "sleepAnalyze"
+    const-string v3, "DataAnalysis"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "sleep "
+    const-string v5, "no next day, so reset "
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v5, v2, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -8897,7 +8898,9 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v5, v2, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -8907,36 +8910,209 @@
 
     invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    :cond_17
+    iget v3, v2, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+
+    iget v4, v2, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+
+    if-ge v3, v4, :cond_18
+
+    iget v3, v2, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+
+    iget v2, v2, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+
+    move-object/from16 v0, v23
+
+    invoke-static {v0, v3, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;II)V
+
     :cond_18
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    move-object/from16 v0, v48
 
-    if-eqz v3, :cond_19
+    iget v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->a:I
 
-    const-string v3, "DataAnalysis"
+    move-object/from16 v0, v48
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/analysis/b;->b:I
+
+    if-ne v3, v2, :cond_6f
+
+    if-eqz v9, :cond_2e
+
+    const/4 v2, 0x0
+
+    :goto_d
+    move v11, v2
+
+    move v12, v2
+
+    :goto_e
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_19
+
+    const-string v2, "sleepAnalyze"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "sleep "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "->"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_19
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_1a
+
+    const-string v2, "DataAnalysis"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, ">>>>height="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v44
+
+    iget v4, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ",weight="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, v44
+
+    iget v4, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1a
+    move-object/from16 v0, v44
+
+    iget v2, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gender:I
+
+    if-nez v2, :cond_1b
+
+    :cond_1b
+    const/4 v2, 0x0
+
+    :goto_f
+    sget-object v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
+
+    array-length v3, v3
+
+    if-lt v2, v3, :cond_2f
+
+    new-instance v50, Ljava/util/ArrayList;
+
+    invoke-direct/range {v50 .. v50}, Ljava/util/ArrayList;-><init>()V
+
+    if-eqz v9, :cond_31
+
+    const/16 v38, 0x0
+
+    :goto_10
+    if-eqz v9, :cond_33
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_11
+    add-int/lit16 v2, v3, 0x5a0
+
+    invoke-virtual/range {v23 .. v23}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v51
+
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_1c
+
+    const-string v2, "sleepAnalyze"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, ">>>>height="
+    const-string v5, "startAnalyze="
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v41
+    move/from16 v0, v38
 
-    iget v5, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    const-string v5, ",weight="
+    const-string v5, ",stopSleep="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    move-object/from16 v0, v41
+    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v5, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
+    move-result-object v4
+
+    const-string v5, ",time:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ":"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+
+    move-result v5
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -8946,426 +9122,352 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_19
-    move-object/from16 v0, v41
+    :cond_1c
+    const/16 v27, 0x0
 
-    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gender:I
+    const/16 v26, 0x0
 
-    const/4 v3, 0x0
+    const/16 v25, 0x0
+
+    const/16 v19, 0x0
+
+    new-instance v52, Ljava/util/ArrayList;
+
+    invoke-direct/range {v52 .. v52}, Ljava/util/ArrayList;-><init>()V
+
+    const-wide/high16 v17, 0x3ff8
+
+    const/16 v16, 0x0
+
+    add-int/lit8 v8, v38, 0x1
+
+    move/from16 v15, v28
+
+    move-wide/from16 v13, v31
+
+    move/from16 v32, v39
+
+    move-wide/from16 v57, v33
+
+    move/from16 v34, v38
+
+    move/from16 v33, v40
+
+    move-wide/from16 v59, v29
+
+    move-wide/from16 v28, v59
+
+    move-wide/from16 v30, v57
 
     :goto_12
-    sget-object v4, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
+    move/from16 v0, v51
 
-    array-length v4, v4
+    if-lt v8, v0, :cond_34
 
-    if-lt v3, v4, :cond_2e
+    if-lez v25, :cond_1d
 
-    new-instance v46, Ljava/util/ArrayList;
+    new-instance v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;
 
-    invoke-direct/range {v46 .. v46}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Lcn/com/smartdevices/bracelet/analysis/StageSteps;-><init>()V
 
-    if-eqz v15, :cond_30
+    move/from16 v0, v19
 
-    const/16 v36, 0x0
+    iput v0, v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->time:I
+
+    move/from16 v0, v25
+
+    iput v0, v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->steps:I
+
+    move/from16 v0, v27
+
+    iput v0, v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->distance:I
+
+    const/16 v2, 0x3c
+
+    move/from16 v0, v26
+
+    if-le v0, v2, :cond_40
+
+    div-int/lit8 v2, v26, 0x3c
 
     :goto_13
-    if-eqz v15, :cond_32
+    iput v2, v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
 
-    const/4 v3, 0x0
+    iget v2, v4, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
 
-    move v4, v3
+    add-int v32, v32, v2
 
-    :goto_14
-    add-int/lit16 v3, v4, 0x5a0
+    move-object/from16 v0, v43
 
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-result v5
+    :cond_1d
+    new-instance v4, Ljava/util/HashMap;
 
-    invoke-static {v3, v5}, Ljava/lang/Math;->min(II)I
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    move-result v47
+    const-string v2, "start"
 
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_1a
-
-    const-string v3, "sleepAnalyze"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "startAnalyze="
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move/from16 v0, v36
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static/range {v34 .. v34}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    const-string v6, ",stopSleep="
+    invoke-virtual {v4, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "stop"
 
-    move-result-object v5
+    add-int/lit8 v5, v51, -0x1
 
-    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ",time:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+    invoke-virtual {v4, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v6
+    const-string v5, "mode"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v23
 
-    move-result-object v5
-
-    const-string v6, ":"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1a
-    const/16 v24, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v20, 0x0
-
-    const/16 v17, 0x0
-
-    new-instance v48, Ljava/util/ArrayList;
-
-    invoke-direct/range {v48 .. v48}, Ljava/util/ArrayList;-><init>()V
-
-    const-wide/high16 v12, 0x3ff8
-
-    const/4 v14, 0x0
-
-    add-int/lit8 v7, v36, 0x1
-
-    move/from16 v31, v36
-
-    move/from16 v8, v19
-
-    :goto_15
-    move/from16 v0, v47
-
-    if-lt v7, v0, :cond_33
-
-    if-lez v20, :cond_1b
-
-    new-instance v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;
-
-    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/analysis/StageSteps;-><init>()V
-
-    move/from16 v0, v17
-
-    iput v0, v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->time:I
-
-    move/from16 v0, v20
-
-    iput v0, v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->steps:I
-
-    move/from16 v0, v24
-
-    iput v0, v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->distance:I
-
-    const/16 v3, 0x3c
-
-    move/from16 v0, v21
-
-    if-le v0, v3, :cond_3f
-
-    div-int/lit8 v3, v21, 0x3c
-
-    :goto_16
-    iput v3, v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
-
-    iget v3, v5, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
-
-    add-int v29, v29, v3
-
-    move-object/from16 v0, v40
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_1b
-    new-instance v5, Ljava/util/HashMap;
-
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
-
-    const-string v3, "start"
-
-    invoke-static/range {v31 .. v31}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "stop"
-
-    add-int/lit8 v6, v47, -0x1
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v6, "mode"
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v31
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    move-result v3
+    move-result v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v5, v6, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v0, v46
+    move-object/from16 v0, v50
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v5, 0x0
+    const/16 v27, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    move/from16 v12, v32
+    move v4, v2
 
-    move/from16 v13, v33
+    move/from16 v16, v35
 
-    move/from16 v14, v34
+    move/from16 v17, v36
 
-    move/from16 v24, v5
+    :goto_14
+    invoke-virtual/range {v50 .. v50}, Ljava/util/ArrayList;->size()I
 
-    move v5, v3
+    move-result v2
+
+    if-lt v4, v2, :cond_41
+
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    add-int/lit8 v4, v38, 0x1
+
+    move/from16 v5, v38
+
+    :goto_15
+    move/from16 v0, v51
+
+    if-lt v4, v0, :cond_4d
+
+    new-instance v34, Ljava/util/ArrayList;
+
+    invoke-direct/range {v34 .. v34}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v2, 0x1
+
+    move v3, v2
+
+    :goto_16
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-lt v3, v2, :cond_53
+
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_20
+
+    add-int/lit8 v2, v51, -0x1
+
+    move v3, v2
 
     :goto_17
-    invoke-virtual/range {v46 .. v46}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v2
 
-    if-lt v5, v3, :cond_40
+    add-int/lit8 v2, v2, -0x1
 
-    new-instance v7, Ljava/util/ArrayList;
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v2
 
-    add-int/lit8 v5, v36, 0x1
+    check-cast v2, Ljava/util/HashMap;
 
-    move/from16 v6, v36
+    const-string v4, "stop"
 
-    :goto_18
-    move/from16 v0, v47
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-lt v5, v0, :cond_4d
+    move-result-object v2
 
-    new-instance v33, Ljava/util/ArrayList;
+    check-cast v2, Ljava/lang/Integer;
 
-    invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    const/4 v3, 0x1
+    move-result v2
 
-    move v4, v3
+    if-gt v3, v2, :cond_55
 
-    :goto_19
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    :cond_1e
+    const/4 v4, 0x0
 
-    move-result v3
+    if-lez v15, :cond_1f
 
-    if-lt v4, v3, :cond_53
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    move-result v2
 
-    move-result v3
+    add-int/lit8 v2, v2, -0x1
 
-    if-lez v3, :cond_1e
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    add-int/lit8 v3, v47, -0x1
+    move-result-object v2
 
-    move v4, v3
-
-    :goto_1a
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
+    check-cast v2, Ljava/util/HashMap;
 
     const-string v5, "stop"
 
-    invoke-virtual {v3, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v2, Ljava/lang/Integer;
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v3
+    move-result v2
 
-    if-gt v4, v3, :cond_55
+    add-int/lit8 v2, v2, 0x1
 
-    :cond_1c
-    const/4 v5, 0x0
+    if-lt v15, v2, :cond_1f
 
-    if-lez v8, :cond_1d
+    if-gt v15, v3, :cond_1f
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    const/4 v2, 0x1
 
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v6, "stop"
-
-    invoke-virtual {v3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    if-lt v8, v3, :cond_1d
-
-    if-gt v8, v4, :cond_1d
-
-    const/4 v3, 0x1
-
-    move v5, v3
-
-    :cond_1d
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v6, "stop"
-
-    invoke-virtual {v3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v33
-
-    invoke-static {v0, v3, v4, v1, v5}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILjava/util/ArrayList;Z)V
-
-    :cond_1e
-    const/4 v3, 0x0
-
-    move v4, v3
-
-    :goto_1b
-    invoke-virtual/range {v33 .. v33}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    if-lt v4, v3, :cond_56
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_1f
-
-    const-string v3, "DataAnalysis"
-
-    const-string v4, "filter done"
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    move v4, v2
 
     :cond_1f
-    new-instance v31, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    invoke-direct/range {v31 .. v31}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;-><init>()V
+    move-result v2
 
-    new-instance v32, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;
+    add-int/lit8 v2, v2, -0x1
 
-    invoke-direct/range {v32 .. v32}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;-><init>()V
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/HashMap;
+
+    const-string v5, "stop"
+
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v34
+
+    invoke-static {v0, v2, v3, v1, v4}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILjava/util/ArrayList;Z)V
+
+    :cond_20
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_18
+    invoke-virtual/range {v34 .. v34}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-lt v3, v2, :cond_56
+
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_21
+
+    const-string v2, "DataAnalysis"
+
+    const-string v3, "filter done"
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_21
+    new-instance v15, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;
+
+    invoke-direct {v15}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;-><init>()V
+
+    new-instance v18, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;
+
+    invoke-direct/range {v18 .. v18}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;-><init>()V
 
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v16
+    move-result-object v19
 
-    invoke-virtual {v3}, Ljava/util/Calendar;->clear()V
+    invoke-virtual {v2}, Ljava/util/Calendar;->clear()V
 
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->clear()V
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->clear()V
 
-    if-eqz v15, :cond_5f
+    if-eqz v9, :cond_5f
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
+
+    move-result v3
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+
+    move-result v4
+
+    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Ljava/util/Calendar;->set(IIIII)V
 
     invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
 
@@ -9383,236 +9485,210 @@
 
     const/4 v8, 0x0
 
+    move-object/from16 v3, v19
+
     invoke-virtual/range {v3 .. v8}, Ljava/util/Calendar;->set(IIIII)V
 
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
+    :goto_19
+    if-le v11, v12, :cond_60
 
-    move-result v17
+    sub-int v3, v11, v12
 
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+    add-int/lit8 v3, v3, 0x1
 
-    move-result v18
+    sub-int v3, v3, v37
 
-    invoke-virtual/range {p2 .. p2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+    move v4, v3
 
-    move-result v19
+    :goto_1a
+    if-lez v4, :cond_62
 
-    const/16 v20, 0x0
+    const/16 v3, 0xc
 
-    const/16 v21, 0x0
+    invoke-virtual {v2, v3, v12}, Ljava/util/Calendar;->add(II)V
 
-    invoke-virtual/range {v16 .. v21}, Ljava/util/Calendar;->set(IIIII)V
+    const/16 v3, 0xc
+
+    add-int/lit8 v5, v11, 0x1
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v3, v5}, Ljava/util/Calendar;->add(II)V
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartDate(Ljava/util/Date;)V
+
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopDate(Ljava/util/Date;)V
+
+    invoke-virtual {v15, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setSleepCount(I)V
+
+    sub-int v3, v4, v49
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setRemCount(I)V
+
+    move/from16 v0, v49
+
+    invoke-virtual {v15, v0}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setNonRemCount(I)V
+
+    if-gez v37, :cond_61
+
+    const/4 v3, 0x0
+
+    :goto_1b
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setAwakeCount(I)V
+
+    move/from16 v0, v24
+
+    invoke-virtual {v15, v0}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setAwakeNum(I)V
+
+    const/16 v3, 0xc
+
+    move-object/from16 v0, v48
+
+    iget v5, v0, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
+
+    sub-int/2addr v5, v12
+
+    invoke-virtual {v2, v3, v5}, Ljava/util/Calendar;->add(II)V
+
+    const/16 v3, 0xc
+
+    move-object/from16 v0, v48
+
+    iget v5, v0, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
+
+    sub-int/2addr v5, v11
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v3, v5}, Ljava/util/Calendar;->add(II)V
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartOnBedDate(Ljava/util/Date;)V
+
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopOnBedDate(Ljava/util/Date;)V
 
     :goto_1c
-    if-le v10, v11, :cond_60
+    move-object/from16 v0, v48
 
-    sub-int v4, v10, v11
+    iget-boolean v3, v0, Lcn/com/smartdevices/bracelet/analysis/b;->i:Z
 
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setHasSleep(Z)V
 
-    sub-int v4, v4, v35
+    if-eqz v10, :cond_22
 
-    move v5, v4
+    iget v3, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    :goto_1d
-    if-lez v5, :cond_62
+    const/high16 v5, -0x8000
 
-    const/16 v4, 0xc
+    if-le v3, v5, :cond_22
 
-    invoke-virtual {v3, v4, v11}, Ljava/util/Calendar;->add(II)V
+    iget v3, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
 
-    const/16 v4, 0xc
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setUserSleepStart(I)V
 
-    add-int/lit8 v6, v10, 0x1
+    :cond_22
+    if-eqz v10, :cond_23
 
-    move-object/from16 v0, v16
+    iget v3, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    invoke-virtual {v0, v4, v6}, Ljava/util/Calendar;->add(II)V
+    const/high16 v5, -0x8000
 
-    invoke-virtual {v3}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    if-le v3, v5, :cond_23
 
-    move-result-object v4
+    iget v3, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
 
-    move-object/from16 v0, v31
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setUserSleepEnd(I)V
 
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartDate(Ljava/util/Date;)V
+    :cond_23
+    move-object/from16 v0, v18
 
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopDate(Ljava/util/Date;)V
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v5}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setSleepCount(I)V
-
-    move-object/from16 v0, v31
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setRemCount(I)V
-
-    sub-int v4, v5, v24
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setNonRemCount(I)V
-
-    if-gez v35, :cond_61
-
-    const/4 v4, 0x0
-
-    :goto_1e
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setAwakeCount(I)V
-
-    move-object/from16 v0, v31
-
-    move/from16 v1, v23
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setAwakeNum(I)V
-
-    const/16 v4, 0xc
-
-    move-object/from16 v0, v45
-
-    iget v6, v0, Lcn/com/smartdevices/bracelet/analysis/b;->c:I
-
-    sub-int/2addr v6, v11
-
-    invoke-virtual {v3, v4, v6}, Ljava/util/Calendar;->add(II)V
-
-    const/16 v4, 0xc
-
-    move-object/from16 v0, v45
-
-    iget v6, v0, Lcn/com/smartdevices/bracelet/analysis/b;->d:I
-
-    sub-int/2addr v6, v10
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v4, v6}, Ljava/util/Calendar;->add(II)V
-
-    invoke-virtual {v3}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartOnBedDate(Ljava/util/Date;)V
-
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopOnBedDate(Ljava/util/Date;)V
-
-    :goto_1f
-    move-object/from16 v0, v45
-
-    iget-boolean v4, v0, Lcn/com/smartdevices/bracelet/analysis/b;->i:Z
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setHasSleep(Z)V
-
-    if-eqz v9, :cond_20
-
-    iget v4, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    const/high16 v6, -0x8000
-
-    if-le v4, v6, :cond_20
-
-    iget v4, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setUserSleepStart(I)V
-
-    :cond_20
-    if-eqz v9, :cond_21
-
-    iget v4, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    const/high16 v6, -0x8000
-
-    if-le v4, v6, :cond_21
-
-    iget v4, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepEnd:I
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setUserSleepEnd(I)V
-
-    :cond_21
-    move-object/from16 v0, v32
-
-    move/from16 v1, v30
+    move/from16 v1, v33
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setStepsCount(I)V
 
-    move/from16 v0, v29
+    div-int/lit8 v5, v17, 0x3c
 
-    if-lt v0, v13, :cond_64
+    move/from16 v0, v32
 
-    sub-int v4, v29, v13
+    if-lt v0, v5, :cond_64
 
-    :goto_20
-    move-object/from16 v0, v32
+    sub-int v3, v32, v5
 
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setStepsTimeCount(I)V
+    :goto_1d
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v32
+    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setStepsTimeCount(I)V
 
-    invoke-virtual {v0, v13}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setRunTimeCount(I)V
+    move-object/from16 v0, v18
 
-    move-wide/from16 v0, v27
+    invoke-virtual {v0, v5}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setRunTimeCount(I)V
 
-    double-to-int v4, v0
+    move-wide/from16 v0, v30
 
-    move-object/from16 v0, v32
+    double-to-int v3, v0
 
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setDistance(I)V
+    move-object/from16 v0, v18
 
-    move-wide/from16 v0, v25
+    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setDistance(I)V
 
-    double-to-int v4, v0
+    double-to-int v3, v13
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setCalories(I)V
+    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setRunDistance(I)V
 
-    move-object/from16 v0, v32
+    move-wide/from16 v0, v28
 
-    move/from16 v1, v29
+    double-to-int v3, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setCalories(I)V
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v32
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setActMinutes(I)V
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v12}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setContinuesActive(I)V
+    move/from16 v1, v16
 
-    move-object/from16 v0, v32
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setContinuesActive(I)V
 
-    move-object/from16 v1, v40
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v43
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setStageSteps(Ljava/util/ArrayList;)V
 
-    invoke-virtual/range {v32 .. v33}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setActiveList(Ljava/util/ArrayList;)V
+    move-object/from16 v0, v18
 
-    sget-boolean v4, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    move-object/from16 v1, v34
 
-    if-eqz v4, :cond_22
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->setActiveList(Ljava/util/ArrayList;)V
 
-    const-string v4, "DataAnalysis"
+    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v3, :cond_24
+
+    const-string v3, "DataAnalysis"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -9620,91 +9696,185 @@
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Ljava/util/Calendar;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Calendar;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v6, "->"
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->toString()Ljava/lang/String;
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v6, "), sleeps="
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ",REM="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, v27
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ",NREM="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, v49
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ",Steps="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, v33
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ",totalStepMins="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, v32
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ",totalRunMins="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v3, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_24
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setStepsInfo(Lcn/com/smartdevices/bracelet/analysis/StepsInfo;)V
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v15}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setSleepInfo(Lcn/com/smartdevices/bracelet/analysis/SleepInfo;)V
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setAnalysisData(Ljava/util/ArrayList;)V
+
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setNeedPostProcess(Z)V
+
+    if-eqz v10, :cond_25
+
+    if-nez v9, :cond_25
+
+    iget v2, v10, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
+
+    if-gez v2, :cond_25
+
+    new-instance v4, Ljava/util/ArrayList;
+
+    const/16 v2, 0x5a0
+
+    invoke-direct {v4, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_1e
+    const/16 v2, 0x5a0
+
+    if-lt v3, v2, :cond_65
+
+    :goto_1f
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setAnalysisData(Ljava/util/ArrayList;)V
+
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setNeedPostProcess(Z)V
+
+    :cond_25
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_2
+
+    const-string v2, "DataAnalysis"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "used "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    sub-long v4, v4, v41
+
+    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v4, "ms!"
 
-    move-result-object v3
-
-    const-string v5, ",REM="
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move/from16 v0, v24
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, ",NREM="
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, ",Steps="
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move/from16 v0, v30
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, ",totalStepMins="
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move/from16 v0, v29
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, ",totalRunMins="
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -9712,93 +9882,115 @@
 
     move-result-object v3
 
-    invoke-static {v4, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_22
-    move-object/from16 v0, p2
+    goto/16 :goto_1
 
-    move-object/from16 v1, v32
+    :cond_26
+    const/16 v3, 0x438
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setStepsInfo(Lcn/com/smartdevices/bracelet/analysis/StepsInfo;)V
+    goto/16 :goto_5
 
-    move-object/from16 v0, p2
+    :cond_27
+    const/16 v4, 0xa50
 
-    move-object/from16 v1, v31
+    goto/16 :goto_6
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setSleepInfo(Lcn/com/smartdevices/bracelet/analysis/SleepInfo;)V
+    :cond_28
+    const/4 v7, 0x0
 
-    move-object/from16 v0, p2
+    goto/16 :goto_7
 
-    move-object/from16 v1, v37
+    :cond_29
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setAnalysisData(Ljava/util/ArrayList;)V
+    move/from16 v24, v2
 
-    const/4 v3, 0x0
+    goto/16 :goto_8
 
-    move-object/from16 v0, p2
+    :cond_2a
+    const/16 v2, 0x5a0
 
-    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setNeedPostProcess(Z)V
+    goto/16 :goto_9
 
-    if-eqz v9, :cond_23
+    :cond_2b
+    const/16 v12, 0x9d8
 
-    if-nez v15, :cond_23
+    goto/16 :goto_a
 
-    iget v3, v9, Lcn/com/smartdevices/bracelet/chart/util/ChartData$UserSleepModify;->sleepStart:I
+    :cond_2c
+    const/16 v2, 0xff0
 
-    if-gez v3, :cond_23
+    goto/16 :goto_b
 
-    new-instance v5, Ljava/util/ArrayList;
+    :cond_2d
+    const/16 v16, 0x5a0
 
-    const/16 v3, 0x5a0
+    goto/16 :goto_c
 
-    invoke-direct {v5, v3}, Ljava/util/ArrayList;-><init>(I)V
+    :cond_2e
+    const/16 v2, 0x5a0
 
-    const/4 v3, 0x0
+    goto/16 :goto_d
 
-    move v4, v3
+    :cond_2f
+    aget-object v3, v21, v2
 
-    :goto_21
-    const/16 v3, 0x5a0
+    const/4 v4, 0x0
 
-    if-lt v4, v3, :cond_65
+    const-wide v5, 0x4099240000000000L
 
-    :goto_22
-    move-object/from16 v0, p1
+    sget-object v7, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
 
-    invoke-virtual {v0, v5}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setAnalysisData(Ljava/util/ArrayList;)V
+    aget-object v7, v7, v2
 
-    const/4 v3, 0x0
+    const/4 v8, 0x1
 
-    move-object/from16 v0, p1
+    aget-wide v7, v7, v8
 
-    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/model/DaySportData;->setNeedPostProcess(Z)V
+    mul-double/2addr v5, v7
 
-    :cond_23
+    const-wide/high16 v7, 0x404e
+
+    mul-double v7, v7, v45
+
+    div-double/2addr v5, v7
+
+    double-to-int v5, v5
+
+    int-to-double v5, v5
+
+    aput-wide v5, v3, v4
+
     sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_30
 
     const-string v3, "DataAnalysis"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "used "
+    const-string v5, "alist "
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    sub-long v5, v5, v38
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    const-string v5, "ms!"
+    const-string v5, ":"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    aget-object v5, v21, v2
+
+    const/4 v6, 0x0
+
+    aget-wide v5, v5, v6
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -9808,1918 +10000,1688 @@
 
     invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_2
-
-    :cond_24
-    const/16 v4, 0x438
-
-    goto/16 :goto_7
-
-    :cond_25
-    const/16 v5, 0xa50
-
-    goto/16 :goto_8
-
-    :cond_26
-    const/4 v6, 0x0
-
-    goto/16 :goto_9
-
-    :cond_27
-    const/4 v3, 0x0
-
-    move/from16 v23, v3
-
-    goto/16 :goto_a
-
-    :cond_28
-    const-string v7, "start2"
-
-    const/16 v8, 0x5a0
-
-    invoke-interface {v11, v7, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v7
-
-    add-int/2addr v7, v3
-
-    div-int/lit8 v8, v7, 0x2
-
-    const-string v7, "stop2"
-
-    const/16 v20, 0x780
-
-    move/from16 v0, v20
-
-    invoke-interface {v11, v7, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v7
-
-    add-int/2addr v7, v4
-
-    div-int/lit8 v7, v7, 0x2
-
-    mul-int/lit8 v6, v6, 0x64
-
-    sub-int v3, v4, v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    div-int v3, v6, v3
-
-    const-string v4, "quality2"
-
-    const/16 v6, 0x55
-
-    invoke-interface {v11, v4, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    div-int/lit8 v6, v3, 0x2
-
-    const-string v3, "wakecnt2"
+    :cond_30
+    aget-object v3, v21, v2
 
     const/4 v4, 0x1
 
-    invoke-interface {v11, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    sget-object v5, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
 
-    move-result v3
+    aget-object v5, v5, v2
 
-    add-int/2addr v3, v10
+    const/4 v6, 0x0
 
-    div-int/lit8 v4, v3, 0x2
+    aget-wide v5, v5, v6
 
-    const-string v3, "maxnrem"
+    aput-wide v5, v3, v4
 
-    const/16 v10, 0x3c
+    aget-object v3, v21, v2
 
-    invoke-interface {v11, v3, v10}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    const/4 v4, 0x2
 
-    move-result v3
+    sget-object v5, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
 
-    add-int/2addr v3, v13
+    aget-object v5, v5, v2
 
-    div-int/lit8 v3, v3, 0x2
+    const/4 v6, 0x1
 
-    const-string v10, "start2"
+    aget-wide v5, v5, v6
 
-    move-object/from16 v0, v17
+    aput-wide v5, v3, v4
 
-    invoke-interface {v0, v10, v8}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "stop2"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "quality2"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "wakecnt2"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v10, "maxnrem"
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v10, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    goto/16 :goto_b
-
-    :cond_29
-    const/16 v3, 0x5a0
-
-    goto/16 :goto_c
-
-    :cond_2a
-    const/16 v11, 0x9d8
-
-    goto/16 :goto_d
-
-    :cond_2b
-    const/16 v3, 0xff0
-
-    goto/16 :goto_e
-
-    :cond_2c
-    const/16 v13, 0x5a0
+    add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_f
 
-    :cond_2d
-    const/16 v3, 0x5a0
+    :cond_31
+    const/16 v2, 0x5a0
+
+    if-ge v12, v2, :cond_32
+
+    move/from16 v38, v12
 
     goto/16 :goto_10
 
-    :cond_2e
-    aget-object v4, v18, v3
-
-    const/4 v5, 0x0
-
-    const-wide v6, 0x4099240000000000L
-
-    sget-object v8, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
-
-    aget-object v8, v8, v3
-
-    const/4 v12, 0x1
-
-    aget-wide v12, v8, v12
-
-    mul-double/2addr v6, v12
-
-    const-wide/high16 v12, 0x404e
-
-    mul-double v12, v12, v42
-
-    div-double/2addr v6, v12
-
-    double-to-int v6, v6
-
-    int-to-double v6, v6
-
-    aput-wide v6, v4, v5
-
-    sget-boolean v4, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v4, :cond_2f
-
-    const-string v4, "DataAnalysis"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "alist "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ":"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    aget-object v6, v18, v3
-
-    const/4 v7, 0x0
-
-    aget-wide v6, v6, v7
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_2f
-    aget-object v4, v18, v3
-
-    const/4 v5, 0x1
-
-    sget-object v6, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
-
-    aget-object v6, v6, v3
-
-    const/4 v7, 0x0
-
-    aget-wide v6, v6, v7
-
-    aput-wide v6, v4, v5
-
-    aget-object v4, v18, v3
-
-    const/4 v5, 0x2
-
-    sget-object v6, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->j:[[D
-
-    aget-object v6, v6, v3
-
-    const/4 v7, 0x1
-
-    aget-wide v6, v6, v7
-
-    aput-wide v6, v4, v5
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto/16 :goto_12
-
-    :cond_30
-    const/16 v3, 0x5a0
-
-    if-ge v11, v3, :cond_31
-
-    move/from16 v36, v11
-
-    goto/16 :goto_13
-
-    :cond_31
-    const/16 v36, 0x5a0
-
-    goto/16 :goto_13
-
     :cond_32
-    const/16 v3, 0x5a0
+    const/16 v38, 0x5a0
 
-    move v4, v3
-
-    goto/16 :goto_14
+    goto/16 :goto_10
 
     :cond_33
-    move-object/from16 v0, v22
+    const/16 v2, 0x5a0
 
-    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move v3, v2
 
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
-
-    move-result v19
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    new-instance v49, Lcn/com/smartdevices/bracelet/analysis/a;
-
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v49
-
-    invoke-direct {v0, v5}, Lcn/com/smartdevices/bracelet/analysis/a;-><init>(B)V
-
-    if-ltz v3, :cond_6c
-
-    const/4 v5, 0x7
-
-    if-gt v3, v5, :cond_6c
-
-    const/4 v5, 0x6
-
-    if-eq v3, v5, :cond_6c
-
-    if-lez v19, :cond_6c
-
-    if-lt v7, v4, :cond_6c
-
-    add-int v30, v30, v19
-
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_34
-
-    const-string v3, "DataAnalysis"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "i="
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ":steps="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    move/from16 v0, v19
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    goto/16 :goto_11
 
     :cond_34
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    move-object/from16 v0, v23
 
-    if-eqz v3, :cond_35
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    const-string v3, "DataAnalysis"
+    move-result-object v2
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    const-string v6, "alist size="
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v20
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v23
 
-    array-length v6, v0
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v5
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    move-result-object v5
+    move-result v2
 
-    invoke-static {v3, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v39, Lcn/com/smartdevices/bracelet/analysis/a;
 
-    :cond_35
-    const/16 v3, 0x78
+    const/4 v4, 0x0
 
-    move/from16 v0, v19
+    move-object/from16 v0, v39
 
-    if-le v0, v3, :cond_38
+    invoke-direct {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/a;-><init>(Lcn/com/smartdevices/bracelet/analysis/a;)V
 
-    const/16 v3, 0x7d
+    if-ltz v2, :cond_6e
 
-    :goto_23
-    const/16 v5, 0x5a
+    const/4 v4, 0x7
 
-    move/from16 v0, v19
+    if-gt v2, v4, :cond_6e
 
-    if-gt v0, v5, :cond_39
+    const/4 v4, 0x6
 
-    move/from16 v0, v19
+    if-eq v2, v4, :cond_6e
 
-    int-to-double v5, v0
+    if-lez v20, :cond_6e
 
-    mul-double v5, v5, v42
+    if-lt v8, v3, :cond_6e
 
-    const-wide v50, 0x3feccccccccccccdL
+    add-int v33, v33, v20
 
-    mul-double v5, v5, v50
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    :goto_24
-    add-double v27, v27, v5
+    if-eqz v2, :cond_35
 
-    const/4 v3, 0x0
+    const-string v2, "DataAnalysis"
 
-    :goto_25
-    sget-object v16, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v16
+    const-string v5, "i="
 
-    array-length v0, v0
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move/from16 v16, v0
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v16, v16, -0x1
+    move-result-object v4
 
-    move/from16 v0, v16
+    const-string v5, ":steps="
 
-    if-lt v3, v0, :cond_3a
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_36
-    move-object/from16 v0, v49
-
-    iput-wide v5, v0, Lcn/com/smartdevices/bracelet/analysis/a;->a:D
-
-    move-object/from16 v0, v41
-
-    iget v0, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
-
-    move/from16 v16, v0
-
-    move/from16 v0, v16
-
-    int-to-double v0, v0
-
-    move-wide/from16 v50, v0
-
-    const-wide v52, 0x4001a305532617c2L
-
-    mul-double v50, v50, v52
-
-    sget-object v16, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
-
-    aget-object v16, v16, v3
-
-    const/16 v52, 0x1
-
-    aget-wide v52, v16, v52
-
-    mul-double v50, v50, v52
-
-    mul-double v50, v50, v5
-
-    const-wide/high16 v52, 0x404e
-
-    sget-object v16, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
-
-    aget-object v16, v16, v3
-
-    const/16 v54, 0x0
-
-    aget-wide v54, v16, v54
-
-    mul-double v52, v52, v54
-
-    div-double v50, v50, v52
-
-    move-wide/from16 v0, v50
-
-    move-object/from16 v2, v49
-
-    iput-wide v0, v2, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
-
-    move-object/from16 v0, v49
-
-    iget-wide v0, v0, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
-
-    move-wide/from16 v50, v0
-
-    add-double v25, v25, v50
-
-    sget-boolean v16, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v16, :cond_37
-
-    const-string v16, "DataAnalysis"
-
-    new-instance v50, Ljava/lang/StringBuilder;
-
-    const-string v51, "iDistance="
-
-    invoke-direct/range {v50 .. v51}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v50
-
-    invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v50
-
-    const-string v51, ",p="
-
-    invoke-virtual/range {v50 .. v51}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v50
-
-    move-object/from16 v0, v50
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v50, ",cals="
-
-    move-object/from16 v0, v50
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-wide/from16 v0, v25
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object/from16 v0, v16
-
-    invoke-static {v0, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_37
-    add-int v14, v14, v19
-
-    move/from16 v0, v44
-
-    if-lt v14, v0, :cond_6b
-
-    if-gez v8, :cond_6b
-
-    move v3, v7
-
-    :goto_26
-    sub-int v8, v7, v4
-
-    div-int/lit8 v16, v8, 0x3c
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-eq v0, v1, :cond_3d
-
-    new-instance v50, Lcn/com/smartdevices/bracelet/analysis/StageSteps;
-
-    invoke-direct/range {v50 .. v50}, Lcn/com/smartdevices/bracelet/analysis/StageSteps;-><init>()V
-
-    move/from16 v0, v17
-
-    move-object/from16 v1, v50
-
-    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->time:I
+    move-result-object v4
 
     move/from16 v0, v20
 
-    move-object/from16 v1, v50
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->steps:I
+    move-result-object v4
 
-    move/from16 v0, v24
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object/from16 v1, v50
+    move-result-object v4
 
-    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->distance:I
+    invoke-static {v2, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/16 v8, 0x3c
+    :cond_35
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
 
-    move/from16 v0, v21
+    if-eqz v2, :cond_36
 
-    if-le v0, v8, :cond_3b
+    const-string v2, "DataAnalysis"
 
-    div-int/lit8 v8, v21, 0x3c
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :goto_27
-    move-object/from16 v0, v50
+    const-string v5, "alist size="
 
-    iput v8, v0, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-lez v20, :cond_6a
+    move-object/from16 v0, v21
 
-    move-object/from16 v0, v50
+    array-length v5, v0
 
-    iget v8, v0, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    add-int v20, v29, v8
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_36
+    const/16 v2, 0x78
+
+    move/from16 v0, v20
+
+    if-le v0, v2, :cond_39
+
+    const/16 v2, 0x7d
+
+    :goto_20
+    const/16 v4, 0x5a
+
+    move/from16 v0, v20
+
+    if-gt v0, v4, :cond_3a
+
+    move/from16 v0, v20
+
+    int-to-double v4, v0
+
+    mul-double v4, v4, v45
+
+    const-wide v6, 0x3feccccccccccccdL
+
+    mul-double/2addr v4, v6
+
+    :goto_21
+    add-double v30, v30, v4
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getRuns()I
+
+    move-result v2
+
+    if-lez v2, :cond_6d
+
+    const-wide v6, 0x3fc999999999999aL
+
+    mul-int/lit8 v2, v2, 0x2
+
+    div-int/lit8 v2, v2, 0xf
+
+    int-to-double v0, v2
+
+    move-wide/from16 v53, v0
+
+    add-double v6, v6, v53
+
+    mul-double/2addr v6, v4
+
+    add-double/2addr v6, v13
+
+    :goto_22
+    const/4 v2, 0x0
+
+    :goto_23
+    sget-object v13, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
+
+    array-length v13, v13
+
+    add-int/lit8 v13, v13, -0x1
+
+    if-lt v2, v13, :cond_3b
+
+    :cond_37
+    move-object/from16 v0, v39
+
+    iput-wide v4, v0, Lcn/com/smartdevices/bracelet/analysis/a;->a:D
+
+    move-object/from16 v0, v44
+
+    iget v13, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
+
+    int-to-double v13, v13
+
+    const-wide v53, 0x4001a305532617c2L
+
+    mul-double v13, v13, v53
+
+    sget-object v40, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
+
+    aget-object v40, v40, v2
+
+    const/16 v53, 0x1
+
+    aget-wide v53, v40, v53
+
+    mul-double v13, v13, v53
+
+    mul-double/2addr v13, v4
+
+    const-wide/high16 v53, 0x404e
+
+    sget-object v40, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
+
+    aget-object v40, v40, v2
+
+    const/16 v55, 0x0
+
+    aget-wide v55, v40, v55
+
+    mul-double v53, v53, v55
+
+    div-double v13, v13, v53
+
+    move-object/from16 v0, v39
+
+    iput-wide v13, v0, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
+
+    move-object/from16 v0, v39
+
+    iget-wide v13, v0, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
+
+    add-double v28, v28, v13
+
+    sget-boolean v13, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v13, :cond_38
+
+    const-string v13, "DataAnalysis"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    const-string v40, "iDistance="
 
     move-object/from16 v0, v40
 
-    move-object/from16 v1, v50
+    invoke-direct {v14, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    :goto_28
-    double-to-int v0, v5
+    move-result-object v14
 
-    move/from16 v17, v0
+    const-string v40, ",p="
 
-    if-lez v19, :cond_3c
+    move-object/from16 v0, v40
 
-    const/16 v5, 0x3c
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v14, ",cals="
+
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-wide/from16 v0, v28
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v13, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_38
+    add-int v14, v16, v20
+
+    move/from16 v0, v47
+
+    if-lt v14, v0, :cond_6c
+
+    if-gez v15, :cond_6c
+
+    move v2, v8
+
+    :goto_24
+    sub-int v13, v8, v3
+
+    div-int/lit8 v15, v13, 0x3c
 
     move/from16 v0, v19
 
-    if-gt v0, v5, :cond_3c
+    if-eq v15, v0, :cond_3e
+
+    new-instance v16, Lcn/com/smartdevices/bracelet/analysis/StageSteps;
+
+    invoke-direct/range {v16 .. v16}, Lcn/com/smartdevices/bracelet/analysis/StageSteps;-><init>()V
 
     move/from16 v0, v19
 
-    int-to-double v5, v0
+    move-object/from16 v1, v16
 
-    div-double/2addr v5, v12
+    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->time:I
 
-    double-to-int v5, v5
+    move/from16 v0, v25
 
-    move v8, v14
+    move-object/from16 v1, v16
 
-    move/from16 v21, v20
-
-    move v14, v5
-
-    move-wide v5, v12
-
-    move/from16 v12, v16
-
-    move/from16 v13, v19
-
-    move-wide/from16 v19, v25
-
-    move/from16 v16, v17
-
-    move-wide/from16 v24, v27
-
-    move/from16 v17, v3
-
-    move/from16 v26, v30
-
-    :goto_29
-    invoke-virtual/range {v48 .. v49}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v27
-
-    add-int/lit8 v3, v7, -0x1
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
+    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->steps:I
 
     move/from16 v0, v27
 
-    if-eq v0, v3, :cond_67
+    move-object/from16 v1, v16
 
-    new-instance v27, Ljava/util/HashMap;
+    iput v0, v1, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->distance:I
 
-    invoke-direct/range {v27 .. v27}, Ljava/util/HashMap;-><init>()V
+    const/16 v13, 0x3c
 
-    const-string v3, "start"
+    move/from16 v0, v26
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-le v0, v13, :cond_3c
 
-    move-result-object v28
+    div-int/lit8 v13, v26, 0x3c
 
-    move-object/from16 v0, v27
+    :goto_25
+    move-object/from16 v0, v16
 
-    move-object/from16 v1, v28
+    iput v13, v0, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
 
-    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-lez v25, :cond_6b
 
-    const-string v3, "stop"
+    move-object/from16 v0, v16
 
-    add-int/lit8 v28, v7, -0x1
+    iget v13, v0, Lcn/com/smartdevices/bracelet/analysis/StageSteps;->count:I
 
-    invoke-static/range {v28 .. v28}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    add-int v19, v32, v13
 
-    move-result-object v28
+    move-object/from16 v0, v43
 
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v28, "mode"
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v31
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object/from16 v0, v46
-
-    move-object/from16 v1, v27
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v3, v7
+    :goto_26
+    double-to-int v0, v4
 
-    :goto_2a
-    add-int/lit8 v7, v7, 0x1
+    move/from16 v16, v0
 
-    move/from16 v31, v3
+    if-lez v20, :cond_3d
 
-    move-wide/from16 v27, v24
+    const/16 v4, 0x3c
 
-    move/from16 v29, v21
+    move/from16 v0, v20
 
-    move/from16 v30, v26
+    if-gt v0, v4, :cond_3d
 
-    move/from16 v21, v14
+    move/from16 v0, v20
 
-    move/from16 v24, v16
+    int-to-double v4, v0
 
-    move-wide/from16 v25, v19
+    div-double v4, v4, v17
 
-    move v14, v8
+    double-to-int v4, v4
 
-    move/from16 v20, v13
+    move/from16 v13, v20
 
-    move/from16 v8, v17
+    move-wide/from16 v25, v30
 
-    move/from16 v17, v12
+    move/from16 v27, v19
 
-    move-wide v12, v5
+    move-wide/from16 v19, v6
 
-    goto/16 :goto_15
+    move-wide/from16 v5, v17
 
-    :cond_38
-    const/16 v3, 0x64
+    move v7, v15
+
+    move-wide/from16 v17, v28
+
+    move/from16 v15, v16
+
+    move/from16 v16, v2
+
+    move/from16 v28, v33
+
+    move/from16 v57, v14
+
+    move v14, v4
+
+    move/from16 v4, v57
+
+    :goto_27
+    move-object/from16 v0, v52
+
+    move-object/from16 v1, v39
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v29
+
+    add-int/lit8 v2, v8, -0x1
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v2
+
+    move/from16 v0, v29
+
+    if-eq v0, v2, :cond_68
+
+    new-instance v29, Ljava/util/HashMap;
+
+    invoke-direct/range {v29 .. v29}, Ljava/util/HashMap;-><init>()V
+
+    const-string v2, "start"
+
+    invoke-static/range {v34 .. v34}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v30
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "stop"
+
+    add-int/lit8 v30, v8, -0x1
+
+    invoke-static/range {v30 .. v30}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v30
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v30, "mode"
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object/from16 v0, v50
+
+    move-object/from16 v1, v29
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v2, v8
+
+    :goto_28
+    add-int/lit8 v8, v8, 0x1
+
+    move/from16 v34, v2
+
+    move-wide/from16 v30, v25
+
+    move/from16 v32, v27
+
+    move/from16 v33, v28
+
+    move/from16 v26, v14
+
+    move/from16 v27, v15
+
+    move-wide/from16 v28, v17
+
+    move/from16 v25, v13
+
+    move-wide/from16 v13, v19
+
+    move-wide/from16 v17, v5
+
+    move/from16 v15, v16
+
+    move/from16 v19, v7
+
+    move/from16 v16, v4
+
+    goto/16 :goto_12
+
+    :cond_39
+    const/16 v2, 0x64
+
+    goto/16 :goto_20
+
+    :cond_3a
+    move/from16 v0, v20
+
+    int-to-double v4, v0
+
+    mul-double v4, v4, v45
+
+    move/from16 v0, v20
+
+    int-to-double v6, v0
+
+    mul-double/2addr v4, v6
+
+    int-to-double v6, v2
+
+    div-double/2addr v4, v6
+
+    goto/16 :goto_21
+
+    :cond_3b
+    sget-object v13, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
+
+    aget-object v13, v13, v2
+
+    const/4 v14, 0x0
+
+    aget-wide v13, v13, v14
+
+    cmpg-double v13, v4, v13
+
+    if-lez v13, :cond_37
+
+    add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_23
 
-    :cond_39
-    move/from16 v0, v19
-
-    int-to-double v5, v0
-
-    mul-double v5, v5, v42
-
-    move/from16 v0, v19
-
-    int-to-double v0, v0
-
-    move-wide/from16 v50, v0
-
-    mul-double v5, v5, v50
-
-    int-to-double v0, v3
-
-    move-wide/from16 v50, v0
-
-    div-double v5, v5, v50
-
-    goto/16 :goto_24
-
-    :cond_3a
-    sget-object v16, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->k:[[D
-
-    aget-object v16, v16, v3
-
-    const/16 v50, 0x0
-
-    aget-wide v50, v16, v50
-
-    cmpg-double v16, v5, v50
-
-    if-lez v16, :cond_36
-
-    add-int/lit8 v3, v3, 0x1
+    :cond_3c
+    const/4 v13, 0x1
 
     goto/16 :goto_25
 
-    :cond_3b
-    const/4 v8, 0x1
+    :cond_3d
+    const/16 v4, 0x3c
+
+    move/from16 v0, v20
+
+    if-le v0, v4, :cond_6a
+
+    const/16 v13, 0x3c
+
+    div-int/lit8 v4, v20, 0x3c
+
+    int-to-double v4, v4
+
+    add-double v4, v4, v17
+
+    const-wide/high16 v17, 0x4000
+
+    div-double v4, v4, v17
+
+    move-wide/from16 v17, v28
+
+    move-wide/from16 v25, v30
+
+    move/from16 v27, v19
+
+    move/from16 v28, v33
+
+    move/from16 v57, v13
+
+    move/from16 v13, v20
+
+    move-wide/from16 v19, v6
+
+    move v7, v15
+
+    move/from16 v15, v16
+
+    move/from16 v16, v2
+
+    move-wide/from16 v58, v4
+
+    move-wide/from16 v5, v58
+
+    move v4, v14
+
+    move/from16 v14, v57
 
     goto/16 :goto_27
 
-    :cond_3c
-    const/16 v5, 0x3c
-
-    move/from16 v0, v19
-
-    if-le v0, v5, :cond_69
-
-    const/16 v8, 0x3c
-
-    div-int/lit8 v5, v19, 0x3c
-
-    int-to-double v5, v5
-
-    add-double/2addr v5, v12
-
-    const-wide/high16 v12, 0x4000
-
-    div-double/2addr v5, v12
-
-    move/from16 v12, v16
-
-    move/from16 v13, v19
-
-    move/from16 v21, v20
-
-    move/from16 v16, v17
-
-    move-wide/from16 v19, v25
-
-    move/from16 v17, v3
-
-    move-wide/from16 v24, v27
-
-    move/from16 v26, v30
-
-    move/from16 v56, v14
-
-    move v14, v8
-
-    move/from16 v8, v56
-
-    goto/16 :goto_29
-
-    :cond_3d
-    add-int v8, v20, v19
-
-    double-to-int v5, v5
-
-    add-int v20, v24, v5
-
-    if-lez v19, :cond_3e
-
-    const/16 v5, 0x3c
-
-    move/from16 v0, v19
-
-    if-gt v0, v5, :cond_3e
-
-    move/from16 v0, v19
-
-    int-to-double v5, v0
-
-    div-double/2addr v5, v12
-
-    double-to-int v5, v5
-
-    add-int v5, v5, v21
-
-    move/from16 v16, v20
-
-    move/from16 v21, v29
-
-    move-wide/from16 v19, v25
-
-    move-wide/from16 v24, v27
-
-    move/from16 v26, v30
-
-    move-wide/from16 v56, v12
-
-    move/from16 v12, v17
-
-    move v13, v8
-
-    move/from16 v17, v3
-
-    move v8, v14
-
-    move v14, v5
-
-    move-wide/from16 v5, v56
-
-    goto/16 :goto_29
-
     :cond_3e
-    const/16 v5, 0x3c
+    add-int v13, v25, v20
 
-    move/from16 v0, v19
+    double-to-int v4, v4
 
-    if-le v0, v5, :cond_68
+    add-int v16, v27, v4
 
-    add-int/lit8 v16, v21, 0x3c
+    if-lez v20, :cond_3f
 
-    div-int/lit8 v5, v19, 0x3c
+    const/16 v4, 0x3c
 
-    int-to-double v5, v5
+    move/from16 v0, v20
 
-    add-double/2addr v5, v12
+    if-gt v0, v4, :cond_3f
 
-    const-wide/high16 v12, 0x4000
+    move/from16 v0, v20
 
-    div-double/2addr v5, v12
+    int-to-double v4, v0
 
-    move/from16 v12, v17
+    div-double v4, v4, v17
 
-    move v13, v8
+    double-to-int v4, v4
 
-    move/from16 v21, v29
+    add-int v4, v4, v26
 
-    move/from16 v17, v3
+    move/from16 v15, v16
 
-    move v8, v14
+    move-wide/from16 v25, v30
 
-    move/from16 v14, v16
+    move/from16 v27, v32
 
-    move/from16 v16, v20
+    move/from16 v16, v2
 
-    move-wide/from16 v19, v25
+    move/from16 v57, v14
 
-    move-wide/from16 v24, v27
+    move v14, v4
 
-    move/from16 v26, v30
+    move/from16 v4, v57
 
-    goto/16 :goto_29
+    move-wide/from16 v58, v28
+
+    move/from16 v28, v33
+
+    move-wide/from16 v60, v6
+
+    move-wide/from16 v5, v17
+
+    move/from16 v7, v19
+
+    move-wide/from16 v19, v60
+
+    move-wide/from16 v17, v58
+
+    goto/16 :goto_27
 
     :cond_3f
-    const/4 v3, 0x1
+    const/16 v4, 0x3c
 
-    goto/16 :goto_16
+    move/from16 v0, v20
+
+    if-le v0, v4, :cond_69
+
+    add-int/lit8 v15, v26, 0x3c
+
+    div-int/lit8 v4, v20, 0x3c
+
+    int-to-double v4, v4
+
+    add-double v4, v4, v17
+
+    const-wide/high16 v17, 0x4000
+
+    div-double v4, v4, v17
+
+    move-wide/from16 v17, v28
+
+    move-wide/from16 v25, v30
+
+    move/from16 v27, v32
+
+    move/from16 v28, v33
+
+    move/from16 v57, v16
+
+    move/from16 v16, v2
+
+    move/from16 v58, v14
+
+    move v14, v15
+
+    move/from16 v15, v57
+
+    move-wide/from16 v59, v6
+
+    move/from16 v7, v19
+
+    move-wide/from16 v19, v59
+
+    move-wide/from16 v61, v4
+
+    move-wide/from16 v5, v61
+
+    move/from16 v4, v58
+
+    goto/16 :goto_27
 
     :cond_40
-    move-object/from16 v0, v46
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    goto/16 :goto_13
 
-    move-result-object v3
+    :cond_41
+    move-object/from16 v0, v50
 
-    check-cast v3, Ljava/util/HashMap;
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    const-string v6, "start"
+    move-result-object v2
 
-    invoke-virtual {v3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Ljava/util/HashMap;
 
-    move-result-object v3
+    const-string v5, "start"
 
-    check-cast v3, Ljava/lang/Integer;
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    move-result-object v2
 
-    move-result v6
+    check-cast v2, Ljava/lang/Integer;
 
-    move-object/from16 v0, v46
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v7, "stop"
-
-    invoke-virtual {v3, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
-    move-object/from16 v0, v46
+    move-object/from16 v0, v50
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/HashMap;
+    check-cast v2, Ljava/util/HashMap;
 
-    const-string v16, "mode"
+    const-string v5, "stop"
 
-    move-object/from16 v0, v16
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Ljava/lang/Integer;
 
-    check-cast v3, Ljava/lang/Integer;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    move-result v8
 
-    move-result v16
+    move-object/from16 v0, v50
 
-    const/4 v3, 0x3
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move/from16 v0, v16
+    move-result-object v2
 
-    if-eq v0, v3, :cond_41
+    check-cast v2, Ljava/util/HashMap;
 
-    if-nez v16, :cond_44
+    const-string v5, "mode"
 
-    :cond_41
-    const/4 v3, 0x0
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_2b
-    sget-boolean v17, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+    move-result-object v2
 
-    if-eqz v17, :cond_42
+    check-cast v2, Ljava/lang/Integer;
 
-    const-string v17, "sleepAnalyze"
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    move-result v18
+
+    const/4 v2, 0x3
+
+    move/from16 v0, v18
+
+    if-eq v0, v2, :cond_42
+
+    if-nez v18, :cond_44
+
+    :cond_42
+    const/4 v2, 0x0
+
+    :goto_29
+    sget-boolean v5, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v5, :cond_43
+
+    const-string v5, "sleepAnalyze"
+
+    new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v19, "mList["
 
-    invoke-direct/range {v18 .. v19}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v19
 
-    move-object/from16 v0, v18
+    invoke-direct {v6, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v6
 
     const-string v19, "]:["
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v19
 
-    move-result-object v18
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v18
+    move-result-object v6
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v6
 
     const-string v19, "->"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v19
 
-    move-result-object v18
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v18
+    move-result-object v6
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v6
 
     const-string v19, "],mode="
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v19
 
-    move-result-object v18
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v18
+    move-result-object v6
 
-    move/from16 v1, v16
+    move/from16 v0, v18
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v6
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v6
 
-    invoke-static/range {v17 .. v18}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_42
-    const/16 v17, 0x6
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-eq v0, v1, :cond_4c
-
-    const/16 v17, 0x7
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-eq v0, v1, :cond_4c
-
-    const/16 v17, 0x4
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-eq v0, v1, :cond_43
-
-    const/16 v17, 0x5
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-ne v0, v1, :cond_48
+    invoke-static {v5, v6}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_43
-    if-gt v7, v10, :cond_4c
+    const/4 v5, 0x6
 
-    const/4 v3, 0x4
+    move/from16 v0, v18
 
-    move/from16 v0, v16
+    if-eq v0, v5, :cond_4b
 
-    if-ne v3, v0, :cond_47
+    const/4 v5, 0x7
 
-    sub-int v3, v7, v6
+    move/from16 v0, v18
 
-    add-int/lit8 v3, v3, 0x1
+    if-ne v0, v5, :cond_47
 
-    add-int v24, v24, v3
+    move/from16 v5, v16
 
-    move v6, v12
+    move/from16 v6, v17
 
-    move v7, v13
+    :goto_2a
+    add-int/lit8 v2, v4, 0x1
 
-    move v12, v14
+    move v4, v2
 
-    move/from16 v13, v24
+    move/from16 v16, v5
 
-    :goto_2c
-    add-int/lit8 v3, v5, 0x1
+    move/from16 v17, v6
 
-    move v5, v3
-
-    move v14, v12
-
-    move/from16 v24, v13
-
-    move v12, v6
-
-    move v13, v7
-
-    goto/16 :goto_17
+    goto/16 :goto_14
 
     :cond_44
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    move/from16 v0, v16
+    move/from16 v0, v18
 
-    if-eq v0, v3, :cond_45
+    if-eq v0, v2, :cond_45
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    move/from16 v0, v16
+    move/from16 v0, v18
 
-    if-ne v0, v3, :cond_46
+    if-ne v0, v2, :cond_46
 
     :cond_45
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    goto/16 :goto_2b
+    goto :goto_29
 
     :cond_46
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    goto/16 :goto_2b
+    goto :goto_29
 
     :cond_47
-    sub-int v3, v7, v6
+    const/4 v5, 0x4
 
-    add-int/lit8 v3, v3, 0x1
+    move/from16 v0, v18
 
-    add-int/2addr v14, v3
+    if-eq v0, v5, :cond_48
 
-    move v6, v12
+    const/4 v5, 0x5
 
-    move v7, v13
+    move/from16 v0, v18
 
-    move v12, v14
-
-    move/from16 v13, v24
-
-    goto :goto_2c
+    if-ne v0, v5, :cond_49
 
     :cond_48
-    const/16 v17, 0x1
+    move/from16 v5, v16
 
-    move/from16 v0, v17
+    move/from16 v6, v17
 
-    if-ne v0, v3, :cond_4b
-
-    sub-int v3, v7, v6
-
-    add-int/lit8 v3, v3, 0x1
-
-    if-le v4, v6, :cond_49
-
-    if-lt v7, v4, :cond_49
-
-    sub-int v3, v7, v4
-
-    add-int/lit8 v3, v3, 0x1
+    goto :goto_2a
 
     :cond_49
-    const/16 v17, 0x2
+    const/4 v5, 0x1
+
+    if-ne v5, v2, :cond_4a
+
+    sub-int v2, v8, v7
+
+    add-int/lit8 v2, v2, 0x1
+
+    if-le v3, v7, :cond_67
+
+    if-lt v8, v3, :cond_67
+
+    sub-int v2, v8, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    move v5, v2
+
+    :goto_2b
+    move v6, v7
+
+    :goto_2c
+    if-le v6, v8, :cond_4c
 
     move/from16 v0, v16
 
-    move/from16 v1, v17
-
-    if-ne v0, v1, :cond_4a
-
-    add-int/2addr v13, v3
-
-    :cond_4a
-    invoke-static {v12, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v12
-
-    :cond_4b
-    const/4 v3, 0x3
-
-    move/from16 v0, v16
-
-    if-ne v0, v3, :cond_4c
-
-    sub-int v3, v7, v6
-
-    const/16 v16, 0x1e
-
-    move/from16 v0, v16
-
-    if-ge v3, v0, :cond_4c
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, v22
-
-    invoke-static {v0, v6, v7, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
-
-    move-object/from16 v0, v46
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    const-string v6, "mode"
-
-    const/4 v7, 0x0
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_4c
-    move v6, v12
-
-    move v7, v13
-
-    move v12, v14
-
-    move/from16 v13, v24
-
-    goto :goto_2c
-
-    :cond_4d
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    invoke-static {v0, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v16
 
-    add-int/lit8 v3, v5, -0x1
+    :cond_4a
+    const/4 v2, 0x3
 
-    move-object/from16 v0, v22
+    move/from16 v0, v18
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-ne v0, v2, :cond_4b
 
-    move-result-object v3
+    sub-int v2, v8, v7
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    const/16 v5, 0x1e
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    if-ge v2, v5, :cond_4b
 
-    move-result v3
+    const/4 v2, 0x0
 
-    move/from16 v0, v16
+    move-object/from16 v0, v23
 
-    if-eq v0, v3, :cond_66
+    invoke-static {v0, v7, v8, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;III)V
 
-    add-int/lit8 v3, v5, -0x1
+    move-object/from16 v0, v50
 
-    move-object/from16 v0, v22
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Ljava/util/HashMap;
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    const-string v5, "mode"
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
-
-    if-nez v3, :cond_4e
-
-    sub-int v16, v5, v6
-
-    const/16 v17, 0xa
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-ge v0, v1, :cond_4f
-
-    :cond_4e
-    const/16 v16, 0x1
-
-    move/from16 v0, v16
-
-    if-eq v3, v0, :cond_51
-
-    const/16 v16, 0x2
-
-    move/from16 v0, v16
-
-    if-eq v3, v0, :cond_51
-
-    if-eqz v3, :cond_51
-
-    :cond_4f
-    sget-boolean v3, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
-
-    if-eqz v3, :cond_50
-
-    const-string v3, "dataAnalysis"
-
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    const-string v17, "intv "
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    const-string v17, "->"
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    add-int/lit8 v17, v5, -0x1
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    invoke-static {v3, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_50
-    new-instance v3, Ljava/util/HashMap;
-
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
-
-    if-lt v6, v4, :cond_52
-
-    const-string v16, "start"
+    const/4 v6, 0x0
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    move-object/from16 v0, v16
+    invoke-virtual {v2, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v0, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_4b
+    move/from16 v5, v16
 
-    const-string v6, "stop"
+    move/from16 v6, v17
 
-    add-int/lit8 v16, v5, -0x1
+    goto :goto_2a
 
-    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_4c
+    move-object/from16 v0, v23
 
-    move-result-object v16
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-object/from16 v0, v16
+    move-result-object v2
 
-    invoke-virtual {v3, v6, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getRuns()I
+
+    move-result v2
+
+    mul-int/lit8 v2, v2, 0xa
+
+    add-int v17, v17, v2
+
+    add-int/lit8 v2, v6, 0x1
+
+    move v6, v2
+
+    goto :goto_2c
+
+    :cond_4d
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v7
+
+    add-int/lit8 v2, v4, -0x1
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v2
+
+    if-eq v7, v2, :cond_66
+
+    add-int/lit8 v2, v4, -0x1
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v2
+
+    if-nez v2, :cond_4e
+
+    sub-int v7, v4, v5
+
+    const/16 v8, 0xa
+
+    if-ge v7, v8, :cond_4f
+
+    :cond_4e
+    const/4 v7, 0x1
+
+    if-eq v2, v7, :cond_51
+
+    const/4 v7, 0x2
+
+    if-eq v2, v7, :cond_51
+
+    if-eqz v2, :cond_51
+
+    :cond_4f
+    sget-boolean v2, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a:Z
+
+    if-eqz v2, :cond_50
+
+    const-string v2, "dataAnalysis"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    const-string v8, "intv "
+
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, "->"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    add-int/lit8 v8, v4, -0x1
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v2, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_50
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    if-lt v5, v3, :cond_52
+
+    const-string v7, "start"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "stop"
+
+    add-int/lit8 v7, v4, -0x1
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_51
     :goto_2d
-    move v3, v5
+    move v2, v4
 
     :goto_2e
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    move v6, v3
+    move v5, v2
 
-    goto/16 :goto_18
+    goto/16 :goto_15
 
     :cond_52
-    add-int/lit8 v6, v5, -0x1
+    add-int/lit8 v5, v4, -0x1
 
-    if-lt v6, v4, :cond_51
+    if-lt v5, v3, :cond_51
 
-    const-string v6, "start"
+    const-string v5, "start"
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v16
+    move-result-object v7
 
-    move-object/from16 v0, v16
+    invoke-virtual {v2, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v6, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v5, "stop"
 
-    const-string v6, "stop"
+    add-int/lit8 v7, v4, -0x1
 
-    add-int/lit8 v16, v5, -0x1
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v7
 
-    move-result-object v16
+    invoke-virtual {v2, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v0, v16
-
-    invoke-virtual {v3, v6, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2d
 
     :cond_53
-    add-int/lit8 v3, v4, -0x1
+    add-int/lit8 v2, v3, -0x1
 
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/HashMap;
+    check-cast v2, Ljava/util/HashMap;
 
-    const-string v5, "stop"
+    const-string v4, "stop"
 
-    invoke-virtual {v3, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v2, Ljava/lang/Integer;
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v5, v3, 0x1
+    add-int/lit8 v4, v2, 0x1
 
-    invoke-virtual {v7, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/HashMap;
+    check-cast v2, Ljava/util/HashMap;
 
-    const-string v6, "start"
+    const-string v5, "start"
 
-    invoke-virtual {v3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v2, Ljava/lang/Integer;
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v5, v2, -0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    if-lez v8, :cond_54
+    if-lez v15, :cond_54
 
-    if-lt v8, v5, :cond_54
+    if-lt v15, v4, :cond_54
 
-    if-gt v8, v6, :cond_54
+    if-gt v15, v5, :cond_54
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     :cond_54
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v33
+    move-object/from16 v1, v34
 
-    invoke-static {v0, v5, v6, v1, v3}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILjava/util/ArrayList;Z)V
+    invoke-static {v0, v4, v5, v1, v2}, Lcn/com/smartdevices/bracelet/analysis/DataAnalysis;->a(Ljava/util/ArrayList;IILjava/util/ArrayList;Z)V
 
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v2, v3, 0x1
 
-    move v4, v3
+    move v3, v2
 
-    goto/16 :goto_19
+    goto/16 :goto_16
 
     :cond_55
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    move-result v3
+    move-result v2
 
-    const/16 v5, 0x7e
+    const/16 v4, 0x7e
 
-    if-ne v3, v5, :cond_1c
+    if-ne v2, v4, :cond_1e
 
-    add-int/lit8 v3, v4, -0x1
+    add-int/lit8 v2, v3, -0x1
 
-    move v4, v3
+    move v3, v2
 
-    goto/16 :goto_1a
+    goto/16 :goto_17
 
     :cond_56
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    iget v3, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->flag:I
+    iget v2, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->flag:I
 
-    if-nez v3, :cond_58
-
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
-
-    iget v8, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->start:I
-
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
-
-    iget v0, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
-
-    move/from16 v16, v0
-
-    const-wide/16 v19, 0x0
-
-    const-wide/16 v17, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v6, 0x1
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
-
-    move-wide/from16 v31, v19
-
-    move-wide/from16 v19, v17
-
-    move/from16 v18, v3
-
-    move/from16 v17, v8
+    if-eqz v2, :cond_57
 
     :goto_2f
-    move/from16 v0, v17
+    add-int/lit8 v2, v3, 0x1
 
-    move/from16 v1, v16
+    move v3, v2
 
-    if-le v0, v1, :cond_59
-
-    sub-int v3, v16, v8
-
-    add-int/lit8 v3, v3, 0x1
-
-    if-ne v7, v3, :cond_57
-
-    const/4 v6, 0x2
+    goto/16 :goto_18
 
     :cond_57
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    iput v6, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
+    iget v7, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->start:I
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    const/16 v6, 0x5a0
+    iget v8, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
 
-    if-lt v8, v6, :cond_5d
+    const-wide/16 v20, 0x0
 
-    add-int/lit16 v6, v8, -0x5a0
+    const-wide/16 v18, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x0
+
+    move v15, v7
+
+    move-wide/from16 v25, v20
+
+    move-wide/from16 v57, v18
+
+    move-wide/from16 v19, v57
+
+    move/from16 v18, v2
 
     :goto_30
-    iput v6, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->start:I
+    if-le v15, v8, :cond_59
 
-    move-object/from16 v0, v33
+    sub-int v2, v8, v7
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    add-int/lit8 v2, v2, 0x1
 
-    move-result-object v3
+    if-ne v6, v2, :cond_58
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    const/4 v5, 0x2
 
-    const/16 v6, 0x5a0
+    :cond_58
+    move-object/from16 v0, v34
 
-    move/from16 v0, v16
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    if-lt v0, v6, :cond_5e
+    move-result-object v2
 
-    move/from16 v0, v16
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    add-int/lit16 v6, v0, -0x5a0
+    iput v5, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
+
+    move-object/from16 v0, v34
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+
+    const/16 v5, 0x5a0
+
+    if-lt v7, v5, :cond_5d
+
+    add-int/lit16 v5, v7, -0x5a0
 
     :goto_31
-    iput v6, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
+    iput v5, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->start:I
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    move-wide/from16 v0, v31
+    const/16 v5, 0x5a0
 
-    double-to-int v6, v0
+    if-lt v8, v5, :cond_5e
 
-    iput v6, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->distance:I
+    add-int/lit16 v5, v8, -0x5a0
 
-    move-object/from16 v0, v33
+    :goto_32
+    iput v5, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-object/from16 v0, v34
 
-    move-result-object v3
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+
+    move-wide/from16 v0, v25
+
+    double-to-int v5, v0
+
+    iput v5, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->distance:I
+
+    move-object/from16 v0, v34
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
     move-wide/from16 v0, v19
 
-    double-to-int v6, v0
+    double-to-int v5, v0
 
-    iput v6, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->calories:I
+    iput v5, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->calories:I
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    iput v7, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runtime:I
+    iput v6, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runtime:I
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
     move/from16 v0, v18
 
-    iput v0, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->steps:I
+    iput v0, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->steps:I
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
-    iput v5, v3, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->activeTime:I
+    iput v4, v2, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->activeTime:I
 
-    :cond_58
-    add-int/lit8 v3, v4, 0x1
-
-    move v4, v3
-
-    goto/16 :goto_1b
+    goto/16 :goto_2f
 
     :cond_59
-    sub-int v3, v17, v36
+    sub-int v2, v15, v38
 
-    add-int/lit8 v21, v3, -0x1
+    add-int/lit8 v21, v2, -0x1
 
-    move-object/from16 v0, v48
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/a;
-
-    iget-wide v0, v3, Lcn/com/smartdevices/bracelet/analysis/a;->a:D
-
-    move-wide/from16 v41, v0
-
-    add-double v31, v31, v41
-
-    move-object/from16 v0, v48
+    move-object/from16 v0, v52
 
     move/from16 v1, v21
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/analysis/a;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/a;
 
-    iget-wide v0, v3, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
+    iget-wide v0, v2, Lcn/com/smartdevices/bracelet/analysis/a;->a:D
 
-    move-wide/from16 v41, v0
+    move-wide/from16 v35, v0
 
-    add-double v19, v19, v41
+    add-double v25, v25, v35
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v52
 
-    move/from16 v1, v17
+    move/from16 v1, v21
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    check-cast v2, Lcn/com/smartdevices/bracelet/analysis/a;
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    iget-wide v0, v2, Lcn/com/smartdevices/bracelet/analysis/a;->b:D
 
-    move-result v3
+    move-wide/from16 v35, v0
+
+    add-double v19, v19, v35
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+
+    move-result v2
 
     const/16 v21, 0x2
 
     move/from16 v0, v21
 
-    if-ne v3, v0, :cond_5b
+    if-ne v2, v0, :cond_5b
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    add-int/lit8 v3, v5, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    move v5, v3
+    move v4, v2
 
     :cond_5a
-    :goto_32
-    move-object/from16 v0, v22
+    :goto_33
+    move-object/from16 v0, v23
 
-    move/from16 v1, v17
+    invoke-virtual {v0, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getStep()I
+    move-result v2
 
-    move-result v3
+    add-int v18, v18, v2
 
-    add-int v18, v18, v3
+    add-int/lit8 v2, v15, 0x1
 
-    add-int/lit8 v3, v17, 0x1
+    move v15, v2
 
-    move/from16 v17, v3
-
-    goto/16 :goto_2f
+    goto/16 :goto_30
 
     :cond_5b
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move/from16 v1, v17
+    invoke-virtual {v0, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
-
-    move-result v3
+    move-result v2
 
     const/16 v21, 0x1
 
     move/from16 v0, v21
 
-    if-ne v3, v0, :cond_5c
+    if-ne v2, v0, :cond_5c
 
-    add-int/lit8 v3, v5, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    move v5, v3
+    move v4, v2
 
-    goto :goto_32
+    goto :goto_33
 
     :cond_5c
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move/from16 v1, v17
+    invoke-virtual {v0, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->getSportMode()I
+    move-result v2
 
-    move-result v3
+    if-nez v2, :cond_5a
 
-    if-nez v3, :cond_5a
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v5, v2
 
-    move v6, v3
-
-    goto :goto_32
+    goto :goto_33
 
     :cond_5d
-    move v6, v8
-
-    goto/16 :goto_30
-
-    :cond_5e
-    move/from16 v6, v16
+    move v5, v7
 
     goto/16 :goto_31
 
+    :cond_5e
+    move v5, v8
+
+    goto/16 :goto_32
+
     :cond_5f
+    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
+
+    move-result v3
+
+    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
+
+    move-result v4
+
+    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Ljava/util/Calendar;->set(IIIII)V
+
     invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
 
     move-result v4
@@ -11736,260 +11698,246 @@
 
     const/4 v8, 0x0
 
+    move-object/from16 v3, v19
+
     invoke-virtual/range {v3 .. v8}, Ljava/util/Calendar;->set(IIIII)V
 
-    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getYear()I
-
-    move-result v17
-
-    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getMonth()I
-
-    move-result v18
-
-    invoke-virtual/range {p1 .. p1}, Lcn/com/smartdevices/bracelet/model/DaySportData;->getDay()I
-
-    move-result v19
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    invoke-virtual/range {v16 .. v21}, Ljava/util/Calendar;->set(IIIII)V
-
-    goto/16 :goto_1c
+    goto/16 :goto_19
 
     :cond_60
-    const/4 v4, 0x0
-
-    move v5, v4
-
-    goto/16 :goto_1d
-
-    :cond_61
-    move/from16 v4, v35
-
-    goto/16 :goto_1e
-
-    :cond_62
-    if-nez v15, :cond_63
-
-    const/4 v4, 0x5
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v3, v4, v6}, Ljava/util/Calendar;->add(II)V
-
-    const/4 v4, 0x5
-
-    const/4 v6, 0x1
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v4, v6}, Ljava/util/Calendar;->add(II)V
-
-    :cond_63
-    invoke-virtual {v3}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartDate(Ljava/util/Date;)V
-
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopDate(Ljava/util/Date;)V
-
-    invoke-virtual {v3}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartOnBedDate(Ljava/util/Date;)V
-
-    invoke-virtual/range {v16 .. v16}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v4
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopOnBedDate(Ljava/util/Date;)V
-
-    sget v4, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->NOSLEEP_NONWEAR:I
-
-    move-object/from16 v0, v31
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setNosleepReason(I)V
-
-    goto/16 :goto_1f
-
-    :cond_64
-    move/from16 v4, v29
-
-    goto/16 :goto_20
-
-    :cond_65
-    :try_start_0
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcn/com/smartdevices/bracelet/model/SportData;
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/model/SportData;->copy()Lcn/com/smartdevices/bracelet/model/SportData;
-
-    move-result-object v3
-
-    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    add-int/lit8 v3, v4, 0x1
+    const/4 v3, 0x0
 
     move v4, v3
 
-    goto/16 :goto_21
+    goto/16 :goto_1a
+
+    :cond_61
+    move/from16 v3, v37
+
+    goto/16 :goto_1b
+
+    :cond_62
+    if-nez v9, :cond_63
+
+    const/4 v3, 0x5
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v2, v3, v5}, Ljava/util/Calendar;->add(II)V
+
+    const/4 v3, 0x5
+
+    const/4 v5, 0x1
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v3, v5}, Ljava/util/Calendar;->add(II)V
+
+    :cond_63
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartDate(Ljava/util/Date;)V
+
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopDate(Ljava/util/Date;)V
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStartOnBedDate(Ljava/util/Date;)V
+
+    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setStopOnBedDate(Ljava/util/Date;)V
+
+    sget v3, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->NOSLEEP_NONWEAR:I
+
+    invoke-virtual {v15, v3}, Lcn/com/smartdevices/bracelet/analysis/SleepInfo;->setNosleepReason(I)V
+
+    goto/16 :goto_1c
+
+    :cond_64
+    move/from16 v3, v32
+
+    goto/16 :goto_1d
+
+    :cond_65
+    :try_start_0
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcn/com/smartdevices/bracelet/model/SportData;
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->copy()Lcn/com/smartdevices/bracelet/model/SportData;
+
+    move-result-object v2
+
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    goto/16 :goto_1e
 
     :catch_0
-    move-exception v3
+    move-exception v2
 
-    invoke-virtual {v3}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
+    invoke-virtual {v2}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
 
-    invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    goto/16 :goto_22
+    goto/16 :goto_1f
 
     :cond_66
-    move v3, v6
+    move v2, v5
 
     goto/16 :goto_2e
 
     :cond_67
-    move/from16 v3, v31
+    move v5, v2
 
-    goto/16 :goto_2a
+    goto/16 :goto_2b
 
     :cond_68
-    move-wide v5, v12
-
-    move/from16 v16, v20
-
-    move/from16 v12, v17
-
-    move v13, v8
-
-    move-wide/from16 v19, v25
-
-    move v8, v14
-
-    move/from16 v17, v3
-
-    move-wide/from16 v24, v27
-
-    move/from16 v26, v30
-
-    move/from16 v14, v21
-
-    move/from16 v21, v29
-
-    goto/16 :goto_29
-
-    :cond_69
-    move-wide v5, v12
-
-    move v8, v14
-
-    move/from16 v12, v16
-
-    move/from16 v13, v19
-
-    move/from16 v14, v21
-
-    move/from16 v16, v17
-
-    move/from16 v21, v20
-
-    move-wide/from16 v19, v25
-
-    move/from16 v17, v3
-
-    move-wide/from16 v24, v27
-
-    move/from16 v26, v30
-
-    goto/16 :goto_29
-
-    :cond_6a
-    move/from16 v20, v29
+    move/from16 v2, v34
 
     goto/16 :goto_28
 
+    :cond_69
+    move v4, v14
+
+    move/from16 v15, v16
+
+    move/from16 v27, v32
+
+    move/from16 v14, v26
+
+    move/from16 v16, v2
+
+    move-wide/from16 v25, v30
+
+    move-wide/from16 v57, v28
+
+    move/from16 v28, v33
+
+    move-wide/from16 v59, v6
+
+    move-wide/from16 v5, v17
+
+    move/from16 v7, v19
+
+    move-wide/from16 v19, v59
+
+    move-wide/from16 v17, v57
+
+    goto/16 :goto_27
+
+    :cond_6a
+    move v4, v14
+
+    move/from16 v13, v20
+
+    move/from16 v27, v19
+
+    move/from16 v14, v26
+
+    move-wide/from16 v19, v6
+
+    move-wide/from16 v5, v17
+
+    move-wide/from16 v25, v30
+
+    move v7, v15
+
+    move/from16 v15, v16
+
+    move-wide/from16 v17, v28
+
+    move/from16 v16, v2
+
+    move/from16 v28, v33
+
+    goto/16 :goto_27
+
     :cond_6b
-    move v3, v8
+    move/from16 v19, v32
 
     goto/16 :goto_26
 
     :cond_6c
-    move-wide v5, v12
+    move v2, v15
 
-    move/from16 v16, v24
-
-    move/from16 v12, v17
-
-    move/from16 v13, v20
-
-    move/from16 v17, v8
-
-    move-wide/from16 v19, v25
-
-    move v8, v14
-
-    move-wide/from16 v24, v27
-
-    move/from16 v26, v30
-
-    move/from16 v14, v21
-
-    move/from16 v21, v29
-
-    goto/16 :goto_29
+    goto/16 :goto_24
 
     :cond_6d
-    move v10, v3
+    move-wide v6, v13
 
-    move v11, v4
-
-    goto/16 :goto_11
+    goto/16 :goto_22
 
     :cond_6e
-    move v12, v3
+    move/from16 v4, v16
 
-    goto/16 :goto_6
+    move-wide/from16 v5, v17
+
+    move/from16 v7, v19
+
+    move/from16 v16, v15
+
+    move-wide/from16 v17, v28
+
+    move-wide/from16 v19, v13
+
+    move/from16 v13, v25
+
+    move/from16 v14, v26
+
+    move/from16 v15, v27
+
+    move/from16 v28, v33
+
+    move/from16 v27, v32
+
+    move-wide/from16 v25, v30
+
+    goto/16 :goto_27
 
     :cond_6f
-    move-object v11, v3
+    move v11, v2
 
-    goto/16 :goto_5
+    move v12, v3
+
+    goto/16 :goto_e
 
     :cond_70
-    move-object/from16 v22, v3
+    move-object/from16 v18, v2
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_71
-    move-object/from16 v37, v5
+    move/from16 v57, v3
 
-    goto/16 :goto_1
+    move-object v3, v2
+
+    move/from16 v2, v57
+
+    goto/16 :goto_2
 
     :cond_72
-    move-object v3, v6
+    move-object v2, v6
 
     goto/16 :goto_0
 .end method

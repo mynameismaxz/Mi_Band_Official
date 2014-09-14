@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/ui/j;
+.class Lcn/com/smartdevices/bracelet/ui/j;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 4
 
     iget v1, p1, Landroid/os/Message;->what:I

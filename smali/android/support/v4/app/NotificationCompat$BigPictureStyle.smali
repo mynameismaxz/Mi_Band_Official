@@ -54,7 +54,7 @@
 .method public setBigContentTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->d:Ljava/lang/CharSequence;
+    iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->e:Ljava/lang/CharSequence;
 
     return-object p0
 .end method
@@ -62,11 +62,11 @@
 .method public setSummaryText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
     .locals 1
 
-    iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->e:Ljava/lang/CharSequence;
+    iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->f:Ljava/lang/CharSequence;
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->f:Z
+    iput-boolean v0, p0, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->g:Z
 
     return-object p0
 .end method

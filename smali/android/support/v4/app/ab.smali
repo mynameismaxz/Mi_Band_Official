@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/ab;
+.class Landroid/support/v4/app/ab;
 .super Landroid/support/v4/app/aa;
 
 
@@ -13,17 +13,17 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/CharSequence;)Ljava/lang/String;
+.method public a(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 1
 
-    invoke-static {p1}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-static {p1}, Landroid/support/v4/app/ad;->a(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method final a(Landroid/view/MenuItem;)Z
+.method a(Landroid/view/MenuItem;)Z
     .locals 1
 
     const/4 v0, 0x0

@@ -1,9 +1,9 @@
-.class final Lcom/tencent/connect/auth/b;
+.class Lcom/tencent/connect/auth/b;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/auth/AuthAgent;
+.field final synthetic a:Lcom/tencent/connect/auth/AuthAgent;
 
 
 # direct methods
@@ -19,20 +19,30 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 5
 
     const-string v0, "openSDK_LOG"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "OpenUi, handleMessage msg.what = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget v2, p1, Landroid/os/Message;->what:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

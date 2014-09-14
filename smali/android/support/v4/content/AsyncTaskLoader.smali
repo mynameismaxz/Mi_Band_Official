@@ -15,13 +15,13 @@
 
 
 # static fields
-.field private static b:Ljava/lang/String; = "AsyncTaskLoader"
+.field static final a:Ljava/lang/String; = "AsyncTaskLoader"
 
-.field private static c:Z
+.field static final b:Z
 
 
 # instance fields
-.field private volatile d:Landroid/support/v4/content/a;
+.field volatile c:Landroid/support/v4/content/a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/content/AsyncTaskLoader",
@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field private volatile e:Landroid/support/v4/content/a;
+.field volatile d:Landroid/support/v4/content/a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/content/AsyncTaskLoader",
@@ -39,11 +39,11 @@
     .end annotation
 .end field
 
-.field private f:J
+.field e:J
 
-.field private g:J
+.field f:J
 
-.field private h:Landroid/os/Handler;
+.field g:Landroid/os/Handler;
 
 
 # direct methods
@@ -54,44 +54,44 @@
 
     const-wide/16 v0, -0x2710
 
-    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()V
+.method a()V
     .locals 6
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iget-boolean v0, v0, Landroid/support/v4/content/a;->a:Z
+    iget-boolean v0, v0, Landroid/support/v4/content/a;->b:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Landroid/support/v4/content/a;->a:Z
+    iput-boolean v1, v0, Landroid/support/v4/content/a;->b:Z
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->h:Landroid/os/Handler;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:Landroid/os/Handler;
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     :cond_0
-    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     const-wide/16 v2, 0x0
 
@@ -103,9 +103,9 @@
 
     move-result-wide v0
 
-    iget-wide v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iget-wide v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
-    iget-wide v4, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iget-wide v4, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     add-long/2addr v2, v4
 
@@ -113,19 +113,19 @@
 
     if-gez v0, :cond_2
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Landroid/support/v4/content/a;->a:Z
+    iput-boolean v1, v0, Landroid/support/v4/content/a;->b:Z
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->h:Landroid/os/Handler;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:Landroid/os/Handler;
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iget-wide v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iget-wide v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
-    iget-wide v4, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iget-wide v4, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     add-long/2addr v2, v4
 
@@ -136,18 +136,20 @@
     return-void
 
     :cond_2
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    sget-object v1, Landroid/support/v4/content/ModernAsyncTask;->b:Ljava/util/concurrent/Executor;
+    sget-object v2, Landroid/support/v4/content/ModernAsyncTask;->d:Ljava/util/concurrent/Executor;
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/content/a;->a(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/support/v4/content/ModernAsyncTask;
+    check-cast v0, [Ljava/lang/Void;
+
+    invoke-virtual {v1, v2, v0}, Landroid/support/v4/content/a;->a(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/support/v4/content/ModernAsyncTask;
 
     goto :goto_0
 .end method
 
-.method final a(Landroid/support/v4/content/a;Ljava/lang/Object;)V
+.method a(Landroid/support/v4/content/a;Ljava/lang/Object;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +161,7 @@
 
     invoke-virtual {p0, p2}, Landroid/support/v4/content/AsyncTaskLoader;->onCanceled(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     if-ne v0, p1, :cond_0
 
@@ -169,11 +171,11 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     invoke-virtual {p0}, Landroid/support/v4/content/AsyncTaskLoader;->a()V
 
@@ -181,7 +183,7 @@
     return-void
 .end method
 
-.method final b(Landroid/support/v4/content/a;Ljava/lang/Object;)V
+.method b(Landroid/support/v4/content/a;Ljava/lang/Object;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -191,7 +193,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     if-eq v0, p1, :cond_0
 
@@ -218,11 +220,11 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iput-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {p0, p2}, Landroid/support/v4/content/AsyncTaskLoader;->deliverResult(Ljava/lang/Object;)V
 
@@ -236,60 +238,60 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iget-boolean v1, v1, Landroid/support/v4/content/a;->a:Z
+    iget-boolean v1, v1, Landroid/support/v4/content/a;->b:Z
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iput-boolean v0, v1, Landroid/support/v4/content/a;->a:Z
+    iput-boolean v0, v1, Landroid/support/v4/content/a;->b:Z
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->h:Landroid/os/Handler;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:Landroid/os/Handler;
 
-    iget-object v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     :cond_0
-    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     :cond_1
     :goto_0
     return v0
 
     :cond_2
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iget-boolean v1, v1, Landroid/support/v4/content/a;->a:Z
+    iget-boolean v1, v1, Landroid/support/v4/content/a;->b:Z
 
     if-eqz v1, :cond_3
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iput-boolean v0, v1, Landroid/support/v4/content/a;->a:Z
+    iput-boolean v0, v1, Landroid/support/v4/content/a;->b:Z
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->h:Landroid/os/Handler;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:Landroid/os/Handler;
 
-    iget-object v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v2, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     goto :goto_0
 
     :cond_3
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {v1, v0}, Landroid/support/v4/content/a;->a(Z)Z
 
@@ -297,12 +299,12 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iput-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iput-object v1, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     :cond_4
-    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iput-object v3, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     goto :goto_0
 .end method
@@ -312,7 +314,7 @@
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/support/v4/content/Loader;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     if-eqz v0, :cond_0
 
@@ -322,7 +324,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
@@ -330,14 +332,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
-    iget-boolean v0, v0, Landroid/support/v4/content/a;->a:Z
+    iget-boolean v0, v0, Landroid/support/v4/content/a;->b:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     if-eqz v0, :cond_1
 
@@ -347,7 +349,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
@@ -355,14 +357,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
 
-    iget-boolean v0, v0, Landroid/support/v4/content/a;->a:Z
+    iget-boolean v0, v0, Landroid/support/v4/content/a;->b:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_1
-    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     const-wide/16 v2, 0x0
 
@@ -376,7 +378,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     invoke-static {v0, v1, p3}, Landroid/support/v4/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
@@ -384,7 +386,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:J
+    iget-wide v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -428,7 +430,7 @@
 
     invoke-direct {v0, p0}, Landroid/support/v4/content/a;-><init>(Landroid/support/v4/content/AsyncTaskLoader;)V
 
-    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     invoke-virtual {p0}, Landroid/support/v4/content/AsyncTaskLoader;->a()V
 
@@ -453,7 +455,7 @@
 .method public setUpdateThrottle(J)V
     .locals 2
 
-    iput-wide p1, p0, Landroid/support/v4/content/AsyncTaskLoader;->f:J
+    iput-wide p1, p0, Landroid/support/v4/content/AsyncTaskLoader;->e:J
 
     const-wide/16 v0, 0x0
 
@@ -465,7 +467,7 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->h:Landroid/os/Handler;
+    iput-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->g:Landroid/os/Handler;
 
     :cond_0
     return-void
@@ -474,7 +476,7 @@
 .method public waitForLoader()V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->d:Landroid/support/v4/content/a;
+    iget-object v0, p0, Landroid/support/v4/content/AsyncTaskLoader;->c:Landroid/support/v4/content/a;
 
     if-eqz v0, :cond_0
 

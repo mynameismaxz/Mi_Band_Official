@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/animation/H;
+.class Lcom/nineoldandroids/animation/H;
 .super Landroid/os/Handler;
 
 
@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lcom/nineoldandroids/animation/H;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/nineoldandroids/animation/H;-><init>()V
@@ -21,7 +21,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 12
 
     const/4 v3, 0x1
@@ -144,16 +144,16 @@
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v4
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     move v6, v4
 
     move v4, v2
 
     :goto_5
-    if-lt v6, v4, :cond_b
+    if-lt v4, v6, :cond_b
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -308,7 +308,7 @@
     goto/16 :goto_4
 
     :cond_b
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -327,16 +327,16 @@
 
     move-result v9
 
-    if-ne v9, v4, :cond_d
+    if-ne v9, v6, :cond_d
 
-    add-int/lit8 v2, v6, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    move v6, v2
+    move v4, v2
 
     goto/16 :goto_5
 
     :cond_d
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v6, v6, -0x1
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 

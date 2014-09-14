@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public final encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
+.method public encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -41,9 +41,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Can only encode EAN_8, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -65,7 +69,7 @@
     return-object v0
 .end method
 
-.method public final encode(Ljava/lang/String;)[B
+.method public encode(Ljava/lang/String;)[B
     .locals 7
 
     const/4 v6, 0x1
@@ -84,9 +88,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Requested contents should be 8 digits long, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -115,7 +123,7 @@
 
     move-result v0
 
-    add-int/lit8 v0, v0, 0x0
+    add-int/2addr v0, v1
 
     move v2, v0
 
@@ -194,6 +202,10 @@
     sget-object v0, Lcom/google/zxing/oned/UPCEANReader;->b:[I
 
     invoke-static {v3, v1, v0, v6}, Lcom/google/zxing/oned/EAN8Writer;->appendPattern([BI[II)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
 
     return-object v3
 .end method

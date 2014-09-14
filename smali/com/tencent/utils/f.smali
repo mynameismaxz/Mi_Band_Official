@@ -1,4 +1,4 @@
-.class final Lcom/tencent/utils/f;
+.class Lcom/tencent/utils/f;
 .super Ljava/io/BufferedOutputStream;
 
 
@@ -7,7 +7,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/io/OutputStream;)V
+.method public constructor <init>(Ljava/io/OutputStream;)V
     .locals 1
 
     invoke-direct {p0, p1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -19,7 +19,9 @@
     return-void
 .end method
 
-.method private a()I
+
+# virtual methods
+.method public a()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/utils/f;->a:I
@@ -27,9 +29,7 @@
     return v0
 .end method
 
-
-# virtual methods
-.method public final write([B)V
+.method public write([B)V
     .locals 2
 
     invoke-super {p0, p1}, Ljava/io/BufferedOutputStream;->write([B)V

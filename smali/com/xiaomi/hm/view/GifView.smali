@@ -754,21 +754,13 @@
 .end method
 
 .method public setGifImage(I)V
-    .locals 2
+    .locals 1
 
     invoke-virtual {p0}, Lcom/xiaomi/hm/view/GifView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/xiaomi/hm/view/GifView;->a()V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/view/GifView;->a:Lcom/xiaomi/hm/view/GifDecoder;
-
-    invoke-virtual {v1, v0, p1}, Lcom/xiaomi/hm/view/GifDecoder;->setGifImage(Landroid/content/res/Resources;I)V
-
-    iget-object v0, p0, Lcom/xiaomi/hm/view/GifView;->a:Lcom/xiaomi/hm/view/GifDecoder;
-
-    invoke-virtual {v0}, Lcom/xiaomi/hm/view/GifDecoder;->start()V
+    invoke-direct {p0, v0, p1}, Lcom/xiaomi/hm/view/GifView;->a(Landroid/content/res/Resources;I)V
 
     return-void
 .end method
@@ -790,17 +782,9 @@
 .end method
 
 .method public setGifImage([B)V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Lcom/xiaomi/hm/view/GifView;->a()V
-
-    iget-object v0, p0, Lcom/xiaomi/hm/view/GifView;->a:Lcom/xiaomi/hm/view/GifDecoder;
-
-    invoke-virtual {v0, p1}, Lcom/xiaomi/hm/view/GifDecoder;->setGifImage([B)V
-
-    iget-object v0, p0, Lcom/xiaomi/hm/view/GifView;->a:Lcom/xiaomi/hm/view/GifDecoder;
-
-    invoke-virtual {v0}, Lcom/xiaomi/hm/view/GifDecoder;->start()V
+    invoke-direct {p0, p1}, Lcom/xiaomi/hm/view/GifView;->a([B)V
 
     return-void
 .end method
@@ -823,7 +807,9 @@
 
     iput-object p1, p0, Lcom/xiaomi/hm/view/GifView;->i:Lcom/xiaomi/hm/view/GifListener;
 
-    if-lez p2, :cond_0
+    const/4 v0, 0x1
+
+    if-lt p2, v0, :cond_0
 
     const/4 v0, 0x3
 

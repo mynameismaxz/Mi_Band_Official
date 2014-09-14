@@ -251,7 +251,9 @@
 
     move-result v0
 
-    if-gtz v0, :cond_1
+    const/4 v1, 0x1
+
+    if-ge v0, v1, :cond_1
 
     :cond_0
     :goto_0
@@ -792,7 +794,9 @@
 
     move-result v0
 
-    if-gtz v0, :cond_1
+    const/4 v1, 0x1
+
+    if-ge v0, v1, :cond_1
 
     :cond_0
     :goto_0
@@ -839,13 +843,25 @@
 
     move-result-object v3
 
-    const-string v4, " where date"
+    const-string v4, " where "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, " = \'"
+    const-string v4, "date"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "\'"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -857,13 +873,25 @@
 
     move-result-object v0
 
-    const-string v3, "\' and "
+    const-string v3, "\'"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v3, "type = "
+    const-string v3, " and "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "type"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, " = "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -873,7 +901,13 @@
 
     move-result-object v0
 
-    const-string v3, " and source"
+    const-string v3, " and "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "source"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -919,7 +953,7 @@
 
     invoke-virtual {v1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 .end method
 
 .method public write(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[BIIILjava/lang/String;Ljava/lang/String;)V

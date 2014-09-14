@@ -1,142 +1,51 @@
-.class final Lcn/com/smartdevices/bracelet/ui/aL;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.class Lcn/com/smartdevices/bracelet/ui/aL;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/weather/WeatherListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFailed(Ljava/lang/Object;)V
-    .locals 4
+.method public onReceiveWeather(Lcn/com/smartdevices/bracelet/weather/WeatherInfo;)V
+    .locals 6
 
-    const/4 v3, 0x1
+    const-string v0, ""
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->mRightButton:Landroid/view/View;
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setEnabled(Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const v1, 0x7f0c008a
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const v1, 0x7f0c008c
-
-    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const v1, 0x7f0c008b
-
-    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    goto :goto_0
-.end method
-
-.method public final onFinish(Ljava/lang/Object;)V
-    .locals 4
-
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0089
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v0
-
-    const-class v1, Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;->getWeatherDescription()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
+    if-eqz v1, :cond_0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "MiliRenameFragment"
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;->getWeatherDescription()Ljava/lang/String;
 
-    const-string v3, "miliFragment = "
+    move-result-object v0
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -144,11 +53,63 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_0
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;->getAqiDescription()Ljava/lang/String;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->dismiss()V
+    if-eqz v1, :cond_1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, " "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    const v2, 0x7f0c01d4
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;->getAqiDescription()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_1
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aL;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->o(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

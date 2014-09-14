@@ -162,7 +162,7 @@
 
     invoke-direct {v1}, Lcn/com/smartdevices/bracelet/model/PicUrl;-><init>()V
 
-    const-string v2, "drawable://2130837594"
+    const-string v2, "drawable://2130837596"
 
     iput-object v2, v1, Lcn/com/smartdevices/bracelet/model/PicUrl;->thumbUrl:Ljava/lang/String;
 
@@ -192,7 +192,9 @@
 
     move-result v1
 
-    if-gtz v1, :cond_1
+    const/4 v2, 0x1
+
+    if-ge v1, v2, :cond_1
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
 

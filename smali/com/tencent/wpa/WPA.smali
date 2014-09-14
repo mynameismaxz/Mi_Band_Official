@@ -160,6 +160,8 @@
 
     const/4 v1, 0x0
 
+    const-string v0, "mqqwpa://im/chat?chat_type=wpa&uin=%1$s&version=1&src_type=app&attach_content=%2$s"
+
     new-instance v2, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.VIEW"

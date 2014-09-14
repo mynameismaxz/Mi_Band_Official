@@ -9,39 +9,39 @@
 
 .field final c:I
 
-.field final d:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
+.field final d:I
 
-.field final e:Ljava/util/concurrent/Executor;
+.field final e:I
 
-.field final f:Ljava/util/concurrent/Executor;
+.field final f:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
 
-.field final g:Z
+.field final g:Ljava/util/concurrent/Executor;
 
-.field final h:Z
+.field final h:Ljava/util/concurrent/Executor;
 
-.field final i:I
+.field final i:Z
 
-.field final j:I
+.field final j:Z
 
-.field final k:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
+.field final k:I
 
-.field final l:Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;
+.field final l:I
 
-.field final m:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
+.field final m:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
 
-.field final n:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+.field final n:Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;
 
-.field final o:Lcom/nostra13/universalimageloader/core/decode/ImageDecoder;
+.field final o:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
 
-.field final p:Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
+.field final p:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
-.field final q:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+.field final q:Lcom/nostra13/universalimageloader/core/decode/ImageDecoder;
 
-.field final r:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+.field final r:Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
 
-.field private s:I
+.field final s:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
-.field private t:I
+.field final t:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
 
 # direct methods
@@ -64,119 +64,119 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->s:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->b:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->c(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->t:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->c:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->d(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->b:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->d:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->e(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->c:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->e:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->f(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->d:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->f:Lcom/nostra13/universalimageloader/core/process/BitmapProcessor;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->g(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->e:Ljava/util/concurrent/Executor;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->g:Ljava/util/concurrent/Executor;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->h(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->f:Ljava/util/concurrent/Executor;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->h:Ljava/util/concurrent/Executor;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->i(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->i:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->k:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->j(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->j:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->l:I
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->k(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->k:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->m:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->l(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->m:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->o:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->m(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->l:Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->n:Lcom/nostra13/universalimageloader/cache/memory/MemoryCache;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->n(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->p:Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->r:Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->o(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->n:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->p:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->p(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Lcom/nostra13/universalimageloader/core/decode/ImageDecoder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->o:Lcom/nostra13/universalimageloader/core/decode/ImageDecoder;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->q:Lcom/nostra13/universalimageloader/core/decode/ImageDecoder;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->q(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->g:Z
+    iput-boolean v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->i:Z
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->r(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->h:Z
+    iput-boolean v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->j:Z
 
     new-instance v0, Lcom/nostra13/universalimageloader/core/g;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->n:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->p:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     invoke-direct {v0, v1}, Lcom/nostra13/universalimageloader/core/g;-><init>(Lcom/nostra13/universalimageloader/core/download/ImageDownloader;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->q:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->s:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     new-instance v0, Lcom/nostra13/universalimageloader/core/h;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->n:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->p:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     invoke-direct {v0, v1}, Lcom/nostra13/universalimageloader/core/h;-><init>(Lcom/nostra13/universalimageloader/core/download/ImageDownloader;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->r:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->t:Lcom/nostra13/universalimageloader/core/download/ImageDownloader;
 
     invoke-static {p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->s(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)Z
 
@@ -187,7 +187,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;B)V
+.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;Lcom/nostra13/universalimageloader/core/f;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;-><init>(Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;)V
@@ -211,7 +211,7 @@
 
 
 # virtual methods
-.method final a()Lcom/nostra13/universalimageloader/core/assist/ImageSize;
+.method a()Lcom/nostra13/universalimageloader/core/assist/ImageSize;
     .locals 3
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->a:Landroid/content/res/Resources;
@@ -220,14 +220,14 @@
 
     move-result-object v2
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->s:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->b:I
 
     if-gtz v0, :cond_0
 
     iget v0, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
     :cond_0
-    iget v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->t:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->c:I
 
     if-gtz v1, :cond_1
 

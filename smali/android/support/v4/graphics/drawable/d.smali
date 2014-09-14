@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/graphics/drawable/d;
+.class Landroid/support/v4/graphics/drawable/d;
 .super Ljava/lang/Object;
 
 

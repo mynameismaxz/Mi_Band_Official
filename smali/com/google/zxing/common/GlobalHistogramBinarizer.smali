@@ -78,38 +78,38 @@
     :cond_2
     move v2, v4
 
-    move v0, v4
-
     move v5, v4
 
     :goto_1
-    if-ge v2, v7, :cond_3
+    if-ge v4, v7, :cond_3
 
-    sub-int v4, v2, v1
+    sub-int v0, v4, v1
 
-    aget v6, p0, v2
+    aget v6, p0, v4
 
-    mul-int/2addr v6, v4
+    mul-int/2addr v6, v0
 
-    mul-int/2addr v4, v6
+    mul-int/2addr v0, v6
 
-    if-le v4, v5, :cond_8
+    if-le v0, v2, :cond_8
 
-    move v0, v2
+    move v2, v4
 
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    move v5, v4
+    move v5, v2
+
+    move v2, v0
 
     goto :goto_1
 
     :cond_3
-    if-le v1, v0, :cond_7
+    if-le v1, v5, :cond_7
+
+    move v6, v5
 
     move v5, v1
-
-    move v6, v0
 
     :goto_3
     sub-int v0, v5, v6
@@ -174,14 +174,14 @@
     goto :goto_5
 
     :cond_7
-    move v5, v0
-
     move v6, v1
 
     goto :goto_3
 
     :cond_8
-    move v4, v5
+    move v0, v2
+
+    move v2, v5
 
     goto :goto_2
 .end method
@@ -428,41 +428,43 @@
 
     aget-byte v1, v5, v2
 
+    and-int/lit16 v2, v1, 0xff
+
+    aget-byte v1, v5, v0
+
     and-int/lit16 v1, v1, 0xff
 
-    aget-byte v2, v5, v0
+    move v3, v2
+
+    :goto_2
+    add-int/lit8 v2, v4, -0x1
+
+    if-ge v0, v2, :cond_4
+
+    add-int/lit8 v2, v0, 0x1
+
+    aget-byte v2, v5, v2
 
     and-int/lit16 v2, v2, 0xff
 
-    :goto_2
-    add-int/lit8 v3, v4, -0x1
+    shl-int/lit8 v7, v1, 0x2
 
-    if-ge v0, v3, :cond_4
+    sub-int v3, v7, v3
 
-    add-int/lit8 v3, v0, 0x1
+    sub-int/2addr v3, v2
 
-    aget-byte v3, v5, v3
+    shr-int/lit8 v3, v3, 0x1
 
-    and-int/lit16 v3, v3, 0xff
-
-    shl-int/lit8 v7, v2, 0x2
-
-    sub-int v1, v7, v1
-
-    sub-int/2addr v1, v3
-
-    shr-int/lit8 v1, v1, 0x1
-
-    if-ge v1, v6, :cond_3
+    if-ge v3, v6, :cond_3
 
     invoke-virtual {p2, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
-    move v1, v2
+    move v3, v1
 
-    move v2, v3
+    move v1, v2
 
     goto :goto_2
 

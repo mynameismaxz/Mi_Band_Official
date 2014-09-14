@@ -28,6 +28,8 @@
 
     sput-object v0, Lcom/tencent/stat/common/StatCommonHelper;->c:Ljava/lang/String;
 
+    sput-object v0, Lcom/tencent/stat/common/StatCommonHelper;->d:Ljava/lang/String;
+
     sput-object v0, Lcom/tencent/stat/common/StatCommonHelper;->e:Ljava/util/Random;
 
     sput-object v0, Lcom/tencent/stat/common/StatCommonHelper;->f:Lcom/tencent/stat/common/StatLogger;
@@ -143,9 +145,13 @@
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "\\"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -305,7 +311,7 @@
 
     array-length v3, p0
 
-    shl-int/lit8 v3, v3, 0x1
+    mul-int/lit8 v3, v3, 0x2
 
     invoke-direct {v2, v3}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
@@ -1073,7 +1079,7 @@
 .method public static getLinkedWay(Landroid/content/Context;)Ljava/lang/String;
     .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     const-string v0, "android.permission.ACCESS_WIFI_STATE"
 
@@ -1081,7 +1087,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const-string v0, "connectivity"
 
@@ -1093,33 +1099,33 @@
 
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
-    move-result-object v2
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getTypeName()Ljava/lang/String;
-
     move-result-object v0
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getExtraInfo()Ljava/lang/String;
+    if-eqz v0, :cond_4
 
-    move-result-object v2
-
-    if-eqz v0, :cond_5
-
-    const-string v1, "WIFI"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getTypeName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getExtraInfo()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v1, :cond_4
+
+    const-string v2, "WIFI"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
 
     const-string v0, "WIFI"
 
@@ -1128,41 +1134,36 @@
     return-object v0
 
     :cond_1
-    const-string v1, "MOBILE"
+    const-string v2, "MOBILE"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v1
-
-    if-eqz v1, :cond_3
+    move-result v2
 
     if-eqz v2, :cond_2
 
-    move-object v0, v2
+    if-nez v0, :cond_0
 
-    goto :goto_0
-
-    :cond_2
     const-string v0, "MOBILE"
 
     goto :goto_0
 
-    :cond_3
-    if-eqz v2, :cond_0
+    :cond_2
+    if-nez v0, :cond_0
 
-    move-object v0, v2
+    move-object v0, v1
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     sget-object v0, Lcom/tencent/stat/common/StatCommonHelper;->f:Lcom/tencent/stat/common/StatLogger;
 
-    const-string v2, "can not get the permission of android.permission.ACCESS_WIFI_STATE"
+    const-string v1, "can not get the permission of android.permission.ACCESS_WIFI_STATE"
 
-    invoke-virtual {v0, v2}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Object;)V
 
-    :cond_5
-    move-object v0, v1
+    :cond_4
+    move-object v0, v2
 
     goto :goto_0
 .end method
@@ -1181,6 +1182,8 @@
     invoke-direct {v0, v1}, Lcom/tencent/stat/common/StatLogger;-><init>(Ljava/lang/String;)V
 
     sput-object v0, Lcom/tencent/stat/common/StatCommonHelper;->f:Lcom/tencent/stat/common/StatLogger;
+
+    sget-object v0, Lcom/tencent/stat/common/StatCommonHelper;->f:Lcom/tencent/stat/common/StatLogger;
 
     const/4 v1, 0x0
 
@@ -1271,13 +1274,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-static {p0}, Lcom/tencent/stat/common/StatCommonHelper;->checkPhoneState(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const-string v0, "phone"
 
@@ -1295,7 +1298,11 @@
     move-result-object v0
 
     :goto_0
-    return-object v0
+    move-object v1, v0
+
+    :cond_0
+    :goto_1
+    return-object v1
 
     :catch_0
     move-exception v0
@@ -1308,17 +1315,14 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     sget-object v0, Lcom/tencent/stat/common/StatCommonHelper;->f:Lcom/tencent/stat/common/StatLogger;
 
     const-string v2, "Could not get permission of android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v2}, Lcom/tencent/stat/common/StatLogger;->e(Ljava/lang/Object;)V
 
-    :cond_1
-    move-object v0, v1
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public static getTelephonyNetworkType(Landroid/content/Context;)Ljava/lang/Integer;

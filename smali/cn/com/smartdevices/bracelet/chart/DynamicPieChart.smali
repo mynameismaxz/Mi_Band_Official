@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020064
+    const v1, 0x7f020067
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020063
+    const v1, 0x7f020066
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -261,136 +261,118 @@
 .end method
 
 .method private a(Landroid/graphics/Canvas;FFFLandroid/graphics/Paint;I)V
-    .locals 14
+    .locals 16
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    move-object/from16 v0, p0
 
-    if-nez v1, :cond_0
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
 
-    const/16 v1, 0x320
+    if-nez v2, :cond_0
 
-    new-array v1, v1, [F
+    const/16 v2, 0x320
 
-    iput-object v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    new-array v2, v2, [F
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->m:Landroid/graphics/Paint;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v1}, Landroid/graphics/Paint;->getStrokeWidth()F
+    iput-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
 
-    move-result v1
+    const v3, 0x3d00adfd
 
-    const/high16 v2, 0x4000
+    move-object/from16 v0, p0
 
-    div-float/2addr v1, v2
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->m:Landroid/graphics/Paint;
 
-    sub-float v1, p4, v1
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeWidth()F
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
-
-    const/high16 v3, 0x4000
-
-    mul-float/2addr v2, v3
-
-    sub-float v2, v1, v2
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->m:Landroid/graphics/Paint;
-
-    invoke-virtual {v1}, Landroid/graphics/Paint;->getStrokeWidth()F
-
-    move-result v1
-
-    const/high16 v3, 0x4000
-
-    div-float/2addr v1, v3
-
-    sub-float v1, p4, v1
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
+    move-result v2
 
     const/high16 v4, 0x4000
 
-    mul-float/2addr v3, v4
+    div-float/2addr v2, v4
 
-    sub-float/2addr v1, v3
+    sub-float v2, p4, v2
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->o:F
+    move-object/from16 v0, p0
 
-    sub-float v3, v1, v3
+    iget v4, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
 
-    const/4 v1, 0x0
+    const/high16 v5, 0x4000
 
-    :goto_0
-    const/16 v4, 0xc8
+    mul-float/2addr v4, v5
 
-    if-lt v1, v4, :cond_1
+    sub-float v4, v2, v4
 
-    :cond_0
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->m:Landroid/graphics/Paint;
+
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeWidth()F
+
+    move-result v2
+
+    const/high16 v5, 0x4000
+
+    div-float/2addr v2, v5
+
+    sub-float v2, p4, v2
+
+    move-object/from16 v0, p0
+
+    iget v5, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
+
+    const/high16 v6, 0x4000
+
+    mul-float/2addr v5, v6
+
+    sub-float/2addr v2, v5
+
+    move-object/from16 v0, p0
+
+    iget v5, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->o:F
+
+    sub-float v5, v2, v5
 
     const/4 v2, 0x0
 
-    shl-int/lit8 v3, p6, 0x2
+    :goto_0
+    const/16 v6, 0xc8
 
-    move-object/from16 v0, p5
+    if-lt v2, v6, :cond_1
 
-    invoke-virtual {p1, v1, v2, v3, v0}, Landroid/graphics/Canvas;->drawLines([FIILandroid/graphics/Paint;)V
+    :cond_0
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    const/4 v3, 0x0
+
+    mul-int/lit8 v4, p6, 0x4
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p5
+
+    invoke-virtual {v0, v2, v3, v4, v1}, Landroid/graphics/Canvas;->drawLines([FIILandroid/graphics/Paint;)V
 
     return-void
 
     :cond_1
-    const v4, 0x3d00adfd
+    int-to-float v6, v2
 
-    int-to-float v5, v1
-
-    mul-float/2addr v4, v5
-
-    move/from16 v0, p2
-
-    float-to-double v5, v0
-
-    float-to-double v7, v4
-
-    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v7
-
-    float-to-double v9, v2
-
-    mul-double/2addr v7, v9
-
-    add-double/2addr v5, v7
-
-    double-to-float v5, v5
-
-    move/from16 v0, p3
-
-    float-to-double v6, v0
-
-    float-to-double v8, v4
-
-    invoke-static {v8, v9}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v8
-
-    float-to-double v10, v2
-
-    mul-double/2addr v8, v10
-
-    sub-double/2addr v6, v8
-
-    double-to-float v6, v6
+    mul-float/2addr v6, v3
 
     move/from16 v0, p2
 
     float-to-double v7, v0
 
-    float-to-double v9, v4
+    float-to-double v9, v6
 
     invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v9
 
-    float-to-double v11, v3
+    float-to-double v11, v4
 
     mul-double/2addr v9, v11
 
@@ -402,51 +384,95 @@
 
     float-to-double v8, v0
 
-    float-to-double v10, v4
+    float-to-double v10, v6
 
     invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v10
 
-    float-to-double v12, v3
+    float-to-double v12, v4
 
     mul-double/2addr v10, v12
 
     sub-double/2addr v8, v10
 
-    double-to-float v4, v8
+    double-to-float v8, v8
 
-    iget-object v8, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    move/from16 v0, p2
 
-    shl-int/lit8 v9, v1, 0x2
+    float-to-double v9, v0
 
-    aput v5, v8, v9
+    float-to-double v11, v6
 
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    invoke-static {v11, v12}, Ljava/lang/Math;->sin(D)D
 
-    shl-int/lit8 v8, v1, 0x2
+    move-result-wide v11
 
-    add-int/lit8 v8, v8, 0x1
+    float-to-double v13, v5
 
-    aput v6, v5, v8
+    mul-double/2addr v11, v13
 
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    add-double/2addr v9, v11
 
-    shl-int/lit8 v6, v1, 0x2
+    double-to-float v9, v9
 
-    add-int/lit8 v6, v6, 0x2
+    move/from16 v0, p3
 
-    aput v7, v5, v6
+    float-to-double v10, v0
 
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+    float-to-double v12, v6
 
-    shl-int/lit8 v6, v1, 0x2
+    invoke-static {v12, v13}, Ljava/lang/Math;->cos(D)D
 
-    add-int/lit8 v6, v6, 0x3
+    move-result-wide v12
 
-    aput v4, v5, v6
+    float-to-double v14, v5
 
-    add-int/lit8 v1, v1, 0x1
+    mul-double/2addr v12, v14
+
+    sub-double/2addr v10, v12
+
+    double-to-float v6, v10
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    mul-int/lit8 v11, v2, 0x4
+
+    aput v7, v10, v11
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    mul-int/lit8 v10, v2, 0x4
+
+    add-int/lit8 v10, v10, 0x1
+
+    aput v8, v7, v10
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    mul-int/lit8 v8, v2, 0x4
+
+    add-int/lit8 v8, v8, 0x2
+
+    aput v9, v7, v8
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    mul-int/lit8 v8, v2, 0x4
+
+    add-int/lit8 v8, v8, 0x3
+
+    aput v6, v7, v8
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 .end method

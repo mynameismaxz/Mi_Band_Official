@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/y;
+.class Landroid/support/v4/widget/y;
 .super Landroid/support/v4/widget/v;
 
 
@@ -13,32 +13,28 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Landroid/view/View;
+.method public a(Landroid/content/Context;)Landroid/view/View;
     .locals 1
 
-    new-instance v0, Landroid/support/v4/widget/SearchViewCompatIcs$MySearchView;
+    invoke-static {p1}, Landroid/support/v4/widget/SearchViewCompatIcs;->a(Landroid/content/Context;)Landroid/view/View;
 
-    invoke-direct {v0, p1}, Landroid/support/v4/widget/SearchViewCompatIcs$MySearchView;-><init>(Landroid/content/Context;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Landroid/view/View;I)V
+.method public b(Landroid/view/View;I)V
     .locals 0
 
-    check-cast p1, Landroid/widget/SearchView;
-
-    invoke-virtual {p1, p2}, Landroid/widget/SearchView;->setImeOptions(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/widget/SearchViewCompatIcs;->a(Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public final c(Landroid/view/View;I)V
+.method public c(Landroid/view/View;I)V
     .locals 0
 
-    check-cast p1, Landroid/widget/SearchView;
-
-    invoke-virtual {p1, p2}, Landroid/widget/SearchView;->setInputType(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/widget/SearchViewCompatIcs;->b(Landroid/view/View;I)V
 
     return-void
 .end method

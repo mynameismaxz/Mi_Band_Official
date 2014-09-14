@@ -1,198 +1,152 @@
-.class final Lcn/com/smartdevices/bracelet/ui/bM;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.class Lcn/com/smartdevices/bracelet/ui/bM;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-.field private final synthetic b:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-.field private final synthetic c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;Lcn/com/smartdevices/bracelet/chart/StatisticChartView;Lcn/com/smartdevices/bracelet/chart/StatisticChartView;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    iput-object p3, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/bM;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public onFailed(Ljava/lang/Object;)V
+    .locals 3
 
-    return-void
-.end method
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 5
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
 
-    const/high16 v4, 0x3f80
-
-    const/4 v3, 0x1
-
-    const-string v0, "Statistic.Main"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "OUT VIEW : "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setAlpha(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-virtual {v0, v4}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setScaleX(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->k(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)I
-
-    move-result v0
-
-    if-eq v0, v3, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->E(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setEnabled(Z)V
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->k(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)I
-
-    move-result v0
-
-    const/16 v1, 0x100
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->F(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setEnabled(Z)V
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->C(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setScrollable(Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->D(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setScrollable(Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->b(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;Z)V
-
-    return-void
-.end method
-
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    const-string v0, "Statistic.Main"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "IN VIEW : "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->z(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->z(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
-    iput-boolean v3, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->needDraw:Z
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;Landroid/app/ProgressDialog;)V
 
     :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->c:Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->refresh()V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getActivity()Landroid/app/Activity;
 
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    const v2, 0x7f0c0049
+
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    return-void
+.end method
+
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 4
+
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bN;
+
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bN;-><init>(Lcn/com/smartdevices/bracelet/ui/bM;)V
+
+    const-wide/16 v2, 0x2710
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+.end method
+
+.method public onStart()V
+    .locals 5
+
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    const v3, 0x7f0c007e
+
+    invoke-virtual {v2, v3}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/ui/bM;->b:Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+
+    const v4, 0x7f0c00de
+
+    invoke-virtual {v3, v4}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v2, v3}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;Landroid/app/ProgressDialog;)V
+
+    :cond_0
     return-void
 .end method

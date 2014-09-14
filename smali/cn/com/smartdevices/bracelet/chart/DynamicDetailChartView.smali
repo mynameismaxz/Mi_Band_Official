@@ -188,6 +188,8 @@
 
     invoke-direct {v0, v1, v2}, Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;-><init>(Landroid/content/Context;Lcn/com/smartdevices/bracelet/chart/base/ChartScroller$ScrollingListener;)V
 
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->l:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
+
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -606,35 +608,9 @@
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartData;Z)V
-    .locals 2
+    .locals 0
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->o:I
-
-    const/16 v1, 0x10
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p1, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartData;->sleepData:Ljava/util/List;
-
-    invoke-virtual {p0, v0, p2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->bindSleepData(Ljava/util/List;Z)V
-
-    :cond_0
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->o:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p1, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartData;->stepData:Ljava/util/List;
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->bindStepData(Ljava/util/List;)V
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->notifyChanged()V
+    invoke-direct {p0, p1, p2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartData;Z)V
 
     return-void
 .end method

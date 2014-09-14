@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/core/j;
+.class Lcom/nostra13/universalimageloader/core/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/core/l;
+.field final synthetic a:Lcom/nostra13/universalimageloader/core/l;
 
-.field private synthetic b:Lcom/nostra13/universalimageloader/core/c;
+.field final synthetic b:Lcom/nostra13/universalimageloader/core/i;
 
 
 # direct methods
-.method constructor <init>(Lcom/nostra13/universalimageloader/core/c;Lcom/nostra13/universalimageloader/core/l;)V
+.method constructor <init>(Lcom/nostra13/universalimageloader/core/i;Lcom/nostra13/universalimageloader/core/l;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/c;
+    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/i;
 
     iput-object p2, p0, Lcom/nostra13/universalimageloader/core/j;->a:Lcom/nostra13/universalimageloader/core/l;
 
@@ -26,14 +26,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/i;
 
-    iget-object v0, v0, Lcom/nostra13/universalimageloader/core/c;->a:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
+    iget-object v0, v0, Lcom/nostra13/universalimageloader/core/i;->a:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
 
-    iget-object v0, v0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->m:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
+    iget-object v0, v0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->o:Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
 
     iget-object v1, p0, Lcom/nostra13/universalimageloader/core/j;->a:Lcom/nostra13/universalimageloader/core/l;
 
@@ -56,15 +56,15 @@
     const/4 v0, 0x1
 
     :goto_0
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/i;
 
-    invoke-static {v1}, Lcom/nostra13/universalimageloader/core/c;->a(Lcom/nostra13/universalimageloader/core/c;)V
+    invoke-static {v1}, Lcom/nostra13/universalimageloader/core/i;->a(Lcom/nostra13/universalimageloader/core/i;)V
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/i;
 
-    invoke-static {v0}, Lcom/nostra13/universalimageloader/core/c;->b(Lcom/nostra13/universalimageloader/core/c;)Ljava/util/concurrent/Executor;
+    invoke-static {v0}, Lcom/nostra13/universalimageloader/core/i;->b(Lcom/nostra13/universalimageloader/core/i;)Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
@@ -81,9 +81,9 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/c;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/j;->b:Lcom/nostra13/universalimageloader/core/i;
 
-    invoke-static {v0}, Lcom/nostra13/universalimageloader/core/c;->c(Lcom/nostra13/universalimageloader/core/c;)Ljava/util/concurrent/Executor;
+    invoke-static {v0}, Lcom/nostra13/universalimageloader/core/i;->c(Lcom/nostra13/universalimageloader/core/i;)Ljava/util/concurrent/Executor;
 
     move-result-object v0
 

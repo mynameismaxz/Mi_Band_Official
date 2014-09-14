@@ -3,35 +3,35 @@
 
 
 # static fields
-.field private static O:I = 0xff0001
+.field static final a:I = 0xff0001
 
-.field private static P:I = 0xff0002
+.field static final b:I = 0xff0002
 
-.field private static Q:I = 0xff0003
+.field static final c:I = 0xff0003
 
 
 # instance fields
-.field N:Landroid/widget/ListView;
+.field ae:Ljava/lang/CharSequence;
 
-.field private final R:Landroid/os/Handler;
+.field af:Z
 
-.field private final S:Ljava/lang/Runnable;
+.field private final ag:Landroid/os/Handler;
 
-.field private final T:Landroid/widget/AdapterView$OnItemClickListener;
+.field private final ah:Ljava/lang/Runnable;
 
-.field private U:Landroid/widget/ListAdapter;
+.field private final ai:Landroid/widget/AdapterView$OnItemClickListener;
 
-.field private V:Landroid/view/View;
+.field d:Landroid/widget/ListAdapter;
 
-.field private W:Landroid/widget/TextView;
+.field e:Landroid/widget/ListView;
 
-.field private X:Landroid/view/View;
+.field f:Landroid/view/View;
 
-.field private Y:Landroid/view/View;
+.field g:Landroid/widget/TextView;
 
-.field private Z:Ljava/lang/CharSequence;
+.field h:Landroid/view/View;
 
-.field private aa:Z
+.field i:Landroid/view/View;
 
 
 # direct methods
@@ -44,19 +44,19 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->R:Landroid/os/Handler;
+    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->ag:Landroid/os/Handler;
 
     new-instance v0, Landroid/support/v4/app/H;
 
     invoke-direct {v0, p0}, Landroid/support/v4/app/H;-><init>(Landroid/support/v4/app/ListFragment;)V
 
-    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->S:Ljava/lang/Runnable;
+    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->ah:Ljava/lang/Runnable;
 
     new-instance v0, Landroid/support/v4/app/I;
 
     invoke-direct {v0, p0}, Landroid/support/v4/app/I;-><init>(Landroid/support/v4/app/ListFragment;)V
 
-    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->T:Landroid/widget/AdapterView$OnItemClickListener;
+    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->ai:Landroid/widget/AdapterView$OnItemClickListener;
 
     return-void
 .end method
@@ -72,9 +72,9 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     if-nez v0, :cond_0
 
@@ -87,7 +87,7 @@
     throw v0
 
     :cond_0
-    iget-boolean v0, p0, Landroid/support/v4/app/ListFragment;->aa:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/ListFragment;->af:Z
 
     if-ne v0, p1, :cond_1
 
@@ -95,13 +95,13 @@
     return-void
 
     :cond_1
-    iput-boolean p1, p0, Landroid/support/v4/app/ListFragment;->aa:Z
+    iput-boolean p1, p0, Landroid/support/v4/app/ListFragment;->af:Z
 
     if-eqz p1, :cond_3
 
     if-eqz p2, :cond_2
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/support/v4/app/ListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/support/v4/app/ListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -126,22 +126,22 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     :goto_1
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
     :cond_2
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
@@ -150,7 +150,7 @@
     :cond_3
     if-eqz p2, :cond_4
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/support/v4/app/ListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/support/v4/app/ListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -175,34 +175,34 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     :goto_2
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
     :cond_4
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
     goto :goto_2
 .end method
 
-.method private k()V
+.method private l()V
     .locals 4
 
     const/4 v3, 0x0
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     if-eqz v0, :cond_0
 
@@ -231,37 +231,37 @@
 
     check-cast v0, Landroid/widget/ListView;
 
-    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     :cond_2
     :goto_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v4/app/ListFragment;->aa:Z
+    iput-boolean v0, p0, Landroid/support/v4/app/ListFragment;->af:Z
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->T:Landroid/widget/AdapterView$OnItemClickListener;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->ai:Landroid/widget/AdapterView$OnItemClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
     if-eqz v0, :cond_9
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
     invoke-virtual {p0, v0}, Landroid/support/v4/app/ListFragment;->setListAdapter(Landroid/widget/ListAdapter;)V
 
     :cond_3
     :goto_2
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->R:Landroid/os/Handler;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->ag:Landroid/os/Handler;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->S:Ljava/lang/Runnable;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->ah:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -276,9 +276,9 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     if-nez v1, :cond_5
 
@@ -288,7 +288,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->V:Landroid/view/View;
+    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->f:Landroid/view/View;
 
     :goto_3
     const v1, 0xff0002
@@ -297,7 +297,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     const v1, 0xff0003
 
@@ -305,7 +305,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iput-object v1, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
     const v1, 0x102000a
 
@@ -328,7 +328,7 @@
     throw v0
 
     :cond_5
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
@@ -348,41 +348,41 @@
     :cond_7
     check-cast v0, Landroid/widget/ListView;
 
-    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iput-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->V:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->f:Landroid/view/View;
 
     if-eqz v0, :cond_8
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->V:Landroid/view/View;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->f:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
     goto :goto_1
 
     :cond_8
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Z:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->ae:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->Z:Ljava/lang/CharSequence;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->ae:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_9
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
@@ -396,7 +396,7 @@
 .method public getListAdapter()Landroid/widget/ListAdapter;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
     return-object v0
 .end method
@@ -404,9 +404,9 @@
 .method public getListView()Landroid/widget/ListView;
     .locals 1
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     return-object v0
 .end method
@@ -414,9 +414,9 @@
 .method public getSelectedItemId()J
     .locals 2
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getSelectedItemId()J
 
@@ -428,9 +428,9 @@
 .method public getSelectedItemPosition()I
     .locals 1
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getSelectedItemPosition()I
 
@@ -564,25 +564,25 @@
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->R:Landroid/os/Handler;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->ag:Landroid/os/Handler;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->S:Ljava/lang/Runnable;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->ah:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v4/app/ListFragment;->aa:Z
+    iput-boolean v0, p0, Landroid/support/v4/app/ListFragment;->af:Z
 
-    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->Y:Landroid/view/View;
+    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->i:Landroid/view/View;
 
-    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->X:Landroid/view/View;
+    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->h:Landroid/view/View;
 
-    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->V:Landroid/view/View;
+    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->f:Landroid/view/View;
 
-    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iput-object v2, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroyView()V
 
@@ -600,7 +600,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
     return-void
 .end method
@@ -608,9 +608,9 @@
 .method public setEmptyText(Ljava/lang/CharSequence;)V
     .locals 2
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     if-nez v0, :cond_0
 
@@ -623,22 +623,22 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->Z:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->ae:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
-    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->W:Landroid/widget/TextView;
+    iget-object v1, p0, Landroid/support/v4/app/ListFragment;->g:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
     :cond_1
-    iput-object p1, p0, Landroid/support/v4/app/ListFragment;->Z:Ljava/lang/CharSequence;
+    iput-object p1, p0, Landroid/support/v4/app/ListFragment;->ae:Ljava/lang/CharSequence;
 
     return-void
 .end method
@@ -650,24 +650,24 @@
 
     const/4 v1, 0x1
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
     if-eqz v0, :cond_2
 
     move v0, v1
 
     :goto_0
-    iput-object p1, p0, Landroid/support/v4/app/ListFragment;->U:Landroid/widget/ListAdapter;
+    iput-object p1, p0, Landroid/support/v4/app/ListFragment;->d:Landroid/widget/ListAdapter;
 
-    iget-object v3, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v3, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     if-eqz v3, :cond_1
 
-    iget-object v3, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v3, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     invoke-virtual {v3, p1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    iget-boolean v3, p0, Landroid/support/v4/app/ListFragment;->aa:Z
+    iget-boolean v3, p0, Landroid/support/v4/app/ListFragment;->af:Z
 
     if-nez v3, :cond_1
 
@@ -720,9 +720,9 @@
 .method public setSelection(I)V
     .locals 1
 
-    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->k()V
+    invoke-direct {p0}, Landroid/support/v4/app/ListFragment;->l()V
 
-    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListView;->setSelection(I)V
 

@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/A;
+.class Lcom/loopj/android/http/A;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -155,7 +155,13 @@
 
     move-result-object v0
 
-    const-string v1, "--\r\n"
+    const-string v1, "--"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\r\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -195,15 +201,15 @@
     goto :goto_0
 .end method
 
-.method private static a(Ljava/lang/String;)Ljava/lang/String;
+.method private a(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
-    const-string p0, "application/octet-stream"
+    const-string p1, "application/octet-stream"
 
     :cond_0
-    return-object p0
+    return-object p1
 .end method
 
 .method private a(I)V
@@ -232,99 +238,6 @@
     invoke-direct {p0, p1}, Lcom/loopj/android/http/A;->a(I)V
 
     return-void
-.end method
-
-.method private a(Ljava/lang/String;Ljava/io/File;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method private a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    iget-object v1, p0, Lcom/loopj/android/http/A;->g:[B
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Content-Disposition: form-data; name=\""
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\"\r\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {p0, p3}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;)[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    sget-object v1, Lcom/loopj/android/http/A;->c:[B
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    sget-object v1, Lcom/loopj/android/http/A;->c:[B
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "SimpleMultipartEntity"
-
-    const-string v2, "addPart ByteArrayOutputStream exception"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
 .end method
 
 .method static synthetic a()[B
@@ -356,7 +269,7 @@
 .method static synthetic a(Lcom/loopj/android/http/A;Ljava/lang/String;Ljava/lang/String;)[B
     .locals 1
 
-    invoke-static {p1, p2}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;Ljava/lang/String;)[B
+    invoke-direct {p0, p1, p2}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -380,7 +293,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -405,7 +318,7 @@
     return-object v0
 .end method
 
-.method private static b(Ljava/lang/String;Ljava/lang/String;)[B
+.method private b(Ljava/lang/String;Ljava/lang/String;)[B
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -414,7 +327,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -424,11 +337,17 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\"\r\n"
+    const-string v1, "\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\r\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -445,7 +364,7 @@
     return-object v0
 .end method
 
-.method private static c(Ljava/lang/String;)[B
+.method private c(Ljava/lang/String;)[B
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -454,11 +373,17 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\"\r\n"
+    const-string v1, "\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\r\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -477,14 +402,24 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
+.method public a(Ljava/lang/String;Ljava/io/File;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
     .locals 3
 
     iget-object v0, p0, Lcom/loopj/android/http/A;->j:Ljava/util/List;
 
     new-instance v1, Lcom/loopj/android/http/B;
 
-    invoke-static {p3}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p3}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -495,92 +430,17 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+.method public a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
 
     const-string v0, "text/plain; charset=UTF-8"
 
-    :try_start_0
-    iget-object v1, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+    invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/A;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/loopj/android/http/A;->g:[B
-
-    invoke-virtual {v1, v2}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v1, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Content-Disposition: form-data; name=\""
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\"\r\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v1, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {p0, v0}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;)[B
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    sget-object v1, Lcom/loopj/android/http/A;->c:[B
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
-
-    sget-object v1, Lcom/loopj/android/http/A;->c:[B
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "SimpleMultipartEntity"
-
-    const-string v2, "addPart ByteArrayOutputStream exception"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)V
+.method public a(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)V
     .locals 4
 
     iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
@@ -591,7 +451,7 @@
 
     iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
 
-    invoke-static {p1, p2}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;Ljava/lang/String;)[B
+    invoke-direct {p0, p1, p2}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;Ljava/lang/String;)[B
 
     move-result-object v1
 
@@ -656,7 +516,70 @@
     goto :goto_0
 .end method
 
-.method public final a(Z)V
+.method public a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    :try_start_0
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    iget-object v1, p0, Lcom/loopj/android/http/A;->g:[B
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {p0, p1}, Lcom/loopj/android/http/A;->c(Ljava/lang/String;)[B
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {p0, p3}, Lcom/loopj/android/http/A;->b(Ljava/lang/String;)[B
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    sget-object v1, Lcom/loopj/android/http/A;->c:[B
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
+
+    sget-object v1, Lcom/loopj/android/http/A;->c:[B
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "SimpleMultipartEntity"
+
+    const-string v2, "addPart ByteArrayOutputStream exception"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method public a(Z)V
     .locals 0
 
     iput-boolean p1, p0, Lcom/loopj/android/http/A;->i:Z
@@ -664,7 +587,7 @@
     return-void
 .end method
 
-.method public final consumeContent()V
+.method public consumeContent()V
     .locals 2
 
     invoke-virtual {p0}, Lcom/loopj/android/http/A;->isStreaming()Z
@@ -685,7 +608,7 @@
     return-void
 .end method
 
-.method public final getContent()Ljava/io/InputStream;
+.method public getContent()Ljava/io/InputStream;
     .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -697,7 +620,7 @@
     throw v0
 .end method
 
-.method public final getContentEncoding()Lorg/apache/http/Header;
+.method public getContentEncoding()Lorg/apache/http/Header;
     .locals 1
 
     const/4 v0, 0x0
@@ -705,7 +628,7 @@
     return-object v0
 .end method
 
-.method public final getContentLength()J
+.method public getContentLength()J
     .locals 8
 
     iget-object v0, p0, Lcom/loopj/android/http/A;->k:Ljava/io/ByteArrayOutputStream;
@@ -749,27 +672,9 @@
 
     check-cast v0, Lcom/loopj/android/http/B;
 
-    iget-object v4, v0, Lcom/loopj/android/http/B;->a:Ljava/io/File;
-
-    invoke-virtual {v4}, Ljava/io/File;->length()J
+    invoke-virtual {v0}, Lcom/loopj/android/http/B;->a()J
 
     move-result-wide v4
-
-    sget-object v6, Lcom/loopj/android/http/A;->c:[B
-
-    array-length v6, v6
-
-    int-to-long v6, v6
-
-    add-long/2addr v4, v6
-
-    iget-object v0, v0, Lcom/loopj/android/http/B;->b:[B
-
-    array-length v0, v0
-
-    int-to-long v6, v0
-
-    add-long/2addr v4, v6
 
     const-wide/16 v6, 0x0
 
@@ -789,7 +694,7 @@
     goto :goto_0
 .end method
 
-.method public final getContentType()Lorg/apache/http/Header;
+.method public getContentType()Lorg/apache/http/Header;
     .locals 4
 
     new-instance v0, Lorg/apache/http/message/BasicHeader;
@@ -817,7 +722,7 @@
     return-object v0
 .end method
 
-.method public final isChunked()Z
+.method public isChunked()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -825,7 +730,7 @@
     return v0
 .end method
 
-.method public final isRepeatable()Z
+.method public isRepeatable()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/loopj/android/http/A;->i:Z
@@ -833,7 +738,7 @@
     return v0
 .end method
 
-.method public final isStreaming()Z
+.method public isStreaming()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -841,12 +746,12 @@
     return v0
 .end method
 
-.method public final writeTo(Ljava/io/OutputStream;)V
-    .locals 7
+.method public writeTo(Ljava/io/OutputStream;)V
+    .locals 2
 
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    iput v6, p0, Lcom/loopj/android/http/A;->m:I
+    iput v0, p0, Lcom/loopj/android/http/A;->m:I
 
     invoke-virtual {p0}, Lcom/loopj/android/http/A;->getContentLength()J
 
@@ -900,61 +805,7 @@
 
     check-cast v0, Lcom/loopj/android/http/B;
 
-    iget-object v2, v0, Lcom/loopj/android/http/B;->b:[B
-
-    invoke-virtual {p1, v2}, Ljava/io/OutputStream;->write([B)V
-
-    iget-object v2, v0, Lcom/loopj/android/http/B;->c:Lcom/loopj/android/http/A;
-
-    iget-object v3, v0, Lcom/loopj/android/http/B;->b:[B
-
-    array-length v3, v3
-
-    invoke-direct {v2, v3}, Lcom/loopj/android/http/A;->a(I)V
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    iget-object v3, v0, Lcom/loopj/android/http/B;->a:Ljava/io/File;
-
-    invoke-direct {v2, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    const/16 v3, 0x1000
-
-    new-array v3, v3, [B
-
-    :goto_1
-    invoke-virtual {v2, v3}, Ljava/io/FileInputStream;->read([B)I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    if-ne v4, v5, :cond_1
-
-    sget-object v3, Lcom/loopj/android/http/A;->c:[B
-
-    invoke-virtual {p1, v3}, Ljava/io/OutputStream;->write([B)V
-
-    iget-object v0, v0, Lcom/loopj/android/http/B;->c:Lcom/loopj/android/http/A;
-
-    sget-object v3, Lcom/loopj/android/http/A;->c:[B
-
-    array-length v3, v3
-
-    invoke-direct {v0, v3}, Lcom/loopj/android/http/A;->a(I)V
-
-    invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
-
-    invoke-static {v2}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
+    invoke-virtual {v0, p1}, Lcom/loopj/android/http/B;->a(Ljava/io/OutputStream;)V
 
     goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1, v3, v6, v4}, Ljava/io/OutputStream;->write([BII)V
-
-    iget-object v5, v0, Lcom/loopj/android/http/B;->c:Lcom/loopj/android/http/A;
-
-    invoke-direct {v5, v4}, Lcom/loopj/android/http/A;->a(I)V
-
-    goto :goto_1
 .end method

@@ -26,32 +26,30 @@
     return-void
 .end method
 
-.method private static a(Landroid/support/v4/view/aC;Landroid/support/v4/view/aC;)I
-    .locals 2
-
-    iget v0, p0, Landroid/support/v4/view/aC;->b:I
-
-    iget v1, p1, Landroid/support/v4/view/aC;->b:I
-
-    sub-int/2addr v0, v1
-
-    return v0
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public a(Landroid/support/v4/view/aC;Landroid/support/v4/view/aC;)I
     .locals 2
-
-    check-cast p1, Landroid/support/v4/view/aC;
-
-    check-cast p2, Landroid/support/v4/view/aC;
 
     iget v0, p1, Landroid/support/v4/view/aC;->b:I
 
     iget v1, p2, Landroid/support/v4/view/aC;->b:I
 
     sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Landroid/support/v4/view/aC;
+
+    check-cast p2, Landroid/support/v4/view/aC;
+
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ay;->a(Landroid/support/v4/view/aC;Landroid/support/v4/view/aC;)I
+
+    move-result v0
 
     return v0
 .end method

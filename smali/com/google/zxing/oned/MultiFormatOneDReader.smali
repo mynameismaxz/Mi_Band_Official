@@ -278,7 +278,7 @@
 
 
 # virtual methods
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -327,7 +327,7 @@
     throw v0
 .end method
 
-.method public final reset()V
+.method public reset()V
     .locals 4
 
     iget-object v1, p0, Lcom/google/zxing/oned/MultiFormatOneDReader;->a:[Lcom/google/zxing/oned/OneDReader;

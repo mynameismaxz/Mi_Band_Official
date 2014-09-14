@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/accessibility/G;
+.class Landroid/support/v4/view/accessibility/G;
 .super Ljava/lang/Object;
 
 

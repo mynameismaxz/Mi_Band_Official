@@ -72,10 +72,8 @@
 
     if-eq v3, v4, :cond_1
 
-    move v0, v1
-
     :goto_1
-    return v0
+    return v1
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -90,17 +88,20 @@
 
     const/4 v0, 0x1
 
+    :goto_2
+    move v1, v0
+
     goto :goto_1
 
     :cond_4
     move v0, v1
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
 
 # virtual methods
-.method public final encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
+.method public encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -124,9 +125,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Can only encode CODE_128, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -148,7 +153,7 @@
     return-object v0
 .end method
 
-.method public final encode(Ljava/lang/String;)[B
+.method public encode(Ljava/lang/String;)[B
     .locals 13
 
     const/16 v7, 0x63
@@ -163,7 +168,7 @@
 
     move-result v10
 
-    if-lez v10, :cond_0
+    if-lt v10, v8, :cond_0
 
     const/16 v0, 0x50
 
@@ -174,9 +179,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Contents length should be between 1 and 80 characters, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -215,9 +224,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Bad character in input: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -423,35 +436,39 @@
 
     invoke-interface {v11}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     move v1, v6
 
     :cond_c
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [I
 
-    array-length v4, v0
+    array-length v5, v0
 
     move v2, v6
 
     :goto_7
-    if-ge v2, v4, :cond_c
+    if-ge v2, v5, :cond_c
 
-    aget v5, v0, v2
+    aget v3, v0, v2
 
-    add-int/2addr v1, v5
+    add-int/2addr v3, v1
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    move v1, v3
 
     goto :goto_7
 

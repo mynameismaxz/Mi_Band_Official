@@ -197,18 +197,10 @@
     goto :goto_1
 .end method
 
-.method private static a(FFFFLandroid/graphics/Rect;)Z
+.method private a(FFFFLandroid/graphics/Rect;)Z
     .locals 1
 
-    iget v0, p4, Landroid/graphics/Rect;->top:I
-
-    int-to-float v0, v0
-
-    cmpg-float v0, p0, v0
-
-    if-ltz v0, :cond_0
-
-    iget v0, p4, Landroid/graphics/Rect;->left:I
+    iget v0, p5, Landroid/graphics/Rect;->top:I
 
     int-to-float v0, v0
 
@@ -216,19 +208,27 @@
 
     if-ltz v0, :cond_0
 
-    iget v0, p4, Landroid/graphics/Rect;->bottom:I
+    iget v0, p5, Landroid/graphics/Rect;->left:I
 
     int-to-float v0, v0
 
-    cmpl-float v0, p2, v0
+    cmpg-float v0, p2, v0
 
-    if-gtz v0, :cond_0
+    if-ltz v0, :cond_0
 
-    iget v0, p4, Landroid/graphics/Rect;->right:I
+    iget v0, p5, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v0, v0
 
     cmpl-float v0, p3, v0
+
+    if-gtz v0, :cond_0
+
+    iget v0, p5, Landroid/graphics/Rect;->right:I
+
+    int-to-float v0, v0
+
+    cmpl-float v0, p4, v0
 
     if-gtz v0, :cond_0
 
@@ -243,7 +243,7 @@
     goto :goto_0
 .end method
 
-.method private static synthetic a()[I
+.method static synthetic a()[I
     .locals 3
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->b:[I
@@ -676,7 +676,7 @@
 
 
 # virtual methods
-.method public final adjustCoordinate(F)V
+.method public adjustCoordinate(F)V
     .locals 6
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
@@ -763,14 +763,8 @@
     .end packed-switch
 .end method
 
-.method public final adjustCoordinate(FFLandroid/graphics/Rect;FF)V
-    .locals 5
-
-    const/high16 v1, 0x7f80
-
-    const/high16 v2, -0x80
-
-    const/high16 v4, 0x4270
+.method public adjustCoordinate(FFLandroid/graphics/Rect;FF)V
+    .locals 2
 
     invoke-static {}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a()[I
 
@@ -778,9 +772,9 @@
 
     invoke-virtual {p0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->ordinal()I
 
-    move-result v3
+    move-result v1
 
-    aget v0, v0, v3
+    aget v0, v0, v1
 
     packed-switch v0, :pswitch_data_0
 
@@ -788,332 +782,40 @@
     return-void
 
     :pswitch_0
-    iget v0, p3, Landroid/graphics/Rect;->left:I
+    invoke-static {p1, p3, p4, p5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FLandroid/graphics/Rect;FF)F
 
-    int-to-float v0, v0
+    move-result v0
 
-    sub-float v0, p1, v0
-
-    cmpg-float v0, v0, p4
-
-    if-gez v0, :cond_0
-
-    iget v0, p3, Landroid/graphics/Rect;->left:I
-
-    int-to-float v0, v0
-
-    :goto_1
     iput v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
     goto :goto_0
-
-    :cond_0
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    sub-float/2addr v0, v4
-
-    cmpl-float v0, p1, v0
-
-    if-ltz v0, :cond_b
-
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    sub-float/2addr v0, v4
-
-    :goto_2
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v2
-
-    sub-float/2addr v2, p1
-
-    div-float/2addr v2, p5
-
-    cmpg-float v2, v2, v4
-
-    if-gtz v2, :cond_1
-
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    mul-float v2, v4, p5
-
-    sub-float/2addr v1, v2
-
-    :cond_1
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    invoke-static {p1, v0}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    goto :goto_1
 
     :pswitch_1
-    iget v0, p3, Landroid/graphics/Rect;->top:I
+    invoke-static {p2, p3, p4, p5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->c(FLandroid/graphics/Rect;FF)F
 
-    int-to-float v0, v0
+    move-result v0
 
-    sub-float v0, p2, v0
-
-    cmpg-float v0, v0, p4
-
-    if-gez v0, :cond_2
-
-    iget v0, p3, Landroid/graphics/Rect;->top:I
-
-    int-to-float v0, v0
-
-    :goto_3
     iput v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
     goto :goto_0
 
-    :cond_2
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    sub-float/2addr v0, v4
-
-    cmpl-float v0, p2, v0
-
-    if-ltz v0, :cond_a
-
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    sub-float/2addr v0, v4
-
-    :goto_4
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v2
-
-    sub-float/2addr v2, p2
-
-    mul-float/2addr v2, p5
-
-    cmpg-float v2, v2, v4
-
-    if-gtz v2, :cond_3
-
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    div-float v2, v4, p5
-
-    sub-float/2addr v1, v2
-
-    :cond_3
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    invoke-static {p2, v0}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    goto :goto_3
-
     :pswitch_2
-    iget v0, p3, Landroid/graphics/Rect;->right:I
+    invoke-static {p1, p3, p4, p5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->b(FLandroid/graphics/Rect;FF)F
 
-    int-to-float v0, v0
+    move-result v0
 
-    sub-float/2addr v0, p1
-
-    cmpg-float v0, v0, p4
-
-    if-gez v0, :cond_4
-
-    iget v0, p3, Landroid/graphics/Rect;->right:I
-
-    int-to-float v0, v0
-
-    :goto_5
     iput v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    goto/16 :goto_0
-
-    :cond_4
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    add-float/2addr v0, v4
-
-    cmpg-float v0, p1, v0
-
-    if-gtz v0, :cond_9
-
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    add-float/2addr v0, v4
-
-    :goto_6
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    sub-float v1, p1, v1
-
-    div-float/2addr v1, p5
-
-    cmpg-float v1, v1, v4
-
-    if-gtz v1, :cond_5
-
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    mul-float v2, v4, p5
-
-    add-float/2addr v2, v1
-
-    :cond_5
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    invoke-static {p1, v0}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    goto :goto_5
+    goto :goto_0
 
     :pswitch_3
-    iget v0, p3, Landroid/graphics/Rect;->bottom:I
+    invoke-static {p2, p3, p4, p5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->d(FLandroid/graphics/Rect;FF)F
 
-    int-to-float v0, v0
+    move-result v0
 
-    sub-float/2addr v0, p2
-
-    cmpg-float v0, v0, p4
-
-    if-gez v0, :cond_6
-
-    iget v0, p3, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v0, v0
-
-    :goto_7
     iput v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    goto/16 :goto_0
-
-    :cond_6
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    add-float/2addr v0, v4
-
-    cmpg-float v0, p2, v0
-
-    if-gtz v0, :cond_8
-
-    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v0
-
-    add-float/2addr v0, v4
-
-    :goto_8
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    sub-float v1, p2, v1
-
-    mul-float/2addr v1, p5
-
-    cmpg-float v1, v1, v4
-
-    if-gtz v1, :cond_7
-
-    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
-
-    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v1
-
-    div-float v2, v4, p5
-
-    add-float/2addr v2, v1
-
-    :cond_7
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    invoke-static {p2, v0}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    goto :goto_7
-
-    :cond_8
-    move v0, v2
-
-    goto :goto_8
-
-    :cond_9
-    move v0, v2
-
-    goto :goto_6
-
-    :cond_a
-    move v0, v1
-
-    goto/16 :goto_4
-
-    :cond_b
-    move v0, v1
-
-    goto/16 :goto_2
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1124,7 +826,7 @@
     .end packed-switch
 .end method
 
-.method public final getCoordinate()F
+.method public getCoordinate()F
     .locals 1
 
     iget v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
@@ -1132,8 +834,8 @@
     return v0
 .end method
 
-.method public final isNewRectangleOutOfBounds(Lcom/edmodo/cropper/cropwindow/edge/Edge;Landroid/graphics/Rect;F)Z
-    .locals 4
+.method public isNewRectangleOutOfBounds(Lcom/edmodo/cropper/cropwindow/edge/Edge;Landroid/graphics/Rect;F)Z
+    .locals 6
 
     invoke-virtual {p1, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->snapOffset(Landroid/graphics/Rect;)F
 
@@ -1176,19 +878,23 @@
 
     move-result v2
 
-    sub-float v0, v2, v0
+    sub-float v3, v2, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+
+    move-result v4
+
+    invoke-static {v1, v4, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateLeft(FFFF)F
 
     move-result v2
 
-    invoke-static {v1, v2, v0, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateLeft(FFFF)F
+    move-object v0, p0
 
-    move-result v3
+    move-object v5, p2
 
-    invoke-static {v1, v3, v0, v2, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1205,27 +911,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->bottom:I
 
-    int-to-float v1, v1
+    int-to-float v3, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+
+    move-result v1
+
+    sub-float/2addr v1, v0
+
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+
+    move-result v4
+
+    invoke-static {v1, v4, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateLeft(FFFF)F
 
     move-result v2
 
-    sub-float v0, v2, v0
+    move-object v0, p0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    move-object v5, p2
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v2
-
-    invoke-static {v0, v2, v1, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateLeft(FFFF)F
-
-    move-result v3
-
-    invoke-static {v0, v3, v1, v2, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1242,27 +952,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->left:I
 
-    int-to-float v1, v1
+    int-to-float v2, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    sub-float v0, v2, v0
+    sub-float v4, v1, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v2
-
-    invoke-static {v1, v0, v2, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateTop(FFFF)F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
     move-result v3
 
-    invoke-static {v3, v1, v2, v0, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    invoke-static {v2, v4, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateTop(FFFF)F
+
+    move-result v1
+
+    move-object v0, p0
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1279,27 +993,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->right:I
 
-    int-to-float v1, v1
+    int-to-float v4, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    sub-float v0, v2, v0
+    sub-float v2, v1, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->BOTTOM:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
-
-    move-result v2
-
-    invoke-static {v0, v1, v2, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateTop(FFFF)F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
     move-result v3
 
-    invoke-static {v3, v0, v2, v1, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    invoke-static {v2, v4, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateTop(FFFF)F
+
+    move-result v1
+
+    move-object v0, p0
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1324,19 +1042,23 @@
 
     move-result v2
 
-    sub-float v0, v2, v0
+    sub-float v3, v2, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
     move-result v2
 
-    invoke-static {v2, v1, v0, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateRight(FFFF)F
+    invoke-static {v2, v1, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateRight(FFFF)F
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v1, v2, v0, v3, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    move-object v0, p0
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1353,27 +1075,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->bottom:I
 
-    int-to-float v1, v1
+    int-to-float v3, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+
+    move-result v1
+
+    sub-float/2addr v1, v0
+
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
     move-result v2
 
-    sub-float v0, v2, v0
+    invoke-static {v2, v1, v3, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateRight(FFFF)F
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    move-result v4
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    move-object v0, p0
 
-    move-result v2
+    move-object v5, p2
 
-    invoke-static {v2, v0, v1, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateRight(FFFF)F
-
-    move-result v3
-
-    invoke-static {v0, v2, v1, v3, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1390,27 +1116,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->left:I
 
-    int-to-float v1, v1
+    int-to-float v2, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->RIGHT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    sub-float v0, v2, v0
+    sub-float v4, v1, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v1, v2, v0, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateBottom(FFFF)F
+    invoke-static {v2, v1, v4, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateBottom(FFFF)F
 
     move-result v3
 
-    invoke-static {v2, v1, v3, v0, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    move-object v0, p0
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1427,27 +1157,31 @@
 
     iget v1, p2, Landroid/graphics/Rect;->right:I
 
-    int-to-float v1, v1
+    int-to-float v4, v1
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v1, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v1}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    sub-float v0, v2, v0
+    sub-float v2, v1, v0
 
-    sget-object v2, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
+    sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->TOP:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
-    invoke-virtual {v2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
+    invoke-virtual {v0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->getCoordinate()F
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v0, v2, v1, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateBottom(FFFF)F
+    invoke-static {v2, v1, v4, p3}, Lcom/edmodo/cropper/util/AspectRatioUtil;->calculateBottom(FFFF)F
 
     move-result v3
 
-    invoke-static {v2, v0, v3, v1, p2}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
+    move-object v0, p0
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a(FFFFLandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1462,26 +1196,26 @@
     .end packed-switch
 .end method
 
-.method public final isOutsideFrame(Landroid/graphics/Rect;)Z
+.method public isOutsideFrame(Landroid/graphics/Rect;)Z
     .locals 6
 
     const/4 v0, 0x1
 
-    const-wide/16 v4, 0x0
-
     const/4 v1, 0x0
+
+    const-wide/16 v2, 0x0
 
     invoke-static {}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a()[I
 
-    move-result-object v2
+    move-result-object v4
 
     invoke-virtual {p0}, Lcom/edmodo/cropper/cropwindow/edge/Edge;->ordinal()I
 
-    move-result v3
+    move-result v5
 
-    aget v2, v2, v3
+    aget v4, v4, v5
 
-    packed-switch v2, :pswitch_data_0
+    packed-switch v4, :pswitch_data_0
 
     move v0, v1
 
@@ -1490,17 +1224,17 @@
     return v0
 
     :pswitch_0
-    iget v2, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
+    iget v4, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    iget v3, p1, Landroid/graphics/Rect;->left:I
+    iget v5, p1, Landroid/graphics/Rect;->left:I
 
-    int-to-float v3, v3
+    int-to-float v5, v5
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v4, v5
 
-    float-to-double v2, v2
+    float-to-double v4, v4
 
-    cmpg-double v2, v2, v4
+    cmpg-double v2, v4, v2
 
     if-ltz v2, :cond_0
 
@@ -1509,17 +1243,17 @@
     goto :goto_0
 
     :pswitch_1
-    iget v2, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
+    iget v4, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    iget v3, p1, Landroid/graphics/Rect;->top:I
+    iget v5, p1, Landroid/graphics/Rect;->top:I
 
-    int-to-float v3, v3
+    int-to-float v5, v5
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v4, v5
 
-    float-to-double v2, v2
+    float-to-double v4, v4
 
-    cmpg-double v2, v2, v4
+    cmpg-double v2, v4, v2
 
     if-ltz v2, :cond_0
 
@@ -1528,17 +1262,17 @@
     goto :goto_0
 
     :pswitch_2
-    iget v2, p1, Landroid/graphics/Rect;->right:I
+    iget v4, p1, Landroid/graphics/Rect;->right:I
 
-    int-to-float v2, v2
+    int-to-float v4, v4
 
-    iget v3, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
+    iget v5, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v4, v5
 
-    float-to-double v2, v2
+    float-to-double v4, v4
 
-    cmpg-double v2, v2, v4
+    cmpg-double v2, v4, v2
 
     if-ltz v2, :cond_0
 
@@ -1547,17 +1281,17 @@
     goto :goto_0
 
     :pswitch_3
-    iget v2, p1, Landroid/graphics/Rect;->bottom:I
+    iget v4, p1, Landroid/graphics/Rect;->bottom:I
 
-    int-to-float v2, v2
+    int-to-float v4, v4
 
-    iget v3, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
+    iget v5, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v4, v5
 
-    float-to-double v2, v2
+    float-to-double v4, v4
 
-    cmpg-double v2, v2, v4
+    cmpg-double v2, v4, v2
 
     if-ltz v2, :cond_0
 
@@ -1576,7 +1310,7 @@
     .end packed-switch
 .end method
 
-.method public final isOutsideMargin(Landroid/graphics/Rect;F)Z
+.method public isOutsideMargin(Landroid/graphics/Rect;F)Z
     .locals 4
 
     const/4 v0, 0x1
@@ -1680,7 +1414,7 @@
     .end packed-switch
 .end method
 
-.method public final offset(F)V
+.method public offset(F)V
     .locals 1
 
     iget v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
@@ -1692,7 +1426,7 @@
     return-void
 .end method
 
-.method public final setCoordinate(F)V
+.method public setCoordinate(F)V
     .locals 0
 
     iput p1, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
@@ -1700,7 +1434,7 @@
     return-void
 .end method
 
-.method public final snapOffset(Landroid/graphics/Rect;)F
+.method public snapOffset(Landroid/graphics/Rect;)F
     .locals 3
 
     iget v1, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
@@ -1761,7 +1495,7 @@
     .end packed-switch
 .end method
 
-.method public final snapToRect(Landroid/graphics/Rect;)F
+.method public snapToRect(Landroid/graphics/Rect;)F
     .locals 3
 
     iget v0, p0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->a:F
@@ -1830,7 +1564,7 @@
     .end packed-switch
 .end method
 
-.method public final snapToView(Landroid/view/View;)V
+.method public snapToView(Landroid/view/View;)V
     .locals 3
 
     const/4 v2, 0x0

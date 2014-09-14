@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Landroid/support/v4/view/aJ;
+.field static final a:Landroid/support/v4/view/aJ;
 
 
 # direct methods
@@ -26,9 +26,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/view/aJ;
+    new-instance v0, Landroid/support/v4/view/aK;
 
-    invoke-direct {v0}, Landroid/support/v4/view/aJ;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/view/aK;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/ViewParentCompat;->a:Landroid/support/v4/view/aJ;
 
@@ -48,7 +48,7 @@
 
     sget-object v0, Landroid/support/v4/view/ViewParentCompat;->a:Landroid/support/v4/view/aJ;
 
-    invoke-virtual {v0, p0, p1, p2}, Landroid/support/v4/view/aJ;->a(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-interface {v0, p0, p1, p2}, Landroid/support/v4/view/aJ;->a(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 

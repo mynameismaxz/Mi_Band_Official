@@ -116,63 +116,29 @@
 .end method
 
 .method private a(Lcom/google/gson/annotations/Since;Lcom/google/gson/annotations/Until;)Z
-    .locals 6
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Lcom/google/gson/annotations/Since;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, p2}, Lcom/google/gson/internal/Excluder;->a(Lcom/google/gson/annotations/Until;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lcom/google/gson/annotations/Since;->value()D
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lcom/google/gson/internal/Excluder;->b:D
-
-    cmpl-double v2, v2, v4
-
-    if-lez v2, :cond_0
-
-    move v2, v1
-
     :goto_0
-    if-eqz v2, :cond_2
-
-    if-eqz p2, :cond_1
-
-    invoke-interface {p2}, Lcom/google/gson/annotations/Until;->value()D
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lcom/google/gson/internal/Excluder;->b:D
-
-    cmpg-double v2, v2, v4
-
-    if-gtz v2, :cond_1
-
-    move v2, v1
-
-    :goto_1
-    if-eqz v2, :cond_2
-
-    :goto_2
     return v0
 
     :cond_0
-    move v2, v0
+    const/4 v0, 0x0
 
     goto :goto_0
-
-    :cond_1
-    move v2, v0
-
-    goto :goto_1
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_2
 .end method
 
 .method private a(Lcom/google/gson/annotations/Until;)Z
@@ -201,7 +167,7 @@
     goto :goto_0
 .end method
 
-.method private static a(Ljava/lang/Class;)Z
+.method private a(Ljava/lang/Class;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -213,19 +179,19 @@
 
     const-class v0, Ljava/lang/Enum;
 
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    invoke-virtual {p0}, Ljava/lang/Class;->isAnonymousClass()Z
+    invoke-virtual {p1}, Ljava/lang/Class;->isAnonymousClass()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/Class;->isLocalClass()Z
+    invoke-virtual {p1}, Ljava/lang/Class;->isLocalClass()Z
 
     move-result v0
 
@@ -244,53 +210,6 @@
 .end method
 
 .method private b(Ljava/lang/Class;)Z
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<*>;)Z"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1}, Ljava/lang/Class;->isMemberClass()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getModifiers()I
-
-    move-result v2
-
-    and-int/lit8 v2, v2, 0x8
-
-    if-eqz v2, :cond_0
-
-    move v2, v0
-
-    :goto_0
-    if-nez v2, :cond_1
-
-    :goto_1
-    return v0
-
-    :cond_0
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
-.end method
-
-.method private static c(Ljava/lang/Class;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -300,7 +219,40 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/lang/Class;->getModifiers()I
+    invoke-virtual {p1}, Ljava/lang/Class;->isMemberClass()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->c(Ljava/lang/Class;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private c(Ljava/lang/Class;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)Z"
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getModifiers()I
 
     move-result v0
 
@@ -321,7 +273,7 @@
 
 
 # virtual methods
-.method protected final clone()Lcom/google/gson/internal/Excluder;
+.method protected clone()Lcom/google/gson/internal/Excluder;
     .locals 1
 
     :try_start_0
@@ -345,7 +297,7 @@
     throw v0
 .end method
 
-.method protected final bridge synthetic clone()Ljava/lang/Object;
+.method protected bridge synthetic clone()Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;
@@ -355,7 +307,7 @@
     return-object v0
 .end method
 
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -409,7 +361,7 @@
     goto :goto_0
 .end method
 
-.method public final disableInnerClassSerialization()Lcom/google/gson/internal/Excluder;
+.method public disableInnerClassSerialization()Lcom/google/gson/internal/Excluder;
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;
@@ -423,7 +375,7 @@
     return-object v0
 .end method
 
-.method public final excludeClass(Ljava/lang/Class;Z)Z
+.method public excludeClass(Ljava/lang/Class;Z)Z
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -486,7 +438,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z
 
     move-result v0
 
@@ -540,7 +492,7 @@
     goto :goto_0
 .end method
 
-.method public final excludeField(Ljava/lang/reflect/Field;Z)Z
+.method public excludeField(Ljava/lang/reflect/Field;Z)Z
     .locals 5
 
     const/4 v2, 0x1
@@ -665,7 +617,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z
+    invoke-direct {p0, v0}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z
 
     move-result v0
 
@@ -729,7 +681,7 @@
     goto/16 :goto_0
 .end method
 
-.method public final excludeFieldsWithoutExposeAnnotation()Lcom/google/gson/internal/Excluder;
+.method public excludeFieldsWithoutExposeAnnotation()Lcom/google/gson/internal/Excluder;
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;
@@ -743,7 +695,7 @@
     return-object v0
 .end method
 
-.method public final withExclusionStrategy(Lcom/google/gson/ExclusionStrategy;ZZ)Lcom/google/gson/internal/Excluder;
+.method public withExclusionStrategy(Lcom/google/gson/ExclusionStrategy;ZZ)Lcom/google/gson/internal/Excluder;
     .locals 3
 
     invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;
@@ -783,7 +735,7 @@
     return-object v0
 .end method
 
-.method public final varargs withModifiers([I)Lcom/google/gson/internal/Excluder;
+.method public varargs withModifiers([I)Lcom/google/gson/internal/Excluder;
     .locals 5
 
     const/4 v0, 0x0
@@ -815,7 +767,7 @@
     return-object v1
 .end method
 
-.method public final withVersion(D)Lcom/google/gson/internal/Excluder;
+.method public withVersion(D)Lcom/google/gson/internal/Excluder;
     .locals 1
 
     invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;

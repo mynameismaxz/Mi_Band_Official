@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/V;
+.class Landroid/support/v4/view/V;
 .super Landroid/text/method/SingleLineTransformationMethod;
 
 
@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
+.method public getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 2
 
     invoke-super {p0, p1, p2}, Landroid/text/method/SingleLineTransformationMethod;->getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;

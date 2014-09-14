@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/d;
+.class Lcn/com/smartdevices/bracelet/d;
 .super Ljava/util/TimerTask;
 
 
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;

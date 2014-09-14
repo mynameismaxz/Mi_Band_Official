@@ -295,17 +295,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    new-instance v3, Ljava/text/SimpleDateFormat;
-
-    const-string v4, "yyyy-MM-dd HH:mm:ss.SSS"
-
-    invoke-direct {v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->b()Ljava/lang/String;
 
     move-result-object v2
 
@@ -411,7 +401,7 @@
 .end method
 
 .method public static l(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 5
+    .locals 6
 
     sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
 
@@ -425,6 +415,8 @@
 
     if-ge v0, v1, :cond_0
 
+    const/16 v2, 0x3e8
+
     const/4 v0, 0x0
 
     :goto_0
@@ -432,7 +424,7 @@
 
     move-result v1
 
-    div-int/lit16 v1, v1, 0x3e8
+    div-int/2addr v1, v2
 
     if-le v0, v1, :cond_1
 
@@ -440,40 +432,40 @@
     return-void
 
     :cond_1
-    mul-int/lit16 v2, v0, 0x3e8
+    mul-int v3, v0, v2
 
     add-int/lit8 v1, v0, 0x1
 
-    mul-int/lit16 v1, v1, 0x3e8
+    mul-int/2addr v1, v2
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v4
 
-    if-le v1, v3, :cond_2
+    if-le v1, v4, :cond_2
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
     :cond_2
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->a()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

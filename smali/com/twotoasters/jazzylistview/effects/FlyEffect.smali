@@ -53,7 +53,7 @@
 
     move-result v0
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     mul-int/2addr v0, p3
 
@@ -81,7 +81,7 @@
 
     neg-int v1, v1
 
-    shl-int/lit8 v1, v1, 0x1
+    mul-int/lit8 v1, v1, 0x2
 
     mul-int/2addr v1, p3
 

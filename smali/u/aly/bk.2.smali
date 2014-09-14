@@ -52,6 +52,34 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-string v0, "drawable"
+
+    iput-object v0, p0, Lu/aly/bk;->e:Ljava/lang/String;
+
+    const-string v0, "id"
+
+    iput-object v0, p0, Lu/aly/bk;->f:Ljava/lang/String;
+
+    const-string v0, "layout"
+
+    iput-object v0, p0, Lu/aly/bk;->g:Ljava/lang/String;
+
+    const-string v0, "anim"
+
+    iput-object v0, p0, Lu/aly/bk;->h:Ljava/lang/String;
+
+    const-string v0, "style"
+
+    iput-object v0, p0, Lu/aly/bk;->i:Ljava/lang/String;
+
+    const-string v0, "string"
+
+    iput-object v0, p0, Lu/aly/bk;->j:Ljava/lang/String;
+
+    const-string v0, "array"
+
+    iput-object v0, p0, Lu/aly/bk;->k:Ljava/lang/String;
+
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0

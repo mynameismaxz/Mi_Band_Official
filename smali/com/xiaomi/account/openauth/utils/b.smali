@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/account/openauth/utils/b;
+.class Lcom/xiaomi/account/openauth/utils/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -20,7 +20,7 @@
 
 
 # virtual methods
-.method public final checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+.method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/utils/b;->a:[Ljava/security/cert/X509Certificate;
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public final checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+.method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/utils/b;->a:[Ljava/security/cert/X509Certificate;
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public final getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+.method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
     .locals 1
 
     const/4 v0, 0x0

@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public hasNext()Z
     .locals 3
 
     iget-object v1, p0, Lcom/google/gson/JsonStreamParser;->b:Ljava/lang/Object;
@@ -130,7 +130,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 .end method
 
-.method public final next()Lcom/google/gson/JsonElement;
+.method public next()Lcom/google/gson/JsonElement;
     .locals 3
 
     invoke-virtual {p0}, Lcom/google/gson/JsonStreamParser;->hasNext()Z
@@ -200,7 +200,7 @@
     throw v0
 .end method
 
-.method public final bridge synthetic next()Ljava/lang/Object;
+.method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0}, Lcom/google/gson/JsonStreamParser;->next()Lcom/google/gson/JsonElement;
@@ -210,7 +210,7 @@
     return-object v0
 .end method
 
-.method public final remove()V
+.method public remove()V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;

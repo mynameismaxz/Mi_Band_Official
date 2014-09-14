@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final enqueue(Lde/greenrobot/event/Subscription;Ljava/lang/Object;)V
+.method public enqueue(Lde/greenrobot/event/Subscription;Ljava/lang/Object;)V
     .locals 2
 
     invoke-static {p1, p2}, Lde/greenrobot/event/PendingPost;->obtainPendingPost(Lde/greenrobot/event/Subscription;Ljava/lang/Object;)Lde/greenrobot/event/PendingPost;
@@ -60,8 +60,6 @@
 
     :cond_0
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -69,11 +67,13 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public final run()V
+.method public run()V
     .locals 5
 
     const/4 v4, 0x0
@@ -120,21 +120,24 @@
     :cond_0
     :try_start_2
     monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :cond_1
+    :try_start_3
     iget-object v1, p0, Lde/greenrobot/event/BackgroundPoster;->eventBus:Lde/greenrobot/event/EventBus;
 
     invoke-virtual {v1, v0}, Lde/greenrobot/event/EventBus;->invokeSubscriber(Lde/greenrobot/event/PendingPost;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    :try_start_3
+    :try_start_4
     const-string v1, "Event"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -164,8 +167,8 @@
     move-result-object v2
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     iput-boolean v4, p0, Lde/greenrobot/event/BackgroundPoster;->executorRunning:Z
 
@@ -174,13 +177,16 @@
     :catchall_0
     move-exception v0
 
-    :try_start_4
+    :try_start_5
     monitor-exit p0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
+    :try_start_6
     throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
 
     :catchall_1
     move-exception v0

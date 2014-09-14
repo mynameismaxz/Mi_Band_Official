@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final promoteNameToValue(Lcom/google/gson/stream/JsonReader;)V
+.method public promoteNameToValue(Lcom/google/gson/stream/JsonReader;)V
     .locals 3
 
     instance-of v0, p1, Lcom/google/gson/internal/bind/JsonTreeReader;
@@ -76,9 +76,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Expected a name but was "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
@@ -88,7 +92,13 @@
 
     move-result-object v1
 
-    const-string v2, "  at line "
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " at line "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

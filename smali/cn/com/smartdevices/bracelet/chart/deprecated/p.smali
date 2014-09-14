@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/p;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/p;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onFinish()V
+.method public onFinish()V
     .locals 3
 
     const/4 v2, 0x0
@@ -73,7 +73,7 @@
     return-void
 .end method
 
-.method public final onJustify()V
+.method public onJustify()V
     .locals 2
 
     const-string v0, "Chart.StatisticChartView"
@@ -120,7 +120,7 @@
     return-void
 .end method
 
-.method public final onScrollX(I)Z
+.method public onScrollX(I)Z
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/p;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
@@ -154,7 +154,7 @@
     return v0
 .end method
 
-.method public final onScrollY(I)Z
+.method public onScrollY(I)Z
     .locals 1
 
     const/4 v0, 0x1
@@ -162,7 +162,7 @@
     return v0
 .end method
 
-.method public final onStart()V
+.method public onStart()V
     .locals 2
 
     const-string v0, "Chart.StatisticChartView"

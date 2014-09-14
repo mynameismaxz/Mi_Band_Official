@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/v;
+.class Lcom/tencent/open/v;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Exception;
+.field final synthetic a:Ljava/lang/Exception;
 
-.field private synthetic b:Lcom/tencent/open/u;
+.field final synthetic b:Lcom/tencent/open/u;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     sget-object v0, Lcom/tencent/open/z;->a:Lcom/tencent/open/z;
@@ -68,9 +68,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "\u9886\u53d6\u5931\u8d25 :"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/tencent/open/v;->a:Ljava/lang/Exception;
 

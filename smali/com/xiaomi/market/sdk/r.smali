@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static a:Lcom/xiaomi/market/sdk/r; = null
+.field static final a:Ljava/lang/String; = "xiaomi_market_sdk_update.db"
 
-.field private static final b:Ljava/lang/String; = "MarketSDKDatabaseHelper"
+.field static final b:I = 0x1
 
-.field private static c:Ljava/lang/String; = "xiaomi_market_sdk_update.db"
+.field private static c:Lcom/xiaomi/market/sdk/r; = null
 
-.field private static d:I = 0x1
+.field private static final d:Ljava/lang/String; = "MarketSDKDatabaseHelper"
 
 
 # direct methods
@@ -27,12 +27,12 @@
     return-void
 .end method
 
-.method private static a(Landroid/database/sqlite/SQLiteDatabase;)V
+.method private a(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
 
     const-string v0, "CREATE TABLE update_download (_id INTEGER PRIMARY KEY AUTOINCREMENT,package_name TEXT,download_id INTEGER, version_code INTEGER, apk_url TEXT, apk_hash TEXT, diff_url TEXT, diff_hash TEXT, apk_path TEXT, UNIQUE(package_name));"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 .method public static j(Landroid/content/Context;)Lcom/xiaomi/market/sdk/r;
     .locals 1
 
-    sget-object v0, Lcom/xiaomi/market/sdk/r;->a:Lcom/xiaomi/market/sdk/r;
+    sget-object v0, Lcom/xiaomi/market/sdk/r;->c:Lcom/xiaomi/market/sdk/r;
 
     if-nez v0, :cond_0
 
@@ -48,10 +48,10 @@
 
     invoke-direct {v0, p0}, Lcom/xiaomi/market/sdk/r;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/xiaomi/market/sdk/r;->a:Lcom/xiaomi/market/sdk/r;
+    sput-object v0, Lcom/xiaomi/market/sdk/r;->c:Lcom/xiaomi/market/sdk/r;
 
     :cond_0
-    sget-object v0, Lcom/xiaomi/market/sdk/r;->a:Lcom/xiaomi/market/sdk/r;
+    sget-object v0, Lcom/xiaomi/market/sdk/r;->c:Lcom/xiaomi/market/sdk/r;
 
     return-object v0
 .end method
@@ -207,9 +207,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "CREATE TABLE update_download (_id INTEGER PRIMARY KEY AUTOINCREMENT,package_name TEXT,download_id INTEGER, version_code INTEGER, apk_url TEXT, apk_hash TEXT, diff_url TEXT, diff_hash TEXT, apk_path TEXT, UNIQUE(package_name));"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/xiaomi/market/sdk/r;->a(Landroid/database/sqlite/SQLiteDatabase;)V
 
     return-void
 .end method

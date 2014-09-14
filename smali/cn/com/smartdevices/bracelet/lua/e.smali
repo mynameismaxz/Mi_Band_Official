@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/lua/e;
+.class Lcn/com/smartdevices/bracelet/lua/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/e;->a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 2
 
     const-string v0, "chenee"

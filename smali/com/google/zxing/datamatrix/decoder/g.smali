@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(IIB)V
+.method synthetic constructor <init>(IILcom/google/zxing/datamatrix/decoder/f;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/google/zxing/datamatrix/decoder/g;-><init>(II)V
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method final a()I
+.method a()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/g;->a:I
@@ -39,7 +39,7 @@
     return v0
 .end method
 
-.method final b()I
+.method b()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/g;->b:I

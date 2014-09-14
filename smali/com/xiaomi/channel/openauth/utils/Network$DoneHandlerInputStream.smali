@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public final read([BII)I
+.method public read([BII)I
     .locals 2
 
     const/4 v1, -0x1

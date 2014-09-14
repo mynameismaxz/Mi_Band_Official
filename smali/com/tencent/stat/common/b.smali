@@ -1,31 +1,31 @@
-.class final Lcom/tencent/stat/common/b;
+.class Lcom/tencent/stat/common/b;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field a:Ljava/lang/String;
 
-.field private b:Ljava/lang/String;
+.field b:Ljava/lang/String;
 
-.field private c:Landroid/util/DisplayMetrics;
+.field c:Landroid/util/DisplayMetrics;
 
-.field private d:I
+.field d:I
 
-.field private e:Ljava/lang/String;
+.field e:Ljava/lang/String;
 
-.field private f:Ljava/lang/String;
+.field f:Ljava/lang/String;
 
-.field private g:Ljava/lang/String;
+.field g:Ljava/lang/String;
 
-.field private h:Ljava/lang/String;
+.field h:Ljava/lang/String;
 
-.field private i:Ljava/lang/String;
+.field i:Ljava/lang/String;
 
-.field private j:Ljava/lang/String;
+.field j:Ljava/lang/String;
 
-.field private k:Ljava/lang/String;
+.field k:Ljava/lang/String;
 
-.field private l:I
+.field l:I
 
 
 # direct methods
@@ -36,19 +36,19 @@
 
     const-string v0, "1.0.0"
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->b:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->b:Ljava/lang/String;
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput v0, p0, Lcom/tencent/stat/common/a;->d:I
+    iput v0, p0, Lcom/tencent/stat/common/b;->d:I
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->e:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->e:Ljava/lang/String;
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->f:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->f:Ljava/lang/String;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -58,35 +58,35 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->g:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->g:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/tencent/stat/common/a;->l:I
+    iput v0, p0, Lcom/tencent/stat/common/b;->l:I
 
     invoke-static {p1}, Lcom/tencent/stat/common/StatCommonHelper;->getDisplayMetrics(Landroid/content/Context;)Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->c:Landroid/util/DisplayMetrics;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->c:Landroid/util/DisplayMetrics;
 
     invoke-static {p1}, Lcom/tencent/stat/common/StatCommonHelper;->getCurAppVersion(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->a:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->a:Ljava/lang/String;
 
     invoke-static {p1}, Lcom/tencent/stat/StatConfig;->getInstallChannel(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->h:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->h:Ljava/lang/String;
 
     invoke-static {p1}, Lcom/tencent/stat/common/StatCommonHelper;->getSimOperator(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->i:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->i:Ljava/lang/String;
 
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
@@ -96,34 +96,34 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->j:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->j:Ljava/lang/String;
 
     invoke-static {p1}, Lcom/tencent/stat/common/StatCommonHelper;->hasRootAccess(Landroid/content/Context;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/tencent/stat/common/a;->l:I
+    iput v0, p0, Lcom/tencent/stat/common/b;->l:I
 
     invoke-static {p1}, Lcom/tencent/stat/common/StatCommonHelper;->getExternalStorageInfo(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/tencent/stat/common/a;->k:Ljava/lang/String;
+    iput-object v0, p0, Lcom/tencent/stat/common/b;->k:Ljava/lang/String;
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/content/Context;B)V
+.method synthetic constructor <init>(Landroid/content/Context;Lcom/tencent/stat/common/a;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/tencent/stat/common/a;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lcom/tencent/stat/common/b;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Lorg/json/JSONObject;)V
+.method a(Lorg/json/JSONObject;)V
     .locals 3
 
     const-string v0, "sr"
@@ -132,7 +132,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, p0, Lcom/tencent/stat/common/a;->c:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/tencent/stat/common/b;->c:Landroid/util/DisplayMetrics;
 
     iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
@@ -146,7 +146,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/tencent/stat/common/a;->c:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/tencent/stat/common/b;->c:Landroid/util/DisplayMetrics;
 
     iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
@@ -162,31 +162,31 @@
 
     const-string v0, "av"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->a:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->a:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "ch"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->h:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->h:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "mf"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->f:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->f:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "sv"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->b:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->b:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "ov"
 
-    iget v1, p0, Lcom/tencent/stat/common/a;->d:I
+    iget v1, p0, Lcom/tencent/stat/common/b;->d:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -202,42 +202,42 @@
 
     const-string v0, "op"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->i:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->i:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "lg"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->g:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->g:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "md"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->e:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->e:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "tz"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->j:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->j:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget v0, p0, Lcom/tencent/stat/common/a;->l:I
+    iget v0, p0, Lcom/tencent/stat/common/b;->l:I
 
     if-eqz v0, :cond_0
 
     const-string v0, "jb"
 
-    iget v1, p0, Lcom/tencent/stat/common/a;->l:I
+    iget v1, p0, Lcom/tencent/stat/common/b;->l:I
 
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     :cond_0
     const-string v0, "sd"
 
-    iget-object v1, p0, Lcom/tencent/stat/common/a;->k:Ljava/lang/String;
+    iget-object v1, p0, Lcom/tencent/stat/common/b;->k:Ljava/lang/String;
 
     invoke-static {p1, v0, v1}, Lcom/tencent/stat/common/StatCommonHelper;->jsonPut(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)V
 

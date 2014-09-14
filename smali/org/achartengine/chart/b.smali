@@ -1,4 +1,4 @@
-.class final synthetic Lorg/achartengine/chart/b;
+.class synthetic Lorg/achartengine/chart/b;
 .super Ljava/lang/Object;
 
 

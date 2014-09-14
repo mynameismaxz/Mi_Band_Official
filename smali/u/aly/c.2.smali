@@ -266,7 +266,7 @@
 
     array-length v4, v2
 
-    shl-int/lit8 v1, v4, 0x1
+    mul-int/lit8 v1, v4, 0x2
 
     new-array v5, v1, [B
 
@@ -284,7 +284,9 @@
 
     new-array v1, v1, [B
 
-    int-to-byte v2, p2
+    and-int/lit16 v2, p2, 0xff
+
+    int-to-byte v2, v2
 
     aput-byte v2, v1, v0
 
@@ -292,11 +294,15 @@
 
     shr-int/lit8 v3, p2, 0x8
 
+    and-int/lit16 v3, v3, 0xff
+
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
     shr-int/lit8 v2, p2, 0x10
+
+    and-int/lit16 v2, v2, 0xff
 
     int-to-byte v2, v2
 
@@ -304,7 +310,9 @@
 
     const/4 v2, 0x3
 
-    shr-int/lit8 v3, p2, 0x18
+    ushr-int/lit8 v3, p2, 0x18
+
+    int-to-byte v3, v3
 
     aput-byte v3, v1, v2
 
@@ -316,13 +324,13 @@
     return-object v5
 
     :cond_0
-    shl-int/lit8 v6, v1, 0x1
+    mul-int/lit8 v6, v1, 0x2
 
     aget-byte v7, v3, v1
 
     aput-byte v7, v5, v6
 
-    shl-int/lit8 v6, v1, 0x1
+    mul-int/lit8 v6, v1, 0x2
 
     add-int/lit8 v6, v6, 0x1
 
@@ -593,25 +601,13 @@
 .end method
 
 .method public b()V
-    .locals 5
+    .locals 2
 
     iget-object v0, p0, Lu/aly/c;->d:[B
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lu/aly/c;->a:[B
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    div-long/2addr v1, v3
-
-    long-to-int v1, v1
-
-    invoke-direct {p0, v0, v1}, Lu/aly/c;->a([BI)[B
+    invoke-direct {p0}, Lu/aly/c;->d()[B
 
     move-result-object v0
 
@@ -628,47 +624,7 @@
 
     iput-object v0, p0, Lu/aly/c;->e:[B
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lu/aly/c;->d:[B
-
-    invoke-static {v1}, Lu/aly/c;->b([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lu/aly/c;->g:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lu/aly/c;->h:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lu/aly/c;->i:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lu/aly/c;->e:[B
-
-    invoke-static {v1}, Lu/aly/c;->b([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lu/aly/c;->a([B)[B
+    invoke-direct {p0}, Lu/aly/c;->e()[B
 
     move-result-object v0
 

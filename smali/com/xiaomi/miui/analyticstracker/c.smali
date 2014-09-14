@@ -14,7 +14,7 @@
 
 .field b:Ljava/lang/String;
 
-.field private synthetic c:Lcom/xiaomi/miui/analyticstracker/ObjectBuilder;
+.field final synthetic c:Lcom/xiaomi/miui/analyticstracker/ObjectBuilder;
 
 
 # direct methods
@@ -29,6 +29,8 @@
             ")V"
         }
     .end annotation
+
+    iput-object p1, p0, Lcom/xiaomi/miui/analyticstracker/c;->c:Lcom/xiaomi/miui/analyticstracker/ObjectBuilder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

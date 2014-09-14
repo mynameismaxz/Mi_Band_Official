@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/ui/i;
+.class Lcn/com/smartdevices/bracelet/ui/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmRepeatActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmRepeatActivity;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {

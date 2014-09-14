@@ -63,37 +63,35 @@
 
     move-result-object v0
 
-    move-object v1, v0
-
-    check-cast v1, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    const-string v0, "CountPolicyEvent"
+    const-string v1, "CountPolicyEvent"
 
     const-string v4, "counts"
 
-    invoke-interface {v3, v0, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v4, Lcom/xiaomi/miui/analyticstracker/TrackEvent;
 
-    iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/CountPolicy;->b:Ljava/util/Map;
+    iget-object v1, p0, Lcom/xiaomi/miui/analyticstracker/service/CountPolicy;->b:Ljava/util/Map;
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v0
+    move-result v1
 
-    int-to-long v5, v0
+    int-to-long v5, v1
 
-    invoke-direct {v4, v1, v3, v5, v6}, Lcom/xiaomi/miui/analyticstracker/TrackEvent;-><init>(Ljava/lang/String;Ljava/util/Map;J)V
+    invoke-direct {v4, v0, v3, v5, v6}, Lcom/xiaomi/miui/analyticstracker/TrackEvent;-><init>(Ljava/lang/String;Ljava/util/Map;J)V
 
     invoke-virtual {v4}, Lcom/xiaomi/miui/analyticstracker/Event;->dispatch()V
 

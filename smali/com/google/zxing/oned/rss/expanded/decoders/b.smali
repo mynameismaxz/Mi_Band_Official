@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method protected final a(I)I
+.method protected a(I)I
     .locals 1
 
     const/16 v0, 0x2710
@@ -29,7 +29,7 @@
     goto :goto_0
 .end method
 
-.method protected final a(Ljava/lang/StringBuilder;I)V
+.method protected a(Ljava/lang/StringBuilder;I)V
     .locals 1
 
     const/16 v0, 0x2710

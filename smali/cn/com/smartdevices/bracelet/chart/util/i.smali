@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/i;
+.class Lcn/com/smartdevices/bracelet/chart/util/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -28,7 +28,7 @@
 
 
 # virtual methods
-.method public final evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     return-object p3

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/auth/h;
+.class Lcom/tencent/connect/auth/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/auth/AuthAgent;
+.field final synthetic a:Lcom/tencent/connect/auth/AuthAgent;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
 
 # virtual methods
-.method public final onComplete(Lorg/json/JSONObject;)V
+.method public onComplete(Lorg/json/JSONObject;)V
     .locals 2
 
     const-string v0, "openSDK_LOG"
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public final onConnectTimeoutException(Lorg/apache/http/conn/ConnectTimeoutException;)V
+.method public onConnectTimeoutException(Lorg/apache/http/conn/ConnectTimeoutException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -87,6 +87,12 @@
 
     move-result-object v1
 
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -104,7 +110,7 @@
     return-void
 .end method
 
-.method public final onHttpStatusException(Lcom/tencent/utils/HttpUtils$HttpStatusException;)V
+.method public onHttpStatusException(Lcom/tencent/utils/HttpUtils$HttpStatusException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -133,6 +139,12 @@
 
     move-result-object v1
 
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -150,7 +162,7 @@
     return-void
 .end method
 
-.method public final onIOException(Ljava/io/IOException;)V
+.method public onIOException(Ljava/io/IOException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -179,6 +191,12 @@
 
     move-result-object v1
 
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -196,7 +214,7 @@
     return-void
 .end method
 
-.method public final onJSONException(Lorg/json/JSONException;)V
+.method public onJSONException(Lorg/json/JSONException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -225,41 +243,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/tencent/connect/auth/h;->a:Lcom/tencent/connect/auth/AuthAgent;
-
-    invoke-static {v1}, Lcom/tencent/connect/auth/AuthAgent;->h(Lcom/tencent/connect/auth/AuthAgent;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    return-void
-.end method
-
-.method public final onMalformedURLException(Ljava/net/MalformedURLException;)V
-    .locals 3
-
-    new-instance v0, Landroid/os/Message;
-
-    invoke-direct {v0}, Landroid/os/Message;-><init>()V
-
-    const/4 v1, -0x3
-
-    iput v1, v0, Landroid/os/Message;->what:I
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Ljava/net/MalformedURLException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
+    const-string v2, ""
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -282,7 +266,53 @@
     return-void
 .end method
 
-.method public final onNetworkUnavailableException(Lcom/tencent/utils/HttpUtils$NetworkUnavailableException;)V
+.method public onMalformedURLException(Ljava/net/MalformedURLException;)V
+    .locals 3
+
+    new-instance v0, Landroid/os/Message;
+
+    invoke-direct {v0}, Landroid/os/Message;-><init>()V
+
+    const/4 v1, -0x3
+
+    iput v1, v0, Landroid/os/Message;->what:I
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1}, Ljava/net/MalformedURLException;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/tencent/connect/auth/h;->a:Lcom/tencent/connect/auth/AuthAgent;
+
+    invoke-static {v1}, Lcom/tencent/connect/auth/AuthAgent;->h(Lcom/tencent/connect/auth/AuthAgent;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+.end method
+
+.method public onNetworkUnavailableException(Lcom/tencent/utils/HttpUtils$NetworkUnavailableException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -311,6 +341,12 @@
 
     move-result-object v1
 
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -328,7 +364,7 @@
     return-void
 .end method
 
-.method public final onSocketTimeoutException(Ljava/net/SocketTimeoutException;)V
+.method public onSocketTimeoutException(Ljava/net/SocketTimeoutException;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -357,6 +393,12 @@
 
     move-result-object v1
 
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -374,7 +416,7 @@
     return-void
 .end method
 
-.method public final onUnknowException(Ljava/lang/Exception;)V
+.method public onUnknowException(Ljava/lang/Exception;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
@@ -398,6 +440,12 @@
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ""
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

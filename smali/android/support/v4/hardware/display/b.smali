@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/hardware/display/b;
+.class Landroid/support/v4/hardware/display/b;
 .super Landroid/support/v4/hardware/display/DisplayManagerCompat;
 
 
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final getDisplay(I)Landroid/view/Display;
+.method public getDisplay(I)Landroid/view/Display;
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/hardware/display/b;->a:Landroid/view/WindowManager;
@@ -51,7 +51,7 @@
     goto :goto_0
 .end method
 
-.method public final getDisplays()[Landroid/view/Display;
+.method public getDisplays()[Landroid/view/Display;
     .locals 3
 
     const/4 v0, 0x1
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public final getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+.method public getDisplays(Ljava/lang/String;)[Landroid/view/Display;
     .locals 1
 
     if-nez p1, :cond_0

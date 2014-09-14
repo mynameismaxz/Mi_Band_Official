@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/x;
+.class Lcom/loopj/android/http/x;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/MySSLSocketFactory;
+.field final synthetic a:Lcom/loopj/android/http/MySSLSocketFactory;
 
 
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/MySSLSocketFactory;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/loopj/android/http/x;->a:Lcom/loopj/android/http/MySSLSocketFactory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,19 +22,19 @@
 
 
 # virtual methods
-.method public final checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+.method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+.method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+.method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
     .locals 1
 
     const/4 v0, 0x0

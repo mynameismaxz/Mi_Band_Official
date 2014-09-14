@@ -40,7 +40,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->a:F
 
-    invoke-static {}, Landroid/support/v4/view/ViewPager;->c()[I
+    invoke-static {}, Landroid/support/v4/view/ViewPager;->f()[I
 
     move-result-object v0
 

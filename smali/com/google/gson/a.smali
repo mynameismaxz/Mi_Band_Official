@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method private constructor <init>(I)V
+.method constructor <init>(I)V
     .locals 2
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -105,7 +105,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/text/DateFormat;Ljava/text/DateFormat;)V
+.method constructor <init>(Ljava/text/DateFormat;Ljava/text/DateFormat;)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,38 +135,6 @@
     invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     return-void
-.end method
-
-.method private a(Ljava/util/Date;)Lcom/google/gson/JsonElement;
-    .locals 3
-
-    iget-object v1, p0, Lcom/google/gson/a;->b:Ljava/text/DateFormat;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/google/gson/a;->a:Ljava/text/DateFormat;
-
-    invoke-virtual {v0, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/google/gson/JsonPrimitive;
-
-    invoke-direct {v2, v0}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/String;)V
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v2
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 .method private a(Lcom/google/gson/JsonElement;)Ljava/util/Date;
@@ -267,104 +235,41 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 .end method
 
-.method private a(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;)Ljava/util/Date;
-    .locals 4
-
-    instance-of v0, p1, Lcom/google/gson/JsonPrimitive;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/gson/JsonParseException;
-
-    const-string v1, "The date should be a string value"
-
-    invoke-direct {v0, v1}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    invoke-direct {p0, p1}, Lcom/google/gson/a;->a(Lcom/google/gson/JsonElement;)Ljava/util/Date;
-
-    move-result-object v0
-
-    const-class v1, Ljava/util/Date;
-
-    if-ne p2, v1, :cond_1
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    const-class v1, Ljava/sql/Timestamp;
-
-    if-ne p2, v1, :cond_2
-
-    new-instance v1, Ljava/sql/Timestamp;
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    invoke-direct {v1, v2, v3}, Ljava/sql/Timestamp;-><init>(J)V
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    const-class v1, Ljava/sql/Date;
-
-    if-ne p2, v1, :cond_3
-
-    new-instance v1, Ljava/sql/Date;
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    invoke-direct {v1, v2, v3}, Ljava/sql/Date;-><init>(J)V
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " cannot deserialize to "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 
 # virtual methods
-.method public final synthetic deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/lang/Object;
+.method public a(Ljava/util/Date;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
+    .locals 3
+
+    iget-object v1, p0, Lcom/google/gson/a;->b:Ljava/text/DateFormat;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/gson/a;->a:Ljava/text/DateFormat;
+
+    invoke-virtual {v0, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Lcom/google/gson/JsonPrimitive;
+
+    invoke-direct {v2, v0}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/String;)V
+
+    monitor-exit v1
+
+    return-object v2
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public a(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/util/Date;
     .locals 4
 
     instance-of v0, p1, Lcom/google/gson/JsonPrimitive;
@@ -459,19 +364,29 @@
     throw v0
 .end method
 
-.method public final synthetic serialize(Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
+.method public synthetic deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/gson/a;->a(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/util/Date;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic serialize(Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
     .locals 1
 
     check-cast p1, Ljava/util/Date;
 
-    invoke-direct {p0, p1}, Lcom/google/gson/a;->a(Ljava/util/Date;)Lcom/google/gson/JsonElement;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/gson/a;->a(Ljava/util/Date;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;

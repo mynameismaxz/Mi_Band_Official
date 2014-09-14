@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/n;
+.class Lcom/tencent/connect/avatar/n;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
+.field final synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 0
 
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 6
 
     const/4 v5, 0x0
@@ -192,7 +192,7 @@
     goto :goto_1
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 4
 
     const/4 v1, -0x1

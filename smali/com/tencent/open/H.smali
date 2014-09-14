@@ -1,9 +1,9 @@
-.class final Lcom/tencent/open/H;
+.class Lcom/tencent/open/H;
 .super Landroid/webkit/WebChromeClient;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/d;
+.field final synthetic a:Lcom/tencent/open/d;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
+.method public onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
     .locals 3
 
     const-string v0, "WebConsole"
@@ -72,7 +72,7 @@
     return-void
 .end method
 
-.method public final onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z
+.method public onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z
     .locals 3
 
     const-string v0, "WebConsole"

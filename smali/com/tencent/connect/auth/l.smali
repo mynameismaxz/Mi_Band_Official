@@ -1,9 +1,9 @@
-.class final Lcom/tencent/connect/auth/l;
+.class Lcom/tencent/connect/auth/l;
 .super Landroid/webkit/WebViewClient;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/auth/AuthDialog;
+.field final synthetic a:Lcom/tencent/connect/auth/AuthDialog;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/connect/auth/AuthDialog;B)V
+.method synthetic constructor <init>(Lcom/tencent/connect/auth/AuthDialog;Lcom/tencent/connect/auth/j;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/connect/auth/l;-><init>(Lcom/tencent/connect/auth/AuthDialog;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 2
 
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
@@ -76,16 +76,20 @@
     return-void
 .end method
 
-.method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
     .locals 3
 
     const-string v0, "AuthDialog"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Webview loading URL: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -133,7 +137,7 @@
     return-void
 .end method
 
-.method public final onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
+.method public onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
     .locals 3
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
@@ -194,7 +198,7 @@
     return-void
 .end method
 
-.method public final onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
+.method public onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
     .locals 0
 
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->proceed()V
@@ -202,7 +206,7 @@
     return-void
 .end method
 
-.method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 5
 
     const/4 v4, 0x0
@@ -213,9 +217,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Redirect URL: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -233,7 +241,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-static {p2}, Lcom/tencent/utils/Util;->parseUrlToJson(Ljava/lang/String;)Lorg/json/JSONObject;
 
@@ -255,15 +263,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_1
 
+    :cond_0
+    :goto_0
+    move v0, v1
+
+    :goto_1
+    return v0
+
+    :cond_1
     const-string v2, "fail_cb"
 
     invoke-virtual {v0, v2, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lcom/tencent/connect/auth/l;->a:Lcom/tencent/connect/auth/AuthDialog;
 
@@ -277,21 +293,16 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/tencent/connect/auth/AuthDialog;->callJs(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_0
-    :goto_0
-    move v0, v1
+    goto :goto_0
 
-    :goto_1
-    return v0
-
-    :cond_1
+    :cond_2
     const-string v2, "fall_to_wv"
 
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
 
     move-result v2
 
-    if-ne v2, v1, :cond_3
+    if-ne v2, v1, :cond_4
 
     iget-object v2, p0, Lcom/tencent/connect/auth/l;->a:Lcom/tencent/connect/auth/AuthDialog;
 
@@ -307,7 +318,9 @@
 
     move-result v0
 
-    if-ltz v0, :cond_2
+    const/4 v3, -0x1
+
+    if-le v0, v3, :cond_3
 
     const-string v0, "&"
 
@@ -336,12 +349,12 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     const-string v0, "?"
 
     goto :goto_2
 
-    :cond_3
+    :cond_4
     const-string v2, "redir"
 
     invoke-virtual {v0, v2, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -360,7 +373,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     invoke-static {}, Lcom/tencent/utils/ServerSetting;->getInstance()Lcom/tencent/utils/ServerSetting;
 
     move-result-object v2
@@ -385,7 +398,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lcom/tencent/connect/auth/l;->a:Lcom/tencent/connect/auth/AuthDialog;
 
@@ -405,16 +418,16 @@
 
     move v0, v1
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_5
+    :cond_6
     const-string v0, "auth://cancel"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/tencent/connect/auth/l;->a:Lcom/tencent/connect/auth/AuthDialog;
 
@@ -432,14 +445,14 @@
 
     goto/16 :goto_1
 
-    :cond_6
+    :cond_7
     const-string v0, "auth://close"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/tencent/connect/auth/l;->a:Lcom/tencent/connect/auth/AuthDialog;
 
@@ -449,16 +462,20 @@
 
     goto/16 :goto_1
 
-    :cond_7
+    :cond_8
     const-string v0, "download://"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
-    const/16 v0, 0xb
+    const-string v0, "download://"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -482,7 +499,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     invoke-static {}, Lcom/tencent/connect/auth/AuthDialog;->a()Ljava/lang/ref/WeakReference;
 
@@ -492,7 +509,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     invoke-static {}, Lcom/tencent/connect/auth/AuthDialog;->a()Ljava/lang/ref/WeakReference;
 
@@ -506,12 +523,12 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    :cond_8
+    :cond_9
     move v0, v1
 
     goto/16 :goto_1
 
-    :cond_9
+    :cond_a
     const/4 v0, 0x0
 
     goto/16 :goto_1

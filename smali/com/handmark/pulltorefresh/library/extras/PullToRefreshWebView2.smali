@@ -3,19 +3,19 @@
 
 
 # static fields
-.field private static b:Ljava/lang/String; = "ptr"
+.field static final m:Ljava/lang/String; = "ptr"
 
-.field private static c:Ljava/lang/String; = "javascript:isReadyForPullDown();"
+.field static final n:Ljava/lang/String; = "javascript:isReadyForPullDown();"
 
-.field private static d:Ljava/lang/String; = "javascript:isReadyForPullUp();"
+.field static final o:Ljava/lang/String; = "javascript:isReadyForPullUp();"
 
 
 # instance fields
-.field private e:Lcom/handmark/pulltorefresh/library/extras/a;
+.field private p:Lcom/handmark/pulltorefresh/library/extras/a;
 
-.field private final f:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private final g:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
@@ -30,13 +30,13 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -52,13 +52,13 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -74,13 +74,13 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
 .method static synthetic a(Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-object v0
 .end method
@@ -96,7 +96,7 @@
 .method static synthetic b(Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-object v0
 .end method
@@ -114,9 +114,9 @@
 
     invoke-direct {v1, p0}, Lcom/handmark/pulltorefresh/library/extras/a;-><init>(Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;)V
 
-    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->e:Lcom/handmark/pulltorefresh/library/extras/a;
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->p:Lcom/handmark/pulltorefresh/library/extras/a;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->e:Lcom/handmark/pulltorefresh/library/extras/a;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->p:Lcom/handmark/pulltorefresh/library/extras/a;
 
     const-string v2, "ptr"
 
@@ -138,7 +138,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/PullToRefreshWebView2;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 

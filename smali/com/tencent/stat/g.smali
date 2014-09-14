@@ -1,4 +1,4 @@
-.class final synthetic Lcom/tencent/stat/g;
+.class synthetic Lcom/tencent/stat/g;
 .super Ljava/lang/Object;
 
 

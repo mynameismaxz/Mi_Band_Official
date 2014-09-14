@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/activity/c;
+.class Lcn/com/smartdevices/bracelet/activity/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/b;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/b;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;

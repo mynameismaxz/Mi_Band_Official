@@ -162,7 +162,7 @@
 .end method
 
 .method protected removeNext()Landroid/graphics/Bitmap;
-    .locals 8
+    .locals 9
 
     const/4 v2, 0x0
 
@@ -210,6 +210,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    :goto_1
     move-object v2, v1
 
     move-object v3, v0
@@ -239,12 +240,13 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    :goto_1
-    move-object v2, v0
+    move-object v8, v0
 
-    move-object v3, v1
+    move-object v0, v1
 
-    goto :goto_0
+    move-object v1, v8
+
+    goto :goto_1
 
     :cond_1
     monitor-exit v4
@@ -260,14 +262,17 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
     :cond_2
-    move-object v0, v2
+    move-object v1, v2
 
-    move-object v1, v3
+    move-object v0, v3
 
     goto :goto_1
 .end method

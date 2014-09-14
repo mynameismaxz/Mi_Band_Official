@@ -21,7 +21,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/oned/rss/FinderPattern;
+.method a()Lcom/google/zxing/oned/rss/FinderPattern;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/a;->a:Lcom/google/zxing/oned/rss/FinderPattern;
@@ -29,7 +29,7 @@
     return-object v0
 .end method
 
-.method final b()I
+.method b()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/oned/rss/a;->b:I
@@ -37,7 +37,7 @@
     return v0
 .end method
 
-.method final c()V
+.method c()V
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/oned/rss/a;->b:I

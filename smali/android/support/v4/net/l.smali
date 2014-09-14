@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/net/l;
+.class Landroid/support/v4/net/l;
 .super Ljava/lang/Object;
 
 
@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Landroid/support/v4/net/i;)V
     .locals 0
 
     invoke-direct {p0}, Landroid/support/v4/net/l;-><init>()V

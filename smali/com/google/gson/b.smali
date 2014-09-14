@@ -8,14 +8,14 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0, v0}, Lcom/google/gson/FieldNamingPolicy;-><init>(Ljava/lang/String;IB)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/gson/FieldNamingPolicy;-><init>(Ljava/lang/String;ILcom/google/gson/b;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
+.method public translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
     .locals 1
 
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;

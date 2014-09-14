@@ -1,15 +1,15 @@
-.class final Lcom/nineoldandroids/animation/g;
+.class Lcom/nineoldandroids/animation/g;
 .super Lcom/nineoldandroids/animation/k;
 
 
 # instance fields
-.field private e:I
-
-.field private f:I
-
 .field private g:I
 
-.field private h:Z
+.field private h:I
+
+.field private i:I
+
+.field private j:Z
 
 
 # direct methods
@@ -20,67 +20,19 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/nineoldandroids/animation/g;->h:Z
+    iput-boolean v0, p0, Lcom/nineoldandroids/animation/g;->j:Z
 
     return-void
 .end method
 
-.method private b()Lcom/nineoldandroids/animation/g;
-    .locals 5
-
-    iget-object v2, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
-
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    new-array v4, v3, [Lcom/nineoldandroids/animation/i;
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-lt v1, v3, :cond_0
-
-    new-instance v0, Lcom/nineoldandroids/animation/g;
-
-    invoke-direct {v0, v4}, Lcom/nineoldandroids/animation/g;-><init>([Lcom/nineoldandroids/animation/i;)V
-
-    return-object v0
-
-    :cond_0
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
-
-    invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->clone()Lcom/nineoldandroids/animation/Keyframe;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/nineoldandroids/animation/i;
-
-    aput-object v0, v4, v1
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Lcom/nineoldandroids/animation/k;
+.method public a()Lcom/nineoldandroids/animation/g;
     .locals 5
 
-    iget-object v2, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -123,7 +75,7 @@
     goto :goto_0
 .end method
 
-.method public final a(F)Ljava/lang/Object;
+.method public a(F)Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/nineoldandroids/animation/g;->b(F)I
@@ -137,7 +89,7 @@
     return-object v0
 .end method
 
-.method public final b(F)I
+.method public b(F)I
     .locals 5
 
     const/4 v1, 0x1
@@ -150,13 +102,13 @@
 
     if-ne v0, v2, :cond_3
 
-    iget-boolean v0, p0, Lcom/nineoldandroids/animation/g;->h:Z
+    iget-boolean v0, p0, Lcom/nineoldandroids/animation/g;->j:Z
 
     if-eqz v0, :cond_0
 
-    iput-boolean v3, p0, Lcom/nineoldandroids/animation/g;->h:Z
+    iput-boolean v3, p0, Lcom/nineoldandroids/animation/g;->j:Z
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -168,9 +120,9 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/nineoldandroids/animation/g;->e:I
+    iput v0, p0, Lcom/nineoldandroids/animation/g;->g:I
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -182,35 +134,35 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/nineoldandroids/animation/g;->f:I
+    iput v0, p0, Lcom/nineoldandroids/animation/g;->h:I
 
-    iget v0, p0, Lcom/nineoldandroids/animation/g;->f:I
+    iget v0, p0, Lcom/nineoldandroids/animation/g;->h:I
 
-    iget v1, p0, Lcom/nineoldandroids/animation/g;->e:I
+    iget v1, p0, Lcom/nineoldandroids/animation/g;->g:I
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/nineoldandroids/animation/g;->g:I
+    iput v0, p0, Lcom/nineoldandroids/animation/g;->i:I
 
     :cond_0
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->b:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->d:Landroid/view/animation/Interpolator;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->b:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->d:Landroid/view/animation/Interpolator;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result p1
 
     :cond_1
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     if-nez v0, :cond_2
 
-    iget v0, p0, Lcom/nineoldandroids/animation/g;->e:I
+    iget v0, p0, Lcom/nineoldandroids/animation/g;->g:I
 
-    iget v1, p0, Lcom/nineoldandroids/animation/g;->g:I
+    iget v1, p0, Lcom/nineoldandroids/animation/g;->i:I
 
     int-to-float v1, v1
 
@@ -224,15 +176,15 @@
     return v0
 
     :cond_2
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
-    iget v1, p0, Lcom/nineoldandroids/animation/g;->e:I
+    iget v1, p0, Lcom/nineoldandroids/animation/g;->g:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    iget v2, p0, Lcom/nineoldandroids/animation/g;->f:I
+    iget v2, p0, Lcom/nineoldandroids/animation/g;->h:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -257,7 +209,7 @@
 
     if-gtz v0, :cond_6
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -265,7 +217,7 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/i;
 
-    iget-object v2, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -306,7 +258,7 @@
 
     div-float v0, v1, v0
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     if-nez v1, :cond_5
 
@@ -323,7 +275,7 @@
     goto :goto_0
 
     :cond_5
-    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -352,7 +304,7 @@
 
     if-ltz v0, :cond_9
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     iget v1, p0, Lcom/nineoldandroids/animation/g;->a:I
 
@@ -364,7 +316,7 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/i;
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     iget v2, p0, Lcom/nineoldandroids/animation/g;->a:I
 
@@ -409,7 +361,7 @@
 
     div-float v0, v1, v0
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     if-nez v1, :cond_8
 
@@ -426,7 +378,7 @@
     goto/16 :goto_0
 
     :cond_8
-    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -449,7 +401,7 @@
     goto/16 :goto_0
 
     :cond_9
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -464,7 +416,7 @@
 
     if-lt v1, v0, :cond_a
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     iget v1, p0, Lcom/nineoldandroids/animation/g;->a:I
 
@@ -489,7 +441,7 @@
     goto/16 :goto_0
 
     :cond_a
-    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/g;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -542,7 +494,7 @@
 
     move-result v0
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     if-nez v3, :cond_c
 
@@ -559,7 +511,7 @@
     goto/16 :goto_0
 
     :cond_c
-    iget-object v3, p0, Lcom/nineoldandroids/animation/g;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/g;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -587,4 +539,14 @@
     move-object v2, v0
 
     goto :goto_1
+.end method
+
+.method public synthetic b()Lcom/nineoldandroids/animation/k;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/nineoldandroids/animation/g;->a()Lcom/nineoldandroids/animation/g;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -3,15 +3,15 @@
 
 
 # static fields
-.field private static b:I = 0x96
+.field static final a:I = 0x96
 
-.field private static synthetic e:[I
+.field private static synthetic f:[I
 
 
 # instance fields
-.field private final c:Landroid/view/animation/Animation;
-
 .field private final d:Landroid/view/animation/Animation;
+
+.field private final e:Landroid/view/animation/Animation;
 
 
 # direct methods
@@ -45,21 +45,21 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->a:Landroid/view/animation/Interpolator;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
     const/4 v1, 0x1
 
@@ -81,21 +81,21 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:Landroid/view/animation/Animation;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:Landroid/view/animation/Animation;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->a:Landroid/view/animation/Interpolator;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:Landroid/view/animation/Animation;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:Landroid/view/animation/Animation;
 
     const/4 v1, 0x1
 
@@ -111,67 +111,10 @@
     goto :goto_0
 .end method
 
-.method private a()F
+.method static synthetic a()[I
     .locals 3
 
-    const/4 v0, 0x0
-
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->b()[I
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mMode:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
-
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_0
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :pswitch_0
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    sget-object v1, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    if-ne v0, v1, :cond_1
-
-    const/high16 v0, 0x42b4
-
-    goto :goto_0
-
-    :cond_1
-    const/high16 v0, 0x4334
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    sget-object v2, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    if-ne v1, v2, :cond_0
-
-    const/high16 v0, 0x4387
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method private static synthetic b()[I
-    .locals 3
-
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->f:[I
 
     if-eqz v0, :cond_0
 
@@ -257,7 +200,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
 
     :goto_5
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->f:[I
 
     goto :goto_0
 
@@ -287,12 +230,69 @@
     goto :goto_1
 .end method
 
+.method private d()F
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->a()[I
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mMode:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
+
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->ordinal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    packed-switch v1, :pswitch_data_0
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :pswitch_0
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
+
+    sget-object v1, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
+
+    if-ne v0, v1, :cond_1
+
+    const/high16 v0, 0x42b4
+
+    goto :goto_0
+
+    :cond_1
+    const/high16 v0, 0x4334
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
+
+    sget-object v2, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
+
+    if-ne v1, v2, :cond_0
+
+    const/high16 v0, 0x4387
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
 
 # virtual methods
 .method protected getDefaultDrawableResId()I
     .locals 1
 
-    const v0, 0x7f020057
+    const v0, 0x7f020059
 
     return v0
 .end method
@@ -302,7 +302,7 @@
 
     const/high16 v5, 0x4000
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -358,24 +358,10 @@
 
     invoke-virtual {v3, v1, v0}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d()F
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->b()[I
+    move-result v0
 
-    move-result-object v1
-
-    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mMode:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
-
-    invoke-virtual {v4}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v4
-
-    aget v1, v1, v4
-
-    packed-switch v1, :pswitch_data_0
-
-    :cond_0
-    :goto_0
     iget v1, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     int-to-float v1, v1
@@ -394,41 +380,8 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
-    :cond_1
+    :cond_0
     return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    sget-object v1, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    if-ne v0, v1, :cond_2
-
-    const/high16 v0, 0x42b4
-
-    goto :goto_0
-
-    :cond_2
-    const/high16 v0, 0x4334
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    sget-object v4, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
-
-    if-ne v1, v4, :cond_0
-
-    const/high16 v0, 0x4387
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method protected onPullImpl(F)V
@@ -440,7 +393,7 @@
 .method protected pullToRefreshImpl()V
     .locals 2
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
     iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
@@ -452,7 +405,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->e:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
@@ -487,7 +440,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/FlipLoadingLayout;->d:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 

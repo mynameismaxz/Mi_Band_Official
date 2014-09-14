@@ -8,27 +8,27 @@
 # static fields
 .field private static final B:Ljava/io/OutputStream; = null
 
-.field private static a:Ljava/lang/String; = "journal"
+.field static final a:Ljava/lang/String; = "journal"
 
-.field private static b:Ljava/lang/String; = "journal.tmp"
+.field static final b:Ljava/lang/String; = "journal.tmp"
 
-.field private static c:Ljava/lang/String; = "journal.bkp"
+.field static final c:Ljava/lang/String; = "journal.bkp"
 
-.field private static d:Ljava/lang/String; = "libcore.io.DiskLruCache"
+.field static final d:Ljava/lang/String; = "libcore.io.DiskLruCache"
 
-.field private static e:Ljava/lang/String; = "1"
+.field static final e:Ljava/lang/String; = "1"
 
-.field private static f:J = -0x1L
+.field static final f:J = -0x1L
 
-.field private static g:Ljava/util/regex/Pattern; = null
+.field static final g:Ljava/util/regex/Pattern; = null
 
-.field private static final h:Ljava/lang/String; = "CLEAN"
+.field private static final i:Ljava/lang/String; = "CLEAN"
 
-.field private static final i:Ljava/lang/String; = "DIRTY"
+.field private static final j:Ljava/lang/String; = "DIRTY"
 
-.field private static final j:Ljava/lang/String; = "REMOVE"
+.field private static final k:Ljava/lang/String; = "REMOVE"
 
-.field private static final k:Ljava/lang/String; = "READ"
+.field private static final l:Ljava/lang/String; = "READ"
 
 
 # instance fields
@@ -43,7 +43,7 @@
     .end annotation
 .end field
 
-.field private final l:Ljava/io/File;
+.field final h:Ljava/util/concurrent/ThreadPoolExecutor;
 
 .field private final m:Ljava/io/File;
 
@@ -51,21 +51,23 @@
 
 .field private final o:Ljava/io/File;
 
-.field private final p:I
+.field private final p:Ljava/io/File;
 
-.field private q:J
+.field private final q:I
 
-.field private r:I
+.field private r:J
 
-.field private final s:I
+.field private s:I
 
-.field private t:J
+.field private final t:I
 
-.field private u:I
+.field private u:J
 
-.field private v:Ljava/io/Writer;
+.field private v:I
 
-.field private final w:Ljava/util/LinkedHashMap;
+.field private w:Ljava/io/Writer;
+
+.field private final x:Ljava/util/LinkedHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedHashMap",
@@ -77,11 +79,9 @@
     .end annotation
 .end field
 
-.field private x:I
+.field private y:I
 
-.field private y:J
-
-.field private z:Ljava/util/concurrent/ThreadPoolExecutor;
+.field private z:J
 
 
 # direct methods
@@ -116,9 +116,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     new-instance v0, Ljava/util/LinkedHashMap;
 
@@ -126,9 +126,9 @@
 
     invoke-direct {v0, v1, v3, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
-    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:J
+    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:J
 
     new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -142,7 +142,7 @@
 
     invoke-direct/range {v0 .. v6}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:Ljava/util/concurrent/ThreadPoolExecutor;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h:Ljava/util/concurrent/ThreadPoolExecutor;
 
     new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;
 
@@ -150,9 +150,9 @@
 
     iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
 
-    iput-object p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l:Ljava/io/File;
+    iput-object p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
 
-    iput p2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:I
+    iput p2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:I
 
     new-instance v0, Ljava/io/File;
 
@@ -160,7 +160,7 @@
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
     new-instance v0, Ljava/io/File;
 
@@ -168,7 +168,7 @@
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
 
     new-instance v0, Ljava/io/File;
 
@@ -176,25 +176,23 @@
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:Ljava/io/File;
 
-    iput p3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iput p3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
-    iput-wide p4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:J
+    iput-wide p4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:J
 
-    iput p6, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:I
+    iput p6, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
 
     return-void
 .end method
 
 .method static synthetic a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;I)I
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    iput p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
-
-    return v0
+    return p1
 .end method
 
 .method static synthetic a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;J)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
@@ -215,11 +213,11 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()V
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n()V
 
-    invoke-static {p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -261,9 +259,9 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;B)V
+    invoke-direct {v0, p0, p1, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -274,17 +272,21 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;B)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
 
     invoke-static {v1, v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "DIRTY "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -302,7 +304,7 @@
 
     invoke-virtual {v1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     invoke-virtual {v1}, Ljava/io/Writer;->flush()V
     :try_end_1
@@ -340,8 +342,6 @@
 .method public static a(Ljava/io/File;IIJI)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;
     .locals 7
 
-    const/4 v2, 0x1
-
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
@@ -368,6 +368,17 @@
     throw v0
 
     :cond_1
+    if-gtz p2, :cond_2
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "valueCount <= 0"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
     new-instance v0, Ljava/io/File;
 
     const-string v1, "journal.bkp"
@@ -378,29 +389,31 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     new-instance v1, Ljava/io/File;
 
-    const-string v3, "journal"
+    const-string v2, "journal"
 
-    invoke-direct {v1, p0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v1, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_4
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    :cond_2
+    :cond_3
     :goto_0
     new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;
 
     move-object v1, p0
 
-    move v3, v2
+    move v2, p1
+
+    move v3, p2
 
     move-wide v4, p3
 
@@ -408,83 +421,87 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;-><init>(Ljava/io/File;IIJI)V
 
-    iget-object v1, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v1, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     :try_start_0
-    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->f()V
+    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->j()V
 
-    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->g()V
+    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->k()V
 
     new-instance v1, Ljava/io/BufferedWriter;
 
-    new-instance v3, Ljava/io/OutputStreamWriter;
+    new-instance v2, Ljava/io/OutputStreamWriter;
 
-    new-instance v4, Ljava/io/FileOutputStream;
+    new-instance v3, Ljava/io/FileOutputStream;
 
-    iget-object v5, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v4, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    invoke-direct {v4, v5, v6}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+    invoke-direct {v3, v4, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
-    sget-object v5, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a:Ljava/nio/charset/Charset;
+    sget-object v4, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a:Ljava/nio/charset/Charset;
 
-    invoke-direct {v3, v4, v5}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v2, v3, v4}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    invoke-direct {v1, v3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
+    invoke-direct {v1, v2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
 
-    iput-object v1, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iput-object v1, v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_1
     return-object v0
 
-    :cond_3
-    const/4 v3, 0x0
+    :cond_4
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1, v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->a(Ljava/io/File;Ljava/io/File;Z)V
+    invoke-static {v0, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->a(Ljava/io/File;Ljava/io/File;Z)V
 
     goto :goto_0
 
     :catch_0
     move-exception v1
 
-    sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v5, "DiskLruCache "
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v4, "DiskLruCache "
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, " is corrupt: "
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    move-result-object v4
+    const-string v4, " is corrupt: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v4, ", removing"
+    const-string v3, ", removing"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -492,18 +509,20 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->d()V
+    invoke-virtual {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h()V
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Ljava/io/File;->mkdirs()Z
 
     new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;
 
     move-object v1, p0
 
-    move v3, v2
+    move v2, p1
+
+    move v3, p2
 
     move-wide v4, p3
 
@@ -511,7 +530,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;-><init>(Ljava/io/File;IIJI)V
 
-    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h()V
+    invoke-direct {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l()V
 
     goto :goto_1
 .end method
@@ -519,53 +538,19 @@
 .method static synthetic a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)Ljava/io/Writer;
     .locals 1
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     return-object v0
 .end method
 
 .method static synthetic a(Ljava/io/InputStream;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    new-instance v0, Ljava/io/InputStreamReader;
-
-    sget-object v1, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->b:Ljava/nio/charset/Charset;
-
-    invoke-direct {v0, p0, v1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
-
-    invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/Reader;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->b(Ljava/io/InputStream;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method private declared-synchronized a(J)V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iput-wide p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:J
-
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method private declared-synchronized a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;Z)V
@@ -614,7 +599,7 @@
     move v1, v0
 
     :goto_0
-    iget v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v3, :cond_4
 
@@ -632,9 +617,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Newly created entry didn\'t create value for index "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -677,7 +666,7 @@
     :cond_4
     :goto_2
     :try_start_2
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v0, v1, :cond_7
 
@@ -715,19 +704,19 @@
 
     aput-wide v6, v1, v0
 
-    iget-wide v8, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iget-wide v8, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
     sub-long v3, v8, v4
 
     add-long/2addr v3, v6
 
-    iput-wide v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iput-wide v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     :cond_5
     :goto_3
@@ -741,11 +730,11 @@
     goto :goto_3
 
     :cond_7
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
     const/4 v0, 0x0
 
@@ -763,13 +752,17 @@
 
     invoke-static {v2, v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Z)Z
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "CLEAN "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->c(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)Ljava/lang/String;
 
@@ -801,44 +794,44 @@
 
     if-eqz p2, :cond_8
 
-    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:J
+    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:J
 
     const-wide/16 v3, 0x1
 
     add-long/2addr v3, v0
 
-    iput-wide v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:J
+    iput-wide v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:J
 
     invoke-static {v2, v0, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;J)J
 
     :cond_8
     :goto_4
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->flush()V
 
-    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:J
+    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:J
 
     cmp-long v0, v0, v2
 
     if-gtz v0, :cond_9
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
 
     if-gt v0, v1, :cond_9
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->k()Z
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
     :cond_9
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h:Ljava/util/concurrent/ThreadPoolExecutor;
 
     iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
 
@@ -847,7 +840,7 @@
     goto/16 :goto_1
 
     :cond_a
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-static {v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->c(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)Ljava/lang/String;
 
@@ -855,13 +848,17 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "REMOVE "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->c(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)Ljava/lang/String;
 
@@ -978,11 +975,9 @@
 .end method
 
 .method private d(Ljava/lang/String;)V
-    .locals 8
+    .locals 7
 
     const/16 v1, 0x20
-
-    const/4 v7, 0x5
 
     const/4 v6, 0x0
 
@@ -998,9 +993,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "unexpected journal line: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1027,7 +1026,11 @@
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    const-string v1, "REMOVE"
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
 
     if-ne v2, v1, :cond_7
 
@@ -1039,7 +1042,7 @@
 
     if-eqz v1, :cond_7
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1055,7 +1058,7 @@
     move-object v1, v0
 
     :goto_1
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1067,16 +1070,22 @@
 
     new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;
 
-    invoke-direct {v0, p0, v1, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;B)V
+    invoke-direct {v0, p0, v1, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
 
-    iget-object v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v4, v1, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_3
     if-eq v3, v5, :cond_4
 
-    if-ne v2, v7, :cond_4
+    const-string v1, "CLEAN"
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-ne v2, v1, :cond_4
 
     const-string v1, "CLEAN"
 
@@ -1102,9 +1111,7 @@
 
     invoke-static {v0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Z)Z
 
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
+    invoke-static {v0, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
 
     invoke-static {v0, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;[Ljava/lang/String;)V
 
@@ -1113,7 +1120,13 @@
     :cond_4
     if-ne v3, v5, :cond_5
 
-    if-ne v2, v7, :cond_5
+    const-string v1, "DIRTY"
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-ne v2, v1, :cond_5
 
     const-string v1, "DIRTY"
 
@@ -1125,7 +1138,7 @@
 
     new-instance v1, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
 
-    invoke-direct {v1, p0, v0, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;B)V
+    invoke-direct {v1, p0, v0, v6}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
 
     invoke-static {v0, v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
 
@@ -1134,7 +1147,11 @@
     :cond_5
     if-ne v3, v5, :cond_6
 
-    const/4 v0, 0x4
+    const-string v0, "READ"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
 
     if-ne v2, v0, :cond_6
 
@@ -1151,9 +1168,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "unexpected journal line: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1170,41 +1191,33 @@
     :cond_7
     move-object v1, v0
 
-    goto :goto_1
+    goto/16 :goto_1
 .end method
 
 .method static synthetic d(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)Z
     .locals 1
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->k()Z
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method static synthetic e()Ljava/io/OutputStream;
-    .locals 1
-
-    sget-object v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->B:Ljava/io/OutputStream;
-
-    return-object v0
-.end method
-
 .method static synthetic e(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h()V
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l()V
 
     return-void
 .end method
 
-.method private static e(Ljava/lang/String;)V
+.method private e(Ljava/lang/String;)V
     .locals 3
 
     sget-object v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->g:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
@@ -1218,11 +1231,15 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "keys must match regex [a-z0-9_-]{1,64}: \""
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1247,418 +1264,230 @@
 .method static synthetic f(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)I
     .locals 1
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     return v0
 .end method
 
-.method private f()V
-    .locals 10
+.method static synthetic g(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)Ljava/io/File;
+    .locals 1
 
-    const/4 v9, 0x5
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
 
-    const/4 v0, 0x0
+    return-object v0
+.end method
 
-    const/4 v8, -0x1
+.method static synthetic i()Ljava/io/OutputStream;
+    .locals 1
 
-    new-instance v3, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
+    sget-object v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->B:Ljava/io/OutputStream;
 
-    new-instance v1, Ljava/io/FileInputStream;
+    return-object v0
+.end method
 
-    iget-object v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+.method private j()V
+    .locals 8
 
-    invoke-direct {v1, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
+
+    new-instance v0, Ljava/io/FileInputStream;
+
+    iget-object v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
+
+    invoke-direct {v0, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     sget-object v2, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a:Ljava/nio/charset/Charset;
 
-    invoke-direct {v3, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v1, v0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     :try_start_0
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
+    const-string v6, "libcore.io.DiskLruCache"
+
+    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    const-string v6, "1"
+
+    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    iget v6, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v7, "libcore.io.DiskLruCache"
+    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v7
+    if-eqz v3, :cond_0
 
-    if-eqz v7, :cond_0
+    iget v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
-    const-string v7, "1"
+    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v3
 
-    move-result v7
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v7, :cond_0
+    move-result v3
 
-    iget v7, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:I
+    if-eqz v3, :cond_0
 
-    invoke-static {v7}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    const-string v3, ""
 
-    move-result-object v7
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const-string v4, ""
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
+    if-nez v3, :cond_1
 
     :cond_0
-    new-instance v0, Ljava/io/IOException;
+    new-instance v3, Ljava/io/IOException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v7, "unexpected journal header: ["
 
-    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v1
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, ", "
+    move-result-object v0
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, ", "
 
-    move-result-object v1
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, ", "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
+
+    const-string v2, ", "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     const-string v2, "]"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :catchall_0
     move-exception v0
 
-    invoke-static {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/Closeable;)V
+    invoke-static {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/Closeable;)V
 
     throw v0
 
     :cond_1
-    move v1, v0
+    const/4 v0, 0x0
 
     :goto_0
     :try_start_1
-    invoke-virtual {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/16 v0, 0x20
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v5
-
-    if-ne v5, v8, :cond_2
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v5, "unexpected journal line: "
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;->a()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-direct {p0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->d(Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0
 
-    :catch_0
-    move-exception v0
-
-    :try_start_2
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->size()I
-
-    move-result v0
-
-    sub-int v0, v1, v0
-
-    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-static {v3}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/Closeable;)V
-
-    return-void
-
-    :cond_2
-    add-int/lit8 v0, v5, 0x1
-
-    const/16 v2, 0x20
-
-    :try_start_3
-    invoke-virtual {v4, v2, v0}, Ljava/lang/String;->indexOf(II)I
-
-    move-result v6
-
-    if-ne v6, v8, :cond_4
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x6
-
-    if-ne v5, v2, :cond_9
-
-    const-string v2, "REMOVE"
-
-    invoke-virtual {v4, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
-
-    iget-object v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v2, v0}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_3
-    :goto_1
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_4
-    invoke-virtual {v4, v0, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    :catch_0
+    move-exception v2
 
-    move-result-object v0
+    :try_start_2
+    iget-object v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
-    move-object v2, v0
-
-    :goto_2
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0, v2}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;
-
-    if-nez v0, :cond_5
-
-    new-instance v0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v0, p0, v2, v7}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;B)V
-
-    iget-object v7, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v7, v2, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_5
-    if-eq v6, v8, :cond_6
-
-    if-ne v5, v9, :cond_6
-
-    const-string v2, "CLEAN"
-
-    invoke-virtual {v4, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v2}, Ljava/util/LinkedHashMap;->size()I
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    sub-int/2addr v0, v2
 
-    add-int/lit8 v2, v6, 0x1
+    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {v4, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/Closeable;)V
 
-    move-result-object v2
-
-    const-string v4, " "
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v4, 0x1
-
-    invoke-static {v0, v4}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Z)Z
-
-    const/4 v4, 0x0
-
-    invoke-static {v0, v4}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
-
-    invoke-static {v0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;[Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_6
-    if-ne v6, v8, :cond_7
-
-    if-ne v5, v9, :cond_7
-
-    const-string v2, "DIRTY"
-
-    invoke-virtual {v4, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    new-instance v2, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, p0, v0, v4}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;B)V
-
-    invoke-static {v0, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->a(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
-
-    goto :goto_1
-
-    :cond_7
-    if-ne v6, v8, :cond_8
-
-    const/4 v0, 0x4
-
-    if-ne v5, v0, :cond_8
-
-    const-string v0, "READ"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    :cond_8
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v5, "unexpected journal line: "
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-    .catch Ljava/io/EOFException; {:try_start_3 .. :try_end_3} :catch_0
-
-    :cond_9
-    move-object v2, v0
-
-    goto :goto_2
+    return-void
 .end method
 
-.method static synthetic g(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;)Ljava/io/File;
-    .locals 1
-
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l:Ljava/io/File;
-
-    return-object v0
-.end method
-
-.method private g()V
+.method private k()V
     .locals 8
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->a(Ljava/io/File;)V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -1691,11 +1520,11 @@
     move v1, v2
 
     :goto_1
-    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v4, :cond_0
 
-    iget-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iget-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->b(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)[J
 
@@ -1705,13 +1534,13 @@
 
     add-long/2addr v4, v6
 
-    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iput-wide v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iput v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     add-int/lit8 v1, v1, 0x1
 
@@ -1725,7 +1554,7 @@
     move v1, v2
 
     :goto_2
-    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v4, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v4, :cond_2
 
@@ -1754,17 +1583,17 @@
     return-void
 .end method
 
-.method private declared-synchronized h()V
+.method private declared-synchronized l()V
     .locals 5
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
@@ -1775,7 +1604,7 @@
 
     new-instance v2, Ljava/io/FileOutputStream;
 
-    iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
+    iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
 
     invoke-direct {v2, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
@@ -1804,7 +1633,7 @@
 
     invoke-virtual {v1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -1816,7 +1645,7 @@
 
     invoke-virtual {v1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -1832,7 +1661,7 @@
 
     invoke-virtual {v1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -1863,9 +1692,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "DIRTY "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->c(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)Ljava/lang/String;
 
@@ -1912,9 +1745,13 @@
     :try_start_3
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "CLEAN "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->c(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)Ljava/lang/String;
 
@@ -1952,7 +1789,7 @@
     :try_start_4
     invoke-virtual {v1}, Ljava/io/Writer;->close()V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1960,24 +1797,24 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:Ljava/io/File;
 
     const/4 v2, 0x1
 
     invoke-static {v0, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->a(Ljava/io/File;Ljava/io/File;Z)V
 
     :cond_3
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->a(Ljava/io/File;Ljava/io/File;Z)V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
@@ -1987,7 +1824,7 @@
 
     new-instance v2, Ljava/io/FileOutputStream;
 
-    iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
+    iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n:Ljava/io/File;
 
     const/4 v4, 0x1
 
@@ -1999,7 +1836,7 @@
 
     invoke-direct {v0, v1}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
@@ -2008,64 +1845,18 @@
     return-void
 .end method
 
-.method private declared-synchronized i()J
+.method private m()Z
     .locals 2
 
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-wide v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method private declared-synchronized j()J
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    int-to-long v0, v0
-
-    monitor-exit p0
-
-    return-wide v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method private k()Z
-    .locals 2
-
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
     const/16 v1, 0x7d0
 
     if-lt v0, v1, :cond_0
 
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1}, Ljava/util/LinkedHashMap;->size()I
 
@@ -2084,42 +1875,10 @@
     goto :goto_0
 .end method
 
-.method private declared-synchronized l()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    monitor-exit p0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method private m()V
+.method private n()V
     .locals 2
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     if-nez v0, :cond_0
 
@@ -2135,49 +1894,19 @@
     return-void
 .end method
 
-.method private declared-synchronized n()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()V
-
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o()V
-
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p()V
-
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
-
-    invoke-virtual {v0}, Ljava/io/Writer;->flush()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
 .method private o()V
     .locals 4
 
     :goto_0
-    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:J
+    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:J
 
     cmp-long v0, v0, v2
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
 
@@ -2211,13 +1940,13 @@
     .locals 2
 
     :goto_0
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
 
     if-le v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
 
@@ -2249,21 +1978,21 @@
 
 
 # virtual methods
-.method public final declared-synchronized a(Ljava/lang/String;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Snapshot;
+.method public declared-synchronized a(Ljava/lang/String;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Snapshot;
     .locals 10
 
-    const/4 v3, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v3, 0x0
 
     monitor-enter p0
 
     :try_start_0
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()V
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n()V
 
-    invoke-static {p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2299,11 +2028,11 @@
     goto :goto_0
 
     :cond_1
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     new-array v6, v1, [Ljava/io/File;
 
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     new-array v7, v1, [Ljava/io/InputStream;
     :try_end_1
@@ -2313,7 +2042,7 @@
 
     :goto_1
     :try_start_2
-    iget v5, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v5, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v5, :cond_3
 
@@ -2343,7 +2072,7 @@
 
     :goto_2
     :try_start_3
-    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v2, :cond_2
 
@@ -2365,19 +2094,23 @@
     goto :goto_0
 
     :cond_3
-    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iget v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iput v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "READ "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2395,13 +2128,13 @@
 
     invoke-virtual {v1, v3}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->k()Z
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h:Ljava/util/concurrent/ThreadPoolExecutor;
 
     iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
 
@@ -2424,7 +2157,7 @@
 
     move-object v3, p1
 
-    invoke-direct/range {v1 .. v9}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Snapshot;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;J[Ljava/io/File;[Ljava/io/InputStream;[JB)V
+    invoke-direct/range {v1 .. v9}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Snapshot;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;Ljava/lang/String;J[Ljava/io/File;[Ljava/io/InputStream;[JLcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -2438,21 +2171,49 @@
     throw v1
 .end method
 
-.method public final a()Ljava/io/File;
+.method public a()Ljava/io/File;
     .locals 1
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
 
     return-object v0
 .end method
 
-.method public final declared-synchronized b()J
+.method public declared-synchronized a(J)V
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->q:J
+    iput-wide p1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:J
+
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized b()J
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2468,7 +2229,7 @@
     throw v0
 .end method
 
-.method public final b(Ljava/lang/String;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
+.method public b(Ljava/lang/String;)Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
     .locals 2
 
     const-wide/16 v0, -0x1
@@ -2480,13 +2241,13 @@
     return-object v0
 .end method
 
-.method public final declared-synchronized c()I
+.method public declared-synchronized c()I
     .locals 1
 
     monitor-enter p0
 
     :try_start_0
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->r:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2502,7 +2263,7 @@
     throw v0
 .end method
 
-.method public final declared-synchronized c(Ljava/lang/String;)Z
+.method public declared-synchronized c(Ljava/lang/String;)Z
     .locals 6
 
     const/4 v1, 0x0
@@ -2510,11 +2271,11 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()V
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n()V
 
-    invoke-static {p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->e(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2542,7 +2303,7 @@
 
     :cond_1
     :try_start_1
-    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iget-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->b(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)[J
 
@@ -2552,13 +2313,13 @@
 
     sub-long/2addr v2, v4
 
-    iput-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:J
+    iput-wide v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
 
-    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:I
+    iput v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;->b(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/d;)[J
 
@@ -2571,7 +2332,7 @@
     add-int/lit8 v1, v1, 0x1
 
     :cond_2
-    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->s:I
+    iget v2, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->t:I
 
     if-ge v1, v2, :cond_3
 
@@ -2595,9 +2356,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "failed to delete "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -2622,19 +2387,23 @@
 
     :cond_3
     :try_start_2
-    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:I
+    iput v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->y:I
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "REMOVE "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2652,17 +2421,17 @@
 
     invoke-virtual {v0, v1}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->k()Z
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->z:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->h:Ljava/util/concurrent/ThreadPoolExecutor;
 
     iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->A:Ljava/util/concurrent/Callable;
 
@@ -2673,16 +2442,16 @@
     :cond_4
     const/4 v0, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
-.method public final declared-synchronized close()V
+.method public declared-synchronized close()V
     .locals 3
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2697,7 +2466,7 @@
     :try_start_1
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/util/LinkedHashMap;
+    iget-object v1, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->x:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2752,25 +2521,133 @@
 
     invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p()V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:Ljava/io/Writer;
+    iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 .end method
 
-.method public final d()V
+.method public declared-synchronized d()J
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->u:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized e()J
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->v:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    int-to-long v0, v0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized f()Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    monitor-exit p0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized g()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->n()V
+
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->o()V
+
+    invoke-direct {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->p()V
+
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->w:Ljava/io/Writer;
+
+    invoke-virtual {v0}, Ljava/io/Writer;->flush()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public h()V
     .locals 1
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->close()V
 
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->l:Ljava/io/File;
+    iget-object v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache;->m:Ljava/io/File;
 
     invoke-static {v0}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/g;->a(Ljava/io/File;)V
 

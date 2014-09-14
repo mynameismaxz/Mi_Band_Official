@@ -122,9 +122,15 @@
     goto :goto_0
 
     :cond_1
-    const-string v0, "&8007236f-"
+    const-string v0, "&"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "8007236f-"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "a2d6-4847-ac83-"
 

@@ -1,33 +1,33 @@
-.class final Lcn/com/smartdevices/bracelet/chart/d;
+.class Lcn/com/smartdevices/bracelet/chart/d;
 .super Lcn/com/smartdevices/bracelet/chart/b;
 
 
 # instance fields
-.field private a:F
+.field final synthetic b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
-.field private b:I
+.field private c:F
 
-.field private synthetic c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+.field private d:I
 
 
 # direct methods
 .method private constructor <init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)V
     .locals 1
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/b;-><init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;B)V
+    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/b;-><init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;Lcn/com/smartdevices/bracelet/chart/b;)V
 
     const/16 v0, 0xa
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:I
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->d:I
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;Lcn/com/smartdevices/bracelet/chart/d;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/d;-><init>(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)V
@@ -37,7 +37,7 @@
 
 
 # virtual methods
-.method protected final itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 4
 
     iget v0, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
@@ -66,9 +66,9 @@
 
     iget v1, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->a:F
+    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:F
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:I
+    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->d:I
 
     invoke-static {v0, v1, v2, v3}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->itemLevelSize(IIFI)F
 
@@ -77,7 +77,7 @@
     goto :goto_0
 .end method
 
-.method protected final itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 3
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
@@ -92,13 +92,13 @@
 
     sub-float/2addr v0, v1
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
     move-result v1
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -114,7 +114,7 @@
 
     iget v1, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -130,7 +130,7 @@
 
     add-float/2addr v1, v0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->f(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
@@ -138,7 +138,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/chart/a;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/a;->b()F
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/a;->c()F
 
     move-result v0
 
@@ -147,7 +147,7 @@
     return v0
 .end method
 
-.method protected final itemOffsetY(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemOffsetY(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 1
 
     const/4 v0, 0x0
@@ -155,7 +155,7 @@
     return v0
 .end method
 
-.method protected final itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 3
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
@@ -170,13 +170,13 @@
 
     sub-float/2addr v0, v1
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
     move-result v1
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -201,7 +201,7 @@
     return v0
 .end method
 
-.method protected final onItemsChanged(Ljava/util/List;)V
+.method protected onItemsChanged(Ljava/util/List;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -245,22 +245,22 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->mMaxItemValue:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->d:I
 
     invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->updateLevelSize(IFI)F
 
     move-result v0
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->a:F
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:F
 
     :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     const v1, 0x7fffffff
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v0, v5}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
@@ -282,18 +282,18 @@
 
     if-nez v0, :cond_2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v0, v5}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v0, v5}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
     :cond_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -303,9 +303,9 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->c(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -315,7 +315,7 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->d(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     const/16 v1, 0x8
 
@@ -350,7 +350,7 @@
 
     iget v2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->a(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -358,7 +358,7 @@
 
     if-ge v2, v3, :cond_4
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     iget v3, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
@@ -367,7 +367,7 @@
     :cond_4
     iget v2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;->b(Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;)I
 
@@ -375,7 +375,7 @@
 
     if-le v2, v3, :cond_1
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:Lcn/com/smartdevices/bracelet/chart/DynamicDetailChart;
 
     iget v0, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
@@ -384,7 +384,7 @@
     goto :goto_0
 .end method
 
-.method protected final onRectChanged(Landroid/graphics/RectF;)V
+.method protected onRectChanged(Landroid/graphics/RectF;)V
     .locals 3
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/b;->onRectChanged(Landroid/graphics/RectF;)V
@@ -405,13 +405,13 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/d;->mMaxItemValue:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->b:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/d;->d:I
 
     invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->updateLevelSize(IFI)F
 
     move-result v0
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->a:F
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/d;->c:F
 
     :cond_0
     return-void

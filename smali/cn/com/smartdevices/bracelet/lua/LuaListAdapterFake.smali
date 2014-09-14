@@ -205,6 +205,10 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/lua/f;-><init>(Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;)V
 
+    iput-object p1, v0, Lcn/com/smartdevices/bracelet/lua/f;->a:Ljava/lang/String;
+
+    iput-object p2, v0, Lcn/com/smartdevices/bracelet/lua/f;->b:Ljava/lang/String;
+
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapterFake;->infoList:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -297,7 +301,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f03004c
+    const v3, 0x7f03004e
 
     const/4 v4, 0x0
 
@@ -305,7 +309,7 @@
 
     move-result-object v3
 
-    const v1, 0x7f070156
+    const v1, 0x7f07015c
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -321,7 +325,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f070157
+    const v1, 0x7f07015d
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +341,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f070155
+    const v1, 0x7f07015b
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

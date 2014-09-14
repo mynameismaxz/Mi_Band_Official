@@ -1,43 +1,61 @@
-.class final Lcn/com/smartdevices/bracelet/ui/D;
-.super Landroid/os/Handler;
+.class Lcn/com/smartdevices/bracelet/ui/D;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/media/MediaScannerConnection$MediaScannerConnectionClient;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 1
+.method public onMediaScannerConnected()V
+    .locals 3
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->l(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/media/MediaScannerConnection;
 
-    :goto_0
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->m(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaScannerConnection;->scanFile(Ljava/lang/String;Ljava/lang/String;)V
+
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.method public onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
+    .locals 2
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->a(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/D;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    goto :goto_0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->h(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/os/Handler;
 
-    :pswitch_data_0
-    .packed-switch 0x1002
-        :pswitch_0
-    .end packed-switch
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/ui/K;
+.class Lcn/com/smartdevices/bracelet/ui/K;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/K;->a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,10 +22,8 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

@@ -12,13 +12,11 @@
 .end method
 
 .method static a(Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     const/16 v0, 0x3b
 
-    const/4 v1, 0x1
-
-    invoke-static {p0, p1, v0, v1}, Lcom/google/zxing/client/result/a;->a(Ljava/lang/String;Ljava/lang/String;CZ)[Ljava/lang/String;
+    invoke-static {p0, p1, v0, p2}, Lcom/google/zxing/client/result/a;->a(Ljava/lang/String;Ljava/lang/String;CZ)[Ljava/lang/String;
 
     move-result-object v0
 

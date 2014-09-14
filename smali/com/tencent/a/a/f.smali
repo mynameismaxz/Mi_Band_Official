@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Thread;JLjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.method protected a(ILjava/lang/Thread;JLjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
     sparse-switch p1, :sswitch_data_0

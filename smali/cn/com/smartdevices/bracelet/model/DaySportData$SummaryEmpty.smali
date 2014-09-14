@@ -104,6 +104,14 @@
     return v0
 .end method
 
+.method public getStepRunDistance()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public getStepRunTime()I
     .locals 1
 

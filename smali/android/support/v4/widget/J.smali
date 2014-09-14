@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/widget/J;
+.class Landroid/support/v4/widget/J;
 .super Landroid/support/v4/widget/ViewDragHelper$Callback;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/SlidingPaneLayout;
+.field final synthetic a:Landroid/support/v4/widget/SlidingPaneLayout;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/support/v4/widget/SlidingPaneLayout;B)V
+.method synthetic constructor <init>(Landroid/support/v4/widget/SlidingPaneLayout;Landroid/support/v4/widget/G;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/support/v4/widget/J;-><init>(Landroid/support/v4/widget/SlidingPaneLayout;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final clampViewPositionHorizontal(Landroid/view/View;II)I
+.method public clampViewPositionHorizontal(Landroid/view/View;II)I
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -71,7 +71,7 @@
     return v0
 .end method
 
-.method public final getViewHorizontalDragRange(Landroid/view/View;)I
+.method public getViewHorizontalDragRange(Landroid/view/View;)I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -83,7 +83,7 @@
     return v0
 .end method
 
-.method public final onEdgeDragStarted(II)V
+.method public onEdgeDragStarted(II)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -103,7 +103,7 @@
     return-void
 .end method
 
-.method public final onViewCaptured(Landroid/view/View;I)V
+.method public onViewCaptured(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -113,7 +113,7 @@
     return-void
 .end method
 
-.method public final onViewDragStateChanged(I)V
+.method public onViewDragStateChanged(I)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -148,7 +148,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->c(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->d(Landroid/view/View;)V
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
 
@@ -158,7 +158,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->b(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->c(Landroid/view/View;)V
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
 
@@ -179,7 +179,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->a(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SlidingPaneLayout;->b(Landroid/view/View;)V
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
 
@@ -190,7 +190,7 @@
     goto :goto_0
 .end method
 
-.method public final onViewPositionChanged(Landroid/view/View;IIII)V
+.method public onViewPositionChanged(Landroid/view/View;IIII)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;
@@ -204,7 +204,7 @@
     return-void
 .end method
 
-.method public final onViewReleased(Landroid/view/View;FF)V
+.method public onViewReleased(Landroid/view/View;FF)V
     .locals 3
 
     const/4 v2, 0x0
@@ -274,7 +274,7 @@
     return-void
 .end method
 
-.method public final tryCaptureView(Landroid/view/View;I)Z
+.method public tryCaptureView(Landroid/view/View;I)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/J;->a:Landroid/support/v4/widget/SlidingPaneLayout;

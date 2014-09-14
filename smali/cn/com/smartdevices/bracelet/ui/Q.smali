@@ -1,23 +1,19 @@
-.class final Lcn/com/smartdevices/bracelet/ui/Q;
+.class Lcn/com/smartdevices/bracelet/ui/Q;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-.field private final synthetic b:Landroid/view/View;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/Q;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/Q;->b:Landroid/view/View;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/Q;->a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/Q;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/Q;->a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/Q;->b:Landroid/view/View;
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/Q;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->j(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;Landroid/view/View;)V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->onEmptyAreaClicked()V
 
     return-void
 .end method

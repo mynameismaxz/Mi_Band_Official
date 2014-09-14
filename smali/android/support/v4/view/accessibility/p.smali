@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/accessibility/p;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/accessibility/m;
+
 
 # direct methods
 .method constructor <init>()V
@@ -217,10 +220,12 @@
     return-object v0
 .end method
 
-.method public d(Ljava/lang/Object;I)V
-    .locals 0
+.method public d(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public d(Ljava/lang/Object;Landroid/graphics/Rect;)V
@@ -271,12 +276,10 @@
     return-object v0
 .end method
 
-.method public f(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 1
+.method public f(Ljava/lang/Object;I)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method
 
 .method public f(Ljava/lang/Object;Z)V
@@ -425,34 +428,34 @@
     return v0
 .end method
 
-.method public t(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public u(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public v(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public w(Ljava/lang/Object;)V
+.method public t(Ljava/lang/Object;)V
     .locals 0
 
     return-void
+.end method
+
+.method public u(Ljava/lang/Object;)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public v(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public w(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public x(Ljava/lang/Object;)Ljava/lang/String;

@@ -31,9 +31,7 @@
 
     if-lt v0, v1, :cond_0
 
-    new-instance v0, Landroid/support/v4/os/b;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/os/b;-><init>(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)V
+    invoke-static {p0}, Landroid/support/v4/os/c;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
 
     :cond_0
     new-instance v0, Landroid/support/v4/os/a;

@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/google/gson/reflect/TypeToken;
+.field final synthetic a:Lcom/google/gson/reflect/TypeToken;
 
-.field private synthetic b:Lcom/google/gson/TypeAdapter;
+.field final synthetic b:Lcom/google/gson/TypeAdapter;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

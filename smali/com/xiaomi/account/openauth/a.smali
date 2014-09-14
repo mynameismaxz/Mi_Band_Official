@@ -1,9 +1,9 @@
-.class final Lcom/xiaomi/account/openauth/a;
+.class Lcom/xiaomi/account/openauth/a;
 .super Landroid/webkit/WebViewClient;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/account/openauth/AuthorizeActivity;
+.field final synthetic a:Lcom/xiaomi/account/openauth/AuthorizeActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 4
 
     const-string v0, "AuthorizeActivity"
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
     .locals 5
 
     invoke-super {p0, p1, p2, p3}, Landroid/webkit/WebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
@@ -242,7 +242,7 @@
     goto :goto_0
 .end method
 
-.method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 1
 
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z

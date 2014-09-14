@@ -296,7 +296,13 @@
 
     move-result-object v0
 
+    const v1, 0x3faa3d71
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->getDensity()F
+
+    move-result v2
+
+    mul-float/2addr v1, v2
 
     aget-object v1, v0, v4
 

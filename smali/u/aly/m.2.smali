@@ -75,15 +75,8 @@
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 2
 
-    sget-boolean v0, Lcom/umeng/analytics/AnalyticsConfig;->CATCH_EXCEPTION:Z
+    invoke-direct {p0, p2}, Lu/aly/m;->a(Ljava/lang/Throwable;)V
 
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lu/aly/m;->b:Lu/aly/t;
-
-    invoke-interface {v0, p2}, Lu/aly/t;->a(Ljava/lang/Throwable;)V
-
-    :goto_0
     iget-object v0, p0, Lu/aly/m;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     if-eqz v0, :cond_0
@@ -102,13 +95,4 @@
 
     :cond_0
     return-void
-
-    :cond_1
-    iget-object v0, p0, Lu/aly/m;->b:Lu/aly/t;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lu/aly/t;->a(Ljava/lang/Throwable;)V
-
-    goto :goto_0
 .end method

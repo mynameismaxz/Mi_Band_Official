@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static final a:Ljava/lang/String; = "RangeFileAsyncHttpResponseHandler"
+.field private static final b:Ljava/lang/String; = "RangeFileAsyncHttpResponseHandler"
 
 
 # instance fields
-.field private b:J
+.field private c:J
 
-.field private c:Z
+.field private d:Z
 
 
 # direct methods
@@ -20,11 +20,11 @@
 
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iput-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:Z
+    iput-boolean v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->d:Z
 
     return-void
 .end method
@@ -44,7 +44,7 @@
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v4, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     add-long/2addr v2, v4
 
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    iget-boolean v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:Z
+    iget-boolean v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->d:Z
 
     invoke-direct {v4, v0, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
@@ -66,7 +66,7 @@
     new-array v0, v0, [B
 
     :goto_0
-    iget-wide v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     cmp-long v5, v5, v2
 
@@ -106,19 +106,19 @@
 
     :cond_2
     :try_start_1
-    iget-wide v6, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v6, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     int-to-long v8, v5
 
     add-long/2addr v6, v8
 
-    iput-wide v6, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iput-wide v6, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     const/4 v6, 0x0
 
     invoke-virtual {v4, v0, v6, v5}, Ljava/io/FileOutputStream;->write([BII)V
 
-    iget-wide v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v5, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     long-to-int v5, v5
 
@@ -257,11 +257,11 @@
 
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:Z
+    iput-boolean v1, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->d:Z
 
     const-wide/16 v1, 0x0
 
-    iput-wide v1, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iput-wide v1, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     :goto_1
     invoke-interface {v0}, Lorg/apache/http/StatusLine;->getStatusCode()I
@@ -335,10 +335,10 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iput-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     :cond_0
-    iget-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     const-wide/16 v2, 0x0
 
@@ -348,7 +348,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:Z
+    iput-boolean v0, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->d:Z
 
     const-string v0, "Range"
 
@@ -358,7 +358,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v2, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->b:J
+    iget-wide v2, p0, Lcom/loopj/android/http/RangeFileAsyncHttpResponseHandler;->c:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

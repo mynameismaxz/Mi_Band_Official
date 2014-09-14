@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/s;
+.class Landroid/support/v4/widget/s;
 .super Landroid/support/v4/widget/r;
 
 
@@ -13,12 +13,10 @@
 
 
 # virtual methods
-.method public final d(Ljava/lang/Object;)F
+.method public d(Ljava/lang/Object;)F
     .locals 1
 
-    check-cast p1, Landroid/widget/OverScroller;
-
-    invoke-virtual {p1}, Landroid/widget/OverScroller;->getCurrVelocity()F
+    invoke-static {p1}, Landroid/support/v4/widget/u;->a(Ljava/lang/Object;)F
 
     move-result v0
 

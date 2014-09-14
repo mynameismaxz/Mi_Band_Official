@@ -1,4 +1,4 @@
-.class final Lcom/edmodo/cropper/cropwindow/handle/a;
+.class Lcom/edmodo/cropper/cropwindow/handle/a;
 .super Lcom/edmodo/cropper/cropwindow/handle/c;
 
 
@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method final a(FFFLandroid/graphics/Rect;F)V
+.method a(FFFLandroid/graphics/Rect;F)V
     .locals 0
 
     invoke-virtual {p0, p1, p2, p4, p5}, Lcom/edmodo/cropper/cropwindow/handle/a;->a(FFLandroid/graphics/Rect;F)V
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method final a(FFLandroid/graphics/Rect;F)V
+.method a(FFLandroid/graphics/Rect;F)V
     .locals 5
 
     const/high16 v4, 0x4000

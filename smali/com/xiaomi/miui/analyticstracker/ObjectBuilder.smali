@@ -53,17 +53,14 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lcom/xiaomi/miui/analyticstracker/ObjectBuilder;->a:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/ObjectBuilder;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    move-object v1, v0
-
-    :cond_0
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -95,6 +92,7 @@
 
     move-result-object v0
 
+    :goto_1
     move-object v1, v0
 
     goto :goto_0
@@ -104,14 +102,19 @@
 
     invoke-virtual {v0}, Ljava/lang/InstantiationException;->printStackTrace()V
 
-    goto :goto_0
+    move-object v0, v1
+
+    goto :goto_1
 
     :catch_1
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    goto :goto_0
+    :cond_0
+    move-object v0, v1
+
+    goto :goto_1
 
     :cond_1
     return-object v1

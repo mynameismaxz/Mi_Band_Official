@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/f;
+.class Lcom/nineoldandroids/view/f;
 .super Ljava/lang/Object;
 
 
@@ -10,7 +10,7 @@
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "Lcom/nineoldandroids/view/a;",
+            "Lcom/nineoldandroids/view/e;",
             ">;"
         }
     .end annotation
@@ -25,7 +25,7 @@
             "(I",
             "Ljava/util/ArrayList",
             "<",
-            "Lcom/nineoldandroids/view/a;",
+            "Lcom/nineoldandroids/view/e;",
             ">;)V"
         }
     .end annotation
@@ -41,7 +41,7 @@
 
 
 # virtual methods
-.method final a(I)Z
+.method a(I)Z
     .locals 4
 
     const/4 v1, 0x0
@@ -80,9 +80,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/nineoldandroids/view/a;
+    check-cast v0, Lcom/nineoldandroids/view/e;
 
-    iget v0, v0, Lcom/nineoldandroids/view/a;->a:I
+    iget v0, v0, Lcom/nineoldandroids/view/e;->a:I
 
     if-ne v0, p1, :cond_2
 

@@ -863,10 +863,8 @@
 
     if-nez p1, :cond_0
 
-    move-object v0, v1
-
     :goto_0
-    return-object v0
+    return-object v1
 
     :cond_0
     invoke-virtual {p0, p1}, Lcom/xiaomi/hm/bleservice/gatt/GattPeripheral;->readCharacteristic(Landroid/bluetooth/BluetoothGattCharacteristic;)I
@@ -886,6 +884,9 @@
 
     move-result-object v0
 
+    :goto_2
+    move-object v1, v0
+
     goto :goto_0
 
     :cond_1
@@ -896,7 +897,7 @@
     :cond_2
     move-object v0, v1
 
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method public bridge synthetic refreshGatt()V

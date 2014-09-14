@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Ljava/lang/String;
+.field static a:Ljava/lang/String;
 
 .field private static b:Ljava/lang/String;
 
@@ -32,14 +32,31 @@
 .method public static a(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
 
-    if-nez p0, :cond_0
+    sget-object v0, Lcom/tencent/open/a/c;->a:Ljava/lang/String;
 
-    const-string v0, ""
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/tencent/open/a/c;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/tencent/open/a/c;->a:Ljava/lang/String;
 
     :goto_0
     return-object v0
 
     :cond_0
+    if-nez p0, :cond_1
+
+    const-string v0, ""
+
+    goto :goto_0
+
+    :cond_1
     :try_start_0
     const-string v0, "phone"
 

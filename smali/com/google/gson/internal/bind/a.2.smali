@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {

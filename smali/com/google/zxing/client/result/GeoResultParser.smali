@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/GeoParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/GeoParsedResult;
     .locals 11
 
     const-wide/16 v5, 0x0
@@ -159,7 +159,7 @@
     goto :goto_0
 .end method
 
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/GeoResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/GeoParsedResult;

@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/w;
+.class Lcom/loopj/android/http/w;
 .super Lorg/apache/http/impl/client/DefaultRedirectHandler;
 
 
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final getLocationURI(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/net/URI;
+.method public getLocationURI(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/net/URI;
     .locals 6
 
     if-nez p1, :cond_0
@@ -352,7 +352,7 @@
     goto :goto_0
 .end method
 
-.method public final isRedirectRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
+.method public isRedirectRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
     .locals 2
 
     const/4 v0, 0x0

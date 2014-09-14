@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/o;
+.class Lcom/tencent/connect/avatar/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
+.field final synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 4
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J

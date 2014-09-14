@@ -25,7 +25,7 @@
 
     const/4 v8, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     array-length v3, p1
 
@@ -35,41 +35,39 @@
 
     invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v2
+    move-result v1
 
     invoke-static {v8, p3}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
-    div-int v5, v2, v0
+    div-int v5, v1, v0
 
     mul-int v0, v3, v5
 
-    sub-int v0, v2, v0
+    sub-int v0, v1, v0
 
     div-int/lit8 v0, v0, 0x2
 
     new-instance v6, Lcom/google/zxing/common/BitMatrix;
 
-    invoke-direct {v6, v2, v4}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+    invoke-direct {v6, v1, v4}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
-    move v2, v0
-
-    move v0, v1
+    move v1, v2
 
     :goto_0
-    if-ge v0, v3, :cond_1
+    if-ge v1, v3, :cond_1
 
-    aget-byte v7, p1, v0
+    aget-byte v7, p1, v1
 
     if-ne v7, v8, :cond_0
 
-    invoke-virtual {v6, v2, v1, v5, v4}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v6, v0, v2, v5, v4}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
     :cond_0
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    add-int/2addr v2, v5
+    add-int/2addr v0, v5
 
     goto :goto_0
 
@@ -92,9 +90,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "startColor must be either 0 or 1, but got: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -228,9 +230,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Negative size is not allowed. Input: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

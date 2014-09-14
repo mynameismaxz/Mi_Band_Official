@@ -1,25 +1,23 @@
-.class final Lcn/com/smartdevices/bracelet/ui/T;
+.class Lcn/com/smartdevices/bracelet/ui/T;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Z
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-.field private synthetic b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-.field private final synthetic c:Landroid/view/View;
+.field private final synthetic b:Landroid/view/View;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/T;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/T;->c:Landroid/view/View;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,89 +26,20 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 2
+.method public run()V
+    .locals 3
 
-    const-string v0, "Dynamic.Detail"
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    const-string v1, "Dismiss Anim Canceled!!"
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/T;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    const/4 v0, 0x1
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->i(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Landroid/view/View;
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->a:Z
+    move-result-object v2
 
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->a:Z
-
-    if-nez v0, :cond_0
-
-    const-string v0, "Dynamic.Detail"
-
-    const-string v1, "Dismiss Anim Ended!!"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->c:Landroid/view/View;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->h(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    const v1, 0x7f0c0112
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;I)V
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/T;->b:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->b(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/animation/Animator;)V
-
-    return-void
-.end method
-
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;Landroid/view/View;)V
 
     return-void
 .end method

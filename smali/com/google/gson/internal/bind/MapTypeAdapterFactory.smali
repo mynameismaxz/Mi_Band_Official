@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/gson/Gson;Ljava/lang/reflect/Type;)Lcom/google/gson/TypeAdapter;
+.method private a(Lcom/google/gson/Gson;Ljava/lang/reflect/Type;)Lcom/google/gson/TypeAdapter;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,11 +39,11 @@
 
     sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    if-eq p1, v0, :cond_0
+    if-eq p2, v0, :cond_0
 
     const-class v0, Ljava/lang/Boolean;
 
-    if-ne p1, v0, :cond_1
+    if-ne p2, v0, :cond_1
 
     :cond_0
     sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->BOOLEAN_AS_STRING:Lcom/google/gson/TypeAdapter;
@@ -52,11 +52,11 @@
     return-object v0
 
     :cond_1
-    invoke-static {p1}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
+    invoke-static {p2}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/gson/Gson;->getAdapter(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+    invoke-virtual {p1, v0}, Lcom/google/gson/Gson;->getAdapter(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
 
@@ -73,7 +73,7 @@
 
 
 # virtual methods
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -124,18 +124,10 @@
 
     aget-object v0, v1, v3
 
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;->a(Lcom/google/gson/Gson;Ljava/lang/reflect/Type;)Lcom/google/gson/TypeAdapter;
 
-    if-eq v0, v2, :cond_1
+    move-result-object v4
 
-    const-class v2, Ljava/lang/Boolean;
-
-    if-ne v0, v2, :cond_2
-
-    :cond_1
-    sget-object v4, Lcom/google/gson/internal/bind/TypeAdapters;->BOOLEAN_AS_STRING:Lcom/google/gson/TypeAdapter;
-
-    :goto_1
     aget-object v0, v1, v5
 
     invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
@@ -165,15 +157,4 @@
     invoke-direct/range {v0 .. v7}, Lcom/google/gson/internal/bind/f;-><init>(Lcom/google/gson/internal/bind/MapTypeAdapterFactory;Lcom/google/gson/Gson;Ljava/lang/reflect/Type;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;Lcom/google/gson/TypeAdapter;Lcom/google/gson/internal/ObjectConstructor;)V
 
     goto :goto_0
-
-    :cond_2
-    invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lcom/google/gson/Gson;->getAdapter(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-
-    move-result-object v4
-
-    goto :goto_1
 .end method

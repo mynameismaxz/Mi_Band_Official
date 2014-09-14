@@ -92,9 +92,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Negative size: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -267,14 +271,17 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
     :cond_2
     monitor-enter p0
 
-    :try_start_1
+    :try_start_2
     iget v0, p0, Landroid/support/v4/util/LruCache;->e:I
 
     add-int/lit8 v0, v0, 0x1
@@ -295,8 +302,8 @@
 
     :goto_1
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     if-eqz v0, :cond_4
 
@@ -307,7 +314,7 @@
     goto :goto_0
 
     :cond_3
-    :try_start_2
+    :try_start_3
     iget v2, p0, Landroid/support/v4/util/LruCache;->b:I
 
     invoke-direct {p0, p1, v1}, Landroid/support/v4/util/LruCache;->a(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -317,8 +324,6 @@
     add-int/2addr v2, v3
 
     iput v2, p0, Landroid/support/v4/util/LruCache;->b:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     goto :goto_1
 
@@ -326,6 +331,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw v0
 
@@ -485,7 +492,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -571,7 +581,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -784,13 +797,13 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :catchall_0
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 

@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/aa;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/ah;
+
 
 # direct methods
 .method constructor <init>()V
@@ -32,7 +35,7 @@
 .method public a(Landroid/view/View;IIII)V
     .locals 7
 
-    invoke-virtual {p0}, Landroid/support/v4/view/ah;->a()J
+    invoke-virtual {p0}, Landroid/support/v4/view/aa;->a()J
 
     move-result-wide v1
 
@@ -84,7 +87,7 @@
 .method public a(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 2
 
-    invoke-virtual {p0}, Landroid/support/v4/view/ah;->a()J
+    invoke-virtual {p0}, Landroid/support/v4/view/aa;->a()J
 
     move-result-wide v0
 
@@ -96,7 +99,7 @@
 .method public a(Landroid/view/View;Ljava/lang/Runnable;J)V
     .locals 2
 
-    invoke-virtual {p0}, Landroid/support/v4/view/ah;->a()J
+    invoke-virtual {p0}, Landroid/support/v4/view/aa;->a()J
 
     move-result-wide v0
 
@@ -154,7 +157,7 @@
 .method public c(Landroid/view/View;)V
     .locals 2
 
-    invoke-virtual {p0}, Landroid/support/v4/view/ah;->a()J
+    invoke-virtual {p0}, Landroid/support/v4/view/aa;->a()J
 
     move-result-wide v0
 

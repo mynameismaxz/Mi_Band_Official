@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/Map;)Ljava/lang/String;
+.method private a(Ljava/util/Map;)Ljava/lang/String;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -94,13 +94,13 @@
 
     const-string v0, ""
 
-    if-eqz p0, :cond_1
+    if-eqz p1, :cond_1
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -257,7 +257,7 @@
 .end method
 
 .method public restore(Landroid/database/Cursor;)V
-    .locals 5
+    .locals 2
 
     invoke-super {p0, p1}, Lcom/xiaomi/miui/analyticstracker/Event;->restore(Landroid/database/Cursor;)V
 
@@ -289,46 +289,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a:Ljava/util/Map;
-
-    const-string v1, "\\$"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    array-length v2, v1
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-ge v0, v2, :cond_0
-
-    iget-object v2, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a:Ljava/util/Map;
-
-    aget-object v3, v1, v0
-
-    add-int/lit8 v4, v0, 0x1
-
-    aget-object v4, v1, v4
-
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_0
+    invoke-direct {p0, v0}, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -337,67 +298,18 @@
 .method public writeEvent(Lcom/xiaomi/miui/analyticstracker/j;)V
     .locals 7
 
-    const/16 v6, 0x24
-
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_0
 
     iget-object v1, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->mType:Ljava/lang/Integer;
 
     iget-object v2, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->mEventId:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a:Ljava/util/Map;
+    iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a:Ljava/util/Map;
 
-    const-string v3, ""
-
-    if-eqz v4, :cond_1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-interface {v4}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :goto_0
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->a(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v3
 
-    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -405,6 +317,12 @@
     iget-wide v4, p0, Lcom/xiaomi/miui/analyticstracker/TrackEvent;->mTrackTime:J
 
     invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, ""
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -422,6 +340,12 @@
 
     move-result-object v0
 
+    const-string v5, ""
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -430,6 +354,6 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/xiaomi/miui/analyticstracker/j;->a(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_0
     return-void
 .end method

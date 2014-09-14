@@ -187,7 +187,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f070095
+    .packed-switch 0x7f07009a
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -205,7 +205,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    const v0, 0x7f070097
+    const v0, 0x7f07009c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070095
+    const v0, 0x7f07009a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 

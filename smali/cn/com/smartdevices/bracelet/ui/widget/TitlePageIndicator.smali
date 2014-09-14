@@ -145,7 +145,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f08004e
+    const v1, 0x7f080050
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -163,7 +163,7 @@
 
     move-result v3
 
-    const v4, 0x7f08004f
+    const v4, 0x7f080051
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -175,7 +175,7 @@
 
     move-result v5
 
-    const v6, 0x7f080050
+    const v6, 0x7f080052
 
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1243,6 +1243,8 @@
     iget v3, v1, Landroid/graphics/Rect;->bottom:I
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
+
+    sub-int v1, v3, v1
 
     invoke-virtual/range {p0 .. p0}, Lcn/com/smartdevices/bracelet/ui/widget/TitlePageIndicator;->getResources()Landroid/content/res/Resources;
 

@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/l;
+.class Lcom/google/gson/l;
 .super Lcom/google/gson/TypeAdapter;
 
 
@@ -36,7 +36,7 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/gson/TypeAdapter;)V
+.method public a(Lcom/google/gson/TypeAdapter;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -92,7 +92,7 @@
     return-object v0
 .end method
 
-.method public final write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

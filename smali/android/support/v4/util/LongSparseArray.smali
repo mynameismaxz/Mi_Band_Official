@@ -83,9 +83,9 @@
 .method private static a([JIIJ)I
     .locals 5
 
-    add-int/lit8 v2, p2, 0x0
+    add-int v2, p1, p2
 
-    const/4 v0, -0x1
+    add-int/lit8 v0, p1, -0x1
 
     move v1, v0
 
@@ -118,11 +118,11 @@
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v1, p2, 0x0
+    add-int v1, p1, p2
 
     if-ne v0, v1, :cond_3
 
-    add-int/lit8 v0, p2, 0x0
+    add-int v0, p1, p2
 
     xor-int/lit8 v0, v0, -0x1
 
@@ -228,7 +228,7 @@
 .method public static idealLongArraySize(I)I
     .locals 1
 
-    shl-int/lit8 v0, p0, 0x3
+    mul-int/lit8 v0, p0, 0x8
 
     invoke-static {v0}, Landroid/support/v4/util/LongSparseArray;->idealByteArraySize(I)I
 

@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private a:Ljava/lang/Long;
+.field a:Ljava/lang/Long;
 
-.field private b:Ljava/lang/String;
+.field b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field c:Ljava/lang/String;
 
 
 # direct methods

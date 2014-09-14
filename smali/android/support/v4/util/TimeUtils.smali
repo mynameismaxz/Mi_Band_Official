@@ -120,22 +120,20 @@
 
     if-nez v3, :cond_2
 
-    add-int/lit8 v3, p2, -0x1
+    const/4 v3, 0x0
+
+    add-int/lit8 v4, p2, -0x1
 
     :goto_0
-    if-lez v3, :cond_1
-
-    const/4 v4, 0x0
+    if-ge v3, v4, :cond_1
 
     const/16 v5, 0x20
 
-    aput-char v5, v2, v4
+    aput-char v5, v2, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
-
     const/16 v4, 0x30
 
     aput-char v4, v2, v3
@@ -679,8 +677,6 @@
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -688,6 +684,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -713,8 +711,6 @@
     invoke-virtual {p2, v2, v3, v0}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -722,6 +718,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

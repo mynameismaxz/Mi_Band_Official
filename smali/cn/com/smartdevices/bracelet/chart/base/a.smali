@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/base/a;
+.class Lcn/com/smartdevices/bracelet/chart/base/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/base/a;->a:Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;

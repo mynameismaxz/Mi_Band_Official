@@ -171,12 +171,12 @@
     goto :goto_0
 .end method
 
-.method private static a(Ljava/lang/String;)I
+.method private a(Ljava/lang/String;)I
     .locals 5
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_1
+    if-nez p1, :cond_1
 
     const/4 v0, -0x7
 
@@ -185,7 +185,7 @@
     return v0
 
     :cond_1
-    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
 
@@ -239,7 +239,7 @@
     :cond_3
     new-instance v1, Ljava/io/File;
 
-    invoke-direct {v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -287,7 +287,7 @@
 
 
 # virtual methods
-.method public final getRequestDateTypeFlag()I
+.method public getRequestDateTypeFlag()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/connect/dataprovider/CallbackManager;->h:I
@@ -295,7 +295,7 @@
     return v0
 .end method
 
-.method public final isCallFromTencentApp()Z
+.method public isCallFromTencentApp()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/tencent/connect/dataprovider/CallbackManager;->g:Z
@@ -303,7 +303,7 @@
     return v0
 .end method
 
-.method public final isSupportType(I)Z
+.method public isSupportType(I)Z
     .locals 1
 
     invoke-virtual {p0}, Lcom/tencent/connect/dataprovider/CallbackManager;->getRequestDateTypeFlag()I
@@ -325,7 +325,7 @@
     goto :goto_0
 .end method
 
-.method public final sendTextAndImagePath(Ljava/lang/String;Ljava/lang/String;)I
+.method public sendTextAndImagePath(Ljava/lang/String;Ljava/lang/String;)I
     .locals 4
 
     const/4 v3, 0x1
@@ -343,7 +343,7 @@
     return v0
 
     :cond_1
-    invoke-static {p2}, Lcom/tencent/connect/dataprovider/CallbackManager;->a(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lcom/tencent/connect/dataprovider/CallbackManager;->a(Ljava/lang/String;)I
 
     move-result v0
 
@@ -372,7 +372,7 @@
     goto :goto_0
 .end method
 
-.method public final sendTextAndVideoPath(Ljava/lang/String;Ljava/lang/String;)I
+.method public sendTextAndVideoPath(Ljava/lang/String;Ljava/lang/String;)I
     .locals 4
 
     const/4 v3, 0x2
@@ -390,7 +390,7 @@
     return v0
 
     :cond_1
-    invoke-static {p2}, Lcom/tencent/connect/dataprovider/CallbackManager;->a(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lcom/tencent/connect/dataprovider/CallbackManager;->a(Ljava/lang/String;)I
 
     move-result v0
 
@@ -419,7 +419,7 @@
     goto :goto_0
 .end method
 
-.method public final sendTextOnly(Ljava/lang/String;)I
+.method public sendTextOnly(Ljava/lang/String;)I
     .locals 4
 
     const/4 v3, 0x4

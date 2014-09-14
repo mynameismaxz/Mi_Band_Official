@@ -17,26 +17,6 @@
     return-void
 .end method
 
-.method private static a()Z
-    .locals 1
-
-    invoke-static {}, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->showGuidelines()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
 .method private static a(FFFFF)Z
     .locals 1
 
@@ -103,39 +83,7 @@
     goto :goto_0
 .end method
 
-.method private static b(FFFFFF)Z
-    .locals 1
-
-    sub-float v0, p0, p2
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    cmpg-float v0, v0, p5
-
-    if-gtz v0, :cond_0
-
-    cmpl-float v0, p1, p3
-
-    if-lez v0, :cond_0
-
-    cmpg-float v0, p1, p4
-
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private static synthetic b()[I
+.method static synthetic a()[I
     .locals 3
 
     sget-object v0, Lcom/edmodo/cropper/util/HandleUtil;->b:[I
@@ -330,6 +278,58 @@
     goto :goto_1
 .end method
 
+.method private static b()Z
+    .locals 1
+
+    invoke-static {}, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->showGuidelines()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method private static b(FFFFFF)Z
+    .locals 1
+
+    sub-float v0, p0, p2
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    cmpg-float v0, v0, p5
+
+    if-gtz v0, :cond_0
+
+    cmpl-float v0, p1, p3
+
+    if-lez v0, :cond_0
+
+    cmpg-float v0, p1, p4
+
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method private static c(FFFFFF)Z
     .locals 1
 
@@ -387,7 +387,7 @@
     return-object v0
 
     :cond_0
-    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->b()[I
+    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->a()[I
 
     move-result-object v1
 
@@ -563,7 +563,7 @@
 
     if-eqz v0, :cond_4
 
-    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->a()Z
+    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->b()Z
 
     move-result v0
 
@@ -672,7 +672,7 @@
 
     if-eqz v0, :cond_9
 
-    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->a()Z
+    invoke-static {}, Lcom/edmodo/cropper/util/HandleUtil;->b()Z
 
     move-result v0
 

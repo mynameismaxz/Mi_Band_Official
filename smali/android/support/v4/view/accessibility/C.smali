@@ -1,258 +1,114 @@
-.class Landroid/support/v4/view/accessibility/C;
+.class interface abstract Landroid/support/v4/view/accessibility/C;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract a()Ljava/lang/Object;
 .end method
 
-.method public a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract a(Ljava/lang/Object;)Ljava/lang/Object;
 .end method
 
-.method public a(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;I)V
 .end method
 
-.method public a(Ljava/lang/Object;Landroid/os/Parcelable;)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;Landroid/os/Parcelable;)V
 .end method
 
-.method public a(Ljava/lang/Object;Landroid/view/View;)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;Landroid/view/View;)V
 .end method
 
-.method public a(Ljava/lang/Object;Landroid/view/View;I)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;Landroid/view/View;I)V
 .end method
 
-.method public a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 .end method
 
-.method public a(Ljava/lang/Object;Z)V
-    .locals 0
-
-    return-void
+.method public abstract a(Ljava/lang/Object;Z)V
 .end method
 
-.method public b(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract b(Ljava/lang/Object;)I
 .end method
 
-.method public b(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract b(Ljava/lang/Object;I)V
 .end method
 
-.method public b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
+.method public abstract b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 .end method
 
-.method public b(Ljava/lang/Object;Z)V
-    .locals 0
-
-    return-void
+.method public abstract b(Ljava/lang/Object;Z)V
 .end method
 
-.method public c(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract c(Ljava/lang/Object;)Ljava/lang/CharSequence;
 .end method
 
-.method public c(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract c(Ljava/lang/Object;I)V
 .end method
 
-.method public c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
+.method public abstract c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 .end method
 
-.method public c(Ljava/lang/Object;Z)V
-    .locals 0
-
-    return-void
+.method public abstract c(Ljava/lang/Object;Z)V
 .end method
 
-.method public d(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract d(Ljava/lang/Object;)Ljava/lang/CharSequence;
 .end method
 
-.method public d(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract d(Ljava/lang/Object;I)V
 .end method
 
-.method public d(Ljava/lang/Object;Z)V
-    .locals 0
-
-    return-void
+.method public abstract d(Ljava/lang/Object;Z)V
 .end method
 
-.method public e(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract e(Ljava/lang/Object;)Ljava/lang/CharSequence;
 .end method
 
-.method public e(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract e(Ljava/lang/Object;I)V
 .end method
 
-.method public e(Ljava/lang/Object;Z)V
-    .locals 0
-
-    return-void
+.method public abstract e(Ljava/lang/Object;Z)V
 .end method
 
-.method public f(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract f(Ljava/lang/Object;)I
 .end method
 
-.method public f(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract f(Ljava/lang/Object;I)V
 .end method
 
-.method public g(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract g(Ljava/lang/Object;)I
 .end method
 
-.method public g(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract g(Ljava/lang/Object;I)V
 .end method
 
-.method public h(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract h(Ljava/lang/Object;)I
 .end method
 
-.method public h(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract h(Ljava/lang/Object;I)V
 .end method
 
-.method public i(Ljava/lang/Object;)Landroid/os/Parcelable;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract i(Ljava/lang/Object;)Landroid/os/Parcelable;
 .end method
 
-.method public i(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract i(Ljava/lang/Object;I)V
 .end method
 
-.method public j(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract j(Ljava/lang/Object;)I
 .end method
 
-.method public j(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
+.method public abstract j(Ljava/lang/Object;I)V
 .end method
 
-.method public k(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract k(Ljava/lang/Object;)I
 .end method
 
-.method public l(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract l(Ljava/lang/Object;)I
 .end method
 
-.method public m(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract m(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 .end method
 
-.method public n(Ljava/lang/Object;)Ljava/util/List;
-    .locals 1
+.method public abstract n(Ljava/lang/Object;)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -264,88 +120,34 @@
             ">;"
         }
     .end annotation
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
-.method public o(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract o(Ljava/lang/Object;)I
 .end method
 
-.method public p(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract p(Ljava/lang/Object;)I
 .end method
 
-.method public q(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract q(Ljava/lang/Object;)Z
 .end method
 
-.method public r(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract r(Ljava/lang/Object;)Z
 .end method
 
-.method public s(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract s(Ljava/lang/Object;)Z
 .end method
 
-.method public t(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract t(Ljava/lang/Object;)Z
 .end method
 
-.method public u(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract u(Ljava/lang/Object;)Z
 .end method
 
-.method public v(Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
+.method public abstract v(Ljava/lang/Object;)V
 .end method
 
-.method public w(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract w(Ljava/lang/Object;)I
 .end method
 
-.method public x(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract x(Ljava/lang/Object;)I
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/channel/sdk/d;
+.class Lcom/xiaomi/channel/sdk/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/channel/sdk/c;
+.field final synthetic a:Lcom/xiaomi/channel/sdk/c;
 
 .field private final synthetic b:Landroid/accounts/Account;
 
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     new-instance v0, Landroid/os/Bundle;

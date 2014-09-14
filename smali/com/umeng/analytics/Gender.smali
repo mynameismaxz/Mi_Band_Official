@@ -94,7 +94,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IIB)V
+.method synthetic constructor <init>(Ljava/lang/String;IILcom/umeng/analytics/Gender;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/umeng/analytics/Gender;-><init>(Ljava/lang/String;II)V
@@ -102,7 +102,7 @@
     return-void
 .end method
 
-.method private static synthetic a()[I
+.method static synthetic a()[I
     .locals 3
 
     sget-object v0, Lcom/umeng/analytics/Gender;->a:[I

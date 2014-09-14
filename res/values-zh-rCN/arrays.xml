@@ -49,4 +49,12 @@
         <item>水滴石穿，我要把鞋底走穿</item>
         <item>成功的道理很简单，坚持坚持再坚持</item>
     </string-array>
+    <string-array name="weather_aqi_descriptions">
+        <item>优</item>
+        <item>良</item>
+        <item>轻度污染</item>
+        <item>中度污染</item>
+        <item>重度污染</item>
+        <item>严重污染</item>
+    </string-array>
 </resources>

@@ -151,11 +151,11 @@
 .method public loadItemData(I)V
     .locals 5
 
-    const/4 v4, 0x0
-
     new-instance v0, Lcn/com/smartdevices/bracelet/chart/data/a;
 
-    invoke-direct {v0, p0, v4}, Lcn/com/smartdevices/bracelet/chart/data/a;-><init>(Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;B)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/chart/data/a;-><init>(Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;Lcn/com/smartdevices/bracelet/chart/data/a;)V
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;->a:Ljava/util/concurrent/Executor;
 
@@ -163,11 +163,13 @@
 
     new-array v2, v2, [Ljava/lang/Integer;
 
+    const/4 v3, 0x0
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    aput-object v3, v2, v4
+    aput-object v4, v2, v3
 
     invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/chart/data/a;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 

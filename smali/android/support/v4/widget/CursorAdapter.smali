@@ -40,7 +40,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
 
     return-void
 .end method
@@ -50,7 +50,7 @@
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
 
     return-void
 .end method
@@ -65,7 +65,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-direct {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
 
     return-void
 
@@ -75,14 +75,16 @@
     goto :goto_0
 .end method
 
-.method private a(Landroid/content/Context;Landroid/database/Cursor;I)V
-    .locals 5
 
-    const/4 v4, 0x0
-
-    const/4 v0, 0x1
+# virtual methods
+.method a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    .locals 4
 
     const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v0, 0x1
 
     and-int/lit8 v2, p3, 0x1
 
@@ -104,32 +106,32 @@
 
     if-eqz v0, :cond_4
 
-    const-string v2, "_id"
+    const-string v1, "_id"
 
-    invoke-interface {p2, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    invoke-interface {p2, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v1
 
     :goto_2
-    iput v2, p0, Landroid/support/v4/widget/CursorAdapter;->mRowIDColumn:I
+    iput v1, p0, Landroid/support/v4/widget/CursorAdapter;->mRowIDColumn:I
 
-    and-int/lit8 v2, p3, 0x2
+    and-int/lit8 v1, p3, 0x2
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ne v2, v3, :cond_5
+    if-ne v1, v2, :cond_5
 
-    new-instance v2, Landroid/support/v4/widget/b;
+    new-instance v1, Landroid/support/v4/widget/b;
 
-    invoke-direct {v2, p0}, Landroid/support/v4/widget/b;-><init>(Landroid/support/v4/widget/CursorAdapter;)V
+    invoke-direct {v1, p0}, Landroid/support/v4/widget/b;-><init>(Landroid/support/v4/widget/CursorAdapter;)V
 
-    iput-object v2, p0, Landroid/support/v4/widget/CursorAdapter;->mChangeObserver:Landroid/support/v4/widget/b;
+    iput-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->mChangeObserver:Landroid/support/v4/widget/b;
 
-    new-instance v2, Landroid/support/v4/widget/c;
+    new-instance v1, Landroid/support/v4/widget/c;
 
-    invoke-direct {v2, p0, v1}, Landroid/support/v4/widget/c;-><init>(Landroid/support/v4/widget/CursorAdapter;B)V
+    invoke-direct {v1, p0, v3}, Landroid/support/v4/widget/c;-><init>(Landroid/support/v4/widget/CursorAdapter;Landroid/support/v4/widget/a;)V
 
-    iput-object v2, p0, Landroid/support/v4/widget/CursorAdapter;->mDataSetObserver:Landroid/database/DataSetObserver;
+    iput-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->mDataSetObserver:Landroid/database/DataSetObserver;
 
     :goto_3
     if-eqz v0, :cond_1
@@ -165,20 +167,18 @@
     goto :goto_1
 
     :cond_4
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
     goto :goto_2
 
     :cond_5
-    iput-object v4, p0, Landroid/support/v4/widget/CursorAdapter;->mChangeObserver:Landroid/support/v4/widget/b;
+    iput-object v3, p0, Landroid/support/v4/widget/CursorAdapter;->mChangeObserver:Landroid/support/v4/widget/b;
 
-    iput-object v4, p0, Landroid/support/v4/widget/CursorAdapter;->mDataSetObserver:Landroid/database/DataSetObserver;
+    iput-object v3, p0, Landroid/support/v4/widget/CursorAdapter;->mDataSetObserver:Landroid/database/DataSetObserver;
 
     goto :goto_3
 .end method
 
-
-# virtual methods
 .method public abstract bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
 .end method
 
@@ -400,9 +400,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "couldn\'t move cursor to position "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -453,7 +457,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-direct {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
 
     return-void
 

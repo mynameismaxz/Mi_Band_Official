@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/h;
+.class Lcn/com/smartdevices/bracelet/h;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/String;)Ljava/lang/String;
+.method private a(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
     const-string v0, ""
@@ -25,7 +25,7 @@
     :try_start_0
     new-instance v1, Lorg/json/JSONObject;
 
-    invoke-direct {v1, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string v2, "data"
 
@@ -101,13 +101,13 @@
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
     .locals 4
 
     const-string v0, "Utils"
@@ -146,7 +146,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/h;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/h;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

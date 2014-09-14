@@ -1,9 +1,9 @@
-.class final Lcom/tencent/weiyun/d;
+.class Lcom/tencent/weiyun/d;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/weiyun/a;
+.field final synthetic a:Lcom/tencent/weiyun/a;
 
 
 # direct methods
@@ -19,8 +19,8 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 19
+.method public run()V
+    .locals 20
 
     new-instance v2, Lorg/apache/http/params/BasicHttpParams;
 
@@ -48,9 +48,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "http://"
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     move-object/from16 v0, p0
 
@@ -184,9 +188,9 @@
 
     new-array v11, v2, [B
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v5, 0x0
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     move-object/from16 v0, p0
 
@@ -223,19 +227,19 @@
     const-wide/32 v2, 0x40000
 
     :goto_0
-    const-wide/16 v12, 0x0
+    add-long/2addr v2, v5
 
-    add-long/2addr v2, v12
+    move/from16 v17, v4
 
-    move-wide/from16 v17, v2
+    move-wide/from16 v18, v2
 
-    move-wide v2, v4
+    move/from16 v2, v17
 
-    move v4, v6
+    move-wide v3, v5
 
     move-object v5, v7
 
-    move-wide/from16 v6, v17
+    move-wide/from16 v6, v18
 
     :goto_1
     move-object/from16 v0, p0
@@ -334,11 +338,15 @@
 
     new-instance v13, Ljava/lang/StringBuilder;
 
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v14, "bytes="
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v13
+
+    invoke-virtual {v13, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v13
 
@@ -349,6 +357,12 @@
     move-result-object v13
 
     invoke-virtual {v13, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, ""
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v13
 
@@ -367,9 +381,13 @@
 
     new-instance v13, Ljava/lang/StringBuilder;
 
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v14, "uploadFileToWeiyun doDownloadPic response:"
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
 
     invoke-virtual {v8}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -425,7 +443,7 @@
 
     int-to-long v12, v8
 
-    add-long/2addr v2, v12
+    add-long/2addr v3, v12
 
     goto :goto_2
 
@@ -485,11 +503,11 @@
     :catch_1
     move-exception v8
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     const/16 v12, 0xa
 
-    if-le v4, v12, :cond_4
+    if-le v2, v12, :cond_4
 
     invoke-virtual {v8}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -497,13 +515,23 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "uploadFileToWeiyun doDownloadPic error:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v8}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ""
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -617,7 +645,7 @@
 
     move-result-wide v6
 
-    sub-long/2addr v6, v2
+    sub-long/2addr v6, v3
 
     const-wide/32 v12, 0x40000
 
@@ -628,7 +656,7 @@
     const-wide/32 v6, 0x40000
 
     :goto_5
-    add-long/2addr v6, v2
+    add-long/2addr v6, v3
 
     move-object/from16 v0, p0
 
@@ -672,6 +700,12 @@
 
     move-result-object v12
 
+    const-string v13, ""
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v12
@@ -703,7 +737,7 @@
 
     move-result-wide v6
 
-    sub-long/2addr v6, v2
+    sub-long/2addr v6, v3
 
     goto :goto_5
 
@@ -772,6 +806,12 @@
 
     move-result-object v3
 
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -793,9 +833,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "uploadFileToWeiyun doDownloadPic response:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -860,13 +904,23 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "uploadFileToWeiyun doDownloadPic error:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ""
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

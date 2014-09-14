@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/net/m;
+.class Landroid/support/v4/net/m;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,60 +16,60 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 0
 
-    invoke-static {}, Landroid/net/TrafficStats;->clearThreadStatsTag()V
+    invoke-static {}, Landroid/support/v4/net/o;->a()V
 
     return-void
 .end method
 
-.method public final a(I)V
+.method public a(I)V
     .locals 0
 
-    invoke-static {p1}, Landroid/net/TrafficStats;->incrementOperationCount(I)V
+    invoke-static {p1}, Landroid/support/v4/net/o;->a(I)V
 
     return-void
 .end method
 
-.method public final a(II)V
+.method public a(II)V
     .locals 0
 
-    invoke-static {p1, p2}, Landroid/net/TrafficStats;->incrementOperationCount(II)V
+    invoke-static {p1, p2}, Landroid/support/v4/net/o;->a(II)V
 
     return-void
 .end method
 
-.method public final a(Ljava/net/Socket;)V
+.method public a(Ljava/net/Socket;)V
     .locals 0
 
-    invoke-static {p1}, Landroid/net/TrafficStats;->tagSocket(Ljava/net/Socket;)V
+    invoke-static {p1}, Landroid/support/v4/net/o;->a(Ljava/net/Socket;)V
 
     return-void
 .end method
 
-.method public final b()I
+.method public b()I
     .locals 1
 
-    invoke-static {}, Landroid/net/TrafficStats;->getThreadStatsTag()I
+    invoke-static {}, Landroid/support/v4/net/o;->b()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(I)V
+.method public b(I)V
     .locals 0
 
-    invoke-static {p1}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
+    invoke-static {p1}, Landroid/support/v4/net/o;->b(I)V
 
     return-void
 .end method
 
-.method public final b(Ljava/net/Socket;)V
+.method public b(Ljava/net/Socket;)V
     .locals 0
 
-    invoke-static {p1}, Landroid/net/TrafficStats;->untagSocket(Ljava/net/Socket;)V
+    invoke-static {p1}, Landroid/support/v4/net/o;->b(Ljava/net/Socket;)V
 
     return-void
 .end method

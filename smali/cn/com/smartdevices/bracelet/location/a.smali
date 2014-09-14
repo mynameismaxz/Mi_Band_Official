@@ -1,136 +1,69 @@
-.class final Lcn/com/smartdevices/bracelet/location/a;
-.super Lcn/com/smartdevices/bracelet/location/LocationManager$LocationResult;
+.class Lcn/com/smartdevices/bracelet/location/a;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Lcn/com/smartdevices/bracelet/location/Location;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/location/GetLocationHelper;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/location/a;->a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/location/LocationManager$LocationResult;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final gotLocation(Landroid/location/Location;Landroid/content/Context;)V
-    .locals 6
+.method public a(Landroid/os/Parcel;)Lcn/com/smartdevices/bracelet/location/Location;
+    .locals 2
 
-    if-nez p1, :cond_0
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/Location;
 
-    const-string v0, "GetLocationHelper"
+    const/4 v1, 0x0
 
-    const-string v1, "Can\'t get network/gps loaction"
+    invoke-direct {v0, p1, v1}, Lcn/com/smartdevices/bracelet/location/Location;-><init>(Landroid/os/Parcel;Lcn/com/smartdevices/bracelet/location/Location;)V
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/a;->a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
+.method public a(I)[Lcn/com/smartdevices/bracelet/location/Location;
+    .locals 1
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/location/GetLocationHelper;->c(Lcn/com/smartdevices/bracelet/location/GetLocationHelper;)Lcn/com/smartdevices/bracelet/location/GetLocationHelper$ILocationGetter;
+    new-array v0, p1, [Lcn/com/smartdevices/bracelet/location/Location;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/location/a;->a(Landroid/os/Parcel;)Lcn/com/smartdevices/bracelet/location/Location;
 
     move-result-object v0
 
-    const-string v1, ""
+    return-object v0
+.end method
 
-    new-instance v2, Ljava/lang/StringBuilder;
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/location/a;->a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/location/a;->a(I)[Lcn/com/smartdevices/bracelet/location/Location;
 
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/location/GetLocationHelper;->b(Lcn/com/smartdevices/bracelet/location/GetLocationHelper;)D
+    move-result-object v0
 
-    move-result-wide v3
-
-    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcn/com/smartdevices/bracelet/location/a;->a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
-
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/location/GetLocationHelper;->a(Lcn/com/smartdevices/bracelet/location/GetLocationHelper;)D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0, v1, v2, v3}, Lcn/com/smartdevices/bracelet/location/GetLocationHelper$ILocationGetter;->onLocationGet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    const-string v0, "GetLocationHelper"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Get NetWork /GPS location: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/location/b;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/location/a;->a:Lcn/com/smartdevices/bracelet/location/GetLocationHelper;
-
-    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/location/b;-><init>(Lcn/com/smartdevices/bracelet/location/GetLocationHelper;)V
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Landroid/location/Location;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/location/b;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    goto :goto_0
+    return-object v0
 .end method

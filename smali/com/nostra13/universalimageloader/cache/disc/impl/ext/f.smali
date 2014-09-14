@@ -1,9 +1,9 @@
-.class final Lcom/nostra13/universalimageloader/cache/disc/impl/ext/f;
+.class Lcom/nostra13/universalimageloader/cache/disc/impl/ext/f;
 .super Ljava/io/ByteArrayOutputStream;
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
+.field final synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/e;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     iget v0, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/f;->count:I

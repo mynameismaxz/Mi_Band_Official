@@ -1,17 +1,17 @@
-.class final Lcom/nineoldandroids/animation/c;
+.class Lcom/nineoldandroids/animation/c;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field private static c:I = 0x0
+.field static final a:I = 0x0
 
-.field private static d:I = 0x1
+.field static final b:I = 0x1
 
 
 # instance fields
-.field public a:Lcom/nineoldandroids/animation/e;
+.field public c:Lcom/nineoldandroids/animation/e;
 
-.field public b:I
+.field public d:I
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iput-object p1, p0, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
-    iput p2, p0, Lcom/nineoldandroids/animation/c;->b:I
+    iput p2, p0, Lcom/nineoldandroids/animation/c;->d:I
 
     return-void
 .end method

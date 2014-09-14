@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/ag;
+.class Landroid/support/v4/app/ag;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;[Landroid/content/Intent;IILandroid/os/Bundle;)Landroid/app/PendingIntent;
+.method public a(Landroid/content/Context;[Landroid/content/Intent;IILandroid/os/Bundle;)Landroid/app/PendingIntent;
     .locals 2
 
     new-instance v0, Landroid/content/Intent;

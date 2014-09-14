@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/channel/sdk/f;
+.class Lcom/xiaomi/channel/sdk/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -25,12 +25,16 @@
 .method constructor <init>(Lcom/xiaomi/channel/sdk/AccountManager;)V
     .locals 0
 
+    iput-object p1, p0, Lcom/xiaomi/channel/sdk/f;->a:Lcom/xiaomi/channel/sdk/AccountManager;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a()Landroid/os/Bundle;
+
+# virtual methods
+.method public a()Landroid/os/Bundle;
     .locals 2
 
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -42,16 +46,12 @@
     throw v0
 .end method
 
+.method public synthetic call()Ljava/lang/Object;
+    .locals 1
 
-# virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 2
+    invoke-virtual {p0}, Lcom/xiaomi/channel/sdk/f;->a()Landroid/os/Bundle;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v0
 
-    const-string v1, "this should never be called"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-object v0
 .end method

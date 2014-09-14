@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/gson/internal/ObjectConstructor;Ljava/util/Map;B)V
+.method synthetic constructor <init>(Lcom/google/gson/internal/ObjectConstructor;Ljava/util/Map;Lcom/google/gson/internal/bind/i;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter;-><init>(Lcom/google/gson/internal/ObjectConstructor;Ljava/util/Map;)V
@@ -72,7 +72,7 @@
 
 
 # virtual methods
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-boolean v2, v0, Lcom/google/gson/internal/bind/j;->c:Z
+    iget-boolean v2, v0, Lcom/google/gson/internal/bind/j;->i:Z
 
     if-nez v2, :cond_2
 
@@ -175,7 +175,7 @@
     goto :goto_0
 .end method
 
-.method public final write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -220,11 +220,11 @@
 
     check-cast v0, Lcom/google/gson/internal/bind/j;
 
-    iget-boolean v2, v0, Lcom/google/gson/internal/bind/j;->b:Z
+    iget-boolean v2, v0, Lcom/google/gson/internal/bind/j;->h:Z
 
     if-eqz v2, :cond_1
 
-    iget-object v2, v0, Lcom/google/gson/internal/bind/j;->a:Ljava/lang/String;
+    iget-object v2, v0, Lcom/google/gson/internal/bind/j;->g:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Lcom/google/gson/stream/JsonWriter;->name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 

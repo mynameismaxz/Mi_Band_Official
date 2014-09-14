@@ -28,6 +28,8 @@
 
 .field private stepDistance:I
 
+.field private stepRunDistance:I
+
 .field private stepRunTime:I
 
 .field private stepWalkTime:I
@@ -138,6 +140,14 @@
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepDistance:I
+
+    return v0
+.end method
+
+.method public getStepRunDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunDistance:I
 
     return v0
 .end method
@@ -274,6 +284,14 @@
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepDistance:I
+
+    return-void
+.end method
+
+.method public setStepRunDistance(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunDistance:I
 
     return-void
 .end method

@@ -861,28 +861,24 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    const/16 v0, 0x18
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [I
 
-    new-array v1, v1, [I
+    aput p3, v0, v1
 
-    const/16 v2, 0x1c
+    new-array v1, v1, [Ljava/lang/String;
 
-    aput v2, v1, v3
-
-    new-array v2, v3, [Ljava/lang/String;
-
-    invoke-direct {p0, p1, v0, v1, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -961,9 +957,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Bad ECI value: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1023,7 +1023,7 @@
 
 
 # virtual methods
-.method public final getValue()I
+.method public getValue()I
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/common/CharacterSetECI;->c:[I

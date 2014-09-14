@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/t;
+.class Lcom/tencent/stat/t;
 .super Ljava/lang/Object;
 
 
@@ -9,7 +9,7 @@
 
 .field c:I
 
-.field private d:I
+.field d:I
 
 
 # direct methods
@@ -22,7 +22,9 @@
 
     iput-object p3, p0, Lcom/tencent/stat/t;->b:Ljava/lang/String;
 
-    iput p5, p0, Lcom/tencent/stat/t;->c:I
+    iput p4, p0, Lcom/tencent/stat/t;->c:I
+
+    iput p5, p0, Lcom/tencent/stat/t;->d:I
 
     return-void
 .end method

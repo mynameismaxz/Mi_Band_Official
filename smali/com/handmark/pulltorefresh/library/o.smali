@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static a:I = 0x2
+.field static final a:I = 0x2
 
-.field private static b:F = 1.5f
+.field static final b:F = 1.5f
 
 
 # instance fields
-.field private synthetic c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
+.field final synthetic c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/o;->c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
 
-    iget-object v0, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -42,7 +42,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/o;->c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
 
-    iget-object v0, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -87,7 +87,7 @@
 
 
 # virtual methods
-.method protected final overScrollBy(IIIIIIIIZ)Z
+.method protected overScrollBy(IIIIIIIIZ)Z
     .locals 10
 
     invoke-super/range {p0 .. p9}, Landroid/webkit/WebView;->overScrollBy(IIIIIIIIZ)Z
@@ -96,61 +96,9 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/o;->c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
 
-    const/4 v2, 0x0
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/o;->a()I
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/o;->c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
-
-    iget-object v1, v1, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
-
-    check-cast v1, Landroid/webkit/WebView;
-
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getContentHeight()I
-
-    move-result v1
-
-    int-to-float v3, v1
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/o;->c:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
-
-    iget-object v1, v1, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
-
-    check-cast v1, Landroid/webkit/WebView;
-
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getScale()F
-
-    move-result v1
-
-    mul-float/2addr v1, v3
-
-    invoke-static {v1}, Landroid/util/FloatMath;->floor(F)F
-
-    move-result v1
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/o;->getHeight()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/o;->getPaddingBottom()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/o;->getPaddingTop()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sub-float/2addr v1, v3
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    float-to-int v5, v1
+    move-result v5
 
     const/4 v6, 0x2
 
