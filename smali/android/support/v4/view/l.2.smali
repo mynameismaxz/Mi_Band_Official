@@ -1,5 +1,8 @@
-.class final Landroid/support/v4/view/l;
+.class Landroid/support/v4/view/l;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/view/i;
 
 
 # instance fields
@@ -16,37 +19,37 @@
 
     invoke-direct {v0, p1, p2, p3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;->a:Landroid/view/GestureDetector;
+    iput-object v0, p0, Landroid/support/v4/view/l;->a:Landroid/view/GestureDetector;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+.method public a(Landroid/view/GestureDetector$OnDoubleTapListener;)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;->a:Landroid/view/GestureDetector;
+    iget-object v0, p0, Landroid/support/v4/view/l;->a:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
 
     return-void
 .end method
 
-.method public final a(Z)V
+.method public a(Z)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;->a:Landroid/view/GestureDetector;
+    iget-object v0, p0, Landroid/support/v4/view/l;->a:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
 
     return-void
 .end method
 
-.method public final a()Z
+.method public a()Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;->a:Landroid/view/GestureDetector;
+    iget-object v0, p0, Landroid/support/v4/view/l;->a:Landroid/view/GestureDetector;
 
     invoke-virtual {v0}, Landroid/view/GestureDetector;->isLongpressEnabled()Z
 
@@ -55,10 +58,10 @@
     return v0
 .end method
 
-.method public final a(Landroid/view/MotionEvent;)Z
+.method public a(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/AccessibilityDelegateCompatIcs;->a:Landroid/view/GestureDetector;
+    iget-object v0, p0, Landroid/support/v4/view/l;->a:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

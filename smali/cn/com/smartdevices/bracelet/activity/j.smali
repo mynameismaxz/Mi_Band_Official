@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/activity/j;
+.class Lcn/com/smartdevices/bracelet/activity/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
 .field private final synthetic b:Landroid/webkit/WebView;
 
@@ -26,12 +26,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
-    const v1, 0x7f07008d
+    const v1, 0x7f070092
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 

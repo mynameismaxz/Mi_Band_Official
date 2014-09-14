@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/q;
+.class Landroid/support/v4/content/q;
 .super Ljava/util/concurrent/FutureTask;
 
 
@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/content/ModernAsyncTask;
+.field final synthetic a:Landroid/support/v4/content/ModernAsyncTask;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
 
 # virtual methods
-.method protected final done()V
+.method protected done()V
     .locals 3
 
     :try_start_0

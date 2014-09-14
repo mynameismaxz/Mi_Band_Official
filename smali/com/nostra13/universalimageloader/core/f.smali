@@ -1,4 +1,4 @@
-.class final synthetic Lcom/nostra13/universalimageloader/core/f;
+.class synthetic Lcom/nostra13/universalimageloader/core/f;
 .super Ljava/lang/Object;
 
 

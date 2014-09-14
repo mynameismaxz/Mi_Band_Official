@@ -1,11 +1,11 @@
-.class final Landroid/support/v4/content/m;
+.class Landroid/support/v4/content/m;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:Landroid/content/Intent;
+.field final a:Landroid/content/Intent;
 
-.field private b:Ljava/util/ArrayList;
+.field final b:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -33,9 +33,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroid/support/v4/content/c;->a:Landroid/content/Intent;
+    iput-object p1, p0, Landroid/support/v4/content/m;->a:Landroid/content/Intent;
 
-    iput-object p2, p0, Landroid/support/v4/content/c;->b:Ljava/util/ArrayList;
+    iput-object p2, p0, Landroid/support/v4/content/m;->b:Ljava/util/ArrayList;
 
     return-void
 .end method

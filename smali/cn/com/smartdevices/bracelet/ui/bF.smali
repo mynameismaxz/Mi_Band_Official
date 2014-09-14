@@ -1,19 +1,19 @@
-.class final Lcn/com/smartdevices/bracelet/ui/bF;
+.class Lcn/com/smartdevices/bracelet/ui/bF;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout$PanelSlideListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/bE;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/bE;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,109 +22,105 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public onGetPullDownDistance()I
+    .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bE;->a(Lcn/com/smartdevices/bracelet/ui/bE;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    return v0
+.end method
 
-    move-result-object v0
+.method public onGetPullDownDockEnable()Ljava/lang/Boolean;
+    .locals 1
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bE;->a(Lcn/com/smartdevices/bracelet/ui/bE;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public onGetThreshhold()F
+    .locals 1
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
+    return v0
+.end method
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bE;->a(Lcn/com/smartdevices/bracelet/ui/bE;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+.method public onGetThreshhold2()F
+    .locals 1
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    return v0
+.end method
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;Landroid/app/ProgressDialog;)V
+.method public onLastSlideOffset(Landroid/view/View;F)V
+    .locals 0
 
-    :cond_0
-    sget-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->getDefaultPeripheral()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+.method public onPanelAnchored(Landroid/view/View;)V
+    .locals 2
 
-    move-result-object v0
+    const-string v0, "SettingFragment"
 
-    check-cast v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    const-class v1, Landroid/bluetooth/BluetoothDevice;
-
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDevice()Landroid/bluetooth/BluetoothDevice;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Utils;->removeBond(Ljava/lang/Class;Landroid/bluetooth/BluetoothDevice;)Z
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bE;->a(Lcn/com/smartdevices/bracelet/ui/bE;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/Activity;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, ""
-
-    const-string v1, "getActivity is null! System.exit(-1) now!"
+    const-string v1, "onPanelAnchored"
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/System;->exit(I)V
-
-    :goto_0
     return-void
+.end method
 
-    :cond_1
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/bE;
+.method public onPanelCollapsed(Landroid/view/View;)V
+    .locals 2
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/bE;->a(Lcn/com/smartdevices/bracelet/ui/bE;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    const-string v0, "SettingFragment"
 
-    move-result-object v1
+    const-string v1, "onPanelCollapsed"
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->dismiss()V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v1, Landroid/content/Intent;
+    return-void
+.end method
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+.method public onPanelExpanded(Landroid/view/View;)V
+    .locals 2
 
-    const-class v2, Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+    const-string v0, "SettingFragment"
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    const-string v1, "onPanelExpanded"
 
-    const v2, 0x10008000
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
+
+    return-void
+.end method
+
+.method public onPanelSlide(Landroid/view/View;Ljava/lang/Boolean;F)V
+    .locals 1
+
+    const/high16 v0, 0x3f80
+
+    cmpg-float v0, p3, v0
+
+    if-gtz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v0, p3}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;F)V
+
+    :cond_0
+    return-void
 .end method

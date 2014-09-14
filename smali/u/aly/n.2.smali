@@ -20,6 +20,14 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/16 v0, 0x80
+
+    iput v0, p0, Lu/aly/n;->a:I
+
+    const/16 v0, 0x100
+
+    iput v0, p0, Lu/aly/n;->b:I
+
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/RuntimeException;
@@ -72,12 +80,12 @@
     goto :goto_0
 .end method
 
-.method private static a(Ljava/lang/String;)Z
+.method private a(Ljava/lang/String;)Z
     .locals 2
 
-    if-eqz p0, :cond_0
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
 
@@ -170,47 +178,45 @@
 
     move-result-object v0
 
-    move-object v1, v0
+    check-cast v0, Ljava/util/Map$Entry;
 
-    check-cast v1, Ljava/util/Map$Entry;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
+    invoke-direct {p0, v1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
-    invoke-static {v0}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    move-result v1
 
-    move-result v0
-
-    if-nez v0, :cond_4
+    if-nez v1, :cond_4
 
     move v0, v2
 
     goto :goto_0
 
     :cond_4
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_5
+    if-nez v1, :cond_5
 
     move v0, v2
 
     goto :goto_0
 
     :cond_5
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    instance-of v0, v0, Ljava/lang/String;
+    instance-of v1, v1, Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -218,7 +224,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lu/aly/n;->b(Ljava/lang/String;)Z
+    invoke-direct {p0, v0}, Lu/aly/n;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -229,19 +235,19 @@
     goto :goto_0
 .end method
 
-.method private static b(Ljava/lang/String;)Z
+.method private b(Ljava/lang/String;)Z
     .locals 3
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_1
+    if-nez p1, :cond_1
 
     :cond_0
     :goto_0
     return v0
 
     :cond_1
-    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
@@ -273,13 +279,13 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
+    invoke-direct {p0, p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -308,13 +314,13 @@
 .method public a(Ljava/lang/String;Ljava/lang/String;JI)V
     .locals 7
 
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
+    invoke-direct {p0, p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -368,7 +374,7 @@
     .end annotation
 
     :try_start_0
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -417,7 +423,7 @@
     .end annotation
 
     :try_start_0
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -482,7 +488,7 @@
         }
     .end annotation
 
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -517,13 +523,13 @@
 .method public b(Ljava/lang/String;Ljava/lang/String;)V
     .locals 6
 
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
+    invoke-direct {p0, p2}, Lu/aly/n;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -576,7 +582,7 @@
 .method public c(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
 
-    invoke-static {p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lu/aly/n;->a(Ljava/lang/String;)Z
 
     move-result v0
 

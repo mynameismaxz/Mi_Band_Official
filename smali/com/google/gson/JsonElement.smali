@@ -13,10 +13,10 @@
 
 
 # virtual methods
-.method abstract a()Lcom/google/gson/JsonElement;
+.method abstract b()Lcom/google/gson/JsonElement;
 .end method
 
-.method b()Ljava/lang/Boolean;
+.method c()Ljava/lang/Boolean;
     .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -242,9 +242,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Not a JSON Object: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

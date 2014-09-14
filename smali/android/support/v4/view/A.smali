@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/A;
+.class Landroid/support/v4/view/A;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,19 +16,19 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/MenuItem;Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)Landroid/view/MenuItem;
+.method public a(Landroid/view/MenuItem;Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)Landroid/view/MenuItem;
     .locals 0
 
     return-object p1
 .end method
 
-.method public final a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
+.method public a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
     .locals 0
 
     return-object p1
 .end method
 
-.method public final a(Landroid/view/MenuItem;)Landroid/view/View;
+.method public a(Landroid/view/MenuItem;)Landroid/view/View;
     .locals 1
 
     const/4 v0, 0x0
@@ -36,19 +36,19 @@
     return-object v0
 .end method
 
-.method public final a(Landroid/view/MenuItem;I)V
+.method public a(Landroid/view/MenuItem;I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
+.method public b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
     .locals 0
 
     return-object p1
 .end method
 
-.method public final b(Landroid/view/MenuItem;)Z
+.method public b(Landroid/view/MenuItem;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
     return v0
 .end method
 
-.method public final c(Landroid/view/MenuItem;)Z
+.method public c(Landroid/view/MenuItem;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -64,7 +64,7 @@
     return v0
 .end method
 
-.method public final d(Landroid/view/MenuItem;)Z
+.method public d(Landroid/view/MenuItem;)Z
     .locals 1
 
     const/4 v0, 0x0

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract a(Landroid/support/v4/view/PagerAdapter;Landroid/support/v4/view/PagerAdapter;)V
 .end method

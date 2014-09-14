@@ -68,9 +68,9 @@
 
     const/16 v4, 0x1e
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     invoke-static {}, Lcom/tencent/stat/common/StatCommonHelper;->getLogger()Lcom/tencent/stat/common/StatLogger;
 
@@ -88,7 +88,7 @@
 
     new-instance v0, Lcom/tencent/stat/a;
 
-    invoke-direct {v0, v2}, Lcom/tencent/stat/a;-><init>(I)V
+    invoke-direct {v0, v3}, Lcom/tencent/stat/a;-><init>(I)V
 
     sput-object v0, Lcom/tencent/stat/StatConfig;->b:Lcom/tencent/stat/a;
 
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/tencent/stat/StatConfig;->f:Lcom/tencent/stat/StatReportStrategy;
 
-    sput-boolean v2, Lcom/tencent/stat/StatConfig;->g:Z
+    sput-boolean v3, Lcom/tencent/stat/StatConfig;->g:Z
 
     const/16 v0, 0x7530
 
@@ -130,23 +130,33 @@
 
     sput v5, Lcom/tencent/stat/StatConfig;->q:I
 
-    sput-boolean v2, Lcom/tencent/stat/StatConfig;->r:Z
+    sput-boolean v3, Lcom/tencent/stat/StatConfig;->r:Z
 
-    sput-boolean v2, Lcom/tencent/stat/StatConfig;->isAutoExceptionCaught:Z
+    const-wide/16 v0, 0x0
+
+    sput-wide v0, Lcom/tencent/stat/StatConfig;->s:J
+
+    const-wide/32 v0, 0x493e0
+
+    sput-wide v0, Lcom/tencent/stat/StatConfig;->t:J
+
+    sput-boolean v3, Lcom/tencent/stat/StatConfig;->isAutoExceptionCaught:Z
 
     const-string v0, "http://pingma.qq.com:80/mstat/report"
 
     sput-object v0, Lcom/tencent/stat/StatConfig;->u:Ljava/lang/String;
 
-    sput v3, Lcom/tencent/stat/StatConfig;->v:I
+    sput v2, Lcom/tencent/stat/StatConfig;->v:I
 
-    sput v3, Lcom/tencent/stat/StatConfig;->w:I
+    sput v2, Lcom/tencent/stat/StatConfig;->w:I
 
     const/16 v0, 0x14
 
     sput v0, Lcom/tencent/stat/StatConfig;->x:I
 
-    sput v3, Lcom/tencent/stat/StatConfig;->y:I
+    sput v2, Lcom/tencent/stat/StatConfig;->y:I
+
+    sput-boolean v2, Lcom/tencent/stat/StatConfig;->z:Z
 
     const/16 v0, 0x1000
 
@@ -171,7 +181,7 @@
     return v0
 .end method
 
-.method private static a(Landroid/content/Context;)Ljava/lang/String;
+.method static a(Landroid/content/Context;)Ljava/lang/String;
     .locals 2
 
     const-string v0, "_mta_ky_tag_"
@@ -196,10 +206,8 @@
 
     monitor-enter v0
 
-    const/4 v1, 0x0
-
     :try_start_0
-    sput v1, Lcom/tencent/stat/StatConfig;->w:I
+    sput p0, Lcom/tencent/stat/StatConfig;->w:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -215,7 +223,7 @@
     throw v1
 .end method
 
-.method private static a(Landroid/content/Context;Ljava/lang/String;)V
+.method static a(Landroid/content/Context;Ljava/lang/String;)V
     .locals 2
 
     if-eqz p1, :cond_0
@@ -245,7 +253,9 @@
 
     sput-object p0, Lcom/tencent/stat/StatConfig;->b:Lcom/tencent/stat/a;
 
-    iget-object v0, p0, Lcom/tencent/stat/a;->b:Lorg/json/JSONObject;
+    sget-object v0, Lcom/tencent/stat/StatConfig;->b:Lcom/tencent/stat/a;
+
+    iget-object v0, v0, Lcom/tencent/stat/a;->b:Lorg/json/JSONObject;
 
     invoke-static {v0}, Lcom/tencent/stat/StatConfig;->b(Lorg/json/JSONObject;)V
 
@@ -267,8 +277,8 @@
     goto :goto_0
 .end method
 
-.method private static a(Lcom/tencent/stat/a;Lorg/json/JSONObject;)V
-    .locals 5
+.method static a(Lcom/tencent/stat/a;Lorg/json/JSONObject;)V
+    .locals 3
 
     :try_start_0
     invoke-virtual {p1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
@@ -408,110 +418,13 @@
     invoke-static {v0}, Lcom/tencent/stat/StatConfig;->b(Lorg/json/JSONObject;)V
 
     iget-object v0, p0, Lcom/tencent/stat/a;->b:Lorg/json/JSONObject;
+
+    invoke-static {v0}, Lcom/tencent/stat/StatConfig;->c(Lorg/json/JSONObject;)V
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
-    :try_start_3
-    sget-object v1, Lcom/tencent/stat/StatConfig;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/tencent/stat/StatConfig;->e:Lcom/tencent/stat/common/StatLogger;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "hibernateVer:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", current version:1.0.0"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/tencent/stat/common/StatLogger;->d(Ljava/lang/Object;)V
-
-    invoke-static {v0}, Lcom/tencent/stat/common/StatCommonHelper;->getSDKLongVersion(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    const-string v3, "1.0.0"
-
-    invoke-static {v3}, Lcom/tencent/stat/common/StatCommonHelper;->getSDKLongVersion(Ljava/lang/String;)J
-
-    move-result-wide v3
-
-    cmp-long v3, v3, v1
-
-    if-gtz v3, :cond_1
-
-    invoke-static {}, Lcom/tencent/stat/c;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/tencent/stat/StatConfig;->c:Ljava/lang/String;
-
-    invoke-static {v3, v4, v1, v2}, Lcom/tencent/stat/common/StatPreferences;->putLong(Landroid/content/Context;Ljava/lang/String;J)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/tencent/stat/StatConfig;->setEnableStatService(Z)V
-
-    sget-object v1, Lcom/tencent/stat/StatConfig;->e:Lcom/tencent/stat/common/StatLogger;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "MTA has disable for SDK version of "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " or lower."
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcom/tencent/stat/common/StatLogger;->warn(Ljava/lang/Object;)V
-    :try_end_3
-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_2
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto/16 :goto_1
-
-    :catch_2
-    move-exception v0
-
-    :try_start_4
-    sget-object v0, Lcom/tencent/stat/StatConfig;->e:Lcom/tencent/stat/common/StatLogger;
-
-    const-string v1, "__HIBERNATE__ not found."
-
-    invoke-virtual {v0, v1}, Lcom/tencent/stat/common/StatLogger;->d(Ljava/lang/Object;)V
-    :try_end_4
-    .catch Lorg/json/JSONException; {:try_start_4 .. :try_end_4} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
-
-    goto/16 :goto_1
+    goto :goto_1
 .end method
 
 .method static a(Lorg/json/JSONObject;)V
@@ -623,9 +536,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "Change to ReportStrategy:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v0}, Lcom/tencent/stat/StatReportStrategy;->name()Ljava/lang/String;
 
@@ -646,7 +563,7 @@
     goto :goto_0
 .end method
 
-.method private static a(III)Z
+.method static a(III)Z
     .locals 1
 
     if-lt p0, p1, :cond_0
@@ -729,24 +646,79 @@
 .end method
 
 .method static b()Lorg/apache/http/HttpHost;
-    .locals 1
+    .locals 5
+
+    sget-object v0, Lcom/tencent/stat/StatConfig;->m:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/tencent/stat/StatConfig;->m:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
+
+    sget-object v1, Lcom/tencent/stat/StatConfig;->m:Ljava/lang/String;
+
+    const-string v0, ":"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    const/16 v0, 0x50
+
+    array-length v3, v2
+
+    const/4 v4, 0x2
+
+    if-ne v3, v4, :cond_0
 
     const/4 v0, 0x0
 
+    aget-object v1, v2, v0
+
+    const/4 v0, 0x1
+
+    aget-object v0, v2, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    :cond_0
+    new-instance v2, Lorg/apache/http/HttpHost;
+
+    invoke-direct {v2, v1, v0}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;I)V
+
+    move-object v0, v2
+
+    :goto_0
     return-object v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method static b(I)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    if-gez p0, :cond_0
 
-    sput v0, Lcom/tencent/stat/StatConfig;->y:I
-
+    :goto_0
     return-void
+
+    :cond_0
+    sput p0, Lcom/tencent/stat/StatConfig;->y:I
+
+    goto :goto_0
 .end method
 
-.method private static b(Lorg/json/JSONObject;)V
+.method static b(Lorg/json/JSONObject;)V
     .locals 4
 
     :try_start_0
@@ -768,9 +740,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Change to ReportStrategy: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v0}, Lcom/tencent/stat/StatReportStrategy;->name()Ljava/lang/String;
 
@@ -832,7 +808,7 @@
     throw v0
 .end method
 
-.method private static c(Lorg/json/JSONObject;)V
+.method static c(Lorg/json/JSONObject;)V
     .locals 5
 
     :try_start_0
@@ -846,15 +822,25 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "hibernateVer:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, ", current version:1.0.0"
+    const-string v3, ", current version:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "1.0.0"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -896,9 +882,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "MTA has disable for SDK version of "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1088,6 +1078,8 @@
     move-result-object v0
 
     sput-object v0, Lcom/tencent/stat/StatConfig;->o:Ljava/lang/String;
+
+    sget-object v0, Lcom/tencent/stat/StatConfig;->o:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
@@ -1290,15 +1282,7 @@
 
     if-nez v0, :cond_4
 
-    const-string v0, "_mta_ky_tag_"
-
-    const/4 v1, 0x0
-
-    invoke-static {p0, v0, v1}, Lcom/tencent/stat/common/StatPreferences;->getString(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/tencent/stat/common/StatCommonHelper;->decode(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/tencent/stat/StatConfig;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1323,15 +1307,7 @@
 
     sget-object v0, Lcom/tencent/stat/StatConfig;->n:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    invoke-static {v0}, Lcom/tencent/stat/common/StatCommonHelper;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "_mta_ky_tag_"
-
-    invoke-static {p0, v1, v0}, Lcom/tencent/stat/common/StatPreferences;->putString(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lcom/tencent/stat/StatConfig;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -1716,9 +1692,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Change to statSendStrategy: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

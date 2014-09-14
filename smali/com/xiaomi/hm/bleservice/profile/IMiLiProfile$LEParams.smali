@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 6
 
     const-wide/high16 v4, 0x3ff4

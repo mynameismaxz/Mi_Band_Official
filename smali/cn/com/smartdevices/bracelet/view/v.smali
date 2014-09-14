@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/v;
+.class Lcn/com/smartdevices/bracelet/view/v;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/u;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/u;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/v;->a:Lcn/com/smartdevices/bracelet/view/u;

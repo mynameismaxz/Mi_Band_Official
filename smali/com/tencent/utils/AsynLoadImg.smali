@@ -3,17 +3,17 @@
 
 
 # static fields
-.field private static c:Ljava/lang/String;
+.field private static d:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field a:Landroid/app/Activity;
 
-.field private b:Lcom/tencent/utils/AsynLoadImgBack;
+.field private b:Ljava/lang/String;
 
-.field private d:J
+.field private c:Lcom/tencent/utils/AsynLoadImgBack;
 
-.field private e:Landroid/app/Activity;
+.field private e:J
 
 .field private f:Landroid/os/Handler;
 
@@ -32,6 +32,8 @@
 
     iput-object v0, p0, Lcom/tencent/utils/AsynLoadImg;->g:Ljava/lang/Runnable;
 
+    iput-object p1, p0, Lcom/tencent/utils/AsynLoadImg;->a:Landroid/app/Activity;
+
     new-instance v0, Lcom/tencent/utils/a;
 
     invoke-virtual {p1}, Landroid/app/Activity;->getMainLooper()Landroid/os/Looper;
@@ -48,7 +50,7 @@
 .method static synthetic a(Lcom/tencent/utils/AsynLoadImg;)Lcom/tencent/utils/AsynLoadImgBack;
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/utils/AsynLoadImg;->b:Lcom/tencent/utils/AsynLoadImgBack;
+    iget-object v0, p0, Lcom/tencent/utils/AsynLoadImg;->c:Lcom/tencent/utils/AsynLoadImgBack;
 
     return-object v0
 .end method
@@ -56,7 +58,7 @@
 .method static synthetic a()Ljava/lang/String;
     .locals 1
 
-    sget-object v0, Lcom/tencent/utils/AsynLoadImg;->c:Ljava/lang/String;
+    sget-object v0, Lcom/tencent/utils/AsynLoadImg;->d:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -64,7 +66,7 @@
 .method static synthetic b(Lcom/tencent/utils/AsynLoadImg;)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/utils/AsynLoadImg;->a:Ljava/lang/String;
+    iget-object v0, p0, Lcom/tencent/utils/AsynLoadImg;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -80,7 +82,7 @@
 .method static synthetic d(Lcom/tencent/utils/AsynLoadImg;)J
     .locals 2
 
-    iget-wide v0, p0, Lcom/tencent/utils/AsynLoadImg;->d:J
+    iget-wide v0, p0, Lcom/tencent/utils/AsynLoadImg;->e:J
 
     return-wide v0
 .end method
@@ -92,9 +94,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "getbitmap:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -137,9 +143,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "image download finished."
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -239,17 +249,17 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/tencent/utils/AsynLoadImg;->c:Ljava/lang/String;
+    sput-object v0, Lcom/tencent/utils/AsynLoadImg;->d:Ljava/lang/String;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/tencent/utils/AsynLoadImg;->d:J
+    iput-wide v0, p0, Lcom/tencent/utils/AsynLoadImg;->e:J
 
-    iput-object p1, p0, Lcom/tencent/utils/AsynLoadImg;->a:Ljava/lang/String;
+    iput-object p1, p0, Lcom/tencent/utils/AsynLoadImg;->b:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/tencent/utils/AsynLoadImg;->b:Lcom/tencent/utils/AsynLoadImgBack;
+    iput-object p2, p0, Lcom/tencent/utils/AsynLoadImg;->c:Lcom/tencent/utils/AsynLoadImgBack;
 
     new-instance v0, Ljava/lang/Thread;
 
@@ -265,7 +275,7 @@
 .method public saveFile(Landroid/graphics/Bitmap;Ljava/lang/String;)Z
     .locals 4
 
-    sget-object v0, Lcom/tencent/utils/AsynLoadImg;->c:Ljava/lang/String;
+    sget-object v0, Lcom/tencent/utils/AsynLoadImg;->d:Ljava/lang/String;
 
     :try_start_0
     new-instance v1, Ljava/io/File;
@@ -301,9 +311,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "saveFile:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

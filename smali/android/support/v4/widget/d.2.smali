@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/widget/d;
+.class Landroid/support/v4/widget/d;
 .super Landroid/widget/Filter;
 
 
 # instance fields
-.field private a:Landroid/support/v4/widget/e;
+.field a:Landroid/support/v4/widget/e;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final convertResultToString(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public convertResultToString(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/d;->a:Landroid/support/v4/widget/e;
@@ -33,7 +33,7 @@
     return-object v0
 .end method
 
-.method protected final performFiltering(Ljava/lang/CharSequence;)Landroid/widget/Filter$FilterResults;
+.method protected performFiltering(Ljava/lang/CharSequence;)Landroid/widget/Filter$FilterResults;
     .locals 3
 
     iget-object v0, p0, Landroid/support/v4/widget/d;->a:Landroid/support/v4/widget/e;
@@ -71,7 +71,7 @@
     goto :goto_0
 .end method
 
-.method protected final publishResults(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterResults;)V
+.method protected publishResults(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterResults;)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/widget/d;->a:Landroid/support/v4/widget/e;

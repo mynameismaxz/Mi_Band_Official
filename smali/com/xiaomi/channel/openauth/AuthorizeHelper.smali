@@ -76,11 +76,9 @@
 .end method
 
 .method static synthetic a()V
-    .locals 1
+    .locals 0
 
-    sget-object v0, Lcom/xiaomi/channel/openauth/APP2SDKReceiver;->availableApp:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-static {}, Lcom/xiaomi/channel/openauth/AuthorizeHelper;->b()V
 
     return-void
 .end method
@@ -145,26 +143,9 @@
 
     invoke-virtual {p0, v3, v1}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    new-instance v1, Landroid/content/Intent;
-
-    sget-object v2, Lcom/xiaomi/channel/openauth/SDK2APPReceiver;->AUTH_ACTION_NAME:Ljava/lang/String;
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-static/range {p8 .. p8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    const-string v2, "user_id"
-
     move-object/from16 v0, p8
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    :cond_3
-    invoke-virtual {p0, v1}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-static {p0, v0}, Lcom/xiaomi/channel/openauth/AuthorizeHelper;->a(Landroid/app/Activity;Ljava/lang/String;)V
 
     new-instance v11, Landroid/os/Handler;
 
@@ -251,19 +232,17 @@
 .end method
 
 .method private static b(Landroid/content/Context;)Landroid/content/Intent;
-    .locals 6
-
-    const/4 v2, 0x0
+    .locals 5
 
     sget-object v0, Lcom/xiaomi/channel/openauth/APP2SDKReceiver;->availableApp:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_0
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
@@ -281,7 +260,7 @@
     return-object v0
 
     :cond_1
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -297,30 +276,30 @@
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    new-instance v4, Landroid/content/ComponentName;
+    new-instance v3, Landroid/content/ComponentName;
 
-    sget-object v5, Lcom/xiaomi/channel/openauth/AuthorizeHelper;->AUTH_ACTIVITY_NAME:Ljava/lang/String;
+    sget-object v4, Lcom/xiaomi/channel/openauth/AuthorizeHelper;->AUTH_ACTIVITY_NAME:Ljava/lang/String;
 
-    invoke-direct {v4, v0, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, v0, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "com.xiaomi.channel"
+    const-string v4, "com.xiaomi.channel"
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     :try_start_0
-    invoke-virtual {v4, v0, v5}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    invoke-virtual {v3, v0, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
@@ -328,40 +307,20 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v4, 0x35c
+    const/16 v3, 0x35c
 
-    if-le v0, v4, :cond_0
+    if-le v0, v3, :cond_0
 
     :cond_2
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    const/high16 v4, 0x1
-
-    invoke-virtual {v0, v1, v4}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {p0, v1}, Lcom/xiaomi/channel/openauth/AuthorizeHelper;->a(Landroid/content/Context;Landroid/content/Intent;)Z
 
     move-result v0
 
-    if-lez v0, :cond_3
-
-    const/4 v0, 0x1
-
-    :goto_2
     if-eqz v0, :cond_0
 
     move-object v0, v1
 
     goto :goto_1
-
-    :cond_3
-    move v0, v2
-
-    goto :goto_2
 
     :catch_0
     move-exception v0

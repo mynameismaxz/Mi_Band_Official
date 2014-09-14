@@ -1,4 +1,4 @@
-.class final Lcom/google/zxing/datamatrix/detector/b;
+.class Lcom/google/zxing/datamatrix/detector/b;
 .super Ljava/lang/Object;
 
 
@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;IB)V
+.method synthetic constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;ILcom/google/zxing/datamatrix/detector/a;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/google/zxing/datamatrix/detector/b;-><init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;I)V
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/ResultPoint;
+.method a()Lcom/google/zxing/ResultPoint;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/datamatrix/detector/b;->a:Lcom/google/zxing/ResultPoint;
@@ -43,7 +43,7 @@
     return-object v0
 .end method
 
-.method final b()Lcom/google/zxing/ResultPoint;
+.method b()Lcom/google/zxing/ResultPoint;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/datamatrix/detector/b;->b:Lcom/google/zxing/ResultPoint;
@@ -51,7 +51,7 @@
     return-object v0
 .end method
 
-.method public final c()I
+.method public c()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/datamatrix/detector/b;->c:I
@@ -59,7 +59,7 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

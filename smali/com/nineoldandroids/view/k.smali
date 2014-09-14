@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/k;
+.class Lcom/nineoldandroids/view/k;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nineoldandroids/view/i;
+.field final synthetic a:Lcom/nineoldandroids/view/i;
 
 
 # direct methods
@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/nineoldandroids/view/i;B)V
+.method synthetic constructor <init>(Lcom/nineoldandroids/view/i;Lcom/nineoldandroids/view/k;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/nineoldandroids/view/k;-><init>(Lcom/nineoldandroids/view/i;)V
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/k;->a:Lcom/nineoldandroids/view/i;
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public final onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/k;->a:Lcom/nineoldandroids/view/i;
@@ -104,7 +104,7 @@
     return-void
 .end method
 
-.method public final onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/k;->a:Lcom/nineoldandroids/view/i;
@@ -127,7 +127,7 @@
     return-void
 .end method
 
-.method public final onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/k;->a:Lcom/nineoldandroids/view/i;
@@ -150,7 +150,7 @@
     return-void
 .end method
 
-.method public final onAnimationUpdate(Lcom/nineoldandroids/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Lcom/nineoldandroids/animation/ValueAnimator;)V
     .locals 7
 
     invoke-virtual {p1}, Lcom/nineoldandroids/animation/ValueAnimator;->getAnimatedFraction()F

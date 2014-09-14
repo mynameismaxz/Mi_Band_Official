@@ -1,4 +1,4 @@
-.class final Lcom/edmodo/cropper/cropwindow/handle/b;
+.class Lcom/edmodo/cropper/cropwindow/handle/b;
 .super Lcom/edmodo/cropper/cropwindow/handle/c;
 
 
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method final a(FFFLandroid/graphics/Rect;F)V
+.method a(FFFLandroid/graphics/Rect;F)V
     .locals 7
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/edmodo/cropper/cropwindow/handle/b;->a(FFF)Lcom/edmodo/cropper/cropwindow/edge/EdgePair;

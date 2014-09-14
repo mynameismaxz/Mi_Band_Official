@@ -2181,6 +2181,16 @@
 
     invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/SportData;->getTimeIndex()I
 
+    move-result v2
+
+    const v3, 0xea60
+
+    mul-int/2addr v2, v3
+
+    int-to-long v2, v2
+
+    add-long v2, v2, p3
+
     const/4 v2, 0x7
 
     new-array v2, v2, [Ljava/lang/String;
@@ -3441,7 +3451,7 @@
     move v6, v5
 
     :goto_2
-    if-lt v6, v8, :cond_a
+    if-lt v6, v8, :cond_b
 
     :cond_2
     const/16 v5, 0xe
@@ -3711,7 +3721,7 @@
     const/4 v5, 0x0
 
     :goto_3
-    if-lt v5, v12, :cond_12
+    if-lt v5, v12, :cond_14
 
     invoke-virtual {v8}, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->getSeriesRendererCount()I
 
@@ -3722,7 +3732,7 @@
     move v6, v5
 
     :goto_4
-    if-lt v6, v7, :cond_13
+    if-lt v6, v7, :cond_15
 
     const/high16 v5, 0x4170
 
@@ -3827,8 +3837,17 @@
 
     move/from16 v1, v27
 
-    if-eq v0, v1, :cond_4
+    if-ne v0, v1, :cond_5
 
+    :cond_4
+    :goto_5
+    add-int/lit8 v5, v6, 0x1
+
+    move v6, v5
+
+    goto/16 :goto_1
+
+    :cond_5
     invoke-virtual {v5}, Lcn/com/smartdevices/bracelet/model/SportData;->getTimeIndex()I
 
     move-result v27
@@ -3865,7 +3884,7 @@
 
     invoke-virtual {v12, v0, v1, v2, v3}, Lorg/achartengine/model/XYSeries;->add(DD)V
 
-    if-nez v26, :cond_5
+    if-nez v26, :cond_6
 
     move-wide/from16 v0, v27
 
@@ -3881,20 +3900,14 @@
 
     invoke-virtual {v13, v0, v1, v2, v3}, Lorg/achartengine/model/XYSeries;->add(DD)V
 
-    :cond_4
-    :goto_5
-    add-int/lit8 v5, v6, 0x1
+    goto :goto_5
 
-    move v6, v5
-
-    goto/16 :goto_1
-
-    :cond_5
+    :cond_6
     const/4 v5, 0x1
 
     move/from16 v0, v26
 
-    if-ne v0, v5, :cond_6
+    if-ne v0, v5, :cond_7
 
     move-wide/from16 v0, v27
 
@@ -3912,12 +3925,12 @@
 
     goto :goto_5
 
-    :cond_6
+    :cond_7
     const/4 v5, 0x2
 
     move/from16 v0, v26
 
-    if-ne v0, v5, :cond_7
+    if-ne v0, v5, :cond_8
 
     move-wide/from16 v0, v27
 
@@ -3935,12 +3948,12 @@
 
     goto :goto_5
 
-    :cond_7
+    :cond_8
     const/4 v5, 0x3
 
     move/from16 v0, v26
 
-    if-ne v0, v5, :cond_8
+    if-ne v0, v5, :cond_9
 
     move-wide/from16 v0, v27
 
@@ -3960,12 +3973,12 @@
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     const/4 v5, 0x4
 
     move/from16 v0, v26
 
-    if-ne v0, v5, :cond_9
+    if-ne v0, v5, :cond_a
 
     move-wide/from16 v0, v27
 
@@ -3983,9 +3996,9 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/achartengine/model/XYSeries;->add(DD)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    :cond_9
+    :cond_a
     const/4 v5, 0x5
 
     move/from16 v0, v26
@@ -4008,9 +4021,9 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/achartengine/model/XYSeries;->add(DD)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    :cond_a
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcn/com/smartdevices/bracelet/DataChart;->b:Ljava/util/ArrayList;
@@ -4027,8 +4040,17 @@
 
     const/16 v12, 0x7f
 
-    if-eq v7, v12, :cond_b
+    if-ne v7, v12, :cond_d
 
+    :cond_c
+    :goto_6
+    add-int/lit8 v5, v6, 0x1
+
+    move v6, v5
+
+    goto/16 :goto_2
+
+    :cond_d
     invoke-virtual {v5}, Lcn/com/smartdevices/bracelet/model/SportData;->getTimeIndex()I
 
     move-result v5
@@ -4041,7 +4063,7 @@
 
     add-long v12, v12, p3
 
-    if-nez v7, :cond_c
+    if-nez v7, :cond_e
 
     long-to-double v12, v12
 
@@ -4051,18 +4073,12 @@
 
     invoke-virtual {v0, v12, v13, v14, v15}, Lorg/achartengine/model/XYSeries;->add(DD)V
 
-    :cond_b
-    :goto_6
-    add-int/lit8 v5, v6, 0x1
+    goto :goto_6
 
-    move v6, v5
-
-    goto/16 :goto_2
-
-    :cond_c
+    :cond_e
     const/4 v5, 0x1
 
-    if-ne v7, v5, :cond_d
+    if-ne v7, v5, :cond_f
 
     long-to-double v12, v12
 
@@ -4074,10 +4090,10 @@
 
     goto :goto_6
 
-    :cond_d
+    :cond_f
     const/4 v5, 0x2
 
-    if-ne v7, v5, :cond_e
+    if-ne v7, v5, :cond_10
 
     long-to-double v12, v12
 
@@ -4089,10 +4105,10 @@
 
     goto :goto_6
 
-    :cond_e
+    :cond_10
     const/4 v5, 0x3
 
-    if-ne v7, v5, :cond_f
+    if-ne v7, v5, :cond_11
 
     long-to-double v12, v12
 
@@ -4104,10 +4120,10 @@
 
     goto :goto_6
 
-    :cond_f
+    :cond_11
     const/4 v5, 0x4
 
-    if-ne v7, v5, :cond_10
+    if-ne v7, v5, :cond_12
 
     long-to-double v12, v12
 
@@ -4119,10 +4135,10 @@
 
     goto :goto_6
 
-    :cond_10
+    :cond_12
     const/4 v5, 0x5
 
-    if-ne v7, v5, :cond_11
+    if-ne v7, v5, :cond_13
 
     long-to-double v12, v12
 
@@ -4134,10 +4150,10 @@
 
     goto :goto_6
 
-    :cond_11
+    :cond_13
     const/4 v5, 0x7
 
-    if-ne v7, v5, :cond_b
+    if-ne v7, v5, :cond_c
 
     long-to-double v12, v12
 
@@ -4149,7 +4165,7 @@
 
     goto :goto_6
 
-    :cond_12
+    :cond_14
     new-instance v13, Lorg/achartengine/renderer/XYSeriesRenderer;
 
     invoke-direct {v13}, Lorg/achartengine/renderer/XYSeriesRenderer;-><init>()V
@@ -4168,7 +4184,7 @@
 
     goto/16 :goto_3
 
-    :cond_13
+    :cond_15
     invoke-virtual {v8, v6}, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->getSeriesRendererAt(I)Lorg/achartengine/renderer/SimpleSeriesRenderer;
 
     move-result-object v5

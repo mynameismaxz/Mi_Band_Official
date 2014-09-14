@@ -122,7 +122,7 @@
 
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/nostra13/universalimageloader/utils/L;->c:Z
+    invoke-static {v0}, Lcom/nostra13/universalimageloader/utils/L;->writeLogs(Z)V
 
     return-void
 .end method
@@ -170,7 +170,7 @@
 
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/nostra13/universalimageloader/utils/L;->c:Z
+    invoke-static {v0}, Lcom/nostra13/universalimageloader/utils/L;->writeLogs(Z)V
 
     return-void
 .end method

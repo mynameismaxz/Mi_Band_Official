@@ -53,7 +53,7 @@
 
 
 # virtual methods
-.method public final encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
+.method public encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,9 +77,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Can only encode CODE_39, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -101,7 +105,7 @@
     return-object v0
 .end method
 
-.method public final encode(Ljava/lang/String;)[B
+.method public encode(Ljava/lang/String;)[B
     .locals 10
 
     const/16 v9, 0x27
@@ -122,9 +126,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Requested contents should be less than 80 digits long, but got "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -160,7 +168,7 @@
 
     move-result v1
 
-    sget-object v6, Lcom/google/zxing/oned/Code39Reader;->a:[I
+    sget-object v6, Lcom/google/zxing/oned/Code39Reader;->b:[I
 
     aget v1, v6, v1
 
@@ -195,7 +203,7 @@
     :cond_2
     new-array v3, v0, [B
 
-    sget-object v0, Lcom/google/zxing/oned/Code39Reader;->a:[I
+    sget-object v0, Lcom/google/zxing/oned/Code39Reader;->b:[I
 
     aget v0, v0, v9
 
@@ -230,7 +238,7 @@
 
     move-result v4
 
-    sget-object v7, Lcom/google/zxing/oned/Code39Reader;->a:[I
+    sget-object v7, Lcom/google/zxing/oned/Code39Reader;->b:[I
 
     aget v4, v7, v4
 
@@ -253,13 +261,17 @@
     goto :goto_2
 
     :cond_3
-    sget-object v0, Lcom/google/zxing/oned/Code39Reader;->a:[I
+    sget-object v0, Lcom/google/zxing/oned/Code39Reader;->b:[I
 
     aget v0, v0, v9
 
     invoke-static {v0, v5}, Lcom/google/zxing/oned/Code39Writer;->a(I[I)V
 
     invoke-static {v3, v1, v5, v8}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([BI[II)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
 
     return-object v3
 .end method

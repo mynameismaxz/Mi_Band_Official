@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/B;
+.class Landroid/support/v4/widget/B;
 .super Ljava/lang/Object;
 
 
@@ -33,22 +33,22 @@
     return-object v0
 .end method
 
-.method public static a(Landroid/support/v4/widget/m;)Ljava/lang/Object;
+.method public static a(Landroid/support/v4/widget/E;)Ljava/lang/Object;
     .locals 1
 
     new-instance v0, Landroid/support/v4/widget/D;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/widget/D;-><init>(Landroid/support/v4/widget/m;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/widget/D;-><init>(Landroid/support/v4/widget/E;)V
 
     return-object v0
 .end method
 
-.method public static a(Landroid/support/v4/widget/t;)Ljava/lang/Object;
+.method public static a(Landroid/support/v4/widget/F;)Ljava/lang/Object;
     .locals 1
 
     new-instance v0, Landroid/support/v4/widget/C;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/widget/C;-><init>(Landroid/support/v4/widget/t;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/widget/C;-><init>(Landroid/support/v4/widget/F;)V
 
     return-object v0
 .end method

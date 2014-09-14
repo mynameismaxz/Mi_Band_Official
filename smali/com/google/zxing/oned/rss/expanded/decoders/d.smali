@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static final a:I = 0x8
+.field private static final b:I = 0x8
 
-.field private static final b:I = 0x2
+.field private static final c:I = 0x2
 
-.field private static final c:I = 0xa
+.field private static final d:I = 0xa
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
 
 # virtual methods
-.method public final parseInformation()Ljava/lang/String;
+.method public parseInformation()Ljava/lang/String;
     .locals 5
 
     const/16 v4, 0x30

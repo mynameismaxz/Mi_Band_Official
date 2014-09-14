@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/I;
+.class Landroid/support/v4/app/I;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/app/ListFragment;
+.field final synthetic a:Landroid/support/v4/app/ListFragment;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -49,7 +49,7 @@
 
     iput p1, p0, Lde/greenrobot/dao/internal/LongHashMap;->capacity:I
 
-    shl-int/lit8 v0, p1, 0x2
+    mul-int/lit8 v0, p1, 0x4
 
     div-int/lit8 v0, v0, 0x3
 
@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method public final clear()V
+.method public clear()V
     .locals 2
 
     const/4 v0, 0x0
@@ -80,7 +80,7 @@
     return-void
 .end method
 
-.method public final containsKey(J)Z
+.method public containsKey(J)Z
     .locals 3
 
     const/16 v0, 0x20
@@ -130,7 +130,7 @@
     goto :goto_1
 .end method
 
-.method public final get(J)Ljava/lang/Object;
+.method public get(J)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -185,7 +185,7 @@
     goto :goto_1
 .end method
 
-.method public final logStats()V
+.method public logStats()V
     .locals 6
 
     const/4 v0, 0x0
@@ -226,9 +226,13 @@
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "load: "
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget v2, p0, Lde/greenrobot/dao/internal/LongHashMap;->size:I
 
@@ -305,7 +309,7 @@
     return-void
 .end method
 
-.method public final put(JLjava/lang/Object;)Ljava/lang/Object;
+.method public put(JLjava/lang/Object;)Ljava/lang/Object;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -391,7 +395,7 @@
     goto :goto_1
 .end method
 
-.method public final remove(J)Ljava/lang/Object;
+.method public remove(J)Ljava/lang/Object;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -467,7 +471,7 @@
     goto :goto_0
 .end method
 
-.method public final reserveRoom(I)V
+.method public reserveRoom(I)V
     .locals 1
 
     mul-int/lit8 v0, p1, 0x5
@@ -479,7 +483,7 @@
     return-void
 .end method
 
-.method public final setCapacity(I)V
+.method public setCapacity(I)V
     .locals 9
 
     new-array v3, p1, [Lde/greenrobot/dao/internal/LongHashMap$Entry;
@@ -544,7 +548,7 @@
 
     iput p1, p0, Lde/greenrobot/dao/internal/LongHashMap;->capacity:I
 
-    shl-int/lit8 v0, p1, 0x2
+    mul-int/lit8 v0, p1, 0x4
 
     div-int/lit8 v0, v0, 0x3
 
@@ -553,7 +557,7 @@
     return-void
 .end method
 
-.method public final size()I
+.method public size()I
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/LongHashMap;->size:I

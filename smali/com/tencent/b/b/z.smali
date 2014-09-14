@@ -34,7 +34,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1}, Lcom/tencent/b/b/n;->i(Lcom/tencent/b/b/n;)I
+    invoke-static {p1}, Lcom/tencent/b/b/n;->h(Lcom/tencent/b/b/n;)I
 
     move-result v0
 
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    invoke-static {p1}, Lcom/tencent/b/b/n;->j(Lcom/tencent/b/b/n;)I
+    invoke-static {p1}, Lcom/tencent/b/b/n;->i(Lcom/tencent/b/b/n;)I
 
     move-result v1
 
@@ -193,7 +193,7 @@
     :goto_0
     iget-object v0, p0, Lcom/tencent/b/b/z;->d:Lcom/tencent/b/b/n;
 
-    invoke-static {v0}, Lcom/tencent/b/b/n;->k(Lcom/tencent/b/b/n;)V
+    invoke-static {v0}, Lcom/tencent/b/b/n;->j(Lcom/tencent/b/b/n;)V
 
     iget-object v0, p0, Lcom/tencent/b/b/z;->d:Lcom/tencent/b/b/n;
 

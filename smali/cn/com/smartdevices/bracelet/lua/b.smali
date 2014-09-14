@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/lua/b;
+.class Lcn/com/smartdevices/bracelet/lua/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/b;->a:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;

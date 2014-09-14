@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/chart/base/c;
+.class Lcn/com/smartdevices/bracelet/chart/base/c;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 5
 
     const/4 v4, 0x1
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    if-gtz v0, :cond_2
+    if-ge v0, v4, :cond_2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/base/c;->a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
 
@@ -165,7 +165,7 @@
 
     move-result v0
 
-    if-gtz v0, :cond_3
+    if-ge v0, v4, :cond_3
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/base/c;->a:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller;
 

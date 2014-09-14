@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:J
+.field static a:J
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method private static a(Landroid/content/Context;Ljava/lang/String;)J
+.method static a(Landroid/content/Context;Ljava/lang/String;)J
     .locals 2
 
     sget-wide v0, Lcom/tencent/stat/common/SdkProtection;->a:J
@@ -29,7 +29,7 @@
     return-wide v0
 .end method
 
-.method private static a(Landroid/content/Context;Ljava/lang/String;J)V
+.method static a(Landroid/content/Context;Ljava/lang/String;J)V
     .locals 0
 
     invoke-static {p0, p1, p2, p3}, Lcom/tencent/stat/common/StatPreferences;->putLong(Landroid/content/Context;Ljava/lang/String;J)V
@@ -82,7 +82,7 @@
 
     move-result-wide v1
 
-    invoke-static {p0, v0, v1, v2}, Lcom/tencent/stat/common/StatPreferences;->putLong(Landroid/content/Context;Ljava/lang/String;J)V
+    invoke-static {p0, v0, v1, v2}, Lcom/tencent/stat/common/SdkProtection;->a(Landroid/content/Context;Ljava/lang/String;J)V
 
     :cond_1
     const/4 v0, 0x1
@@ -111,7 +111,7 @@
 
     move-result-wide v1
 
-    invoke-static {p0, v0, v1, v2}, Lcom/tencent/stat/common/StatPreferences;->putLong(Landroid/content/Context;Ljava/lang/String;J)V
+    invoke-static {p0, v0, v1, v2}, Lcom/tencent/stat/common/SdkProtection;->a(Landroid/content/Context;Ljava/lang/String;J)V
 
     :cond_0
     return-void

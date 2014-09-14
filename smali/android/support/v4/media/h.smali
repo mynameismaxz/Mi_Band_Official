@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/media/h;
+.class Landroid/support/v4/media/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/d;
+.field final synthetic a:Landroid/support/v4/media/d;
 
 
 # direct methods
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final onAudioFocusChange(I)V
+.method public onAudioFocusChange(I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/h;->a:Landroid/support/v4/media/d;
 
-    iget-object v0, v0, Landroid/support/v4/media/d;->a:Landroid/support/v4/media/c;
+    iget-object v0, v0, Landroid/support/v4/media/d;->d:Landroid/support/v4/media/c;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/c;->b(I)V
+    invoke-interface {v0, p1}, Landroid/support/v4/media/c;->a(I)V
 
     return-void
 .end method

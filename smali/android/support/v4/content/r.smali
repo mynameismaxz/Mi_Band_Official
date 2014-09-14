@@ -1,4 +1,4 @@
-.class final synthetic Landroid/support/v4/content/r;
+.class synthetic Landroid/support/v4/content/r;
 .super Ljava/lang/Object;
 
 

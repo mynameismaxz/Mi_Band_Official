@@ -1,4 +1,4 @@
-.class final Lu/aly/cP;
+.class Lu/aly/cP;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lu/aly/cP;)V
     .locals 0
 
     invoke-direct {p0}, Lu/aly/cP;-><init>()V
@@ -24,7 +24,7 @@
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     if-nez p1, :cond_0

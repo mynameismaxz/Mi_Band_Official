@@ -13,9 +13,9 @@
 
 .field public static final SHOW_AS_ACTION_WITH_TEXT:I = 0x4
 
-.field private static final a:Ljava/lang/String; = "MenuItemCompat"
+.field static final a:Landroid/support/v4/view/E; = null
 
-.field private static b:Landroid/support/v4/view/E;
+.field private static final b:Ljava/lang/String; = "MenuItemCompat"
 
 
 # direct methods
@@ -32,7 +32,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/C;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     :goto_0
     return-void
@@ -46,7 +46,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/B;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     goto :goto_0
 
@@ -55,7 +55,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/A;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sput-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     goto :goto_0
 .end method
@@ -85,7 +85,7 @@
     return v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0}, Landroid/support/v4/view/E;->c(Landroid/view/MenuItem;)Z
 
@@ -111,7 +111,7 @@
     return v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0}, Landroid/support/v4/view/E;->b(Landroid/view/MenuItem;)Z
 
@@ -165,7 +165,7 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0}, Landroid/support/v4/view/E;->a(Landroid/view/MenuItem;)Landroid/view/View;
 
@@ -191,7 +191,7 @@
     return v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0}, Landroid/support/v4/view/E;->d(Landroid/view/MenuItem;)Z
 
@@ -243,7 +243,7 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/view/E;->b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
 
@@ -269,7 +269,7 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/view/E;->a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
 
@@ -295,7 +295,7 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/view/E;->a(Landroid/view/MenuItem;Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)Landroid/view/MenuItem;
 
@@ -319,7 +319,7 @@
     return-void
 
     :cond_0
-    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->b:Landroid/support/v4/view/E;
+    sget-object v0, Landroid/support/v4/view/MenuItemCompat;->a:Landroid/support/v4/view/E;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/view/E;->a(Landroid/view/MenuItem;I)V
 

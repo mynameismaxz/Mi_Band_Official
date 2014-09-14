@@ -144,7 +144,7 @@
 
 
 # virtual methods
-.method public final getFontName()Ljava/lang/String;
+.method public getFontName()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/typeface/MIUITextStyle;->b:Ljava/lang/String;
@@ -152,7 +152,7 @@
     return-object v0
 .end method
 
-.method public final getName()Ljava/lang/String;
+.method public getName()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/typeface/MIUITextStyle;->a:Ljava/lang/String;

@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Landroid/support/v4/view/au;
+.field static final a:Landroid/support/v4/view/au;
 
 
 # direct methods
@@ -39,9 +39,9 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v4/view/au;
+    new-instance v0, Landroid/support/v4/view/av;
 
-    invoke-direct {v0}, Landroid/support/v4/view/au;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/view/av;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/ViewGroupCompat;->a:Landroid/support/v4/view/au;
 
@@ -61,7 +61,7 @@
 
     sget-object v0, Landroid/support/v4/view/ViewGroupCompat;->a:Landroid/support/v4/view/au;
 
-    invoke-virtual {v0, p0, p1, p2}, Landroid/support/v4/view/au;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-interface {v0, p0, p1, p2}, Landroid/support/v4/view/au;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 
@@ -73,7 +73,7 @@
 
     sget-object v0, Landroid/support/v4/view/ViewGroupCompat;->a:Landroid/support/v4/view/au;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/view/au;->a(Landroid/view/ViewGroup;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/view/au;->a(Landroid/view/ViewGroup;Z)V
 
     return-void
 .end method

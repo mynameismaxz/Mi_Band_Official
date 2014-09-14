@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract onReq(Lcom/tencent/mm/sdk/openapi/BaseReq;)V
+.method public abstract onReq(Lcom/tencent/mm/sdk/modelbase/BaseReq;)V
 .end method
 
-.method public abstract onResp(Lcom/tencent/mm/sdk/openapi/BaseResp;)V
+.method public abstract onResp(Lcom/tencent/mm/sdk/modelbase/BaseResp;)V
 .end method

@@ -1,15 +1,15 @@
-.class final Landroid/support/v4/app/s;
+.class Landroid/support/v4/app/s;
 .super Ljava/lang/Object;
 
 
 # static fields
 .field public static final a:[I = null
 
-.field private static b:I = 0x1
+.field public static final b:I = 0x1
 
-.field private static c:I = 0x0
+.field public static final c:I = 0x0
 
-.field private static d:I = 0x2
+.field public static final d:I = 0x2
 
 
 # direct methods

@@ -26,6 +26,22 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-string v0, "um_g_cache"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/b;->d:Ljava/lang/String;
+
+    const-string v0, "single_level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/b;->e:Ljava/lang/String;
+
+    const-string v0, "stat_player_level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/b;->f:Ljava/lang/String;
+
+    const-string v0, "stat_game_level"
+
+    iput-object v0, p0, Lcom/umeng/analytics/game/b;->g:Ljava/lang/String;
+
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/umeng/analytics/game/b;->h:Lcom/umeng/analytics/game/c;

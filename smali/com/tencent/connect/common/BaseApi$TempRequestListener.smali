@@ -6,20 +6,22 @@
 
 
 # instance fields
-.field private a:Lcom/tencent/tauth/IUiListener;
+.field final synthetic a:Lcom/tencent/connect/common/BaseApi;
 
-.field private b:Landroid/os/Handler;
+.field private b:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic c:Lcom/tencent/connect/common/BaseApi;
+.field private c:Landroid/os/Handler;
 
 
 # direct methods
 .method public constructor <init>(Lcom/tencent/connect/common/BaseApi;Lcom/tencent/tauth/IUiListener;)V
     .locals 2
 
+    iput-object p1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->a:Lcom/tencent/connect/common/BaseApi;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->a:Lcom/tencent/tauth/IUiListener;
+    iput-object p2, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Lcom/tencent/tauth/IUiListener;
 
     new-instance v0, Lcom/tencent/connect/common/a;
 
@@ -31,7 +33,7 @@
 
     invoke-direct {v0, p0, v1, p1}, Lcom/tencent/connect/common/a;-><init>(Lcom/tencent/connect/common/BaseApi$TempRequestListener;Landroid/os/Looper;Lcom/tencent/connect/common/BaseApi;)V
 
-    iput-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     return-void
 .end method
@@ -39,7 +41,7 @@
 .method static synthetic a(Lcom/tencent/connect/common/BaseApi$TempRequestListener;)Lcom/tencent/tauth/IUiListener;
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Lcom/tencent/tauth/IUiListener;
 
     return-object v0
 .end method
@@ -49,7 +51,7 @@
 .method public onComplete(Lorg/json/JSONObject;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -61,7 +63,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -71,7 +73,7 @@
 .method public onConnectTimeoutException(Lorg/apache/http/conn/ConnectTimeoutException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -87,7 +89,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -97,7 +99,7 @@
 .method public onHttpStatusException(Lcom/tencent/utils/HttpUtils$HttpStatusException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -113,7 +115,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -123,7 +125,7 @@
 .method public onIOException(Ljava/io/IOException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -139,7 +141,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -149,7 +151,7 @@
 .method public onJSONException(Lorg/json/JSONException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -165,7 +167,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -175,7 +177,7 @@
 .method public onMalformedURLException(Ljava/net/MalformedURLException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -191,7 +193,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -201,7 +203,7 @@
 .method public onNetworkUnavailableException(Lcom/tencent/utils/HttpUtils$NetworkUnavailableException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -217,7 +219,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -227,7 +229,7 @@
 .method public onSocketTimeoutException(Ljava/net/SocketTimeoutException;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -243,7 +245,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -253,7 +255,7 @@
 .method public onUnknowException(Ljava/lang/Exception;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
@@ -269,7 +271,7 @@
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/tencent/connect/common/BaseApi$TempRequestListener;->c:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 

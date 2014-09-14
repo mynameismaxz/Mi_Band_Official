@@ -10,8 +10,13 @@
     <item type="id" name="start_weixin_btn">false</item>
     <item type="id" name="gen_qr_code_btn">false</item>
     <item type="id" name="mask_view">false</item>
-    <item type="id" name="fw_help_back_btn">false</item>
-    <item type="id" name="fw_help_back_txt">false</item>
+    <item type="id" name="bind_weixin_new_img_ll">false</item>
+    <item type="id" name="bind_weixin_new_help_iv">false</item>
+    <item type="id" name="bind_weixin_new_tips_tvx">false</item>
+    <item type="id" name="bind_weixin_new_tips_tv">false</item>
+    <item type="id" name="fw_help_screen_home_back">false</item>
+    <item type="id" name="fw_low_battery_help_tv">false</item>
+    <item type="id" name="fw_low_battery_confirm_btn">false</item>
     <item type="id" name="header">false</item>
     <item type="id" name="home_back">false</item>
     <item type="id" name="view_pager">false</item>
@@ -170,6 +175,7 @@
     <item type="id" name="header_nav_left">false</item>
     <item type="id" name="dynamic_title">false</item>
     <item type="id" name="header_nav_right">false</item>
+    <item type="id" name="dynamic_subtitle">false</item>
     <item type="id" name="dynamic_lv">false</item>
     <item type="id" name="title">false</item>
     <item type="id" name="summary">false</item>

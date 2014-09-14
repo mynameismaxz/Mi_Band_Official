@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/p;
+.class Lcom/tencent/stat/p;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/stat/StatStore;
+.field final synthetic a:Lcom/tencent/stat/StatStore;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 9
 
     const/4 v8, 0x0
@@ -119,7 +119,7 @@
 
     :goto_1
     :try_start_2
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v2
 

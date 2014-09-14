@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/os/a;
+.class Landroid/support/v4/os/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private a:Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;
+.field final a:Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/os/ParcelableCompatCreatorCallbacks",
@@ -49,7 +49,7 @@
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,7 +70,7 @@
     return-object v0
 .end method
 
-.method public final newArray(I)[Ljava/lang/Object;
+.method public newArray(I)[Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

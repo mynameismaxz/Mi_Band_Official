@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/z;
+.class Lcom/google/gson/internal/z;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -20,7 +20,7 @@
 
 
 # virtual methods
-.method public final charAt(I)C
+.method public charAt(I)C
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/z;->a:[C
@@ -30,7 +30,7 @@
     return v0
 .end method
 
-.method public final length()I
+.method public length()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/z;->a:[C
@@ -40,7 +40,7 @@
     return v0
 .end method
 
-.method public final subSequence(II)Ljava/lang/CharSequence;
+.method public subSequence(II)Ljava/lang/CharSequence;
     .locals 3
 
     new-instance v0, Ljava/lang/String;

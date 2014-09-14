@@ -3,235 +3,155 @@
 
 
 # static fields
-.field protected static final TAG:Ljava/lang/String; = "LocationManager"
+.field public static final ACTION_LOCATION_RECEIVED:Ljava/lang/String; = "com.xiaomi.hm.health.LocationReceived"
 
-.field private static final i:I = 0x2710
+.field public static final KEY_LOCATION:Ljava/lang/String; = "Location"
 
-.field private static final j:Z = true
+.field public static final SERVICE_AMAP:Ljava/lang/String; = "ServiceAmap"
 
-.field private static final k:I = 0x1
+.field public static final SERVICE_BAIDU:Ljava/lang/String; = "ServiceBaidu"
+
+.field public static final SERVICE_SYSTEM:Ljava/lang/String; = "ServiceSystem"
+
+.field private static final a:Ljava/lang/String; = "LocationManager"
+
+.field private static final b:I = 0x1b7740
+
+.field private static c:Lcn/com/smartdevices/bracelet/location/LocationManager;
 
 
 # instance fields
-.field a:Ljava/util/Timer;
+.field private d:Landroid/content/Context;
 
-.field b:Landroid/location/LocationManager;
+.field private e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-.field c:Lcn/com/smartdevices/bracelet/location/LocationManager$LocationResult;
+.field private f:Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-.field d:Z
-
-.field e:Z
-
-.field f:Landroid/content/Context;
-
-.field g:Landroid/location/LocationListener;
-
-.field h:Landroid/location/LocationListener;
-
-.field private final l:Landroid/os/Handler;
+.field private g:Lcn/com/smartdevices/bracelet/location/LocationListener;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const/4 v0, 0x0
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Z
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Landroid/content/Context;
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Z
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/location/c;
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/location/LocationOption;-><init>()V
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/c;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Landroid/location/LocationListener;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/location/d;
+    sget-object v1, Lcn/com/smartdevices/bracelet/location/LocationOption$LocationMode;->BatterySave:Lcn/com/smartdevices/bracelet/location/LocationOption$LocationMode;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/d;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationOption;->setMode(Lcn/com/smartdevices/bracelet/location/LocationOption$LocationMode;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->h:Landroid/location/LocationListener;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Landroid/content/Context;
+    const/4 v1, 0x0
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/location/e;
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationOption;->setNeedAddress(Z)V
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/e;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Lcn/com/smartdevices/bracelet/location/LocationOption;
 
-    return-void
-.end method
+    const v1, 0x1b7740
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/location/LocationManager;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
-    .locals 3
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationOption;->setUpdateInterval(I)V
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/b;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/b;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
 
-    const-string v1, "location"
-
-    iget-object v2, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->location:Lcn/com/smartdevices/bracelet/model/UserLocationData;
-
-    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/UserLocationData;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readLoginData()Lcn/com/smartdevices/bracelet/model/LoginData;
-
-    move-result-object v0
-
-    iget-object v1, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->location:Lcn/com/smartdevices/bracelet/model/UserLocationData;
-
-    new-instance v2, Lcn/com/smartdevices/bracelet/location/f;
-
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/location/f;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/webapi/WebAPI;->sendLocation(Lcn/com/smartdevices/bracelet/model/LoginData;Lcn/com/smartdevices/bracelet/model/UserLocationData;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Lcn/com/smartdevices/bracelet/location/LocationListener;
 
     return-void
 .end method
 
-.method private a(Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
-    .locals 3
+.method static synthetic a(Lcn/com/smartdevices/bracelet/location/LocationManager;)Landroid/content/Context;
+    .locals 1
 
-    new-instance v0, Ljava/util/HashMap;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    return-object v0
+.end method
 
-    const-string v1, "location"
+.method public static getManager()Lcn/com/smartdevices/bracelet/location/LocationManager;
+    .locals 1
 
-    iget-object v2, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->location:Lcn/com/smartdevices/bracelet/model/UserLocationData;
+    sget-object v0, Lcn/com/smartdevices/bracelet/location/LocationManager;->c:Lcn/com/smartdevices/bracelet/location/LocationManager;
 
-    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/UserLocationData;->toString()Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v2
+.method public static getManager(Landroid/content/Context;)Lcn/com/smartdevices/bracelet/location/LocationManager;
+    .locals 1
 
-    invoke-static {v2}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v0, Lcn/com/smartdevices/bracelet/location/LocationManager;->c:Lcn/com/smartdevices/bracelet/location/LocationManager;
 
-    move-result-object v2
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/LocationManager;
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readLoginData()Lcn/com/smartdevices/bracelet/model/LoginData;
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/LocationManager;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
+    sput-object v0, Lcn/com/smartdevices/bracelet/location/LocationManager;->c:Lcn/com/smartdevices/bracelet/location/LocationManager;
 
-    iget-object v1, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->location:Lcn/com/smartdevices/bracelet/model/UserLocationData;
+    :cond_0
+    sget-object v0, Lcn/com/smartdevices/bracelet/location/LocationManager;->c:Lcn/com/smartdevices/bracelet/location/LocationManager;
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/location/f;
-
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/location/f;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/webapi/WebAPI;->sendLocation(Lcn/com/smartdevices/bracelet/model/LoginData;Lcn/com/smartdevices/bracelet/model/UserLocationData;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public getLocation(Landroid/content/Context;Lcn/com/smartdevices/bracelet/location/LocationManager$LocationResult;)Z
-    .locals 6
+.method public cancelLocation()V
+    .locals 1
 
-    const-wide/16 v2, 0x0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    const/4 v4, 0x0
+    if-eqz v0, :cond_0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Landroid/content/Context;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->c:Lcn/com/smartdevices/bracelet/location/LocationManager$LocationResult;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
-
-    if-nez v0, :cond_0
-
-    const-string v0, "location"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/LocationManager;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
-
-    const-string v0, "LocationManager"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v5, "lm == null !!!!!!!!!!!!!!"
-
-    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0}, Lcn/com/smartdevices/bracelet/location/LocationService;->stopLocation()V
 
     :cond_0
-    :try_start_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
+    return-void
+.end method
 
-    const-string v1, "gps"
+.method public getService()Lcn/com/smartdevices/bracelet/location/LocationService;
+    .locals 1
 
-    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    move-result v0
+    return-object v0
+.end method
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Z
+.method public getService(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/location/LocationService;
+    .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    const-string v1, "network"
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    move-result v0
+    invoke-interface {v0}, Lcn/com/smartdevices/bracelet/location/LocationService;->stopLocation()V
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
+    :cond_0
     const-string v0, "LocationManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v5, "getLocation!!!!!!!!!!!!!!gps_enabled "
+    const-string v2, "Get Location Service : "
 
-    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-boolean v5, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Z
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, " network_enabled "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v5, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Z
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -239,72 +159,96 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Z
+    const-string v0, "ServiceSystem"
 
-    if-nez v0, :cond_1
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Z
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    :goto_1
-    return v0
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_0
-
-    :cond_1
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
-
-    const-string v1, "gps"
-
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Landroid/location/LocationListener;
-
-    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
-
-    :cond_2
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Z
+    move-result v0
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->b:Landroid/location/LocationManager;
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/SystemLocationService;
 
-    const-string v1, "network"
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Landroid/content/Context;
 
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->h:Landroid/location/LocationListener;
+    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/location/SystemLocationService;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->f:Lcn/com/smartdevices/bracelet/location/LocationOption;
+
+    invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationService;->optionLocationService(Lcn/com/smartdevices/bracelet/location/LocationOption;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Lcn/com/smartdevices/bracelet/location/LocationListener;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Lcn/com/smartdevices/bracelet/location/LocationListener;
+
+    invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationService;->registerLocationListener(Lcn/com/smartdevices/bracelet/location/LocationListener;)V
+
+    :cond_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    return-object v0
 
     :cond_3
-    new-instance v0, Ljava/util/Timer;
+    const-string v0, "ServiceAmap"
 
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->a:Ljava/util/Timer;
+    move-result v0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->a:Ljava/util/Timer;
+    if-eqz v0, :cond_1
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/location/g;
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/AmapLocationService;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/location/g;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Landroid/content/Context;
 
-    const-wide/16 v2, 0x2710
+    invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/location/AmapLocationService;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
-    const/4 v0, 0x1
+    goto :goto_0
+.end method
 
-    goto :goto_1
+.method public registerLocationListener(Lcn/com/smartdevices/bracelet/location/LocationListener;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Lcn/com/smartdevices/bracelet/location/LocationListener;
+
+    return-void
+.end method
+
+.method public requestLocation()V
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    invoke-interface {v0}, Lcn/com/smartdevices/bracelet/location/LocationService;->startLocation()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public requestLocation(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/location/LocationManager;->getService(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/location/LocationService;
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/location/LocationManager;->requestLocation()V
+
+    return-void
 .end method

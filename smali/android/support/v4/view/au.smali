@@ -1,28 +1,10 @@
-.class Landroid/support/v4/view/au;
+.class interface abstract Landroid/support/v4/view/au;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public a(Landroid/view/ViewGroup;Z)V
-    .locals 0
-
-    return-void
+.method public abstract a(Landroid/view/ViewGroup;Z)V
 .end method
 
-.method public a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
+.method public abstract a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 .end method

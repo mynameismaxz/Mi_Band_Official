@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/accessibility/b;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/accessibility/c;
+
 
 # direct methods
 .method constructor <init>()V

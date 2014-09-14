@@ -60,41 +60,53 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
+    .locals 5
 
-    const/16 v3, 0x3e8
+    const/16 v4, 0x3e8
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x0
-
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->a:Landroid/graphics/Bitmap;
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->a:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->b:Landroid/graphics/Bitmap;
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->b:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->c:Landroid/graphics/Bitmap;
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->c:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->d:Landroid/graphics/Bitmap;
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->d:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
+    const/16 v0, 0xf
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->e:I
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->i:F
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    iput v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->i:F
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
+    const-string v0, "Ruler"
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->j:Ljava/lang/String;
+
+    iput v4, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
+
+    const/16 v0, 0x195
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->t:I
+
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
 
     new-instance v0, Landroid/widget/Scroller;
 
@@ -102,7 +114,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
 
-    invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->setFocusable(Z)V
+    invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->setFocusable(Z)V
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -112,7 +124,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
 
@@ -128,7 +140,7 @@
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
 
-    if-ne v3, v0, :cond_0
+    if-ne v4, v0, :cond_0
 
     const/16 v0, 0x3e9
 
@@ -159,47 +171,37 @@
 .end method
 
 .method private a(F)V
-    .locals 5
+    .locals 4
 
-    const/high16 v4, 0x4396
+    const/high16 v3, 0x4396
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    cmpg-float v0, p1, v3
+    cmpg-float v0, p1, v2
 
-    if-gez v0, :cond_1
+    if-gez v0, :cond_0
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
+    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->a()F
 
-    const/16 v2, 0x3ea
+    move-result v1
 
-    if-ne v0, v2, :cond_0
+    cmpl-float v0, v0, v1
 
-    const/high16 v0, 0x44c8
+    if-lez v0, :cond_0
 
     :goto_0
-    cmpl-float v0, v1, v0
-
-    if-lez v0, :cond_1
-
-    :goto_1
     return-void
 
     :cond_0
-    const/high16 v0, 0x42dc
-
-    goto :goto_0
-
-    :cond_1
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
     add-float/2addr v0, p1
 
-    cmpg-float v0, v0, v3
+    cmpg-float v0, v0, v2
 
-    if-gtz v0, :cond_4
+    if-gtz v0, :cond_3
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
@@ -209,53 +211,53 @@
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    rem-float/2addr v0, v4
+    rem-float/2addr v0, v3
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    cmpl-float v0, v0, v3
+    cmpl-float v0, v0, v2
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_2
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    sub-float/2addr v0, v4
+    sub-float/2addr v0, v3
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    :cond_2
-    :goto_2
+    :cond_1
+    :goto_1
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->invalidate()V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
+    :cond_2
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
     const/high16 v1, -0x3c6a
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    add-float/2addr v0, v4
+    add-float/2addr v0, v3
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_4
-    iput v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
+    :cond_3
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    iput v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
+    iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->invalidate()V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private a(Landroid/graphics/Canvas;)V
@@ -302,6 +304,10 @@
 
     int-to-float v3, v0
 
+    const/high16 v4, 0x3f80
+
+    mul-float/2addr v3, v4
+
     add-float/2addr v2, v3
 
     iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
@@ -345,8 +351,6 @@
     iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
 
     goto :goto_1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x3ea
@@ -643,40 +647,32 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 8
+    .locals 3
 
-    const/4 v7, 0x1
+    const/4 v2, 0x1
 
-    const/high16 v3, 0x4170
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
 
-    const/high16 v6, 0x4396
+    if-eqz v0, :cond_1
 
-    const/high16 v5, 0x4120
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
+    move-result v0
 
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
-
-    invoke-virtual {v1}, Landroid/widget/Scroller;->isFinished()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     :goto_0
-    return v7
+    return v2
 
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v1
+    move-result v0
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
@@ -692,11 +688,11 @@
     :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v1
+    move-result v0
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->i:F
+    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->i:F
 
-    sub-float v2, v1, v2
+    sub-float/2addr v0, v1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -704,64 +700,8 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->i:F
 
-    cmpg-float v1, v2, v0
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->a(F)V
 
-    if-gez v1, :cond_2
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
-
-    const/16 v4, 0x3ea
-
-    if-ne v1, v4, :cond_5
-
-    const/high16 v1, 0x44c8
-
-    :goto_1
-    cmpl-float v1, v3, v1
-
-    if-gtz v1, :cond_4
-
-    :cond_2
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
-
-    add-float/2addr v1, v2
-
-    cmpg-float v1, v1, v0
-
-    if-gtz v1, :cond_7
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
-
-    add-float/2addr v1, v2
-
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
-
-    rem-float/2addr v1, v6
-
-    iput v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    cmpl-float v0, v1, v0
-
-    if-lez v0, :cond_6
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    sub-float/2addr v0, v6
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    :cond_3
-    :goto_2
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->invalidate()V
-
-    :cond_4
-    :goto_3
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
 
     if-eqz v0, :cond_0
@@ -772,136 +712,36 @@
 
     goto :goto_0
 
-    :cond_5
-    const/high16 v1, 0x42dc
-
-    goto :goto_1
-
-    :cond_6
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    const/high16 v1, -0x3c6a
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_3
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    add-float/2addr v0, v6
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    goto :goto_2
-
-    :cond_7
-    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->invalidate()V
-
-    goto :goto_3
-
     :pswitch_2
-    iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
+    iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    rem-float/2addr v1, v3
+    const/high16 v1, 0x4170
 
-    neg-float v1, v1
+    rem-float/2addr v0, v1
 
-    invoke-direct {p0, v1}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->b(F)V
+    neg-float v0, v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->b(F)V
 
-    if-eqz v1, :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
+    if-eqz v0, :cond_0
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->w:Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;
 
-    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->divide(FF)F
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->b()F
 
-    move-result v2
+    move-result v1
 
-    float-to-int v2, v2
+    invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;->onScrollEnd(F)V
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
-
-    packed-switch v3, :pswitch_data_1
-
-    :goto_4
-    invoke-interface {v1, v0}, Lcn/com/smartdevices/bracelet/view/RadioRuler$ScrollListener;->onScrollEnd(F)V
-
-    goto/16 :goto_0
-
-    :pswitch_3
-    const v0, 0x402ccccd
-
-    const/high16 v3, 0x42a7
-
-    int-to-float v2, v2
-
-    const/high16 v4, 0x3f80
-
-    invoke-static {v4, v5}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->divide(FF)F
-
-    move-result v4
-
-    invoke-static {v2, v4}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->mulitiply(FF)F
-
-    move-result v2
-
-    invoke-static {v3, v2}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->add(FF)F
-
-    move-result v2
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->add(FF)F
-
-    move-result v0
-
-    goto :goto_4
-
-    :pswitch_4
-    const/high16 v0, 0x41d8
-
-    const v3, 0x43f78000
-
-    int-to-float v2, v2
-
-    invoke-static {v5, v5}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->divide(FF)F
-
-    move-result v4
-
-    invoke-static {v2, v4}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->mulitiply(FF)F
-
-    move-result v2
-
-    invoke-static {v3, v2}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->add(FF)F
-
-    move-result v2
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->add(FF)F
-
-    move-result v0
-
-    goto :goto_4
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
         :pswitch_2
         :pswitch_1
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x3e9
-        :pswitch_3
-        :pswitch_4
     .end packed-switch
 .end method
 
@@ -949,6 +789,10 @@
 
     sub-float v0, p2, v0
 
+    const/high16 v1, 0x3f80
+
+    div-float/2addr v0, v1
+
     sub-float/2addr v0, v3
 
     neg-float v0, v0
@@ -958,8 +802,6 @@
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
     goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x3e9
@@ -1047,6 +889,10 @@
 
     sub-float v0, p1, v0
 
+    const/high16 v1, 0x3f80
+
+    div-float/2addr v0, v1
+
     sub-float/2addr v0, v3
 
     neg-float v0, v0
@@ -1054,6 +900,8 @@
     mul-float/2addr v0, v2
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3e9

@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/K;
+.class Landroid/support/v4/view/K;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,50 +16,50 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/MotionEvent;)I
+.method public a(Landroid/view/MotionEvent;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+    invoke-static {p1}, Landroid/support/v4/view/M;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final a(Landroid/view/MotionEvent;I)I
+.method public a(Landroid/view/MotionEvent;I)I
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->findPointerIndex(I)I
+    invoke-static {p1, p2}, Landroid/support/v4/view/M;->a(Landroid/view/MotionEvent;I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/MotionEvent;I)I
+.method public b(Landroid/view/MotionEvent;I)I
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getPointerId(I)I
+    invoke-static {p1, p2}, Landroid/support/v4/view/M;->b(Landroid/view/MotionEvent;I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final c(Landroid/view/MotionEvent;I)F
+.method public c(Landroid/view/MotionEvent;I)F
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/M;->c(Landroid/view/MotionEvent;I)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public final d(Landroid/view/MotionEvent;I)F
+.method public d(Landroid/view/MotionEvent;I)F
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/M;->d(Landroid/view/MotionEvent;I)F
 
     move-result v0
 

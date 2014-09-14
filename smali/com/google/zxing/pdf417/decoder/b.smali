@@ -68,6 +68,8 @@
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/b;->s:[Ljava/math/BigInteger;
 
+    sget-object v0, Lcom/google/zxing/pdf417/decoder/b;->s:[Ljava/math/BigInteger;
+
     const/4 v1, 0x0
 
     sget-object v2, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
@@ -202,11 +204,11 @@
 
     const/4 v0, 0x6
 
-    new-array v5, v0, [C
+    new-array v6, v0, [C
 
     const/4 v0, 0x6
 
-    new-array v6, v0, [I
+    new-array v7, v0, [I
 
     const/4 v0, 0x0
 
@@ -222,13 +224,13 @@
 
     add-int/lit8 v4, p2, 0x1
 
-    aget v7, p1, p2
+    aget v5, p1, p2
 
     const/16 v8, 0x384
 
-    if-ge v7, v8, :cond_1
+    if-ge v5, v8, :cond_1
 
-    aput v7, v6, v3
+    aput v5, v7, v3
 
     add-int/lit8 v3, v3, 0x1
 
@@ -236,9 +238,9 @@
 
     mul-long/2addr v1, v8
 
-    int-to-long v7, v7
+    int-to-long v8, v5
 
-    add-long/2addr v1, v7
+    add-long/2addr v1, v8
 
     move p2, v4
 
@@ -258,52 +260,56 @@
 
     rsub-int/lit8 v4, v3, 0x5
 
-    const-wide/16 v7, 0x100
+    const-wide/16 v8, 0x100
 
-    rem-long v7, v1, v7
+    rem-long v8, v1, v8
 
-    long-to-int v7, v7
+    long-to-int v5, v8
 
-    int-to-char v7, v7
+    int-to-char v5, v5
 
-    aput-char v7, v5, v4
+    aput-char v5, v6, v4
 
     const/16 v4, 0x8
 
-    shr-long/2addr v1, v4
+    shr-long v4, v1, v4
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    move-wide v1, v4
 
     goto :goto_2
 
     :cond_1
     const/16 v8, 0x384
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x385
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x386
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x39c
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x3a0
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x39b
 
-    if-eq v7, v8, :cond_2
+    if-eq v5, v8, :cond_2
 
     const/16 v8, 0x39a
 
-    if-ne v7, v8, :cond_c
+    if-ne v5, v8, :cond_c
 
     :cond_2
     add-int/lit8 p2, v4, -0x1
@@ -313,7 +319,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v6}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
 
     const/4 v3, 0x0
 
@@ -327,7 +333,7 @@
     :goto_3
     if-ge v0, v3, :cond_a
 
-    aget v1, v6, v0
+    aget v1, v7, v0
 
     int-to-char v1, v1
 
@@ -344,9 +350,9 @@
 
     const/4 v3, 0x0
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :cond_6
     :goto_4
@@ -356,7 +362,7 @@
 
     if-ge p2, v4, :cond_a
 
-    if-nez v2, :cond_a
+    if-nez v0, :cond_a
 
     add-int/lit8 v4, p2, 0x1
 
@@ -370,11 +376,11 @@
 
     const-wide/16 v6, 0x384
 
-    mul-long/2addr v0, v6
+    mul-long/2addr v1, v6
 
     int-to-long v5, v5
 
-    add-long/2addr v0, v5
+    add-long/2addr v1, v5
 
     move p2, v4
 
@@ -400,7 +406,7 @@
 
     const-wide/16 v8, 0xff
 
-    and-long/2addr v8, v0
+    and-long/2addr v8, v1
 
     long-to-int v6, v8
 
@@ -410,13 +416,13 @@
 
     const/16 v5, 0x8
 
-    shr-long v5, v0, v5
+    shr-long v5, v1, v5
 
-    add-int/lit8 v0, v4, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    move v4, v0
+    move v4, v1
 
-    move-wide v0, v5
+    move-wide v1, v5
 
     goto :goto_6
 
@@ -452,7 +458,7 @@
     :cond_8
     add-int/lit8 p2, v4, -0x1
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_5
 
@@ -476,449 +482,113 @@
 .end method
 
 .method private static a([IILjava/lang/StringBuilder;)I
-    .locals 11
+    .locals 9
 
-    const/4 v0, 0x0
+    const/4 v3, 0x1
 
-    aget v0, p0, v0
+    const/4 v1, 0x0
+
+    aget v0, p0, v1
 
     shl-int/lit8 v0, v0, 0x1
 
     new-array v5, v0, [I
 
-    const/4 v0, 0x0
-
-    aget v0, p0, v0
+    aget v0, p0, v1
 
     shl-int/lit8 v0, v0, 0x1
 
     new-array v6, v0, [I
 
-    const/4 v1, 0x0
+    move v0, v1
 
-    const/4 v0, 0x0
+    move v2, v1
 
     :goto_0
-    const/4 v2, 0x0
+    aget v4, p0, v1
 
-    aget v2, p0, v2
-
-    if-ge p1, v2, :cond_1
+    if-ge p1, v4, :cond_1
 
     if-nez v0, :cond_1
 
-    add-int/lit8 v2, p1, 0x1
+    add-int/lit8 v4, p1, 0x1
 
-    aget v3, p0, p1
+    aget v7, p0, p1
 
-    const/16 v4, 0x384
+    const/16 v8, 0x384
 
-    if-ge v3, v4, :cond_0
+    if-ge v7, v8, :cond_0
 
-    div-int/lit8 v4, v3, 0x1e
+    div-int/lit8 v8, v7, 0x1e
 
-    aput v4, v5, v1
+    aput v8, v5, v2
 
-    add-int/lit8 v4, v1, 0x1
+    add-int/lit8 v8, v2, 0x1
 
-    rem-int/lit8 v3, v3, 0x1e
+    rem-int/lit8 v7, v7, 0x1e
 
-    aput v3, v5, v4
+    aput v7, v5, v8
 
-    add-int/lit8 v1, v1, 0x2
+    add-int/lit8 v2, v2, 0x2
 
-    move p1, v2
+    move p1, v4
 
     goto :goto_0
 
     :cond_0
-    sparse-switch v3, :sswitch_data_0
+    sparse-switch v7, :sswitch_data_0
 
-    move p1, v2
+    move p1, v4
 
     goto :goto_0
 
     :sswitch_0
-    add-int/lit8 p1, v2, -0x1
+    add-int/lit8 p1, v4, -0x1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :sswitch_1
-    add-int/lit8 p1, v2, -0x1
+    add-int/lit8 p1, v4, -0x1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :sswitch_2
-    add-int/lit8 p1, v2, -0x1
+    add-int/lit8 p1, v4, -0x1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :sswitch_3
-    const/16 v3, 0x391
+    const/16 v7, 0x391
 
-    aput v3, v5, v1
+    aput v7, v5, v2
 
-    add-int/lit8 p1, v2, 0x1
+    add-int/lit8 p1, v4, 0x1
 
-    aget v2, p0, v2
+    aget v4, p0, v4
 
-    aput v2, v6, v1
+    aput v4, v6, v2
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :sswitch_4
-    add-int/lit8 p1, v2, -0x1
+    add-int/lit8 p1, v4, -0x1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->a:Lcom/google/zxing/pdf417/decoder/d;
+    invoke-static {v5, v6, v2, p2}, Lcom/google/zxing/pdf417/decoder/b;->a([I[IILjava/lang/StringBuilder;)V
 
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/d;->a:Lcom/google/zxing/pdf417/decoder/d;
-
-    const/4 v0, 0x0
-
-    move v4, v0
-
-    :goto_1
-    if-ge v4, v1, :cond_18
-
-    aget v7, v5, v4
-
-    const/4 v0, 0x0
-
-    sget-object v8, Lcom/google/zxing/pdf417/decoder/c;->a:[I
-
-    invoke-virtual {v3}, Lcom/google/zxing/pdf417/decoder/d;->ordinal()I
-
-    move-result v9
-
-    aget v8, v8, v9
-
-    packed-switch v8, :pswitch_data_0
-
-    :cond_2
-    :goto_2
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_3
-    add-int/lit8 v0, v4, 0x1
-
-    move v4, v0
-
-    goto :goto_1
-
-    :pswitch_0
-    const/16 v8, 0x1a
-
-    if-ge v7, v8, :cond_4
-
-    add-int/lit8 v0, v7, 0x41
-
-    int-to-char v0, v0
-
-    goto :goto_2
-
-    :cond_4
-    const/16 v8, 0x1a
-
-    if-ne v7, v8, :cond_5
-
-    const/16 v0, 0x20
-
-    goto :goto_2
-
-    :cond_5
-    const/16 v8, 0x1b
-
-    if-ne v7, v8, :cond_6
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->b:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto :goto_2
-
-    :cond_6
-    const/16 v8, 0x1c
-
-    if-ne v7, v8, :cond_7
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->c:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto :goto_2
-
-    :cond_7
-    const/16 v8, 0x1d
-
-    if-ne v7, v8, :cond_8
-
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/d;->f:Lcom/google/zxing/pdf417/decoder/d;
-
-    move-object v10, v3
-
-    move-object v3, v2
-
-    move-object v2, v10
-
-    goto :goto_2
-
-    :cond_8
-    const/16 v8, 0x391
-
-    if-ne v7, v8, :cond_2
-
-    aget v7, v6, v4
-
-    int-to-char v7, v7
-
-    invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :pswitch_1
-    const/16 v8, 0x1a
-
-    if-ge v7, v8, :cond_9
-
-    add-int/lit8 v0, v7, 0x61
-
-    int-to-char v0, v0
-
-    goto :goto_2
-
-    :cond_9
-    const/16 v8, 0x1a
-
-    if-ne v7, v8, :cond_a
-
-    const/16 v0, 0x20
-
-    goto :goto_2
-
-    :cond_a
-    const/16 v8, 0x1b
-
-    if-ne v7, v8, :cond_b
-
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/d;->e:Lcom/google/zxing/pdf417/decoder/d;
-
-    move-object v10, v3
-
-    move-object v3, v2
-
-    move-object v2, v10
-
-    goto :goto_2
-
-    :cond_b
-    const/16 v8, 0x1c
-
-    if-ne v7, v8, :cond_c
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->c:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto :goto_2
-
-    :cond_c
-    const/16 v8, 0x1d
-
-    if-ne v7, v8, :cond_d
-
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/d;->f:Lcom/google/zxing/pdf417/decoder/d;
-
-    move-object v10, v3
-
-    move-object v3, v2
-
-    move-object v2, v10
-
-    goto :goto_2
-
-    :cond_d
-    const/16 v8, 0x391
-
-    if-ne v7, v8, :cond_2
-
-    aget v7, v6, v4
-
-    int-to-char v7, v7
-
-    invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :pswitch_2
-    const/16 v8, 0x19
-
-    if-ge v7, v8, :cond_e
-
-    sget-object v0, Lcom/google/zxing/pdf417/decoder/b;->r:[C
-
-    aget-char v0, v0, v7
-
-    goto :goto_2
-
-    :cond_e
-    const/16 v8, 0x19
-
-    if-ne v7, v8, :cond_f
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->d:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto :goto_2
-
-    :cond_f
-    const/16 v8, 0x1a
-
-    if-ne v7, v8, :cond_10
-
-    const/16 v0, 0x20
-
-    goto/16 :goto_2
-
-    :cond_10
-    const/16 v8, 0x1b
-
-    if-ne v7, v8, :cond_11
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->b:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto/16 :goto_2
-
-    :cond_11
-    const/16 v8, 0x1c
-
-    if-ne v7, v8, :cond_12
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->a:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto/16 :goto_2
-
-    :cond_12
-    const/16 v8, 0x1d
-
-    if-ne v7, v8, :cond_13
-
-    sget-object v2, Lcom/google/zxing/pdf417/decoder/d;->f:Lcom/google/zxing/pdf417/decoder/d;
-
-    move-object v10, v3
-
-    move-object v3, v2
-
-    move-object v2, v10
-
-    goto/16 :goto_2
-
-    :cond_13
-    const/16 v8, 0x391
-
-    if-ne v7, v8, :cond_2
-
-    aget v7, v6, v4
-
-    int-to-char v7, v7
-
-    invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_2
-
-    :pswitch_3
-    const/16 v8, 0x1d
-
-    if-ge v7, v8, :cond_14
-
-    sget-object v0, Lcom/google/zxing/pdf417/decoder/b;->q:[C
-
-    aget-char v0, v0, v7
-
-    goto/16 :goto_2
-
-    :cond_14
-    const/16 v8, 0x1d
-
-    if-ne v7, v8, :cond_15
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->a:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto/16 :goto_2
-
-    :cond_15
-    const/16 v8, 0x391
-
-    if-ne v7, v8, :cond_2
-
-    aget v7, v6, v4
-
-    int-to-char v7, v7
-
-    invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_2
-
-    :pswitch_4
-    const/16 v3, 0x1a
-
-    if-ge v7, v3, :cond_16
-
-    add-int/lit8 v0, v7, 0x41
-
-    int-to-char v0, v0
-
-    move-object v3, v2
-
-    goto/16 :goto_2
-
-    :cond_16
-    const/16 v3, 0x1a
-
-    if-ne v7, v3, :cond_19
-
-    const/16 v0, 0x20
-
-    move-object v3, v2
-
-    goto/16 :goto_2
-
-    :pswitch_5
-    const/16 v3, 0x1d
-
-    if-ge v7, v3, :cond_17
-
-    sget-object v0, Lcom/google/zxing/pdf417/decoder/b;->q:[C
-
-    aget-char v0, v0, v7
-
-    move-object v3, v2
-
-    goto/16 :goto_2
-
-    :cond_17
-    const/16 v3, 0x1d
-
-    if-ne v7, v3, :cond_19
-
-    sget-object v3, Lcom/google/zxing/pdf417/decoder/d;->a:Lcom/google/zxing/pdf417/decoder/d;
-
-    goto/16 :goto_2
-
-    :cond_18
     return p1
-
-    :cond_19
-    move-object v3, v2
-
-    goto/16 :goto_2
 
     :sswitch_data_0
     .sparse-switch
@@ -928,16 +598,6 @@
         0x391 -> :sswitch_3
         0x39c -> :sswitch_4
     .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-    .end packed-switch
 .end method
 
 .method static a([I)Lcom/google/zxing/common/DecoderResult;
@@ -1472,9 +1132,9 @@
 .end method
 
 .method private static b([IILjava/lang/StringBuilder;)I
-    .locals 11
+    .locals 9
 
-    const/16 v10, 0x384
+    const/16 v8, 0x384
 
     const/4 v3, 0x1
 
@@ -1482,7 +1142,7 @@
 
     const/16 v0, 0xf
 
-    new-array v6, v0, [I
+    new-array v5, v0, [I
 
     move v0, v1
 
@@ -1492,13 +1152,13 @@
     :goto_0
     aget v4, p0, v1
 
-    if-ge p1, v4, :cond_7
+    if-ge p1, v4, :cond_5
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_5
 
     add-int/lit8 v4, p1, 0x1
 
-    aget v5, p0, p1
+    aget v6, p0, p1
 
     aget v7, p0, v1
 
@@ -1507,9 +1167,9 @@
     move v0, v3
 
     :cond_1
-    if-ge v5, v10, :cond_3
+    if-ge v6, v8, :cond_3
 
-    aput v5, v6, v2
+    aput v6, v5, v2
 
     add-int/lit8 v2, v2, 0x1
 
@@ -1522,99 +1182,12 @@
 
     const/16 v4, 0x386
 
-    if-eq v5, v4, :cond_2
+    if-eq v6, v4, :cond_2
 
     if-eqz v0, :cond_0
 
     :cond_2
-    sget-object v4, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
-
-    move-object v5, v4
-
-    move v4, v1
-
-    :goto_2
-    if-ge v4, v2, :cond_5
-
-    sget-object v7, Lcom/google/zxing/pdf417/decoder/b;->s:[Ljava/math/BigInteger;
-
-    sub-int v8, v2, v4
-
-    add-int/lit8 v8, v8, -0x1
-
-    aget-object v7, v7, v8
-
-    aget v8, v6, v4
-
-    int-to-long v8, v8
-
-    invoke-static {v8, v9}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v7}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    move-result-object v5
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    if-eq v5, v10, :cond_4
-
-    const/16 v7, 0x385
-
-    if-eq v5, v7, :cond_4
-
-    const/16 v7, 0x39c
-
-    if-eq v5, v7, :cond_4
-
-    const/16 v7, 0x3a0
-
-    if-eq v5, v7, :cond_4
-
-    const/16 v7, 0x39b
-
-    if-eq v5, v7, :cond_4
-
-    const/16 v7, 0x39a
-
-    if-ne v5, v7, :cond_8
-
-    :cond_4
-    add-int/lit8 p1, v4, -0x1
-
-    move v0, v3
-
-    goto :goto_1
-
-    :cond_5
-    invoke-virtual {v5}, Ljava/math/BigInteger;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v4
-
-    const/16 v5, 0x31
-
-    if-eq v4, v5, :cond_6
-
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_6
-    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lcom/google/zxing/pdf417/decoder/b;->a([II)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1624,10 +1197,40 @@
 
     goto :goto_0
 
-    :cond_7
+    :cond_3
+    if-eq v6, v8, :cond_4
+
+    const/16 v7, 0x385
+
+    if-eq v6, v7, :cond_4
+
+    const/16 v7, 0x39c
+
+    if-eq v6, v7, :cond_4
+
+    const/16 v7, 0x3a0
+
+    if-eq v6, v7, :cond_4
+
+    const/16 v7, 0x39b
+
+    if-eq v6, v7, :cond_4
+
+    const/16 v7, 0x39a
+
+    if-ne v6, v7, :cond_6
+
+    :cond_4
+    add-int/lit8 p1, v4, -0x1
+
+    move v0, v3
+
+    goto :goto_1
+
+    :cond_5
     return p1
 
-    :cond_8
+    :cond_6
     move p1, v4
 
     goto :goto_1

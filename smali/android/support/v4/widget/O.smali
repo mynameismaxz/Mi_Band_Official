@@ -1,19 +1,19 @@
-.class final Landroid/support/v4/widget/O;
-.super Landroid/support/v4/widget/L;
+.class Landroid/support/v4/widget/O;
+.super Landroid/support/v4/widget/M;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/support/v4/widget/L;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/widget/M;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/support/v4/widget/SlidingPaneLayout;Landroid/view/View;)V
+.method public a(Landroid/support/v4/widget/SlidingPaneLayout;Landroid/view/View;)V
     .locals 1
 
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;

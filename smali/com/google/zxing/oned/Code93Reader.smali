@@ -32,6 +32,8 @@
 
     sput-object v0, Lcom/google/zxing/oned/Code93Reader;->c:[I
 
+    sget-object v0, Lcom/google/zxing/oned/Code93Reader;->c:[I
+
     const/16 v1, 0x2f
 
     aget v0, v0, v1
@@ -191,7 +193,9 @@
     move v4, v1
 
     :goto_2
-    if-lez v4, :cond_1
+    const/4 v1, 0x1
+
+    if-lt v4, v1, :cond_1
 
     const/4 v1, 0x4
 
@@ -511,11 +515,11 @@
 
     array-length v8, v7
 
+    move v5, v0
+
     move v2, v4
 
     move v1, v4
-
-    move v5, v0
 
     :goto_0
     if-ge v5, v6, :cond_4
@@ -634,7 +638,7 @@
 
 
 # virtual methods
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -648,86 +652,21 @@
         }
     .end annotation
 
+    invoke-static {p2}, Lcom/google/zxing/oned/Code93Reader;->a(Lcom/google/zxing/common/BitArray;)[I
+
+    move-result-object v3
+
+    const/4 v0, 0x1
+
+    aget v0, v3, v0
+
+    invoke-virtual {p2, v0}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
+
+    move-result v0
+
     invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v4
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, v0}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x6
-
-    new-array v5, v2, [I
-
-    const/4 v2, 0x0
-
-    array-length v6, v5
-
-    move v3, v0
-
-    :goto_0
-    if-ge v3, v4, :cond_4
-
-    invoke-virtual {p2, v3}, Lcom/google/zxing/common/BitArray;->get(I)Z
-
-    move-result v7
-
-    xor-int/2addr v7, v2
-
-    if-eqz v7, :cond_0
-
-    aget v7, v5, v1
-
-    add-int/lit8 v7, v7, 0x1
-
-    aput v7, v5, v1
-
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    add-int/lit8 v7, v6, -0x1
-
-    if-ne v1, v7, :cond_2
-
-    invoke-static {v5}, Lcom/google/zxing/oned/Code93Reader;->a([I)I
-
-    move-result v7
-
-    sget v8, Lcom/google/zxing/oned/Code93Reader;->d:I
-
-    if-ne v7, v8, :cond_1
-
-    const/4 v1, 0x2
-
-    new-array v4, v1, [I
-
-    const/4 v1, 0x0
-
-    aput v0, v4, v1
-
-    const/4 v0, 0x1
-
-    aput v3, v4, v0
-
-    const/4 v0, 0x1
-
-    aget v0, v4, v0
-
-    invoke-virtual {p2, v0}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v3
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -739,14 +678,14 @@
 
     new-array v6, v1, [I
 
-    :goto_2
+    :goto_0
     invoke-static {p2, v0, v6}, Lcom/google/zxing/oned/Code93Reader;->recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
 
     invoke-static {v6}, Lcom/google/zxing/oned/Code93Reader;->a([I)I
 
     move-result v1
 
-    if-gez v1, :cond_5
+    if-gez v1, :cond_0
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -754,70 +693,7 @@
 
     throw v0
 
-    :cond_1
-    const/4 v7, 0x0
-
-    aget v7, v5, v7
-
-    const/4 v8, 0x1
-
-    aget v8, v5, v8
-
-    add-int/2addr v7, v8
-
-    add-int/2addr v0, v7
-
-    const/4 v7, 0x2
-
-    const/4 v8, 0x0
-
-    add-int/lit8 v9, v6, -0x2
-
-    invoke-static {v5, v7, v5, v8, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    add-int/lit8 v7, v6, -0x2
-
-    const/4 v8, 0x0
-
-    aput v8, v5, v7
-
-    add-int/lit8 v7, v6, -0x1
-
-    const/4 v8, 0x0
-
-    aput v8, v5, v7
-
-    add-int/lit8 v1, v1, -0x1
-
-    :goto_3
-    const/4 v7, 0x1
-
-    aput v7, v5, v1
-
-    if-nez v2, :cond_3
-
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v2, 0x0
-
-    goto :goto_1
-
-    :cond_4
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_5
+    :cond_0
     invoke-static {v1}, Lcom/google/zxing/oned/Code93Reader;->a(I)C
 
     move-result v7
@@ -830,8 +706,8 @@
 
     move v2, v0
 
-    :goto_4
-    if-ge v1, v8, :cond_6
+    :goto_1
+    if-ge v1, v8, :cond_1
 
     aget v9, v6, v1
 
@@ -839,16 +715,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_1
 
-    :cond_6
+    :cond_1
     invoke-virtual {p2, v2}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
 
     move-result v1
 
     const/16 v2, 0x2a
 
-    if-ne v7, v2, :cond_a
+    if-ne v7, v2, :cond_5
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
 
@@ -858,29 +734,29 @@
 
     invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
 
-    if-eq v1, v3, :cond_7
+    if-eq v1, v4, :cond_2
 
     invoke-virtual {p2, v1}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_3
 
-    :cond_7
+    :cond_2
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v0
 
     throw v0
 
-    :cond_8
+    :cond_3
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    if-ge v2, v3, :cond_9
+    if-ge v2, v4, :cond_4
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -888,22 +764,8 @@
 
     throw v0
 
-    :cond_9
-    invoke-interface {v5}, Ljava/lang/CharSequence;->length()I
-
-    move-result v2
-
-    add-int/lit8 v3, v2, -0x2
-
-    const/16 v6, 0x14
-
-    invoke-static {v5, v3, v6}, Lcom/google/zxing/oned/Code93Reader;->a(Ljava/lang/CharSequence;II)V
-
-    add-int/lit8 v2, v2, -0x1
-
-    const/16 v3, 0xf
-
-    invoke-static {v5, v2, v3}, Lcom/google/zxing/oned/Code93Reader;->a(Ljava/lang/CharSequence;II)V
+    :cond_4
+    invoke-static {v5}, Lcom/google/zxing/oned/Code93Reader;->b(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
 
@@ -917,13 +779,13 @@
 
     move-result-object v2
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    aget v3, v4, v3
+    aget v4, v3, v4
 
     const/4 v5, 0x0
 
-    aget v4, v4, v5
+    aget v3, v3, v5
 
     add-int/2addr v3, v4
 
@@ -975,8 +837,8 @@
 
     return-object v1
 
-    :cond_a
+    :cond_5
     move v0, v1
 
-    goto/16 :goto_2
+    goto/16 :goto_0
 .end method

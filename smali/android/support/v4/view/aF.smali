@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/view/aF;
+.class Landroid/support/v4/view/aF;
 .super Landroid/database/DataSetObserver;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/ViewPager;
+.field final synthetic a:Landroid/support/v4/view/ViewPager;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/support/v4/view/ViewPager;B)V
+.method synthetic constructor <init>(Landroid/support/v4/view/ViewPager;Landroid/support/v4/view/ay;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/support/v4/view/aF;-><init>(Landroid/support/v4/view/ViewPager;)V
@@ -27,22 +27,22 @@
 
 
 # virtual methods
-.method public final onChanged()V
+.method public onChanged()V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/aF;->a:Landroid/support/v4/view/ViewPager;
 
-    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->a()V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->b()V
 
     return-void
 .end method
 
-.method public final onInvalidated()V
+.method public onInvalidated()V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/aF;->a:Landroid/support/v4/view/ViewPager;
 
-    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->a()V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->b()V
 
     return-void
 .end method

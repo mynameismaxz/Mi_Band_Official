@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/A;
+.class Landroid/support/v4/app/A;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/app/Fragment;
+.field final synthetic a:Landroid/support/v4/app/Fragment;
 
-.field private synthetic b:Landroid/support/v4/app/v;
+.field final synthetic b:Landroid/support/v4/app/v;
 
 
 # direct methods
@@ -26,14 +26,14 @@
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 6
 
     const/4 v3, 0x0
 
     iget-object v0, p0, Landroid/support/v4/app/A;->a:Landroid/support/v4/app/Fragment;
 
-    iget-object v0, v0, Landroid/support/v4/app/Fragment;->b:Landroid/view/View;
+    iget-object v0, v0, Landroid/support/v4/app/Fragment;->q:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
@@ -41,7 +41,7 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Landroid/support/v4/app/Fragment;->b:Landroid/view/View;
+    iput-object v1, v0, Landroid/support/v4/app/Fragment;->q:Landroid/view/View;
 
     iget-object v0, p0, Landroid/support/v4/app/A;->b:Landroid/support/v4/app/v;
 
@@ -49,7 +49,7 @@
 
     iget-object v2, p0, Landroid/support/v4/app/A;->a:Landroid/support/v4/app/Fragment;
 
-    iget v2, v2, Landroid/support/v4/app/Fragment;->c:I
+    iget v2, v2, Landroid/support/v4/app/Fragment;->r:I
 
     move v4, v3
 
@@ -61,13 +61,13 @@
     return-void
 .end method
 
-.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/view/animation/Animation;)V
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
 
     return-void

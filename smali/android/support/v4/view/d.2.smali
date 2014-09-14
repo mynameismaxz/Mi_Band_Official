@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/d;
+.class Landroid/support/v4/view/d;
 .super Landroid/support/v4/view/a;
 
 
@@ -13,12 +13,10 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+.method public a(Ljava/lang/Object;Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
     .locals 2
 
-    check-cast p1, Landroid/view/View$AccessibilityDelegate;
-
-    invoke-virtual {p1, p2}, Landroid/view/View$AccessibilityDelegate;->getAccessibilityNodeProvider(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;
+    invoke-static {p1, p2}, Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean;->a(Ljava/lang/Object;Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -37,26 +35,24 @@
     goto :goto_0
 .end method
 
-.method public final a(Landroid/support/v4/view/AccessibilityDelegateCompat;)Ljava/lang/Object;
-    .locals 2
+.method public a(Landroid/support/v4/view/AccessibilityDelegateCompat;)Ljava/lang/Object;
+    .locals 1
 
     new-instance v0, Landroid/support/v4/view/e;
 
     invoke-direct {v0, p0, p1}, Landroid/support/v4/view/e;-><init>(Landroid/support/v4/view/d;Landroid/support/v4/view/AccessibilityDelegateCompat;)V
 
-    new-instance v1, Landroid/support/v4/view/h;
+    invoke-static {v0}, Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean;->a(Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0}, Landroid/support/v4/view/h;-><init>(Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean;)V
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;Landroid/view/View;ILandroid/os/Bundle;)Z
+.method public a(Ljava/lang/Object;Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 1
 
-    check-cast p1, Landroid/view/View$AccessibilityDelegate;
-
-    invoke-virtual {p1, p2, p3, p4}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/view/AccessibilityDelegateCompatJellyBean;->a(Ljava/lang/Object;Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result v0
 

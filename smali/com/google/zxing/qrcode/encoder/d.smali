@@ -1297,7 +1297,7 @@
     return-void
 .end method
 
-.method private static a(I)I
+.method static a(I)I
     .locals 1
 
     const/4 v0, 0x0
@@ -1315,7 +1315,7 @@
     return v0
 .end method
 
-.method private static a(II)I
+.method static a(II)I
     .locals 3
 
     invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/d;->a(I)I
@@ -1424,7 +1424,7 @@
     return-void
 .end method
 
-.method private static a(ILcom/google/zxing/common/BitArray;)V
+.method static a(ILcom/google/zxing/common/BitArray;)V
     .locals 3
 
     const/4 v0, 0x6
@@ -1453,9 +1453,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "should not happen but we got: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
@@ -1477,408 +1481,32 @@
     return-void
 .end method
 
-.method private static a(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-    .locals 11
+.method static a(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+    .locals 0
 
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->a:[[I
+    invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/d;->d(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    const/4 v1, 0x0
+    invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/d;->c(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    aget-object v0, v0, v1
+    invoke-static {p0, p1}, Lcom/google/zxing/qrcode/encoder/d;->c(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    array-length v0, v0
+    invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/d;->b(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p1}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p1}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v2
-
-    sub-int v0, v2, v0
-
-    invoke-static {v1, v0, p1}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->b:[[I
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    array-length v0, v0
-
-    const/4 v1, 0x0
-
-    add-int/lit8 v2, v0, -0x1
-
-    invoke-static {v1, v2, p1}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    add-int/lit8 v2, v0, -0x1
-
-    invoke-static {v1, v2, p1}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v2
-
-    sub-int v0, v2, v0
-
-    invoke-static {v1, v0, p1}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->c:[[I
-
-    array-length v0, v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1, p1}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    add-int/lit8 v1, v1, -0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p1}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    invoke-static {v0, v1, p1}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_0
-    const/16 v0, 0x8
-
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v0, v1, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    const/4 v0, 0x2
-
-    if-lt p0, v0, :cond_7
-
-    add-int/lit8 v0, p0, -0x1
-
-    sget-object v1, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
-
-    aget-object v4, v1, v0
-
-    sget-object v1, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
-
-    aget-object v0, v1, v0
-
-    array-length v5, v0
-
-    const/4 v0, 0x0
-
-    move v3, v0
-
-    :goto_0
-    if-ge v3, v5, :cond_7
-
-    const/4 v0, 0x0
-
-    move v2, v0
-
-    :goto_1
-    if-ge v2, v5, :cond_6
-
-    aget v0, v4, v3
-
-    aget v1, v4, v2
-
-    const/4 v6, -0x1
-
-    if-eq v1, v6, :cond_5
-
-    const/4 v6, -0x1
-
-    if-eq v0, v6, :cond_5
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v6
-
-    invoke-static {v6}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    add-int/lit8 v6, v1, -0x2
-
-    add-int/lit8 v7, v0, -0x2
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    array-length v0, v0
-
-    const/4 v1, 0x5
-
-    if-ne v0, v1, :cond_1
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    array-length v0, v0
-
-    const/4 v1, 0x5
-
-    if-eq v0, v1, :cond_2
-
-    :cond_1
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    const-string v1, "Bad position adjustment"
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_2
-    const/4 v0, 0x5
-
-    if-ge v1, v0, :cond_5
-
-    const/4 v0, 0x0
-
-    :goto_3
-    const/4 v8, 0x5
-
-    if-ge v0, v8, :cond_4
-
-    add-int v8, v6, v0
-
-    add-int v9, v7, v1
-
-    invoke-virtual {p1, v8, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v8
-
-    invoke-static {v8}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v8
-
-    if-nez v8, :cond_3
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_3
-    add-int v8, v6, v0
-
-    add-int v9, v7, v1
-
-    sget-object v10, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    aget-object v10, v10, v1
-
-    aget v10, v10, v0
-
-    invoke-virtual {p1, v8, v9, v10}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
-
-    :cond_4
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_2
-
-    :cond_5
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    goto :goto_1
-
-    :cond_6
-    add-int/lit8 v0, v3, 0x1
-
-    move v3, v0
-
-    goto :goto_0
-
-    :cond_7
-    const/16 v0, 0x8
-
-    :goto_4
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    if-ge v0, v1, :cond_c
-
-    add-int/lit8 v1, v0, 0x1
-
-    rem-int/lit8 v1, v1, 0x2
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v0, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->c(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_8
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_8
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v0, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v0, v2, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    :cond_9
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->c(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_a
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_a
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_b
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    :cond_b
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_c
     return-void
 .end method
 
-.method private static a(Lcom/google/zxing/common/BitArray;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-    .locals 13
+.method static a(Lcom/google/zxing/common/BitArray;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+    .locals 11
 
-    const/4 v1, 0x1
+    const/4 v7, -0x1
 
-    const/4 v9, -0x1
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
 
     move-result v0
 
-    add-int/lit8 v3, v0, -0x1
+    add-int/lit8 v2, v0, -0x1
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
 
@@ -1886,267 +1514,156 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    move v8, v9
+    move v6, v7
 
-    move v4, v2
+    move v3, v1
 
     :goto_0
-    if-lez v3, :cond_8
+    if-lez v2, :cond_6
 
-    const/4 v5, 0x6
+    const/4 v4, 0x6
 
-    if-ne v3, v5, :cond_a
+    if-ne v2, v4, :cond_8
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    move v6, v0
-
-    move v7, v3
-
-    move v0, v4
-
-    :goto_1
-    if-ltz v6, :cond_7
-
-    invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v3
-
-    if-ge v6, v3, :cond_7
+    move v4, v0
 
     move v5, v2
 
+    move v0, v3
+
+    :goto_1
+    if-ltz v4, :cond_5
+
+    invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
+
+    move-result v2
+
+    if-ge v4, v2, :cond_5
+
+    move v3, v1
+
     :goto_2
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ge v5, v3, :cond_6
+    if-ge v3, v2, :cond_4
 
-    sub-int v10, v7, v5
+    sub-int v8, v5, v3
 
-    invoke-virtual {p2, v10, v6}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
+    invoke-virtual {p2, v8, v4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
-    move-result v3
+    move-result v2
 
-    invoke-static {v3}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
+    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3
+    if-nez v2, :cond_0
 
+    :goto_3
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    goto :goto_2
+
+    :cond_0
     invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v3
+    move-result v2
 
-    if-ge v0, v3, :cond_0
+    if-ge v0, v2, :cond_2
 
     invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v3
+    move-result v2
 
     add-int/lit8 v0, v0, 0x1
 
-    move v12, v3
+    move v10, v2
 
-    move v3, v0
+    move v2, v0
 
-    move v0, v12
+    move v0, v10
 
-    :goto_3
-    if-eq p1, v9, :cond_2
+    :goto_4
+    if-eq p1, v7, :cond_1
 
-    invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/QRCode;->isValidMaskPattern(I)Z
+    invoke-static {p1, v8, v4}, Lcom/google/zxing/qrcode/encoder/c;->a(III)Z
 
-    move-result v4
+    move-result v9
 
-    if-nez v4, :cond_1
+    if-eqz v9, :cond_1
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    if-nez v0, :cond_3
 
-    const-string v1, "Invalid mask pattern"
+    const/4 v0, 0x1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    move v3, v0
+    :cond_1
+    :goto_5
+    invoke-virtual {p2, v8, v4, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
     move v0, v2
 
     goto :goto_3
 
-    :cond_1
-    packed-switch p1, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Invalid mask pattern: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_0
-    add-int v4, v6, v10
-
-    and-int/lit8 v4, v4, 0x1
-
-    :goto_4
-    if-nez v4, :cond_4
-
-    move v4, v1
-
-    :goto_5
-    if-eqz v4, :cond_2
-
-    if-nez v0, :cond_5
+    :cond_2
+    move v2, v0
 
     move v0, v1
 
-    :cond_2
-    :goto_6
-    invoke-virtual {p2, v10, v6, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
-
-    move v0, v3
+    goto :goto_4
 
     :cond_3
-    add-int/lit8 v3, v5, 0x1
-
-    move v5, v3
-
-    goto :goto_2
-
-    :pswitch_1
-    and-int/lit8 v4, v6, 0x1
-
-    goto :goto_4
-
-    :pswitch_2
-    rem-int/lit8 v4, v10, 0x3
-
-    goto :goto_4
-
-    :pswitch_3
-    add-int v4, v6, v10
-
-    rem-int/lit8 v4, v4, 0x3
-
-    goto :goto_4
-
-    :pswitch_4
-    ushr-int/lit8 v4, v6, 0x1
-
-    div-int/lit8 v11, v10, 0x3
-
-    add-int/2addr v4, v11
-
-    and-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    :pswitch_5
-    mul-int v4, v6, v10
-
-    and-int/lit8 v11, v4, 0x1
-
-    rem-int/lit8 v4, v4, 0x3
-
-    add-int/2addr v4, v11
-
-    goto :goto_4
-
-    :pswitch_6
-    mul-int v4, v6, v10
-
-    and-int/lit8 v11, v4, 0x1
-
-    rem-int/lit8 v4, v4, 0x3
-
-    add-int/2addr v4, v11
-
-    and-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    :pswitch_7
-    mul-int v4, v6, v10
-
-    rem-int/lit8 v4, v4, 0x3
-
-    add-int v11, v6, v10
-
-    and-int/lit8 v11, v11, 0x1
-
-    add-int/2addr v4, v11
-
-    and-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    :cond_4
-    move v4, v2
+    move v0, v1
 
     goto :goto_5
 
-    :cond_5
-    move v0, v2
+    :cond_4
+    add-int v2, v4, v6
 
-    goto :goto_6
+    move v4, v2
+
+    goto :goto_1
+
+    :cond_5
+    neg-int v6, v6
+
+    add-int v2, v4, v6
+
+    add-int/lit8 v3, v5, -0x2
+
+    move v10, v2
+
+    move v2, v3
+
+    move v3, v0
+
+    move v0, v10
+
+    goto :goto_0
 
     :cond_6
-    add-int v3, v6, v8
-
-    move v6, v3
-
-    goto/16 :goto_1
-
-    :cond_7
-    neg-int v5, v8
-
-    add-int v3, v6, v5
-
-    add-int/lit8 v4, v7, -0x2
-
-    move v8, v5
-
-    move v12, v4
-
-    move v4, v0
-
-    move v0, v3
-
-    move v3, v12
-
-    goto/16 :goto_0
-
-    :cond_8
     invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v0
 
-    if-eq v4, v0, :cond_9
+    if-eq v3, v0, :cond_7
 
     new-instance v0, Lcom/google/zxing/WriterException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Not all bits consumed: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2172,576 +1689,28 @@
 
     throw v0
 
-    :cond_9
+    :cond_7
     return-void
 
-    :cond_a
-    move v6, v0
+    :cond_8
+    move v4, v0
 
-    move v7, v3
+    move v5, v2
 
-    move v0, v4
+    move v0, v3
 
-    goto/16 :goto_1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-    .end packed-switch
+    goto :goto_1
 .end method
 
 .method static a(Lcom/google/zxing/common/BitArray;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-    .locals 11
+    .locals 0
 
-    const/4 v0, -0x1
+    invoke-static {p4}, Lcom/google/zxing/qrcode/encoder/d;->a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    invoke-virtual {p4, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->clear(B)V
+    invoke-static {p2, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->a:[[I
+    invoke-static {p1, p3, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    array-length v0, v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p4}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p4}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v2
-
-    sub-int v0, v2, v0
-
-    invoke-static {v1, v0, p4}, Lcom/google/zxing/qrcode/encoder/d;->d(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->b:[[I
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    array-length v0, v0
-
-    const/4 v1, 0x0
-
-    add-int/lit8 v2, v0, -0x1
-
-    invoke-static {v1, v2, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    add-int/lit8 v2, v0, -0x1
-
-    invoke-static {v1, v2, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v2
-
-    sub-int v0, v2, v0
-
-    invoke-static {v1, v0, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->c:[[I
-
-    array-length v0, v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1, p4}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    add-int/lit8 v1, v1, -0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2, p4}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    invoke-static {v0, v1, p4}, Lcom/google/zxing/qrcode/encoder/d;->b(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    invoke-virtual {p4, v0, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_0
-    const/16 v0, 0x8
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p4, v0, v1, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    const/4 v0, 0x2
-
-    if-lt p2, v0, :cond_7
-
-    add-int/lit8 v0, p2, -0x1
-
-    sget-object v1, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
-
-    aget-object v4, v1, v0
-
-    sget-object v1, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
-
-    aget-object v0, v1, v0
-
-    array-length v5, v0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v5, :cond_7
-
-    const/4 v1, 0x0
-
-    :goto_1
-    if-ge v1, v5, :cond_6
-
-    aget v2, v4, v0
-
-    aget v3, v4, v1
-
-    const/4 v6, -0x1
-
-    if-eq v3, v6, :cond_5
-
-    const/4 v6, -0x1
-
-    if-eq v2, v6, :cond_5
-
-    invoke-virtual {p4, v3, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v6
-
-    invoke-static {v6}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    add-int/lit8 v6, v3, -0x2
-
-    add-int/lit8 v7, v2, -0x2
-
-    sget-object v2, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    const/4 v3, 0x0
-
-    aget-object v2, v2, v3
-
-    array-length v2, v2
-
-    const/4 v3, 0x5
-
-    if-ne v2, v3, :cond_1
-
-    sget-object v2, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    array-length v2, v2
-
-    const/4 v3, 0x5
-
-    if-eq v2, v3, :cond_2
-
-    :cond_1
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    const-string v1, "Bad position adjustment"
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    :goto_2
-    const/4 v2, 0x5
-
-    if-ge v3, v2, :cond_5
-
-    const/4 v2, 0x0
-
-    :goto_3
-    const/4 v8, 0x5
-
-    if-ge v2, v8, :cond_4
-
-    add-int v8, v6, v2
-
-    add-int v9, v7, v3
-
-    invoke-virtual {p4, v8, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v8
-
-    invoke-static {v8}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v8
-
-    if-nez v8, :cond_3
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_3
-    add-int v8, v6, v2
-
-    add-int v9, v7, v3
-
-    sget-object v10, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    aget-object v10, v10, v3
-
-    aget v10, v10, v2
-
-    invoke-virtual {p4, v8, v9, v10}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_3
-
-    :cond_4
-    add-int/lit8 v2, v3, 0x1
-
-    move v3, v2
-
-    goto :goto_2
-
-    :cond_5
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_6
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_7
-    const/16 v0, 0x8
-
-    :goto_4
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x8
-
-    if-ge v0, v1, :cond_c
-
-    add-int/lit8 v1, v0, 0x1
-
-    rem-int/lit8 v1, v1, 0x2
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v0, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->c(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_8
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_8
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v0, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v0, v2, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    :cond_9
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v2, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->c(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_a
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_a
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v2, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_b
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p4, v2, v0, v1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    :cond_b
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_c
-    new-instance v1, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v1}, Lcom/google/zxing/common/BitArray;-><init>()V
-
-    invoke-static {p3}, Lcom/google/zxing/qrcode/encoder/QRCode;->isValidMaskPattern(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    const-string v1, "Invalid mask pattern"
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_d
-    invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->getBits()I
-
-    move-result v0
-
-    shl-int/lit8 v0, v0, 0x3
-
-    or-int/2addr v0, p3
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    const/16 v2, 0x537
-
-    invoke-static {v0, v2}, Lcom/google/zxing/qrcode/encoder/d;->a(II)I
-
-    move-result v0
-
-    const/16 v2, 0xa
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    new-instance v0, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v0}, Lcom/google/zxing/common/BitArray;-><init>()V
-
-    const/16 v2, 0x5412
-
-    const/16 v3, 0xf
-
-    invoke-virtual {v0, v2, v3}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    invoke-virtual {v1, v0}, Lcom/google/zxing/common/BitArray;->xor(Lcom/google/zxing/common/BitArray;)V
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v0
-
-    const/16 v2, 0xf
-
-    if-eq v0, v2, :cond_e
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "should not happen but we got: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    :goto_5
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_10
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, -0x1
-
-    sub-int/2addr v2, v0
-
-    invoke-virtual {v1, v2}, Lcom/google/zxing/common/BitArray;->get(I)Z
-
-    move-result v2
-
-    sget-object v3, Lcom/google/zxing/qrcode/encoder/d;->f:[[I
-
-    aget-object v3, v3, v0
-
-    const/4 v4, 0x0
-
-    aget v3, v3, v4
-
-    sget-object v4, Lcom/google/zxing/qrcode/encoder/d;->f:[[I
-
-    aget-object v4, v4, v0
-
-    const/4 v5, 0x1
-
-    aget v4, v4, v5
-
-    invoke-virtual {p4, v3, v4, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
-
-    const/16 v3, 0x8
-
-    if-ge v0, v3, :cond_f
-
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
-
-    move-result v3
-
-    sub-int/2addr v3, v0
-
-    add-int/lit8 v3, v3, -0x1
-
-    const/16 v4, 0x8
-
-    invoke-virtual {p4, v3, v4, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
-
-    :goto_6
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_5
-
-    :cond_f
-    invoke-virtual {p4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x7
-
-    add-int/lit8 v4, v0, -0x8
-
-    add-int/2addr v3, v4
-
-    const/16 v4, 0x8
-
-    invoke-virtual {p4, v4, v3, v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
-
-    goto :goto_6
-
-    :cond_10
     invoke-static {p2, p4}, Lcom/google/zxing/qrcode/encoder/d;->b(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
     invoke-static {p0, p3, p4}, Lcom/google/zxing/qrcode/encoder/d;->a(Lcom/google/zxing/common/BitArray;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
@@ -2749,7 +1718,7 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/common/BitArray;)V
+.method static a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/common/BitArray;)V
     .locals 3
 
     const/16 v2, 0xf
@@ -2811,9 +1780,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "should not happen but we got: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
@@ -2835,10 +1808,8 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+.method static a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 8
-
-    const/16 v4, 0xf
 
     const/4 v1, 0x0
 
@@ -2848,84 +1819,8 @@
 
     invoke-direct {v2}, Lcom/google/zxing/common/BitArray;-><init>()V
 
-    invoke-static {p1}, Lcom/google/zxing/qrcode/encoder/QRCode;->isValidMaskPattern(I)Z
+    invoke-static {p0, p1, v2}, Lcom/google/zxing/qrcode/encoder/d;->a(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;ILcom/google/zxing/common/BitArray;)V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    const-string v1, "Invalid mask pattern"
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->getBits()I
-
-    move-result v0
-
-    shl-int/lit8 v0, v0, 0x3
-
-    or-int/2addr v0, p1
-
-    const/4 v3, 0x5
-
-    invoke-virtual {v2, v0, v3}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    const/16 v3, 0x537
-
-    invoke-static {v0, v3}, Lcom/google/zxing/qrcode/encoder/d;->a(II)I
-
-    move-result v0
-
-    const/16 v3, 0xa
-
-    invoke-virtual {v2, v0, v3}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    new-instance v0, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v0}, Lcom/google/zxing/common/BitArray;-><init>()V
-
-    const/16 v3, 0x5412
-
-    invoke-virtual {v0, v3, v4}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    invoke-virtual {v2, v0}, Lcom/google/zxing/common/BitArray;->xor(Lcom/google/zxing/common/BitArray;)V
-
-    invoke-virtual {v2}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v0
-
-    if-eq v0, v4, :cond_1
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v3, "should not happen but we got: "
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
     move v0, v1
 
     :goto_0
@@ -2933,7 +1828,7 @@
 
     move-result v3
 
-    if-ge v0, v3, :cond_3
+    if-ge v0, v3, :cond_1
 
     invoke-virtual {v2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
@@ -2963,7 +1858,7 @@
 
     invoke-virtual {p2, v4, v5, v3}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
-    if-ge v0, v7, :cond_2
+    if-ge v0, v7, :cond_0
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
 
@@ -2980,7 +1875,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
 
     move-result v4
@@ -2995,11 +1890,11 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_1
     return-void
 .end method
 
-.method private static a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+.method static a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 1
 
     const/4 v0, -0x1
@@ -3084,10 +1979,8 @@
     return-void
 .end method
 
-.method private static b(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-    .locals 8
-
-    const/4 v7, 0x6
+.method static b(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+    .locals 7
 
     const/4 v1, 0x0
 
@@ -3103,57 +1996,16 @@
 
     invoke-direct {v4}, Lcom/google/zxing/common/BitArray;-><init>()V
 
-    invoke-virtual {v4, p0, v7}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
+    invoke-static {p0, v4}, Lcom/google/zxing/qrcode/encoder/d;->a(ILcom/google/zxing/common/BitArray;)V
 
-    const/16 v0, 0x1f25
-
-    invoke-static {p0, v0}, Lcom/google/zxing/qrcode/encoder/d;->a(II)I
-
-    move-result v0
-
-    const/16 v2, 0xc
-
-    invoke-virtual {v4, v0, v2}, Lcom/google/zxing/common/BitArray;->appendBits(II)V
-
-    invoke-virtual {v4}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v0
-
-    const/16 v2, 0x12
-
-    if-eq v0, v2, :cond_2
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "should not happen but we got: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
     const/16 v0, 0x11
 
     move v3, v1
 
     :goto_0
-    if-ge v3, v7, :cond_0
+    const/4 v2, 0x6
+
+    if-ge v3, v2, :cond_0
 
     move v2, v0
 
@@ -3162,7 +2014,7 @@
     :goto_1
     const/4 v5, 0x3
 
-    if-ge v0, v5, :cond_3
+    if-ge v0, v5, :cond_2
 
     invoke-virtual {v4, v2}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
@@ -3194,7 +2046,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     add-int/lit8 v0, v3, 0x1
 
     move v3, v0
@@ -3400,13 +2252,11 @@
 .end method
 
 .method private static c(ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
-    .locals 14
-
-    const/4 v13, -0x1
-
-    const/4 v12, 0x5
+    .locals 9
 
     const/4 v1, 0x0
+
+    const/4 v8, -0x1
 
     const/4 v0, 0x2
 
@@ -3420,33 +2270,40 @@
 
     sget-object v2, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
 
-    aget-object v5, v2, v0
+    aget-object v3, v2, v0
 
     sget-object v2, Lcom/google/zxing/qrcode/encoder/d;->e:[[I
 
     aget-object v0, v2, v0
 
-    array-length v6, v0
+    array-length v4, v0
 
-    move v4, v1
+    move v2, v1
 
     :goto_0
-    if-ge v4, v6, :cond_0
+    if-ge v2, v4, :cond_0
 
-    move v3, v1
+    move v0, v1
 
     :goto_1
-    if-ge v3, v6, :cond_7
+    if-ge v0, v4, :cond_4
 
-    aget v0, v5, v4
+    aget v5, v3, v2
 
-    aget v2, v5, v3
+    aget v6, v3, v0
 
-    if-eq v2, v13, :cond_6
+    if-eq v6, v8, :cond_2
 
-    if-eq v0, v13, :cond_6
+    if-ne v5, v8, :cond_3
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
+    :cond_2
+    :goto_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p1, v6, v5}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v7
 
@@ -3454,101 +2311,20 @@
 
     move-result v7
 
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_2
 
-    add-int/lit8 v7, v2, -0x2
+    add-int/lit8 v6, v6, -0x2
 
-    add-int/lit8 v8, v0, -0x2
+    add-int/lit8 v5, v5, -0x2
 
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    aget-object v0, v0, v1
-
-    array-length v0, v0
-
-    if-ne v0, v12, :cond_2
-
-    sget-object v0, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    array-length v0, v0
-
-    if-eq v0, v12, :cond_3
-
-    :cond_2
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    const-string v1, "Bad position adjustment"
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/WriterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
-    move v2, v1
-
-    :goto_2
-    if-ge v2, v12, :cond_6
-
-    move v0, v1
-
-    :goto_3
-    if-ge v0, v12, :cond_5
-
-    add-int v9, v7, v0
-
-    add-int v10, v8, v2
-
-    invoke-virtual {p1, v9, v10}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
-
-    move-result v9
-
-    invoke-static {v9}, Lcom/google/zxing/qrcode/encoder/d;->b(I)Z
-
-    move-result v9
-
-    if-nez v9, :cond_4
-
-    new-instance v0, Lcom/google/zxing/WriterException;
-
-    invoke-direct {v0}, Lcom/google/zxing/WriterException;-><init>()V
-
-    throw v0
-
-    :cond_4
-    add-int v9, v7, v0
-
-    add-int v10, v8, v2
-
-    sget-object v11, Lcom/google/zxing/qrcode/encoder/d;->d:[[I
-
-    aget-object v11, v11, v2
-
-    aget v11, v11, v0
-
-    invoke-virtual {p1, v9, v10, v11}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
-
-    :cond_5
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
+    invoke-static {v6, v5, p1}, Lcom/google/zxing/qrcode/encoder/d;->c(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
     goto :goto_2
 
-    :cond_6
-    add-int/lit8 v0, v3, 0x1
+    :cond_4
+    add-int/lit8 v0, v2, 0x1
 
-    move v3, v0
-
-    goto :goto_1
-
-    :cond_7
-    add-int/lit8 v0, v4, 0x1
-
-    move v4, v0
+    move v2, v0
 
     goto :goto_0
 .end method

@@ -58,7 +58,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/xiaomi/miui/analyticstracker/service/d;-><init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;B)V
+    invoke-direct {v0, p0, v1}, Lcom/xiaomi/miui/analyticstracker/service/d;-><init>(Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;Lcom/xiaomi/miui/analyticstracker/service/a;)V
 
     iput-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->s:Lcom/xiaomi/miui/analyticstracker/service/b;
 
@@ -81,7 +81,7 @@
     return-object v0
 .end method
 
-.method private static a(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;J)Ljava/util/List;
+.method private a(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;J)Ljava/util/List;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +101,7 @@
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     move-result v8
 
@@ -113,7 +113,7 @@
     if-ge v6, v8, :cond_0
 
     :try_start_0
-    invoke-virtual {p0, v6}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {p1, v6}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v4
 
@@ -133,13 +133,13 @@
 
     const-string v3, "version_regex"
 
-    invoke-virtual {v4, v3, p2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v3, p3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     const-string v5, "probability"
 
-    invoke-virtual {v4, v5, p3, p4}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+    invoke-virtual {v4, v5, p4, p5}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
@@ -163,11 +163,15 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Failed to compile items regex for app: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -189,7 +193,7 @@
     goto :goto_1
 .end method
 
-.method private static a(Lorg/json/JSONArray;)Ljava/util/Map;
+.method private a(Lorg/json/JSONArray;)Ljava/util/Map;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -208,7 +212,7 @@
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     move-result v2
 
@@ -218,7 +222,7 @@
     if-ge v0, v2, :cond_0
 
     :try_start_0
-    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {p1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v3
 
@@ -262,7 +266,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->t:Landroid/content/Context;
 
@@ -270,7 +274,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->s:Lcom/xiaomi/miui/analyticstracker/service/b;
 
@@ -278,7 +282,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_0
 
     invoke-virtual {v8}, Lorg/json/JSONArray;->length()I
 
@@ -289,7 +293,7 @@
     move v7, v0
 
     :goto_0
-    if-ge v7, v9, :cond_2
+    if-ge v7, v9, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->t:Landroid/content/Context;
 
@@ -297,7 +301,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->t:Landroid/content/Context;
 
@@ -305,8 +309,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_1
 
+    :cond_0
+    return-void
+
+    :cond_1
     :try_start_0
     invoke-virtual {v8, v7}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -316,21 +324,21 @@
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->t:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->t:Landroid/content/Context;
 
-    move-result v2
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    if-nez v2, :cond_1
+    move-result-object v1
 
-    :cond_0
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    :cond_2
     :goto_1
     add-int/lit8 v0, v7, 0x1
 
@@ -338,7 +346,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_3
     const-wide/16 v4, 0x64
 
     const-string v3, ".*"
@@ -346,9 +354,9 @@
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    const-string v2, "probability"
+    const-string v1, "probability"
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_3
 
@@ -356,9 +364,9 @@
 
     :goto_2
     :try_start_2
-    const-string v2, "version"
+    const-string v1, "version"
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -368,21 +376,21 @@
     :try_start_3
     invoke-static {v3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v2
+    move-result-object v1
 
     sget-object v6, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
-    invoke-virtual {v2, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v1, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_2
 
-    iget-object v2, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->r:Lcom/xiaomi/miui/analyticstracker/service/DispatcherManager;
+    iget-object v1, p0, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->r:Lcom/xiaomi/miui/analyticstracker/service/DispatcherManager;
 
     const-string v6, "servers"
 
@@ -390,22 +398,24 @@
 
     move-result-object v6
 
-    invoke-static {v6}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->a(Lorg/json/JSONArray;)Ljava/util/Map;
+    invoke-direct {p0, v6}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->a(Lorg/json/JSONArray;)Ljava/util/Map;
 
     move-result-object v6
 
-    invoke-virtual {v2, v6}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherManager;->switchDispatcher(Ljava/util/Map;)V
+    invoke-virtual {v1, v6}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherManager;->switchDispatcher(Ljava/util/Map;)V
     :try_end_3
     .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_0
 
     :try_start_4
-    const-string v2, "items"
+    const-string v1, "items"
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0, v1, v3, v4, v5}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->a(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;J)Ljava/util/List;
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Lcom/xiaomi/miui/analyticstracker/service/DispatcherHelper;->a(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;J)Ljava/util/List;
     :try_end_4
     .catch Lorg/json/JSONException; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -452,16 +462,13 @@
 
     goto :goto_4
 
-    :cond_2
-    return-void
-
     :catch_2
-    move-exception v2
+    move-exception v1
 
     goto :goto_3
 
     :catch_3
-    move-exception v2
+    move-exception v1
 
     goto :goto_2
 .end method

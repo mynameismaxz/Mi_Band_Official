@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/core/a;
+.class Lcom/nostra13/universalimageloader/core/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -108,7 +108,7 @@
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 6
 
     new-instance v0, Ljava/lang/Thread;

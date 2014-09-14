@@ -1,4 +1,4 @@
-.class final Lkankan/wheel/widget/c;
+.class Lkankan/wheel/widget/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lkankan/wheel/widget/WheelView;
+.field final synthetic a:Lkankan/wheel/widget/WheelView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onFinished()V
+.method public onFinished()V
     .locals 2
 
     const/4 v1, 0x0
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public final onJustify()V
+.method public onJustify()V
     .locals 3
 
     iget-object v0, p0, Lkankan/wheel/widget/c;->a:Lkankan/wheel/widget/WheelView;
@@ -92,7 +92,7 @@
     return-void
 .end method
 
-.method public final onScroll(I)V
+.method public onScroll(I)V
     .locals 3
 
     iget-object v0, p0, Lkankan/wheel/widget/c;->a:Lkankan/wheel/widget/WheelView;
@@ -157,7 +157,7 @@
     goto :goto_0
 .end method
 
-.method public final onStarted()V
+.method public onStarted()V
     .locals 2
 
     iget-object v0, p0, Lkankan/wheel/widget/c;->a:Lkankan/wheel/widget/WheelView;

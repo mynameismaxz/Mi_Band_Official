@@ -1,16 +1,10 @@
-.class interface abstract Landroid/support/v4/view/i;
+.class interface abstract Landroid/support/v4/view/I;
 .super Ljava/lang/Object;
 
 
 # virtual methods
-.method public abstract a(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+.method public abstract a(Landroid/view/MenuItem;)Z
 .end method
 
-.method public abstract a(Z)V
-.end method
-
-.method public abstract a(Landroid/view/MotionEvent;)Z
-.end method
-
-.method public abstract b()Z
+.method public abstract b(Landroid/view/MenuItem;)Z
 .end method

@@ -1,9 +1,9 @@
-.class final Lcom/xiaomi/hm/view/b;
+.class Lcom/xiaomi/hm/view/b;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/view/GifView;
+.field final synthetic a:Lcom/xiaomi/hm/view/GifView;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
     :try_start_0

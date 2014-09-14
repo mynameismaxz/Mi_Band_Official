@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/miui/analyticstracker/g;
+.class Lcom/xiaomi/miui/analyticstracker/g;
 .super Ljava/lang/Thread;
 
 
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/xiaomi/miui/analyticstracker/d;B)V
+.method synthetic constructor <init>(Lcom/xiaomi/miui/analyticstracker/d;Lcom/xiaomi/miui/analyticstracker/e;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/xiaomi/miui/analyticstracker/g;-><init>(Lcom/xiaomi/miui/analyticstracker/d;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     invoke-static {}, Landroid/os/Looper;->prepare()V
@@ -68,7 +68,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method

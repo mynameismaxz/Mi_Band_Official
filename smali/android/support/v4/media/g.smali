@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/media/g;
+.class Landroid/support/v4/media/g;
 .super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/d;
+.field final synthetic a:Landroid/support/v4/media/d;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
     :try_start_0
@@ -33,9 +33,9 @@
 
     iget-object v1, p0, Landroid/support/v4/media/g;->a:Landroid/support/v4/media/d;
 
-    iget-object v1, v1, Landroid/support/v4/media/d;->a:Landroid/support/v4/media/c;
+    iget-object v1, v1, Landroid/support/v4/media/d;->d:Landroid/support/v4/media/c;
 
-    invoke-virtual {v1, v0}, Landroid/support/v4/media/c;->b(Landroid/view/KeyEvent;)V
+    invoke-interface {v1, v0}, Landroid/support/v4/media/c;->a(Landroid/view/KeyEvent;)V
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -20,7 +20,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-static {p0, p1}, Lcn/com/smartdevices/bracelet/chart/compat/e;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     :goto_0
     return-void
@@ -32,24 +32,18 @@
 
     if-lt v0, v1, :cond_1
 
-    invoke-static {}, Landroid/animation/ValueAnimator;->getFrameDelay()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, p1, v0, v1}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-static {p0, p1}, Lcn/com/smartdevices/bracelet/chart/compat/c;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     goto :goto_0
 
     :cond_1
-    const-wide/16 v0, 0xa
-
-    invoke-virtual {p0, p1, v0, v1}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-static {p0, p1}, Lcn/com/smartdevices/bracelet/chart/compat/a;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     goto :goto_0
 .end method
 
 .method public static postOnAnimationInvalidate(Landroid/view/View;)V
-    .locals 3
+    .locals 2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -57,7 +51,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/chart/compat/e;->a(Landroid/view/View;)V
 
     :goto_0
     return-void
@@ -69,26 +63,12 @@
 
     if-lt v0, v1, :cond_1
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/compat/d;
-
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/compat/d;-><init>(Landroid/view/View;)V
-
-    invoke-static {}, Landroid/animation/ValueAnimator;->getFrameDelay()J
-
-    move-result-wide v1
-
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/chart/compat/c;->a(Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/compat/b;
-
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/compat/b;-><init>(Landroid/view/View;)V
-
-    const-wide/16 v1, 0xa
-
-    invoke-virtual {p0, v0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/chart/compat/a;->a(Landroid/view/View;)V
 
     goto :goto_0
 .end method
@@ -102,8 +82,13 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+    invoke-static {p0, p1}, Lcn/com/smartdevices/bracelet/chart/compat/c;->a(Landroid/view/View;F)V
+
+    :goto_0
+    return-void
 
     :cond_0
-    return-void
+    invoke-static {p0, p1}, Lcn/com/smartdevices/bracelet/chart/compat/a;->a(Landroid/view/View;F)V
+
+    goto :goto_0
 .end method

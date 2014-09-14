@@ -1,11 +1,11 @@
-.class final Lcom/google/zxing/aztec/detector/b;
+.class Lcom/google/zxing/aztec/detector/b;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:I
+.field public final a:I
 
-.field private b:I
+.field public final b:I
 
 
 # direct methods
@@ -14,33 +14,33 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/google/zxing/aztec/detector/a;->a:I
+    iput p1, p0, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iput p2, p0, Lcom/google/zxing/aztec/detector/a;->b:I
+    iput p2, p0, Lcom/google/zxing/aztec/detector/b;->b:I
 
     return-void
 .end method
 
-.method synthetic constructor <init>(IIB)V
+.method synthetic constructor <init>(IILcom/google/zxing/aztec/detector/a;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/google/zxing/aztec/detector/a;-><init>(II)V
+    invoke-direct {p0, p1, p2}, Lcom/google/zxing/aztec/detector/b;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/zxing/ResultPoint;
+.method public a()Lcom/google/zxing/ResultPoint;
     .locals 3
 
     new-instance v0, Lcom/google/zxing/ResultPoint;
 
-    iget v1, p0, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v1, p0, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v1, v1
 
-    iget v2, p0, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v2, p0, Lcom/google/zxing/aztec/detector/b;->b:I
 
     int-to-float v2, v2
 

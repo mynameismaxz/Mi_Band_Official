@@ -241,7 +241,9 @@
 .end method
 
 .method public final onProviderDisabled(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     if-eqz p1, :cond_0
 
@@ -265,7 +267,7 @@
 
     iget-object v1, p0, Lcom/tencent/b/b/p;->a:Lcom/tencent/b/b/e;
 
-    invoke-static {v1}, Lcom/tencent/b/b/e;->h(Lcom/tencent/b/b/e;)I
+    invoke-static {v1, v2}, Lcom/tencent/b/b/e;->c(Lcom/tencent/b/b/e;I)I
 
     move-result v1
 
@@ -273,9 +275,7 @@
 
     iget-object v0, p0, Lcom/tencent/b/b/p;->a:Lcom/tencent/b/b/e;
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/tencent/b/b/e;->c(Lcom/tencent/b/b/e;I)I
+    invoke-static {v0, v2}, Lcom/tencent/b/b/e;->d(Lcom/tencent/b/b/e;I)I
 
     iget-object v0, p0, Lcom/tencent/b/b/p;->a:Lcom/tencent/b/b/e;
 
@@ -332,7 +332,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {v0, v1}, Lcom/tencent/b/b/e;->c(Lcom/tencent/b/b/e;I)I
+    invoke-static {v0, v1}, Lcom/tencent/b/b/e;->d(Lcom/tencent/b/b/e;I)I
 
     iget-object v0, p0, Lcom/tencent/b/b/p;->a:Lcom/tencent/b/b/e;
 

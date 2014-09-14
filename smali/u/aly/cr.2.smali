@@ -122,15 +122,13 @@
 .end method
 
 .method private a([BII)I
-    .locals 2
+    .locals 1
 
     invoke-virtual {p0, p3}, Lu/aly/cr;->d(I)V
 
     iget-object v0, p0, Lu/aly/cr;->g:Lu/aly/dm;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1, p3}, Lu/aly/dm;->d([BII)I
+    invoke-virtual {v0, p1, p2, p3}, Lu/aly/dm;->d([BII)I
 
     move-result v0
 
@@ -853,6 +851,8 @@
 
     move-result-object v2
 
+    and-int/lit16 v1, v1, 0xff
+
     int-to-byte v1, v1
 
     invoke-virtual {p0}, Lu/aly/cr;->w()I
@@ -1050,9 +1050,9 @@
 .method public u()B
     .locals 3
 
-    const/4 v2, 0x1
-
     const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     iget-object v0, p0, Lu/aly/cr;->g:Lu/aly/dm;
 
@@ -1060,7 +1060,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_0
+    if-lt v0, v2, :cond_0
 
     iget-object v0, p0, Lu/aly/cr;->g:Lu/aly/dm;
 

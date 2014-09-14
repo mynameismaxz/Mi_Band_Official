@@ -176,7 +176,7 @@
 
     iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLShareReq;->b:Lcom/xiaomi/channel/sdk/MLShareMessage;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLShareReq;->b:Lcom/xiaomi/channel/sdk/MLShareMessage;
 
@@ -249,7 +249,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_2
 
     const-string v2, "share_img_url"
 
@@ -260,14 +260,11 @@
     invoke-virtual {v4, v2, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
-    move v2, v1
+    if-eqz v0, :cond_6
 
-    :cond_1
-    if-eqz v0, :cond_7
+    if-nez v1, :cond_6
 
-    if-nez v2, :cond_7
-
-    if-nez v3, :cond_7
+    if-nez v3, :cond_6
 
     const v0, 0x18704
 
@@ -280,18 +277,18 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_2
+    :cond_1
     move-object v0, v4
 
     :goto_4
     return-object v0
 
-    :cond_3
+    :cond_2
     iget-object v5, p0, Lcom/xiaomi/channel/sdk/MLShareReq;->b:Lcom/xiaomi/channel/sdk/MLShareMessage;
 
     iget-object v5, v5, Lcom/xiaomi/channel/sdk/MLShareMessage;->imgObj:Lcom/xiaomi/channel/sdk/MLImgObj;
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_c
 
     iget-object v5, p0, Lcom/xiaomi/channel/sdk/MLShareReq;->b:Lcom/xiaomi/channel/sdk/MLShareMessage;
 
@@ -301,23 +298,23 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_c
 
     invoke-static {}, Lcom/xiaomi/channel/sdk/ShareUtils;->getTmpImgFile()Ljava/io/File;
 
     move-result-object v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_3
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    :cond_4
+    :cond_3
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
@@ -326,7 +323,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_4
 
     const-string v5, "MLShare"
 
@@ -352,6 +349,13 @@
 
     goto :goto_2
 
+    :cond_4
+    const-string v2, "share_img_data_bmp"
+
+    invoke-virtual {v4, v2, v5}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    goto :goto_2
+
     :cond_5
     const-string v2, "share_img_data_bmp"
 
@@ -360,18 +364,11 @@
     goto :goto_2
 
     :cond_6
-    const-string v2, "share_img_data_bmp"
+    if-eqz v1, :cond_7
 
-    invoke-virtual {v4, v2, v5}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    if-nez v0, :cond_7
 
-    goto :goto_2
-
-    :cond_7
-    if-eqz v2, :cond_8
-
-    if-nez v0, :cond_8
-
-    if-nez v3, :cond_8
+    if-nez v3, :cond_7
 
     const v0, 0x18705
 
@@ -379,32 +376,37 @@
 
     goto :goto_3
 
-    :cond_8
-    if-eqz v2, :cond_9
+    :cond_7
+    if-eqz v1, :cond_8
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
+
+    :cond_8
+    if-eqz v1, :cond_9
+
+    if-nez v3, :cond_a
 
     :cond_9
-    if-eqz v2, :cond_a
+    if-eqz v0, :cond_b
 
-    if-nez v3, :cond_b
+    if-eqz v3, :cond_b
 
     :cond_a
-    if-eqz v0, :cond_c
-
-    if-eqz v3, :cond_c
-
-    :cond_b
     const v0, 0x18708
 
     iput v0, p0, Lcom/xiaomi/channel/sdk/MLShareReq;->a:I
 
     goto :goto_3
 
-    :cond_c
+    :cond_b
     const/4 v0, 0x0
 
     goto :goto_4
+
+    :cond_c
+    move v1, v2
+
+    goto/16 :goto_2
 
     :cond_d
     move v3, v2

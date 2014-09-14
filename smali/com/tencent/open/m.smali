@@ -1,9 +1,9 @@
-.class final Lcom/tencent/open/m;
+.class Lcom/tencent/open/m;
 .super Landroid/webkit/WebViewClient;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/TDialog;
+.field final synthetic a:Lcom/tencent/open/TDialog;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/TDialog;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/TDialog;Lcom/tencent/open/l;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/m;-><init>(Lcom/tencent/open/TDialog;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 2
 
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
@@ -76,16 +76,20 @@
     return-void
 .end method
 
-.method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
     .locals 3
 
     const-string v0, "TDialog"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Webview loading URL: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -133,7 +137,7 @@
     return-void
 .end method
 
-.method public final onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
+.method public onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
     .locals 3
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
@@ -194,7 +198,7 @@
     return-void
 .end method
 
-.method public final onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
+.method public onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
     .locals 0
 
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->proceed()V
@@ -202,7 +206,7 @@
     return-void
 .end method
 
-.method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 4
 
     const/4 v1, 0x1
@@ -211,9 +215,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Redirect URL: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -350,7 +358,11 @@
 
     if-eqz v0, :cond_7
 
-    const/16 v0, 0xb
+    const-string v0, "download://"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 

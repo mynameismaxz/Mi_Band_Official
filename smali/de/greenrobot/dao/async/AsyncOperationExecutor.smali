@@ -100,9 +100,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Unsupported operation: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p1, Lde/greenrobot/dao/async/AsyncOperation;->type:Lde/greenrobot/dao/async/AsyncOperation$OperationType;
 
@@ -162,6 +166,8 @@
 
     check-cast v0, [Ljava/lang/Object;
 
+    check-cast v0, [Ljava/lang/Object;
+
     invoke-virtual {v1, v0}, Lde/greenrobot/dao/AbstractDao;->deleteInTx([Ljava/lang/Object;)V
 
     goto :goto_0
@@ -190,6 +196,8 @@
     iget-object v1, p1, Lde/greenrobot/dao/async/AsyncOperation;->dao:Lde/greenrobot/dao/AbstractDao;
 
     iget-object v0, p1, Lde/greenrobot/dao/async/AsyncOperation;->parameter:Ljava/lang/Object;
+
+    check-cast v0, [Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
@@ -224,6 +232,8 @@
 
     check-cast v0, [Ljava/lang/Object;
 
+    check-cast v0, [Ljava/lang/Object;
+
     invoke-virtual {v1, v0}, Lde/greenrobot/dao/AbstractDao;->insertOrReplaceInTx([Ljava/lang/Object;)V
 
     goto :goto_0
@@ -255,6 +265,8 @@
 
     check-cast v0, [Ljava/lang/Object;
 
+    check-cast v0, [Ljava/lang/Object;
+
     invoke-virtual {v1, v0}, Lde/greenrobot/dao/AbstractDao;->updateInTx([Ljava/lang/Object;)V
 
     goto :goto_0
@@ -262,12 +274,12 @@
     :pswitch_c
     invoke-direct {p0, p1}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executeTransactionRunnable(Lde/greenrobot/dao/async/AsyncOperation;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_d
     invoke-direct {p0, p1}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executeTransactionCallable(Lde/greenrobot/dao/async/AsyncOperation;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_e
     iget-object v0, p1, Lde/greenrobot/dao/async/AsyncOperation;->parameter:Ljava/lang/Object;
@@ -531,8 +543,6 @@
 
     :cond_3
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -540,6 +550,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -774,8 +786,6 @@
 
     :cond_0
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -783,6 +793,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -925,10 +937,13 @@
     :cond_0
     :try_start_2
     monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-object v1, v0
 
     :goto_2
+    :try_start_3
     invoke-virtual {v1}, Lde/greenrobot/dao/async/AsyncOperation;->isMergeTx()Z
 
     move-result v0
@@ -958,16 +973,16 @@
     if-eqz v2, :cond_1
 
     invoke-direct {p0, v1, v0}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->mergeTxAndExecute(Lde/greenrobot/dao/async/AsyncOperation;Lde/greenrobot/dao/async/AsyncOperation;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    :try_start_3
+    :try_start_4
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -995,8 +1010,8 @@
     move-result-object v1
 
     invoke-static {v1, v0}, Lde/greenrobot/dao/DaoLog;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     iput-boolean v5, p0, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executorRunning:Z
 
@@ -1005,13 +1020,16 @@
     :catchall_0
     move-exception v0
 
-    :try_start_4
+    :try_start_5
     monitor-exit p0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
+    :try_start_6
     throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
 
     :catchall_1
     move-exception v0
@@ -1021,7 +1039,7 @@
     throw v0
 
     :cond_1
-    :try_start_5
+    :try_start_7
     invoke-direct {p0, v1}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executeOperationAndPostCompleted(Lde/greenrobot/dao/async/AsyncOperation;)V
 
     invoke-direct {p0, v0}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executeOperationAndPostCompleted(Lde/greenrobot/dao/async/AsyncOperation;)V
@@ -1030,9 +1048,9 @@
 
     :cond_2
     invoke-direct {p0, v1}, Lde/greenrobot/dao/async/AsyncOperationExecutor;->executeOperationAndPostCompleted(Lde/greenrobot/dao/async/AsyncOperation;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_5} :catch_0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_7 .. :try_end_7} :catch_0
 
     goto :goto_0
 

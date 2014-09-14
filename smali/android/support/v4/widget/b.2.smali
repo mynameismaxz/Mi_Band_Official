@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/widget/b;
+.class Landroid/support/v4/widget/b;
 .super Landroid/database/ContentObserver;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/CursorAdapter;
+.field final synthetic a:Landroid/support/v4/widget/CursorAdapter;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final deliverSelfNotifications()Z
+.method public deliverSelfNotifications()Z
     .locals 1
 
     const/4 v0, 0x1
@@ -31,7 +31,7 @@
     return v0
 .end method
 
-.method public final onChange(Z)V
+.method public onChange(Z)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/widget/b;->a:Landroid/support/v4/widget/CursorAdapter;

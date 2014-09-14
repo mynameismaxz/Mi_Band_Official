@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/l;
+.class Lcn/com/smartdevices/bracelet/chart/util/l;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -46,7 +46,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 6
 
     const/high16 v5, 0x3f80

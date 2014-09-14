@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/b;
+.class Lcom/loopj/android/http/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
+.field final synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
 
 
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/AsyncHttpClient;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/loopj/android/http/b;->a:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final process(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
+.method public process(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
     .locals 6
 
     invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;

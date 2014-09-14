@@ -36,6 +36,12 @@
 
     iput-object v2, p0, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->b:Landroid/content/Context;
 
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->c:I
+
+    iput-object v2, p0, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->d:[Ljava/lang/String;
+
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->b:Landroid/content/Context;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/SelectDaysView;->b:Landroid/content/Context;
@@ -44,13 +50,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f030061
+    const v1, 0x7f030063
 
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    const v0, 0x7f0701c8
+    const v0, 0x7f0701ce
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

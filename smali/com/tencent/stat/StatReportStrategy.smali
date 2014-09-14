@@ -32,7 +32,7 @@
 
 
 # instance fields
-.field private a:I
+.field a:I
 
 
 # direct methods
@@ -239,7 +239,7 @@
 
 
 # virtual methods
-.method public final getIntValue()I
+.method public getIntValue()I
     .locals 1
 
     iget v0, p0, Lcom/tencent/stat/StatReportStrategy;->a:I

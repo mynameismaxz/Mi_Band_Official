@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/market/sdk/p;
+.class Lcom/xiaomi/market/sdk/p;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/market/sdk/n;
+.field final synthetic a:Lcom/xiaomi/market/sdk/n;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 9
 
     const/4 v8, 0x0

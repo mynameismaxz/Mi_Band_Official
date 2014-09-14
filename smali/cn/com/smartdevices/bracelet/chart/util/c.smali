@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/c;
+.class Lcn/com/smartdevices/bracelet/chart/util/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/c;->a:Landroid/view/View;

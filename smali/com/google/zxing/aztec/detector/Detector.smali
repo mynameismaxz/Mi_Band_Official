@@ -39,16 +39,16 @@
     return v0
 .end method
 
-.method private a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
+.method private a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)I
     .locals 12
 
-    invoke-static {p1, p2}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
+    invoke-static {p1, p2}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)F
 
     move-result v4
 
-    iget v0, p2, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v0, p2, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v1, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v1, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     sub-int/2addr v0, v1
 
@@ -56,9 +56,9 @@
 
     div-float v5, v0, v4
 
-    iget v0, p2, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v0, p2, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v1, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v1, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int/2addr v0, v1
 
@@ -68,19 +68,19 @@
 
     const/4 v3, 0x0
 
-    iget v0, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v2, v0
 
-    iget v0, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     int-to-float v1, v0
 
     iget-object v0, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    iget v7, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v7, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v8, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v8, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     invoke-virtual {v0, v7, v8}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
@@ -111,17 +111,13 @@
 
     iget-object v8, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    const/high16 v9, 0x3f00
+    invoke-static {v3}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    add-float/2addr v9, v3
+    move-result v9
 
-    float-to-int v9, v9
+    invoke-static {v2}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    const/high16 v10, 0x3f00
-
-    add-float/2addr v10, v2
-
-    float-to-int v10, v10
+    move-result v10
 
     invoke-virtual {v8, v9, v10}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
@@ -195,14 +191,14 @@
     goto :goto_1
 .end method
 
-.method private a()Lcom/google/zxing/aztec/detector/a;
+.method private a()Lcom/google/zxing/aztec/detector/b;
     .locals 12
 
     const/high16 v11, 0x4080
 
-    const/high16 v10, 0x3f00
+    const/4 v10, -0x1
 
-    const/4 v9, -0x1
+    const/4 v9, 0x0
 
     const/4 v8, 0x1
 
@@ -262,9 +258,9 @@
 
     div-float/2addr v4, v11
 
-    add-float/2addr v4, v10
+    invoke-static {v4}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v4, v4
+    move-result v4
 
     invoke-virtual {v3}, Lcom/google/zxing/ResultPoint;->getY()F
 
@@ -290,9 +286,9 @@
 
     div-float/2addr v0, v11
 
-    add-float/2addr v0, v10
+    invoke-static {v0}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v0, v0
+    move-result v0
 
     :try_start_1
     new-instance v1, Lcom/google/zxing/common/detector/WhiteRectangleDetector;
@@ -350,9 +346,9 @@
 
     div-float/2addr v4, v11
 
-    add-float/2addr v4, v10
+    invoke-static {v4}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v4, v4
+    move-result v4
 
     invoke-virtual {v3}, Lcom/google/zxing/ResultPoint;->getY()F
 
@@ -378,13 +374,13 @@
 
     div-float/2addr v0, v11
 
-    add-float/2addr v0, v10
+    invoke-static {v0}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v0, v0
+    move-result v0
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
-    invoke-direct {v1, v4, v0, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v4, v0, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
     return-object v1
 
@@ -407,67 +403,67 @@
 
     div-int/lit8 v4, v1, 0x2
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v2, v0, 0x7
 
     add-int/lit8 v3, v4, -0x7
 
-    invoke-direct {v1, v2, v3, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v2, v3, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v8, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v1, v7, v8, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v2, v0, 0x7
 
     add-int/lit8 v5, v4, 0x7
 
-    invoke-direct {v1, v2, v5, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v2, v5, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v8, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v1, v7, v8, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v2
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v5, v0, -0x7
 
     add-int/lit8 v6, v4, 0x7
 
-    invoke-direct {v1, v5, v6, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v5, v6, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v9, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-direct {p0, v1, v7, v10, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    new-instance v5, Lcom/google/zxing/aztec/detector/a;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
+
+    move-result-object v1
+
+    new-instance v5, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v0, v0, -0x7
 
     add-int/lit8 v4, v4, -0x7
 
-    invoke-direct {v5, v0, v4, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v5, v0, v4, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v5, v7, v9, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v5, v7, v10, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v0
 
@@ -476,86 +472,86 @@
     :catch_1
     move-exception v1
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v2, v4, 0x7
 
     add-int/lit8 v3, v0, -0x7
 
-    invoke-direct {v1, v2, v3, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v2, v3, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v8, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v1, v7, v8, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v2, v4, 0x7
 
     add-int/lit8 v5, v0, 0x7
 
-    invoke-direct {v1, v2, v5, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v2, v5, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v8, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v1, v7, v8, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v2
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v5, v4, -0x7
 
     add-int/lit8 v6, v0, 0x7
 
-    invoke-direct {v1, v5, v6, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v1, v5, v6, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v1, v7, v9, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-direct {p0, v1, v7, v10, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v1
 
-    new-instance v5, Lcom/google/zxing/aztec/detector/a;
+    invoke-virtual {v1}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
+
+    move-result-object v1
+
+    new-instance v5, Lcom/google/zxing/aztec/detector/b;
 
     add-int/lit8 v4, v4, -0x7
 
     add-int/lit8 v0, v0, -0x7
 
-    invoke-direct {v5, v4, v0, v7}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v5, v4, v0, v9}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    invoke-direct {p0, v5, v7, v9, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0, v5, v7, v10, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/zxing/aztec/detector/a;->a()Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/detector/b;->a()Lcom/google/zxing/ResultPoint;
 
     move-result-object v0
 
     goto/16 :goto_1
 .end method
 
-.method private a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+.method private a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
     .locals 4
 
-    iget v0, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    add-int/2addr v0, p3
+    add-int v1, v0, p3
 
-    iget v1, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    add-int/2addr v1, p4
+    add-int/2addr v0, p4
 
     :goto_0
-    invoke-direct {p0, v0, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-direct {p0, v1, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
 
     move-result v2
 
@@ -563,61 +559,63 @@
 
     iget-object v2, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v2, v0, v1}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v2, v1, v0}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v2
 
     if-ne v2, p2, :cond_0
 
-    add-int/2addr v0, p3
+    add-int/2addr v1, p3
 
-    add-int/2addr v1, p4
+    add-int/2addr v0, p4
 
     goto :goto_0
 
     :cond_0
-    sub-int/2addr v0, p3
+    sub-int/2addr v1, p3
 
-    sub-int/2addr v1, p4
+    sub-int v2, v0, p4
+
+    move v0, v1
 
     :goto_1
-    invoke-direct {p0, v0, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-direct {p0, v0, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    iget-object v2, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    iget-object v1, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v2, v0, v1}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v1, v0, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v2
+    move-result v1
 
-    if-ne v2, p2, :cond_1
+    if-ne v1, p2, :cond_1
 
     add-int/2addr v0, p3
 
     goto :goto_1
 
     :cond_1
-    sub-int v2, v0, p3
+    sub-int v1, v0, p3
 
-    move v0, v1
+    move v0, v2
 
     :goto_2
-    invoke-direct {p0, v2, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-direct {p0, v1, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-object v1, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    iget-object v2, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v2, v1, v0}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, p2, :cond_2
+    if-ne v2, p2, :cond_2
 
     add-int/2addr v0, p4
 
@@ -626,13 +624,13 @@
     :cond_2
     sub-int/2addr v0, p4
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    new-instance v2, Lcom/google/zxing/aztec/detector/b;
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, v0, v3}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    invoke-direct {v2, v1, v0, v3}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    return-object v1
+    return-object v2
 .end method
 
 .method private a(Lcom/google/zxing/common/BitMatrix;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/common/BitMatrix;
@@ -776,22 +774,36 @@
     goto :goto_0
 .end method
 
-.method private a([Lcom/google/zxing/aztec/detector/a;)V
-    .locals 13
+.method private a([Lcom/google/zxing/aztec/detector/b;)V
+    .locals 11
 
-    const/4 v3, 0x4
+    const/16 v10, 0x1c
 
-    const/4 v10, 0x3
+    const/4 v9, 0x3
 
-    const/4 v2, 0x2
+    const/4 v8, 0x2
 
-    const/4 v5, 0x1
+    const/4 v7, 0x1
 
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    aget-object v0, p1, v6
+    aget-object v0, p1, v1
 
-    aget-object v1, p1, v5
+    aget-object v2, p1, v7
+
+    iget v3, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-direct {p0, v0, v2, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;I)[Z
+
+    move-result-object v2
+
+    aget-object v0, p1, v7
+
+    aget-object v3, p1, v8
 
     iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
@@ -799,53 +811,39 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    invoke-direct {p0, v0, v1, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
+    invoke-direct {p0, v0, v3, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;I)[Z
 
-    move-result-object v1
+    move-result-object v3
 
-    aget-object v0, p1, v5
+    aget-object v0, p1, v8
 
-    aget-object v4, p1, v2
+    aget-object v4, p1, v9
 
-    iget v7, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v5, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/lit8 v5, v5, 0x2
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v5, v5, 0x1
 
-    invoke-direct {p0, v0, v4, v7}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
+    invoke-direct {p0, v0, v4, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;I)[Z
 
     move-result-object v4
 
-    aget-object v0, p1, v2
+    aget-object v0, p1, v9
 
-    aget-object v7, p1, v10
+    aget-object v5, p1, v1
 
-    iget v8, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v6, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    mul-int/lit8 v8, v8, 0x2
+    mul-int/lit8 v6, v6, 0x2
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    invoke-direct {p0, v0, v7, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
+    invoke-direct {p0, v0, v5, v6}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;I)[Z
 
-    move-result-object v7
+    move-result-object v5
 
-    aget-object v0, p1, v10
-
-    aget-object v8, p1, v6
-
-    iget v9, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v9, v9, 0x2
-
-    add-int/lit8 v9, v9, 0x1
-
-    invoke-direct {p0, v0, v8, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
-
-    move-result-object v8
-
-    aget-boolean v0, v1, v6
+    aget-boolean v0, v2, v1
 
     if-eqz v0, :cond_0
 
@@ -853,66 +851,81 @@
 
     mul-int/lit8 v0, v0, 0x2
 
-    aget-boolean v0, v1, v0
+    aget-boolean v0, v2, v0
 
     if-eqz v0, :cond_0
 
-    iput v6, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    iput v1, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
     :goto_0
     iget-boolean v0, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
 
     if-eqz v0, :cond_5
 
-    const/16 v0, 0x1c
+    new-array v6, v10, [Z
 
-    new-array v9, v0, [Z
-
-    move v0, v6
+    move v0, v1
 
     :goto_1
-    const/4 v10, 0x7
+    const/4 v7, 0x7
 
-    if-ge v0, v10, :cond_4
+    if-ge v0, v7, :cond_4
 
-    add-int/lit8 v10, v0, 0x2
+    add-int/lit8 v7, v0, 0x2
 
-    aget-boolean v10, v1, v10
+    aget-boolean v7, v2, v7
 
-    aput-boolean v10, v9, v0
+    aput-boolean v7, v6, v0
 
-    add-int/lit8 v10, v0, 0x7
+    add-int/lit8 v7, v0, 0x7
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v4, v11
+    aget-boolean v8, v3, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0xe
+    add-int/lit8 v7, v0, 0xe
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v7, v11
+    aget-boolean v8, v4, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0x15
+    add-int/lit8 v7, v0, 0x15
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v8, v11
+    aget-boolean v8, v5, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_0
-    aget-boolean v0, v4, v6
+    aget-boolean v0, v3, v1
 
     if-eqz v0, :cond_1
+
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+
+    mul-int/lit8 v0, v0, 0x2
+
+    aget-boolean v0, v3, v0
+
+    if-eqz v0, :cond_1
+
+    iput v7, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+
+    goto :goto_0
+
+    :cond_1
+    aget-boolean v0, v4, v1
+
+    if-eqz v0, :cond_2
 
     iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
@@ -920,31 +933,14 @@
 
     aget-boolean v0, v4, v0
 
-    if-eqz v0, :cond_1
-
-    iput v5, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    goto :goto_0
-
-    :cond_1
-    aget-boolean v0, v7, v6
-
     if-eqz v0, :cond_2
 
-    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v0, v0, 0x2
-
-    aget-boolean v0, v7, v0
-
-    if-eqz v0, :cond_2
-
-    iput v2, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    iput v8, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
     goto :goto_0
 
     :cond_2
-    aget-boolean v0, v8, v6
+    aget-boolean v0, v5, v1
 
     if-eqz v0, :cond_3
 
@@ -952,11 +948,11 @@
 
     mul-int/lit8 v0, v0, 0x2
 
-    aget-boolean v0, v8, v0
+    aget-boolean v0, v5, v0
 
     if-eqz v0, :cond_3
 
-    iput v10, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    iput v9, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
     goto :goto_0
 
@@ -968,28 +964,22 @@
     throw v0
 
     :cond_4
-    const/16 v0, 0x1c
-
-    new-array v0, v0, [Z
-
-    move v1, v6
+    new-array v0, v10, [Z
 
     :goto_2
-    const/16 v4, 0x1c
+    if-ge v1, v10, :cond_9
 
-    if-ge v1, v4, :cond_9
+    iget v2, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    mul-int/lit8 v2, v2, 0x7
 
-    mul-int/lit8 v4, v4, 0x7
+    add-int/2addr v2, v1
 
-    add-int/2addr v4, v1
+    rem-int/lit8 v2, v2, 0x1c
 
-    rem-int/lit8 v4, v4, 0x1c
+    aget-boolean v2, v6, v2
 
-    aget-boolean v4, v9, v4
-
-    aput-boolean v4, v0, v1
+    aput-boolean v2, v0, v1
 
     add-int/lit8 v1, v1, 0x1
 
@@ -998,91 +988,91 @@
     :cond_5
     const/16 v0, 0x28
 
-    new-array v9, v0, [Z
+    new-array v6, v0, [Z
 
-    move v0, v6
+    move v0, v1
 
     :goto_3
-    const/16 v10, 0xb
+    const/16 v7, 0xb
 
-    if-ge v0, v10, :cond_8
+    if-ge v0, v7, :cond_8
 
-    const/4 v10, 0x5
+    const/4 v7, 0x5
 
-    if-ge v0, v10, :cond_6
+    if-ge v0, v7, :cond_6
 
-    add-int/lit8 v10, v0, 0x2
+    add-int/lit8 v7, v0, 0x2
 
-    aget-boolean v10, v1, v10
+    aget-boolean v7, v2, v7
 
-    aput-boolean v10, v9, v0
+    aput-boolean v7, v6, v0
 
-    add-int/lit8 v10, v0, 0xa
+    add-int/lit8 v7, v0, 0xa
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v4, v11
+    aget-boolean v8, v3, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0x14
+    add-int/lit8 v7, v0, 0x14
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v7, v11
+    aget-boolean v8, v4, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0x1e
+    add-int/lit8 v7, v0, 0x1e
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v8, v11
+    aget-boolean v8, v5, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
     :cond_6
-    const/4 v10, 0x5
+    const/4 v7, 0x5
 
-    if-le v0, v10, :cond_7
+    if-le v0, v7, :cond_7
 
-    add-int/lit8 v10, v0, -0x1
+    add-int/lit8 v7, v0, -0x1
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v1, v11
+    aget-boolean v8, v2, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0xa
+    add-int/lit8 v7, v0, 0xa
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v4, v11
+    aget-boolean v8, v3, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0x14
+    add-int/lit8 v7, v0, 0x14
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v7, v11
+    aget-boolean v8, v4, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
-    add-int/lit8 v10, v0, 0x1e
+    add-int/lit8 v7, v0, 0x1e
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    add-int/lit8 v11, v0, 0x2
+    add-int/lit8 v8, v0, 0x2
 
-    aget-boolean v11, v8, v11
+    aget-boolean v8, v5, v8
 
-    aput-boolean v11, v9, v10
+    aput-boolean v8, v6, v7
 
     :cond_7
     add-int/lit8 v0, v0, 0x1
@@ -1094,24 +1084,22 @@
 
     new-array v0, v0, [Z
 
-    move v1, v6
-
     :goto_4
-    const/16 v4, 0x28
+    const/16 v2, 0x28
 
-    if-ge v1, v4, :cond_9
+    if-ge v1, v2, :cond_9
 
-    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    iget v2, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    mul-int/lit8 v4, v4, 0xa
+    mul-int/lit8 v2, v2, 0xa
 
-    add-int/2addr v4, v1
+    add-int/2addr v2, v1
 
-    rem-int/lit8 v4, v4, 0x28
+    rem-int/lit8 v2, v2, 0x28
 
-    aget-boolean v4, v9, v4
+    aget-boolean v2, v6, v2
 
-    aput-boolean v4, v0, v1
+    aput-boolean v2, v0, v1
 
     add-int/lit8 v1, v1, 0x1
 
@@ -1120,219 +1108,9 @@
     :cond_9
     iget-boolean v1, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
 
-    if-eqz v1, :cond_b
+    invoke-static {v0, v1}, Lcom/google/zxing/aztec/detector/Detector;->a([ZZ)V
 
-    const/4 v1, 0x7
-
-    move v4, v1
-
-    move v1, v2
-
-    :goto_5
-    sub-int v10, v4, v1
-
-    new-array v11, v4, [I
-
-    move v9, v6
-
-    :goto_6
-    if-ge v9, v4, :cond_d
-
-    move v7, v5
-
-    move v8, v5
-
-    :goto_7
-    if-gt v7, v3, :cond_c
-
-    mul-int/lit8 v12, v9, 0x4
-
-    add-int/lit8 v12, v12, 0x4
-
-    sub-int/2addr v12, v7
-
-    aget-boolean v12, v0, v12
-
-    if-eqz v12, :cond_a
-
-    aget v12, v11, v9
-
-    add-int/2addr v12, v8
-
-    aput v12, v11, v9
-
-    :cond_a
-    shl-int/lit8 v8, v8, 0x1
-
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_7
-
-    :cond_b
-    const/16 v1, 0xa
-
-    move v4, v1
-
-    move v1, v3
-
-    goto :goto_5
-
-    :cond_c
-    add-int/lit8 v7, v9, 0x1
-
-    move v9, v7
-
-    goto :goto_6
-
-    :cond_d
-    :try_start_0
-    new-instance v4, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
-
-    sget-object v7, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_PARAM:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    invoke-direct {v4, v7}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
-
-    invoke-virtual {v4, v11, v10}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
-    :try_end_0
-    .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move v9, v6
-
-    :goto_8
-    if-ge v9, v1, :cond_10
-
-    move v7, v5
-
-    move v8, v5
-
-    :goto_9
-    if-gt v7, v3, :cond_f
-
-    shl-int/lit8 v4, v9, 0x2
-
-    add-int/lit8 v4, v4, 0x4
-
-    sub-int v10, v4, v7
-
-    aget v4, v11, v9
-
-    and-int/2addr v4, v8
-
-    if-ne v4, v8, :cond_e
-
-    move v4, v5
-
-    :goto_a
-    aput-boolean v4, v0, v10
-
-    shl-int/lit8 v8, v8, 0x1
-
-    add-int/lit8 v4, v7, 0x1
-
-    move v7, v4
-
-    goto :goto_9
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_e
-    move v4, v6
-
-    goto :goto_a
-
-    :cond_f
-    add-int/lit8 v4, v9, 0x1
-
-    move v9, v4
-
-    goto :goto_8
-
-    :cond_10
-    iget-boolean v1, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    if-eqz v1, :cond_12
-
-    const/4 v1, 0x6
-
-    :goto_b
-    if-ge v6, v2, :cond_13
-
-    iget v3, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    shl-int/lit8 v3, v3, 0x1
-
-    iput v3, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    aget-boolean v3, v0, v6
-
-    if-eqz v3, :cond_11
-
-    iget v3, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v3, v3, 0x1
-
-    iput v3, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    :cond_11
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_b
-
-    :cond_12
-    const/4 v2, 0x5
-
-    const/16 v1, 0xb
-
-    goto :goto_b
-
-    :cond_13
-    move v3, v2
-
-    :goto_c
-    add-int v4, v2, v1
-
-    if-ge v3, v4, :cond_15
-
-    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    shl-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    aget-boolean v4, v0, v3
-
-    if-eqz v4, :cond_14
-
-    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    :cond_14
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_c
-
-    :cond_15
-    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
+    invoke-direct {p0, v0}, Lcom/google/zxing/aztec/detector/Detector;->a([Z)V
 
     return-void
 .end method
@@ -1459,9 +1237,9 @@
     :goto_2
     if-gt v5, v1, :cond_2
 
-    mul-int/lit8 v10, v7, 0x4
+    mul-int v10, v1, v7
 
-    add-int/lit8 v10, v10, 0x4
+    add-int/2addr v10, v1
 
     sub-int/2addr v10, v5
 
@@ -1522,9 +1300,9 @@
     :goto_4
     if-gt v5, v1, :cond_5
 
-    shl-int/lit8 v2, v7, 0x2
+    mul-int v2, v7, v1
 
-    add-int/lit8 v2, v2, 0x4
+    add-int/2addr v2, v1
 
     sub-int v8, v2, v5
 
@@ -1606,655 +1384,499 @@
     goto :goto_0
 .end method
 
-.method private a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)Z
-    .locals 7
+.method private a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)Z
+    .locals 9
+
+    const/4 v8, 0x0
 
     const/4 v0, 0x0
 
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
+    const/4 v1, 0x3
 
-    iget v2, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    new-instance v2, Lcom/google/zxing/aztec/detector/b;
 
-    add-int/lit8 v2, v2, -0x3
+    iget v3, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v3, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    sub-int/2addr v3, v1
 
-    add-int/lit8 v3, v3, 0x3
+    iget v4, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {v1, v2, v3, v0}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    add-int/2addr v4, v1
 
-    new-instance v2, Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {v2, v3, v4, v8}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    iget v3, p2, Lcom/google/zxing/aztec/detector/a;->a:I
+    new-instance v3, Lcom/google/zxing/aztec/detector/b;
 
-    add-int/lit8 v3, v3, -0x3
+    iget v4, p2, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v4, p2, Lcom/google/zxing/aztec/detector/a;->b:I
+    sub-int/2addr v4, v1
 
-    add-int/lit8 v4, v4, -0x3
+    iget v5, p2, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {v2, v3, v4, v0}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    sub-int/2addr v5, v1
 
-    new-instance v3, Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {v3, v4, v5, v8}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    iget v4, p3, Lcom/google/zxing/aztec/detector/a;->a:I
+    new-instance v4, Lcom/google/zxing/aztec/detector/b;
 
-    add-int/lit8 v4, v4, 0x3
+    iget v5, p3, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v5, p3, Lcom/google/zxing/aztec/detector/a;->b:I
+    add-int/2addr v5, v1
 
-    add-int/lit8 v5, v5, -0x3
+    iget v6, p3, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {v3, v4, v5, v0}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    sub-int/2addr v6, v1
 
-    new-instance v4, Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {v4, v5, v6, v8}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    iget v5, p4, Lcom/google/zxing/aztec/detector/a;->a:I
+    new-instance v5, Lcom/google/zxing/aztec/detector/b;
 
-    add-int/lit8 v5, v5, 0x3
+    iget v6, p4, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v6, p4, Lcom/google/zxing/aztec/detector/a;->b:I
+    add-int/2addr v6, v1
 
-    add-int/lit8 v6, v6, 0x3
+    iget v7, p4, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {v4, v5, v6, v0}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
+    add-int/2addr v1, v7
 
-    invoke-direct {p0, v4, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
+    invoke-direct {v5, v6, v1, v8}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
 
-    move-result v5
+    invoke-direct {p0, v5, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)I
 
-    if-nez v5, :cond_1
+    move-result v1
+
+    if-nez v1, :cond_1
 
     :cond_0
     :goto_0
     return v0
 
     :cond_1
-    invoke-direct {p0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
+    invoke-direct {p0, v2, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)I
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, v5, :cond_0
+    if-ne v2, v1, :cond_0
 
-    invoke-direct {p0, v2, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
+    invoke-direct {p0, v3, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)I
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, v5, :cond_0
+    if-ne v2, v1, :cond_0
 
-    invoke-direct {p0, v3, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
+    invoke-direct {p0, v4, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)I
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, v5, :cond_0
+    if-ne v2, v1, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
-.method private a(Lcom/google/zxing/aztec/detector/a;)[Lcom/google/zxing/aztec/detector/a;
-    .locals 17
+.method private a(Lcom/google/zxing/aztec/detector/b;)[Lcom/google/zxing/aztec/detector/b;
+    .locals 13
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    move-object/from16 v0, p0
+    iput v1, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    iput v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    move-object v2, p1
 
-    move-object/from16 v4, p1
+    move-object v4, p1
 
-    move-object/from16 v6, p1
-
-    move-object/from16 v8, p1
+    move-object v6, p1
 
     :goto_0
-    move-object/from16 v0, p0
+    iget v1, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    const/16 v3, 0x9
 
-    const/16 v5, 0x9
+    if-ge v1, v3, :cond_0
 
-    if-ge v3, v5, :cond_3
-
-    const/4 v3, 0x1
-
-    const/4 v5, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v6, v2, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v7
-
-    const/4 v3, 0x1
-
-    const/4 v5, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v2, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v5
+    const/4 v1, 0x1
 
     const/4 v3, -0x1
 
-    const/4 v9, 0x1
+    invoke-direct {p0, v6, v0, v1, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
-    move-object/from16 v0, p0
+    move-result-object v7
 
-    move-object/from16 v1, p1
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1, v2, v3, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v4, v0, v1, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
+
+    move-result-object v5
+
+    const/4 v1, -0x1
+
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v2, v0, v1, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
     move-result-object v3
 
-    const/4 v9, -0x1
+    const/4 v1, -0x1
 
-    const/4 v10, -0x1
+    const/4 v8, -0x1
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, p1, v0, v1, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;ZII)Lcom/google/zxing/aztec/detector/b;
 
-    invoke-direct {v0, v8, v2, v9, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
+    move-result-object v1
 
-    move-result-object v9
+    iget v8, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    move-object/from16 v0, p0
+    const/4 v9, 0x2
 
-    iget v10, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    if-le v8, v9, :cond_1
 
-    const/4 v11, 0x2
+    invoke-static {v1, v7}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)F
 
-    if-le v10, v11, :cond_0
+    move-result v8
 
-    invoke-static {v9, v7}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
+    iget v9, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    move-result v10
+    int-to-float v9, v9
 
-    move-object/from16 v0, p0
+    mul-float/2addr v8, v9
 
-    iget v11, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    invoke-static {p1, v6}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)F
 
-    int-to-float v11, v11
+    move-result v9
 
-    mul-float/2addr v10, v11
+    iget v10, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    invoke-static {v8, v6}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
+    add-int/lit8 v10, v10, 0x2
 
-    move-result v11
+    int-to-float v10, v10
 
-    move-object/from16 v0, p0
+    mul-float/2addr v9, v10
 
-    iget v12, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    div-float/2addr v8, v9
 
-    add-int/lit8 v12, v12, 0x2
+    float-to-double v9, v8
 
-    int-to-float v12, v12
+    const-wide/high16 v11, 0x3fe8
 
-    mul-float/2addr v11, v12
+    cmpg-double v9, v9, v11
 
-    div-float/2addr v10, v11
+    if-ltz v9, :cond_0
 
-    float-to-double v11, v10
+    float-to-double v8, v8
 
-    const-wide/high16 v13, 0x3fe8
+    const-wide/high16 v10, 0x3ff4
 
-    cmpg-double v11, v11, v13
+    cmpl-double v8, v8, v10
 
-    if-ltz v11, :cond_3
+    if-gtz v8, :cond_0
 
-    float-to-double v10, v10
+    invoke-direct {p0, v7, v5, v3, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)Z
 
-    const-wide/high16 v12, 0x3ff4
+    move-result v8
 
-    cmpl-double v10, v10, v12
-
-    if-gtz v10, :cond_3
-
-    new-instance v10, Lcom/google/zxing/aztec/detector/a;
-
-    iget v11, v7, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v11, v11, -0x3
-
-    iget v12, v7, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v12, v12, 0x3
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v11, Lcom/google/zxing/aztec/detector/a;
-
-    iget v12, v5, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v12, v12, -0x3
-
-    iget v13, v5, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v13, v13, -0x3
-
-    const/4 v14, 0x0
-
-    invoke-direct {v11, v12, v13, v14}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v12, Lcom/google/zxing/aztec/detector/a;
-
-    iget v13, v3, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v13, v13, 0x3
-
-    iget v14, v3, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v14, v14, -0x3
-
-    const/4 v15, 0x0
-
-    invoke-direct {v12, v13, v14, v15}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v13, Lcom/google/zxing/aztec/detector/a;
-
-    iget v14, v9, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v14, v14, 0x3
-
-    iget v15, v9, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v15, v15, 0x3
-
-    const/16 v16, 0x0
-
-    invoke-direct/range {v13 .. v16}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v13, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v14
-
-    if-eqz v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v10, v11}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11, v12}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v12, v13}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    const/4 v10, 0x1
-
-    :goto_1
-    if-eqz v10, :cond_3
+    if-nez v8, :cond_1
 
     :cond_0
-    if-nez v2, :cond_2
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    const/4 v2, 0x1
+    const/4 v1, 0x5
 
-    :goto_2
-    move-object/from16 v0, p0
+    if-eq v0, v1, :cond_3
 
-    iget v4, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    add-int/lit8 v4, v4, 0x1
+    const/4 v1, 0x7
 
-    move-object/from16 v0, p0
+    if-eq v0, v1, :cond_3
 
-    iput v4, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-object/from16 p1, v3
+    move-result-object v0
+
+    throw v0
+
+    :cond_1
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_1
+    iget v2, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+
+    move-object p1, v1
+
+    move-object v2, v3
 
     move-object v4, v5
 
     move-object v6, v7
 
-    move-object v8, v9
+    goto :goto_0
 
-    goto/16 :goto_0
-
-    :cond_1
-    const/4 v10, 0x0
+    :cond_2
+    const/4 v0, 0x0
 
     goto :goto_1
 
-    :cond_2
-    const/4 v2, 0x0
-
-    goto :goto_2
-
     :cond_3
-    move-object/from16 v0, p0
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    iget v2, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    const/4 v1, 0x5
 
-    const/4 v3, 0x5
+    if-ne v0, v1, :cond_5
 
-    if-eq v2, v3, :cond_4
+    const/4 v0, 0x1
 
-    move-object/from16 v0, p0
+    :goto_2
+    iput-boolean v0, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
 
-    iget v2, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    const/high16 v0, 0x3fc0
 
-    const/4 v3, 0x7
+    iget v1, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    if-eq v2, v3, :cond_4
+    mul-int/lit8 v1, v1, 0x2
 
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+    add-int/lit8 v1, v1, -0x3
 
-    move-result-object v2
+    int-to-float v1, v1
 
-    throw v2
+    div-float/2addr v0, v1
 
-    :cond_4
-    move-object/from16 v0, p0
+    iget v1, v6, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v2, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v3, v2, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    const/4 v3, 0x5
+    sub-int/2addr v1, v3
 
-    if-ne v2, v3, :cond_6
+    iget v3, v6, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    const/4 v2, 0x1
-
-    :goto_3
-    move-object/from16 v0, p0
-
-    iput-boolean v2, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    const/high16 v2, 0x3fc0
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/lit8 v3, v3, -0x3
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    iget v3, v6, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    move-object/from16 v0, p1
-
-    iget v5, v0, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v5, v2, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int/2addr v3, v5
 
-    iget v5, v6, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    move-object/from16 v0, p1
-
-    iget v7, v0, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int/2addr v5, v7
-
-    move-object/from16 v0, p1
-
-    iget v7, v0, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v7, v7
-
-    int-to-float v9, v3
-
-    mul-float/2addr v9, v2
-
-    sub-float/2addr v7, v9
-
-    const/high16 v9, 0x3f00
-
-    add-float/2addr v7, v9
-
-    float-to-int v7, v7
-
-    move-object/from16 v0, p1
-
-    iget v9, v0, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v9, v9
-
-    int-to-float v10, v5
-
-    mul-float/2addr v10, v2
-
-    sub-float/2addr v9, v10
-
-    const/high16 v10, 0x3f00
-
-    add-float/2addr v9, v10
-
-    float-to-int v9, v9
-
-    iget v10, v6, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v10, v10
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v2
-
-    add-float/2addr v3, v10
-
-    const/high16 v10, 0x3f00
-
-    add-float/2addr v3, v10
-
-    float-to-int v3, v3
-
-    iget v6, v6, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v6, v6
+    iget v5, v2, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v5, v5
 
-    mul-float/2addr v5, v2
+    int-to-float v7, v1
 
-    add-float/2addr v5, v6
+    mul-float/2addr v7, v0
 
-    const/high16 v6, 0x3f00
+    sub-float/2addr v5, v7
 
-    add-float/2addr v5, v6
+    invoke-static {v5}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v5, v5
+    move-result v5
 
-    iget v6, v4, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v2, v2, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v10, v8, Lcom/google/zxing/aztec/detector/a;->a:I
+    int-to-float v2, v2
 
-    sub-int/2addr v6, v10
+    int-to-float v7, v3
 
-    iget v10, v4, Lcom/google/zxing/aztec/detector/a;->b:I
+    mul-float/2addr v7, v0
 
-    iget v11, v8, Lcom/google/zxing/aztec/detector/a;->b:I
+    sub-float/2addr v2, v7
 
-    sub-int/2addr v10, v11
+    invoke-static {v2}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    iget v11, v8, Lcom/google/zxing/aztec/detector/a;->a:I
+    move-result v2
 
-    int-to-float v11, v11
+    iget v7, v6, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    int-to-float v12, v6
+    int-to-float v7, v7
 
-    mul-float/2addr v12, v2
+    int-to-float v1, v1
 
-    sub-float/2addr v11, v12
+    mul-float/2addr v1, v0
 
-    const/high16 v12, 0x3f00
+    add-float/2addr v1, v7
 
-    add-float/2addr v11, v12
+    invoke-static {v1}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v11, v11
+    move-result v1
 
-    iget v8, v8, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v8, v8
-
-    int-to-float v12, v10
-
-    mul-float/2addr v12, v2
-
-    sub-float/2addr v8, v12
-
-    const/high16 v12, 0x3f00
-
-    add-float/2addr v8, v12
-
-    float-to-int v8, v8
-
-    iget v12, v4, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v12, v12
+    iget v6, v6, Lcom/google/zxing/aztec/detector/b;->b:I
 
     int-to-float v6, v6
 
-    mul-float/2addr v6, v2
+    int-to-float v3, v3
 
-    add-float/2addr v6, v12
+    mul-float/2addr v3, v0
 
-    const/high16 v12, 0x3f00
+    add-float/2addr v3, v6
 
-    add-float/2addr v6, v12
+    invoke-static {v3}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v6, v6
+    move-result v3
 
-    iget v4, v4, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v6, v4, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    int-to-float v4, v4
+    iget v7, p1, Lcom/google/zxing/aztec/detector/b;->a:I
+
+    sub-int/2addr v6, v7
+
+    iget v7, v4, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    iget v8, p1, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    sub-int/2addr v7, v8
+
+    iget v8, p1, Lcom/google/zxing/aztec/detector/b;->a:I
+
+    int-to-float v8, v8
+
+    int-to-float v9, v6
+
+    mul-float/2addr v9, v0
+
+    sub-float/2addr v8, v9
+
+    invoke-static {v8}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v8
+
+    iget v9, p1, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    int-to-float v9, v9
+
+    int-to-float v10, v7
+
+    mul-float/2addr v10, v0
+
+    sub-float/2addr v9, v10
+
+    invoke-static {v9}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v9
+
+    iget v10, v4, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v10, v10
 
-    mul-float/2addr v2, v10
+    int-to-float v6, v6
 
-    add-float/2addr v2, v4
+    mul-float/2addr v6, v0
 
-    const/high16 v4, 0x3f00
+    add-float/2addr v6, v10
 
-    add-float/2addr v2, v4
+    invoke-static {v6}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v2, v2
+    move-result v6
 
-    move-object/from16 v0, p0
+    iget v4, v4, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {v0, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    int-to-float v4, v4
 
-    move-result v4
+    int-to-float v7, v7
 
-    if-eqz v4, :cond_5
+    mul-float/2addr v0, v7
 
-    move-object/from16 v0, p0
+    add-float/2addr v0, v4
 
-    invoke-direct {v0, v6, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-static {v0}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_5
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v7, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-direct {p0, v1, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_4
 
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    invoke-direct {p0, v6, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
 
     move-result v4
 
-    if-nez v4, :cond_7
+    if-eqz v4, :cond_4
 
-    :cond_5
+    invoke-direct {p0, v5, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    invoke-direct {p0, v8, v9}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
+    :cond_4
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
+
+    :cond_5
+    const/4 v0, 0x0
+
+    goto/16 :goto_2
 
     :cond_6
-    const/4 v2, 0x0
-
-    goto/16 :goto_3
-
-    :cond_7
-    new-instance v4, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v10, 0x0
-
-    invoke-direct {v4, v3, v5, v10}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v3, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v3, v6, v2, v5}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v2, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v2, v7, v9, v5}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v5, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v5, v11, v8, v6}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    const/4 v6, 0x4
-
-    new-array v6, v6, [Lcom/google/zxing/aztec/detector/a;
+    new-instance v4, Lcom/google/zxing/aztec/detector/b;
 
     const/4 v7, 0x0
 
-    aput-object v4, v6, v7
+    invoke-direct {v4, v1, v3, v7}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
+
+    new-instance v1, Lcom/google/zxing/aztec/detector/b;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v6, v0, v3}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
+
+    new-instance v0, Lcom/google/zxing/aztec/detector/b;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v5, v2, v3}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
+
+    new-instance v2, Lcom/google/zxing/aztec/detector/b;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v8, v9, v3}, Lcom/google/zxing/aztec/detector/b;-><init>(IILcom/google/zxing/aztec/detector/a;)V
+
+    const/4 v3, 0x4
+
+    new-array v3, v3, [Lcom/google/zxing/aztec/detector/b;
+
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
 
     const/4 v4, 0x1
 
-    aput-object v3, v6, v4
+    aput-object v1, v3, v4
 
-    const/4 v3, 0x2
+    const/4 v1, 0x2
 
-    aput-object v2, v6, v3
+    aput-object v0, v3, v1
 
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    aput-object v5, v6, v2
+    aput-object v2, v3, v0
 
-    return-object v6
+    return-object v3
 .end method
 
-.method private a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
-    .locals 10
-
-    const/high16 v9, 0x3f00
+.method private a(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;I)[Z
+    .locals 9
 
     new-array v3, p3, [Z
 
-    invoke-static {p1, p2}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
+    invoke-static {p1, p2}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)F
 
     move-result v0
 
@@ -2264,9 +1886,9 @@
 
     div-float v1, v0, v1
 
-    iget v2, p2, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v2, p2, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v4, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v4, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     sub-int/2addr v2, v4
 
@@ -2276,9 +1898,9 @@
 
     div-float v4, v2, v0
 
-    iget v2, p2, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v2, p2, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v5, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v5, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int/2addr v2, v5
 
@@ -2288,13 +1910,13 @@
 
     div-float v5, v1, v0
 
-    iget v0, p1, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v1, v0
-
-    iget v0, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v2, v0
+
+    iget v0, p1, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    int-to-float v1, v0
 
     const/4 v0, 0x0
 
@@ -2303,13 +1925,13 @@
 
     iget-object v6, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    add-float v7, v1, v9
+    invoke-static {v2}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v7, v7
+    move-result v7
 
-    add-float v8, v2, v9
+    invoke-static {v1}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v8, v8
+    move-result v8
 
     invoke-virtual {v6, v7, v8}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
@@ -2317,9 +1939,9 @@
 
     aput-boolean v6, v3, v0
 
-    add-float/2addr v1, v4
+    add-float/2addr v2, v4
 
-    add-float/2addr v2, v5
+    add-float/2addr v1, v5
 
     add-int/lit8 v0, v0, 0x1
 
@@ -2329,32 +1951,32 @@
     return-object v3
 .end method
 
-.method private static b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
+.method private static b(Lcom/google/zxing/aztec/detector/b;Lcom/google/zxing/aztec/detector/b;)F
     .locals 4
 
-    iget v0, p0, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v0, p0, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v1, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v1, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     sub-int/2addr v0, v1
 
-    iget v1, p0, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v1, p0, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v2, p1, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v2, p1, Lcom/google/zxing/aztec/detector/b;->a:I
 
     sub-int/2addr v1, v2
 
     mul-int/2addr v0, v1
 
-    iget v1, p0, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v1, p0, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v2, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v2, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v2, p0, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v3, p1, Lcom/google/zxing/aztec/detector/a;->b:I
+    iget v3, p1, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int/2addr v2, v3
 
@@ -2373,2060 +1995,417 @@
     return v0
 .end method
 
-.method private b([Lcom/google/zxing/aztec/detector/a;)[Lcom/google/zxing/ResultPoint;
-    .locals 11
+.method private b([Lcom/google/zxing/aztec/detector/b;)[Lcom/google/zxing/ResultPoint;
+    .locals 14
+
+    const/4 v3, -0x1
+
+    const/4 v13, 0x3
+
+    const/4 v12, 0x2
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
 
     iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
 
-    mul-int/lit8 v1, v0, 0x2
+    mul-int/lit8 v4, v0, 0x2
 
     iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
 
-    const/4 v2, 0x4
+    const/4 v5, 0x4
 
-    if-le v0, v2, :cond_1
+    if-le v0, v5, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_0
-    add-int/2addr v0, v1
+    add-int/2addr v0, v4
 
-    iget v1, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
+    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
 
-    add-int/lit8 v1, v1, -0x4
+    add-int/lit8 v4, v4, -0x4
 
-    div-int/lit8 v1, v1, 0x8
+    div-int/lit8 v4, v4, 0x8
 
-    add-int/2addr v0, v1
+    add-int/2addr v0, v4
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x4000
+    const/high16 v4, 0x4000
 
-    iget v2, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v5, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
-    int-to-float v2, v2
+    int-to-float v5, v5
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v4, v5
 
-    div-float v1, v0, v1
+    div-float v4, v0, v4
 
-    const/4 v0, 0x0
+    aget-object v0, p1, v2
 
-    aget-object v0, p1, v0
+    iget v0, v0, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    iget v0, v0, Lcom/google/zxing/aztec/detector/a;->a:I
+    aget-object v5, p1, v12
 
-    const/4 v2, 0x2
+    iget v5, v5, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    aget-object v2, p1, v2
+    sub-int v5, v0, v5
 
-    iget v2, v2, Lcom/google/zxing/aztec/detector/a;->a:I
+    if-lez v5, :cond_3
 
-    sub-int v2, v0, v2
-
-    if-lez v2, :cond_2
-
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
-    add-int/2addr v2, v0
+    add-int/2addr v5, v0
 
-    const/4 v0, 0x0
+    aget-object v0, p1, v2
 
-    aget-object v0, p1, v0
+    iget v0, v0, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v0, v0, Lcom/google/zxing/aztec/detector/a;->b:I
+    aget-object v6, p1, v12
 
-    const/4 v3, 0x2
-
-    aget-object v3, p1, v3
-
-    iget v3, v3, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int v3, v0, v3
-
-    if-lez v3, :cond_3
-
-    const/4 v0, 0x1
-
-    :goto_2
-    add-int/2addr v0, v3
-
-    const/4 v3, 0x2
-
-    aget-object v3, p1, v3
-
-    iget v3, v3, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v3, v3
-
-    int-to-float v4, v2
-
-    mul-float/2addr v4, v1
-
-    sub-float/2addr v3, v4
-
-    const/high16 v4, 0x3f00
-
-    add-float/2addr v3, v4
-
-    float-to-int v3, v3
-
-    const/4 v4, 0x2
-
-    aget-object v4, p1, v4
-
-    iget v4, v4, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v4, v4
-
-    int-to-float v5, v0
-
-    mul-float/2addr v5, v1
-
-    sub-float/2addr v4, v5
-
-    const/high16 v5, 0x3f00
-
-    add-float/2addr v4, v5
-
-    float-to-int v4, v4
-
-    const/4 v5, 0x0
-
-    aget-object v5, p1, v5
-
-    iget v5, v5, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v5, v5
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v1
-
-    add-float/2addr v2, v5
-
-    const/high16 v5, 0x3f00
-
-    add-float/2addr v2, v5
-
-    float-to-int v2, v2
-
-    const/4 v5, 0x0
-
-    aget-object v5, p1, v5
-
-    iget v5, v5, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v5, v5
-
-    int-to-float v0, v0
-
-    mul-float/2addr v0, v1
-
-    add-float/2addr v0, v5
-
-    const/high16 v5, 0x3f00
-
-    add-float/2addr v0, v5
-
-    float-to-int v5, v0
-
-    const/4 v0, 0x1
-
-    aget-object v0, p1, v0
-
-    iget v0, v0, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    const/4 v6, 0x3
-
-    aget-object v6, p1, v6
-
-    iget v6, v6, Lcom/google/zxing/aztec/detector/a;->a:I
+    iget v6, v6, Lcom/google/zxing/aztec/detector/b;->b:I
 
     sub-int v6, v0, v6
 
     if-lez v6, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
-    :goto_3
-    add-int/2addr v6, v0
+    :goto_2
+    add-int/2addr v0, v6
 
-    const/4 v0, 0x1
+    aget-object v6, p1, v12
 
-    aget-object v0, p1, v0
-
-    iget v0, v0, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    const/4 v7, 0x3
-
-    aget-object v7, p1, v7
-
-    iget v7, v7, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int v7, v0, v7
-
-    if-lez v7, :cond_5
-
-    const/4 v0, 0x1
-
-    :goto_4
-    add-int/2addr v0, v7
-
-    const/4 v7, 0x3
-
-    aget-object v7, p1, v7
-
-    iget v7, v7, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v7, v7
-
-    int-to-float v8, v6
-
-    mul-float/2addr v8, v1
-
-    sub-float/2addr v7, v8
-
-    const/high16 v8, 0x3f00
-
-    add-float/2addr v7, v8
-
-    float-to-int v7, v7
-
-    const/4 v8, 0x3
-
-    aget-object v8, p1, v8
-
-    iget v8, v8, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v8, v8
-
-    int-to-float v9, v0
-
-    mul-float/2addr v9, v1
-
-    sub-float/2addr v8, v9
-
-    const/high16 v9, 0x3f00
-
-    add-float/2addr v8, v9
-
-    float-to-int v8, v8
-
-    const/4 v9, 0x1
-
-    aget-object v9, p1, v9
-
-    iget v9, v9, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v9, v9
+    iget v6, v6, Lcom/google/zxing/aztec/detector/b;->a:I
 
     int-to-float v6, v6
 
-    mul-float/2addr v6, v1
+    int-to-float v7, v5
 
-    add-float/2addr v6, v9
+    mul-float/2addr v7, v4
 
-    const/high16 v9, 0x3f00
+    sub-float/2addr v6, v7
 
-    add-float/2addr v6, v9
+    invoke-static {v6}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    float-to-int v6, v6
+    move-result v6
 
-    const/4 v9, 0x1
+    aget-object v7, p1, v12
 
-    aget-object v9, p1, v9
+    iget v7, v7, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    iget v9, v9, Lcom/google/zxing/aztec/detector/a;->b:I
+    int-to-float v7, v7
 
-    int-to-float v9, v9
+    int-to-float v8, v0
+
+    mul-float/2addr v8, v4
+
+    sub-float/2addr v7, v8
+
+    invoke-static {v7}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v7
+
+    aget-object v8, p1, v2
+
+    iget v8, v8, Lcom/google/zxing/aztec/detector/b;->a:I
+
+    int-to-float v8, v8
+
+    int-to-float v5, v5
+
+    mul-float/2addr v5, v4
+
+    add-float/2addr v5, v8
+
+    invoke-static {v5}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v5
+
+    aget-object v8, p1, v2
+
+    iget v8, v8, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    int-to-float v8, v8
 
     int-to-float v0, v0
 
-    mul-float/2addr v0, v1
+    mul-float/2addr v0, v4
 
-    add-float/2addr v0, v9
+    add-float/2addr v0, v8
 
-    const/high16 v1, 0x3f00
+    invoke-static {v0}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
 
-    add-float/2addr v0, v1
+    move-result v8
 
-    float-to-int v0, v0
+    aget-object v0, p1, v1
 
-    invoke-direct {p0, v2, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    iget v0, v0, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    move-result v1
+    aget-object v9, p1, v13
 
-    if-eqz v1, :cond_0
+    iget v9, v9, Lcom/google/zxing/aztec/detector/b;->a:I
 
-    invoke-direct {p0, v6, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    sub-int v9, v0, v9
 
-    move-result v1
+    if-lez v9, :cond_5
 
-    if-eqz v1, :cond_0
+    move v0, v1
 
-    invoke-direct {p0, v3, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    :goto_3
+    add-int/2addr v0, v9
 
-    move-result v1
+    aget-object v9, p1, v1
 
-    if-eqz v1, :cond_0
+    iget v9, v9, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    invoke-direct {p0, v7, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+    aget-object v10, p1, v13
 
-    move-result v1
+    iget v10, v10, Lcom/google/zxing/aztec/detector/b;->b:I
 
-    if-nez v1, :cond_6
+    sub-int/2addr v9, v10
+
+    if-lez v9, :cond_0
+
+    move v3, v1
 
     :cond_0
+    add-int/2addr v3, v9
+
+    aget-object v9, p1, v13
+
+    iget v9, v9, Lcom/google/zxing/aztec/detector/b;->a:I
+
+    int-to-float v9, v9
+
+    int-to-float v10, v0
+
+    mul-float/2addr v10, v4
+
+    sub-float/2addr v9, v10
+
+    invoke-static {v9}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v9
+
+    aget-object v10, p1, v13
+
+    iget v10, v10, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    int-to-float v10, v10
+
+    int-to-float v11, v3
+
+    mul-float/2addr v11, v4
+
+    sub-float/2addr v10, v11
+
+    invoke-static {v10}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v10
+
+    aget-object v11, p1, v1
+
+    iget v11, v11, Lcom/google/zxing/aztec/detector/b;->a:I
+
+    int-to-float v11, v11
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, v4
+
+    add-float/2addr v0, v11
+
+    invoke-static {v0}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v0
+
+    aget-object v11, p1, v1
+
+    iget v11, v11, Lcom/google/zxing/aztec/detector/b;->b:I
+
+    int-to-float v11, v11
+
+    int-to-float v3, v3
+
+    mul-float/2addr v3, v4
+
+    add-float/2addr v3, v11
+
+    invoke-static {v3}, Lcom/google/zxing/aztec/detector/Detector;->a(F)I
+
+    move-result v3
+
+    invoke-direct {p0, v5, v8}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-direct {p0, v0, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-direct {p0, v6, v7}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-direct {p0, v9, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
+    :cond_1
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v0
 
     throw v0
 
-    :cond_1
-    const/4 v0, 0x0
+    :cond_2
+    move v0, v2
 
     goto/16 :goto_0
 
-    :cond_2
-    const/4 v0, -0x1
+    :cond_3
+    move v0, v3
 
     goto/16 :goto_1
 
-    :cond_3
-    const/4 v0, -0x1
+    :cond_4
+    move v0, v3
 
     goto/16 :goto_2
 
-    :cond_4
-    const/4 v0, -0x1
+    :cond_5
+    move v0, v3
 
     goto :goto_3
 
-    :cond_5
-    const/4 v0, -0x1
-
-    goto :goto_4
-
     :cond_6
-    const/4 v1, 0x4
+    const/4 v4, 0x4
 
-    new-array v1, v1, [Lcom/google/zxing/ResultPoint;
+    new-array v4, v4, [Lcom/google/zxing/ResultPoint;
 
-    const/4 v9, 0x0
-
-    new-instance v10, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v2, v2
+    new-instance v11, Lcom/google/zxing/ResultPoint;
 
     int-to-float v5, v5
 
-    invoke-direct {v10, v2, v5}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    int-to-float v8, v8
 
-    aput-object v10, v1, v9
+    invoke-direct {v11, v5, v8}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    const/4 v2, 0x1
+    aput-object v11, v4, v2
 
-    new-instance v5, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v6, v6
+    new-instance v2, Lcom/google/zxing/ResultPoint;
 
     int-to-float v0, v0
 
-    invoke-direct {v5, v6, v0}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v5, v1, v2
-
-    const/4 v0, 0x2
-
-    new-instance v2, Lcom/google/zxing/ResultPoint;
-
     int-to-float v3, v3
 
-    int-to-float v4, v4
+    invoke-direct {v2, v0, v3}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    aput-object v2, v4, v1
 
-    aput-object v2, v1, v0
+    new-instance v0, Lcom/google/zxing/ResultPoint;
 
-    const/4 v0, 0x3
+    int-to-float v1, v6
 
-    new-instance v2, Lcom/google/zxing/ResultPoint;
+    int-to-float v2, v7
 
-    int-to-float v3, v7
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    int-to-float v4, v8
+    aput-object v0, v4, v12
 
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    new-instance v0, Lcom/google/zxing/ResultPoint;
 
-    aput-object v2, v1, v0
+    int-to-float v1, v9
 
-    return-object v1
+    int-to-float v2, v10
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+
+    aput-object v0, v4, v13
+
+    return-object v4
 .end method
 
 
 # virtual methods
-.method public final detect()Lcom/google/zxing/aztec/AztecDetectorResult;
-    .locals 22
+.method public detect()Lcom/google/zxing/aztec/AztecDetectorResult;
+    .locals 7
 
-    invoke-direct/range {p0 .. p0}, Lcom/google/zxing/aztec/detector/Detector;->a()Lcom/google/zxing/aztec/detector/a;
+    invoke-direct {p0}, Lcom/google/zxing/aztec/detector/Detector;->a()Lcom/google/zxing/aztec/detector/b;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-direct {p0, v0}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/b;)[Lcom/google/zxing/aztec/detector/b;
 
-    const/4 v3, 0x1
+    move-result-object v0
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, v0}, Lcom/google/zxing/aztec/detector/Detector;->a([Lcom/google/zxing/aztec/detector/b;)V
 
-    iput v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    move-object v4, v2
-
-    move-object v6, v2
-
-    move-object v8, v2
-
-    :goto_0
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    const/16 v5, 0x9
-
-    if-ge v3, v5, :cond_3
-
-    const/4 v3, 0x1
-
-    const/4 v5, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v8, v1, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v9
-
-    const/4 v3, 0x1
-
-    const/4 v5, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v6, v1, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v7
-
-    const/4 v3, -0x1
-
-    const/4 v5, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v1, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v5
-
-    const/4 v3, -0x1
-
-    const/4 v10, -0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v2, v1, v3, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;ZII)Lcom/google/zxing/aztec/detector/a;
-
-    move-result-object v3
-
-    move-object/from16 v0, p0
-
-    iget v10, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    const/4 v11, 0x2
-
-    if-le v10, v11, :cond_0
-
-    invoke-static {v3, v9}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
-
-    move-result v10
-
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    int-to-float v11, v11
-
-    mul-float/2addr v10, v11
-
-    invoke-static {v2, v8}, Lcom/google/zxing/aztec/detector/Detector;->b(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)F
-
-    move-result v11
-
-    move-object/from16 v0, p0
-
-    iget v12, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    add-int/lit8 v12, v12, 0x2
-
-    int-to-float v12, v12
-
-    mul-float/2addr v11, v12
-
-    div-float/2addr v10, v11
-
-    float-to-double v11, v10
-
-    const-wide/high16 v13, 0x3fe8
-
-    cmpg-double v11, v11, v13
-
-    if-ltz v11, :cond_3
-
-    float-to-double v10, v10
-
-    const-wide/high16 v12, 0x3ff4
-
-    cmpl-double v10, v10, v12
-
-    if-gtz v10, :cond_3
-
-    new-instance v10, Lcom/google/zxing/aztec/detector/a;
-
-    iget v11, v9, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v11, v11, -0x3
-
-    iget v12, v9, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v12, v12, 0x3
-
-    const/4 v13, 0x0
-
-    invoke-direct {v10, v11, v12, v13}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v11, Lcom/google/zxing/aztec/detector/a;
-
-    iget v12, v7, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v12, v12, -0x3
-
-    iget v13, v7, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v13, v13, -0x3
-
-    const/4 v14, 0x0
-
-    invoke-direct {v11, v12, v13, v14}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v12, Lcom/google/zxing/aztec/detector/a;
-
-    iget v13, v5, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v13, v13, 0x3
-
-    iget v14, v5, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v14, v14, -0x3
-
-    const/4 v15, 0x0
-
-    invoke-direct {v12, v13, v14, v15}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v13, Lcom/google/zxing/aztec/detector/a;
-
-    iget v14, v3, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    add-int/lit8 v14, v14, 0x3
-
-    iget v15, v3, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    add-int/lit8 v15, v15, 0x3
-
-    const/16 v16, 0x0
-
-    invoke-direct/range {v13 .. v16}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v13, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v14
-
-    if-eqz v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v10, v11}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11, v12}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v12, v13}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;)I
-
-    move-result v10
-
-    if-ne v10, v14, :cond_1
-
-    const/4 v10, 0x1
-
-    :goto_1
-    if-eqz v10, :cond_3
-
-    :cond_0
-    if-nez v1, :cond_2
-
-    const/4 v1, 0x1
-
-    :goto_2
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    move-object v2, v3
-
-    move-object v4, v5
-
-    move-object v6, v7
-
-    move-object v8, v9
-
-    goto/16 :goto_0
-
-    :cond_1
-    const/4 v10, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v1, 0x0
-
-    goto :goto_2
-
-    :cond_3
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    const/4 v3, 0x5
-
-    if-eq v1, v3, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    const/4 v3, 0x7
-
-    if-eq v1, v3, :cond_4
-
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v1
-
-    throw v1
-
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    const/4 v3, 0x5
-
-    if-ne v1, v3, :cond_6
-
-    const/4 v1, 0x1
-
-    :goto_3
-    move-object/from16 v0, p0
-
-    iput-boolean v1, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    const/high16 v1, 0x3fc0
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/lit8 v3, v3, -0x3
-
-    int-to-float v3, v3
-
-    div-float/2addr v1, v3
-
-    iget v3, v8, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    iget v5, v4, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    sub-int/2addr v3, v5
-
-    iget v5, v8, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    iget v7, v4, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int/2addr v5, v7
-
-    iget v7, v4, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v7, v7
-
-    int-to-float v9, v3
-
-    mul-float/2addr v9, v1
-
-    sub-float/2addr v7, v9
-
-    const/high16 v9, 0x3f00
-
-    add-float/2addr v7, v9
-
-    float-to-int v7, v7
-
-    iget v4, v4, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v4, v4
-
-    int-to-float v9, v5
-
-    mul-float/2addr v9, v1
-
-    sub-float/2addr v4, v9
-
-    const/high16 v9, 0x3f00
-
-    add-float/2addr v4, v9
-
-    float-to-int v4, v4
-
-    iget v9, v8, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v9, v9
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v1
-
-    add-float/2addr v3, v9
-
-    const/high16 v9, 0x3f00
-
-    add-float/2addr v3, v9
-
-    float-to-int v3, v3
-
-    iget v8, v8, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v8, v8
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v1
-
-    add-float/2addr v5, v8
-
-    const/high16 v8, 0x3f00
-
-    add-float/2addr v5, v8
-
-    float-to-int v5, v5
-
-    iget v8, v6, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    iget v9, v2, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    sub-int/2addr v8, v9
-
-    iget v9, v6, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    iget v10, v2, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int/2addr v9, v10
-
-    iget v10, v2, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v10, v10
-
-    int-to-float v11, v8
-
-    mul-float/2addr v11, v1
-
-    sub-float/2addr v10, v11
-
-    const/high16 v11, 0x3f00
-
-    add-float/2addr v10, v11
-
-    float-to-int v10, v10
-
-    iget v2, v2, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v2, v2
-
-    int-to-float v11, v9
-
-    mul-float/2addr v11, v1
-
-    sub-float/2addr v2, v11
-
-    const/high16 v11, 0x3f00
-
-    add-float/2addr v2, v11
-
-    float-to-int v2, v2
-
-    iget v11, v6, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v11, v11
-
-    int-to-float v8, v8
-
-    mul-float/2addr v8, v1
-
-    add-float/2addr v8, v11
-
-    const/high16 v11, 0x3f00
-
-    add-float/2addr v8, v11
-
-    float-to-int v8, v8
-
-    iget v6, v6, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v6, v6
-
-    int-to-float v9, v9
-
-    mul-float/2addr v1, v9
-
-    add-float/2addr v1, v6
-
-    const/high16 v6, 0x3f00
-
-    add-float/2addr v1, v6
-
-    float-to-int v1, v1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v3, v5}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v8, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v7, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v10, v2}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v6
-
-    if-nez v6, :cond_7
-
-    :cond_5
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v1
-
-    throw v1
-
-    :cond_6
-    const/4 v1, 0x0
-
-    goto/16 :goto_3
-
-    :cond_7
-    new-instance v6, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v9, 0x0
-
-    invoke-direct {v6, v3, v5, v9}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v3, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v3, v8, v1, v5}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v1, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v1, v7, v4, v5}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    new-instance v4, Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v4, v10, v2, v5}, Lcom/google/zxing/aztec/detector/a;-><init>(IIB)V
-
-    const/4 v2, 0x4
-
-    new-array v5, v2, [Lcom/google/zxing/aztec/detector/a;
-
-    const/4 v2, 0x0
-
-    aput-object v6, v5, v2
-
-    const/4 v2, 0x1
-
-    aput-object v3, v5, v2
-
-    const/4 v2, 0x2
-
-    aput-object v1, v5, v2
-
-    const/4 v1, 0x3
-
-    aput-object v4, v5, v1
-
-    const/4 v1, 0x0
-
-    aget-object v1, v5, v1
-
-    const/4 v2, 0x1
-
-    aget-object v2, v5, v2
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/lit8 v3, v3, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
-
-    move-result-object v2
-
-    const/4 v1, 0x1
-
-    aget-object v1, v5, v1
-
-    const/4 v3, 0x2
-
-    aget-object v3, v5, v3
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v4, v4, 0x2
-
-    add-int/lit8 v4, v4, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v1, v3, v4}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
-
-    move-result-object v3
-
-    const/4 v1, 0x2
-
-    aget-object v1, v5, v1
-
-    const/4 v4, 0x3
-
-    aget-object v4, v5, v4
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v6, v6, 0x2
-
-    add-int/lit8 v6, v6, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v1, v4, v6}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
-
-    move-result-object v4
-
-    const/4 v1, 0x3
-
-    aget-object v1, v5, v1
-
-    const/4 v6, 0x0
-
-    aget-object v6, v5, v6
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v7, v7, 0x2
-
-    add-int/lit8 v7, v7, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v1, v6, v7}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/aztec/detector/a;Lcom/google/zxing/aztec/detector/a;I)[Z
+    invoke-direct {p0, v0}, Lcom/google/zxing/aztec/detector/Detector;->b([Lcom/google/zxing/aztec/detector/b;)[Lcom/google/zxing/ResultPoint;
 
     move-result-object v6
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    aget-boolean v1, v2, v1
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    if-eqz v1, :cond_8
+    rem-int/lit8 v0, v0, 0x4
 
-    move-object/from16 v0, p0
+    aget-object v2, v6, v0
 
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    mul-int/lit8 v1, v1, 0x2
+    add-int/lit8 v0, v0, 0x3
 
-    aget-boolean v1, v2, v1
+    rem-int/lit8 v0, v0, 0x4
 
-    if-eqz v1, :cond_8
+    aget-object v3, v6, v0
 
-    const/4 v1, 0x0
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    move-object/from16 v0, p0
+    add-int/lit8 v0, v0, 0x2
 
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
+    rem-int/lit8 v0, v0, 0x4
 
-    :goto_4
-    move-object/from16 v0, p0
+    aget-object v4, v6, v0
 
-    iget-boolean v1, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
+    iget v0, p0, Lcom/google/zxing/aztec/detector/Detector;->f:I
 
-    if-eqz v1, :cond_d
+    add-int/lit8 v0, v0, 0x1
 
-    const/16 v1, 0x1c
+    rem-int/lit8 v0, v0, 0x4
 
-    new-array v7, v1, [Z
+    aget-object v5, v6, v0
 
-    const/4 v1, 0x0
+    move-object v0, p0
 
-    :goto_5
-    const/4 v8, 0x7
-
-    if-ge v1, v8, :cond_c
-
-    add-int/lit8 v8, v1, 0x2
-
-    aget-boolean v8, v2, v8
-
-    aput-boolean v8, v7, v1
-
-    add-int/lit8 v8, v1, 0x7
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v3, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0xe
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v4, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0x15
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v6, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_5
-
-    :cond_8
-    const/4 v1, 0x0
-
-    aget-boolean v1, v3, v1
-
-    if-eqz v1, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    aget-boolean v1, v3, v1
-
-    if-eqz v1, :cond_9
-
-    const/4 v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    goto :goto_4
-
-    :cond_9
-    const/4 v1, 0x0
-
-    aget-boolean v1, v4, v1
-
-    if-eqz v1, :cond_a
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    aget-boolean v1, v4, v1
-
-    if-eqz v1, :cond_a
-
-    const/4 v1, 0x2
-
-    move-object/from16 v0, p0
-
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    goto :goto_4
-
-    :cond_a
-    const/4 v1, 0x0
-
-    aget-boolean v1, v6, v1
-
-    if-eqz v1, :cond_b
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    aget-boolean v1, v6, v1
-
-    if-eqz v1, :cond_b
-
-    const/4 v1, 0x3
-
-    move-object/from16 v0, p0
-
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    goto :goto_4
-
-    :cond_b
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/aztec/detector/Detector;->a(Lcom/google/zxing/common/BitMatrix;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v1
 
-    throw v1
+    new-instance v0, Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    :cond_c
-    const/16 v1, 0x1c
+    iget-boolean v3, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
 
-    new-array v1, v1, [Z
+    iget v4, p0, Lcom/google/zxing/aztec/detector/Detector;->d:I
 
-    const/4 v2, 0x0
+    iget v5, p0, Lcom/google/zxing/aztec/detector/Detector;->c:I
 
-    :goto_6
-    const/16 v3, 0x1c
+    move-object v2, v6
 
-    if-ge v2, v3, :cond_11
+    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/aztec/AztecDetectorResult;-><init>(Lcom/google/zxing/common/BitMatrix;[Lcom/google/zxing/ResultPoint;ZII)V
 
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    mul-int/lit8 v3, v3, 0x7
-
-    add-int/2addr v3, v2
-
-    rem-int/lit8 v3, v3, 0x1c
-
-    aget-boolean v3, v7, v3
-
-    aput-boolean v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_6
-
-    :cond_d
-    const/16 v1, 0x28
-
-    new-array v7, v1, [Z
-
-    const/4 v1, 0x0
-
-    :goto_7
-    const/16 v8, 0xb
-
-    if-ge v1, v8, :cond_10
-
-    const/4 v8, 0x5
-
-    if-ge v1, v8, :cond_e
-
-    add-int/lit8 v8, v1, 0x2
-
-    aget-boolean v8, v2, v8
-
-    aput-boolean v8, v7, v1
-
-    add-int/lit8 v8, v1, 0xa
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v3, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0x14
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v4, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0x1e
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v6, v9
-
-    aput-boolean v9, v7, v8
-
-    :cond_e
-    const/4 v8, 0x5
-
-    if-le v1, v8, :cond_f
-
-    add-int/lit8 v8, v1, -0x1
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v2, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0xa
-
-    add-int/lit8 v8, v8, -0x1
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v3, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0x14
-
-    add-int/lit8 v8, v8, -0x1
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v4, v9
-
-    aput-boolean v9, v7, v8
-
-    add-int/lit8 v8, v1, 0x1e
-
-    add-int/lit8 v8, v8, -0x1
-
-    add-int/lit8 v9, v1, 0x2
-
-    aget-boolean v9, v6, v9
-
-    aput-boolean v9, v7, v8
-
-    :cond_f
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_7
-
-    :cond_10
-    const/16 v1, 0x28
-
-    new-array v1, v1, [Z
-
-    const/4 v2, 0x0
-
-    :goto_8
-    const/16 v3, 0x28
-
-    if-ge v2, v3, :cond_11
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    mul-int/lit8 v3, v3, 0xa
-
-    add-int/2addr v3, v2
-
-    rem-int/lit8 v3, v3, 0x28
-
-    aget-boolean v3, v7, v3
-
-    aput-boolean v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_8
-
-    :cond_11
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    invoke-static {v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->a([ZZ)V
-
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    if-eqz v2, :cond_13
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x6
-
-    :goto_9
-    const/4 v4, 0x0
-
-    :goto_a
-    if-ge v4, v2, :cond_14
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    shl-int/lit8 v6, v6, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v6, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    aget-boolean v6, v1, v4
-
-    if-eqz v6, :cond_12
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v6, v6, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v6, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    :cond_12
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_a
-
-    :cond_13
-    const/4 v2, 0x5
-
-    const/16 v3, 0xb
-
-    goto :goto_9
-
-    :cond_14
-    move v4, v2
-
-    :goto_b
-    add-int v6, v2, v3
-
-    if-ge v4, v6, :cond_16
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    shl-int/lit8 v6, v6, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v6, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    aget-boolean v6, v1, v4
-
-    if-eqz v6, :cond_15
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    add-int/lit8 v6, v6, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v6, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    :cond_15
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_b
-
-    :cond_16
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iput v1, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    mul-int/lit8 v2, v1, 0x2
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    const/4 v3, 0x4
-
-    if-le v1, v3, :cond_18
-
-    const/4 v1, 0x1
-
-    :goto_c
-    add-int/2addr v1, v2
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v2, v2, -0x4
-
-    div-int/lit8 v2, v2, 0x8
-
-    add-int/2addr v1, v2
-
-    int-to-float v1, v1
-
-    const/high16 v2, 0x4000
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->e:I
-
-    int-to-float v3, v3
-
-    mul-float/2addr v2, v3
-
-    div-float v2, v1, v2
-
-    const/4 v1, 0x0
-
-    aget-object v1, v5, v1
-
-    iget v1, v1, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    const/4 v3, 0x2
-
-    aget-object v3, v5, v3
-
-    iget v3, v3, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    sub-int v3, v1, v3
-
-    if-lez v3, :cond_19
-
-    const/4 v1, 0x1
-
-    :goto_d
-    add-int/2addr v3, v1
-
-    const/4 v1, 0x0
-
-    aget-object v1, v5, v1
-
-    iget v1, v1, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    const/4 v4, 0x2
-
-    aget-object v4, v5, v4
-
-    iget v4, v4, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int v4, v1, v4
-
-    if-lez v4, :cond_1a
-
-    const/4 v1, 0x1
-
-    :goto_e
-    add-int/2addr v1, v4
-
-    const/4 v4, 0x2
-
-    aget-object v4, v5, v4
-
-    iget v4, v4, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v4, v4
-
-    int-to-float v6, v3
-
-    mul-float/2addr v6, v2
-
-    sub-float/2addr v4, v6
-
-    const/high16 v6, 0x3f00
-
-    add-float/2addr v4, v6
-
-    float-to-int v4, v4
-
-    const/4 v6, 0x2
-
-    aget-object v6, v5, v6
-
-    iget v6, v6, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v6, v6
-
-    int-to-float v7, v1
-
-    mul-float/2addr v7, v2
-
-    sub-float/2addr v6, v7
-
-    const/high16 v7, 0x3f00
-
-    add-float/2addr v6, v7
-
-    float-to-int v6, v6
-
-    const/4 v7, 0x0
-
-    aget-object v7, v5, v7
-
-    iget v7, v7, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v7, v7
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v2
-
-    add-float/2addr v3, v7
-
-    const/high16 v7, 0x3f00
-
-    add-float/2addr v3, v7
-
-    float-to-int v3, v3
-
-    const/4 v7, 0x0
-
-    aget-object v7, v5, v7
-
-    iget v7, v7, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v7, v7
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v2
-
-    add-float/2addr v1, v7
-
-    const/high16 v7, 0x3f00
-
-    add-float/2addr v1, v7
-
-    float-to-int v7, v1
-
-    const/4 v1, 0x1
-
-    aget-object v1, v5, v1
-
-    iget v1, v1, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    const/4 v8, 0x3
-
-    aget-object v8, v5, v8
-
-    iget v8, v8, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    sub-int v8, v1, v8
-
-    if-lez v8, :cond_1b
-
-    const/4 v1, 0x1
-
-    :goto_f
-    add-int/2addr v8, v1
-
-    const/4 v1, 0x1
-
-    aget-object v1, v5, v1
-
-    iget v1, v1, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    const/4 v9, 0x3
-
-    aget-object v9, v5, v9
-
-    iget v9, v9, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    sub-int v9, v1, v9
-
-    if-lez v9, :cond_1c
-
-    const/4 v1, 0x1
-
-    :goto_10
-    add-int/2addr v1, v9
-
-    const/4 v9, 0x3
-
-    aget-object v9, v5, v9
-
-    iget v9, v9, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v9, v9
-
-    int-to-float v10, v8
-
-    mul-float/2addr v10, v2
-
-    sub-float/2addr v9, v10
-
-    const/high16 v10, 0x3f00
-
-    add-float/2addr v9, v10
-
-    float-to-int v9, v9
-
-    const/4 v10, 0x3
-
-    aget-object v10, v5, v10
-
-    iget v10, v10, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v10, v10
-
-    int-to-float v11, v1
-
-    mul-float/2addr v11, v2
-
-    sub-float/2addr v10, v11
-
-    const/high16 v11, 0x3f00
-
-    add-float/2addr v10, v11
-
-    float-to-int v10, v10
-
-    const/4 v11, 0x1
-
-    aget-object v11, v5, v11
-
-    iget v11, v11, Lcom/google/zxing/aztec/detector/a;->a:I
-
-    int-to-float v11, v11
-
-    int-to-float v8, v8
-
-    mul-float/2addr v8, v2
-
-    add-float/2addr v8, v11
-
-    const/high16 v11, 0x3f00
-
-    add-float/2addr v8, v11
-
-    float-to-int v8, v8
-
-    const/4 v11, 0x1
-
-    aget-object v5, v5, v11
-
-    iget v5, v5, Lcom/google/zxing/aztec/detector/a;->b:I
-
-    int-to-float v5, v5
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v2
-
-    add-float/2addr v1, v5
-
-    const/high16 v2, 0x3f00
-
-    add-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v3, v7}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v8, v1}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v6}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v9, v10}, Lcom/google/zxing/aztec/detector/Detector;->a(II)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1d
-
-    :cond_17
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v1
-
-    throw v1
-
-    :cond_18
-    const/4 v1, 0x0
-
-    goto/16 :goto_c
-
-    :cond_19
-    const/4 v1, -0x1
-
-    goto/16 :goto_d
-
-    :cond_1a
-    const/4 v1, -0x1
-
-    goto/16 :goto_e
-
-    :cond_1b
-    const/4 v1, -0x1
-
-    goto :goto_f
-
-    :cond_1c
-    const/4 v1, -0x1
-
-    goto :goto_10
-
-    :cond_1d
-    const/4 v2, 0x4
-
-    new-array v0, v2, [Lcom/google/zxing/ResultPoint;
-
-    move-object/from16 v21, v0
-
-    const/4 v2, 0x0
-
-    new-instance v5, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v3, v3
-
-    int-to-float v7, v7
-
-    invoke-direct {v5, v3, v7}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v5, v21, v2
-
-    const/4 v2, 0x1
-
-    new-instance v3, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v5, v8
-
-    int-to-float v1, v1
-
-    invoke-direct {v3, v5, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v3, v21, v2
-
-    const/4 v1, 0x2
-
-    new-instance v2, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v3, v4
-
-    int-to-float v4, v6
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v2, v21, v1
-
-    const/4 v1, 0x3
-
-    new-instance v2, Lcom/google/zxing/ResultPoint;
-
-    int-to-float v3, v9
-
-    int-to-float v4, v10
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v2, v21, v1
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/google/zxing/aztec/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    rem-int/lit8 v1, v1, 0x4
-
-    aget-object v4, v21, v1
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    add-int/lit8 v1, v1, 0x3
-
-    rem-int/lit8 v1, v1, 0x4
-
-    aget-object v20, v21, v1
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    add-int/lit8 v1, v1, 0x2
-
-    rem-int/lit8 v1, v1, 0x4
-
-    aget-object v18, v21, v1
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->f:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    rem-int/lit8 v1, v1, 0x4
-
-    aget-object v16, v21, v1
-
-    move-object/from16 v0, p0
-
-    iget-boolean v1, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    if-eqz v1, :cond_1e
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    mul-int/lit8 v1, v1, 0x4
-
-    add-int/lit8 v3, v1, 0xb
-
-    :goto_11
-    invoke-static {}, Lcom/google/zxing/common/GridSampler;->getInstance()Lcom/google/zxing/common/GridSampler;
-
-    move-result-object v1
-
-    const/high16 v5, 0x3f00
-
-    const/high16 v6, 0x3f00
-
-    int-to-float v7, v3
-
-    const/high16 v8, 0x3f00
-
-    sub-float/2addr v7, v8
-
-    const/high16 v8, 0x3f00
-
-    int-to-float v9, v3
-
-    const/high16 v10, 0x3f00
-
-    sub-float/2addr v9, v10
-
-    int-to-float v10, v3
-
-    const/high16 v11, 0x3f00
-
-    sub-float/2addr v10, v11
-
-    const/high16 v11, 0x3f00
-
-    int-to-float v12, v3
-
-    const/high16 v13, 0x3f00
-
-    sub-float/2addr v12, v13
-
-    invoke-virtual {v4}, Lcom/google/zxing/ResultPoint;->getX()F
-
-    move-result v13
-
-    invoke-virtual {v4}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v14
-
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getX()F
-
-    move-result v15
-
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v16
-
-    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/ResultPoint;->getX()F
-
-    move-result v17
-
-    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v18
-
-    invoke-virtual/range {v20 .. v20}, Lcom/google/zxing/ResultPoint;->getX()F
-
-    move-result v19
-
-    invoke-virtual/range {v20 .. v20}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v20
-
-    move v4, v3
-
-    invoke-virtual/range {v1 .. v20}, Lcom/google/zxing/common/GridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;IIFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
-
-    move-result-object v2
-
-    new-instance v1, Lcom/google/zxing/aztec/AztecDetectorResult;
-
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/google/zxing/aztec/detector/Detector;->d:I
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    move-object/from16 v3, v21
-
-    invoke-direct/range {v1 .. v6}, Lcom/google/zxing/aztec/AztecDetectorResult;-><init>(Lcom/google/zxing/common/BitMatrix;[Lcom/google/zxing/ResultPoint;ZII)V
-
-    return-object v1
-
-    :cond_1e
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    const/4 v3, 0x4
-
-    if-gt v1, v3, :cond_1f
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    mul-int/lit8 v1, v1, 0x4
-
-    add-int/lit8 v3, v1, 0xf
-
-    goto :goto_11
-
-    :cond_1f
-    move-object/from16 v0, p0
-
-    iget v1, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    mul-int/lit8 v1, v1, 0x4
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Lcom/google/zxing/aztec/detector/Detector;->c:I
-
-    add-int/lit8 v3, v3, -0x4
-
-    div-int/lit8 v3, v3, 0x8
-
-    add-int/lit8 v3, v3, 0x1
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v1, v3
-
-    add-int/lit8 v3, v1, 0xf
-
-    goto :goto_11
+    return-object v0
 .end method

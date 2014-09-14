@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/E;
+.class Lcn/com/smartdevices/bracelet/view/E;
 .super Ljava/lang/Object;
 
 

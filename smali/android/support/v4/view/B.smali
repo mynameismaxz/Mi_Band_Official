@@ -22,38 +22,38 @@
     return-object p1
 .end method
 
-.method public final a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
+.method public a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
     .locals 1
 
-    invoke-interface {p1, p2}, Landroid/view/MenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+    invoke-static {p1, p2}, Landroid/support/v4/view/F;->a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/MenuItem;)Landroid/view/View;
+.method public a(Landroid/view/MenuItem;)Landroid/view/View;
     .locals 1
 
-    invoke-interface {p1}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
+    invoke-static {p1}, Landroid/support/v4/view/F;->a(Landroid/view/MenuItem;)Landroid/view/View;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/MenuItem;I)V
+.method public a(Landroid/view/MenuItem;I)V
     .locals 0
 
-    invoke-interface {p1, p2}, Landroid/view/MenuItem;->setShowAsAction(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/F;->a(Landroid/view/MenuItem;I)V
 
     return-void
 .end method
 
-.method public final b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
+.method public b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
     .locals 1
 
-    invoke-interface {p1, p2}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
+    invoke-static {p1, p2}, Landroid/support/v4/view/F;->b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
 
     move-result-object v0
 

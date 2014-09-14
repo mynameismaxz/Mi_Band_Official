@@ -34,59 +34,21 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 3
 
-    const-wide/16 v3, 0x0
-
-    const/4 v2, 0x0
+    const-wide/16 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide v3, p0, Lu/aly/w;->f:J
+    const v0, 0x36ee80
 
-    iput-wide v3, p0, Lu/aly/w;->g:J
+    iput v0, p0, Lu/aly/w;->d:I
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    iput-wide v1, p0, Lu/aly/w;->f:J
 
-    move-result-object v0
+    iput-wide v1, p0, Lu/aly/w;->g:J
 
-    iput-object v0, p0, Lu/aly/w;->m:Landroid/content/Context;
-
-    invoke-static {p1}, Lu/aly/u;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "successful_request"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, p0, Lu/aly/w;->a:I
-
-    const-string v1, "failed_requests "
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, p0, Lu/aly/w;->b:I
-
-    const-string v1, "last_request_spent_ms"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, p0, Lu/aly/w;->e:I
-
-    const-string v1, "last_request_time"
-
-    invoke-interface {v0, v1, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lu/aly/w;->c:J
+    invoke-direct {p0, p1}, Lu/aly/w;->b(Landroid/content/Context;)V
 
     return-void
 .end method

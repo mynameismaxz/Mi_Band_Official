@@ -58,9 +58,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/view/accessibility/c;
+    new-instance v0, Landroid/support/v4/view/accessibility/b;
 
-    invoke-direct {v0}, Landroid/support/v4/view/accessibility/c;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/view/accessibility/b;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityEventCompat;->a:Landroid/support/v4/view/accessibility/c;
 
@@ -84,7 +84,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, p0, v1}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;Ljava/lang/Object;)V
+    invoke-interface {v0, p0, v1}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -106,7 +106,7 @@
 
     sget-object v1, Landroid/support/v4/view/accessibility/AccessibilityEventCompat;->a:Landroid/support/v4/view/accessibility/c;
 
-    invoke-virtual {v1, p0, p1}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;I)Ljava/lang/Object;
+    invoke-interface {v1, p0, p1}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -120,7 +120,7 @@
 
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityEventCompat;->a:Landroid/support/v4/view/accessibility/c;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;)I
+    invoke-interface {v0, p0}, Landroid/support/v4/view/accessibility/c;->a(Landroid/view/accessibility/AccessibilityEvent;)I
 
     move-result v0
 

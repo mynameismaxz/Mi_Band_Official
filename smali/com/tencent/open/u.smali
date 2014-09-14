@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/u;
+.class Lcom/tencent/open/u;
 .super Lcom/tencent/open/C;
 
 
@@ -16,7 +16,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/tencent/open/C;-><init>(Lcom/tencent/open/TaskGuide;B)V
+    invoke-direct {p0, p1, v0}, Lcom/tencent/open/C;-><init>(Lcom/tencent/open/TaskGuide;Lcom/tencent/open/t;)V
 
     const/4 v0, -0x1
 
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method protected final a(Ljava/lang/Exception;)V
+.method protected a(Ljava/lang/Exception;)V
     .locals 5
 
     if-eqz p1, :cond_0
@@ -39,7 +39,7 @@
     :cond_0
     iget-object v0, p0, Lcom/tencent/open/u;->b:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     new-instance v1, Lcom/tencent/tauth/UiError;
 
@@ -77,7 +77,7 @@
     return-void
 .end method
 
-.method public final onComplete(Lorg/json/JSONObject;)V
+.method public onComplete(Lorg/json/JSONObject;)V
     .locals 5
 
     const/4 v1, 0x0
@@ -124,7 +124,7 @@
     :try_start_2
     iget-object v0, p0, Lcom/tencent/open/u;->b:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0, v2}, Lcom/tencent/tauth/IUiListener;->onComplete(Ljava/lang/Object;)V
     :try_end_2
@@ -207,7 +207,7 @@
     :try_start_6
     iget-object v0, p0, Lcom/tencent/open/u;->b:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0, v2}, Lcom/tencent/tauth/IUiListener;->onComplete(Ljava/lang/Object;)V
 

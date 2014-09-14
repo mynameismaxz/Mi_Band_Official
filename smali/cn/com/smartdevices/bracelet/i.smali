@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/i;
+.class Lcn/com/smartdevices/bracelet/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final onUpdateReturned(ILcom/xiaomi/market/sdk/UpdateResponse;)V
+.method public onUpdateReturned(ILcom/xiaomi/market/sdk/UpdateResponse;)V
     .locals 3
 
     const v1, 0x7f0c0026

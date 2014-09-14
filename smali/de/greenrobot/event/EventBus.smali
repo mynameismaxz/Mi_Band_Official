@@ -431,8 +431,6 @@
     invoke-static {v0, v3}, Lde/greenrobot/event/EventBus;->addInterfaces(Ljava/util/List;[Ljava/lang/Class;)V
 
     invoke-virtual {v1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v1
 
@@ -442,6 +440,8 @@
     move-exception v0
 
     monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -481,7 +481,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -596,7 +599,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
@@ -1020,7 +1026,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
@@ -1099,7 +1108,7 @@
 
 
 # virtual methods
-.method public final configureLogSubscriberExceptions(Z)V
+.method public configureLogSubscriberExceptions(Z)V
     .locals 2
 
     iget-boolean v0, p0, Lde/greenrobot/event/EventBus;->subscribed:Z
@@ -1120,7 +1129,7 @@
     return-void
 .end method
 
-.method public final getStickyEvent(Ljava/lang/Class;)Ljava/lang/Object;
+.method public getStickyEvent(Ljava/lang/Class;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1143,8 +1152,6 @@
     move-result-object v0
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
@@ -1152,11 +1159,13 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method final invokeSubscriber(Lde/greenrobot/event/PendingPost;)V
+.method invokeSubscriber(Lde/greenrobot/event/PendingPost;)V
     .locals 2
 
     iget-object v0, p1, Lde/greenrobot/event/PendingPost;->event:Ljava/lang/Object;
@@ -1170,7 +1179,7 @@
     return-void
 .end method
 
-.method final invokeSubscriber(Lde/greenrobot/event/Subscription;Ljava/lang/Object;)V
+.method invokeSubscriber(Lde/greenrobot/event/Subscription;Ljava/lang/Object;)V
     .locals 4
 
     :try_start_0
@@ -1341,7 +1350,7 @@
     throw v1
 .end method
 
-.method public final post(Ljava/lang/Object;)V
+.method public post(Ljava/lang/Object;)V
     .locals 6
 
     const/4 v3, 0x1
@@ -1430,7 +1439,7 @@
     throw v0
 .end method
 
-.method public final postSticky(Ljava/lang/Object;)V
+.method public postSticky(Ljava/lang/Object;)V
     .locals 3
 
     invoke-virtual {p0, p1}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
@@ -1449,8 +1458,6 @@
     invoke-interface {v0, v2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -1458,11 +1465,13 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public final register(Ljava/lang/Object;)V
+.method public register(Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/event/EventBus;->defaultMethodName:Ljava/lang/String;
@@ -1474,7 +1483,7 @@
     return-void
 .end method
 
-.method public final varargs register(Ljava/lang/Object;Ljava/lang/Class;[Ljava/lang/Class;)V
+.method public varargs register(Ljava/lang/Object;Ljava/lang/Class;[Ljava/lang/Class;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1504,7 +1513,7 @@
     return-void
 .end method
 
-.method public final register(Ljava/lang/Object;Ljava/lang/String;)V
+.method public register(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -1514,7 +1523,7 @@
     return-void
 .end method
 
-.method public final varargs declared-synchronized register(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
+.method public varargs declared-synchronized register(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1559,7 +1568,7 @@
     throw v0
 .end method
 
-.method public final registerSticky(Ljava/lang/Object;)V
+.method public registerSticky(Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/event/EventBus;->defaultMethodName:Ljava/lang/String;
@@ -1571,7 +1580,7 @@
     return-void
 .end method
 
-.method public final varargs registerSticky(Ljava/lang/Object;Ljava/lang/Class;[Ljava/lang/Class;)V
+.method public varargs registerSticky(Ljava/lang/Object;Ljava/lang/Class;[Ljava/lang/Class;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1601,7 +1610,7 @@
     return-void
 .end method
 
-.method public final registerSticky(Ljava/lang/Object;Ljava/lang/String;)V
+.method public registerSticky(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -1611,7 +1620,7 @@
     return-void
 .end method
 
-.method public final varargs declared-synchronized registerSticky(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
+.method public varargs declared-synchronized registerSticky(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1656,7 +1665,7 @@
     throw v0
 .end method
 
-.method public final removeStickyEvent(Ljava/lang/Class;)Ljava/lang/Object;
+.method public removeStickyEvent(Ljava/lang/Class;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1679,8 +1688,6 @@
     move-result-object v0
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
@@ -1688,11 +1695,13 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public final removeStickyEvent(Ljava/lang/Object;)Z
+.method public removeStickyEvent(Ljava/lang/Object;)Z
     .locals 3
 
     iget-object v1, p0, Lde/greenrobot/event/EventBus;->stickyEvents:Ljava/util/Map;
@@ -1721,8 +1730,6 @@
     invoke-interface {v2, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v0, 0x1
 
@@ -1740,11 +1747,13 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public final declared-synchronized unregister(Ljava/lang/Object;)V
+.method public declared-synchronized unregister(Ljava/lang/Object;)V
     .locals 3
 
     monitor-enter p0
@@ -1832,7 +1841,7 @@
     goto :goto_1
 .end method
 
-.method public final varargs declared-synchronized unregister(Ljava/lang/Object;[Ljava/lang/Class;)V
+.method public varargs declared-synchronized unregister(Ljava/lang/Object;[Ljava/lang/Class;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {

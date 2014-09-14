@@ -210,6 +210,8 @@
 
     iput-boolean v3, p0, Lcom/tencent/b/b/n;->K:Z
 
+    iput-boolean v3, p0, Lcom/tencent/b/b/n;->L:Z
+
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/tencent/b/b/n;->M:J
@@ -263,6 +265,16 @@
     iput-wide p1, p0, Lcom/tencent/b/b/n;->M:J
 
     return-wide p1
+.end method
+
+.method static synthetic a(Lcom/tencent/b/b/n;Lcom/tencent/b/b/A;)Lcom/tencent/b/b/A;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/tencent/b/b/n;->s:Lcom/tencent/b/b/A;
+
+    return-object v0
 .end method
 
 .method public static declared-synchronized a()Lcom/tencent/b/b/n;
@@ -473,7 +485,7 @@
 
     if-eqz v0, :cond_5
 
-    invoke-direct {p0, v4}, Lcom/tencent/b/b/n;->a(Z)V
+    invoke-direct {p0, v4}, Lcom/tencent/b/b/n;->b(Z)V
 
     :cond_1
     :goto_0
@@ -776,7 +788,7 @@
     goto :goto_1
 
     :cond_5
-    invoke-direct {p0}, Lcom/tencent/b/b/n;->f()V
+    invoke-direct {p0}, Lcom/tencent/b/b/n;->e()V
 
     goto/16 :goto_0
 
@@ -1031,7 +1043,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/tencent/b/b/n;->a(Z)V
+    invoke-direct {p0, v0}, Lcom/tencent/b/b/n;->b(Z)V
 
     goto :goto_0
 
@@ -1082,7 +1094,7 @@
 
     iput-object p1, p0, Lcom/tencent/b/b/n;->y:Lcom/tencent/b/b/f$b;
 
-    invoke-direct {p0}, Lcom/tencent/b/b/n;->e()V
+    invoke-direct {p0}, Lcom/tencent/b/b/n;->d()V
 
     :cond_0
     return-void
@@ -1150,7 +1162,7 @@
     iput v0, p0, Lcom/tencent/b/b/n;->C:I
 
     :cond_1
-    invoke-direct {p0}, Lcom/tencent/b/b/n;->e()V
+    invoke-direct {p0}, Lcom/tencent/b/b/n;->d()V
 
     goto :goto_0
 .end method
@@ -2074,7 +2086,67 @@
     goto/16 :goto_3
 .end method
 
-.method private a(Z)V
+.method static synthetic a(Lcom/tencent/b/b/n;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/tencent/b/b/n;->p:Z
+
+    return p1
+.end method
+
+.method static synthetic a(Z)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/tencent/b/b/n;->t:Z
+
+    return v0
+.end method
+
+.method static synthetic b(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/f;
+    .locals 1
+
+    iget-object v0, p0, Lcom/tencent/b/b/n;->e:Lcom/tencent/b/b/f;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lcom/tencent/b/b/n;I)V
+    .locals 2
+
+    const/4 v0, 0x3
+
+    if-ne p1, v0, :cond_0
+
+    const/4 v0, 0x4
+
+    :cond_0
+    iput v0, p0, Lcom/tencent/b/b/n;->g:I
+
+    iget-object v0, p0, Lcom/tencent/b/b/n;->j:Lcom/tencent/b/a/a/b;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/tencent/b/b/n;->j:Lcom/tencent/b/a/a/b;
+
+    iget v1, p0, Lcom/tencent/b/b/n;->g:I
+
+    invoke-virtual {v0, v1}, Lcom/tencent/b/a/a/b;->onStatusUpdate(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method static synthetic b(Lcom/tencent/b/b/n;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/tencent/b/b/n;->a(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private b(Z)V
     .locals 7
 
     const/4 v6, 0x6
@@ -2259,56 +2331,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic a(Lcom/tencent/b/b/n;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/tencent/b/b/n;->p:Z
-
-    return p1
-.end method
-
-.method static synthetic b(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/f;
-    .locals 1
-
-    iget-object v0, p0, Lcom/tencent/b/b/n;->e:Lcom/tencent/b/b/f;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/tencent/b/b/n;I)V
-    .locals 2
-
-    const/4 v0, 0x3
-
-    if-ne p1, v0, :cond_0
-
-    const/4 v0, 0x4
-
-    :cond_0
-    iput v0, p0, Lcom/tencent/b/b/n;->g:I
-
-    iget-object v0, p0, Lcom/tencent/b/b/n;->j:Lcom/tencent/b/a/a/b;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/tencent/b/b/n;->j:Lcom/tencent/b/a/a/b;
-
-    iget v1, p0, Lcom/tencent/b/b/n;->g:I
-
-    invoke-virtual {v0, v1}, Lcom/tencent/b/a/a/b;->onStatusUpdate(I)V
-
-    :cond_1
-    return-void
-.end method
-
-.method static synthetic b(Lcom/tencent/b/b/n;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/tencent/b/b/n;->a(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method static synthetic c(Lcom/tencent/b/b/n;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
@@ -2320,7 +2342,7 @@
 .method static synthetic c(Lcom/tencent/b/b/n;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/tencent/b/b/n;->e()V
+    invoke-direct {p0}, Lcom/tencent/b/b/n;->d()V
 
     return-void
 .end method
@@ -2349,33 +2371,7 @@
     return-object p1
 .end method
 
-.method static synthetic d()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/tencent/b/b/n;->t:Z
-
-    return v0
-.end method
-
-.method static synthetic e(Lcom/tencent/b/b/n;)I
-    .locals 1
-
-    iget v0, p0, Lcom/tencent/b/b/n;->B:I
-
-    return v0
-.end method
-
-.method static synthetic e(Lcom/tencent/b/b/n;Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    iput-object p1, p0, Lcom/tencent/b/b/n;->G:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method private e()V
+.method private d()V
     .locals 4
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->s:Lcom/tencent/b/b/A;
@@ -2405,25 +2401,23 @@
     goto :goto_0
 .end method
 
-.method static synthetic f(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/A;
+.method static synthetic e(Lcom/tencent/b/b/n;)I
     .locals 1
 
-    const/4 v0, 0x0
+    iget v0, p0, Lcom/tencent/b/b/n;->B:I
 
-    iput-object v0, p0, Lcom/tencent/b/b/n;->s:Lcom/tencent/b/b/A;
-
-    return-object v0
+    return v0
 .end method
 
-.method static synthetic f(Lcom/tencent/b/b/n;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic e(Lcom/tencent/b/b/n;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    iput-object p1, p0, Lcom/tencent/b/b/n;->I:Ljava/lang/String;
+    iput-object p1, p0, Lcom/tencent/b/b/n;->G:Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method private f()V
+.method private e()V
     .locals 3
 
     const/4 v2, 0x1
@@ -2468,7 +2462,7 @@
     return-void
 .end method
 
-.method static synthetic g(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
+.method static synthetic f(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/e$a;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->w:Lcom/tencent/b/b/e$a;
@@ -2476,15 +2470,23 @@
     return-object v0
 .end method
 
-.method static synthetic h(Lcom/tencent/b/b/n;)V
+.method static synthetic f(Lcom/tencent/b/b/n;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    invoke-direct {p0}, Lcom/tencent/b/b/n;->f()V
+    iput-object p1, p0, Lcom/tencent/b/b/n;->I:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic g(Lcom/tencent/b/b/n;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/tencent/b/b/n;->e()V
 
     return-void
 .end method
 
-.method static synthetic i(Lcom/tencent/b/b/n;)I
+.method static synthetic h(Lcom/tencent/b/b/n;)I
     .locals 1
 
     iget v0, p0, Lcom/tencent/b/b/n;->D:I
@@ -2492,7 +2494,7 @@
     return v0
 .end method
 
-.method static synthetic j(Lcom/tencent/b/b/n;)I
+.method static synthetic i(Lcom/tencent/b/b/n;)I
     .locals 1
 
     iget v0, p0, Lcom/tencent/b/b/n;->m:I
@@ -2500,13 +2502,13 @@
     return v0
 .end method
 
-.method static synthetic k(Lcom/tencent/b/b/n;)V
+.method static synthetic j(Lcom/tencent/b/b/n;)V
     .locals 0
 
     return-void
 .end method
 
-.method static synthetic l(Lcom/tencent/b/b/n;)Landroid/content/Context;
+.method static synthetic k(Lcom/tencent/b/b/n;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->b:Landroid/content/Context;
@@ -2514,7 +2516,7 @@
     return-object v0
 .end method
 
-.method static synthetic m(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic l(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->E:Ljava/lang/String;
@@ -2522,7 +2524,7 @@
     return-object v0
 .end method
 
-.method static synthetic n(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic m(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->F:Ljava/lang/String;
@@ -2530,7 +2532,7 @@
     return-object v0
 .end method
 
-.method static synthetic o(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic n(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->G:Ljava/lang/String;
@@ -2538,7 +2540,7 @@
     return-object v0
 .end method
 
-.method static synthetic p(Lcom/tencent/b/b/n;)I
+.method static synthetic o(Lcom/tencent/b/b/n;)I
     .locals 1
 
     iget v0, p0, Lcom/tencent/b/b/n;->g:I
@@ -2546,7 +2548,7 @@
     return v0
 .end method
 
-.method static synthetic q(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/m;
+.method static synthetic p(Lcom/tencent/b/b/n;)Lcom/tencent/b/b/m;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->d:Lcom/tencent/b/b/m;
@@ -2554,7 +2556,7 @@
     return-object v0
 .end method
 
-.method static synthetic r(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic q(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->H:Ljava/lang/String;
@@ -2562,7 +2564,7 @@
     return-object v0
 .end method
 
-.method static synthetic s(Lcom/tencent/b/b/n;)Z
+.method static synthetic r(Lcom/tencent/b/b/n;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/tencent/b/b/n;->K:Z
@@ -2570,7 +2572,7 @@
     return v0
 .end method
 
-.method static synthetic t(Lcom/tencent/b/b/n;)I
+.method static synthetic s(Lcom/tencent/b/b/n;)I
     .locals 1
 
     iget v0, p0, Lcom/tencent/b/b/n;->l:I
@@ -2578,7 +2580,7 @@
     return v0
 .end method
 
-.method static synthetic u(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic t(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->I:Ljava/lang/String;
@@ -2586,7 +2588,7 @@
     return-object v0
 .end method
 
-.method static synthetic v(Lcom/tencent/b/b/n;)Ljava/lang/String;
+.method static synthetic u(Lcom/tencent/b/b/n;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/b/b/n;->J:Ljava/lang/String;
@@ -2938,6 +2940,10 @@
     iput v0, p0, Lcom/tencent/b/b/n;->l:I
 
     :cond_4
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/tencent/b/b/n;->L:Z
+
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/tencent/b/b/n;->D:I

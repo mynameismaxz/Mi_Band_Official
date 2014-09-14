@@ -22,6 +22,7 @@
     :cond_0
     if-nez p1, :cond_1
 
+    :goto_1
     move-object p1, p0
 
     goto :goto_0
@@ -47,9 +48,9 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private static a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
@@ -101,20 +102,20 @@
 
 
 # virtual methods
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
     .locals 15
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v0, "BIZCARD:"
+    const-string v1, "BIZCARD:"
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -122,81 +123,79 @@
     return-object v0
 
     :cond_0
-    const-string v0, "N:"
+    const-string v1, "N:"
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-static {v0, v2, v1}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v0, "X:"
+    const-string v2, "X:"
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v2, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-nez v1, :cond_5
+    invoke-static {v1, v2}, Lcom/google/zxing/client/result/BizcardResultParser;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-object v1, v0
+    move-result-object v1
 
-    :cond_1
-    :goto_1
-    const-string v0, "T:"
+    const-string v2, "T:"
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v2, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v13
 
-    const-string v0, "C:"
+    const-string v2, "C:"
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v2, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v11
 
-    const-string v0, "A:"
+    const-string v2, "A:"
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v2, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->a(Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->a(Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/String;
 
     move-result-object v9
 
-    const-string v0, "B:"
+    const-string v2, "B:"
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v2, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v0, "M:"
+    const-string v2, "M:"
 
     const/4 v4, 0x1
 
-    invoke-static {v0, v2, v4}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v4}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v0, "F:"
+    const-string v2, "F:"
 
     const/4 v5, 0x1
 
-    invoke-static {v0, v2, v5}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v5}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v0, "E:"
+    const-string v2, "E:"
 
     const/4 v6, 0x1
 
-    invoke-static {v0, v2, v6}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v2, v0, v6}, Lcom/google/zxing/client/result/BizcardResultParser;->b(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v6
 
@@ -208,36 +207,10 @@
 
     const/4 v2, 0x0
 
-    new-instance v7, Ljava/util/ArrayList;
+    invoke-static {v3, v4, v5}, Lcom/google/zxing/client/result/BizcardResultParser;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
-    const/4 v8, 0x3
+    move-result-object v3
 
-    invoke-direct {v7, v8}, Ljava/util/ArrayList;-><init>(I)V
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v7, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_2
-    if-eqz v4, :cond_3
-
-    invoke-interface {v7, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_3
-    if-eqz v5, :cond_4
-
-    invoke-interface {v7, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_4
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    const/4 v3, 0x0
-
-    :goto_2
     const/4 v4, 0x0
 
     invoke-static {v6}, Lcom/google/zxing/client/result/BizcardResultParser;->maybeWrap(Ljava/lang/String;)[Ljava/lang/String;
@@ -259,49 +232,9 @@
     invoke-direct/range {v0 .. v14}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
-
-    :cond_5
-    if-eqz v0, :cond_1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const/16 v3, 0x20
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto :goto_1
-
-    :cond_6
-    new-array v3, v3, [Ljava/lang/String;
-
-    invoke-interface {v7, v3}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, [Ljava/lang/String;
-
-    goto :goto_2
 .end method
 
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/BizcardResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;

@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method final e()I
+.method g()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/q;->a:I

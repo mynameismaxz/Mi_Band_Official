@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/BleTask/a;
+.class Lcn/com/smartdevices/bracelet/BleTask/a;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
     iget v0, p1, Landroid/os/Message;->what:I

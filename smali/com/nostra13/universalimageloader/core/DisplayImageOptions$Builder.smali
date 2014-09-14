@@ -267,12 +267,10 @@
 
 
 # virtual methods
-.method final a(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
-    .locals 1
+.method a(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
+    .locals 0
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->s:Z
+    iput-boolean p1, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->s:Z
 
     return-object p0
 .end method
@@ -305,7 +303,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;-><init>(Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;B)V
+    invoke-direct {v0, p0, v1}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions;-><init>(Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;Lcom/nostra13/universalimageloader/core/c;)V
 
     return-object v0
 .end method

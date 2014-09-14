@@ -21,9 +21,9 @@
 
 
 # instance fields
-.field private a:Landroid/os/Handler;
+.field final b:Landroid/os/Handler;
 
-.field private b:Landroid/accounts/AccountManagerCallback;
+.field final c:Landroid/accounts/AccountManagerCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/accounts/AccountManagerCallback",
@@ -34,9 +34,9 @@
     .end annotation
 .end field
 
-.field private c:Landroid/app/Activity;
+.field final d:Landroid/app/Activity;
 
-.field private synthetic d:Lcom/xiaomi/channel/sdk/AccountManager;
+.field final synthetic e:Lcom/xiaomi/channel/sdk/AccountManager;
 
 
 # direct methods
@@ -54,7 +54,7 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lcom/xiaomi/channel/sdk/e;->d:Lcom/xiaomi/channel/sdk/AccountManager;
+    iput-object p1, p0, Lcom/xiaomi/channel/sdk/e;->e:Lcom/xiaomi/channel/sdk/AccountManager;
 
     new-instance v0, Lcom/xiaomi/channel/sdk/f;
 
@@ -62,21 +62,13 @@
 
     invoke-direct {p0, v0}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
+    iput-object p3, p0, Lcom/xiaomi/channel/sdk/e;->b:Landroid/os/Handler;
+
+    iput-object p4, p0, Lcom/xiaomi/channel/sdk/e;->c:Landroid/accounts/AccountManagerCallback;
+
+    iput-object p2, p0, Lcom/xiaomi/channel/sdk/e;->d:Landroid/app/Activity;
+
     return-void
-.end method
-
-.method private a(JLjava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
-    .locals 1
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p3}, Lcom/xiaomi/channel/sdk/e;->a(Ljava/lang/Long;Ljava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method private a(Ljava/lang/Long;Ljava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
@@ -90,7 +82,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/xiaomi/channel/sdk/e;->d:Lcom/xiaomi/channel/sdk/AccountManager;
+    iget-object v0, p0, Lcom/xiaomi/channel/sdk/e;->e:Lcom/xiaomi/channel/sdk/AccountManager;
 
     invoke-static {v0}, Lcom/xiaomi/channel/sdk/AccountManager;->a(Lcom/xiaomi/channel/sdk/AccountManager;)V
 
@@ -239,20 +231,22 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 .end method
 
-.method private c()Landroid/os/Bundle;
+
+# virtual methods
+.method public a(JLjava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-direct {p0, v0, v0}, Lcom/xiaomi/channel/sdk/e;->a(Ljava/lang/Long;Ljava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
+    move-result-object v0
+
+    invoke-direct {p0, v0, p3}, Lcom/xiaomi/channel/sdk/e;->a(Ljava/lang/Long;Ljava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-
-# virtual methods
 .method public abstract a()V
 .end method
 
@@ -284,7 +278,7 @@
     goto :goto_0
 .end method
 
-.method public synthetic getResult()Ljava/lang/Object;
+.method public c()Landroid/os/Bundle;
     .locals 1
 
     const/4 v0, 0x0
@@ -296,14 +290,20 @@
     return-object v0
 .end method
 
-.method public synthetic getResult(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+.method public synthetic getResult()Ljava/lang/Object;
     .locals 1
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0}, Lcom/xiaomi/channel/sdk/e;->c()Landroid/os/Bundle;
 
     move-result-object v0
 
-    invoke-direct {p0, v0, p3}, Lcom/xiaomi/channel/sdk/e;->a(Ljava/lang/Long;Ljava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
+    return-object v0
+.end method
+
+.method public synthetic getResult(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/xiaomi/channel/sdk/e;->a(JLjava/util/concurrent/TimeUnit;)Landroid/os/Bundle;
 
     move-result-object v0
 

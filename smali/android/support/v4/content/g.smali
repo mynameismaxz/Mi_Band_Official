@@ -1,6 +1,9 @@
 .class Landroid/support/v4/content/g;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/content/f;
+
 
 # direct methods
 .method constructor <init>()V
@@ -46,7 +49,7 @@
 .method public b(Landroid/content/ComponentName;)Landroid/content/Intent;
     .locals 2
 
-    invoke-virtual {p0, p1}, Landroid/support/v4/content/f;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {p0, p1}, Landroid/support/v4/content/g;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 

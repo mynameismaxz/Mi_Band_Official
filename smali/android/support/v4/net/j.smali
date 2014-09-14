@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/net/j;
+.class Landroid/support/v4/net/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/net/j;->a:Ljava/lang/ThreadLocal;
@@ -53,25 +53,25 @@
     return-void
 .end method
 
-.method public final a(I)V
+.method public a(I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final a(II)V
+.method public a(II)V
     .locals 0
 
     return-void
 .end method
 
-.method public final a(Ljava/net/Socket;)V
+.method public a(Ljava/net/Socket;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final b()I
+.method public b()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/net/j;->a:Ljava/lang/ThreadLocal;
@@ -87,7 +87,7 @@
     return v0
 .end method
 
-.method public final b(I)V
+.method public b(I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/net/j;->a:Ljava/lang/ThreadLocal;
@@ -103,7 +103,7 @@
     return-void
 .end method
 
-.method public final b(Ljava/net/Socket;)V
+.method public b(Ljava/net/Socket;)V
     .locals 0
 
     return-void

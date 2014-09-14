@@ -211,11 +211,13 @@
 
     sput-object v0, Lu/aly/bh;->u:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/bh;->u:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/cL;
 
-    invoke-direct {v2, v3}, Lu/aly/cL;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/cL;-><init>(Lu/aly/cL;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -225,7 +227,7 @@
 
     new-instance v2, Lu/aly/cN;
 
-    invoke-direct {v2, v3}, Lu/aly/cN;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/cN;-><init>(Lu/aly/cN;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

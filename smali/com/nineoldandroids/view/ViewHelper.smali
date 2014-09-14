@@ -30,7 +30,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->a(Landroid/view/View;)F
 
     move-result v0
 
@@ -56,7 +56,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getPivotX()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->b(Landroid/view/View;)F
 
     move-result v0
 
@@ -82,7 +82,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getPivotY()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->c(Landroid/view/View;)F
 
     move-result v0
 
@@ -108,7 +108,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getRotation()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->d(Landroid/view/View;)F
 
     move-result v0
 
@@ -134,7 +134,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getRotationX()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->e(Landroid/view/View;)F
 
     move-result v0
 
@@ -160,7 +160,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getRotationY()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->f(Landroid/view/View;)F
 
     move-result v0
 
@@ -186,7 +186,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getScaleX()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->g(Landroid/view/View;)F
 
     move-result v0
 
@@ -212,7 +212,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getScaleY()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->h(Landroid/view/View;)F
 
     move-result v0
 
@@ -240,11 +240,9 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->i(Landroid/view/View;)F
 
     move-result v0
-
-    int-to-float v0, v0
 
     goto :goto_0
 .end method
@@ -270,11 +268,9 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getScrollY()I
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->j(Landroid/view/View;)F
 
     move-result v0
-
-    int-to-float v0, v0
 
     goto :goto_0
 .end method
@@ -298,7 +294,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->k(Landroid/view/View;)F
 
     move-result v0
 
@@ -324,7 +320,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getTranslationY()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->l(Landroid/view/View;)F
 
     move-result v0
 
@@ -350,7 +346,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getX()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->m(Landroid/view/View;)F
 
     move-result v0
 
@@ -376,7 +372,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getY()F
+    invoke-static {p0}, Lcom/nineoldandroids/view/a;->n(Landroid/view/View;)F
 
     move-result v0
 
@@ -400,7 +396,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->a(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -422,7 +418,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotX(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->b(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -444,7 +440,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotY(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->c(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -466,7 +462,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setRotation(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->d(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -488,7 +484,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setRotationX(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->e(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -510,7 +506,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setRotationY(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->f(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -532,7 +528,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setScaleX(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->g(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -554,7 +550,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setScaleY(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->h(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -576,7 +572,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setScrollX(I)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->a(Landroid/view/View;I)V
 
     goto :goto_0
 .end method
@@ -598,7 +594,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setScrollY(I)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->b(Landroid/view/View;I)V
 
     goto :goto_0
 .end method
@@ -620,7 +616,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationX(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->i(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -642,7 +638,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->j(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -664,7 +660,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setX(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->k(Landroid/view/View;F)V
 
     goto :goto_0
 .end method
@@ -686,7 +682,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/View;->setY(F)V
+    invoke-static {p0, p1}, Lcom/nineoldandroids/view/a;->l(Landroid/view/View;F)V
 
     goto :goto_0
 .end method

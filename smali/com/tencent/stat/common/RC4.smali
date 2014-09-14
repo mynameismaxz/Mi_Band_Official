@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:[B
+.field static final a:[B
 
 
 # direct methods
@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method private static a([B[B)[B
+.method static a([B[B)[B
     .locals 8
 
     const/16 v7, 0x100
@@ -34,7 +34,9 @@
 
     array-length v2, p1
 
-    if-lez v2, :cond_0
+    const/4 v1, 0x1
+
+    if-lt v2, v1, :cond_0
 
     if-le v2, v7, :cond_1
 
@@ -71,27 +73,27 @@
     move v2, v0
 
     :goto_1
-    if-ge v2, v7, :cond_3
+    if-ge v1, v7, :cond_3
 
-    aget v5, v3, v2
+    aget v5, v3, v1
 
-    add-int/2addr v1, v5
+    add-int/2addr v2, v5
 
-    aget v5, v4, v2
+    aget v5, v4, v1
 
-    add-int/2addr v1, v5
+    add-int/2addr v2, v5
 
-    and-int/lit16 v1, v1, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    aget v5, v3, v2
+    aget v5, v3, v1
 
-    aget v6, v3, v1
+    aget v6, v3, v2
 
-    aput v6, v3, v2
+    aput v6, v3, v1
 
-    aput v5, v3, v1
+    aput v5, v3, v2
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
@@ -109,27 +111,27 @@
 
     if-ge v0, v5, :cond_4
 
-    add-int/lit8 v1, v1, 0x1
-
-    and-int/lit16 v1, v1, 0xff
-
-    aget v5, v3, v1
-
-    add-int/2addr v2, v5
+    add-int/lit8 v2, v2, 0x1
 
     and-int/lit16 v2, v2, 0xff
 
-    aget v5, v3, v1
+    aget v5, v3, v2
 
-    aget v6, v3, v2
+    add-int/2addr v1, v5
 
-    aput v6, v3, v1
+    and-int/lit16 v1, v1, 0xff
 
-    aput v5, v3, v2
+    aget v5, v3, v2
 
-    aget v5, v3, v1
+    aget v6, v3, v1
 
-    aget v6, v3, v2
+    aput v6, v3, v2
+
+    aput v5, v3, v1
+
+    aget v5, v3, v2
+
+    aget v6, v3, v1
 
     add-int/2addr v5, v6
 
@@ -153,7 +155,7 @@
     return-object v4
 .end method
 
-.method private static b([B[B)[B
+.method static b([B[B)[B
     .locals 1
 
     invoke-static {p0, p1}, Lcom/tencent/stat/common/RC4;->a([B[B)[B
@@ -168,7 +170,7 @@
 
     sget-object v0, Lcom/tencent/stat/common/RC4;->a:[B
 
-    invoke-static {p0, v0}, Lcom/tencent/stat/common/RC4;->a([B[B)[B
+    invoke-static {p0, v0}, Lcom/tencent/stat/common/RC4;->b([B[B)[B
 
     move-result-object v0
 

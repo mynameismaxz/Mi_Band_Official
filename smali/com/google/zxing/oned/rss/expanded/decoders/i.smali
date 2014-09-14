@@ -19,7 +19,7 @@
 .method protected abstract a(Ljava/lang/StringBuilder;I)V
 .end method
 
-.method protected final b(Ljava/lang/StringBuilder;II)V
+.method protected b(Ljava/lang/StringBuilder;II)V
     .locals 4
 
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/i;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/s;

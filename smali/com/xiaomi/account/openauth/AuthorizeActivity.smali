@@ -51,19 +51,19 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/String;)Landroid/os/Bundle;
+.method private a(Ljava/lang/String;)Landroid/os/Bundle;
     .locals 4
 
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    if-eqz p0, :cond_1
+    if-eqz p1, :cond_1
 
     :try_start_0
     new-instance v0, Ljava/net/URI;
 
-    invoke-direct {v0, p0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
     const-string v2, "UTF-8"
 
@@ -180,10 +180,10 @@
     return-object v0
 .end method
 
-.method private static a(Landroid/os/Bundle;)Ljava/lang/String;
+.method private a(Landroid/os/Bundle;)Ljava/lang/String;
     .locals 5
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
     const-string v0, ""
 
@@ -195,7 +195,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+    invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -226,7 +226,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -258,7 +258,7 @@
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    invoke-static {p2}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->a(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-direct {p0, p2}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->a(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v1
 
@@ -310,43 +310,15 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 3
 
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    const/4 v2, -0x1
-
-    const/4 v3, -0x2
+    const/4 v2, 0x0
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    new-instance v0, Landroid/widget/LinearLayout;
+    invoke-direct {p0}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->a()Landroid/view/View;
 
-    invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-direct {v1, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    new-instance v1, Landroid/webkit/WebView;
-
-    invoke-direct {v1, p0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
-
-    iput-object v1, p0, Lcom/xiaomi/account/openauth/AuthorizeActivity;->d:Landroid/webkit/WebView;
-
-    iget-object v1, p0, Lcom/xiaomi/account/openauth/AuthorizeActivity;->d:Landroid/webkit/WebView;
-
-    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-direct {v2, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->setContentView(Landroid/view/View;)V
 
@@ -360,15 +332,17 @@
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/AuthorizeActivity;->e:Landroid/webkit/WebSettings;
 
-    invoke-virtual {v0, v5}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/AuthorizeActivity;->e:Landroid/webkit/WebSettings;
 
-    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setSavePassword(Z)V
+    invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setSavePassword(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/AuthorizeActivity;->e:Landroid/webkit/WebSettings;
 
-    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setSaveFormData(Z)V
+    invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setSaveFormData(Z)V
 
     invoke-virtual {p0}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->getIntent()Landroid/content/Intent;
 
@@ -386,7 +360,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->a(Landroid/os/Bundle;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/xiaomi/account/openauth/AuthorizeActivity;->a(Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object v0
 

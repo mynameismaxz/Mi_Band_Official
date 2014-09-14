@@ -14,17 +14,17 @@
 
 
 # static fields
-.field private static synthetic f:[I
+.field private static synthetic q:[I
 
 
 # instance fields
-.field private b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+.field private m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-.field private c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+.field private n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-.field private d:Landroid/widget/FrameLayout;
+.field private o:Landroid/widget/FrameLayout;
 
-.field private e:Z
+.field private p:Z
 
 
 # direct methods
@@ -63,15 +63,15 @@
 .method static synthetic a(Lcom/handmark/pulltorefresh/library/PullToRefreshListView;)Landroid/widget/FrameLayout;
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->d:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->o:Landroid/widget/FrameLayout;
 
     return-object v0
 .end method
 
-.method private static synthetic a()[I
+.method static synthetic e()[I
     .locals 3
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->f:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->q:[I
 
     if-eqz v0, :cond_0
 
@@ -157,7 +157,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
 
     :goto_5
-    sput-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->f:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->q:[I
 
     goto :goto_0
 
@@ -220,7 +220,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e:Z
+    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->p:Z
 
     if-eqz v1, :cond_1
 
@@ -236,7 +236,7 @@
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0, v2}, Lcom/handmark/pulltorefresh/library/LoadingLayoutProxy;->addLayout(Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;)V
 
@@ -249,7 +249,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0, v1}, Lcom/handmark/pulltorefresh/library/LoadingLayoutProxy;->addLayout(Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;)V
 
@@ -304,9 +304,9 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->p:Z
 
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->p:Z
 
     if-eqz v0, :cond_0
 
@@ -336,17 +336,17 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -364,7 +364,7 @@
 
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->d:Landroid/widget/FrameLayout;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->o:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->getContext()Landroid/content/Context;
 
@@ -376,15 +376,15 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->d:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->o:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -407,7 +407,7 @@
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -415,7 +415,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e:Z
+    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->p:Z
 
     if-eqz v1, :cond_0
 
@@ -443,7 +443,7 @@
     :cond_2
     invoke-super {p0, v2}, Lcom/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase;->onRefreshing(Z)V
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a()[I
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e()[I
 
     move-result-object v0
 
@@ -464,9 +464,9 @@
 
     move-result-object v4
 
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->getScrollY()I
 
@@ -505,7 +505,7 @@
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->setHeaderScroll(I)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -520,11 +520,11 @@
 
     move-result-object v5
 
-    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -561,7 +561,7 @@
 
     const/4 v1, 0x1
 
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->p:Z
 
     if-nez v0, :cond_0
 
@@ -571,7 +571,7 @@
     return-void
 
     :cond_0
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a()[I
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->e()[I
 
     move-result-object v0
 
@@ -592,7 +592,7 @@
 
     move-result-object v5
 
-    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->b:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->m:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->getHeaderSize()I
 
@@ -600,13 +600,15 @@
 
     neg-int v3, v0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
 
     move-result v0
+
+    sub-int/2addr v0, v2
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -646,7 +648,7 @@
 
     if-eq v0, v3, :cond_1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -664,9 +666,9 @@
 
     move-result-object v6
 
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->c:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->n:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -680,7 +682,7 @@
 
     move-result v4
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshListView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ListView;
 
@@ -718,8 +720,6 @@
     move v1, v2
 
     goto :goto_1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x3

@@ -1,4 +1,4 @@
-.class final Lcom/umeng/analytics/game/c;
+.class Lcom/umeng/analytics/game/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -28,17 +28,9 @@
     return-void
 .end method
 
-.method private f()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/umeng/analytics/game/c;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -50,7 +42,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;)Z
+.method public a(Ljava/lang/String;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/game/c;->b:Ljava/lang/String;
@@ -62,7 +54,7 @@
     return v0
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 6
 
     iget-wide v0, p0, Lcom/umeng/analytics/game/c;->c:J
@@ -86,19 +78,15 @@
     return-void
 .end method
 
-.method public final c()V
-    .locals 2
+.method public c()V
+    .locals 0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/umeng/analytics/game/c;->d:J
+    invoke-virtual {p0}, Lcom/umeng/analytics/game/c;->a()V
 
     return-void
 .end method
 
-.method public final d()V
+.method public d()V
     .locals 0
 
     invoke-virtual {p0}, Lcom/umeng/analytics/game/c;->b()V
@@ -106,10 +94,18 @@
     return-void
 .end method
 
-.method public final e()J
+.method public e()J
     .locals 2
 
     iget-wide v0, p0, Lcom/umeng/analytics/game/c;->c:J
 
     return-wide v0
+.end method
+
+.method public f()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/umeng/analytics/game/c;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

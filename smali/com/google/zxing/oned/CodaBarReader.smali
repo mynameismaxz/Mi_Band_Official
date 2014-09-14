@@ -241,13 +241,13 @@
 
     const/4 v10, 0x1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v5
 
-    invoke-virtual {p0, v3}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
+    invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
 
     move-result v0
 
@@ -257,16 +257,16 @@
 
     array-length v7, v6
 
-    move v2, v3
+    move v3, v0
 
-    move v1, v3
+    move v2, v4
 
-    move v4, v0
+    move v1, v4
 
     :goto_0
-    if-ge v4, v5, :cond_3
+    if-ge v3, v5, :cond_3
 
-    invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p0, v3}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v8
 
@@ -289,7 +289,7 @@
     move v0, v12
 
     :goto_1
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     move v12, v0
 
@@ -321,7 +321,7 @@
 
     const/4 v8, 0x0
 
-    sub-int v9, v4, v0
+    sub-int v9, v3, v0
 
     div-int/lit8 v9, v9, 0x2
 
@@ -349,7 +349,7 @@
 
     const/4 v9, 0x1
 
-    aput v4, v8, v9
+    aput v3, v8, v9
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -359,7 +359,7 @@
     move-exception v8
 
     :cond_1
-    aget v8, v6, v3
+    aget v8, v6, v4
 
     aget v9, v6, v10
 
@@ -369,15 +369,15 @@
 
     add-int/lit8 v8, v7, -0x2
 
-    invoke-static {v6, v11, v6, v3, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v6, v11, v6, v4, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/lit8 v8, v7, -0x2
 
-    aput v3, v6, v8
+    aput v4, v6, v8
 
     add-int/lit8 v8, v7, -0x1
 
-    aput v3, v6, v8
+    aput v4, v6, v8
 
     add-int/lit8 v1, v1, -0x1
 
@@ -411,7 +411,7 @@
 
 
 # virtual methods
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {

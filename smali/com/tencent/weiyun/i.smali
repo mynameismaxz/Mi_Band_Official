@@ -1,9 +1,9 @@
-.class final Lcom/tencent/weiyun/i;
+.class Lcom/tencent/weiyun/i;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/weiyun/f;
+.field final synthetic a:Lcom/tencent/weiyun/f;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 11
 
     const/4 v1, 0x0
@@ -101,15 +101,88 @@
 
     add-int/2addr v0, v2
 
-    if-eqz v6, :cond_0
+    if-nez v6, :cond_1
 
+    :cond_0
+    :goto_1
+    :try_start_2
+    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+
+    :goto_2
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+
+    move-result-object v0
+
+    iput v10, v0, Landroid/os/Message;->what:I
+
+    const-string v1, ""
+
+    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto :goto_2
+
+    :catch_1
+    move-exception v0
+
+    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+
+    move-result-object v0
+
+    iput v10, v0, Landroid/os/Message;->what:I
+
+    const-string v1, ""
+
+    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto :goto_1
+
+    :cond_1
     new-instance v2, Lorg/apache/http/client/methods/HttpPost;
 
     new-instance v7, Ljava/lang/StringBuilder;
 
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v8, "http://"
 
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     iget-object v8, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
 
@@ -173,7 +246,7 @@
 
     invoke-virtual {v2, v7}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    :try_start_2
+    :try_start_3
     invoke-interface {v3, v2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
     move-result-object v2
@@ -183,15 +256,15 @@
     move-result-object v2
 
     invoke-interface {v2}, Lorg/apache/http/StatusLine;->getStatusCode()I
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     move-result v2
 
-    :goto_1
+    :goto_3
     const/16 v6, 0xc8
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v6, :cond_3
 
     int-to-long v6, v0
 
@@ -203,7 +276,7 @@
 
     cmp-long v2, v6, v8
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_2
 
     int-to-long v6, v0
 
@@ -243,6 +316,12 @@
 
     move-result-object v2
 
+    const-string v7, ""
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -259,104 +338,7 @@
 
     goto/16 :goto_0
 
-    :catch_0
-    move-exception v0
-
-    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
-
-    move-result-object v0
-
-    iput v10, v0, Landroid/os/Message;->what:I
-
-    const-string v1, ""
-
-    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    :goto_2
-    return-void
-
-    :catch_1
-    move-exception v0
-
-    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
-
-    move-result-object v0
-
-    iput v10, v0, Landroid/os/Message;->what:I
-
-    const-string v1, ""
-
-    iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    :cond_0
-    :goto_3
-    :try_start_3
-    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
-
-    goto :goto_2
-
     :catch_2
-    move-exception v0
-
-    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
-
-    move-result-object v1
-
-    iput v10, v1, Landroid/os/Message;->what:I
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
-
-    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_2
-
-    :catch_3
     move-exception v2
 
     iget-object v2, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
@@ -385,9 +367,9 @@
 
     move v2, v1
 
-    goto/16 :goto_1
+    goto :goto_3
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
 
     invoke-static {v2}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
@@ -416,7 +398,7 @@
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
 
     invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
@@ -443,5 +425,36 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_3
+    goto/16 :goto_1
+
+    :catch_3
+    move-exception v0
+
+    iget-object v1, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v1}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+
+    move-result-object v1
+
+    iput v10, v1, Landroid/os/Message;->what:I
+
+    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/tencent/weiyun/i;->a:Lcom/tencent/weiyun/f;
+
+    invoke-static {v0}, Lcom/tencent/weiyun/f;->i(Lcom/tencent/weiyun/f;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto/16 :goto_2
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/h;
+.class Lcom/tencent/connect/avatar/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method private a()V
+.method private a(I)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/h;->a:Lcom/tencent/connect/avatar/ImageActivity;
@@ -43,13 +43,13 @@
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 0
 
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 5
 
     check-cast p1, Lorg/json/JSONObject;
@@ -96,7 +96,7 @@
     :goto_0
     if-eqz v1, :cond_0
 
-    invoke-direct {p0}, Lcom/tencent/connect/avatar/h;->a()V
+    invoke-direct {p0, v1}, Lcom/tencent/connect/avatar/h;->a(I)V
 
     :cond_0
     return-void
@@ -123,10 +123,12 @@
     goto :goto_0
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
-    .locals 0
+.method public onError(Lcom/tencent/tauth/UiError;)V
+    .locals 1
 
-    invoke-direct {p0}, Lcom/tencent/connect/avatar/h;->a()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/tencent/connect/avatar/h;->a(I)V
 
     return-void
 .end method

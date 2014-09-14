@@ -1,18 +1,23 @@
-.class final Landroid/support/v4/widget/w;
+.class Landroid/support/v4/widget/w;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/widget/F;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
+.field final synthetic a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
 
-.field private synthetic b:Landroid/support/v4/widget/v;
+.field final synthetic b:Landroid/support/v4/widget/v;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/widget/v;Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;)V
     .locals 0
 
-    iput-object p2, p0, Landroid/support/v4/widget/t;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
+    iput-object p1, p0, Landroid/support/v4/widget/w;->b:Landroid/support/v4/widget/v;
+
+    iput-object p2, p0, Landroid/support/v4/widget/w;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -21,10 +26,10 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Z
+.method public a(Ljava/lang/String;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/widget/t;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
+    iget-object v0, p0, Landroid/support/v4/widget/w;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;->onQueryTextSubmit(Ljava/lang/String;)Z
 
@@ -33,10 +38,10 @@
     return v0
 .end method
 
-.method public final b(Ljava/lang/String;)Z
+.method public b(Ljava/lang/String;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/widget/t;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
+    iget-object v0, p0, Landroid/support/v4/widget/w;->a:Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;->onQueryTextChange(Ljava/lang/String;)Z
 

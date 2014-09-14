@@ -3,9 +3,10 @@
 
 
 # static fields
-.field private static final a:Ljava/lang/String; = "FileAsyncHttpResponseHandler"
+#the value of this static final field might be set in the static constructor
+.field static final synthetic a:Z = false
 
-.field private static synthetic b:Z
+.field private static final b:Ljava/lang/String; = "FileAsyncHttpResponseHandler"
 
 
 # instance fields
@@ -27,7 +28,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    sput-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->b:Z
+    sput-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->a:Z
 
     return-void
 
@@ -56,7 +57,7 @@
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->b:Z
+    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->a:Z
 
     if-nez v0, :cond_0
 
@@ -200,7 +201,7 @@
 .method protected getTargetFile()Ljava/io/File;
     .locals 1
 
-    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->b:Z
+    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->a:Z
 
     if-nez v0, :cond_0
 
@@ -223,7 +224,7 @@
 .method protected getTemporaryFile(Landroid/content/Context;)Ljava/io/File;
     .locals 3
 
-    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->b:Z
+    sget-boolean v0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->a:Z
 
     if-nez v0, :cond_0
 

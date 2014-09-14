@@ -133,7 +133,7 @@
 
 
 # virtual methods
-.method public final decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
+.method public decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
     .locals 1
 
     const/4 v0, 0x0
@@ -145,7 +145,7 @@
     return-object v0
 .end method
 
-.method public final decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
+.method public decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
     .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {

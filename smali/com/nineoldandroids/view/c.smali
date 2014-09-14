@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/c;
+.class Lcom/nineoldandroids/view/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nineoldandroids/view/b;
+.field final synthetic a:Lcom/nineoldandroids/view/b;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/c;->a:Lcom/nineoldandroids/view/b;

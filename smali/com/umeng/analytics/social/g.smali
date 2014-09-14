@@ -1,4 +1,4 @@
-.class final enum Lcom/umeng/analytics/social/g;
+.class enum Lcom/umeng/analytics/social/g;
 .super Lcom/umeng/analytics/social/UMPlatformData$GENDER;
 
 
@@ -8,14 +8,14 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0, v0, v0}, Lcom/umeng/analytics/social/UMPlatformData$GENDER;-><init>(Ljava/lang/String;IIB)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/umeng/analytics/social/UMPlatformData$GENDER;-><init>(Ljava/lang/String;IILcom/umeng/analytics/social/UMPlatformData$GENDER;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;

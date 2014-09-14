@@ -20,9 +20,17 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, "a_start_time"
+
+    iput-object v0, p0, Lu/aly/v;->d:Ljava/lang/String;
+
+    const-string v0, "a_end_time"
+
+    iput-object v0, p0, Lu/aly/v;->e:Ljava/lang/String;
 
     return-void
 .end method
@@ -81,10 +89,10 @@
     goto :goto_0
 .end method
 
-.method private static a(Landroid/content/SharedPreferences;)V
+.method private a(Landroid/content/SharedPreferences;)V
     .locals 3
 
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
@@ -119,7 +127,7 @@
     return-void
 .end method
 
-.method private static b(Landroid/content/SharedPreferences;)Z
+.method private b(Landroid/content/SharedPreferences;)Z
     .locals 9
 
     const/4 v0, 0x0
@@ -128,13 +136,13 @@
 
     const-string v1, "a_start_time"
 
-    invoke-interface {p0, v1, v7, v8}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {p1, v1, v7, v8}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v1
 
     const-string v3, "a_end_time"
 
-    invoke-interface {p0, v3, v7, v8}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {p1, v3, v7, v8}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v3
 
@@ -310,41 +318,11 @@
     invoke-virtual {v7, v0}, Lu/aly/af;->a(Ljava/util/List;)Lu/aly/bd;
 
     :cond_4
-    invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "session_start_time"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "session_end_time"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "session_id"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "a_start_time"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "a_end_time"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "activities"
-
-    const-string v2, ""
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-direct {p0, v8}, Lu/aly/v;->a(Landroid/content/SharedPreferences;)V
 
     move-object v0, v7
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_5
     const/4 v1, 0x1
@@ -416,102 +394,29 @@
 .end method
 
 .method public c(Landroid/content/Context;)V
-    .locals 13
-
-    const/4 v12, 0x0
-
-    const-wide/16 v10, 0x0
+    .locals 5
 
     invoke-static {p1}, Lu/aly/u;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    const-string v0, "a_start_time"
+    invoke-direct {p0, v0}, Lu/aly/v;->b(Landroid/content/SharedPreferences;)Z
 
-    invoke-interface {v1, v0, v10, v11}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    move-result v1
 
-    move-result-wide v2
+    if-eqz v1, :cond_1
 
-    const-string v0, "a_end_time"
+    invoke-direct {p0, p1, v0}, Lu/aly/v;->a(Landroid/content/Context;Landroid/content/SharedPreferences;)Ljava/lang/String;
 
-    invoke-interface {v1, v0, v10, v11}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    move-result-object v1
 
-    move-result-wide v4
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    cmp-long v0, v2, v10
-
-    if-eqz v0, :cond_2
-
-    sub-long v2, v6, v2
-
-    sget-wide v8, Lcom/umeng/analytics/AnalyticsConfig;->kContinueSessionMillis:J
-
-    cmp-long v0, v2, v8
-
-    if-gez v0, :cond_2
-
-    const-string v0, "MobclickAgent"
-
-    const-string v2, "onResume called before onPause"
-
-    invoke-static {v0, v2}, Lu/aly/bj;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    if-eqz v0, :cond_4
-
-    invoke-static {p1}, Lu/aly/k;->a(Landroid/content/Context;)Lu/aly/k;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1}, Lu/aly/v;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, p1}, Lu/aly/v;->a(Landroid/content/Context;)Lu/aly/af;
-
-    move-result-object v3
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
-    const-string v5, "session_id"
-
-    invoke-interface {v4, v5, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v5, "session_start_time"
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    invoke-interface {v4, v5, v6, v7}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    const-string v5, "session_end_time"
-
-    invoke-interface {v4, v5, v10, v11}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v0, v3}, Lu/aly/k;->a(Lu/aly/p;)V
-
-    :goto_2
-    const-string v0, "MobclickAgent"
+    const-string v2, "MobclickAgent"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -519,18 +424,18 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v0, v2}, Lu/aly/bj;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lu/aly/bj;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_3
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    :goto_1
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
@@ -544,36 +449,22 @@
 
     const-string v1, "a_end_time"
 
-    invoke-interface {v0, v1, v10, v11}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    const-wide/16 v2, 0x0
+
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     goto :goto_0
 
-    :cond_2
-    sub-long v2, v6, v4
+    :cond_1
+    const-string v1, "session_id"
 
-    sget-wide v4, Lcom/umeng/analytics/AnalyticsConfig;->kContinueSessionMillis:J
+    const/4 v2, 0x0
 
-    cmp-long v0, v2, v4
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {v0, v12}, Lu/aly/k;->a(Lu/aly/p;)V
-
-    goto :goto_2
-
-    :cond_4
-    const-string v0, "session_id"
-
-    invoke-interface {v1, v0, v12}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "MobclickAgent"
 
@@ -583,17 +474,17 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v2, v0}, Lu/aly/bj;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lu/aly/bj;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_1
 .end method
 
 .method public d(Landroid/content/Context;)V

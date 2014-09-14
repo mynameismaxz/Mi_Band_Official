@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/a;
+.class Lcn/com/smartdevices/bracelet/chart/util/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -34,66 +34,66 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 4
 
-    const v3, 0x3f666666
+    const v0, 0x3f666666
 
-    const/high16 v2, 0x3f00
+    const/high16 v1, 0x3f00
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->b:Ljava/lang/String;
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setScaleX(F)V
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setScaleX(F)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setScaleY(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->c:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setScaleY(F)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->c:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setAlpha(F)V
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->c:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setScaleX(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->c:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setScaleY(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setScaleX(F)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/a;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setScaleY(F)V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/H;
+.class Landroid/support/v4/app/H;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/app/ListFragment;
+.field final synthetic a:Landroid/support/v4/app/ListFragment;
 
 
 # direct methods
@@ -22,16 +22,16 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/app/H;->a:Landroid/support/v4/app/ListFragment;
 
-    iget-object v0, v0, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v0, v0, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     iget-object v1, p0, Landroid/support/v4/app/H;->a:Landroid/support/v4/app/ListFragment;
 
-    iget-object v1, v1, Landroid/support/v4/app/ListFragment;->N:Landroid/widget/ListView;
+    iget-object v1, v1, Landroid/support/v4/app/ListFragment;->e:Landroid/widget/ListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->focusableViewAvailable(Landroid/view/View;)V
 

@@ -1,4 +1,4 @@
-.class final Lkankan/wheel/widget/e;
+.class Lkankan/wheel/widget/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lkankan/wheel/widget/WheelView;
+.field final synthetic a:Lkankan/wheel/widget/WheelView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onChanged(Lkankan/wheel/widget/WheelView;II)V
+.method public onChanged(Lkankan/wheel/widget/WheelView;II)V
     .locals 3
 
     const-string v0, "WheelView"

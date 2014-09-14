@@ -1,9 +1,9 @@
-.class final Lcom/nineoldandroids/animation/h;
+.class Lcom/nineoldandroids/animation/h;
 .super Lcom/nineoldandroids/animation/Keyframe;
 
 
 # instance fields
-.field private d:F
+.field d:F
 
 
 # direct methods
@@ -41,31 +41,9 @@
     return-void
 .end method
 
-.method private b()Lcom/nineoldandroids/animation/h;
-    .locals 3
-
-    new-instance v0, Lcom/nineoldandroids/animation/h;
-
-    invoke-virtual {p0}, Lcom/nineoldandroids/animation/h;->getFraction()F
-
-    move-result v1
-
-    iget v2, p0, Lcom/nineoldandroids/animation/h;->d:F
-
-    invoke-direct {v0, v1, v2}, Lcom/nineoldandroids/animation/h;-><init>(FF)V
-
-    invoke-virtual {p0}, Lcom/nineoldandroids/animation/h;->getInterpolator()Landroid/view/animation/Interpolator;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/nineoldandroids/animation/h;->setInterpolator(Landroid/view/animation/Interpolator;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()F
+.method public a()F
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/animation/h;->d:F
@@ -73,7 +51,7 @@
     return v0
 .end method
 
-.method public final synthetic clone()Lcom/nineoldandroids/animation/Keyframe;
+.method public b()Lcom/nineoldandroids/animation/h;
     .locals 3
 
     new-instance v0, Lcom/nineoldandroids/animation/h;
@@ -95,7 +73,17 @@
     return-object v0
 .end method
 
-.method public final getValue()Ljava/lang/Object;
+.method public synthetic clone()Lcom/nineoldandroids/animation/Keyframe;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/nineoldandroids/animation/h;->b()Lcom/nineoldandroids/animation/h;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getValue()Ljava/lang/Object;
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/animation/h;->d:F
@@ -107,7 +95,7 @@
     return-object v0
 .end method
 
-.method public final setValue(Ljava/lang/Object;)V
+.method public setValue(Ljava/lang/Object;)V
     .locals 2
 
     if-eqz p1, :cond_0

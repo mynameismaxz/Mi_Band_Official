@@ -326,29 +326,23 @@
 
     iget v0, p0, Lcom/google/zxing/oned/ITFReader;->g:I
 
-    mul-int/lit8 v0, v0, 0xa
+    mul-int/lit8 v1, v0, 0xa
 
-    add-int/lit8 v1, p2, -0x1
+    add-int/lit8 v0, p2, -0x1
 
     :goto_0
-    if-lez v0, :cond_0
+    if-lez v1, :cond_0
 
-    if-ltz v1, :cond_0
+    if-ltz v0, :cond_0
 
-    invoke-virtual {p1, v1}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p1, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v2
 
-    if-nez v2, :cond_0
-
-    add-int/lit8 v0, v0, -0x1
-
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_0
+    if-eqz v2, :cond_1
 
     :cond_0
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -357,6 +351,13 @@
     throw v0
 
     :cond_1
+    add-int/lit8 v1, v1, -0x1
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_2
     return-void
 .end method
 
@@ -448,40 +449,6 @@
 
     :cond_2
     return-void
-.end method
-
-.method private a(Lcom/google/zxing/common/BitArray;)[I
-    .locals 4
-
-    const/4 v3, 0x0
-
-    invoke-static {p1}, Lcom/google/zxing/oned/ITFReader;->b(Lcom/google/zxing/common/BitArray;)I
-
-    move-result v0
-
-    sget-object v1, Lcom/google/zxing/oned/ITFReader;->h:[I
-
-    invoke-static {p1, v0, v1}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I[I)[I
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    aget v1, v0, v1
-
-    aget v2, v0, v3
-
-    sub-int/2addr v1, v2
-
-    shr-int/lit8 v1, v1, 0x2
-
-    iput v1, p0, Lcom/google/zxing/oned/ITFReader;->g:I
-
-    aget v1, v0, v3
-
-    invoke-direct {p0, p1, v1}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I)V
-
-    return-object v0
 .end method
 
 .method private static a(Lcom/google/zxing/common/BitArray;I[I)[I
@@ -602,7 +569,7 @@
     throw v0
 .end method
 
-.method private static b(Lcom/google/zxing/common/BitArray;)I
+.method private static c(Lcom/google/zxing/common/BitArray;)I
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
@@ -627,13 +594,49 @@
     return v1
 .end method
 
-.method private c(Lcom/google/zxing/common/BitArray;)[I
+
+# virtual methods
+.method a(Lcom/google/zxing/common/BitArray;)[I
+    .locals 4
+
+    const/4 v3, 0x0
+
+    invoke-static {p1}, Lcom/google/zxing/oned/ITFReader;->c(Lcom/google/zxing/common/BitArray;)I
+
+    move-result v0
+
+    sget-object v1, Lcom/google/zxing/oned/ITFReader;->h:[I
+
+    invoke-static {p1, v0, v1}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I[I)[I
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    aget v1, v0, v1
+
+    aget v2, v0, v3
+
+    sub-int/2addr v1, v2
+
+    shr-int/lit8 v1, v1, 0x2
+
+    iput v1, p0, Lcom/google/zxing/oned/ITFReader;->g:I
+
+    aget v1, v0, v3
+
+    invoke-direct {p0, p1, v1}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I)V
+
+    return-object v0
+.end method
+
+.method b(Lcom/google/zxing/common/BitArray;)[I
     .locals 5
 
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->reverse()V
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/oned/ITFReader;->b(Lcom/google/zxing/common/BitArray;)I
+    invoke-static {p1}, Lcom/google/zxing/oned/ITFReader;->c(Lcom/google/zxing/common/BitArray;)I
 
     move-result v0
 
@@ -691,9 +694,7 @@
     throw v0
 .end method
 
-
-# virtual methods
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -713,31 +714,11 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p2}, Lcom/google/zxing/oned/ITFReader;->b(Lcom/google/zxing/common/BitArray;)I
-
-    move-result v0
-
-    sget-object v3, Lcom/google/zxing/oned/ITFReader;->h:[I
-
-    invoke-static {p2, v0, v3}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I[I)[I
+    invoke-virtual {p0, p2}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;)[I
 
     move-result-object v5
 
-    aget v0, v5, v1
-
-    aget v3, v5, v2
-
-    sub-int/2addr v0, v3
-
-    shr-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, Lcom/google/zxing/oned/ITFReader;->g:I
-
-    aget v0, v5, v2
-
-    invoke-direct {p0, p2, v0}, Lcom/google/zxing/oned/ITFReader;->a(Lcom/google/zxing/common/BitArray;I)V
-
-    invoke-direct {p0, p2}, Lcom/google/zxing/oned/ITFReader;->c(Lcom/google/zxing/common/BitArray;)[I
+    invoke-virtual {p0, p2}, Lcom/google/zxing/oned/ITFReader;->b(Lcom/google/zxing/common/BitArray;)[I
 
     move-result-object v6
 
@@ -764,6 +745,8 @@
     invoke-interface {p3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [I
 
     check-cast v0, [I
 

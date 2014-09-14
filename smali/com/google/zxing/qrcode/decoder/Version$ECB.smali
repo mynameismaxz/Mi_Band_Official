@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final getCount()I
+.method public getCount()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->a:I
@@ -31,7 +31,7 @@
     return v0
 .end method
 
-.method public final getDataCodewords()I
+.method public getDataCodewords()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->b:I

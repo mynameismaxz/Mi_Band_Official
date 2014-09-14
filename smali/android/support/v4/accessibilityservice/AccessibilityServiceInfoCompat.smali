@@ -65,9 +65,9 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v4/accessibilityservice/d;
+    new-instance v0, Landroid/support/v4/accessibilityservice/c;
 
-    invoke-direct {v0}, Landroid/support/v4/accessibilityservice/d;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/accessibilityservice/c;-><init>()V
 
     sput-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
@@ -283,7 +283,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->a(Landroid/accessibilityservice/AccessibilityServiceInfo;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->a(Landroid/accessibilityservice/AccessibilityServiceInfo;)Z
 
     move-result v0
 
@@ -295,7 +295,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->f(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->f(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
 
     move-result v0
 
@@ -307,7 +307,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->b(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->b(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -319,7 +319,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->c(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->c(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -331,7 +331,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->d(Landroid/accessibilityservice/AccessibilityServiceInfo;)Landroid/content/pm/ResolveInfo;
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->d(Landroid/accessibilityservice/AccessibilityServiceInfo;)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
@@ -343,7 +343,7 @@
 
     sget-object v0, Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;->a:Landroid/support/v4/accessibilityservice/d;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/accessibilityservice/d;->e(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+    invoke-interface {v0, p0}, Landroid/support/v4/accessibilityservice/d;->e(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
 
     move-result-object v0
 

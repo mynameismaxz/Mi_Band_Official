@@ -75,7 +75,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IB)V
+.method synthetic constructor <init>(Ljava/lang/String;ILcom/google/gson/m;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/google/gson/LongSerializationPolicy;-><init>(Ljava/lang/String;I)V

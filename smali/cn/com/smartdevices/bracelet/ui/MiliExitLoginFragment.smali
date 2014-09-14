@@ -40,13 +40,13 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f03002d
+    const v0, 0x7f03002f
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x7f03002e
+    const v0, 0x7f030030
 
     goto :goto_0
 .end method
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0700d9
+    const v0, 0x7f0700df
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -70,19 +70,19 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0c01ae
+    const v1, 0x7f0c01b2
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v3, 0x7f0c01af
+    const v3, 0x7f0c01b3
 
     invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f0c01b0
+    const v4, 0x7f0c01b4
 
     invoke-virtual {p0, v4}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 

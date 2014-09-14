@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/hm/bleservice/a;
+.class Lcom/xiaomi/hm/bleservice/a;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
 
 # direct methods
 .method constructor <init>(Lcom/xiaomi/hm/bleservice/BLEService;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/xiaomi/hm/bleservice/a;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 0
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V

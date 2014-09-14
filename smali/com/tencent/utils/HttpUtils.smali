@@ -425,7 +425,11 @@
 .end method
 
 .method private static a(Lorg/apache/http/HttpResponse;)Ljava/lang/String;
-    .locals 5
+    .locals 6
+
+    const/4 v5, -0x1
+
+    const-string v0, ""
 
     invoke-interface {p0}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
@@ -461,7 +465,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1
+    if-le v0, v5, :cond_1
 
     new-instance v0, Ljava/util/zip/GZIPInputStream;
 
@@ -477,9 +481,7 @@
 
     move-result v3
 
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_0
+    if-eq v3, v5, :cond_0
 
     const/4 v4, 0x0
 
@@ -507,13 +509,15 @@
 .method private static a(Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;Ljava/lang/String;)V
     .locals 3
 
+    const/4 v1, -0x1
+
     const-string v0, "add_share"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "upload_pic"
 
@@ -521,7 +525,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "add_topic"
 
@@ -529,7 +533,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "set_user_face"
 
@@ -537,7 +541,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "add_t"
 
@@ -545,7 +549,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "add_pic_t"
 
@@ -553,7 +557,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "add_pic_url"
 
@@ -561,7 +565,7 @@
 
     move-result v0
 
-    if-gez v0, :cond_0
+    if-gt v0, v1, :cond_0
 
     const-string v0, "add_video"
 
@@ -569,7 +573,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1
+    if-le v0, v1, :cond_1
 
     :cond_0
     const-string v0, "requireApi"
@@ -670,7 +674,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -686,19 +690,34 @@
 
     instance-of v6, v1, Ljava/lang/String;
 
-    if-eqz v6, :cond_3
+    if-nez v6, :cond_1
 
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_1
     new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v7, "Content-Disposition: form-data; name=\""
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v6, "\"\r\n"
+    const-string v6, "\""
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v6, "\r\n"
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -726,13 +745,17 @@
 
     add-int/lit8 v0, v4, -0x1
 
-    if-ge v2, v0, :cond_1
+    if-ge v2, v0, :cond_2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "\r\n--"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -750,22 +773,17 @@
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
+    :cond_2
     move v1, v2
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
-
-    :cond_3
-    move v1, v2
-
-    goto :goto_1
+    goto/16 :goto_0
 .end method
 
 .method public static encodeUrl(Landroid/os/Bundle;)Ljava/lang/String;
@@ -803,7 +821,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -826,7 +844,7 @@
     :cond_2
     instance-of v3, v3, [Ljava/lang/String;
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     if-eqz v1, :cond_3
 
@@ -868,7 +886,7 @@
     :goto_3
     array-length v6, v0
 
-    if-ge v3, v6, :cond_1
+    if-ge v3, v6, :cond_5
 
     if-nez v3, :cond_4
 
@@ -895,9 +913,13 @@
     :cond_4
     new-instance v6, Ljava/lang/StringBuilder;
 
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v7, ","
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     aget-object v7, v0, v3
 
@@ -918,11 +940,19 @@
     goto :goto_4
 
     :cond_5
-    if-eqz v1, :cond_6
+    move v0, v1
+
+    :goto_5
+    move v1, v0
+
+    goto :goto_1
+
+    :cond_6
+    if-eqz v1, :cond_7
 
     move v1, v2
 
-    :goto_5
+    :goto_6
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -959,16 +989,18 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_1
-
-    :cond_6
-    const-string v3, "&"
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move v0, v1
 
     goto :goto_5
 
     :cond_7
+    const-string v3, "&"
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_6
+
+    :cond_8
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1089,9 +1121,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "AndroidSDK_"
 
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     sget-object v3, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
 
@@ -1238,78 +1274,38 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_3
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {p0}, Lcom/tencent/utils/HttpUtils;->b(Landroid/content/Context;)Ljava/lang/String;
 
-    const/16 v2, 0xb
+    move-result-object v2
 
-    if-ge v0, v2, :cond_5
-
-    if-eqz p0, :cond_4
-
-    invoke-static {p0}, Landroid/net/Proxy;->getHost(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-static {}, Landroid/net/Proxy;->getDefaultHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_3
-    :goto_1
     invoke-static {p0}, Lcom/tencent/utils/HttpUtils;->a(Landroid/content/Context;)I
-
-    move-result v2
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_6
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    if-ltz v2, :cond_6
+    move-result v0
 
-    new-instance v1, Lcom/tencent/utils/HttpUtils$NetworkProxy;
+    if-nez v0, :cond_3
 
-    const/4 v3, 0x0
+    if-ltz v3, :cond_3
 
-    invoke-direct {v1, v0, v2, v3}, Lcom/tencent/utils/HttpUtils$NetworkProxy;-><init>(Ljava/lang/String;IB)V
+    new-instance v0, Lcom/tencent/utils/HttpUtils$NetworkProxy;
 
-    move-object v0, v1
+    invoke-direct {v0, v2, v3, v1}, Lcom/tencent/utils/HttpUtils$NetworkProxy;-><init>(Ljava/lang/String;ILcom/tencent/utils/c;)V
 
     goto :goto_0
 
-    :cond_4
-    invoke-static {}, Landroid/net/Proxy;->getDefaultHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_5
-    const-string v0, "http.proxyHost"
-
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_6
+    :cond_3
     move-object v0, v1
 
     goto :goto_0
 .end method
 
 .method public static openUrl2(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Lcom/tencent/utils/Util$Statistic;
-    .locals 11
+    .locals 12
 
     const/4 v3, -0x1
 
@@ -1347,7 +1343,7 @@
     throw v0
 
     :cond_1
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_2
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -1356,6 +1352,8 @@
     move-object v2, v0
 
     :goto_0
+    const-string v0, ""
+
     const-string v0, "appid_for_getting_config"
 
     invoke-virtual {v2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1368,19 +1366,19 @@
 
     invoke-static {p0, v0, p1}, Lcom/tencent/utils/HttpUtils;->getHttpClient(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/client/HttpClient;
 
-    move-result-object v5
-
-    const/4 v1, 0x0
+    move-result-object v6
 
     const/4 v0, 0x0
 
-    const-string v4, "GET"
+    const/4 v4, 0x0
 
-    invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v1, "GET"
 
-    move-result v4
+    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v4, :cond_5
+    move-result v1
+
+    if-eqz v1, :cond_4
 
     invoke-static {v2}, Lcom/tencent/utils/HttpUtils;->encodeUrl(Landroid/os/Bundle;)Ljava/lang/String;
 
@@ -1390,7 +1388,7 @@
 
     move-result v0
 
-    add-int/lit8 v1, v0, 0x0
+    add-int v1, v4, v0
 
     const-string v0, "?"
 
@@ -1398,7 +1396,7 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_4
+    if-ne v0, v3, :cond_3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1445,15 +1443,14 @@
 
     invoke-interface {v0, v2, v3}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    move v10, v1
+    move v11, v1
 
     move-object v1, v0
 
-    move v0, v10
+    move v0, v11
 
-    :cond_2
     :goto_2
-    invoke-interface {v5, v1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
+    invoke-interface {v6, v1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
     move-result-object v1
 
@@ -1467,7 +1464,7 @@
 
     const/16 v3, 0xc8
 
-    if-ne v2, v3, :cond_c
+    if-ne v2, v3, :cond_b
 
     invoke-static {v1}, Lcom/tencent/utils/HttpUtils;->a(Lorg/apache/http/HttpResponse;)Ljava/lang/String;
 
@@ -1479,7 +1476,7 @@
 
     return-object v2
 
-    :cond_3
+    :cond_2
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -1488,7 +1485,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1509,28 +1506,28 @@
 
     goto :goto_1
 
-    :cond_5
-    const-string v4, "POST"
+    :cond_4
+    const-string v1, "POST"
 
-    invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_c
 
-    new-instance v4, Lorg/apache/http/client/methods/HttpPost;
+    new-instance v5, Lorg/apache/http/client/methods/HttpPost;
 
-    invoke-direct {v4, p1}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, p1}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
 
     const-string v0, "Accept-Encoding"
 
     const-string v1, "gzip"
 
-    invoke-virtual {v4, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v6, Landroid/os/Bundle;
+    new-instance v7, Landroid/os/Bundle;
 
-    invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
     invoke-virtual {v2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -1538,17 +1535,17 @@
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v8
 
-    :cond_6
+    :cond_5
     :goto_3
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1558,45 +1555,47 @@
 
     move-result-object v1
 
-    instance-of v8, v1, [B
+    instance-of v9, v1, [B
 
-    if-eqz v8, :cond_6
+    if-eqz v9, :cond_5
 
     check-cast v1, [B
 
-    invoke-virtual {v6, v0, v1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
+    check-cast v1, [B
+
+    invoke-virtual {v7, v0, v1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
     goto :goto_3
 
-    :cond_7
+    :cond_6
     const-string v0, "method"
 
     invoke-virtual {v2, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
     const-string v0, "method"
 
     invoke-virtual {v2, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_8
+    :cond_7
     const-string v0, "Content-Type"
 
     const-string v1, "multipart/form-data; boundary=3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f"
 
-    invoke-virtual {v4, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "Connection"
 
     const-string v1, "Keep-Alive"
 
-    invoke-virtual {v4, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5, v0, v1}, Lorg/apache/http/client/methods/HttpPost;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v7, Ljava/io/ByteArrayOutputStream;
+    new-instance v8, Ljava/io/ByteArrayOutputStream;
 
-    invoke-direct {v7}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    invoke-direct {v8}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     const-string v0, "--3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f\r\n"
 
@@ -1604,7 +1603,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     const-string v0, "3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f"
 
@@ -1616,15 +1615,15 @@
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    invoke-virtual {v6}, Landroid/os/Bundle;->isEmpty()Z
+    invoke-virtual {v7}, Landroid/os/Bundle;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
-    invoke-virtual {v6}, Landroid/os/Bundle;->size()I
+    invoke-virtual {v7}, Landroid/os/Bundle;->size()I
 
     move-result v2
 
@@ -1634,27 +1633,27 @@
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    invoke-virtual {v6}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+    invoke-virtual {v7}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v9
 
     move v1, v3
 
-    :cond_9
+    :cond_8
     :goto_4
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1664,17 +1663,11 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v9, "Content-Disposition: form-data; name=\""
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v10, "Content-Disposition: form-data; name=\""
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v9, "\"; filename=\""
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -1682,9 +1675,25 @@
 
     move-result-object v3
 
-    const-string v9, "\"\r\n"
+    const-string v10, "\"; filename=\""
 
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v10, "\""
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v10, "\r\n"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -1696,7 +1705,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v7, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     const-string v3, "Content-Type: content/unknown\r\n\r\n"
 
@@ -1704,20 +1713,20 @@
 
     move-result-object v3
 
-    invoke-virtual {v7, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    invoke-virtual {v6, v0}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
+    invoke-virtual {v7, v0}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    :cond_a
+    :cond_9
     add-int/lit8 v0, v2, -0x1
 
-    if-ge v1, v0, :cond_9
+    if-ge v1, v0, :cond_8
 
     const-string v0, "\r\n--3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f\r\n"
 
@@ -1725,47 +1734,51 @@
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     goto :goto_4
 
-    :cond_b
+    :cond_a
     const-string v0, "\r\n--3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f--\r\n"
 
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-virtual {v8, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    invoke-virtual {v7}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    invoke-virtual {v8}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v1
 
     array-length v0, v1
 
-    add-int/lit8 v0, v0, 0x0
+    add-int/2addr v0, v4
 
-    invoke-virtual {v7}, Ljava/io/ByteArrayOutputStream;->close()V
+    invoke-virtual {v8}, Ljava/io/ByteArrayOutputStream;->close()V
 
     new-instance v2, Lorg/apache/http/entity/ByteArrayEntity;
 
     invoke-direct {v2, v1}, Lorg/apache/http/entity/ByteArrayEntity;-><init>([B)V
 
-    invoke-virtual {v4, v2}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
+    invoke-virtual {v5, v2}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    move-object v1, v4
+    move-object v1, v5
 
     goto/16 :goto_2
 
-    :cond_c
+    :cond_b
     new-instance v0, Lcom/tencent/utils/HttpUtils$HttpStatusException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "http status code error:"
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1778,6 +1791,13 @@
     invoke-direct {v0, v1}, Lcom/tencent/utils/HttpUtils$HttpStatusException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :cond_c
+    move-object v1, v0
+
+    move v0, v4
+
+    goto/16 :goto_2
 .end method
 
 .method public static request(Lcom/tencent/connect/auth/QQToken;Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)Lorg/json/JSONObject;
@@ -1898,9 +1918,13 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v12, "config 1:Common_HttpRetryCount            config_value:"
 
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
 
     invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1945,9 +1969,13 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v12, "config 1:Common_HttpRetryCount            result_value:"
 
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
 
     invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1991,8 +2019,8 @@
 
     move/from16 v8, v16
 
-    :cond_1
-    add-int/lit8 v8, v8, 0x1
+    :goto_1
+    add-int/lit8 v13, v8, 0x1
 
     :try_start_0
     move-object/from16 v0, p1
@@ -2005,9 +2033,9 @@
 
     move-result-object v10
 
-    iget-object v11, v10, Lcom/tencent/utils/Util$Statistic;->response:Ljava/lang/String;
+    iget-object v8, v10, Lcom/tencent/utils/Util$Statistic;->response:Ljava/lang/String;
 
-    invoke-static {v11}, Lcom/tencent/utils/Util;->parseJson(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-static {v8}, Lcom/tencent/utils/Util;->parseJson(Ljava/lang/String;)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_a
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_9
@@ -2020,9 +2048,9 @@
     move-result-object v14
 
     :try_start_1
-    const-string v9, "ret"
+    const-string v8, "ret"
 
-    invoke-virtual {v14, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v14, v8}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_1
@@ -2032,11 +2060,11 @@
     .catch Ljava/net/MalformedURLException; {:try_start_1 .. :try_end_1} :catch_6
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
 
-    move-result v9
+    move-result v12
 
-    :goto_1
+    :goto_2
     :try_start_2
-    iget-wide v12, v10, Lcom/tencent/utils/Util$Statistic;->reqSize:J
+    iget-wide v8, v10, Lcom/tencent/utils/Util$Statistic;->reqSize:J
 
     iget-wide v10, v10, Lcom/tencent/utils/Util$Statistic;->rspSize:J
     :try_end_2
@@ -2048,13 +2076,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_7
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_8
 
-    move-wide/from16 v16, v12
-
-    move v12, v9
-
-    move-wide/from16 v8, v16
-
-    :goto_2
+    :goto_3
     invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
 
     move-result-object v3
@@ -2070,61 +2092,55 @@
     return-object v14
 
     :catch_0
-    move-exception v9
+    move-exception v8
 
-    const/4 v9, -0x4
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v9
-
-    move-object/from16 v16, v9
-
-    move-object v9, v14
-
-    move-object/from16 v14, v16
-
-    :goto_3
-    invoke-virtual {v14}, Lorg/apache/http/conn/ConnectTimeoutException;->printStackTrace()V
-
-    const/4 v15, -0x7
-
-    const-wide/16 v12, 0x0
-
-    const-wide/16 v10, 0x0
-
-    if-ge v8, v4, :cond_2
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    move v14, v15
-
-    :goto_4
-    if-lt v8, v4, :cond_1
-
-    move-wide/from16 v16, v12
-
-    move v12, v14
-
-    move-object v14, v9
-
-    move-wide/from16 v8, v16
+    const/4 v12, -0x4
 
     goto :goto_2
 
-    :cond_2
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+    :catch_1
+    move-exception v8
 
-    move-result-object v3
+    move-object v15, v14
+
+    move-object v14, v8
+
+    :goto_4
+    invoke-virtual {v14}, Lorg/apache/http/conn/ConnectTimeoutException;->printStackTrace()V
+
+    const/4 v12, -0x7
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x7
+    if-ge v13, v4, :cond_1
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    move-wide/from16 v16, v8
+
+    move-object v8, v15
+
+    move-wide/from16 v14, v16
+
+    :goto_5
+    if-lt v13, v4, :cond_3
+
+    move-wide/from16 v16, v14
+
+    move-object v14, v8
+
+    move-wide/from16 v8, v16
+
+    goto :goto_3
+
+    :cond_1
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2137,43 +2153,39 @@
     throw v14
 
     :catch_2
-    move-exception v9
+    move-exception v8
 
-    move-object/from16 v16, v9
+    move-object v15, v14
 
-    move-object v9, v14
+    move-object v14, v8
 
-    move-object/from16 v14, v16
-
-    :goto_5
+    :goto_6
     invoke-virtual {v14}, Ljava/net/SocketTimeoutException;->printStackTrace()V
 
-    const/4 v15, -0x8
-
-    const-wide/16 v12, 0x0
-
-    const-wide/16 v10, 0x0
-
-    if-ge v8, v4, :cond_3
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    move v14, v15
-
-    goto :goto_4
-
-    :cond_3
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x8
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x8
+    if-ge v13, v4, :cond_2
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    move-wide/from16 v16, v8
+
+    move-object v8, v15
+
+    move-wide/from16 v14, v16
+
+    goto :goto_5
+
+    :cond_2
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2211,14 +2223,14 @@
 
     move-result v12
 
-    :goto_6
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
-
+    :goto_7
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
+
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2237,7 +2249,7 @@
 
     const/16 v12, -0x9
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_5
     move-exception v3
@@ -2253,15 +2265,15 @@
 
     invoke-virtual {v14}, Ljava/net/MalformedURLException;->printStackTrace()V
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x3
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x3
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2284,13 +2296,13 @@
 
     move-result v12
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
-
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
+
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2309,15 +2321,15 @@
 
     invoke-virtual {v14}, Lorg/json/JSONException;->printStackTrace()V
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x4
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x4
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2330,18 +2342,29 @@
     throw v14
 
     :catch_9
-    move-exception v10
+    move-exception v8
 
-    move-object v14, v10
+    move-object v14, v8
 
-    goto/16 :goto_5
+    move-object v15, v9
+
+    goto/16 :goto_6
 
     :catch_a
-    move-exception v10
+    move-exception v8
 
-    move-object v14, v10
+    move-object v14, v8
 
-    goto/16 :goto_3
+    move-object v15, v9
+
+    goto/16 :goto_4
+
+    :cond_3
+    move-object v9, v8
+
+    move v8, v13
+
+    goto/16 :goto_1
 
     :cond_4
     move-object/from16 v5, p2
@@ -2493,9 +2516,13 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v12, "config 1:Common_HttpRetryCount            config_value:"
 
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
 
     invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2540,9 +2567,13 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v12, "config 1:Common_HttpRetryCount            result_value:"
 
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
 
     invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2586,8 +2617,8 @@
 
     move/from16 v8, v16
 
-    :cond_1
-    add-int/lit8 v8, v8, 0x1
+    :goto_1
+    add-int/lit8 v13, v8, 0x1
 
     :try_start_0
     move-object/from16 v0, p1
@@ -2598,9 +2629,9 @@
 
     move-result-object v10
 
-    iget-object v11, v10, Lcom/tencent/utils/Util$Statistic;->response:Ljava/lang/String;
+    iget-object v8, v10, Lcom/tencent/utils/Util$Statistic;->response:Ljava/lang/String;
 
-    invoke-static {v11}, Lcom/tencent/utils/Util;->parseJson(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-static {v8}, Lcom/tencent/utils/Util;->parseJson(Ljava/lang/String;)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_a
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_9
@@ -2613,9 +2644,9 @@
     move-result-object v14
 
     :try_start_1
-    const-string v9, "ret"
+    const-string v8, "ret"
 
-    invoke-virtual {v14, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v14, v8}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_1
@@ -2625,11 +2656,11 @@
     .catch Ljava/net/MalformedURLException; {:try_start_1 .. :try_end_1} :catch_6
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
 
-    move-result v9
+    move-result v12
 
-    :goto_1
+    :goto_2
     :try_start_2
-    iget-wide v12, v10, Lcom/tencent/utils/Util$Statistic;->reqSize:J
+    iget-wide v8, v10, Lcom/tencent/utils/Util$Statistic;->reqSize:J
 
     iget-wide v10, v10, Lcom/tencent/utils/Util$Statistic;->rspSize:J
     :try_end_2
@@ -2641,13 +2672,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_7
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_8
 
-    move-wide/from16 v16, v12
-
-    move v12, v9
-
-    move-wide/from16 v8, v16
-
-    :goto_2
+    :goto_3
     invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
 
     move-result-object v3
@@ -2663,61 +2688,55 @@
     return-object v14
 
     :catch_0
-    move-exception v9
+    move-exception v8
 
-    const/4 v9, -0x4
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v9
-
-    move-object/from16 v16, v9
-
-    move-object v9, v14
-
-    move-object/from16 v14, v16
-
-    :goto_3
-    invoke-virtual {v14}, Lorg/apache/http/conn/ConnectTimeoutException;->printStackTrace()V
-
-    const/4 v15, -0x7
-
-    const-wide/16 v12, 0x0
-
-    const-wide/16 v10, 0x0
-
-    if-ge v8, v4, :cond_2
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    move v14, v15
-
-    :goto_4
-    if-lt v8, v4, :cond_1
-
-    move-wide/from16 v16, v12
-
-    move v12, v14
-
-    move-object v14, v9
-
-    move-wide/from16 v8, v16
+    const/4 v12, -0x4
 
     goto :goto_2
 
-    :cond_2
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+    :catch_1
+    move-exception v8
 
-    move-result-object v3
+    move-object v15, v14
+
+    move-object v14, v8
+
+    :goto_4
+    invoke-virtual {v14}, Lorg/apache/http/conn/ConnectTimeoutException;->printStackTrace()V
+
+    const/4 v12, -0x7
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x7
+    if-ge v13, v4, :cond_1
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    move-wide/from16 v16, v8
+
+    move-object v8, v15
+
+    move-wide/from16 v14, v16
+
+    :goto_5
+    if-lt v13, v4, :cond_3
+
+    move-wide/from16 v16, v14
+
+    move-object v14, v8
+
+    move-wide/from16 v8, v16
+
+    goto :goto_3
+
+    :cond_1
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2730,43 +2749,39 @@
     throw v14
 
     :catch_2
-    move-exception v9
+    move-exception v8
 
-    move-object/from16 v16, v9
+    move-object v15, v14
 
-    move-object v9, v14
+    move-object v14, v8
 
-    move-object/from16 v14, v16
-
-    :goto_5
+    :goto_6
     invoke-virtual {v14}, Ljava/net/SocketTimeoutException;->printStackTrace()V
 
-    const/4 v15, -0x8
-
-    const-wide/16 v12, 0x0
-
-    const-wide/16 v10, 0x0
-
-    if-ge v8, v4, :cond_3
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    move v14, v15
-
-    goto :goto_4
-
-    :cond_3
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x8
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x8
+    if-ge v13, v4, :cond_2
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    move-wide/from16 v16, v8
+
+    move-object v8, v15
+
+    move-wide/from16 v14, v16
+
+    goto :goto_5
+
+    :cond_2
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2804,14 +2819,14 @@
 
     move-result v12
 
-    :goto_6
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
-
+    :goto_7
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
+
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2830,7 +2845,7 @@
 
     const/16 v12, -0x9
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_5
     move-exception v3
@@ -2846,15 +2861,15 @@
 
     invoke-virtual {v14}, Ljava/net/MalformedURLException;->printStackTrace()V
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x3
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x3
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2877,13 +2892,13 @@
 
     move-result v12
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
-
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
+
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2902,15 +2917,15 @@
 
     invoke-virtual {v14}, Lorg/json/JSONException;->printStackTrace()V
 
-    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
-
-    move-result-object v3
+    const/4 v12, -0x4
 
     const-wide/16 v8, 0x0
 
     const-wide/16 v10, 0x0
 
-    const/4 v12, -0x4
+    invoke-static {}, Lcom/tencent/open/a/b;->a()Lcom/tencent/open/a/b;
+
+    move-result-object v3
 
     invoke-virtual/range {p0 .. p0}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
@@ -2923,18 +2938,29 @@
     throw v14
 
     :catch_9
-    move-exception v10
+    move-exception v8
 
-    move-object v14, v10
+    move-object v14, v8
 
-    goto/16 :goto_5
+    move-object v15, v9
+
+    goto/16 :goto_6
 
     :catch_a
-    move-exception v10
+    move-exception v8
 
-    move-object v14, v10
+    move-object v14, v8
 
-    goto/16 :goto_3
+    move-object v15, v9
+
+    goto/16 :goto_4
+
+    :cond_3
+    move-object v9, v8
+
+    move v8, v13
+
+    goto/16 :goto_1
 
     :cond_4
     move-object/from16 v5, p2

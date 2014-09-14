@@ -3,14 +3,16 @@
 
 
 # instance fields
-.field private a:Ljava/io/File;
+.field final synthetic a:Lcom/xiaomi/market/sdk/c;
 
-.field private synthetic b:Lcom/xiaomi/market/sdk/c;
+.field private c:Ljava/io/File;
 
 
 # direct methods
 .method public constructor <init>(Lcom/xiaomi/market/sdk/c;Ljava/io/File;)V
     .locals 1
+
+    iput-object p1, p0, Lcom/xiaomi/market/sdk/e;->a:Lcom/xiaomi/market/sdk/c;
 
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -18,7 +20,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/xiaomi/market/sdk/i;-><init>(Lcom/xiaomi/market/sdk/c;Ljava/io/OutputStream;)V
 
-    iput-object p2, p0, Lcom/xiaomi/market/sdk/e;->a:Ljava/io/File;
+    iput-object p2, p0, Lcom/xiaomi/market/sdk/e;->c:Ljava/io/File;
 
     return-void
 .end method
@@ -36,14 +38,14 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     :goto_0
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/e;->a:Ljava/io/File;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/e;->c:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     :try_start_1
     new-instance v0, Ljava/io/FileOutputStream;
 
-    iget-object v1, p0, Lcom/xiaomi/market/sdk/e;->a:Ljava/io/File;
+    iget-object v1, p0, Lcom/xiaomi/market/sdk/e;->c:Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 

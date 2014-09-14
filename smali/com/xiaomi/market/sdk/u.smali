@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/market/sdk/u;
+.class Lcom/xiaomi/market/sdk/u;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,14 +16,14 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
 
     invoke-static {}, Lcom/xiaomi/market/sdk/XiaomiUpdateAgent;->b()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/market/sdk/s;->a(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/xiaomi/market/sdk/s;->b(Landroid/content/Context;)Z
 
     move-result v0
 

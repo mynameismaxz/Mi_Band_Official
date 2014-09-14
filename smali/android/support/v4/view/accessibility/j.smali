@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/accessibility/d;
+.field final synthetic a:Landroid/support/v4/view/accessibility/k;
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/view/accessibility/d;)V
+.method constructor <init>(Landroid/support/v4/view/accessibility/k;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/view/accessibility/j;->a:Landroid/support/v4/view/accessibility/d;
+    iput-object p1, p0, Landroid/support/v4/view/accessibility/j;->a:Landroid/support/v4/view/accessibility/k;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onAccessibilityStateChanged(Z)V
+.method public onAccessibilityStateChanged(Z)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/j;->a:Landroid/support/v4/view/accessibility/d;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/j;->a:Landroid/support/v4/view/accessibility/k;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/d;->a(Z)V
+    invoke-interface {v0, p1}, Landroid/support/v4/view/accessibility/k;->a(Z)V
 
     return-void
 .end method

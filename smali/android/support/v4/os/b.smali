@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/os/b;
+.class Landroid/support/v4/os/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -49,7 +49,7 @@
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,7 +70,7 @@
     return-object v0
 .end method
 
-.method public final createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+.method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,7 +90,7 @@
     return-object v0
 .end method
 
-.method public final newArray(I)[Ljava/lang/Object;
+.method public newArray(I)[Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

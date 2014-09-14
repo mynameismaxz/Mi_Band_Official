@@ -92,15 +92,15 @@
 .method static constructor <clinit>()V
     .locals 13
 
-    const/16 v12, 0xc
+    const/16 v12, 0xd
 
-    const/4 v11, 0x1
+    const/16 v11, 0xc
 
-    const/4 v3, 0x0
+    const/4 v10, 0x1
 
-    const/16 v10, 0xb
+    const/16 v9, 0xb
 
-    const/4 v9, 0x2
+    const/4 v8, 0x2
 
     new-instance v0, Lu/aly/dd;
 
@@ -114,9 +114,7 @@
 
     const-string v1, "snapshots"
 
-    const/16 v2, 0xd
-
-    invoke-direct {v0, v1, v2, v11}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
+    invoke-direct {v0, v1, v12, v10}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
 
     sput-object v0, Lu/aly/as;->f:Lu/aly/ct;
 
@@ -126,7 +124,7 @@
 
     const/16 v2, 0xf
 
-    invoke-direct {v0, v1, v2, v9}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
+    invoke-direct {v0, v1, v2, v8}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
 
     sput-object v0, Lu/aly/as;->g:Lu/aly/ct;
 
@@ -136,7 +134,7 @@
 
     const/4 v2, 0x3
 
-    invoke-direct {v0, v1, v10, v2}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
+    invoke-direct {v0, v1, v9, v2}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
 
     sput-object v0, Lu/aly/as;->h:Lu/aly/ct;
 
@@ -146,11 +144,15 @@
 
     sput-object v0, Lu/aly/as;->i:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/as;->i:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/aL;
 
-    invoke-direct {v2, v3}, Lu/aly/aL;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/aL;-><init>(Lu/aly/aL;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -160,7 +162,9 @@
 
     new-instance v2, Lu/aly/aN;
 
-    invoke-direct {v2, v3}, Lu/aly/aN;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/aN;-><init>(Lu/aly/aN;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -178,21 +182,19 @@
 
     new-instance v4, Lu/aly/co;
 
-    const/16 v5, 0xd
+    new-instance v5, Lu/aly/cm;
 
-    new-instance v6, Lu/aly/cm;
+    invoke-direct {v5, v9}, Lu/aly/cm;-><init>(B)V
 
-    invoke-direct {v6, v10}, Lu/aly/cm;-><init>(B)V
+    new-instance v6, Lu/aly/cq;
 
-    new-instance v7, Lu/aly/cq;
+    const-class v7, Lu/aly/ar;
 
-    const-class v8, Lu/aly/ar;
+    invoke-direct {v6, v11, v7}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
 
-    invoke-direct {v7, v12, v8}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
+    invoke-direct {v4, v12, v5, v6}, Lu/aly/co;-><init>(BLu/aly/cm;Lu/aly/cm;)V
 
-    invoke-direct {v4, v5, v6, v7}, Lu/aly/co;-><init>(BLu/aly/cm;Lu/aly/cm;)V
-
-    invoke-direct {v2, v3, v11, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
+    invoke-direct {v2, v3, v10, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -210,11 +212,11 @@
 
     const-class v7, Lu/aly/aq;
 
-    invoke-direct {v6, v12, v7}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
+    invoke-direct {v6, v11, v7}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
 
     invoke-direct {v4, v5, v6}, Lu/aly/cn;-><init>(BLu/aly/cm;)V
 
-    invoke-direct {v2, v3, v9, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
+    invoke-direct {v2, v3, v8, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -226,9 +228,9 @@
 
     new-instance v4, Lu/aly/cm;
 
-    invoke-direct {v4, v10}, Lu/aly/cm;-><init>(B)V
+    invoke-direct {v4, v9}, Lu/aly/cm;-><init>(B)V
 
-    invoke-direct {v2, v3, v9, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
+    invoke-direct {v2, v3, v8, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -267,6 +269,8 @@
     sget-object v2, Lu/aly/as$e;->c:Lu/aly/as$e;
 
     aput-object v2, v0, v1
+
+    iput-object v0, p0, Lu/aly/as;->j:[Lu/aly/as$e;
 
     return-void
 .end method
@@ -311,6 +315,8 @@
     sget-object v2, Lu/aly/as$e;->c:Lu/aly/as$e;
 
     aput-object v2, v0, v1
+
+    iput-object v0, p0, Lu/aly/as;->j:[Lu/aly/as$e;
 
     invoke-virtual {p1}, Lu/aly/as;->f()Z
 

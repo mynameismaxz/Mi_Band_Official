@@ -16,13 +16,13 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p0, v0}, Lcom/google/zxing/qrcode/encoder/a;->a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;Z)I
+    invoke-static {p0, v0}, Lcom/google/zxing/qrcode/encoder/c;->a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;Z)I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v1}, Lcom/google/zxing/qrcode/encoder/a;->a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;Z)I
+    invoke-static {p0, v1}, Lcom/google/zxing/qrcode/encoder/c;->a(Lcom/google/zxing/qrcode/encoder/ByteMatrix;Z)I
 
     move-result v1
 
@@ -173,9 +173,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid mask pattern: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

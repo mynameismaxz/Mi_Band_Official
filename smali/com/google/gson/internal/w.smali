@@ -139,7 +139,7 @@
 
 
 # virtual methods
-.method public final a()Lcom/google/gson/internal/w;
+.method public a()Lcom/google/gson/internal/w;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -166,7 +166,7 @@
     return-object p0
 .end method
 
-.method public final b()Lcom/google/gson/internal/w;
+.method public b()Lcom/google/gson/internal/w;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -193,7 +193,7 @@
     return-object p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -262,7 +262,7 @@
     goto :goto_1
 .end method
 
-.method public final getKey()Ljava/lang/Object;
+.method public getKey()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -275,7 +275,7 @@
     return-object v0
 .end method
 
-.method public final getValue()Ljava/lang/Object;
+.method public getValue()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -288,7 +288,7 @@
     return-object v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 3
 
     const/4 v1, 0x0
@@ -328,7 +328,7 @@
     goto :goto_1
 .end method
 
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+.method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -343,7 +343,7 @@
     return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

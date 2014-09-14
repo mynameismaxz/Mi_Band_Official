@@ -334,7 +334,7 @@
 
 # virtual methods
 .method protected onHandleIntent(Landroid/content/Intent;)V
-    .locals 6
+    .locals 2
 
     const-string v0, "Request"
 
@@ -346,152 +346,20 @@
 
     packed-switch v0, :pswitch_data_0
 
-    :cond_0
     :goto_0
     return-void
 
     :pswitch_0
-    invoke-static {}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->getUpgradeURL()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->getNetVersionInfo(Landroid/content/Context;Ljava/lang/String;)Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;
-
-    move-result-object v1
-
-    const-string v0, "UpgradeService"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "VersionInfo : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeService;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->getApkVersionCode(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->getVersionCode()I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_0
-
-    new-instance v3, Landroid/os/Message;
-
-    invoke-direct {v3}, Landroid/os/Message;-><init>()V
-
-    const/16 v0, 0x107
-
-    iput v0, v3, Landroid/os/Message;->what:I
-
-    new-instance v4, Landroid/os/Bundle;
-
-    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
-
-    const-string v0, "ChangeLog"
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->getChangeLog()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v0, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "NewVersion"
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->getVersionCode()I
-
-    move-result v5
-
-    invoke-virtual {v4, v0, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0}, Ljava/lang/String;-><init>()V
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->getVersionCode()I
-
-    move-result v5
-
-    if-ge v2, v5, :cond_1
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/upgrade/NewVersionInfo;->getFileUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_1
-    const-string v1, "DownUrl"
-
-    invoke-virtual {v4, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v3, v4}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeService;->a()V
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->getOtaUrl()Ljava/lang/String;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeService;->b()V
 
-    move-result-object v0
+    goto :goto_0
 
-    invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->getOtaVersionInfo(Landroid/content/Context;Ljava/lang/String;)Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;
-
-    move-result-object v0
-
-    const-string v1, "DDDD"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "OTAInfo : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->mHandler:Landroid/os/Handler;
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Landroid/os/Message;
-
-    invoke-direct {v1}, Landroid/os/Message;-><init>()V
-
-    const/4 v2, 0x1
-
-    iput v2, v1, Landroid/os/Message;->what:I
-
-    iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto/16 :goto_0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

@@ -1,9 +1,9 @@
-.class final Lcom/handmark/pulltorefresh/library/n;
+.class Lcom/handmark/pulltorefresh/library/n;
 .super Landroid/webkit/WebChromeClient;
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
+.field final synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onProgressChanged(Landroid/webkit/WebView;I)V
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 1
 
     const/16 v0, 0x64

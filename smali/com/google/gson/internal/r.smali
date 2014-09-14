@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/r;
+.class Lcom/google/gson/internal/r;
 .super Ljava/util/AbstractSet;
 
 
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final clear()V
+.method public clear()V
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/r;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
+.method public contains(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p1, Ljava/util/Map$Entry;
@@ -68,7 +68,7 @@
     goto :goto_0
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
+.method public iterator()Ljava/util/Iterator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -87,7 +87,7 @@
     return-object v0
 .end method
 
-.method public final remove(Ljava/lang/Object;)Z
+.method public remove(Ljava/lang/Object;)Z
     .locals 3
 
     const/4 v1, 0x1
@@ -122,12 +122,12 @@
     goto :goto_0
 .end method
 
-.method public final size()I
+.method public size()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/r;->a:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->a:I
+    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->c:I
 
     return v0
 .end method

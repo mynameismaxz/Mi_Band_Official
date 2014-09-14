@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/core/g;
+.class Lcom/nostra13/universalimageloader/core/g;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final getStream(Ljava/lang/String;Ljava/lang/Object;)Ljava/io/InputStream;
+.method public getStream(Ljava/lang/String;Ljava/lang/Object;)Ljava/io/InputStream;
     .locals 2
 
     sget-object v0, Lcom/nostra13/universalimageloader/core/f;->a:[I

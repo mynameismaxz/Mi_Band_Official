@@ -1,9 +1,9 @@
-.class final Lcom/umeng/analytics/game/f;
+.class Lcom/umeng/analytics/game/f;
 .super Lcom/umeng/analytics/f;
 
 
 # instance fields
-.field private synthetic a:Lcom/umeng/analytics/game/d;
+.field final synthetic a:Lcom/umeng/analytics/game/d;
 
 .field private final synthetic b:Ljava/lang/String;
 
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 5
 
     iget-object v0, p0, Lcom/umeng/analytics/game/f;->a:Lcom/umeng/analytics/game/d;

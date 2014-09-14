@@ -3,27 +3,27 @@
 
 
 # instance fields
-.field private a:Landroid/graphics/Matrix;
+.field final a:Ljava/lang/String;
 
 .field public b:Z
 
 .field private c:Landroid/graphics/Matrix;
 
-.field private d:I
+.field private d:Landroid/graphics/Matrix;
 
-.field private e:F
+.field private e:I
 
 .field private f:F
 
-.field private g:Landroid/graphics/Bitmap;
+.field private g:F
 
-.field private h:Z
+.field private h:Landroid/graphics/Bitmap;
 
-.field private i:F
+.field private i:Z
 
 .field private j:F
 
-.field private k:Ljava/lang/String;
+.field private k:F
 
 .field private l:Landroid/graphics/PointF;
 
@@ -50,21 +50,25 @@
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->d:I
-
-    iput v1, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iput v2, p0, Lcom/tencent/connect/avatar/b;->e:I
 
     iput v1, p0, Lcom/tencent/connect/avatar/b;->f:F
 
-    iput-boolean v2, p0, Lcom/tencent/connect/avatar/b;->h:Z
+    iput v1, p0, Lcom/tencent/connect/avatar/b;->g:F
+
+    iput-boolean v2, p0, Lcom/tencent/connect/avatar/b;->i:Z
+
+    const-string v0, "TouchView"
+
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Ljava/lang/String;
 
     new-instance v0, Landroid/graphics/PointF;
 
@@ -95,6 +99,8 @@
     iget-object v0, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->getDrawingRect(Landroid/graphics/Rect;)V
+
+    invoke-direct {p0}, Lcom/tencent/connect/avatar/b;->a()V
 
     return-void
 .end method
@@ -112,21 +118,25 @@
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->d:I
-
-    iput v1, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iput v2, p0, Lcom/tencent/connect/avatar/b;->e:I
 
     iput v1, p0, Lcom/tencent/connect/avatar/b;->f:F
 
-    iput-boolean v2, p0, Lcom/tencent/connect/avatar/b;->h:Z
+    iput v1, p0, Lcom/tencent/connect/avatar/b;->g:F
+
+    iput-boolean v2, p0, Lcom/tencent/connect/avatar/b;->i:Z
+
+    const-string v0, "TouchView"
+
+    iput-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Ljava/lang/String;
 
     new-instance v0, Landroid/graphics/PointF;
 
@@ -158,17 +168,19 @@
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->getDrawingRect(Landroid/graphics/Rect;)V
 
+    invoke-direct {p0}, Lcom/tencent/connect/avatar/b;->a()V
+
     return-void
 .end method
 
-.method private static a(Landroid/view/MotionEvent;)F
+.method private a(Landroid/view/MotionEvent;)F
     .locals 4
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    invoke-virtual {p0}, Landroid/view/MotionEvent;->getPointerCount()I
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
 
@@ -182,21 +194,21 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0, v2}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p0, v3}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
     sub-float/2addr v0, v1
 
-    invoke-virtual {p0, v2}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v1
 
-    invoke-virtual {p0, v3}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
@@ -215,7 +227,7 @@
     goto :goto_0
 .end method
 
-.method private static a()V
+.method private a()V
     .locals 0
 
     return-void
@@ -226,7 +238,7 @@
 
     const/high16 v1, 0x3f80
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
 
@@ -238,7 +250,7 @@
 
     new-array v0, v0, [F
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->getValues([F)V
 
@@ -254,7 +266,7 @@
 
     aget v0, v0, v4
 
-    iget-object v4, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v4, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -262,7 +274,7 @@
 
     int-to-float v4, v4
 
-    iget-object v5, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v5, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -399,19 +411,17 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/connect/avatar/b;Z)Z
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-boolean p1, p0, Lcom/tencent/connect/avatar/b;->i:Z
 
-    iput-boolean v0, p0, Lcom/tencent/connect/avatar/b;->h:Z
-
-    return v0
+    return p1
 .end method
 
 .method private b()V
     .locals 12
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_1
 
@@ -440,7 +450,7 @@
 
     new-array v6, v0, [F
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v6}, Landroid/graphics/Matrix;->getValues([F)V
 
@@ -458,19 +468,19 @@
 
     const/4 v0, 0x0
 
-    iget v1, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iget v1, p0, Lcom/tencent/connect/avatar/b;->f:F
 
     cmpl-float v1, v7, v1
 
     if-lez v1, :cond_2
 
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->f:F
 
     div-float/2addr v0, v7
 
     iput v0, p0, Lcom/tencent/connect/avatar/b;->o:F
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     iget v1, p0, Lcom/tencent/connect/avatar/b;->o:F
 
@@ -486,7 +496,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -523,7 +533,7 @@
 
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/tencent/connect/avatar/b;->h:Z
+    iput-boolean v1, p0, Lcom/tencent/connect/avatar/b;->i:Z
 
     const-wide/16 v1, 0x12c
 
@@ -544,19 +554,19 @@
     goto :goto_0
 
     :cond_2
-    iget v1, p0, Lcom/tencent/connect/avatar/b;->f:F
+    iget v1, p0, Lcom/tencent/connect/avatar/b;->g:F
 
     cmpg-float v1, v7, v1
 
     if-gez v1, :cond_3
 
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->f:F
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->g:F
 
     div-float/2addr v0, v7
 
     iput v0, p0, Lcom/tencent/connect/avatar/b;->o:F
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     iget v1, p0, Lcom/tencent/connect/avatar/b;->o:F
 
@@ -597,7 +607,7 @@
     :cond_3
     const/4 v1, 0x0
 
-    iget-object v8, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v8, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -607,7 +617,7 @@
 
     mul-float/2addr v8, v7
 
-    iget-object v9, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v9, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v9}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -723,11 +733,11 @@
 
     aput v2, v6, v0
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v6}, Landroid/graphics/Matrix;->setValues([F)V
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -742,7 +752,7 @@
     goto/16 :goto_1
 
     :cond_8
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v1}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -756,7 +766,7 @@
 
     const/high16 v5, 0x4000
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
 
@@ -768,7 +778,7 @@
 
     new-array v0, v0, [F
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->getValues([F)V
 
@@ -780,7 +790,7 @@
 
     int-to-float v1, v1
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -798,7 +808,7 @@
 
     int-to-float v2, v2
 
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -818,7 +828,7 @@
 
     int-to-float v2, v2
 
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -842,7 +852,7 @@
 
     sub-float/2addr v2, v3
 
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->i:F
+    iput v2, p0, Lcom/tencent/connect/avatar/b;->j:F
 
     iget-object v2, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
 
@@ -850,7 +860,7 @@
 
     int-to-float v2, v2
 
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -874,17 +884,17 @@
 
     sub-float/2addr v2, v3
 
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->j:F
+    iput v2, p0, Lcom/tencent/connect/avatar/b;->k:F
 
     const/4 v2, 0x2
 
-    iget v3, p0, Lcom/tencent/connect/avatar/b;->i:F
+    iget v3, p0, Lcom/tencent/connect/avatar/b;->j:F
 
     aput v3, v0, v2
 
     const/4 v2, 0x5
 
-    iget v3, p0, Lcom/tencent/connect/avatar/b;->j:F
+    iget v3, p0, Lcom/tencent/connect/avatar/b;->k:F
 
     aput v3, v0, v2
 
@@ -896,11 +906,11 @@
 
     aput v1, v0, v2
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->setValues([F)V
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -910,7 +920,7 @@
 
     div-float v0, v6, v0
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -924,24 +934,24 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iput v0, p0, Lcom/tencent/connect/avatar/b;->f:F
 
-    iput v1, p0, Lcom/tencent/connect/avatar/b;->f:F
+    iput v1, p0, Lcom/tencent/connect/avatar/b;->g:F
 
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->f:F
 
-    iget v1, p0, Lcom/tencent/connect/avatar/b;->f:F
+    iget v1, p0, Lcom/tencent/connect/avatar/b;->g:F
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_1
 
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->f:F
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->g:F
 
-    iput v0, p0, Lcom/tencent/connect/avatar/b;->e:F
+    iput v0, p0, Lcom/tencent/connect/avatar/b;->f:F
 
     :cond_1
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -951,226 +961,35 @@
 
 # virtual methods
 .method public a(Landroid/graphics/Rect;)V
-    .locals 7
-
-    const/high16 v6, 0x4500
-
-    const/high16 v5, 0x4000
+    .locals 1
 
     iput-object p1, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    if-eqz v0, :cond_1
-
-    const/16 v0, 0x9
-
-    new-array v0, v0, [F
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
-
-    invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->getValues([F)V
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    div-float/2addr v1, v2
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v2, v2, Landroid/graphics/Rect;->left:I
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v1
-
-    iget-object v4, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    sub-float/2addr v3, v4
-
-    div-float/2addr v3, v5
-
-    sub-float/2addr v2, v3
-
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->i:F
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v2, v2, Landroid/graphics/Rect;->top:I
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v1
-
-    iget-object v4, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    sub-float/2addr v3, v4
-
-    div-float/2addr v3, v5
-
-    sub-float/2addr v2, v3
-
-    iput v2, p0, Lcom/tencent/connect/avatar/b;->j:F
-
-    const/4 v2, 0x2
-
-    iget v3, p0, Lcom/tencent/connect/avatar/b;->i:F
-
-    aput v3, v0, v2
-
-    const/4 v2, 0x5
-
-    iget v3, p0, Lcom/tencent/connect/avatar/b;->j:F
-
-    aput v3, v0, v2
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x4
-
-    aput v1, v0, v3
-
-    aput v1, v0, v2
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
-
-    invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->setValues([F)V
-
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    div-float v0, v6, v0
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    div-float v2, v6, v2
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    iput v0, p0, Lcom/tencent/connect/avatar/b;->e:F
-
-    iput v1, p0, Lcom/tencent/connect/avatar/b;->f:F
-
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->e:F
-
-    iget v1, p0, Lcom/tencent/connect/avatar/b;->f:F
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_0
-
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->f:F
-
-    iput v0, p0, Lcom/tencent/connect/avatar/b;->e:F
+    invoke-direct {p0}, Lcom/tencent/connect/avatar/b;->c()V
 
     :cond_0
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
-
-    invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
-
-    :cond_1
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 10
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v3, 0x2
 
     const/high16 v2, 0x4120
 
-    const/4 v9, 0x2
+    const/4 v4, 0x1
 
-    const/4 v8, 0x1
-
-    const/high16 v1, 0x3f80
-
-    iget-boolean v0, p0, Lcom/tencent/connect/avatar/b;->h:Z
+    iget-boolean v0, p0, Lcom/tencent/connect/avatar/b;->i:Z
 
     if-eqz v0, :cond_0
 
     :goto_0
-    return v8
+    return v4
 
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -1184,12 +1003,12 @@
     :cond_1
     :goto_1
     :pswitch_0
-    iput-boolean v8, p0, Lcom/tencent/connect/avatar/b;->b:Z
+    iput-boolean v4, p0, Lcom/tencent/connect/avatar/b;->b:Z
 
     goto :goto_0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Lcom/tencent/connect/avatar/b;->getImageMatrix()Landroid/graphics/Matrix;
 
@@ -1197,9 +1016,9 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
@@ -1215,12 +1034,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/PointF;->set(FF)V
 
-    iput v8, p0, Lcom/tencent/connect/avatar/b;->d:I
+    iput v4, p0, Lcom/tencent/connect/avatar/b;->e:I
 
     goto :goto_1
 
     :pswitch_2
-    invoke-static {p1}, Lcom/tencent/connect/avatar/b;->a(Landroid/view/MotionEvent;)F
+    invoke-direct {p0, p1}, Lcom/tencent/connect/avatar/b;->a(Landroid/view/MotionEvent;)F
 
     move-result v0
 
@@ -1232,182 +1051,37 @@
 
     if-lez v0, :cond_1
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    iget-object v3, p0, Lcom/tencent/connect/avatar/b;->m:Landroid/graphics/PointF;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->m:Landroid/graphics/PointF;
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    invoke-direct {p0, v0}, Lcom/tencent/connect/avatar/b;->a(Landroid/graphics/PointF;)V
 
-    if-eqz v0, :cond_5
+    iput v3, p0, Lcom/tencent/connect/avatar/b;->e:I
 
-    const/16 v0, 0x9
-
-    new-array v0, v0, [F
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
-
-    invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->getValues([F)V
-
-    aget v2, v0, v9
-
-    const/4 v4, 0x5
-
-    aget v4, v0, v4
-
-    aget v0, v0, v5
-
-    iget-object v5, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    iget-object v6, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v6}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v5, v0
-
-    mul-float/2addr v6, v0
-
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    int-to-float v0, v0
-
-    sub-float/2addr v0, v2
-
-    cmpg-float v7, v0, v1
-
-    if-gtz v7, :cond_2
-
-    move v0, v1
-
-    :cond_2
-    add-float/2addr v2, v5
-
-    iget-object v5, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v5, v5, Landroid/graphics/Rect;->right:I
-
-    int-to-float v5, v5
-
-    sub-float/2addr v2, v5
-
-    cmpg-float v5, v2, v1
-
-    if-gtz v5, :cond_3
-
-    move v2, v1
-
-    :cond_3
-    add-float/2addr v2, v0
-
-    iget-object v5, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v0, v5
-
-    div-float/2addr v0, v2
-
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v2, v2, Landroid/graphics/Rect;->left:I
-
-    int-to-float v2, v2
-
-    add-float v5, v0, v2
-
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    int-to-float v0, v0
-
-    sub-float v2, v0, v4
-
-    add-float v0, v4, v6
-
-    iget-object v4, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v4, v4, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v4, v4
-
-    sub-float/2addr v0, v4
-
-    cmpg-float v4, v2, v1
-
-    if-gtz v4, :cond_4
-
-    move v2, v1
-
-    :cond_4
-    cmpg-float v4, v0, v1
-
-    if-gtz v4, :cond_8
-
-    :goto_2
-    add-float v0, v2, v1
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v2
-
-    div-float v0, v1, v0
-
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->p:Landroid/graphics/Rect;
-
-    iget v1, v1, Landroid/graphics/Rect;->top:I
-
-    int-to-float v1, v1
-
-    add-float/2addr v0, v1
-
-    invoke-virtual {v3, v5, v0}, Landroid/graphics/PointF;->set(FF)V
-
-    :cond_5
-    iput v9, p0, Lcom/tencent/connect/avatar/b;->d:I
-
-    goto/16 :goto_1
+    goto :goto_1
 
     :pswitch_3
     invoke-direct {p0}, Lcom/tencent/connect/avatar/b;->b()V
 
-    iput v5, p0, Lcom/tencent/connect/avatar/b;->d:I
+    const/4 v0, 0x0
 
-    goto/16 :goto_1
+    iput v0, p0, Lcom/tencent/connect/avatar/b;->e:I
+
+    goto :goto_1
 
     :pswitch_4
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->d:I
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->e:I
 
-    if-ne v0, v8, :cond_7
+    if-ne v0, v4, :cond_2
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
@@ -1431,40 +1105,38 @@
 
     sub-float/2addr v1, v2
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v0, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    :cond_6
-    :goto_3
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    :cond_7
-    iget v0, p0, Lcom/tencent/connect/avatar/b;->d:I
+    :cond_2
+    iget v0, p0, Lcom/tencent/connect/avatar/b;->e:I
 
-    if-ne v0, v9, :cond_1
+    if-ne v0, v3, :cond_1
 
-    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    invoke-static {p1}, Lcom/tencent/connect/avatar/b;->a(Landroid/view/MotionEvent;)F
+    invoke-direct {p0, p1}, Lcom/tencent/connect/avatar/b;->a(Landroid/view/MotionEvent;)F
 
     move-result v0
 
     cmpl-float v1, v0, v2
 
-    if-lez v1, :cond_6
+    if-lez v1, :cond_3
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
-    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lcom/tencent/connect/avatar/b;->d:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
@@ -1472,7 +1144,7 @@
 
     div-float/2addr v0, v1
 
-    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->a:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
     iget-object v2, p0, Lcom/tencent/connect/avatar/b;->m:Landroid/graphics/PointF;
 
@@ -1484,14 +1156,12 @@
 
     invoke-virtual {v1, v0, v0, v2, v3}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    goto :goto_3
+    :cond_3
+    iget-object v0, p0, Lcom/tencent/connect/avatar/b;->c:Landroid/graphics/Matrix;
 
-    :cond_8
-    move v1, v0
+    invoke-virtual {p0, v0}, Lcom/tencent/connect/avatar/b;->setImageMatrix(Landroid/graphics/Matrix;)V
 
-    goto :goto_2
-
-    nop
+    goto/16 :goto_1
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1510,11 +1180,11 @@
 
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    iput-object p1, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     if-eqz p1, :cond_0
 
-    iput-object p1, p0, Lcom/tencent/connect/avatar/b;->g:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
     :cond_0
     return-void

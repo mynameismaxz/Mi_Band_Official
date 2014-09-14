@@ -3,26 +3,34 @@
 
 
 # instance fields
-.field private a:Landroid/webkit/WebChromeClient;
+.field a:Landroid/webkit/WebChromeClient;
 
-.field private final b:Ljava/lang/String;
+.field final synthetic b:Lcom/umeng/analytics/MobclickAgentJSInterface;
 
 .field private final c:Ljava/lang/String;
 
-.field private synthetic d:Lcom/umeng/analytics/MobclickAgentJSInterface;
+.field private final d:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Lcom/umeng/analytics/MobclickAgentJSInterface;Landroid/webkit/WebChromeClient;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/umeng/analytics/k;->d:Lcom/umeng/analytics/MobclickAgentJSInterface;
+    iput-object p1, p0, Lcom/umeng/analytics/k;->b:Lcom/umeng/analytics/MobclickAgentJSInterface;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
+
+    const-string v0, "ekv"
+
+    iput-object v0, p0, Lcom/umeng/analytics/k;->c:Ljava/lang/String;
+
+    const-string v0, "event"
+
+    iput-object v0, p0, Lcom/umeng/analytics/k;->d:Ljava/lang/String;
 
     if-nez p2, :cond_0
 
@@ -43,7 +51,7 @@
 
 
 # virtual methods
-.method public final onCloseWindow(Landroid/webkit/WebView;)V
+.method public onCloseWindow(Landroid/webkit/WebView;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -53,7 +61,7 @@
     return-void
 .end method
 
-.method public final onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
+.method public onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -65,7 +73,7 @@
     return v0
 .end method
 
-.method public final onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.method public onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -77,7 +85,7 @@
     return v0
 .end method
 
-.method public final onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.method public onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -89,7 +97,7 @@
     return v0
 .end method
 
-.method public final onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.method public onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -101,7 +109,7 @@
     return v0
 .end method
 
-.method public final onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z
+.method public onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z
     .locals 8
 
     const/4 v7, 0x1
@@ -159,7 +167,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/umeng/analytics/k;->d:Lcom/umeng/analytics/MobclickAgentJSInterface;
+    iget-object v1, p0, Lcom/umeng/analytics/k;->b:Lcom/umeng/analytics/MobclickAgentJSInterface;
 
     invoke-static {v1}, Lcom/umeng/analytics/MobclickAgentJSInterface;->a(Lcom/umeng/analytics/MobclickAgentJSInterface;)Landroid/content/Context;
 
@@ -256,7 +264,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/umeng/analytics/k;->d:Lcom/umeng/analytics/MobclickAgentJSInterface;
+    iget-object v1, p0, Lcom/umeng/analytics/k;->b:Lcom/umeng/analytics/MobclickAgentJSInterface;
 
     invoke-static {v1}, Lcom/umeng/analytics/MobclickAgentJSInterface;->a(Lcom/umeng/analytics/MobclickAgentJSInterface;)Landroid/content/Context;
 
@@ -309,7 +317,7 @@
     goto :goto_3
 .end method
 
-.method public final onProgressChanged(Landroid/webkit/WebView;I)V
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -319,7 +327,7 @@
     return-void
 .end method
 
-.method public final onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V
+.method public onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -329,7 +337,7 @@
     return-void
 .end method
 
-.method public final onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;
@@ -339,7 +347,7 @@
     return-void
 .end method
 
-.method public final onRequestFocus(Landroid/webkit/WebView;)V
+.method public onRequestFocus(Landroid/webkit/WebView;)V
     .locals 1
 
     iget-object v0, p0, Lcom/umeng/analytics/k;->a:Landroid/webkit/WebChromeClient;

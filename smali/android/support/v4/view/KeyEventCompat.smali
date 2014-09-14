@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Landroid/support/v4/view/t;
+.field static final a:Landroid/support/v4/view/t;
 
 
 # direct methods
@@ -26,9 +26,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/view/t;
+    new-instance v0, Landroid/support/v4/view/q;
 
-    invoke-direct {v0}, Landroid/support/v4/view/t;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/view/q;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
@@ -48,7 +48,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0, p1, p2, p3}, Landroid/support/v4/view/t;->a(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v0, p0, p1, p2, p3}, Landroid/support/v4/view/t;->a(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -60,7 +60,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/t;->a(Landroid/view/View;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Landroid/support/v4/view/t;->a(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1, p1}, Landroid/support/v4/view/t;->a(II)Z
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/t;->a(II)Z
 
     move-result v0
 
@@ -92,7 +92,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/t;->b(I)Z
+    invoke-interface {v0, v1}, Landroid/support/v4/view/t;->b(I)Z
 
     move-result v0
 
@@ -104,7 +104,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/t;->b(Landroid/view/KeyEvent;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/view/t;->b(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -116,7 +116,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/view/t;->a(II)Z
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/view/t;->a(II)Z
 
     move-result v0
 
@@ -128,7 +128,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/t;->b(I)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/view/t;->b(I)Z
 
     move-result v0
 
@@ -140,7 +140,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/t;->a(I)I
+    invoke-interface {v0, p0}, Landroid/support/v4/view/t;->a(I)I
 
     move-result v0
 
@@ -152,7 +152,7 @@
 
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/t;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/view/t;->a(Landroid/view/KeyEvent;)V
+    invoke-interface {v0, p0}, Landroid/support/v4/view/t;->a(Landroid/view/KeyEvent;)V
 
     return-void
 .end method

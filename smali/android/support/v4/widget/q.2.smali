@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/q;
+.class Landroid/support/v4/widget/q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
+.method public a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
     .locals 1
 
     if-eqz p2, :cond_0
@@ -36,13 +36,13 @@
     goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/Object;III)V
+.method public a(Ljava/lang/Object;III)V
     .locals 0
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIII)V
+.method public a(Ljava/lang/Object;IIII)V
     .locals 0
 
     check-cast p1, Landroid/widget/Scroller;
@@ -52,7 +52,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIII)V
+.method public a(Ljava/lang/Object;IIIII)V
     .locals 6
 
     move-object v0, p1
@@ -74,7 +74,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIIIIII)V
+.method public a(Ljava/lang/Object;IIIIIIII)V
     .locals 9
 
     move-object v0, p1
@@ -102,7 +102,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;IIIIIIIIII)V
+.method public a(Ljava/lang/Object;IIIIIIIIII)V
     .locals 9
 
     move-object v0, p1
@@ -130,7 +130,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Object;)Z
+.method public a(Ljava/lang/Object;)Z
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;
@@ -142,7 +142,7 @@
     return v0
 .end method
 
-.method public final b(Ljava/lang/Object;)I
+.method public b(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;
@@ -154,13 +154,13 @@
     return v0
 .end method
 
-.method public final b(Ljava/lang/Object;III)V
+.method public b(Ljava/lang/Object;III)V
     .locals 0
 
     return-void
 .end method
 
-.method public final c(Ljava/lang/Object;)I
+.method public c(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;
@@ -172,7 +172,7 @@
     return v0
 .end method
 
-.method public final d(Ljava/lang/Object;)F
+.method public d(Ljava/lang/Object;)F
     .locals 1
 
     const/4 v0, 0x0
@@ -180,7 +180,7 @@
     return v0
 .end method
 
-.method public final e(Ljava/lang/Object;)Z
+.method public e(Ljava/lang/Object;)Z
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;
@@ -192,7 +192,7 @@
     return v0
 .end method
 
-.method public final f(Ljava/lang/Object;)V
+.method public f(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Landroid/widget/Scroller;
@@ -202,7 +202,7 @@
     return-void
 .end method
 
-.method public final g(Ljava/lang/Object;)Z
+.method public g(Ljava/lang/Object;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -210,7 +210,7 @@
     return v0
 .end method
 
-.method public final h(Ljava/lang/Object;)I
+.method public h(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;
@@ -222,7 +222,7 @@
     return v0
 .end method
 
-.method public final i(Ljava/lang/Object;)I
+.method public i(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Landroid/widget/Scroller;

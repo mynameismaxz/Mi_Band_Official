@@ -47,6 +47,8 @@
 
     sput-object v0, Lu/aly/h;->a:Lu/aly/d;
 
+    sget-object v0, Lu/aly/h;->a:Lu/aly/d;
+
     new-instance v2, Lu/aly/e;
 
     invoke-direct {v2, p0}, Lu/aly/e;-><init>(Landroid/content/Context;)V
@@ -115,6 +117,8 @@
     invoke-direct {v0, p0}, Lu/aly/f;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lu/aly/h;->b:Lu/aly/f;
+
+    sget-object v0, Lu/aly/h;->b:Lu/aly/f;
 
     invoke-virtual {v0}, Lu/aly/f;->b()V
 

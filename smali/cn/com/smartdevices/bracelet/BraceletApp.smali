@@ -134,7 +134,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "/Millelet"
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "Millelet"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -181,7 +187,9 @@
 .end method
 
 .method public onCreate()V
-    .locals 10
+    .locals 11
+
+    const/4 v10, 0x1
 
     const/4 v9, 0x0
 
@@ -221,7 +229,7 @@
 
     move-result v0
 
-    if-gtz v0, :cond_1
+    if-ge v0, v10, :cond_1
 
     :cond_0
     const-string v0, "phone"
@@ -385,9 +393,7 @@
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/typeface/TypefaceManager;->addTextStyleExtractor(Lcn/com/smartdevices/bracelet/chart/typeface/TypefaceManager$TextStyleExtractor;)V
 
-    const/4 v0, 0x1
-
-    invoke-static {v0, v9, v9}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->config(ZZZ)V
+    invoke-static {v10, v9, v9}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->config(ZZZ)V
 
     return-void
 .end method

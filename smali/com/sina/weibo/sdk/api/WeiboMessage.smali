@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final checkArgs()Z
+.method public checkArgs()Z
     .locals 3
 
     const/4 v0, 0x0
@@ -72,7 +72,7 @@
     goto :goto_0
 .end method
 
-.method public final toBundle(Landroid/os/Bundle;)Landroid/os/Bundle;
+.method public toBundle(Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 2
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/api/WeiboMessage;->mediaObject:Lcom/sina/weibo/sdk/api/BaseMediaObject;
@@ -99,7 +99,7 @@
     return-object p1
 .end method
 
-.method public final toObject(Landroid/os/Bundle;)Lcom/sina/weibo/sdk/api/WeiboMessage;
+.method public toObject(Landroid/os/Bundle;)Lcom/sina/weibo/sdk/api/WeiboMessage;
     .locals 2
 
     const-string v0, "_weibo_message_media"

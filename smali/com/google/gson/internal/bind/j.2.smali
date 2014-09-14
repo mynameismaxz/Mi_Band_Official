@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field final a:Ljava/lang/String;
+.field final g:Ljava/lang/String;
 
-.field final b:Z
+.field final h:Z
 
-.field final c:Z
+.field final i:Z
 
 
 # direct methods
@@ -16,11 +16,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/gson/internal/bind/j;->a:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/gson/internal/bind/j;->g:Ljava/lang/String;
 
-    iput-boolean p2, p0, Lcom/google/gson/internal/bind/j;->b:Z
+    iput-boolean p2, p0, Lcom/google/gson/internal/bind/j;->h:Z
 
-    iput-boolean p3, p0, Lcom/google/gson/internal/bind/j;->c:Z
+    iput-boolean p3, p0, Lcom/google/gson/internal/bind/j;->i:Z
 
     return-void
 .end method

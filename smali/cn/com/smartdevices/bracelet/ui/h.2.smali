@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/ui/h;
+.class Lcn/com/smartdevices/bracelet/ui/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/e;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/e;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;

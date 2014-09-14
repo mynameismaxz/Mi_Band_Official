@@ -574,22 +574,47 @@
 
     invoke-static {v0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :cond_0
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/model/StorageAccessTokenRequest;->oauthAppId:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_1
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/model/StorageAccessTokenRequest;->accessToken:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_2
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/model/StorageAccessTokenRequest;->oauthProvider:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :cond_3
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/model/StorageAccessTokenRequest;->oauthVersion:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    :cond_4
     return-void
 .end method
 

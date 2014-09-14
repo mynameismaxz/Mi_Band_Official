@@ -85,7 +85,7 @@
     :goto_0
     if-ge v0, v3, :cond_0
 
-    shl-int/lit8 v2, v0, 0x3
+    mul-int/lit8 v2, v0, 0x8
 
     rsub-int/lit8 v2, v2, 0x18
 
@@ -192,9 +192,11 @@
 
     move-result-object v0
 
-    aget-byte v1, v0, v3
+    add-int/lit8 v1, p2, 0x0
 
-    aput-byte v1, p1, p2
+    aget-byte v2, v0, v3
+
+    aput-byte v2, p1, v1
 
     add-int/lit8 v1, p2, 0x1
 
@@ -290,25 +292,31 @@
 
     div-int/lit8 v0, v2, 0x2
 
-    rem-int/lit8 v2, v2, 0x2
+    rem-int/lit8 v3, v2, 0x2
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_0
+    if-ne v3, v4, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v3, "0"
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v4, "0"
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
+
+    add-int/lit8 v2, v2, 0x1
 
     add-int/lit8 v0, v0, 0x1
 
@@ -361,7 +369,7 @@
     :cond_0
     array-length v0, p0
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -394,9 +402,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "0"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

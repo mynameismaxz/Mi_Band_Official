@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/ui/k;
+.class Lcn/com/smartdevices/bracelet/ui/k;
 .super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
 
     const/4 v2, -0x1

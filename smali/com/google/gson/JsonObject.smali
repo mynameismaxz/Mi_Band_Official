@@ -31,10 +31,10 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+.method private a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
     .locals 1
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
     sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
 
@@ -44,12 +44,14 @@
     :cond_0
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
-    invoke-direct {v0, p0}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
-.method private c()Lcom/google/gson/JsonObject;
+
+# virtual methods
+.method a()Lcom/google/gson/JsonObject;
     .locals 4
 
     new-instance v2, Lcom/google/gson/JsonObject;
@@ -91,7 +93,7 @@
 
     check-cast v0, Lcom/google/gson/JsonElement;
 
-    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->a()Lcom/google/gson/JsonElement;
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->b()Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -103,19 +105,7 @@
     return-object v2
 .end method
 
-
-# virtual methods
-.method final synthetic a()Lcom/google/gson/JsonElement;
-    .locals 1
-
-    invoke-direct {p0}, Lcom/google/gson/JsonObject;->c()Lcom/google/gson/JsonObject;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
+.method public add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
     .locals 1
 
     if-nez p2, :cond_0
@@ -130,10 +120,10 @@
     return-void
 .end method
 
-.method public final addProperty(Ljava/lang/String;Ljava/lang/Boolean;)V
+.method public addProperty(Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 1
 
-    invoke-static {p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+    invoke-direct {p0, p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -142,10 +132,10 @@
     return-void
 .end method
 
-.method public final addProperty(Ljava/lang/String;Ljava/lang/Character;)V
+.method public addProperty(Ljava/lang/String;Ljava/lang/Character;)V
     .locals 1
 
-    invoke-static {p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+    invoke-direct {p0, p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -154,10 +144,10 @@
     return-void
 .end method
 
-.method public final addProperty(Ljava/lang/String;Ljava/lang/Number;)V
+.method public addProperty(Ljava/lang/String;Ljava/lang/Number;)V
     .locals 1
 
-    invoke-static {p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+    invoke-direct {p0, p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -166,10 +156,10 @@
     return-void
 .end method
 
-.method public final addProperty(Ljava/lang/String;Ljava/lang/String;)V
+.method public addProperty(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    invoke-static {p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+    invoke-direct {p0, p2}, Lcom/google/gson/JsonObject;->a(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -178,7 +168,17 @@
     return-void
 .end method
 
-.method public final entrySet()Ljava/util/Set;
+.method synthetic b()Lcom/google/gson/JsonElement;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/gson/JsonObject;->a()Lcom/google/gson/JsonObject;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public entrySet()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -202,7 +202,7 @@
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 2
 
     if-eq p1, p0, :cond_0
@@ -235,7 +235,7 @@
     goto :goto_0
 .end method
 
-.method public final get(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+.method public get(Ljava/lang/String;)Lcom/google/gson/JsonElement;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -249,7 +249,7 @@
     return-object v0
 .end method
 
-.method public final getAsJsonArray(Ljava/lang/String;)Lcom/google/gson/JsonArray;
+.method public getAsJsonArray(Ljava/lang/String;)Lcom/google/gson/JsonArray;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -263,7 +263,7 @@
     return-object v0
 .end method
 
-.method public final getAsJsonObject(Ljava/lang/String;)Lcom/google/gson/JsonObject;
+.method public getAsJsonObject(Ljava/lang/String;)Lcom/google/gson/JsonObject;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -277,7 +277,7 @@
     return-object v0
 .end method
 
-.method public final getAsJsonPrimitive(Ljava/lang/String;)Lcom/google/gson/JsonPrimitive;
+.method public getAsJsonPrimitive(Ljava/lang/String;)Lcom/google/gson/JsonPrimitive;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -291,7 +291,7 @@
     return-object v0
 .end method
 
-.method public final has(Ljava/lang/String;)Z
+.method public has(Ljava/lang/String;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -303,7 +303,7 @@
     return v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;
@@ -315,7 +315,7 @@
     return v0
 .end method
 
-.method public final remove(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+.method public remove(Ljava/lang/String;)Lcom/google/gson/JsonElement;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonObject;->a:Lcom/google/gson/internal/LinkedTreeMap;

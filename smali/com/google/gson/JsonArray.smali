@@ -45,7 +45,9 @@
     return-void
 .end method
 
-.method private c()Lcom/google/gson/JsonArray;
+
+# virtual methods
+.method a()Lcom/google/gson/JsonArray;
     .locals 3
 
     new-instance v1, Lcom/google/gson/JsonArray;
@@ -71,7 +73,7 @@
 
     check-cast v0, Lcom/google/gson/JsonElement;
 
-    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->a()Lcom/google/gson/JsonElement;
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->b()Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
@@ -83,19 +85,7 @@
     return-object v1
 .end method
 
-
-# virtual methods
-.method final synthetic a()Lcom/google/gson/JsonElement;
-    .locals 1
-
-    invoke-direct {p0}, Lcom/google/gson/JsonArray;->c()Lcom/google/gson/JsonArray;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final add(Lcom/google/gson/JsonElement;)V
+.method public add(Lcom/google/gson/JsonElement;)V
     .locals 1
 
     if-nez p1, :cond_0
@@ -110,7 +100,7 @@
     return-void
 .end method
 
-.method public final addAll(Lcom/google/gson/JsonArray;)V
+.method public addAll(Lcom/google/gson/JsonArray;)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -122,7 +112,17 @@
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method synthetic b()Lcom/google/gson/JsonElement;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/gson/JsonArray;->a()Lcom/google/gson/JsonArray;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .locals 2
 
     if-eq p1, p0, :cond_0
@@ -155,7 +155,7 @@
     goto :goto_0
 .end method
 
-.method public final get(I)Lcom/google/gson/JsonElement;
+.method public get(I)Lcom/google/gson/JsonElement;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -169,7 +169,7 @@
     return-object v0
 .end method
 
-.method public final getAsBigDecimal()Ljava/math/BigDecimal;
+.method public getAsBigDecimal()Ljava/math/BigDecimal;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -206,7 +206,7 @@
     throw v0
 .end method
 
-.method public final getAsBigInteger()Ljava/math/BigInteger;
+.method public getAsBigInteger()Ljava/math/BigInteger;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -243,7 +243,7 @@
     throw v0
 .end method
 
-.method public final getAsBoolean()Z
+.method public getAsBoolean()Z
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -280,7 +280,7 @@
     throw v0
 .end method
 
-.method public final getAsByte()B
+.method public getAsByte()B
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -317,7 +317,7 @@
     throw v0
 .end method
 
-.method public final getAsCharacter()C
+.method public getAsCharacter()C
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -354,7 +354,7 @@
     throw v0
 .end method
 
-.method public final getAsDouble()D
+.method public getAsDouble()D
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -391,7 +391,7 @@
     throw v0
 .end method
 
-.method public final getAsFloat()F
+.method public getAsFloat()F
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -428,7 +428,7 @@
     throw v0
 .end method
 
-.method public final getAsInt()I
+.method public getAsInt()I
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -465,7 +465,7 @@
     throw v0
 .end method
 
-.method public final getAsLong()J
+.method public getAsLong()J
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -502,7 +502,7 @@
     throw v0
 .end method
 
-.method public final getAsNumber()Ljava/lang/Number;
+.method public getAsNumber()Ljava/lang/Number;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -539,7 +539,7 @@
     throw v0
 .end method
 
-.method public final getAsShort()S
+.method public getAsShort()S
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -576,7 +576,7 @@
     throw v0
 .end method
 
-.method public final getAsString()Ljava/lang/String;
+.method public getAsString()Ljava/lang/String;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -613,7 +613,7 @@
     throw v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;
@@ -625,7 +625,7 @@
     return v0
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
+.method public iterator()Ljava/util/Iterator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -646,7 +646,7 @@
     return-object v0
 .end method
 
-.method public final size()I
+.method public size()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/JsonArray;->a:Ljava/util/List;

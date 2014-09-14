@@ -445,7 +445,7 @@
 
 
 # virtual methods
-.method public final detect()[Lcom/google/zxing/ResultPoint;
+.method public detect()[Lcom/google/zxing/ResultPoint;
     .locals 14
 
     iget-object v0, p0, Lcom/google/zxing/common/detector/MonochromeRectangleDetector;->b:Lcom/google/zxing/common/BitMatrix;
@@ -480,13 +480,13 @@
 
     move-result v11
 
-    const/4 v2, 0x0
+    const/4 v7, 0x0
 
     const/4 v3, 0x0
 
-    neg-int v6, v10
+    const/4 v2, 0x0
 
-    const/4 v7, 0x0
+    neg-int v6, v10
 
     shr-int/lit8 v9, v1, 0x1
 
@@ -505,8 +505,6 @@
     add-int/lit8 v7, v0, -0x1
 
     neg-int v2, v11
-
-    const/4 v3, 0x0
 
     const/4 v6, 0x0
 

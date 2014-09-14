@@ -1,9 +1,9 @@
-.class final Landroid/support/v4/app/P;
+.class Landroid/support/v4/app/P;
 .super Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -46,7 +46,7 @@
 
 
 # virtual methods
-.method protected final dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+.method protected dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -63,7 +63,7 @@
     return-void
 .end method
 
-.method protected final dispatchSaveInstanceState(Landroid/util/SparseArray;)V
+.method protected dispatchSaveInstanceState(Landroid/util/SparseArray;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

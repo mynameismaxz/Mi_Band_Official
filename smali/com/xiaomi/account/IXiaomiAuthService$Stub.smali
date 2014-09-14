@@ -6,15 +6,15 @@
 
 
 # static fields
-.field private static final a:Ljava/lang/String; = "com.xiaomi.account.IXiaomiAuthService"
+.field static final a:I = 0x1
 
-.field private static b:I = 0x1
+.field static final b:I = 0x2
 
-.field private static c:I = 0x2
+.field static final c:I = 0x3
 
-.field private static d:I = 0x3
+.field static final d:I = 0x4
 
-.field private static e:I = 0x4
+.field private static final e:Ljava/lang/String; = "com.xiaomi.account.IXiaomiAuthService"
 
 
 # direct methods

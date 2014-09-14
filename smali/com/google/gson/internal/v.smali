@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private a:Lcom/google/gson/internal/w;
+.field b:Lcom/google/gson/internal/w;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/internal/w",
@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field private b:Lcom/google/gson/internal/w;
+.field c:Lcom/google/gson/internal/w;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/internal/w",
@@ -37,41 +37,41 @@
     .end annotation
 .end field
 
-.field private c:I
+.field d:I
 
-.field private synthetic d:Lcom/google/gson/internal/LinkedTreeMap;
+.field final synthetic e:Lcom/google/gson/internal/LinkedTreeMap;
 
 
 # direct methods
 .method private constructor <init>(Lcom/google/gson/internal/LinkedTreeMap;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iput-object p1, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget-object v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->c:Lcom/google/gson/internal/w;
+    iget-object v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->e:Lcom/google/gson/internal/w;
 
     iget-object v0, v0, Lcom/google/gson/internal/w;->d:Lcom/google/gson/internal/w;
 
-    iput-object v0, p0, Lcom/google/gson/internal/v;->a:Lcom/google/gson/internal/w;
+    iput-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
+    iput-object v0, p0, Lcom/google/gson/internal/v;->c:Lcom/google/gson/internal/w;
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->b:I
+    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->d:I
 
-    iput v0, p0, Lcom/google/gson/internal/v;->c:I
+    iput v0, p0, Lcom/google/gson/internal/v;->d:I
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/gson/internal/LinkedTreeMap;B)V
+.method synthetic constructor <init>(Lcom/google/gson/internal/LinkedTreeMap;Lcom/google/gson/internal/q;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/google/gson/internal/v;-><init>(Lcom/google/gson/internal/LinkedTreeMap;)V
@@ -81,7 +81,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/gson/internal/w;
+.method final b()Lcom/google/gson/internal/w;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -91,11 +91,11 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->a:Lcom/google/gson/internal/w;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
 
-    iget-object v1, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v1, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget-object v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->c:Lcom/google/gson/internal/w;
+    iget-object v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->e:Lcom/google/gson/internal/w;
 
     if-ne v0, v1, :cond_0
 
@@ -106,11 +106,11 @@
     throw v0
 
     :cond_0
-    iget-object v1, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v1, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->b:I
+    iget v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->d:I
 
-    iget v2, p0, Lcom/google/gson/internal/v;->c:I
+    iget v2, p0, Lcom/google/gson/internal/v;->d:I
 
     if-eq v1, v2, :cond_1
 
@@ -123,9 +123,9 @@
     :cond_1
     iget-object v1, v0, Lcom/google/gson/internal/w;->d:Lcom/google/gson/internal/w;
 
-    iput-object v1, p0, Lcom/google/gson/internal/v;->a:Lcom/google/gson/internal/w;
+    iput-object v1, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
 
-    iput-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
+    iput-object v0, p0, Lcom/google/gson/internal/v;->c:Lcom/google/gson/internal/w;
 
     return-object v0
 .end method
@@ -133,11 +133,11 @@
 .method public final hasNext()Z
     .locals 2
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->a:Lcom/google/gson/internal/w;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
 
-    iget-object v1, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v1, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget-object v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->c:Lcom/google/gson/internal/w;
+    iget-object v1, v1, Lcom/google/gson/internal/LinkedTreeMap;->e:Lcom/google/gson/internal/w;
 
     if-eq v0, v1, :cond_0
 
@@ -155,7 +155,7 @@
 .method public final remove()V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->c:Lcom/google/gson/internal/w;
 
     if-nez v0, :cond_0
 
@@ -166,9 +166,9 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget-object v1, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
+    iget-object v1, p0, Lcom/google/gson/internal/v;->c:Lcom/google/gson/internal/w;
 
     const/4 v2, 0x1
 
@@ -176,13 +176,13 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/gson/internal/v;->b:Lcom/google/gson/internal/w;
+    iput-object v0, p0, Lcom/google/gson/internal/v;->c:Lcom/google/gson/internal/w;
 
-    iget-object v0, p0, Lcom/google/gson/internal/v;->d:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v0, p0, Lcom/google/gson/internal/v;->e:Lcom/google/gson/internal/LinkedTreeMap;
 
-    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->b:I
+    iget v0, v0, Lcom/google/gson/internal/LinkedTreeMap;->d:I
 
-    iput v0, p0, Lcom/google/gson/internal/v;->c:I
+    iput v0, p0, Lcom/google/gson/internal/v;->d:I
 
     return-void
 .end method

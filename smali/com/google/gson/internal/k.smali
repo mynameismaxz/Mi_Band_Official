@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/k;
+.class Lcom/google/gson/internal/k;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,14 +16,16 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/reflect/Type;
+.field final synthetic a:Ljava/lang/reflect/Type;
 
-.field private synthetic b:Lcom/google/gson/internal/ConstructorConstructor;
+.field final synthetic b:Lcom/google/gson/internal/ConstructorConstructor;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/reflect/Type;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/google/gson/internal/k;->b:Lcom/google/gson/internal/ConstructorConstructor;
 
     iput-object p2, p0, Lcom/google/gson/internal/k;->a:Ljava/lang/reflect/Type;
 
@@ -34,7 +36,7 @@
 
 
 # virtual methods
-.method public final construct()Ljava/lang/Object;
+.method public construct()Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,9 +79,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid EnumSet type: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/google/gson/internal/k;->a:Ljava/lang/reflect/Type;
 
@@ -104,9 +110,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Invalid EnumSet type: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/google/gson/internal/k;->a:Ljava/lang/reflect/Type;
 

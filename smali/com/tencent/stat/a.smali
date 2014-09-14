@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/a;
+.class Lcom/tencent/stat/a;
 .super Ljava/lang/Object;
 
 
@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method final a()Ljava/lang/String;
+.method a()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/stat/a;->b:Lorg/json/JSONObject;

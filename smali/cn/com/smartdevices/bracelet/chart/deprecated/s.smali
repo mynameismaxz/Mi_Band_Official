@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/s;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/s;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final hasData(I)Z
+.method public hasData(I)Z
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/s;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;
@@ -89,7 +89,7 @@
     goto :goto_0
 .end method
 
-.method public final loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
+.method public loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
     .locals 5
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/s;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;
@@ -178,13 +178,13 @@
     return-object v2
 .end method
 
-.method public final onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
+.method public onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onToItem(I)V
+.method public onToItem(I)V
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/s;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;

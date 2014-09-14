@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final getNbDatablocks()I
+.method public getNbDatablocks()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/aztec/AztecDetectorResult;->b:I
@@ -35,7 +35,7 @@
     return v0
 .end method
 
-.method public final getNbLayers()I
+.method public getNbLayers()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/aztec/AztecDetectorResult;->c:I
@@ -43,7 +43,7 @@
     return v0
 .end method
 
-.method public final isCompact()Z
+.method public isCompact()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/google/zxing/aztec/AztecDetectorResult;->a:Z

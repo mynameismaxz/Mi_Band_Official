@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static a:Ljava/lang/String; = "OverscrollHelper"
+.field static final a:Ljava/lang/String; = "OverscrollHelper"
 
-.field private static b:F = 1.0f
+.field static final b:F = 1.0f
 
 .field private static synthetic c:[I
 
@@ -41,7 +41,7 @@
     goto :goto_0
 .end method
 
-.method private static synthetic a()[I
+.method static synthetic a()[I
     .locals 3
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/OverscrollHelper;->c:[I

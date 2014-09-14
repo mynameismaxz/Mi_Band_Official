@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/animation/D;
+.class Lcom/nineoldandroids/animation/D;
 .super Ljava/lang/ThreadLocal;
 
 
@@ -24,7 +24,9 @@
     return-void
 .end method
 
-.method private static a()Ljava/util/ArrayList;
+
+# virtual methods
+.method protected a()Ljava/util/ArrayList;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,14 +45,12 @@
     return-object v0
 .end method
 
-
-# virtual methods
-.method protected final synthetic initialValue()Ljava/lang/Object;
+.method protected synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-virtual {p0}, Lcom/nineoldandroids/animation/D;->a()Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v0
 
     return-object v0
 .end method

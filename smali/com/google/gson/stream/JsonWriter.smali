@@ -142,6 +142,8 @@
 
     sput-object v0, Lcom/google/gson/stream/JsonWriter;->b:[Ljava/lang/String;
 
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->b:[Ljava/lang/String;
+
     const/16 v1, 0x3c
 
     const-string v2, "\\u003c"
@@ -281,9 +283,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Dangling name: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->j:Ljava/lang/String;
 
@@ -349,7 +355,7 @@
 
     iget v0, p0, Lcom/google/gson/stream/JsonWriter;->e:I
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     new-array v0, v0, [I
 
@@ -584,32 +590,13 @@
 .end method
 
 .method private b()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->j:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->a()I
-
-    move-result v0
-
-    const/4 v1, 0x5
-
-    if-ne v0, v1, :cond_2
-
-    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->c:Ljava/io/Writer;
-
-    const/16 v1, 0x2c
-
-    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(I)V
-
-    :cond_0
-    invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->c()V
-
-    const/4 v0, 0x4
-
-    invoke-direct {p0, v0}, Lcom/google/gson/stream/JsonWriter;->b(I)V
+    invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->d()V
 
     iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->j:Ljava/lang/String;
 
@@ -619,21 +606,8 @@
 
     iput-object v0, p0, Lcom/google/gson/stream/JsonWriter;->j:Ljava/lang/String;
 
-    :cond_1
+    :cond_0
     return-void
-
-    :cond_2
-    const/4 v1, 0x3
-
-    if-eq v0, v1, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Nesting problem."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method private b(I)V
@@ -1032,9 +1006,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Numeric values must be finite, but was "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
@@ -1138,9 +1116,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Numeric values must be finite, but was "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

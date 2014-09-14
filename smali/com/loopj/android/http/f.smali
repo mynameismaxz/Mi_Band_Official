@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/f;
+.class Lcom/loopj/android/http/f;
 .super Landroid/os/Handler;
 
 
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 1
 
     iget-object v0, p0, Lcom/loopj/android/http/f;->a:Lcom/loopj/android/http/AsyncHttpResponseHandler;

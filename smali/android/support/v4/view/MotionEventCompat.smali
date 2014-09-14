@@ -21,7 +21,7 @@
 
 .field public static final ACTION_SCROLL:I = 0x8
 
-.field private static a:Landroid/support/v4/view/L;
+.field static final a:Landroid/support/v4/view/L;
 
 
 # direct methods
@@ -74,15 +74,17 @@
 .end method
 
 .method public static getActionIndex(Landroid/view/MotionEvent;)I
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    shr-int/lit8 v0, v0, 0x8
+    const v1, 0xff00
 
-    and-int/lit16 v0, v0, 0xff
+    and-int/2addr v0, v1
+
+    shr-int/lit8 v0, v0, 0x8
 
     return v0
 .end method

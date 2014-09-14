@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/activity/l;
+.class Lcn/com/smartdevices/bracelet/activity/l;
 .super Landroid/webkit/WebViewClient;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/l;->a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/l;->a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 1
 
     invoke-virtual {p1, p2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V

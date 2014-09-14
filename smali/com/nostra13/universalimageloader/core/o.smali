@@ -1,4 +1,4 @@
-.class final Lcom/nostra13/universalimageloader/core/o;
+.class Lcom/nostra13/universalimageloader/core/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/core/l;
+.field final synthetic a:Lcom/nostra13/universalimageloader/core/l;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/o;->a:Lcom/nostra13/universalimageloader/core/l;

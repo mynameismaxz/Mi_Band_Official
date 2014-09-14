@@ -179,16 +179,8 @@
     return-wide v0
 .end method
 
-.method private a(I)V
-    .locals 14
-
-    const-wide v12, 0x408f400000000000L
-
-    const-wide v10, 0x3ff19999a0000000L
-
-    const-wide/high16 v8, 0x3ff0
-
-    const-wide v6, 0x3fecccccc0000000L
+.method private a(II)V
+    .locals 8
 
     iget v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->h:I
 
@@ -212,13 +204,19 @@
 
     if-gez v4, :cond_3
 
+    const-wide/high16 v4, 0x3ff0
+
     long-to-double v2, v2
 
-    div-double v2, v8, v2
+    div-double v2, v4, v2
 
-    mul-double/2addr v2, v12
+    const-wide v4, 0x408f400000000000L
 
-    iget-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
+    mul-double/2addr v2, v4
+
+    const-wide v4, 0x3fecccccc0000000L
+
+    iget-wide v6, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
     mul-double/2addr v4, v6
 
@@ -228,7 +226,9 @@
 
     iget-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
-    mul-double/2addr v2, v6
+    const-wide v4, 0x3fecccccc0000000L
+
+    mul-double/2addr v2, v4
 
     iput-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
@@ -241,9 +241,11 @@
     return-void
 
     :cond_1
-    iget-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
+    const-wide v4, 0x3ff19999a0000000L
 
-    mul-double/2addr v4, v10
+    iget-wide v6, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
+
+    mul-double/2addr v4, v6
 
     cmpl-double v4, v2, v4
 
@@ -251,7 +253,9 @@
 
     iget-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
-    mul-double/2addr v2, v10
+    const-wide v4, 0x3ff19999a0000000L
+
+    mul-double/2addr v2, v4
 
     iput-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
@@ -263,11 +267,15 @@
     goto :goto_0
 
     :cond_3
+    const-wide/high16 v4, 0x3ff0
+
     long-to-double v2, v2
 
-    div-double v2, v8, v2
+    div-double v2, v4, v2
 
-    mul-double/2addr v2, v12
+    const-wide v4, 0x408f400000000000L
+
+    mul-double/2addr v2, v4
 
     iput-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
 
@@ -319,7 +327,9 @@
 
     int-to-double v0, v0
 
-    iget-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
+    invoke-direct {p0}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a()D
+
+    move-result-wide v2
 
     cmpg-double v0, v0, v2
 
@@ -446,222 +456,116 @@
 
 # virtual methods
 .method public final onScroll(Landroid/widget/AbsListView;III)V
-    .locals 10
+    .locals 7
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v6, -0x1
 
     iget v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->c:I
 
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_3
+    if-eq v0, v6, :cond_1
 
     iget v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->d:I
 
-    const/4 v1, -0x1
+    if-eq v0, v6, :cond_1
 
-    if-eq v0, v1, :cond_3
-
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_0
-    add-int v1, p2, p3
+    add-int v3, p2, p3
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v3, v3, -0x1
 
-    iget-boolean v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->b:Z
+    iget-boolean v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->b:Z
 
-    if-eqz v2, :cond_9
+    if-eqz v4, :cond_4
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_4
 
-    iget v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->h:I
+    invoke-direct {p0, p2, p4}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(II)V
 
-    if-lez v0, :cond_0
-
-    iget v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->e:I
-
-    if-eq v0, p2, :cond_0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->f:J
-
-    sub-long v4, v2, v4
-
-    const-wide/16 v6, 0x1
-
-    cmp-long v0, v4, v6
-
-    if-gez v0, :cond_6
-
-    const-wide/high16 v6, 0x3ff0
-
-    long-to-double v4, v4
-
-    div-double v4, v6, v4
-
-    const-wide v6, 0x408f400000000000L
-
-    mul-double/2addr v4, v6
-
-    const-wide v6, 0x3fecccccc0000000L
-
-    iget-wide v8, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    mul-double/2addr v6, v8
-
-    cmpg-double v0, v4, v6
-
-    if-gez v0, :cond_4
-
-    iget-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    const-wide v6, 0x3fecccccc0000000L
-
-    mul-double/2addr v4, v6
-
-    iput-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
+    move v0, v2
 
     :goto_1
-    iput p2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->e:I
+    add-int v4, p2, v0
 
-    iput-wide v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->f:J
+    iget v5, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->c:I
 
-    :cond_0
-    const/4 v0, 0x0
+    if-lt v4, v5, :cond_2
 
     :goto_2
-    add-int v2, p2, v0
+    sub-int v0, v3, v2
 
-    iget v3, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->c:I
+    iget v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->d:I
 
-    if-lt v2, v3, :cond_7
+    if-gt v0, v4, :cond_3
 
-    const/4 v0, 0x0
-
-    :goto_3
-    sub-int v2, v1, v0
-
-    iget v3, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->d:I
-
-    if-gt v2, v3, :cond_8
-
-    :cond_1
+    :cond_0
     iput p2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->c:I
 
-    iput v1, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->d:I
+    iput v3, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->d:I
 
-    iget-object v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->i:Landroid/widget/AbsListView$OnScrollListener;
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/widget/AbsListView;III)V
 
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->i:Landroid/widget/AbsListView$OnScrollListener;
-
-    invoke-interface {v0, p1, p2, p3, p4}, Landroid/widget/AbsListView$OnScrollListener;->onScroll(Landroid/widget/AbsListView;III)V
-
-    :cond_2
     return-void
 
-    :cond_3
-    const/4 v0, 0x0
+    :cond_1
+    move v0, v2
 
     goto :goto_0
 
-    :cond_4
-    const-wide v6, 0x3ff19999a0000000L
-
-    iget-wide v8, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    mul-double/2addr v6, v8
-
-    cmpl-double v0, v4, v6
-
-    if-lez v0, :cond_5
-
-    iget-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    const-wide v6, 0x3ff19999a0000000L
-
-    mul-double/2addr v4, v6
-
-    iput-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    goto :goto_1
-
-    :cond_5
-    iput-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    goto :goto_1
-
-    :cond_6
-    const-wide/high16 v6, 0x3ff0
-
-    long-to-double v4, v4
-
-    div-double v4, v6, v4
-
-    const-wide v6, 0x408f400000000000L
-
-    mul-double/2addr v4, v6
-
-    iput-wide v4, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->g:D
-
-    goto :goto_1
-
-    :cond_7
+    :cond_2
     invoke-virtual {p1, v0}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v4
 
-    add-int v3, p2, v0
+    add-int v5, p2, v0
 
-    const/4 v4, -0x1
-
-    invoke-direct {p0, v2, v3, v4}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/view/View;II)V
+    invoke-direct {p0, v4, v5, v6}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/view/View;II)V
 
     add-int/lit8 v0, v0, 0x1
 
+    goto :goto_1
+
+    :cond_3
+    sub-int v0, v3, p2
+
+    sub-int/2addr v0, v2
+
+    invoke-virtual {p1, v0}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    sub-int v4, v3, v2
+
+    invoke-direct {p0, v0, v4, v1}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/view/View;II)V
+
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_2
 
-    :cond_8
-    sub-int v2, v1, p2
+    :cond_4
+    if-nez v0, :cond_0
 
-    sub-int/2addr v2, v0
+    move v0, p2
 
-    invoke-virtual {p1, v2}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
+    :goto_3
+    if-ge v0, p3, :cond_0
+
+    iget-object v1, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->n:Ljava/util/HashSet;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    sub-int v3, v1, v0
-
-    const/4 v4, 0x1
-
-    invoke-direct {p0, v2, v3, v4}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/view/View;II)V
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
-
-    :cond_9
-    if-nez v0, :cond_1
-
-    move v0, p2
-
-    :goto_4
-    if-ge v0, p3, :cond_1
-
-    iget-object v2, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->n:Ljava/util/HashSet;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
 .end method
 
 .method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
@@ -674,15 +578,8 @@
     packed-switch p2, :pswitch_data_0
 
     :goto_0
-    iget-object v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->i:Landroid/widget/AbsListView$OnScrollListener;
+    invoke-direct {p0, p1, p2}, Lcom/twotoasters/jazzylistview/JazzyHelper;->a(Landroid/widget/AbsListView;I)V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/twotoasters/jazzylistview/JazzyHelper;->i:Landroid/widget/AbsListView$OnScrollListener;
-
-    invoke-interface {v0, p1, p2}, Landroid/widget/AbsListView$OnScrollListener;->onScrollStateChanged(Landroid/widget/AbsListView;I)V
-
-    :cond_0
     return-void
 
     :pswitch_0

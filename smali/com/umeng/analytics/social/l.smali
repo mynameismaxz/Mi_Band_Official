@@ -1,23 +1,21 @@
-.class final enum Lcom/umeng/analytics/social/l;
+.class enum Lcom/umeng/analytics/social/l;
 .super Lcom/umeng/analytics/social/UMPlatformData$UMedia;
 
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
-    .locals 2
+    .locals 1
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/umeng/analytics/social/UMPlatformData$UMedia;-><init>(Ljava/lang/String;IB)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/umeng/analytics/social/UMPlatformData$UMedia;-><init>(Ljava/lang/String;ILcom/umeng/analytics/social/UMPlatformData$UMedia;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     const-string v0, "qq"

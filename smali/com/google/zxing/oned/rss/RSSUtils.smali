@@ -70,7 +70,7 @@
     goto :goto_2
 .end method
 
-.method private static a(IIIIZ)[I
+.method static a(IIIIZ)[I
     .locals 10
 
     new-array v7, p2, [I
@@ -198,30 +198,8 @@
     :goto_3
     sub-int/2addr v2, v3
 
-    if-ltz v2, :cond_4
+    if-gez v2, :cond_4
 
-    add-int/lit8 v0, v0, 0x1
-
-    const/4 v3, 0x1
-
-    shl-int/2addr v3, v6
-
-    xor-int/lit8 v3, v3, -0x1
-
-    and-int/2addr v1, v3
-
-    goto :goto_1
-
-    :cond_3
-    sub-int v4, p1, v0
-
-    if-le v4, p3, :cond_2
-
-    add-int/lit8 v3, v3, -0x1
-
-    goto :goto_3
-
-    :cond_4
     add-int/2addr v2, v3
 
     sub-int/2addr p1, v0
@@ -234,13 +212,35 @@
 
     goto :goto_0
 
+    :cond_3
+    sub-int v4, p1, v0
+
+    if-le v4, p3, :cond_2
+
+    add-int/lit8 v3, v3, -0x1
+
+    goto :goto_3
+
+    :cond_4
+    add-int/lit8 v0, v0, 0x1
+
+    const/4 v3, 0x1
+
+    shl-int/2addr v3, v6
+
+    xor-int/lit8 v3, v3, -0x1
+
+    and-int/2addr v1, v3
+
+    goto :goto_1
+
     :cond_5
     aput p1, v7, v6
 
     return-object v7
 .end method
 
-.method private static a([III)[I
+.method static a([III)[I
     .locals 10
 
     const/4 v1, 0x0

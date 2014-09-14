@@ -6,20 +6,20 @@
 
 
 # instance fields
-.field private a:Lcom/tencent/open/c;
+.field a:Lcom/tencent/open/j;
 
-.field private synthetic b:Lcom/tencent/open/SocialApiIml;
+.field final synthetic b:Lcom/tencent/open/SocialApiIml;
 
 
 # direct methods
-.method public constructor <init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/c;)V
+.method public constructor <init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/j;)V
     .locals 0
 
     iput-object p1, p0, Lcom/tencent/open/SocialApiIml$a;->b:Lcom/tencent/open/SocialApiIml;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iput-object p2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
     return-void
 .end method
@@ -33,9 +33,9 @@
 
     invoke-static {v0}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;)V
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v0, v0, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v0, v0, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
     const-string v1, "image_date"
 
@@ -55,21 +55,21 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v3, v3, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iget-object v3, v3, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v4, v4, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v4, v4, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v5, v5, Lcom/tencent/open/c;->d:Ljava/lang/String;
+    iget-object v5, v5, Lcom/tencent/open/j;->d:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v6, v6, Lcom/tencent/open/c;->e:Lcom/tencent/tauth/IUiListener;
+    iget-object v6, v6, Lcom/tencent/open/j;->e:Lcom/tencent/tauth/IUiListener;
 
     invoke-static/range {v0 .. v6}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -83,9 +83,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "CheckListener--onComplete--response = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -128,13 +132,17 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "CheckListener---delayStartParam.agentIntent = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    move-result-object v1
 
-    iget-object v2, v2, Lcom/tencent/open/c;->a:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
+
+    iget-object v2, v2, Lcom/tencent/open/j;->a:Landroid/content/Intent;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -146,9 +154,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v2, v2, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iget-object v2, v2, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -168,25 +176,25 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v2, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v2, v2, Lcom/tencent/open/c;->a:Landroid/content/Intent;
+    iget-object v2, v2, Lcom/tencent/open/j;->a:Landroid/content/Intent;
 
-    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v3, v3, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iget-object v3, v3, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v4, v4, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v4, v4, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v5, v5, Lcom/tencent/open/c;->d:Ljava/lang/String;
+    iget-object v5, v5, Lcom/tencent/open/j;->d:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v6, v6, Lcom/tencent/open/c;->e:Lcom/tencent/tauth/IUiListener;
+    iget-object v6, v6, Lcom/tencent/open/j;->e:Lcom/tencent/tauth/IUiListener;
 
     invoke-static/range {v0 .. v6}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -201,9 +209,9 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v0, v0, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v0, v0, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
     const-string v1, "image_date"
 
@@ -223,21 +231,21 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v3, v3, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iget-object v3, v3, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v4, v4, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v4, v4, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v5, v5, Lcom/tencent/open/c;->d:Ljava/lang/String;
+    iget-object v5, v5, Lcom/tencent/open/j;->d:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v6, v6, Lcom/tencent/open/c;->e:Lcom/tencent/tauth/IUiListener;
+    iget-object v6, v6, Lcom/tencent/open/j;->e:Lcom/tencent/tauth/IUiListener;
 
     invoke-static/range {v0 .. v6}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -251,9 +259,9 @@
 
     invoke-static {v0}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;)V
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v0, v0, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v0, v0, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
     const-string v1, "image_date"
 
@@ -273,21 +281,21 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v3, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v3, v3, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iget-object v3, v3, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v4, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v4, v4, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iget-object v4, v4, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v5, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v5, v5, Lcom/tencent/open/c;->d:Ljava/lang/String;
+    iget-object v5, v5, Lcom/tencent/open/j;->d:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/c;
+    iget-object v6, p0, Lcom/tencent/open/SocialApiIml$a;->a:Lcom/tencent/open/j;
 
-    iget-object v6, v6, Lcom/tencent/open/c;->e:Lcom/tencent/tauth/IUiListener;
+    iget-object v6, v6, Lcom/tencent/open/j;->e:Lcom/tencent/tauth/IUiListener;
 
     invoke-static/range {v0 .. v6}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 

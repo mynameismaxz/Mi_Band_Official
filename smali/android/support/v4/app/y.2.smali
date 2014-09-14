@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/y;
+.class Landroid/support/v4/app/y;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/String;
 
-.field private synthetic b:I
+.field final synthetic b:I
 
-.field private synthetic c:Landroid/support/v4/app/v;
+.field final synthetic c:Landroid/support/v4/app/v;
 
 
 # direct methods
@@ -30,24 +30,24 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public run()V
+    .locals 5
 
     iget-object v0, p0, Landroid/support/v4/app/y;->c:Landroid/support/v4/app/v;
 
     iget-object v1, p0, Landroid/support/v4/app/y;->c:Landroid/support/v4/app/v;
 
-    iget-object v1, v1, Landroid/support/v4/app/v;->e:Landroid/support/v4/app/FragmentActivity;
+    iget-object v1, v1, Landroid/support/v4/app/v;->t:Landroid/support/v4/app/FragmentActivity;
 
-    iget-object v1, v1, Landroid/support/v4/app/FragmentActivity;->a:Landroid/os/Handler;
+    iget-object v1, v1, Landroid/support/v4/app/FragmentActivity;->d:Landroid/os/Handler;
 
-    iget-object v1, p0, Landroid/support/v4/app/y;->a:Ljava/lang/String;
+    iget-object v2, p0, Landroid/support/v4/app/y;->a:Ljava/lang/String;
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    iget v3, p0, Landroid/support/v4/app/y;->b:I
+    iget v4, p0, Landroid/support/v4/app/y;->b:I
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/v;->a(Ljava/lang/String;II)Z
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/app/v;->a(Landroid/os/Handler;Ljava/lang/String;II)Z
 
     return-void
 .end method

@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final close()V
+.method public close()V
     .locals 1
 
     new-instance v0, Ljava/lang/AssertionError;
@@ -23,7 +23,7 @@
     throw v0
 .end method
 
-.method public final read([CII)I
+.method public read([CII)I
     .locals 1
 
     new-instance v0, Ljava/lang/AssertionError;

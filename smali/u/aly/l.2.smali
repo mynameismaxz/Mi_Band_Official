@@ -30,6 +30,10 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-string v0, "umeng_event_snapshot"
+
+    iput-object v0, p0, Lu/aly/l;->a:Ljava/lang/String;
+
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lu/aly/l;->b:Z

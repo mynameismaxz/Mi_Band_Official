@@ -22,7 +22,9 @@
     return-void
 .end method
 
-.method private a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+
+# virtual methods
+.method public a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
     .locals 3
 
     sget-object v0, Lcom/google/gson/internal/bind/N;->a:[I
@@ -108,7 +110,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object v1
 
@@ -139,7 +141,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object v2
 
@@ -163,7 +165,7 @@
     .end packed-switch
 .end method
 
-.method private a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
     .locals 3
 
     if-eqz p2, :cond_0
@@ -259,7 +261,7 @@
 
     check-cast v0, Lcom/google/gson/JsonElement;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
 
     goto :goto_1
 
@@ -316,7 +318,7 @@
 
     check-cast v0, Lcom/google/gson/JsonElement;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
 
     goto :goto_2
 
@@ -330,9 +332,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Couldn\'t write "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -351,24 +357,22 @@
     throw v0
 .end method
 
-
-# virtual methods
-.method public final synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 1
 
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Lcom/google/gson/JsonElement;
 
-    invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/F;->a(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
 
     return-void
 .end method

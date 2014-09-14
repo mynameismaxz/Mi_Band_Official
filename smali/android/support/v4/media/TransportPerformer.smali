@@ -3,17 +3,17 @@
 
 
 # static fields
-.field private static a:I = 0x1
+.field static final a:I = 0x1
 
-.field private static b:I = 0x2
+.field static final b:I = 0x2
 
-.field private static c:I = 0x3
+.field static final c:I = 0x3
 
-.field private static d:I = -0x1
+.field static final d:I = -0x1
 
-.field private static e:I = -0x2
+.field static final e:I = -0x2
 
-.field private static f:I = -0x3
+.field static final f:I = -0x3
 
 
 # direct methods
@@ -28,26 +28,22 @@
 
 # virtual methods
 .method public onAudioFocusChange(I)V
-    .locals 9
+    .locals 8
 
-    const/4 v0, 0x0
+    const/4 v6, 0x0
 
     packed-switch p1, :pswitch_data_0
 
     :goto_0
-    if-eqz v0, :cond_0
+    if-eqz v6, :cond_0
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    const/16 v8, 0x7f
-
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x0
-
-    const/16 v6, 0x7f
 
     const/4 v7, 0x0
 
@@ -55,29 +51,25 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/view/KeyEvent;-><init>(JJIII)V
 
-    invoke-virtual {p0, v8, v0}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonDown(ILandroid/view/KeyEvent;)Z
-
-    const/16 v8, 0x7f
+    invoke-virtual {p0, v6, v0}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonDown(ILandroid/view/KeyEvent;)Z
 
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x1
 
-    const/16 v6, 0x7f
-
     const/4 v7, 0x0
 
     move-wide v3, v1
 
     invoke-direct/range {v0 .. v7}, Landroid/view/KeyEvent;-><init>(JJIII)V
 
-    invoke-virtual {p0, v8, v0}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonUp(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {p0, v6, v0}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonUp(ILandroid/view/KeyEvent;)Z
 
     :cond_0
     return-void
 
     :pswitch_0
-    const/16 v0, 0x7f
+    const/16 v6, 0x7f
 
     goto :goto_0
 

@@ -271,6 +271,8 @@
     invoke-virtual {v5, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
+    const-string v0, "com.xiaomi.channel"
+
     iget-object v0, p0, Lcom/xiaomi/channel/sdk/MLShareApiFactory;->a:Landroid/content/Context;
 
     const-string v1, "activity"

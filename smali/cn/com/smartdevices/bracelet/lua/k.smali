@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/lua/k;
+.class Lcn/com/smartdevices/bracelet/lua/k;
 .super Ljava/lang/Object;
 
 
@@ -7,16 +7,18 @@
 
 .field public b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
-.field private d:Ljava/lang/String;
+.field public d:Ljava/lang/String;
 
-.field private synthetic e:Lcn/com/smartdevices/bracelet/lua/LuaManager;
+.field final synthetic e:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/lua/LuaManager;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/lua/LuaManager;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/k;->e:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

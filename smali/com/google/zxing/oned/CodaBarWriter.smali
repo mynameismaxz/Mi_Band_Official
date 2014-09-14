@@ -157,9 +157,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Cannot encode : \'"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
@@ -251,16 +255,16 @@
     :goto_5
     move v5, v3
 
-    move v6, v1
+    move v6, v3
 
-    move v7, v3
+    move v7, v1
 
     :goto_6
     const/4 v8, 0x7
 
     if-ge v5, v8, :cond_b
 
-    aput-byte v6, v9, v2
+    aput-byte v7, v9, v2
 
     add-int/lit8 v8, v2, 0x1
 
@@ -272,10 +276,10 @@
 
     if-eqz v2, :cond_7
 
-    if-ne v7, v1, :cond_a
+    if-ne v6, v1, :cond_a
 
     :cond_7
-    xor-int/lit8 v2, v6, 0x1
+    xor-int/lit8 v2, v7, 0x1
 
     int-to-byte v6, v2
 
@@ -283,7 +287,9 @@
 
     move v5, v2
 
-    move v7, v3
+    move v7, v6
+
+    move v6, v3
 
     move v2, v8
 
@@ -304,9 +310,9 @@
     goto :goto_4
 
     :cond_a
-    add-int/lit8 v2, v7, 0x1
+    add-int/lit8 v2, v6, 0x1
 
-    move v7, v2
+    move v6, v2
 
     move v2, v8
 
@@ -337,6 +343,8 @@
     move v4, v3
 
     goto :goto_5
+
+    nop
 
     :array_0
     .array-data 0x2

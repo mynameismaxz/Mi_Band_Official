@@ -81,9 +81,9 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    const/4 v7, 0x2
-
     const/4 v3, 0x0
+
+    const/4 v7, 0x2
 
     const/4 v6, 0x1
 
@@ -129,11 +129,13 @@
 
     sput-object v0, Lu/aly/aj;->i:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/aj;->i:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/J;
 
-    invoke-direct {v2, v3}, Lu/aly/J;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/J;-><init>(Lu/aly/J;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -143,7 +145,7 @@
 
     new-instance v2, Lu/aly/L;
 
-    invoke-direct {v2, v3}, Lu/aly/L;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/L;-><init>(Lu/aly/L;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -227,6 +229,8 @@
 
     aput-object v1, v0, v2
 
+    iput-object v0, p0, Lu/aly/aj;->n:[Lu/aly/aj$e;
+
     iput v2, p0, Lu/aly/aj;->a:I
 
     iput v2, p0, Lu/aly/aj;->b:I
@@ -268,6 +272,8 @@
     sget-object v1, Lu/aly/aj$e;->c:Lu/aly/aj$e;
 
     aput-object v1, v0, v2
+
+    iput-object v0, p0, Lu/aly/aj;->n:[Lu/aly/aj$e;
 
     iget-byte v0, p1, Lu/aly/aj;->m:B
 

@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/d;
+.class Lcom/loopj/android/http/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
+.field final synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
 
 .field private final synthetic b:Landroid/content/Context;
 
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/loopj/android/http/d;->a:Lcom/loopj/android/http/AsyncHttpClient;

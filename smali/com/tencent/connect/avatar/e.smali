@@ -1,14 +1,16 @@
-.class final Lcom/tencent/connect/avatar/e;
+.class Lcom/tencent/connect/avatar/e;
 .super Lcom/tencent/connect/common/BaseApi;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
+.field final synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
 
 
 # direct methods
 .method public constructor <init>(Lcom/tencent/connect/avatar/ImageActivity;Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/tencent/connect/avatar/e;->a:Lcom/tencent/connect/avatar/ImageActivity;
 
     invoke-direct {p0, p2, p3}, Lcom/tencent/connect/common/BaseApi;-><init>(Landroid/content/Context;Lcom/tencent/connect/auth/QQToken;)V
 
@@ -17,7 +19,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Bitmap;Lcom/tencent/tauth/IUiListener;)V
+.method public a(Landroid/graphics/Bitmap;Lcom/tencent/tauth/IUiListener;)V
     .locals 6
 
     invoke-virtual {p0}, Lcom/tencent/connect/avatar/e;->composeCGIParams()Landroid/os/Bundle;

@@ -48,6 +48,8 @@
 .method public static a(Landroid/content/Context;J)Ljava/lang/String;
     .locals 6
 
+    const-string v0, ""
+
     const-wide/16 v0, 0x3e8
 
     cmp-long v0, p1, v0
@@ -661,6 +663,8 @@
 
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
     .locals 6
+
+    const-string v0, ""
 
     :try_start_0
     invoke-static {p0}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;

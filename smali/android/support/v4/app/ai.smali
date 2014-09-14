@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/ai;
+.class Landroid/support/v4/app/ai;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;[Landroid/content/Intent;IILandroid/os/Bundle;)Landroid/app/PendingIntent;
+.method public a(Landroid/content/Context;[Landroid/content/Intent;IILandroid/os/Bundle;)Landroid/app/PendingIntent;
     .locals 3
 
     const/4 v2, 0x0
@@ -35,7 +35,7 @@
 
     aput-object v0, p2, v2
 
-    invoke-static {p1, p3, p2, p4, p5}, Landroid/app/PendingIntent;->getActivities(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;
+    invoke-static {p1, p3, p2, p4, p5}, Landroid/support/v4/app/ak;->a(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;
 
     move-result-object v0
 

@@ -49,7 +49,7 @@
 
     new-instance v0, Landroid/support/v4/app/d;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/app/d;-><init>(B)V
+    invoke-direct {v0, v2}, Landroid/support/v4/app/d;-><init>(Landroid/support/v4/app/a;)V
 
     sput-object v0, Landroid/support/v4/app/ActionBarDrawerToggle;->a:Landroid/support/v4/app/b;
 
@@ -57,9 +57,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/app/a;
+    new-instance v0, Landroid/support/v4/app/c;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/app/a;-><init>(B)V
+    invoke-direct {v0, v2}, Landroid/support/v4/app/c;-><init>(Landroid/support/v4/app/a;)V
 
     sput-object v0, Landroid/support/v4/app/ActionBarDrawerToggle;->a:Landroid/support/v4/app/b;
 
@@ -85,7 +85,7 @@
 
     iput p5, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->l:I
 
-    invoke-direct {p0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -138,7 +138,9 @@
     goto :goto_0
 .end method
 
-.method private a()Landroid/graphics/drawable/Drawable;
+
+# virtual methods
+.method a()Landroid/graphics/drawable/Drawable;
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->d:Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;
@@ -166,7 +168,7 @@
     goto :goto_0
 .end method
 
-.method private a(I)V
+.method a(I)V
     .locals 3
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->d:Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;
@@ -196,7 +198,7 @@
     goto :goto_0
 .end method
 
-.method private a(Landroid/graphics/drawable/Drawable;I)V
+.method a(Landroid/graphics/drawable/Drawable;I)V
     .locals 3
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->d:Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;
@@ -226,8 +228,6 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
 .method public isDrawerIndicatorEnabled()Z
     .locals 1
 
@@ -239,7 +239,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 2
 
-    invoke-direct {p0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -279,7 +279,7 @@
 
     iget v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->l:I
 
-    invoke-direct {p0, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(I)V
+    invoke-virtual {p0, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(I)V
 
     :cond_0
     return-void
@@ -300,7 +300,7 @@
 
     iget v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->k:I
 
-    invoke-direct {p0, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(I)V
+    invoke-virtual {p0, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(I)V
 
     :cond_0
     return-void
@@ -434,7 +434,7 @@
     iget v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->k:I
 
     :goto_0
-    invoke-direct {p0, v1, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, v1, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
 
     :goto_1
     iput-boolean p1, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->f:Z
@@ -452,7 +452,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, v0, v1}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
 
     goto :goto_1
 .end method
@@ -494,7 +494,7 @@
     iget v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->k:I
 
     :goto_1
-    invoke-direct {p0, v1, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, v1, v0}, Landroid/support/v4/app/ActionBarDrawerToggle;->a(Landroid/graphics/drawable/Drawable;I)V
 
     :cond_0
     return-void

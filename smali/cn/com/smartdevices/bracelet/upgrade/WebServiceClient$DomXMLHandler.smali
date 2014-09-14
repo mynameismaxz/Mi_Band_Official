@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method private static a()Ljavax/xml/parsers/DocumentBuilder;
+.method private a()Ljavax/xml/parsers/DocumentBuilder;
     .locals 1
 
     invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
@@ -41,11 +41,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/upgrade/WebServiceClient$DomXMLHandler;->a()Ljavax/xml/parsers/DocumentBuilder;
 
     move-result-object v1
 

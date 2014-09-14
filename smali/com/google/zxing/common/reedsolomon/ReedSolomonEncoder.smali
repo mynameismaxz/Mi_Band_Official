@@ -161,7 +161,7 @@
 
 
 # virtual methods
-.method public final encode([II)V
+.method public encode([II)V
     .locals 7
 
     const/4 v6, 0x1

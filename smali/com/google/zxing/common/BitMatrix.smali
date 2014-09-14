@@ -24,11 +24,13 @@
 .method public constructor <init>(II)V
     .locals 2
 
+    const/4 v0, 0x1
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-lez p1, :cond_0
+    if-lt p1, v0, :cond_0
 
-    if-gtz p2, :cond_1
+    if-ge p2, v0, :cond_1
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -63,7 +65,7 @@
 
 
 # virtual methods
-.method public final clear()V
+.method public clear()V
     .locals 4
 
     const/4 v1, 0x0
@@ -89,7 +91,7 @@
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 4
 
     const/4 v1, 0x0
@@ -162,7 +164,7 @@
     goto :goto_0
 .end method
 
-.method public final flip(II)V
+.method public flip(II)V
     .locals 5
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->c:I
@@ -190,7 +192,7 @@
     return-void
 .end method
 
-.method public final get(II)Z
+.method public get(II)Z
     .locals 2
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->c:I
@@ -224,7 +226,7 @@
     goto :goto_0
 .end method
 
-.method public final getBottomRightOnBit()[I
+.method public getBottomRightOnBit()[I
     .locals 5
 
     iget-object v0, p0, Lcom/google/zxing/common/BitMatrix;->d:[I
@@ -298,7 +300,7 @@
     goto :goto_1
 .end method
 
-.method public final getEnclosingRectangle()[I
+.method public getEnclosingRectangle()[I
     .locals 10
 
     const/4 v0, -0x1
@@ -353,7 +355,7 @@
     move v2, v0
 
     :cond_1
-    shl-int/lit8 v7, v6, 0x5
+    mul-int/lit8 v7, v6, 0x20
 
     if-ge v7, v5, :cond_9
 
@@ -371,20 +373,20 @@
     goto :goto_2
 
     :cond_2
-    shl-int/lit8 v9, v6, 0x5
+    mul-int/lit8 v9, v6, 0x20
 
     add-int/2addr v9, v7
 
     if-ge v9, v5, :cond_9
 
-    shl-int/lit8 v5, v6, 0x5
+    mul-int/lit8 v5, v6, 0x20
 
     add-int/2addr v5, v7
 
     move v7, v5
 
     :goto_3
-    shl-int/lit8 v5, v6, 0x5
+    mul-int/lit8 v5, v6, 0x20
 
     add-int/lit8 v5, v5, 0x1f
 
@@ -402,13 +404,13 @@
     goto :goto_4
 
     :cond_3
-    shl-int/lit8 v8, v6, 0x5
+    mul-int/lit8 v8, v6, 0x20
 
     add-int/2addr v8, v5
 
     if-le v8, v3, :cond_8
 
-    shl-int/lit8 v3, v6, 0x5
+    mul-int/lit8 v3, v6, 0x20
 
     add-int/2addr v3, v5
 
@@ -500,7 +502,7 @@
     goto :goto_5
 .end method
 
-.method public final getHeight()I
+.method public getHeight()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->b:I
@@ -508,7 +510,7 @@
     return v0
 .end method
 
-.method public final getRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
+.method public getRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .locals 5
 
     if-eqz p2, :cond_0
@@ -558,7 +560,7 @@
     return-object p2
 .end method
 
-.method public final getTopLeftOnBit()[I
+.method public getTopLeftOnBit()[I
     .locals 6
 
     const/4 v1, 0x0
@@ -638,7 +640,7 @@
     goto :goto_1
 .end method
 
-.method public final getWidth()I
+.method public getWidth()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->a:I
@@ -646,7 +648,7 @@
     return v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 5
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->a:I
@@ -692,7 +694,7 @@
     return v1
 .end method
 
-.method public final set(II)V
+.method public set(II)V
     .locals 5
 
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->c:I
@@ -720,8 +722,10 @@
     return-void
 .end method
 
-.method public final setRegion(IIII)V
+.method public setRegion(IIII)V
     .locals 9
+
+    const/4 v8, 0x1
 
     if-ltz p2, :cond_0
 
@@ -737,9 +741,9 @@
     throw v0
 
     :cond_1
-    if-lez p4, :cond_2
+    if-lt p4, v8, :cond_2
 
-    if-gtz p3, :cond_3
+    if-ge p3, v8, :cond_3
 
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -795,11 +799,9 @@
 
     aget v6, v4, v5
 
-    const/4 v7, 0x1
+    and-int/lit8 v7, v0, 0x1f
 
-    and-int/lit8 v8, v0, 0x1f
-
-    shl-int/2addr v7, v8
+    shl-int v7, v8, v7
 
     or-int/2addr v6, v7
 
@@ -813,7 +815,7 @@
     return-void
 .end method
 
-.method public final setRow(ILcom/google/zxing/common/BitArray;)V
+.method public setRow(ILcom/google/zxing/common/BitArray;)V
     .locals 5
 
     invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->getBitArray()[I
@@ -835,7 +837,7 @@
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     const/4 v1, 0x0

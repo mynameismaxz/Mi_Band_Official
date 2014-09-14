@@ -93,9 +93,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Expected "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -149,7 +153,7 @@
 
 
 # virtual methods
-.method public final beginArray()V
+.method public beginArray()V
     .locals 2
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
@@ -173,7 +177,7 @@
     return-void
 .end method
 
-.method public final beginObject()V
+.method public beginObject()V
     .locals 2
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
@@ -201,7 +205,7 @@
     return-void
 .end method
 
-.method public final close()V
+.method public close()V
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->c:Ljava/util/List;
@@ -217,7 +221,7 @@
     return-void
 .end method
 
-.method public final endArray()V
+.method public endArray()V
     .locals 1
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
@@ -231,7 +235,7 @@
     return-void
 .end method
 
-.method public final endObject()V
+.method public endObject()V
     .locals 1
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
@@ -245,7 +249,7 @@
     return-void
 .end method
 
-.method public final hasNext()Z
+.method public hasNext()Z
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -271,7 +275,7 @@
     goto :goto_0
 .end method
 
-.method public final nextBoolean()Z
+.method public nextBoolean()Z
     .locals 1
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
@@ -291,7 +295,7 @@
     return v0
 .end method
 
-.method public final nextDouble()D
+.method public nextDouble()D
     .locals 5
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -310,9 +314,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Expected "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
@@ -372,9 +380,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "JSON forbids NaN and infinities: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
@@ -394,7 +406,7 @@
     return-wide v0
 .end method
 
-.method public final nextInt()I
+.method public nextInt()I
     .locals 4
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -413,9 +425,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Expected "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
@@ -457,7 +473,7 @@
     return v0
 .end method
 
-.method public final nextLong()J
+.method public nextLong()J
     .locals 4
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -476,9 +492,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Expected "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
@@ -520,7 +540,7 @@
     return-wide v0
 .end method
 
-.method public final nextName()Ljava/lang/String;
+.method public nextName()Ljava/lang/String;
     .locals 3
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
@@ -556,7 +576,7 @@
     return-object v0
 .end method
 
-.method public final nextNull()V
+.method public nextNull()V
     .locals 1
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
@@ -568,7 +588,7 @@
     return-void
 .end method
 
-.method public final nextString()Ljava/lang/String;
+.method public nextString()Ljava/lang/String;
     .locals 4
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -587,9 +607,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Expected "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
 
@@ -629,10 +653,9 @@
     return-object v0
 .end method
 
-.method public final peek()Lcom/google/gson/stream/JsonToken;
+.method public peek()Lcom/google/gson/stream/JsonToken;
     .locals 3
 
-    :goto_0
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -643,7 +666,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
 
-    :goto_1
+    :goto_0
     return-object v0
 
     :cond_0
@@ -683,7 +706,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     iget-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->c:Ljava/util/List;
@@ -694,6 +717,10 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
+
+    move-result-object v0
+
     goto :goto_0
 
     :cond_2
@@ -701,12 +728,12 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_3
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
     instance-of v1, v0, Lcom/google/gson/JsonObject;
@@ -715,7 +742,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_5
     instance-of v1, v0, Lcom/google/gson/JsonArray;
@@ -724,7 +751,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_6
     instance-of v1, v0, Lcom/google/gson/JsonPrimitive;
@@ -741,7 +768,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_7
     invoke-virtual {v0}, Lcom/google/gson/JsonPrimitive;->isBoolean()Z
@@ -752,7 +779,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_8
     invoke-virtual {v0}, Lcom/google/gson/JsonPrimitive;->isNumber()Z
@@ -763,7 +790,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_9
     new-instance v0, Ljava/lang/AssertionError;
@@ -779,7 +806,7 @@
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_b
     sget-object v1, Lcom/google/gson/internal/bind/JsonTreeReader;->b:Ljava/lang/Object;
@@ -802,7 +829,7 @@
     throw v0
 .end method
 
-.method public final promoteNameToValue()V
+.method public promoteNameToValue()V
     .locals 3
 
     sget-object v0, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
@@ -846,7 +873,7 @@
     return-void
 .end method
 
-.method public final skipValue()V
+.method public skipValue()V
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -868,7 +895,7 @@
     goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

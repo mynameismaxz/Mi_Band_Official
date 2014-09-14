@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static a:Ljava/lang/String; = "ANALYTICS.SQLITESTORE"
+.field public static final a:Ljava/lang/String; = "ANALYTICS.SQLITESTORE"
 
 .field private static final b:Ljava/lang/String; = "analytics"
 
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Landroid/database/Cursor;
+.method public a(Ljava/lang/String;)Landroid/database/Cursor;
     .locals 6
 
     const/4 v0, 0x0
@@ -115,7 +115,7 @@
     goto :goto_0
 .end method
 
-.method public final a()V
+.method public a()V
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/miui/analyticstracker/i;->g:Landroid/database/sqlite/SQLiteOpenHelper;
@@ -130,7 +130,7 @@
     return-void
 .end method
 
-.method public final a(Landroid/content/Context;Ljava/lang/String;)V
+.method public a(Landroid/content/Context;Ljava/lang/String;)V
     .locals 3
 
     new-instance v0, Lcom/xiaomi/miui/analyticstracker/a;
@@ -146,7 +146,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public a(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 7
 
     const/4 v6, 0x1
@@ -240,7 +240,7 @@
     goto :goto_0
 .end method
 
-.method public final b(Ljava/lang/String;)V
+.method public b(Ljava/lang/String;)V
     .locals 5
 
     const/4 v3, 0x1

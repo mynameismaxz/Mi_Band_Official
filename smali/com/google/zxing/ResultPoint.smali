@@ -86,33 +86,33 @@
 .end method
 
 .method public static orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
-    .locals 11
+    .locals 9
 
-    const/4 v9, 0x2
+    const/4 v7, 0x2
 
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    aget-object v0, p0, v7
+    aget-object v0, p0, v5
 
-    aget-object v1, p0, v8
+    aget-object v1, p0, v6
 
     invoke-static {v0, v1}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
     move-result v0
 
-    aget-object v1, p0, v8
+    aget-object v1, p0, v6
 
-    aget-object v2, p0, v9
+    aget-object v2, p0, v7
 
     invoke-static {v1, v2}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
     move-result v1
 
-    aget-object v2, p0, v7
+    aget-object v2, p0, v5
 
-    aget-object v3, p0, v9
+    aget-object v3, p0, v7
 
     invoke-static {v2, v3}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
@@ -126,38 +126,16 @@
 
     if-ltz v3, :cond_0
 
-    aget-object v1, p0, v7
+    aget-object v1, p0, v5
 
-    aget-object v2, p0, v8
+    aget-object v2, p0, v6
 
-    aget-object v0, p0, v9
+    aget-object v0, p0, v7
 
     :goto_0
-    iget v3, v1, Lcom/google/zxing/ResultPoint;->a:F
+    invoke-static {v2, v1, v0}, Lcom/google/zxing/ResultPoint;->a(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
-    iget v4, v1, Lcom/google/zxing/ResultPoint;->b:F
-
-    iget v5, v0, Lcom/google/zxing/ResultPoint;->a:F
-
-    sub-float/2addr v5, v3
-
-    iget v6, v2, Lcom/google/zxing/ResultPoint;->b:F
-
-    sub-float/2addr v6, v4
-
-    mul-float/2addr v5, v6
-
-    iget v6, v0, Lcom/google/zxing/ResultPoint;->b:F
-
-    sub-float v4, v6, v4
-
-    iget v6, v2, Lcom/google/zxing/ResultPoint;->a:F
-
-    sub-float v3, v6, v3
-
-    mul-float/2addr v3, v4
-
-    sub-float v3, v5, v3
+    move-result v3
 
     const/4 v4, 0x0
 
@@ -166,11 +144,11 @@
     if-gez v3, :cond_2
 
     :goto_1
-    aput-object v0, p0, v7
+    aput-object v0, p0, v5
 
-    aput-object v1, p0, v8
+    aput-object v1, p0, v6
 
-    aput-object v2, p0, v9
+    aput-object v2, p0, v7
 
     return-void
 
@@ -183,29 +161,29 @@
 
     if-ltz v0, :cond_1
 
-    aget-object v1, p0, v8
+    aget-object v1, p0, v6
 
-    aget-object v2, p0, v7
+    aget-object v2, p0, v5
 
-    aget-object v0, p0, v9
+    aget-object v0, p0, v7
 
     goto :goto_0
 
     :cond_1
-    aget-object v1, p0, v9
+    aget-object v1, p0, v7
 
-    aget-object v2, p0, v7
+    aget-object v2, p0, v5
 
-    aget-object v0, p0, v8
+    aget-object v0, p0, v6
 
     goto :goto_0
 
     :cond_2
-    move-object v10, v0
+    move-object v8, v0
 
     move-object v0, v2
 
-    move-object v2, v10
+    move-object v2, v8
 
     goto :goto_1
 .end method

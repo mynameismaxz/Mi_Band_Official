@@ -55,7 +55,7 @@
 
 
 # virtual methods
-.method public final getResultPoints()[Lcom/google/zxing/ResultPoint;
+.method public getResultPoints()[Lcom/google/zxing/ResultPoint;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/FinderPattern;->c:[Lcom/google/zxing/ResultPoint;
@@ -63,7 +63,7 @@
     return-object v0
 .end method
 
-.method public final getStartEnd()[I
+.method public getStartEnd()[I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/FinderPattern;->b:[I
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public final getValue()I
+.method public getValue()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/oned/rss/FinderPattern;->a:I

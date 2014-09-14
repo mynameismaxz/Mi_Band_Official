@@ -124,13 +124,13 @@
     return-object v0
 .end method
 
-.method private static a(Landroid/content/Context;)Ljava/lang/String;
+.method private a(Landroid/content/Context;)Ljava/lang/String;
     .locals 4
 
     :try_start_0
     const-string v0, "connectivity"
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -226,9 +226,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "ReportManager getAPN type = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1001,202 +1005,14 @@
     :cond_1
     const-string v0, "http://wspeed.qq.com/w.cgi"
 
-    new-instance v1, Lcom/tencent/open/a/e;
+    const-string v1, "POST"
 
-    invoke-direct {v1, p0, v0, p1, v2}, Lcom/tencent/open/a/e;-><init>(Lcom/tencent/open/a/b;Ljava/lang/String;Landroid/content/Context;Landroid/os/Bundle;)V
-
-    invoke-virtual {v1}, Lcom/tencent/open/a/e;->start()V
+    invoke-direct {p0, p1, v0, v1, v2}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-void
 .end method
 
-.method private a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 1
-
-    new-instance v0, Lcom/tencent/open/a/e;
-
-    invoke-direct {v0, p0, p2, p1, p3}, Lcom/tencent/open/a/e;-><init>(Lcom/tencent/open/a/b;Ljava/lang/String;Landroid/content/Context;Landroid/os/Bundle;)V
-
-    invoke-virtual {v0}, Lcom/tencent/open/a/e;->start()V
-
-    return-void
-.end method
-
-.method private a(Landroid/content/Context;I)Z
-    .locals 3
-
-    invoke-static {p1, p2}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/tencent/open/a/b;->e:Ljava/util/Random;
-
-    const/16 v2, 0x64
-
-    invoke-virtual {v1, v2}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v1
-
-    if-ge v1, v0, :cond_0
-
-    const-string v0, "cgi_report_debug"
-
-    const-string v1, "ReportManager availableForFrequency = ture"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const-string v0, "cgi_report_debug"
-
-    const-string v1, "ReportManager availableForFrequency = false"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method static synthetic a(Lcom/tencent/open/a/b;Z)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/tencent/open/a/b;->d:Z
-
-    return v0
-.end method
-
-.method private static b(Landroid/content/Context;I)I
-    .locals 4
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    invoke-static {p0, v0}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
-
-    move-result-object v0
-
-    const-string v1, "Common_CGIReportFrequencySuccess"
-
-    invoke-virtual {v0, v1}, Lcom/tencent/utils/OpenConfig;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    const-string v1, "OpenConfig_agent"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "config 4:Common_CGIReportFrequencySuccess     config_value:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0xa
-
-    :cond_0
-    const-string v1, "OpenConfig_agent"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "config 4:Common_CGIReportFrequencySuccess     result_value:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
-    return v0
-
-    :cond_1
-    invoke-static {p0, v0}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
-
-    move-result-object v0
-
-    const-string v1, "Common_CGIReportFrequencyFailed"
-
-    invoke-virtual {v0, v1}, Lcom/tencent/utils/OpenConfig;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    const-string v1, "OpenConfig_agent"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "config 4:Common_CGIReportFrequencyFailed     config_value:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-nez v0, :cond_2
-
-    const/16 v0, 0x64
-
-    :cond_2
-    const-string v1, "OpenConfig_agent"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "config 4:Common_CGIReportFrequencyFailed     result_value:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method static synthetic b(Lcom/tencent/open/a/b;)Ljava/util/ArrayList;
-    .locals 1
-
-    iget-object v0, p0, Lcom/tencent/open/a/b;->g:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method private b(Landroid/content/Context;Ljava/lang/String;JJJILjava/lang/String;)V
+.method private a(Landroid/content/Context;Ljava/lang/String;JJJILjava/lang/String;Ljava/lang/String;)V
     .locals 14
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1209,9 +1025,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "ReportManager updateDB url="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     move-object/from16 v0, p2
 
@@ -1273,7 +1093,7 @@
 
     move/from16 v0, p9
 
-    invoke-static {p1, v0}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
+    invoke-direct {p0, p1, v0}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
 
     move-result v2
 
@@ -1288,7 +1108,7 @@
     move v4, v2
 
     :goto_0
-    invoke-static {p1}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1299,6 +1119,12 @@
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ""
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -1314,7 +1140,7 @@
 
     move-wide/from16 v11, p7
 
-    move-object/from16 v13, p10
+    move-object/from16 v13, p11
 
     invoke-virtual/range {v2 .. v13}, Lcom/tencent/open/a/d;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJJJLjava/lang/String;)Z
 
@@ -1335,6 +1161,206 @@
     move v4, v2
 
     goto :goto_0
+.end method
+
+.method private a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 1
+
+    new-instance v0, Lcom/tencent/open/a/e;
+
+    invoke-direct {v0, p0, p2, p1, p4}, Lcom/tencent/open/a/e;-><init>(Lcom/tencent/open/a/b;Ljava/lang/String;Landroid/content/Context;Landroid/os/Bundle;)V
+
+    invoke-virtual {v0}, Lcom/tencent/open/a/e;->start()V
+
+    return-void
+.end method
+
+.method private a(Landroid/content/Context;I)Z
+    .locals 3
+
+    invoke-direct {p0, p1, p2}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/tencent/open/a/b;->e:Ljava/util/Random;
+
+    const/16 v2, 0x64
+
+    invoke-virtual {v1, v2}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v1
+
+    if-ge v1, v0, :cond_0
+
+    const-string v0, "cgi_report_debug"
+
+    const-string v1, "ReportManager availableForFrequency = ture"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const-string v0, "cgi_report_debug"
+
+    const-string v1, "ReportManager availableForFrequency = false"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method static synthetic a(Lcom/tencent/open/a/b;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/tencent/open/a/b;->d:Z
+
+    return p1
+.end method
+
+.method private b(Landroid/content/Context;I)I
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-nez p2, :cond_1
+
+    invoke-static {p1, v0}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
+
+    move-result-object v0
+
+    const-string v1, "Common_CGIReportFrequencySuccess"
+
+    invoke-virtual {v0, v1}, Lcom/tencent/utils/OpenConfig;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    const-string v1, "OpenConfig_agent"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "config 4:Common_CGIReportFrequencySuccess     config_value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-nez v0, :cond_0
+
+    const/16 v0, 0xa
+
+    :cond_0
+    const-string v1, "OpenConfig_agent"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "config 4:Common_CGIReportFrequencySuccess     result_value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return v0
+
+    :cond_1
+    invoke-static {p1, v0}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
+
+    move-result-object v0
+
+    const-string v1, "Common_CGIReportFrequencyFailed"
+
+    invoke-virtual {v0, v1}, Lcom/tencent/utils/OpenConfig;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    const-string v1, "OpenConfig_agent"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "config 4:Common_CGIReportFrequencyFailed     config_value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-nez v0, :cond_2
+
+    const/16 v0, 0x64
+
+    :cond_2
+    const-string v1, "OpenConfig_agent"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "config 4:Common_CGIReportFrequencyFailed     result_value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method static synthetic b(Lcom/tencent/open/a/b;)Ljava/util/ArrayList;
+    .locals 1
+
+    iget-object v0, p0, Lcom/tencent/open/a/b;->g:Ljava/util/ArrayList;
+
+    return-object v0
 .end method
 
 .method private b(Landroid/content/Context;)Z
@@ -1358,9 +1384,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "config 5:Common_CGIReportTimeinterval     config_value:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1383,9 +1413,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "config 5:Common_CGIReportTimeinterval     result_value:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1472,9 +1506,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "config 6:Common_CGIReportMaxcount     config_value:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1495,9 +1533,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "config 6:Common_CGIReportMaxcount     result_value:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1571,413 +1613,61 @@
 .end method
 
 .method public a(Landroid/content/Context;Ljava/lang/String;JJJILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 14
+    .locals 2
+
+    const/4 v1, 0x1
 
     if-nez p12, :cond_0
 
     const-string p12, "1000067"
 
     :cond_0
-    iget-object v2, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
+    iget-object v0, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    new-instance v2, Lcom/tencent/open/a/d;
+    new-instance v0, Lcom/tencent/open/a/d;
 
-    invoke-direct {v2, p1}, Lcom/tencent/open/a/d;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1}, Lcom/tencent/open/a/d;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
+    iput-object v0, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
 
     :cond_1
-    move/from16 v0, p9
+    invoke-direct {p0, p1, p9}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;I)Z
 
-    invoke-static {p1, v0}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
+    move-result v0
 
-    move-result v2
+    if-ne v0, v1, :cond_2
 
-    iget-object v3, p0, Lcom/tencent/open/a/b;->e:Ljava/util/Random;
+    invoke-direct/range {p0 .. p11}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;JJJILjava/lang/String;Ljava/lang/String;)V
 
-    const/16 v4, 0x64
+    iget-boolean v0, p0, Lcom/tencent/open/a/b;->d:Z
 
-    invoke-virtual {v3, v4}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v3
-
-    if-ge v3, v2, :cond_3
-
-    const-string v2, "cgi_report_debug"
-
-    const-string v3, "ReportManager availableForFrequency = ture"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v2, 0x1
-
-    :goto_0
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_2
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    sub-long v7, v2, p3
-
-    const-string v2, "cgi_report_debug"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "ReportManager updateDB url="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ",resultCode="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move/from16 v0, p9
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ",timeCost="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ",reqSize="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-wide/from16 v0, p5
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ",rspSize="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-wide/from16 v0, p7
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    move/from16 v0, p9
-
-    invoke-static {p1, v0}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;I)I
-
-    move-result v2
-
-    const/16 v3, 0x64
-
-    div-int v2, v3, v2
-
-    if-gtz v2, :cond_4
-
-    const/4 v2, 0x1
-
-    move v4, v2
-
-    :goto_1
-    invoke-static {p1}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v2, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object/from16 v5, p2
-
-    move/from16 v6, p9
-
-    move-wide/from16 v9, p5
-
-    move-wide/from16 v11, p7
-
-    move-object/from16 v13, p11
-
-    invoke-virtual/range {v2 .. v13}, Lcom/tencent/open/a/d;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJJJLjava/lang/String;)Z
-
-    iget-boolean v2, p0, Lcom/tencent/open/a/b;->d:Z
-
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_5
+    if-ne v0, v1, :cond_3
 
     :cond_2
-    :goto_2
+    :goto_0
     return-void
 
     :cond_3
-    const-string v2, "cgi_report_debug"
+    invoke-direct {p0, p1}, Lcom/tencent/open/a/b;->b(Landroid/content/Context;)Z
 
-    const-string v3, "ReportManager availableForFrequency = false"
+    move-result v0
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-ne v0, v1, :cond_4
 
-    const/4 v2, 0x0
+    invoke-direct {p0, p1, p12}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
-    const/16 v3, 0x64
+    invoke-direct {p0, p1}, Lcom/tencent/open/a/b;->c(Landroid/content/Context;)Z
 
-    if-le v2, v3, :cond_c
+    move-result v0
 
-    const/16 v2, 0x64
+    if-ne v0, v1, :cond_2
 
-    move v4, v2
+    invoke-direct {p0, p1, p12}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_1
-
-    :cond_5
-    const/4 v2, 0x0
-
-    invoke-static {p1, v2}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
-
-    move-result-object v2
-
-    const-string v3, "Common_CGIReportTimeinterval"
-
-    invoke-virtual {v2, v3}, Lcom/tencent/utils/OpenConfig;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    const-string v4, "OpenConfig_test"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "config 5:Common_CGIReportTimeinterval     config_value:"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v4, v2, v4
-
-    if-nez v4, :cond_6
-
-    const-wide/16 v2, 0x4b0
-
-    :cond_6
-    const-string v4, "OpenConfig_test"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "config 5:Common_CGIReportTimeinterval     result_value:"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x3e8
-
-    div-long/2addr v4, v6
-
-    iget-wide v6, p0, Lcom/tencent/open/a/b;->b:J
-
-    const-wide/16 v8, 0x0
-
-    cmp-long v6, v6, v8
-
-    if-eqz v6, :cond_7
-
-    iget-wide v6, p0, Lcom/tencent/open/a/b;->b:J
-
-    add-long/2addr v2, v6
-
-    cmp-long v2, v2, v4
-
-    if-gtz v2, :cond_8
-
-    :cond_7
-    iput-wide v4, p0, Lcom/tencent/open/a/b;->b:J
-
-    const-string v2, "cgi_report_debug"
-
-    const-string v3, "ReportManager availableForTime = ture"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v2, 0x1
-
-    :goto_3
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_9
-
-    move-object/from16 v0, p12
-
-    invoke-direct {p0, p1, v0}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_8
-    const-string v2, "cgi_report_debug"
-
-    const-string v3, "ReportManager availableForTime = false"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v2, 0x0
-
-    goto :goto_3
-
-    :cond_9
-    const/4 v2, 0x0
-
-    invoke-static {p1, v2}, Lcom/tencent/utils/OpenConfig;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/utils/OpenConfig;
-
-    move-result-object v2
-
-    const-string v3, "Common_CGIReportMaxcount"
-
-    invoke-virtual {v2, v3}, Lcom/tencent/utils/OpenConfig;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    const-string v3, "OpenConfig_test"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "config 6:Common_CGIReportMaxcount     config_value:"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-nez v2, :cond_a
-
-    const/16 v2, 0x14
-
-    :cond_a
-    const-string v3, "OpenConfig_test"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "config 6:Common_CGIReportMaxcount     result_value:"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v3, p0, Lcom/tencent/open/a/b;->f:Lcom/tencent/open/a/d;
-
-    invoke-virtual {v3}, Lcom/tencent/open/a/d;->e()I
-
-    move-result v3
-
-    if-lt v3, v2, :cond_b
-
-    const-string v2, "cgi_report_debug"
-
-    const-string v3, "ReportManager availableForCount = ture"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v2, 0x1
-
-    :goto_4
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_2
-
-    move-object/from16 v0, p12
-
-    invoke-direct {p0, p1, v0}, Lcom/tencent/open/a/b;->a(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto/16 :goto_2
-
-    :cond_b
-    const-string v2, "cgi_report_debug"
-
-    const-string v3, "ReportManager availableForCount = false"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v2, 0x0
-
-    goto :goto_4
-
-    :cond_c
-    move v4, v2
-
-    goto/16 :goto_1
+    goto :goto_0
 .end method

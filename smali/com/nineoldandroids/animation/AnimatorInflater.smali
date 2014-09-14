@@ -190,25 +190,9 @@
 
     if-eqz v1, :cond_5
 
-    new-instance v1, Lcom/nineoldandroids/animation/ObjectAnimator;
+    invoke-static {p0, p2}, Lcom/nineoldandroids/animation/AnimatorInflater;->a(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/nineoldandroids/animation/ObjectAnimator;
 
-    invoke-direct {v1}, Lcom/nineoldandroids/animation/ObjectAnimator;-><init>()V
-
-    invoke-static {p0, p2, v1}, Lcom/nineoldandroids/animation/AnimatorInflater;->a(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/nineoldandroids/animation/ValueAnimator;)Lcom/nineoldandroids/animation/ValueAnimator;
-
-    sget-object v0, Lcom/nineoldandroids/animation/AnimatorInflater;->c:[I
-
-    invoke-virtual {p0, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Lcom/nineoldandroids/animation/ObjectAnimator;->setPropertyName(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    move-result-object v1
 
     :goto_3
     if-eqz p3, :cond_0
@@ -372,7 +356,7 @@
 .end method
 
 .method private static a(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/nineoldandroids/animation/ValueAnimator;)Lcom/nineoldandroids/animation/ValueAnimator;
-    .locals 11
+    .locals 13
 
     sget-object v0, Lcom/nineoldandroids/animation/AnimatorInflater;->e:[I
 
@@ -415,14 +399,16 @@
     invoke-direct {p2}, Lcom/nineoldandroids/animation/ValueAnimator;-><init>()V
 
     :cond_0
+    const/4 v10, 0x5
+
+    const/4 v11, 0x6
+
     if-nez v0, :cond_8
 
     const/4 v0, 0x1
 
     :goto_0
-    const/4 v1, 0x5
-
-    invoke-virtual {v5, v1}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    invoke-virtual {v5, v10}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v2
 
@@ -438,13 +424,11 @@
     iget v1, v2, Landroid/util/TypedValue;->type:I
 
     :goto_2
-    const/4 v2, 0x6
+    invoke-virtual {v5, v11}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
-    invoke-virtual {v5, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    move-result-object v12
 
-    move-result-object v10
-
-    if-eqz v10, :cond_b
+    if-eqz v12, :cond_b
 
     const/4 v2, 0x1
 
@@ -453,38 +437,38 @@
     :goto_3
     if-eqz v3, :cond_c
 
-    iget v2, v10, Landroid/util/TypedValue;->type:I
+    iget v2, v12, Landroid/util/TypedValue;->type:I
 
     :goto_4
     if-eqz v4, :cond_1
 
-    const/16 v10, 0x1c
+    const/16 v12, 0x1c
 
-    if-lt v1, v10, :cond_1
+    if-lt v1, v12, :cond_1
 
-    const/16 v10, 0x1f
+    const/16 v12, 0x1f
 
-    if-le v1, v10, :cond_2
+    if-le v1, v12, :cond_2
 
     :cond_1
     if-eqz v3, :cond_3
 
-    const/16 v10, 0x1c
+    const/16 v12, 0x1c
 
-    if-lt v2, v10, :cond_3
+    if-lt v2, v12, :cond_3
 
-    const/16 v10, 0x1f
+    const/16 v12, 0x1f
 
-    if-gt v2, v10, :cond_3
+    if-gt v2, v12, :cond_3
 
     :cond_2
     const/4 v0, 0x0
 
-    new-instance v10, Lcom/nineoldandroids/animation/ArgbEvaluator;
+    new-instance v12, Lcom/nineoldandroids/animation/ArgbEvaluator;
 
-    invoke-direct {v10}, Lcom/nineoldandroids/animation/ArgbEvaluator;-><init>()V
+    invoke-direct {v12}, Lcom/nineoldandroids/animation/ArgbEvaluator;-><init>()V
 
-    invoke-virtual {p2, v10}, Lcom/nineoldandroids/animation/ValueAnimator;->setEvaluator(Lcom/nineoldandroids/animation/TypeEvaluator;)V
+    invoke-virtual {p2, v12}, Lcom/nineoldandroids/animation/ValueAnimator;->setEvaluator(Lcom/nineoldandroids/animation/TypeEvaluator;)V
 
     :cond_3
     if-eqz v0, :cond_12
@@ -495,11 +479,9 @@
 
     if-ne v1, v0, :cond_d
 
-    const/4 v0, 0x5
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v10, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -512,11 +494,9 @@
 
     if-ne v2, v0, :cond_e
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5, v0, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -630,11 +610,9 @@
     goto/16 :goto_4
 
     :cond_d
-    const/4 v0, 0x5
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v5, v10, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v0
 
@@ -643,11 +621,9 @@
     goto :goto_5
 
     :cond_e
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5, v0, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v0
 
@@ -671,11 +647,9 @@
 
     if-ne v2, v0, :cond_11
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -693,11 +667,9 @@
     goto :goto_7
 
     :cond_11
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v0
 
@@ -710,11 +682,9 @@
 
     if-ne v1, v0, :cond_13
 
-    const/4 v0, 0x5
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v10, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -729,11 +699,9 @@
 
     if-ne v2, v0, :cond_15
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5, v0, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -765,11 +733,9 @@
 
     if-gt v1, v0, :cond_14
 
-    const/4 v0, 0x5
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v5, v10, v0}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v0
 
@@ -778,11 +744,9 @@
     goto :goto_9
 
     :cond_14
-    const/4 v0, 0x5
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v5, v10, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
@@ -799,22 +763,18 @@
 
     if-gt v2, v0, :cond_16
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5, v0, v2}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v0
 
     goto :goto_a
 
     :cond_16
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
@@ -840,11 +800,9 @@
 
     if-ne v2, v0, :cond_19
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
@@ -872,22 +830,18 @@
 
     if-gt v2, v0, :cond_1a
 
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v0
 
     goto :goto_b
 
     :cond_1a
-    const/4 v0, 0x6
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v5, v11, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
@@ -908,15 +862,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {p0, v1, v0, v2, v3}, Lcom/nineoldandroids/animation/AnimatorInflater;->a(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Lcom/nineoldandroids/animation/AnimatorSet;I)Lcom/nineoldandroids/animation/Animator;
+    invoke-static {p0, v1}, Lcom/nineoldandroids/animation/AnimatorInflater;->a(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)Lcom/nineoldandroids/animation/Animator;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0

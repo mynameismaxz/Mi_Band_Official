@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/t;
+.class Landroid/support/v4/content/t;
 .super Landroid/os/Handler;
 
 
@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Landroid/support/v4/content/o;)V
     .locals 0
 
     invoke-direct {p0}, Landroid/support/v4/content/t;-><init>()V
@@ -21,12 +21,12 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v0, Landroid/support/v4/content/j;
+    check-cast v0, Landroid/support/v4/content/s;
 
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -36,9 +36,9 @@
     return-void
 
     :pswitch_0
-    iget-object v1, v0, Landroid/support/v4/content/j;->a:Landroid/support/v4/content/ModernAsyncTask;
+    iget-object v1, v0, Landroid/support/v4/content/s;->a:Landroid/support/v4/content/ModernAsyncTask;
 
-    iget-object v0, v0, Landroid/support/v4/content/j;->b:[Ljava/lang/Object;
+    iget-object v0, v0, Landroid/support/v4/content/s;->b:[Ljava/lang/Object;
 
     const/4 v2, 0x0
 
@@ -49,11 +49,11 @@
     goto :goto_0
 
     :pswitch_1
-    iget-object v1, v0, Landroid/support/v4/content/j;->a:Landroid/support/v4/content/ModernAsyncTask;
+    iget-object v1, v0, Landroid/support/v4/content/s;->a:Landroid/support/v4/content/ModernAsyncTask;
 
-    iget-object v0, v0, Landroid/support/v4/content/j;->b:[Ljava/lang/Object;
+    iget-object v0, v0, Landroid/support/v4/content/s;->b:[Ljava/lang/Object;
 
-    invoke-static {}, Landroid/support/v4/content/ModernAsyncTask;->b()V
+    invoke-virtual {v1, v0}, Landroid/support/v4/content/ModernAsyncTask;->b([Ljava/lang/Object;)V
 
     goto :goto_0
 

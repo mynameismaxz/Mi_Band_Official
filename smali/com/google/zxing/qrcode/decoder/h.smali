@@ -1,4 +1,4 @@
-.class final Lcom/google/zxing/qrcode/decoder/h;
+.class Lcom/google/zxing/qrcode/decoder/h;
 .super Lcom/google/zxing/qrcode/decoder/c;
 
 
@@ -8,12 +8,12 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/zxing/qrcode/decoder/c;-><init>(B)V
+    invoke-direct {p0, v0}, Lcom/google/zxing/qrcode/decoder/c;-><init>(Lcom/google/zxing/qrcode/decoder/d;)V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/d;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/zxing/qrcode/decoder/h;-><init>()V
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method final a(II)Z
+.method a(II)Z
     .locals 1
 
     add-int v0, p1, p2

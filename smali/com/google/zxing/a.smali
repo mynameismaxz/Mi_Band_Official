@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/zxing/a;
+.class synthetic Lcom/google/zxing/a;
 .super Ljava/lang/Object;
 
 

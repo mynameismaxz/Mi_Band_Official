@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final getAltitude()D
+.method public getAltitude()D
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/client/result/GeoParsedResult;->c:D
@@ -41,7 +41,7 @@
     return-wide v0
 .end method
 
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 5
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -107,7 +107,7 @@
     return-object v0
 .end method
 
-.method public final getGeoURI()Ljava/lang/String;
+.method public getGeoURI()Ljava/lang/String;
     .locals 6
 
     const/16 v5, 0x2c
@@ -165,7 +165,7 @@
     return-object v0
 .end method
 
-.method public final getLatitude()D
+.method public getLatitude()D
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/client/result/GeoParsedResult;->a:D
@@ -173,7 +173,7 @@
     return-wide v0
 .end method
 
-.method public final getLongitude()D
+.method public getLongitude()D
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/client/result/GeoParsedResult;->b:D
@@ -181,7 +181,7 @@
     return-wide v0
 .end method
 
-.method public final getQuery()Ljava/lang/String;
+.method public getQuery()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/GeoParsedResult;->d:Ljava/lang/String;

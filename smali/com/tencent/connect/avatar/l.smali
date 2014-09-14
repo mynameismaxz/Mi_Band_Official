@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/l;
+.class Lcom/tencent/connect/avatar/l;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 6
 
     const-wide/16 v4, 0x0

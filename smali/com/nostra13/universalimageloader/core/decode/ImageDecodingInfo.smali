@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/nostra13/universalimageloader/core/assist/ImageSize;Lcom/nostra13/universalimageloader/core/assist/ViewScaleType;Lcom/nostra13/universalimageloader/core/download/ImageDownloader;Lcom/nostra13/universalimageloader/core/DisplayImageOptions;)V
-    .locals 4
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -72,76 +72,8 @@
 
     iget-object v1, p0, Lcom/nostra13/universalimageloader/core/decode/ImageDecodingInfo;->j:Landroid/graphics/BitmapFactory$Options;
 
-    iget v2, v0, Landroid/graphics/BitmapFactory$Options;->inDensity:I
+    invoke-direct {p0, v0, v1}, Lcom/nostra13/universalimageloader/core/decode/ImageDecodingInfo;->a(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
 
-    iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inDensity:I
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inDither:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inDither:Z
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inInputShareable:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inInputShareable:Z
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    iget-object v2, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    iput-object v2, v1, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
-
-    iget v2, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
-
-    iget v2, v0, Landroid/graphics/BitmapFactory$Options;->inScreenDensity:I
-
-    iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inScreenDensity:I
-
-    iget v2, v0, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
-
-    iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
-
-    iget-object v2, v0, Landroid/graphics/BitmapFactory$Options;->inTempStorage:[B
-
-    iput-object v2, v1, Landroid/graphics/BitmapFactory$Options;->inTempStorage:[B
-
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0xa
-
-    if-lt v2, v3, :cond_0
-
-    iget-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
-
-    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
-
-    :cond_0
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0xb
-
-    if-lt v2, v3, :cond_1
-
-    iget-object v2, v0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
-
-    iput-object v2, v1, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
-
-    iget-boolean v0, v0, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
-
-    iput-boolean v0, v1, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
-
-    :cond_1
     return-void
 .end method
 
@@ -198,9 +130,7 @@
 
     if-lt v0, v1, :cond_0
 
-    iget-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
-
-    iput-boolean v0, p2, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
+    invoke-direct {p0, p1, p2}, Lcom/nostra13/universalimageloader/core/decode/ImageDecodingInfo;->b(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
 
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -209,6 +139,25 @@
 
     if-lt v0, v1, :cond_1
 
+    invoke-direct {p0, p1, p2}, Lcom/nostra13/universalimageloader/core/decode/ImageDecodingInfo;->c(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method private b(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
+    .locals 1
+
+    iget-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
+
+    iput-boolean v0, p2, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
+
+    return-void
+.end method
+
+.method private c(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
+    .locals 1
+
     iget-object v0, p1, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
     iput-object v0, p2, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
@@ -216,31 +165,6 @@
     iget-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
     iput-boolean v0, p2, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
-
-    :cond_1
-    return-void
-.end method
-
-.method private static b(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
-    .locals 1
-
-    iget-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
-
-    iput-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
-
-    return-void
-.end method
-
-.method private static c(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
-    .locals 1
-
-    iget-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
-
-    iput-object v0, p1, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
-
-    iget-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
-
-    iput-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
     return-void
 .end method

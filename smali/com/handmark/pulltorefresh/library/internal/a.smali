@@ -1,4 +1,4 @@
-.class final Lcom/handmark/pulltorefresh/library/internal/a;
+.class Lcom/handmark/pulltorefresh/library/internal/a;
 .super Ljava/lang/Object;
 
 

@@ -1,13 +1,5 @@
-.class Lcom/nineoldandroids/view/a;
+.class final Lcom/nineoldandroids/view/a;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field a:I
-
-.field b:F
-
-.field c:F
 
 
 # direct methods
@@ -15,20 +7,6 @@
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method constructor <init>(IFF)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lcom/nineoldandroids/view/a;->a:I
-
-    iput p2, p0, Lcom/nineoldandroids/view/a;->b:F
-
-    iput p3, p0, Lcom/nineoldandroids/view/a;->c:F
 
     return-void
 .end method

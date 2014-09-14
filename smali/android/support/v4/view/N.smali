@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/N;
+.class Landroid/support/v4/view/N;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/PagerTabStrip;
+.field final synthetic a:Landroid/support/v4/view/PagerTabStrip;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/view/N;->a:Landroid/support/v4/view/PagerTabStrip;

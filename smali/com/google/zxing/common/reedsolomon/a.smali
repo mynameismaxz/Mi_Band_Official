@@ -89,7 +89,7 @@
 
 
 # virtual methods
-.method final a(I)I
+.method a(I)I
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
@@ -107,7 +107,7 @@
     return v0
 .end method
 
-.method final a(II)Lcom/google/zxing/common/reedsolomon/a;
+.method a(II)Lcom/google/zxing/common/reedsolomon/a;
     .locals 5
 
     if-gez p1, :cond_0
@@ -170,7 +170,7 @@
     goto :goto_0
 .end method
 
-.method final a(Lcom/google/zxing/common/reedsolomon/a;)Lcom/google/zxing/common/reedsolomon/a;
+.method a(Lcom/google/zxing/common/reedsolomon/a;)Lcom/google/zxing/common/reedsolomon/a;
     .locals 8
 
     const/4 v5, 0x0
@@ -215,41 +215,41 @@
     goto :goto_0
 
     :cond_2
-    iget-object v1, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
 
-    iget-object v0, p1, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    iget-object v1, p1, Lcom/google/zxing/common/reedsolomon/a;->b:[I
 
-    array-length v2, v1
+    array-length v2, v0
 
-    array-length v3, v0
+    array-length v3, v1
 
     if-le v2, v3, :cond_4
 
     :goto_1
-    array-length v2, v1
+    array-length v2, v0
 
     new-array v4, v2, [I
 
-    array-length v2, v1
+    array-length v2, v0
 
-    array-length v3, v0
+    array-length v3, v1
 
     sub-int v3, v2, v3
 
-    invoke-static {v1, v5, v4, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v5, v4, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move v2, v3
 
     :goto_2
-    array-length v5, v1
+    array-length v5, v0
 
     if-ge v2, v5, :cond_3
 
     sub-int v5, v2, v3
 
-    aget v5, v0, v5
+    aget v5, v1, v5
 
-    aget v6, v1, v2
+    aget v6, v0, v2
 
     invoke-static {v5, v6}, Lcom/google/zxing/common/reedsolomon/GenericGF;->b(II)I
 
@@ -280,7 +280,7 @@
     goto :goto_1
 .end method
 
-.method final a()[I
+.method a()[I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
@@ -288,7 +288,7 @@
     return-object v0
 .end method
 
-.method final b()I
+.method b()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
@@ -300,7 +300,7 @@
     return v0
 .end method
 
-.method final b(I)I
+.method b(I)I
     .locals 5
 
     const/4 v0, 0x1
@@ -381,7 +381,7 @@
     goto :goto_1
 .end method
 
-.method final b(Lcom/google/zxing/common/reedsolomon/a;)Lcom/google/zxing/common/reedsolomon/a;
+.method b(Lcom/google/zxing/common/reedsolomon/a;)Lcom/google/zxing/common/reedsolomon/a;
     .locals 13
 
     const/4 v1, 0x0
@@ -495,7 +495,7 @@
     goto :goto_0
 .end method
 
-.method final c(I)Lcom/google/zxing/common/reedsolomon/a;
+.method c(I)Lcom/google/zxing/common/reedsolomon/a;
     .locals 5
 
     if-nez p1, :cond_1
@@ -554,7 +554,7 @@
     goto :goto_0
 .end method
 
-.method final c()Z
+.method c()Z
     .locals 2
 
     const/4 v0, 0x0
@@ -571,7 +571,7 @@
     return v0
 .end method
 
-.method final c(Lcom/google/zxing/common/reedsolomon/a;)[Lcom/google/zxing/common/reedsolomon/a;
+.method c(Lcom/google/zxing/common/reedsolomon/a;)[Lcom/google/zxing/common/reedsolomon/a;
     .locals 7
 
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->a:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -614,11 +614,9 @@
 
     move-result-object v0
 
-    iget-object v1, p1, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {p1}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v1, v1
-
-    add-int/lit8 v1, v1, -0x1
+    move-result v1
 
     invoke-virtual {p1, v1}, Lcom/google/zxing/common/reedsolomon/a;->a(I)I
 
@@ -635,17 +633,13 @@
     move-object v0, p0
 
     :goto_0
-    iget-object v3, v0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {v0}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v3, v3
+    move-result v3
 
-    add-int/lit8 v3, v3, -0x1
+    invoke-virtual {p1}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    iget-object v4, p1, Lcom/google/zxing/common/reedsolomon/a;->b:[I
-
-    array-length v4, v4
-
-    add-int/lit8 v4, v4, -0x1
+    move-result v4
 
     if-lt v3, v4, :cond_2
 
@@ -655,27 +649,21 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, v0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {v0}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v3, v3
+    move-result v3
 
-    add-int/lit8 v3, v3, -0x1
+    invoke-virtual {p1}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    iget-object v4, p1, Lcom/google/zxing/common/reedsolomon/a;->b:[I
-
-    array-length v4, v4
-
-    add-int/lit8 v4, v4, -0x1
+    move-result v4
 
     sub-int/2addr v3, v4
 
     iget-object v4, p0, Lcom/google/zxing/common/reedsolomon/a;->a:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    iget-object v5, v0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {v0}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v5, v5
-
-    add-int/lit8 v5, v5, -0x1
+    move-result v5
 
     invoke-virtual {v0, v5}, Lcom/google/zxing/common/reedsolomon/a;->a(I)I
 
@@ -721,28 +709,24 @@
     return-object v2
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     const/4 v4, 0x1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {p0}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v0, v0
-
-    add-int/lit8 v0, v0, -0x1
+    move-result v0
 
     mul-int/lit8 v0, v0, 0x8
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/a;->b:[I
+    invoke-virtual {p0}, Lcom/google/zxing/common/reedsolomon/a;->b()I
 
-    array-length v0, v0
-
-    add-int/lit8 v0, v0, -0x1
+    move-result v0
 
     move v1, v0
 

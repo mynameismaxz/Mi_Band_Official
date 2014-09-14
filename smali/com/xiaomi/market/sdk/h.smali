@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private a:Ljava/util/TreeMap;
+.field final synthetic a:Lcom/xiaomi/market/sdk/c;
 
-.field private synthetic b:Lcom/xiaomi/market/sdk/c;
+.field private b:Ljava/util/TreeMap;
 
 
 # direct methods
@@ -22,13 +22,15 @@
 .method public constructor <init>(Lcom/xiaomi/market/sdk/c;Z)V
     .locals 1
 
+    iput-object p1, p0, Lcom/xiaomi/market/sdk/h;->a:Lcom/xiaomi/market/sdk/c;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
-    iput-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iput-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     if-eqz p2, :cond_0
 
@@ -45,7 +47,7 @@
 
     if-eqz p2, :cond_0
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     const-string v1, "true"
 
@@ -55,7 +57,7 @@
     return-object p0
 
     :cond_0
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     const-string v1, "false"
 
@@ -72,7 +74,7 @@
     const-string p2, ""
 
     :cond_0
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -82,7 +84,7 @@
 .method public get(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v0, p1}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -96,7 +98,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v0}, Ljava/util/TreeMap;->isEmpty()Z
 
@@ -108,7 +110,7 @@
 .method public j()Ljava/util/TreeMap;
     .locals 1
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     return-object v0
 .end method
@@ -116,7 +118,7 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v0}, Ljava/util/TreeMap;->isEmpty()Z
 
@@ -134,7 +136,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v0, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v0}, Ljava/util/TreeMap;->keySet()Ljava/util/Set;
 
@@ -181,7 +183,7 @@
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :try_start_0
-    iget-object v3, p0, Lcom/xiaomi/market/sdk/h;->a:Ljava/util/TreeMap;
+    iget-object v3, p0, Lcom/xiaomi/market/sdk/h;->b:Ljava/util/TreeMap;
 
     invoke-virtual {v3, v0}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

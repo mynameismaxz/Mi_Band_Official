@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/text/i;
+.class Landroid/support/v4/text/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/CharSequence;II)I
+.method public a(Ljava/lang/CharSequence;II)I
     .locals 3
 
     const/4 v1, 0x2

@@ -295,7 +295,7 @@
 .method public getItem(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 9
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     const/4 v8, 0x1
 
@@ -321,9 +321,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->p:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f030069
+    const v1, 0x7f03006b
 
-    invoke-virtual {v0, v1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0, v1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
@@ -332,11 +332,11 @@
     move-object v1, v0
 
     :goto_0
-    new-instance v3, Lcn/com/smartdevices/bracelet/ui/aZ;
+    new-instance v3, Lcn/com/smartdevices/bracelet/ui/bh;
 
-    invoke-direct {v3, p0, v7}, Lcn/com/smartdevices/bracelet/ui/aZ;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;B)V
+    invoke-direct {v3, p0, v4}, Lcn/com/smartdevices/bracelet/ui/bh;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;Lcn/com/smartdevices/bracelet/ui/bh;)V
 
-    const v0, 0x7f0701f3
+    const v0, 0x7f0701f9
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -344,9 +344,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v3, Lcn/com/smartdevices/bracelet/ui/aZ;->a:Landroid/widget/TextView;
+    iput-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
 
-    iget-object v0, v3, Lcn/com/smartdevices/bracelet/ui/aZ;->a:Landroid/widget/TextView;
+    iget-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -365,9 +365,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/ui/aZ;
+    check-cast v0, Lcn/com/smartdevices/bracelet/ui/bh;
 
-    iget-object v3, v0, Lcn/com/smartdevices/bracelet/ui/aZ;->a:Landroid/widget/TextView;
+    iget-object v3, v0, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
 
     const-string v0, "%02d"
 
@@ -453,9 +453,9 @@
     :cond_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->p:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f030068
+    const v1, 0x7f03006a
 
-    invoke-virtual {v0, v1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0, v1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 

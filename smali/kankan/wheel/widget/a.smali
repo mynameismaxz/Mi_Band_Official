@@ -1,9 +1,9 @@
-.class final Lkankan/wheel/widget/a;
+.class Lkankan/wheel/widget/a;
 .super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field private synthetic a:Lkankan/wheel/widget/WheelScroller;
+.field final synthetic a:Lkankan/wheel/widget/WheelScroller;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 9
 
     const/4 v1, 0x0
@@ -65,7 +65,7 @@
     return v0
 .end method
 
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
     const/4 v0, 0x1

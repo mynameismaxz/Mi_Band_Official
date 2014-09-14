@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/h;
+.class Lcom/google/gson/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/google/gson/Gson;
+.field final synthetic a:Lcom/google/gson/Gson;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final serialize(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+.method public serialize(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/h;->a:Lcom/google/gson/Gson;
@@ -34,7 +34,7 @@
     return-object v0
 .end method
 
-.method public final serialize(Ljava/lang/Object;Ljava/lang/reflect/Type;)Lcom/google/gson/JsonElement;
+.method public serialize(Ljava/lang/Object;Ljava/lang/reflect/Type;)Lcom/google/gson/JsonElement;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/h;->a:Lcom/google/gson/Gson;

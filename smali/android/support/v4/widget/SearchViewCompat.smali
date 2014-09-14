@@ -41,16 +41,16 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v4/widget/z;
+    new-instance v0, Landroid/support/v4/widget/A;
 
-    invoke-direct {v0}, Landroid/support/v4/widget/z;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/widget/A;-><init>()V
 
     sput-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
     goto :goto_0
 .end method
 
-.method private constructor <init>()V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/widget/z;->a(Landroid/view/View;)Ljava/lang/CharSequence;
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/z;->a(Landroid/view/View;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -83,7 +83,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/widget/z;->b(Landroid/view/View;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/z;->b(Landroid/view/View;)Z
 
     move-result v0
 
@@ -95,7 +95,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/widget/z;->d(Landroid/view/View;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/z;->d(Landroid/view/View;)Z
 
     move-result v0
 
@@ -107,7 +107,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/widget/z;->c(Landroid/view/View;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/z;->c(Landroid/view/View;)Z
 
     move-result v0
 
@@ -119,7 +119,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/widget/z;->a(Landroid/content/Context;)Landroid/view/View;
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/z;->a(Landroid/content/Context;)Landroid/view/View;
 
     move-result-object v0
 
@@ -131,7 +131,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -141,7 +141,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->b(Landroid/view/View;I)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->b(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -151,7 +151,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->c(Landroid/view/View;I)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->c(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -161,7 +161,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;I)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -173,7 +173,7 @@
 
     iget-object v1, p1, Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0, v1}, Landroid/support/v4/widget/z;->b(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, p0, v1}, Landroid/support/v4/widget/z;->b(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -185,7 +185,7 @@
 
     iget-object v1, p1, Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0, v1}, Landroid/support/v4/widget/z;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, p0, v1}, Landroid/support/v4/widget/z;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -195,7 +195,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1, p2}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Ljava/lang/CharSequence;Z)V
+    invoke-interface {v0, p0, p1, p2}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Ljava/lang/CharSequence;Z)V
 
     return-void
 .end method
@@ -205,7 +205,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -215,7 +215,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->c(Landroid/view/View;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->c(Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -225,7 +225,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Landroid/content/ComponentName;)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->a(Landroid/view/View;Landroid/content/ComponentName;)V
 
     return-void
 .end method
@@ -235,7 +235,7 @@
 
     sget-object v0, Landroid/support/v4/widget/SearchViewCompat;->a:Landroid/support/v4/widget/z;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/widget/z;->b(Landroid/view/View;Z)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/z;->b(Landroid/view/View;Z)V
 
     return-void
 .end method

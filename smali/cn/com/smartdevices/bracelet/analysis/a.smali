@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/analysis/a;
+.class Lcn/com/smartdevices/bracelet/analysis/a;
 .super Ljava/lang/Object;
 
 
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/analysis/a;)V
     .locals 0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/analysis/a;-><init>()V

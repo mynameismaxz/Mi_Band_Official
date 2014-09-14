@@ -5,9 +5,13 @@
 # instance fields
 .field a:I
 
-.field b:Landroid/view/animation/Interpolator;
+.field b:Lcom/nineoldandroids/animation/Keyframe;
 
-.field c:Ljava/util/ArrayList;
+.field c:Lcom/nineoldandroids/animation/Keyframe;
+
+.field d:Landroid/view/animation/Interpolator;
+
+.field e:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -18,11 +22,7 @@
     .end annotation
 .end field
 
-.field d:Lcom/nineoldandroids/animation/TypeEvaluator;
-
-.field private e:Lcom/nineoldandroids/animation/Keyframe;
-
-.field private f:Lcom/nineoldandroids/animation/Keyframe;
+.field f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
 
 # direct methods
@@ -39,9 +39,9 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
 
@@ -59,9 +59,9 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Lcom/nineoldandroids/animation/Keyframe;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->b:Lcom/nineoldandroids/animation/Keyframe;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     iget v1, p0, Lcom/nineoldandroids/animation/k;->a:I
 
@@ -73,15 +73,15 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->getInterpolator()Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->b:Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/nineoldandroids/animation/k;->d:Landroid/view/animation/Interpolator;
 
     return-void
 .end method
@@ -469,52 +469,6 @@
 
 
 # virtual methods
-.method public a()Lcom/nineoldandroids/animation/k;
-    .locals 5
-
-    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
-
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    new-array v4, v3, [Lcom/nineoldandroids/animation/Keyframe;
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-lt v1, v3, :cond_0
-
-    new-instance v0, Lcom/nineoldandroids/animation/k;
-
-    invoke-direct {v0, v4}, Lcom/nineoldandroids/animation/k;-><init>([Lcom/nineoldandroids/animation/Keyframe;)V
-
-    return-object v0
-
-    :cond_0
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
-
-    invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->clone()Lcom/nineoldandroids/animation/Keyframe;
-
-    move-result-object v0
-
-    aput-object v0, v4, v1
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-.end method
-
 .method public a(F)Ljava/lang/Object;
     .locals 5
 
@@ -526,26 +480,26 @@
 
     if-ne v1, v2, :cond_1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->b:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->d:Landroid/view/animation/Interpolator;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->b:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->d:Landroid/view/animation/Interpolator;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result p1
 
     :cond_0
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->e:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->b:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v1}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v2}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
@@ -565,7 +519,7 @@
 
     if-gtz v1, :cond_3
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -584,7 +538,7 @@
     move-result p1
 
     :cond_2
-    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->e:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->b:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v1}, Lcom/nineoldandroids/animation/Keyframe;->getFraction()F
 
@@ -600,9 +554,9 @@
 
     div-float v1, v2, v1
 
-    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->e:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->b:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v3}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
@@ -625,7 +579,7 @@
 
     if-ltz v1, :cond_5
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     iget v1, p0, Lcom/nineoldandroids/animation/k;->a:I
 
@@ -637,7 +591,7 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
 
-    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v1}, Lcom/nineoldandroids/animation/Keyframe;->getInterpolator()Landroid/view/animation/Interpolator;
 
@@ -656,7 +610,7 @@
 
     sub-float v2, p1, v1
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v3}, Lcom/nineoldandroids/animation/Keyframe;->getFraction()F
 
@@ -666,13 +620,13 @@
 
     div-float v1, v2, v1
 
-    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v3}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
@@ -685,7 +639,7 @@
     goto :goto_0
 
     :cond_5
-    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->e:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v1, p0, Lcom/nineoldandroids/animation/k;->b:Lcom/nineoldandroids/animation/Keyframe;
 
     move-object v2, v1
 
@@ -696,7 +650,7 @@
 
     if-lt v1, v0, :cond_6
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/Keyframe;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Lcom/nineoldandroids/animation/Keyframe;
 
     invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
@@ -705,7 +659,7 @@
     goto/16 :goto_0
 
     :cond_6
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -746,7 +700,7 @@
 
     div-float v1, v3, v1
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     invoke-virtual {v2}, Lcom/nineoldandroids/animation/Keyframe;->getValue()Ljava/lang/Object;
 
@@ -770,18 +724,64 @@
     goto :goto_1
 .end method
 
-.method public final a(Lcom/nineoldandroids/animation/TypeEvaluator;)V
+.method public a(Lcom/nineoldandroids/animation/TypeEvaluator;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/nineoldandroids/animation/k;->d:Lcom/nineoldandroids/animation/TypeEvaluator;
+    iput-object p1, p0, Lcom/nineoldandroids/animation/k;->f:Lcom/nineoldandroids/animation/TypeEvaluator;
 
     return-void
+.end method
+
+.method public b()Lcom/nineoldandroids/animation/k;
+    .locals 5
+
+    iget-object v2, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
+
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    new-array v4, v3, [Lcom/nineoldandroids/animation/Keyframe;
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-lt v1, v3, :cond_0
+
+    new-instance v0, Lcom/nineoldandroids/animation/k;
+
+    invoke-direct {v0, v4}, Lcom/nineoldandroids/animation/k;-><init>([Lcom/nineoldandroids/animation/Keyframe;)V
+
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/nineoldandroids/animation/Keyframe;
+
+    invoke-virtual {v0}, Lcom/nineoldandroids/animation/Keyframe;->clone()Lcom/nineoldandroids/animation/Keyframe;
+
+    move-result-object v0
+
+    aput-object v0, v4, v1
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
 .end method
 
 .method public synthetic clone()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/nineoldandroids/animation/k;->a()Lcom/nineoldandroids/animation/k;
+    invoke-virtual {p0}, Lcom/nineoldandroids/animation/k;->b()Lcom/nineoldandroids/animation/k;
 
     move-result-object v0
 
@@ -817,7 +817,7 @@
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->c:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/k;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

@@ -20,11 +20,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object v2, p0, Lcom/xiaomi/hm/view/GifAnimation;->a:Lcom/xiaomi/hm/view/GifReDraw;
+
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/xiaomi/hm/view/GifAnimation;->a:Lcom/xiaomi/hm/view/GifReDraw;
-
-    iput-boolean v2, p0, Lcom/xiaomi/hm/view/GifAnimation;->b:Z
+    iput-boolean v0, p0, Lcom/xiaomi/hm/view/GifAnimation;->b:Z
 
     new-instance v0, Landroid/os/Handler;
 
@@ -38,7 +38,7 @@
 
     new-instance v0, Lcom/xiaomi/hm/view/a;
 
-    invoke-direct {v0, p0, v2}, Lcom/xiaomi/hm/view/a;-><init>(Lcom/xiaomi/hm/view/GifAnimation;B)V
+    invoke-direct {v0, p0, v2}, Lcom/xiaomi/hm/view/a;-><init>(Lcom/xiaomi/hm/view/GifAnimation;Lcom/xiaomi/hm/view/a;)V
 
     iput-object v0, p0, Lcom/xiaomi/hm/view/GifAnimation;->d:Lcom/xiaomi/hm/view/a;
 
@@ -110,8 +110,6 @@
     iput-boolean v0, p0, Lcom/xiaomi/hm/view/GifAnimation;->b:Z
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -119,6 +117,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -142,8 +142,6 @@
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -151,6 +149,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

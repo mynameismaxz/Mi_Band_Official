@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -192,31 +192,7 @@
 
     mul-int/lit16 v0, v0, 0x3e8
 
-    const-string v1, "PhoneState"
-
-    const-string v2, "in startTimerTask"
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v1, Ljava/util/Timer;
-
-    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
-
-    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/d;
-
-    invoke-direct {v1}, Lcn/com/smartdevices/bracelet/d;-><init>()V
-
-    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
-
-    int-to-long v3, v0
-
-    invoke-virtual {v1, v2, v3, v4}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a(I)V
 
     goto :goto_0
 

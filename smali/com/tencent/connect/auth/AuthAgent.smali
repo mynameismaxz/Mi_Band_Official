@@ -36,7 +36,7 @@
 .end method
 
 .method private a(ZLcom/tencent/tauth/IUiListener;)I
-    .locals 6
+    .locals 8
 
     const-string v0, "openSDK_LOG"
 
@@ -85,9 +85,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "desktop_m_qq-"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcom/tencent/connect/auth/AuthAgent;->installChannel:Ljava/lang/String;
 
@@ -95,7 +99,13 @@
 
     move-result-object v2
 
-    const-string v3, "-android"
+    const-string v3, "-"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "android"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -145,6 +155,12 @@
     div-long/2addr v2, v4
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -230,33 +246,43 @@
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    new-instance v4, Lcom/tencent/connect/auth/i;
+    new-instance v0, Lcom/tencent/connect/auth/i;
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v4, p0, v0, p2, v1}, Lcom/tencent/connect/auth/i;-><init>(Lcom/tencent/connect/auth/AuthAgent;Landroid/content/Context;Lcom/tencent/tauth/IUiListener;Z)V
+    const/4 v5, 0x0
 
-    const-string v0, "openSDK_LOG"
+    move-object v1, p0
 
-    const-string v1, "OpenUi, showDialog TDialog"
+    move-object v3, p2
 
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lcom/tencent/connect/auth/i;-><init>(Lcom/tencent/connect/auth/AuthAgent;Landroid/content/Context;Lcom/tencent/tauth/IUiListener;ZZ)V
 
-    new-instance v0, Lcom/tencent/connect/auth/AuthDialog;
+    const-string v1, "openSDK_LOG"
 
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->c:Landroid/app/Activity;
+    const-string v2, "OpenUi, showDialog TDialog"
 
-    const-string v2, "action_login"
+    invoke-static {v1, v2}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
+    new-instance v1, Lcom/tencent/connect/auth/AuthDialog;
 
-    invoke-direct/range {v0 .. v5}, Lcom/tencent/connect/auth/AuthDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V
+    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->c:Landroid/app/Activity;
 
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/AuthDialog;->show()V
+    const-string v3, "action_login"
+
+    iget-object v6, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
+
+    move-object v4, v7
+
+    move-object v5, v0
+
+    invoke-direct/range {v1 .. v6}, Lcom/tencent/connect/auth/AuthDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V
+
+    invoke-virtual {v1}, Lcom/tencent/connect/auth/AuthDialog;->show()V
 
     const/4 v0, 0x2
 
@@ -311,35 +337,9 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/connect/auth/AuthAgent;Ljava/lang/String;)V
-    .locals 6
+    .locals 0
 
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "OpenUi, EncrytokenListener() validToken()"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v2, "https://openmobile.qq.com/user/user_login_statis"
-
-    invoke-virtual {p0}, Lcom/tencent/connect/auth/AuthAgent;->composeCGIParams()Landroid/os/Bundle;
-
-    move-result-object v3
-
-    const-string v0, "encrytoken"
-
-    invoke-virtual {v3, v0, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    const-string v4, "POST"
-
-    new-instance v5, Lcom/tencent/connect/auth/h;
-
-    invoke-direct {v5, p0}, Lcom/tencent/connect/auth/h;-><init>(Lcom/tencent/connect/auth/AuthAgent;)V
-
-    invoke-static/range {v0 .. v5}, Lcom/tencent/utils/HttpUtils;->requestAsync(Lcom/tencent/connect/auth/QQToken;Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IRequestListener;)V
+    invoke-direct {p0, p1}, Lcom/tencent/connect/auth/AuthAgent;->a(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -426,9 +426,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "desktop_m_qq-"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     sget-object v4, Lcom/tencent/connect/auth/AuthAgent;->installChannel:Ljava/lang/String;
 
@@ -436,7 +440,13 @@
 
     move-result-object v3
 
-    const-string v4, "-android"
+    const-string v4, "-"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "android"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -502,6 +512,12 @@
     div-long/2addr v3, v5
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -598,31 +614,9 @@
 .end method
 
 .method static synthetic e(Lcom/tencent/connect/auth/AuthAgent;)V
-    .locals 4
+    .locals 0
 
-    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    const-string v1, ""
-
-    const-string v2, "0"
-
-    invoke-virtual {v0, v1, v2}, Lcom/tencent/connect/auth/QQToken;->setAccessToken(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Lcom/tencent/connect/auth/QQToken;->setOpenId(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->c:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->b:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/tencent/connect/auth/AuthAgent;->doLogin(Landroid/app/Activity;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Z)I
+    invoke-direct {p0}, Lcom/tencent/connect/auth/AuthAgent;->a()V
 
     return-void
 .end method
@@ -724,11 +718,7 @@
 .end method
 
 .method public doLogin(Landroid/app/Activity;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;ZZ)I
-    .locals 8
-
-    const-wide/16 v6, 0x3e8
-
-    const/4 v0, 0x1
+    .locals 6
 
     iput-object p2, p0, Lcom/tencent/connect/auth/AuthAgent;->b:Ljava/lang/String;
 
@@ -738,47 +728,47 @@
 
     if-nez p4, :cond_2
 
+    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
+
+    invoke-virtual {v0}, Lcom/tencent/connect/auth/QQToken;->getAccessToken()Ljava/lang/String;
+
+    move-result-object v0
+
     iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
 
-    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getAccessToken()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getOpenId()Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
 
-    invoke-virtual {v2}, Lcom/tencent/connect/auth/QQToken;->getOpenId()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v3}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
+    move-result v3
 
-    move-result-object v3
+    if-nez v3, :cond_2
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    const-string v3, "com.tencent.open.agent.AgentActivity"
 
-    move-result v4
+    invoke-virtual {p0, v3}, Lcom/tencent/connect/auth/AuthAgent;->getTargetActivityIntent(Ljava/lang/String;)Landroid/content/Intent;
 
-    if-nez v4, :cond_2
-
-    const-string v0, "com.tencent.open.agent.AgentActivity"
-
-    invoke-virtual {p0, v0}, Lcom/tencent/connect/auth/AuthAgent;->getTargetActivityIntent(Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v0
+    move-result-object v3
 
     const-string v4, "com.tencent.open.agent.EncryTokenActivity"
 
@@ -788,9 +778,9 @@
 
     if-eqz v4, :cond_1
 
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v5
 
@@ -802,13 +792,13 @@
 
     if-eqz v5, :cond_1
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
     invoke-virtual {v4}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
@@ -818,23 +808,23 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
-    const-string v0, "oauth_consumer_key"
+    const-string v3, "oauth_consumer_key"
 
-    invoke-virtual {v4, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v4, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string v0, "openid"
+    const-string v2, "openid"
 
-    invoke-virtual {v4, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v4, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string v0, "access_token"
+    const-string v1, "access_token"
 
-    invoke-virtual {v4, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v4, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v0, "key_action"
 
@@ -862,7 +852,7 @@
     return v0
 
     :cond_1
-    const-string v0, "tencent&sdk&qazxc***14969%%"
+    const-string v3, "tencent&sdk&qazxc***14969%%"
 
     const-string v4, "qzone3.4"
 
@@ -870,19 +860,19 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -924,457 +914,53 @@
     goto :goto_2
 
     :cond_2
-    const-string v1, "com.tencent.open.agent.AgentActivity"
+    invoke-direct {p0, p1, p5}, Lcom/tencent/connect/auth/AuthAgent;->a(Landroid/app/Activity;Z)Z
 
-    invoke-virtual {p0, v1}, Lcom/tencent/connect/auth/AuthAgent;->getTargetActivityIntent(Ljava/lang/String;)Landroid/content/Intent;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_4
 
-    if-eqz v1, :cond_6
+    if-eqz p4, :cond_3
 
-    invoke-virtual {p0}, Lcom/tencent/connect/auth/AuthAgent;->composeCGIParams()Landroid/os/Bundle;
+    const-string v0, "10785"
 
-    move-result-object v2
+    const-wide/16 v1, 0x0
 
-    if-eqz p5, :cond_3
+    iget-object v3, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
 
-    const-string v3, "isadd"
+    invoke-virtual {v3}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
 
-    const-string v4, "1"
+    move-result-object v3
 
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1, v2, v3}, Lcom/tencent/utils/Util;->reportBernoulli(Landroid/content/Context;Ljava/lang/String;JLjava/lang/String;)V
 
     :cond_3
-    const-string v3, "scope"
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "client_id"
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v4}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-boolean v3, Lcom/tencent/connect/auth/AuthAgent;->isOEM:Z
-
-    if-eqz v3, :cond_5
-
-    const-string v3, "pf"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "desktop_m_qq-"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->installChannel:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-android"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->registerChannel:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->businessId:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_3
-    const-string v3, "need_pay"
-
-    const-string v4, "1"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "oauth_app_name"
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    invoke-static {v4}, Lcom/tencent/utils/SystemUtils;->getAppName(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    div-long/2addr v4, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    invoke-static {v4, v3}, Lcom/tencent/utils/SystemUtils;->getAppSignatureMD5(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "sign"
-
-    invoke-virtual {v2, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v4, "time"
-
-    invoke-virtual {v2, v4, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "key_action"
-
-    const-string v4, "action_login"
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v3, "key_params"
-
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
-
-    iput-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->mActivityIntent:Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/tencent/connect/auth/AuthAgent;->hasActivityForIntent()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    new-instance v1, Lcom/tencent/connect/auth/c;
-
-    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    invoke-direct {v1, p0, v2}, Lcom/tencent/connect/auth/c;-><init>(Lcom/tencent/connect/auth/AuthAgent;Lcom/tencent/tauth/IUiListener;)V
-
-    iput-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    invoke-virtual {p0, p1, v1}, Lcom/tencent/connect/auth/AuthAgent;->startAssitActivity(Landroid/app/Activity;Lcom/tencent/tauth/IUiListener;)V
-
-    move v1, v0
-
-    :goto_4
-    if-eqz v1, :cond_7
-
-    if-eqz p4, :cond_4
-
-    const-string v1, "10785"
-
-    const-wide/16 v2, 0x0
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v4}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p1, v1, v2, v3, v4}, Lcom/tencent/utils/Util;->reportBernoulli(Landroid/content/Context;Ljava/lang/String;JLjava/lang/String;)V
-
-    :cond_4
-    const-string v1, "openSDK_LOG"
-
-    const-string v2, "OpenUi, showUi, return Constants.UI_ACTIVITY"
-
-    invoke-static {v1, v2}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_1
-
-    :cond_5
-    const-string v3, "pf"
-
-    const-string v4, "openmobile_android"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :cond_6
-    const/4 v1, 0x0
-
-    goto :goto_4
-
-    :cond_7
-    new-instance v1, Lcom/tencent/connect/auth/c;
-
-    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    invoke-direct {v1, p0, v2}, Lcom/tencent/connect/auth/c;-><init>(Lcom/tencent/connect/auth/AuthAgent;Lcom/tencent/tauth/IUiListener;)V
-
-    iput-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
-
-    const-string v2, "openSDK_LOG"
-
-    const-string v3, "OpenUi, showDialog --start"
-
-    invoke-static {v2, v3}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Landroid/webkit/CookieSyncManager;->createInstance(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;
-
-    invoke-virtual {p0}, Lcom/tencent/connect/auth/AuthAgent;->composeCGIParams()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    if-eqz p5, :cond_8
-
-    const-string v3, "isadd"
-
-    const-string v4, "1"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_8
-    const-string v3, "scope"
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "client_id"
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v4}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-boolean v3, Lcom/tencent/connect/auth/AuthAgent;->isOEM:Z
-
-    if-eqz v3, :cond_9
-
-    const-string v3, "pf"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "desktop_m_qq-"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->installChannel:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-android"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->registerChannel:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/tencent/connect/auth/AuthAgent;->businessId:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_5
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    div-long/2addr v4, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    invoke-static {v4, v3}, Lcom/tencent/utils/SystemUtils;->getAppSignatureMD5(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "sign"
-
-    invoke-virtual {v2, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v4, "time"
-
-    invoke-virtual {v2, v4, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "display"
-
-    const-string v4, "mobile"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "response_type"
-
-    const-string v4, "token"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "redirect_uri"
-
-    const-string v4, "auth://tauth.qq.com/"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "cancel_display"
-
-    const-string v4, "1"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "switch"
-
-    const-string v4, "1"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "status_userip"
-
-    invoke-static {}, Lcom/tencent/utils/Util;->getUserIp()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Lcom/tencent/utils/ServerSetting;->getInstance()Lcom/tencent/utils/ServerSetting;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    const-string v6, "https://openmobile.qq.com/oauth2.0/m_authorize?"
-
-    invoke-virtual {v4, v5, v6}, Lcom/tencent/utils/ServerSetting;->getEnvUrl(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v2}, Lcom/tencent/utils/Util;->encodeUrl(Landroid/os/Bundle;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Lcom/tencent/connect/auth/i;
-
-    iget-object v2, p0, Lcom/tencent/connect/auth/AuthAgent;->mContext:Landroid/content/Context;
-
-    invoke-direct {v4, p0, v2, v1, v0}, Lcom/tencent/connect/auth/i;-><init>(Lcom/tencent/connect/auth/AuthAgent;Landroid/content/Context;Lcom/tencent/tauth/IUiListener;Z)V
-
     const-string v0, "openSDK_LOG"
 
-    const-string v1, "OpenUi, showDialog TDialog"
+    const-string v1, "OpenUi, showUi, return Constants.UI_ACTIVITY"
 
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Lcom/tencent/connect/auth/AuthDialog;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->c:Landroid/app/Activity;
+    goto :goto_1
 
-    const-string v2, "action_login"
+    :cond_4
+    new-instance v0, Lcom/tencent/connect/auth/c;
 
-    iget-object v5, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
+    iget-object v1, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
 
-    invoke-direct/range {v0 .. v5}, Lcom/tencent/connect/auth/AuthDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V
+    invoke-direct {v0, p0, v1}, Lcom/tencent/connect/auth/c;-><init>(Lcom/tencent/connect/auth/AuthAgent;Lcom/tencent/tauth/IUiListener;)V
 
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/AuthDialog;->show()V
+    iput-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Lcom/tencent/connect/auth/AuthAgent;->a:Lcom/tencent/tauth/IUiListener;
 
-    goto/16 :goto_1
+    invoke-direct {p0, p5, v0}, Lcom/tencent/connect/auth/AuthAgent;->a(ZLcom/tencent/tauth/IUiListener;)I
 
-    :cond_9
-    const-string v3, "pf"
+    move-result v0
 
-    const-string v4, "openmobile_android"
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_5
+    goto :goto_1
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
@@ -1548,11 +1134,21 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "OpenUi, onActivityResult, onError = "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -1698,9 +1294,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "<!DOCTYPE HTML><html lang=\"en-US\"><head><meta charset=\"UTF-8\"><title>localStorage Test</title><script type=\"text/javascript\">document.domain = \'qq.com\';localStorage[\""
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-object v3, p0, Lcom/tencent/connect/auth/AuthAgent;->mToken:Lcom/tencent/connect/auth/QQToken;
 

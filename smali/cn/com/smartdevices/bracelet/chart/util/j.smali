@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/j;
+.class Lcn/com/smartdevices/bracelet/chart/util/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
     const-string v0, "Text"

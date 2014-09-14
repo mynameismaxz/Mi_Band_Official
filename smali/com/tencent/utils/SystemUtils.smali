@@ -91,7 +91,7 @@
 
     if-ne v3, v6, :cond_1
 
-    if-lez v2, :cond_1
+    if-lt v2, v1, :cond_1
 
     :cond_0
     move v0, v1
@@ -360,6 +360,12 @@
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

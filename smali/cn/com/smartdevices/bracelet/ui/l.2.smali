@@ -1,16 +1,16 @@
-.class final Lcn/com/smartdevices/bracelet/ui/l;
+.class Lcn/com/smartdevices/bracelet/ui/l;
 .super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/l;->a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/l;->b:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
@@ -19,12 +19,12 @@
 
 
 # virtual methods
-.method public final onFailed(Ljava/lang/Object;)V
+.method public onFailed(Ljava/lang/Object;)V
     .locals 2
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->b:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
     const/4 v1, 0x0
 
@@ -33,12 +33,12 @@
     return-void
 .end method
 
-.method public final onFinish(Ljava/lang/Object;)V
+.method public onFinish(Ljava/lang/Object;)V
     .locals 1
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->b:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
     check-cast p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
 
@@ -47,12 +47,12 @@
     return-void
 .end method
 
-.method public final onProgress(I)V
+.method public onProgress(I)V
     .locals 1
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onProgress(I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->a:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/l;->b:Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
 
     invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onTogglePairProgress(I)V
 

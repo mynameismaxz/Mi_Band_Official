@@ -26,9 +26,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/text/a;
+    new-instance v0, Landroid/support/v4/text/d;
 
-    invoke-direct {v0}, Landroid/support/v4/text/a;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/text/d;-><init>()V
 
     sput-object v0, Landroid/support/v4/text/ICUCompat;->a:Landroid/support/v4/text/c;
 

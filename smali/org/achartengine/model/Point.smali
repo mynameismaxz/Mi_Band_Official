@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final getX()F
+.method public getX()F
     .locals 1
 
     iget v0, p0, Lorg/achartengine/model/Point;->a:F
@@ -42,7 +42,7 @@
     return v0
 .end method
 
-.method public final getY()F
+.method public getY()F
     .locals 1
 
     iget v0, p0, Lorg/achartengine/model/Point;->b:F
@@ -50,7 +50,7 @@
     return v0
 .end method
 
-.method public final setX(F)V
+.method public setX(F)V
     .locals 0
 
     iput p1, p0, Lorg/achartengine/model/Point;->a:F
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public final setY(F)V
+.method public setY(F)V
     .locals 0
 
     iput p1, p0, Lorg/achartengine/model/Point;->b:F

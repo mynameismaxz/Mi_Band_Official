@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/animation/b;
+.class Lcom/nineoldandroids/animation/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,36 +6,36 @@
 
 
 # instance fields
-.field private a:Lcom/nineoldandroids/animation/AnimatorSet;
+.field final synthetic a:Lcom/nineoldandroids/animation/AnimatorSet;
 
-.field private synthetic b:Lcom/nineoldandroids/animation/AnimatorSet;
+.field private b:Lcom/nineoldandroids/animation/AnimatorSet;
 
 
 # direct methods
 .method constructor <init>(Lcom/nineoldandroids/animation/AnimatorSet;Lcom/nineoldandroids/animation/AnimatorSet;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iput-object p1, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iput-object p2, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-boolean v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->b:Z
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-static {v0}, Lcom/nineoldandroids/animation/AnimatorSet;->a(Lcom/nineoldandroids/animation/AnimatorSet;)Ljava/util/ArrayList;
 
@@ -47,13 +47,13 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-object v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->a:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-object v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->a:Ljava/util/ArrayList;
 
@@ -72,7 +72,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-object v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->a:Ljava/util/ArrayList;
 
@@ -82,7 +82,7 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
-    iget-object v3, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v3, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-interface {v0, v3}, Lcom/nineoldandroids/animation/Animator$AnimatorListener;->onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
 
@@ -93,7 +93,7 @@
     goto :goto_0
 .end method
 
-.method public final onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
     .locals 6
 
     const/4 v1, 0x1
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1, p0}, Lcom/nineoldandroids/animation/Animator;->removeListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)V
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-static {v0}, Lcom/nineoldandroids/animation/AnimatorSet;->a(Lcom/nineoldandroids/animation/AnimatorSet;)Ljava/util/ArrayList;
 
@@ -110,7 +110,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-static {v0}, Lcom/nineoldandroids/animation/AnimatorSet;->b(Lcom/nineoldandroids/animation/AnimatorSet;)Ljava/util/HashMap;
 
@@ -124,13 +124,13 @@
 
     iput-boolean v1, v0, Lcom/nineoldandroids/animation/e;->f:Z
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-boolean v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->b:Z
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-static {v0}, Lcom/nineoldandroids/animation/AnimatorSet;->c(Lcom/nineoldandroids/animation/AnimatorSet;)Ljava/util/ArrayList;
 
@@ -150,13 +150,13 @@
     :goto_1
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-object v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->a:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
 
     iget-object v0, v0, Lcom/nineoldandroids/animation/AnimatorSet;->a:Ljava/util/ArrayList;
 
@@ -176,7 +176,7 @@
     if-lt v2, v4, :cond_4
 
     :cond_0
-    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-static {v0, v3}, Lcom/nineoldandroids/animation/AnimatorSet;->a(Lcom/nineoldandroids/animation/AnimatorSet;Z)V
 
@@ -212,7 +212,7 @@
 
     check-cast v1, Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
-    iget-object v5, p0, Lcom/nineoldandroids/animation/b;->a:Lcom/nineoldandroids/animation/AnimatorSet;
+    iget-object v5, p0, Lcom/nineoldandroids/animation/b;->b:Lcom/nineoldandroids/animation/AnimatorSet;
 
     invoke-interface {v1, v5}, Lcom/nineoldandroids/animation/Animator$AnimatorListener;->onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
 
@@ -223,13 +223,13 @@
     goto :goto_2
 .end method
 
-.method public final onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
     .locals 0
 
     return-void

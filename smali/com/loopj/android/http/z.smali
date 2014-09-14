@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/z;
+.class Lcom/loopj/android/http/z;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -113,7 +113,26 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+.method static b(Ljava/lang/Class;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)V"
+        }
+    .end annotation
+
+    sget-object v0, Lcom/loopj/android/http/z;->b:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -127,7 +146,7 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -150,7 +169,7 @@
 
     check-cast v0, Ljava/lang/Class;
 
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -161,26 +180,7 @@
     goto :goto_0
 .end method
 
-.method static b(Ljava/lang/Class;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<*>;)V"
-        }
-    .end annotation
-
-    sget-object v0, Lcom/loopj/android/http/z;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final retryRequest(Ljava/io/IOException;ILorg/apache/http/protocol/HttpContext;)Z
+.method public retryRequest(Ljava/io/IOException;ILorg/apache/http/protocol/HttpContext;)Z
     .locals 4
 
     const/4 v1, 0x1
@@ -237,7 +237,7 @@
     :cond_2
     sget-object v3, Lcom/loopj/android/http/z;->a:Ljava/util/HashSet;
 
-    invoke-static {v3, p1}, Lcom/loopj/android/http/z;->a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/z;->a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
 
     move-result v3
 
@@ -245,7 +245,7 @@
 
     sget-object v3, Lcom/loopj/android/http/z;->b:Ljava/util/HashSet;
 
-    invoke-static {v3, p1}, Lcom/loopj/android/http/z;->a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/z;->a(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
 
     move-result v3
 

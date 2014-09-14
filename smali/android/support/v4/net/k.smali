@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/net/k;
+.class Landroid/support/v4/net/k;
 .super Ljava/lang/ThreadLocal;
 
 
@@ -14,40 +14,40 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/net/j;
+.field final synthetic a:Landroid/support/v4/net/j;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/net/j;)V
     .locals 0
 
+    iput-object p1, p0, Landroid/support/v4/net/k;->a:Landroid/support/v4/net/j;
+
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
-.method private static a()Landroid/support/v4/net/l;
+
+# virtual methods
+.method protected a()Landroid/support/v4/net/l;
     .locals 2
 
     new-instance v0, Landroid/support/v4/net/l;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Landroid/support/v4/net/l;-><init>(B)V
+    invoke-direct {v0, v1}, Landroid/support/v4/net/l;-><init>(Landroid/support/v4/net/i;)V
 
     return-object v0
 .end method
 
+.method protected synthetic initialValue()Ljava/lang/Object;
+    .locals 1
 
-# virtual methods
-.method protected final synthetic initialValue()Ljava/lang/Object;
-    .locals 2
+    invoke-virtual {p0}, Landroid/support/v4/net/k;->a()Landroid/support/v4/net/l;
 
-    new-instance v0, Landroid/support/v4/net/l;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Landroid/support/v4/net/l;-><init>(B)V
+    move-result-object v0
 
     return-object v0
 .end method

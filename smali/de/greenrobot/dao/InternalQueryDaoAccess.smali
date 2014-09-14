@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method public final getStatements()Lde/greenrobot/dao/internal/TableStatements;
+.method public getStatements()Lde/greenrobot/dao/internal/TableStatements;
     .locals 1
 
     iget-object v0, p0, Lde/greenrobot/dao/InternalQueryDaoAccess;->dao:Lde/greenrobot/dao/AbstractDao;
@@ -76,7 +76,7 @@
     return-object v0
 .end method
 
-.method public final loadAllAndCloseCursor(Landroid/database/Cursor;)Ljava/util/List;
+.method public loadAllAndCloseCursor(Landroid/database/Cursor;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -97,7 +97,7 @@
     return-object v0
 .end method
 
-.method public final loadCurrent(Landroid/database/Cursor;IZ)Ljava/lang/Object;
+.method public loadCurrent(Landroid/database/Cursor;IZ)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -116,7 +116,7 @@
     return-object v0
 .end method
 
-.method public final loadUniqueAndCloseCursor(Landroid/database/Cursor;)Ljava/lang/Object;
+.method public loadUniqueAndCloseCursor(Landroid/database/Cursor;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

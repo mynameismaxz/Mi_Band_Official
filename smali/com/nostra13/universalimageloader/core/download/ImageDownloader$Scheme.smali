@@ -293,7 +293,7 @@
 
 
 # virtual methods
-.method public final crop(Ljava/lang/String;)Ljava/lang/String;
+.method public crop(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
     invoke-direct {p0, p1}, Lcom/nostra13/universalimageloader/core/download/ImageDownloader$Scheme;->a(Ljava/lang/String;)Z
@@ -342,7 +342,7 @@
     return-object v0
 .end method
 
-.method public final wrap(Ljava/lang/String;)Ljava/lang/String;
+.method public wrap(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

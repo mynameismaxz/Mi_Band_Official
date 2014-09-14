@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/g;
+.class Lcom/nineoldandroids/view/g;
 .super Lcom/nineoldandroids/view/ViewPropertyAnimator;
 
 
@@ -40,7 +40,7 @@
 
 
 # virtual methods
-.method public final alpha(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public alpha(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -59,7 +59,7 @@
     return-object p0
 .end method
 
-.method public final alphaBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public alphaBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -78,7 +78,7 @@
     return-object p0
 .end method
 
-.method public final cancel()V
+.method public cancel()V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -97,7 +97,7 @@
     return-void
 .end method
 
-.method public final getDuration()J
+.method public getDuration()J
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -123,7 +123,7 @@
     goto :goto_0
 .end method
 
-.method public final getStartDelay()J
+.method public getStartDelay()J
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -149,7 +149,7 @@
     goto :goto_0
 .end method
 
-.method public final rotation(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotation(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -168,7 +168,7 @@
     return-object p0
 .end method
 
-.method public final rotationBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotationBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -187,7 +187,7 @@
     return-object p0
 .end method
 
-.method public final rotationX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotationX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -206,7 +206,7 @@
     return-object p0
 .end method
 
-.method public final rotationXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotationXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -225,7 +225,7 @@
     return-object p0
 .end method
 
-.method public final rotationY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotationY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -244,7 +244,7 @@
     return-object p0
 .end method
 
-.method public final rotationYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public rotationYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -263,7 +263,7 @@
     return-object p0
 .end method
 
-.method public final scaleX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public scaleX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -282,7 +282,7 @@
     return-object p0
 .end method
 
-.method public final scaleXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public scaleXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -301,7 +301,7 @@
     return-object p0
 .end method
 
-.method public final scaleY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public scaleY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -320,7 +320,7 @@
     return-object p0
 .end method
 
-.method public final scaleYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public scaleYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -339,7 +339,7 @@
     return-object p0
 .end method
 
-.method public final setDuration(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public setDuration(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -358,7 +358,7 @@
     return-object p0
 .end method
 
-.method public final setInterpolator(Landroid/view/animation/Interpolator;)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public setInterpolator(Landroid/view/animation/Interpolator;)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -377,7 +377,7 @@
     return-object p0
 .end method
 
-.method public final setListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public setListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -410,7 +410,7 @@
     goto :goto_0
 .end method
 
-.method public final setStartDelay(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public setStartDelay(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -429,7 +429,7 @@
     return-object p0
 .end method
 
-.method public final start()V
+.method public start()V
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -448,7 +448,7 @@
     return-void
 .end method
 
-.method public final translationX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public translationX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -467,7 +467,7 @@
     return-object p0
 .end method
 
-.method public final translationXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public translationXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -486,7 +486,7 @@
     return-object p0
 .end method
 
-.method public final translationY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public translationY(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -505,7 +505,7 @@
     return-object p0
 .end method
 
-.method public final translationYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public translationYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -524,7 +524,7 @@
     return-object p0
 .end method
 
-.method public final x(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public x(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -543,7 +543,7 @@
     return-object p0
 .end method
 
-.method public final xBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public xBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -562,7 +562,7 @@
     return-object p0
 .end method
 
-.method public final y(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public y(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;
@@ -581,7 +581,7 @@
     return-object p0
 .end method
 
-.method public final yBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+.method public yBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
     .locals 1
 
     iget-object v0, p0, Lcom/nineoldandroids/view/g;->b:Ljava/lang/ref/WeakReference;

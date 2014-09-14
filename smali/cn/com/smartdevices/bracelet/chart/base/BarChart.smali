@@ -104,8 +104,6 @@
     iget-boolean v4, p0, Lcn/com/smartdevices/bracelet/chart/base/BarChart;->mMirrored:Z
 
     invoke-virtual {v0, p1, p3, v4}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->draw(Landroid/graphics/Canvas;FZ)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     add-int/lit8 v0, v1, 0x1
 
@@ -117,6 +115,8 @@
     move-exception v0
 
     monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -262,8 +262,6 @@
     invoke-virtual {p0, v0, v2}, Lcn/com/smartdevices/bracelet/chart/base/BarChart;->realignItems(Landroid/graphics/RectF;Ljava/util/List;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -271,6 +269,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -643,8 +643,6 @@
     invoke-static {v0, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -652,6 +650,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

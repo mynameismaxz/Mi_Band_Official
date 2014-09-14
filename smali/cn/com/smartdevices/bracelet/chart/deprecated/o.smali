@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/o;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/o;
 .super Lcn/com/smartdevices/bracelet/chart/base/BarChart;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;Lcn/com/smartdevices/bracelet/chart/deprecated/o;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/o;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method protected final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method protected draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
     .locals 0
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -41,7 +41,7 @@
     return-void
 .end method
 
-.method protected final itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 4
 
     const/high16 v3, 0x3f80
@@ -107,7 +107,7 @@
     goto :goto_0
 .end method
 
-.method protected final itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 3
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
@@ -143,7 +143,7 @@
     return v0
 .end method
 
-.method protected final itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 3
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->a()F

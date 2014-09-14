@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final write(I)V
+.method public write(I)V
     .locals 0
 
     return-void

@@ -81,8 +81,6 @@
     new-instance v0, Landroid/support/v4/hardware/display/b;
 
     invoke-direct {v0, p0}, Landroid/support/v4/hardware/display/b;-><init>(Landroid/content/Context;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -90,6 +88,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

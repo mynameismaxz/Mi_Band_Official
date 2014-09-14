@@ -29,10 +29,10 @@
     return-void
 .end method
 
-.method private static a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
+.method private a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
     .locals 0
 
-    invoke-virtual {p0, p2, p3, p4, p1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, p3, p4, p5, p2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     return-void
 .end method
@@ -224,7 +224,7 @@
 .end method
 
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
-    .locals 2
+    .locals 6
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
@@ -232,17 +232,25 @@
 
     const/high16 v0, 0x4120
 
-    add-float/2addr v0, p3
+    add-float v3, p3, v0
 
-    const/high16 v1, 0x4040
+    const/high16 v5, 0x4040
 
-    invoke-static {p1, p6, v0, p4, v1}, Lorg/achartengine/chart/BubbleChart;->a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p6
+
+    move v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lorg/achartengine/chart/BubbleChart;->a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
 
     return-void
 .end method
 
 .method public drawSeries(Landroid/graphics/Canvas;Landroid/graphics/Paint;Ljava/util/List;Lorg/achartengine/renderer/SimpleSeriesRenderer;FII)V
-    .locals 11
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -259,7 +267,7 @@
 
     check-cast p4, Lorg/achartengine/renderer/XYSeriesRenderer;
 
-    invoke-virtual {p4}, Lorg/achartengine/renderer/XYSeriesRenderer;->getColor()I
+    invoke-virtual/range {p4 .. p4}, Lorg/achartengine/renderer/XYSeriesRenderer;->getColor()I
 
     move-result v1
 
@@ -271,7 +279,7 @@
 
     invoke-interface {p3}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v9
 
     iget-object v1, p0, Lorg/achartengine/chart/BubbleChart;->mDataset:Lorg/achartengine/model/XYMultipleSeriesDataset;
 
@@ -281,66 +289,74 @@
 
     move-result-object v1
 
-    check-cast v1, Lorg/achartengine/model/XYValueSeries;
+    move-object v7, v1
 
-    invoke-virtual {v1}, Lorg/achartengine/model/XYValueSeries;->getMaxValue()D
+    check-cast v7, Lorg/achartengine/model/XYValueSeries;
 
-    move-result-wide v2
+    invoke-virtual {v7}, Lorg/achartengine/model/XYValueSeries;->getMaxValue()D
 
-    const-wide/high16 v5, 0x4034
+    move-result-wide v1
 
-    div-double/2addr v5, v2
+    const-wide/high16 v3, 0x4034
 
-    const/4 v2, 0x0
+    div-double v10, v3, v1
 
-    move v3, v2
+    const/4 v1, 0x0
+
+    move v8, v1
 
     :goto_0
-    if-ge v3, v4, :cond_0
+    if-ge v8, v9, :cond_0
 
-    div-int/lit8 v2, v3, 0x2
+    div-int/lit8 v1, v8, 0x2
 
-    add-int v2, v2, p7
+    add-int v1, v1, p7
 
-    invoke-virtual {v1, v2}, Lorg/achartengine/model/XYValueSeries;->getValue(I)D
+    invoke-virtual {v7, v1}, Lorg/achartengine/model/XYValueSeries;->getValue(I)D
 
-    move-result-wide v7
+    move-result-wide v1
 
-    mul-double/2addr v7, v5
+    mul-double/2addr v1, v10
 
-    const-wide/high16 v9, 0x4000
+    const-wide/high16 v3, 0x4000
 
-    add-double/2addr v7, v9
+    add-double v2, v1, v3
 
-    invoke-interface {p3, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p3, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Float;
+    check-cast v1, Ljava/lang/Float;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
-    move-result v9
+    move-result v4
 
-    add-int/lit8 v2, v3, 0x1
+    add-int/lit8 v1, v8, 0x1
 
-    invoke-interface {p3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Float;
+    check-cast v1, Ljava/lang/Float;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
-    move-result v2
+    move-result v5
 
-    double-to-float v7, v7
+    double-to-float v6, v2
 
-    invoke-static {p1, p2, v9, v2, v7}, Lorg/achartengine/chart/BubbleChart;->a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
+    move-object v1, p0
 
-    add-int/lit8 v2, v3, 0x2
+    move-object v2, p1
 
-    move v3, v2
+    move-object v3, p2
+
+    invoke-direct/range {v1 .. v6}, Lorg/achartengine/chart/BubbleChart;->a(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
+
+    add-int/lit8 v1, v8, 0x2
+
+    move v8, v1
 
     goto :goto_0
 

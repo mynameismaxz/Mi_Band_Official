@@ -446,7 +446,11 @@
 
     const-string v3, "https://"
 
-    const/16 v5, 0x8
+    const-string v0, "https://"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v5
 
     move-object v0, p1
 
@@ -465,7 +469,11 @@
     :cond_0
     const-string v3, "http://"
 
-    const/4 v5, 0x7
+    const-string v0, "http://"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v5
 
     move-object v0, p1
 
@@ -520,7 +528,11 @@
 
     const-string v3, "https://"
 
-    const/16 v5, 0x8
+    const-string v4, "https://"
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
 
     move v4, v2
 
@@ -542,7 +554,11 @@
 
     const-string v3, "http://"
 
-    const/4 v5, 0x7
+    const-string v4, "http://"
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
 
     move v4, v2
 

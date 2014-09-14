@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
 
 # direct methods

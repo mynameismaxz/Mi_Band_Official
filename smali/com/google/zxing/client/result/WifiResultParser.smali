@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/WifiResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/WifiParsedResult;
@@ -23,14 +23,12 @@
     return-object v0
 .end method
 
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/WifiParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/WifiParsedResult;
     .locals 6
 
     const/4 v0, 0x0
 
     const/16 v5, 0x3b
-
-    const/4 v4, 0x0
 
     invoke-virtual {p1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
@@ -49,29 +47,31 @@
     return-object v0
 
     :cond_1
-    const-string v2, "S:"
+    const/4 v2, 0x0
 
-    invoke-static {v2, v1, v5, v4}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+    const-string v3, "S:"
 
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const-string v0, "P:"
-
-    invoke-static {v0, v1, v5, v4}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+    invoke-static {v3, v1, v5, v2}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
     move-result-object v3
 
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    const-string v0, "P:"
+
+    invoke-static {v0, v1, v5, v2}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+
+    move-result-object v4
+
     const-string v0, "T:"
 
-    invoke-static {v0, v1, v5, v4}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+    invoke-static {v0, v1, v5, v2}, Lcom/google/zxing/client/result/WifiResultParser;->b(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
     move-result-object v0
 
@@ -82,7 +82,7 @@
     :cond_2
     new-instance v1, Lcom/google/zxing/client/result/WifiParsedResult;
 
-    invoke-direct {v1, v0, v2, v3}, Lcom/google/zxing/client/result/WifiParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v0, v3, v4}, Lcom/google/zxing/client/result/WifiParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 

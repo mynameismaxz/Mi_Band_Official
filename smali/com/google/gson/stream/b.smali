@@ -3,21 +3,21 @@
 
 
 # static fields
-.field private static a:I = 0x1
+.field static final a:I = 0x1
 
-.field private static b:I = 0x2
+.field static final b:I = 0x2
 
-.field private static c:I = 0x3
+.field static final c:I = 0x3
 
-.field private static d:I = 0x4
+.field static final d:I = 0x4
 
-.field private static e:I = 0x5
+.field static final e:I = 0x5
 
-.field private static f:I = 0x6
+.field static final f:I = 0x6
 
-.field private static g:I = 0x7
+.field static final g:I = 0x7
 
-.field private static h:I = 0x8
+.field static final h:I = 0x8
 
 
 # direct methods

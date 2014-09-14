@@ -1,19 +1,19 @@
-.class final Lcn/com/smartdevices/bracelet/chart/j;
+.class Lcn/com/smartdevices/bracelet/chart/j;
 .super Lcn/com/smartdevices/bracelet/chart/base/BarChart$XAxis;
 
 
 # static fields
-.field private static b:I = 0x12
+.field static final a:I = 0x12
 
-.field private static c:I = 0x1
+.field static final b:I = 0x1
 
 
 # instance fields
-.field a:F
+.field c:F
 
-.field private d:Landroid/graphics/Paint;
+.field d:Landroid/graphics/Paint;
 
-.field private synthetic e:Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;
+.field final synthetic e:Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;
 
 
 # direct methods
@@ -21,6 +21,8 @@
     .locals 4
 
     const/4 v3, 0x1
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/j;->e:Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$XAxis;-><init>()V
 
@@ -61,7 +63,7 @@
 
 
 # virtual methods
-.method protected final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method protected draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
     .locals 8
 
     const/4 v1, 0x0
@@ -116,11 +118,11 @@
 
     int-to-float v4, v0
 
-    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/j;->a:F
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/j;->c:F
 
     mul-float/2addr v4, v5
 
-    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/j;->a:F
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/j;->c:F
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
@@ -164,7 +166,7 @@
     goto :goto_0
 .end method
 
-.method protected final onRectChanged(Landroid/graphics/RectF;)V
+.method protected onRectChanged(Landroid/graphics/RectF;)V
     .locals 2
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
@@ -177,7 +179,7 @@
 
     div-float/2addr v0, v1
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/j;->a:F
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/j;->c:F
 
     return-void
 .end method

@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static b:C = '$'
+.field static final a:C = '$'
 
 
 # instance fields
-.field private final a:C
+.field private final b:C
 
 
 # direct methods
@@ -16,25 +16,25 @@
 
     invoke-direct {p0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/q;-><init>(I)V
 
-    iput-char p2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->a:C
+    iput-char p2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->b:C
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()C
+.method a()C
     .locals 1
 
-    iget-char v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->a:C
+    iget-char v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->b:C
 
     return v0
 .end method
 
-.method final b()Z
+.method b()Z
     .locals 2
 
-    iget-char v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->a:C
+    iget-char v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/n;->b:C
 
     const/16 v1, 0x24
 

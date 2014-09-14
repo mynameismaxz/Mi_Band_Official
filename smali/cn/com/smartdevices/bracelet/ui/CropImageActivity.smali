@@ -29,9 +29,13 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+
+    const/16 v0, 0x12
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->b:I
 
     return-void
 .end method
@@ -43,9 +47,9 @@
 
     const/16 v4, 0x438
 
-    const/4 v8, 0x1
-
     const/4 v1, 0x0
+
+    const/4 v8, 0x1
 
     const-string v0, "CropImageActivity"
 
@@ -129,7 +133,7 @@
 
     div-int v5, v3, v0
 
-    if-lez v5, :cond_3
+    if-lt v5, v8, :cond_3
 
     mul-int/lit16 v0, v0, 0x438
 
@@ -250,230 +254,28 @@
 
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
-    .locals 10
-
-    const/16 v2, 0x780
-
-    const/16 v4, 0x438
-
-    const/4 v9, 0x1
-
-    const/4 v1, 0x0
+    .locals 1
 
     const/16 v0, 0x12
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_0
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_1
 
     invoke-virtual {p3}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
-    move-result-object v5
-
-    const-string v0, "CropImageActivity"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v6, "path = "
-
-    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v5}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
     move-result-object v0
 
-    :try_start_0
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v6, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v6}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    iput-boolean v9, v6, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    invoke-static {v0, v1, v6}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    iget v3, v6, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    iget v0, v6, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    const-string v6, "CropImageActivity"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "selected image, origin width="
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", height="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    mul-int v6, v3, v0
-
-    const v7, 0x1fa400
-
-    if-le v6, v7, :cond_0
-
-    div-int v6, v3, v0
-
-    if-lez v6, :cond_4
-
-    mul-int/lit16 v0, v0, 0x438
-
-    div-int/2addr v0, v3
-
-    move v3, v4
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->a(Ljava/lang/String;)V
 
     :cond_0
-    :goto_1
-    const-string v6, "CropImageActivity"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "selected image, new width="
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", height="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    if-lez v3, :cond_1
-
-    if-gtz v0, :cond_2
-
-    :cond_1
-    move v0, v2
-
-    move v3, v4
-
-    :cond_2
-    :try_start_1
-    invoke-static {}, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->getInstance()Lcn/com/smartdevices/bracelet/BraceletImageLoader;
-
-    move-result-object v2
-
-    new-instance v4, Lcom/nostra13/universalimageloader/core/assist/ImageSize;
-
-    invoke-direct {v4, v3, v0}, Lcom/nostra13/universalimageloader/core/assist/ImageSize;-><init>(II)V
-
-    invoke-virtual {v2, v5, v4}, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->loadImageSync(Ljava/lang/String;Lcom/nostra13/universalimageloader/core/assist/ImageSize;)Landroid/graphics/Bitmap;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result-object v1
-
-    :goto_2
-    if-nez v1, :cond_5
-
-    const v0, 0x7f0c00ea
-
-    invoke-static {p0, v0, v9}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->setResult(I)V
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->finish()V
-
-    :cond_3
-    :goto_3
+    :goto_0
     return-void
 
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
-
-    move-object v0, v1
-
-    goto/16 :goto_0
-
-    :cond_4
-    mul-int/lit16 v3, v3, 0x780
-
-    div-int v0, v3, v0
-
-    move v3, v0
-
-    move v0, v2
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_2
-
-    :cond_5
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->c:Lcom/edmodo/cropper/CropImageView;
-
-    invoke-virtual {v0, v1}, Lcom/edmodo/cropper/CropImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    goto :goto_3
-
-    :cond_6
+    :cond_1
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->finish()V
 
-    goto :goto_3
+    goto :goto_0
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -608,7 +410,7 @@
     goto :goto_1
 
     :pswitch_data_0
-    .packed-switch 0x7f070095
+    .packed-switch 0x7f07009a
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -620,7 +422,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030017
+    const v0, 0x7f030019
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->setContentView(I)V
 
@@ -640,7 +442,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    const v0, 0x7f070091
+    const v0, 0x7f070096
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->findViewById(I)Landroid/view/View;
 
@@ -650,7 +452,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->c:Lcom/edmodo/cropper/CropImageView;
 
-    const v0, 0x7f070097
+    const v0, 0x7f07009c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->findViewById(I)Landroid/view/View;
 
@@ -662,7 +464,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070095
+    const v0, 0x7f07009a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/CropImageActivity;->findViewById(I)Landroid/view/View;
 

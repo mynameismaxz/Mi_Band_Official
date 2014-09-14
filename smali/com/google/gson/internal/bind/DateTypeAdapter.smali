@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
     const/4 v1, 0x2
 
@@ -59,21 +59,9 @@
 
     iput-object v0, p0, Lcom/google/gson/internal/bind/DateTypeAdapter;->b:Ljava/text/DateFormat;
 
-    new-instance v0, Ljava/text/SimpleDateFormat;
+    invoke-static {}, Lcom/google/gson/internal/bind/DateTypeAdapter;->a()Ljava/text/DateFormat;
 
-    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss\'Z\'"
-
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    const-string v1, "UTC"
-
-    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    move-result-object v0
 
     iput-object v0, p0, Lcom/google/gson/internal/bind/DateTypeAdapter;->c:Ljava/text/DateFormat;
 
@@ -174,7 +162,7 @@
 
 
 # virtual methods
-.method public final bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/DateTypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Date;
@@ -184,7 +172,7 @@
     return-object v0
 .end method
 
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Date;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Date;
     .locals 2
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
@@ -214,7 +202,7 @@
     goto :goto_0
 .end method
 
-.method public final bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Ljava/util/Date;
@@ -224,7 +212,7 @@
     return-void
 .end method
 
-.method public final declared-synchronized write(Lcom/google/gson/stream/JsonWriter;Ljava/util/Date;)V
+.method public declared-synchronized write(Lcom/google/gson/stream/JsonWriter;Ljava/util/Date;)V
     .locals 1
 
     monitor-enter p0

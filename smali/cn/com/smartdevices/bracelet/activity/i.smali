@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/activity/i;
+.class Lcn/com/smartdevices/bracelet/activity/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
 
     new-instance v0, Landroid/content/Intent;

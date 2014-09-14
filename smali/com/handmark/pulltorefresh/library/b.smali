@@ -1,4 +1,4 @@
-.class final Lcom/handmark/pulltorefresh/library/b;
+.class Lcom/handmark/pulltorefresh/library/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshBase;
+.field final synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshBase;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 1
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/b;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshBase;

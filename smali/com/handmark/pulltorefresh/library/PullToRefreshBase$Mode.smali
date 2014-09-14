@@ -160,7 +160,9 @@
     :goto_0
     if-lt v1, v3, :cond_1
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
+
+    move-result-object v0
 
     :cond_0
     return-object v0
@@ -168,7 +170,9 @@
     :cond_1
     aget-object v0, v2, v1
 
-    iget v4, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->a:I
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->c()I
+
+    move-result v4
 
     if-eq p0, v4, :cond_0
 
@@ -211,7 +215,7 @@
 
 
 # virtual methods
-.method final b()Z
+.method b()Z
     .locals 1
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
@@ -234,7 +238,7 @@
     goto :goto_0
 .end method
 
-.method final c()I
+.method c()I
     .locals 1
 
     iget v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->a:I
@@ -242,7 +246,7 @@
     return v0
 .end method
 
-.method public final showFooterLoadingLayout()Z
+.method public showFooterLoadingLayout()Z
     .locals 1
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;
@@ -268,7 +272,7 @@
     goto :goto_0
 .end method
 
-.method public final showHeaderLoadingLayout()Z
+.method public showHeaderLoadingLayout()Z
     .locals 1
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;

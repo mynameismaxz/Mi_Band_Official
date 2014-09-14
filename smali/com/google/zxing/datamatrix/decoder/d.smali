@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/zxing/datamatrix/decoder/d;
+.class synthetic Lcom/google/zxing/datamatrix/decoder/d;
 .super Ljava/lang/Object;
 
 

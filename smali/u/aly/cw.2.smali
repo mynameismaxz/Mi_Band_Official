@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final a(Lu/aly/cw;)Z
+.method public a(Lu/aly/cw;)Z
     .locals 2
 
     iget-object v0, p0, Lu/aly/cw;->a:Ljava/lang/String;
@@ -75,7 +75,7 @@
     goto :goto_0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p1, Lu/aly/cw;
@@ -97,7 +97,7 @@
     goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;

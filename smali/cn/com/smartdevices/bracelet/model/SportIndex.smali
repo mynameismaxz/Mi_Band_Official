@@ -61,7 +61,7 @@
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/model/SportIndex;->startIndex:I
 
-    shl-int/lit8 v2, v2, 0x2
+    mul-int/lit8 v2, v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
@@ -69,7 +69,7 @@
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/model/SportIndex;->stopIndex:I
 
-    shl-int/lit8 v2, v2, 0x2
+    mul-int/lit8 v2, v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
     :try_end_0

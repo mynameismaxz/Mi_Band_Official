@@ -113,21 +113,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/greenrobot/dao/identityscope/IdentityScopeObject;->lock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
     const/4 v0, 0x1
+
+    iget-object v1, p0, Lde/greenrobot/dao/identityscope/IdentityScopeObject;->lock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     :goto_0
     return v0
 
     :cond_0
-    iget-object v0, p0, Lde/greenrobot/dao/identityscope/IdentityScopeObject;->lock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
     const/4 v0, 0x0
+
+    iget-object v1, p0, Lde/greenrobot/dao/identityscope/IdentityScopeObject;->lock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     goto :goto_0
 

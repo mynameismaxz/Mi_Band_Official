@@ -20,31 +20,31 @@
 .end method
 
 .method private a(IIII)F
-    .locals 7
+    .locals 8
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/high16 v1, 0x3f80
+    const/high16 v2, 0x3f80
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/zxing/qrcode/detector/Detector;->b(IIII)F
 
     move-result v4
 
-    sub-int v0, p3, p1
+    sub-int v1, p3, p1
 
-    sub-int v0, p1, v0
+    sub-int v1, p1, v1
 
-    if-gez v0, :cond_0
+    if-gez v1, :cond_0
 
     int-to-float v3, p1
 
-    sub-int v0, p1, v0
+    sub-int v1, p1, v1
 
-    int-to-float v0, v0
+    int-to-float v1, v1
 
-    div-float v0, v3, v0
+    div-float v1, v3, v1
 
-    move v3, v2
+    move v3, v0
 
     :goto_0
     int-to-float v5, p2
@@ -53,21 +53,21 @@
 
     int-to-float v6, v6
 
-    mul-float/2addr v0, v6
+    mul-float/2addr v1, v6
 
-    sub-float v0, v5, v0
+    sub-float v1, v5, v1
 
-    float-to-int v0, v0
+    float-to-int v1, v1
 
-    if-gez v0, :cond_1
+    if-gez v1, :cond_1
 
     int-to-float v5, p2
 
-    sub-int v0, p2, v0
+    sub-int v1, p2, v1
 
-    int-to-float v0, v0
+    int-to-float v1, v1
 
-    div-float v0, v5, v0
+    div-float v1, v5, v1
 
     :goto_1
     int-to-float v5, p1
@@ -76,19 +76,19 @@
 
     int-to-float v3, v3
 
-    mul-float/2addr v0, v3
+    mul-float/2addr v1, v3
 
-    add-float/2addr v0, v5
+    add-float/2addr v1, v5
 
-    float-to-int v0, v0
+    float-to-int v1, v1
 
-    invoke-direct {p0, p1, p2, v0, v2}, Lcom/google/zxing/qrcode/detector/Detector;->b(IIII)F
+    invoke-direct {p0, p1, p2, v1, v0}, Lcom/google/zxing/qrcode/detector/Detector;->b(IIII)F
 
     move-result v0
 
     add-float/2addr v0, v4
 
-    sub-float/2addr v0, v1
+    sub-float/2addr v0, v2
 
     return v0
 
@@ -99,7 +99,7 @@
 
     move-result v3
 
-    if-lt v0, v3, :cond_3
+    if-lt v1, v3, :cond_3
 
     iget-object v3, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
@@ -113,70 +113,76 @@
 
     int-to-float v3, v3
 
-    sub-int/2addr v0, p1
+    sub-int/2addr v1, p1
 
-    int-to-float v0, v0
+    int-to-float v1, v1
 
-    div-float v0, v3, v0
+    div-float/2addr v3, v1
 
-    iget-object v3, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    iget-object v1, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v3}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
+    invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
-    move-result v3
+    move-result v1
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v1, v1, -0x1
+
+    move v7, v1
+
+    move v1, v3
+
+    move v3, v7
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    iget-object v0, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v2}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v2
+    move-result v0
 
-    if-lt v0, v2, :cond_2
+    if-lt v1, v0, :cond_2
 
-    iget-object v2, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    iget-object v0, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v2}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v2
+    move-result v0
 
-    add-int/lit8 v2, v2, -0x1
-
-    sub-int/2addr v2, p2
-
-    int-to-float v2, v2
+    add-int/lit8 v0, v0, -0x1
 
     sub-int/2addr v0, p2
 
     int-to-float v0, v0
 
-    div-float v0, v2, v0
+    sub-int/2addr v1, p2
 
-    iget-object v2, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
+    int-to-float v1, v1
 
-    invoke-virtual {v2}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    div-float v1, v0, v1
 
-    move-result v2
+    iget-object v0, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    add-int/lit8 v2, v2, -0x1
+    invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
     :cond_2
-    move v2, v0
-
     move v0, v1
+
+    move v1, v2
 
     goto :goto_1
 
     :cond_3
-    move v3, v0
+    move v3, v1
 
-    move v0, v1
+    move v1, v2
 
     goto :goto_0
 .end method
@@ -470,27 +476,11 @@
 
     move/from16 v0, p3
 
-    if-eq v4, v0, :cond_7
+    if-ne v4, v0, :cond_7
 
-    add-int v3, v4, v2
-
-    sub-int v4, v5, v12
-
-    :goto_a
-    add-int/2addr v7, v10
-
-    move v5, v6
-
-    move v9, v4
-
-    move v4, v3
-
-    goto :goto_4
-
-    :cond_7
     move v2, v6
 
-    :goto_b
+    :goto_a
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_8
@@ -517,6 +507,22 @@
 
     goto :goto_8
 
+    :cond_7
+    add-int v3, v4, v2
+
+    sub-int v4, v5, v12
+
+    :goto_b
+    add-int/2addr v7, v10
+
+    move v5, v6
+
+    move v9, v4
+
+    move v4, v3
+
+    goto :goto_4
+
     :cond_8
     const/high16 v2, 0x7fc0
 
@@ -527,7 +533,7 @@
 
     move v4, v5
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_a
     move v6, v5
@@ -537,7 +543,7 @@
     :cond_b
     move v2, v5
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_c
     move/from16 v16, p4
@@ -556,9 +562,7 @@
 .end method
 
 .method protected static computeDimension(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;F)I
-    .locals 3
-
-    const/high16 v2, 0x3f00
+    .locals 2
 
     invoke-static {p0, p1}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
@@ -566,9 +570,9 @@
 
     div-float/2addr v0, p3
 
-    add-float/2addr v0, v2
+    invoke-static {v0}, Lcom/google/zxing/qrcode/detector/Detector;->a(F)I
 
-    float-to-int v0, v0
+    move-result v0
 
     invoke-static {p0, p2}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
@@ -576,9 +580,9 @@
 
     div-float/2addr v1, p3
 
-    add-float/2addr v1, v2
+    invoke-static {v1}, Lcom/google/zxing/qrcode/detector/Detector;->a(F)I
 
-    float-to-int v1, v1
+    move-result v1
 
     add-int/2addr v0, v1
 
@@ -1087,11 +1091,7 @@
 
     iget-object v5, p0, Lcom/google/zxing/qrcode/detector/Detector;->a:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-static {}, Lcom/google/zxing/common/GridSampler;->getInstance()Lcom/google/zxing/common/GridSampler;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v5, v6, v6, v1}, Lcom/google/zxing/common/GridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
+    invoke-static {v5, v1, v6}, Lcom/google/zxing/qrcode/detector/Detector;->a(Lcom/google/zxing/common/BitMatrix;Lcom/google/zxing/common/PerspectiveTransform;I)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v5
 

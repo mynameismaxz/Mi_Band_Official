@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/k;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/k;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/k;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;

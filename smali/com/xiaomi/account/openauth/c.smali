@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/account/openauth/c;
+.class Lcom/xiaomi/account/openauth/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -46,7 +46,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 8
 
     iget-object v0, p0, Lcom/xiaomi/account/openauth/c;->a:Landroid/app/Activity;

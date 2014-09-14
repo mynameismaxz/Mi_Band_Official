@@ -1,9 +1,9 @@
-.class final Lcom/tencent/weiyun/c;
+.class Lcom/tencent/weiyun/c;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/weiyun/a;
+.field final synthetic a:Lcom/tencent/weiyun/a;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     iget-object v0, p0, Lcom/tencent/weiyun/c;->a:Lcom/tencent/weiyun/a;

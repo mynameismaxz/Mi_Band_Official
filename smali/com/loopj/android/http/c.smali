@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/c;
+.class Lcom/loopj/android/http/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,12 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
+.field final synthetic a:Lcom/loopj/android/http/AsyncHttpClient;
 
 
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/AsyncHttpClient;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/loopj/android/http/c;->a:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,7 +22,7 @@
 
 
 # virtual methods
-.method public final process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
+.method public process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
     .locals 5
 
     const-string v0, "http.auth.target-scope"

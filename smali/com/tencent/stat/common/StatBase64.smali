@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static synthetic a:Z
+.field static final synthetic a:Z
 
 
 # direct methods
@@ -139,9 +139,9 @@
 
     div-int/lit8 v0, p2, 0x3
 
-    shl-int/lit8 v0, v0, 0x2
+    mul-int/lit8 v0, v0, 0x4
 
-    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->c:Z
+    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->d:Z
 
     if-eqz v1, :cond_2
 
@@ -154,7 +154,7 @@
     :cond_0
     :goto_0
     :pswitch_0
-    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->d:Z
+    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->e:Z
 
     if-eqz v1, :cond_1
 
@@ -166,7 +166,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->e:Z
+    iget-boolean v1, v3, Lcom/tencent/stat/common/e;->f:Z
 
     if-eqz v1, :cond_3
 

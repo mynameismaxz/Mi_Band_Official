@@ -14,9 +14,7 @@
 .method private static a(Ljava/lang/CharSequence;Ljava/lang/String;Z)Ljava/lang/String;
     .locals 2
 
-    const/4 v0, 0x1
-
-    invoke-static {p0, p1, v0}, Lcom/google/zxing/client/result/VCardResultParser;->a(Ljava/lang/CharSequence;Ljava/lang/String;Z)Ljava/util/List;
+    invoke-static {p0, p1, p2}, Lcom/google/zxing/client/result/VCardResultParser;->a(Ljava/lang/CharSequence;Ljava/lang/String;Z)Ljava/util/List;
 
     move-result-object v0
 
@@ -48,7 +46,7 @@
 
 
 # virtual methods
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/CalendarParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/CalendarParsedResult;
     .locals 12
 
     const-wide/high16 v9, 0x7ff8
@@ -188,7 +186,7 @@
     goto :goto_0
 .end method
 
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/VEventResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/CalendarParsedResult;

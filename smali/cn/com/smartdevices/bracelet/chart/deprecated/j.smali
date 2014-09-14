@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/j;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
 
 
 # direct methods
@@ -20,12 +20,12 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/Calendar;)I
+.method private a(Ljava/util/Calendar;)I
     .locals 2
 
     const/16 v0, 0xb
 
-    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
@@ -37,7 +37,7 @@
 
     const/16 v1, 0xc
 
-    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v1
 
@@ -50,12 +50,12 @@
     return v0
 .end method
 
-.method private static b(Ljava/util/Calendar;)I
+.method private b(Ljava/util/Calendar;)I
     .locals 2
 
     const/16 v0, 0xb
 
-    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
@@ -63,7 +63,7 @@
 
     const/16 v1, 0xc
 
-    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v1
 
@@ -74,7 +74,7 @@
 
 
 # virtual methods
-.method public final hasData(I)Z
+.method public hasData(I)Z
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
@@ -147,7 +147,7 @@
     goto :goto_0
 .end method
 
-.method public final loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
+.method public loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailFragmentOld;
@@ -294,13 +294,13 @@
     goto :goto_1
 .end method
 
-.method public final onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
+.method public onDataLoaded(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onToItem(I)V
+.method public onToItem(I)V
     .locals 11
 
     const/4 v0, 0x0
@@ -436,7 +436,7 @@
 
     invoke-virtual {v5, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->setOffset(I)V
 
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a(Ljava/util/Calendar;)I
+    invoke-direct {p0, v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a(Ljava/util/Calendar;)I
 
     move-result v1
 
@@ -451,7 +451,7 @@
 
     if-eqz v2, :cond_4
 
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a(Ljava/util/Calendar;)I
+    invoke-direct {p0, v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->a(Ljava/util/Calendar;)I
 
     move-result v2
 
@@ -595,14 +595,14 @@
     return-void
 
     :cond_3
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->b(Ljava/util/Calendar;)I
+    invoke-direct {p0, v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->b(Ljava/util/Calendar;)I
 
     move-result v1
 
     goto/16 :goto_1
 
     :cond_4
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->b(Ljava/util/Calendar;)I
+    invoke-direct {p0, v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/j;->b(Ljava/util/Calendar;)I
 
     move-result v2
 

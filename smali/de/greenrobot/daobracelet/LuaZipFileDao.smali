@@ -53,13 +53,25 @@
 
     move-result-object v0
 
-    const-string v1, "\'LUA_ZIP_FILE\' (\'_id\' INTEGER PRIMARY KEY ,"
+    const-string v1, "\'LUA_ZIP_FILE\' ("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'VERSION\' TEXT,\'DATE\' TEXT,"
+    const-string v1, "\'_id\' INTEGER PRIMARY KEY ,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'VERSION\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'DATE\' TEXT,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -236,7 +248,9 @@
 
     new-instance v4, Lde/greenrobot/daobracelet/LuaZipFile;
 
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
@@ -281,7 +295,9 @@
     return-object v4
 
     :cond_0
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
 
@@ -334,7 +350,9 @@
 
     const/4 v1, 0x0
 
-    invoke-interface {p1, p3}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v0, p3, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
@@ -385,7 +403,9 @@
     return-void
 
     :cond_0
-    invoke-interface {p1, p3}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v0, p3, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
 
@@ -436,7 +456,9 @@
 .method public readKey(Landroid/database/Cursor;I)Ljava/lang/Long;
     .locals 2
 
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
@@ -448,7 +470,9 @@
     return-object v0
 
     :cond_0
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 

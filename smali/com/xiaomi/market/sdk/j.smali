@@ -102,7 +102,7 @@
 .method public static k()V
     .locals 1
 
-    sget-boolean v0, Lcom/xiaomi/market/sdk/s;->b:Z
+    sget-boolean v0, Lcom/xiaomi/market/sdk/s;->c:Z
 
     if-eqz v0, :cond_0
 

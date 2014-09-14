@@ -18,12 +18,14 @@
 
 .field c:Landroid/os/Bundle;
 
-.field private synthetic d:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
+.field final synthetic d:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
 
 
 # direct methods
 .method public constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;->d:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,6 +46,8 @@
             ")V"
         }
     .end annotation
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;->d:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/activity/k;
+.class Lcn/com/smartdevices/bracelet/activity/k;
 .super Landroid/webkit/WebChromeClient;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onProgressChanged(Landroid/webkit/WebView;I)V
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/k;->a:Lcn/com/smartdevices/bracelet/activity/WebActivity;

@@ -193,29 +193,9 @@
 
     iput-boolean v0, p0, Lcom/tencent/a/a/a;->i:Z
 
-    monitor-enter p0
+    invoke-direct {p0}, Lcom/tencent/a/a/a;->j()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/tencent/a/a/a;->g:Lcom/tencent/a/a/e;
-
-    iget-object v1, p0, Lcom/tencent/a/a/a;->e:Lcom/tencent/a/a/e;
-
-    if-ne v0, v1, :cond_2
-
-    iget-object v0, p0, Lcom/tencent/a/a/a;->f:Lcom/tencent/a/a/e;
-
-    iput-object v0, p0, Lcom/tencent/a/a/a;->g:Lcom/tencent/a/a/e;
-
-    iget-object v0, p0, Lcom/tencent/a/a/a;->e:Lcom/tencent/a/a/e;
-
-    iput-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-
-    :goto_1
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
     iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
 
     invoke-direct {p0}, Lcom/tencent/a/a/a;->h()Ljava/io/Writer;
@@ -225,41 +205,20 @@
     iget-object v2, p0, Lcom/tencent/a/a/a;->d:[C
 
     invoke-virtual {v0, v1, v2}, Lcom/tencent/a/a/e;->a(Ljava/io/Writer;[C)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
 
     invoke-virtual {v0}, Lcom/tencent/a/a/e;->b()V
 
-    :goto_2
+    :goto_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/tencent/a/a/a;->i:Z
 
     goto :goto_0
-
-    :cond_2
-    :try_start_2
-    iget-object v0, p0, Lcom/tencent/a/a/a;->e:Lcom/tencent/a/a/e;
-
-    iput-object v0, p0, Lcom/tencent/a/a/a;->g:Lcom/tencent/a/a/e;
-
-    iget-object v0, p0, Lcom/tencent/a/a/a;->f:Lcom/tencent/a/a/e;
-
-    iput-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 
     :catch_0
     move-exception v0
@@ -268,9 +227,9 @@
 
     invoke-virtual {v0}, Lcom/tencent/a/a/e;->b()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :catchall_1
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
@@ -395,8 +354,6 @@
     iget-object v0, p0, Lcom/tencent/a/a/a;->f:Lcom/tencent/a/a/e;
 
     iput-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -404,6 +361,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -517,81 +476,23 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)Z
-    .locals 4
-
-    const/4 v3, 0x1
+    .locals 1
 
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     :goto_0
-    return v3
+    const/4 v0, 0x1
+
+    return v0
 
     :pswitch_0
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-direct {p0}, Lcom/tencent/a/a/a;->g()V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/tencent/a/a/a;->j:Landroid/os/HandlerThread;
-
-    if-ne v0, v1, :cond_0
-
-    iget-boolean v0, p0, Lcom/tencent/a/a/a;->i:Z
-
-    if-nez v0, :cond_0
-
-    iput-boolean v3, p0, Lcom/tencent/a/a/a;->i:Z
-
-    invoke-direct {p0}, Lcom/tencent/a/a/a;->j()V
-
-    :try_start_0
-    iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-
-    invoke-direct {p0}, Lcom/tencent/a/a/a;->h()Ljava/io/Writer;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/tencent/a/a/a;->d:[C
-
-    invoke-virtual {v0, v1, v2}, Lcom/tencent/a/a/e;->a(Ljava/io/Writer;[C)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-
-    invoke-virtual {v0}, Lcom/tencent/a/a/e;->b()V
-
-    :goto_1
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/tencent/a/a/a;->i:Z
-
-    :cond_0
     invoke-direct {p0}, Lcom/tencent/a/a/a;->f()V
 
     goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-
-    invoke-virtual {v0}, Lcom/tencent/a/a/e;->b()V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
-
-    invoke-virtual {v1}, Lcom/tencent/a/a/e;->b()V
-
-    throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x400

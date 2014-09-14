@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/i;
+.class Lcn/com/smartdevices/bracelet/chart/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/DynamicPieChartView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/DynamicPieChartView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;

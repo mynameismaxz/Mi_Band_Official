@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/common/d;
+.class Lcom/tencent/stat/common/d;
 .super Lcom/tencent/stat/common/c;
 
 
@@ -591,8 +591,8 @@
 
 
 # virtual methods
-.method public final a([BIIZ)Z
-    .locals 9
+.method public a([BIIZ)Z
+    .locals 10
 
     iget v0, p0, Lcom/tencent/stat/common/d;->e:I
 
@@ -608,7 +608,7 @@
     :cond_0
     add-int v4, p3, p2
 
-    iget v2, p0, Lcom/tencent/stat/common/d;->e:I
+    iget v3, p0, Lcom/tencent/stat/common/d;->e:I
 
     iget v1, p0, Lcom/tencent/stat/common/d;->f:I
 
@@ -618,12 +618,10 @@
 
     iget-object v6, p0, Lcom/tencent/stat/common/d;->g:[I
 
-    move v3, v2
-
     move v2, p2
 
     :goto_1
-    if-ge v2, v4, :cond_b
+    if-ge v2, v4, :cond_c
 
     if-nez v3, :cond_2
 
@@ -703,7 +701,22 @@
     goto :goto_2
 
     :cond_1
-    if-ge v2, v4, :cond_b
+    if-lt v2, v4, :cond_2
+
+    move v2, v1
+
+    :goto_3
+    if-nez p4, :cond_b
+
+    iput v3, p0, Lcom/tencent/stat/common/d;->e:I
+
+    iput v2, p0, Lcom/tencent/stat/common/d;->f:I
+
+    iput v0, p0, Lcom/tencent/stat/common/d;->b:I
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_2
     add-int/lit8 p2, v2, 0x1
@@ -717,6 +730,11 @@
     packed-switch v3, :pswitch_data_0
 
     :cond_3
+    move v2, v3
+
+    :goto_4
+    move v3, v2
+
     move v2, p2
 
     goto :goto_1
@@ -726,13 +744,13 @@
 
     add-int/lit8 v1, v3, 0x1
 
-    move v3, v1
+    move v9, v2
 
-    move v1, v2
+    move v2, v1
 
-    move v2, p2
+    move v1, v9
 
-    goto :goto_1
+    goto :goto_4
 
     :cond_4
     const/4 v7, -0x1
@@ -756,11 +774,7 @@
 
     add-int/lit8 v2, v3, 0x1
 
-    move v3, v2
-
-    move v2, p2
-
-    goto :goto_1
+    goto :goto_4
 
     :cond_5
     const/4 v7, -0x1
@@ -784,11 +798,7 @@
 
     add-int/lit8 v2, v3, 0x1
 
-    move v3, v2
-
-    move v2, p2
-
-    goto/16 :goto_1
+    goto :goto_4
 
     :cond_6
     const/4 v7, -0x2
@@ -805,13 +815,13 @@
 
     const/4 v0, 0x4
 
-    move v3, v0
+    move v9, v2
 
-    move v0, v2
+    move v2, v0
 
-    move v2, p2
+    move v0, v9
 
-    goto/16 :goto_1
+    goto :goto_4
 
     :cond_7
     const/4 v7, -0x1
@@ -857,11 +867,7 @@
 
     const/4 v2, 0x0
 
-    move v3, v2
-
-    move v2, p2
-
-    goto/16 :goto_1
+    goto :goto_4
 
     :cond_8
     const/4 v7, -0x2
@@ -886,11 +892,7 @@
 
     const/4 v2, 0x5
 
-    move v3, v2
-
-    move v2, p2
-
-    goto/16 :goto_1
+    goto :goto_4
 
     :cond_9
     const/4 v7, -0x1
@@ -912,11 +914,7 @@
 
     add-int/lit8 v2, v3, 0x1
 
-    move v3, v2
-
-    move v2, p2
-
-    goto/16 :goto_1
+    goto :goto_4
 
     :cond_a
     const/4 v7, -0x1
@@ -945,11 +943,9 @@
     goto/16 :goto_0
 
     :cond_b
-    move v2, v1
-
     packed-switch v3, :pswitch_data_1
 
-    :goto_3
+    :goto_5
     :pswitch_6
     iput v3, p0, Lcom/tencent/stat/common/d;->e:I
 
@@ -979,7 +975,7 @@
 
     move v0, v1
 
-    goto :goto_3
+    goto :goto_5
 
     :pswitch_9
     add-int/lit8 v1, v0, 0x1
@@ -998,7 +994,7 @@
 
     aput-byte v2, v5, v1
 
-    goto :goto_3
+    goto :goto_5
 
     :pswitch_a
     const/4 v0, 0x6
@@ -1009,7 +1005,10 @@
 
     goto/16 :goto_0
 
-    nop
+    :cond_c
+    move v2, v1
+
+    goto/16 :goto_3
 
     :pswitch_data_0
     .packed-switch 0x0

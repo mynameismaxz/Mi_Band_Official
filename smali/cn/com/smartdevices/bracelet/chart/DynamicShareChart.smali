@@ -150,7 +150,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/chart/j;
 
-    iget v1, v0, Lcn/com/smartdevices/bracelet/chart/j;->a:F
+    iget v1, v0, Lcn/com/smartdevices/bracelet/chart/j;->c:F
 
     check-cast p2, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;
 

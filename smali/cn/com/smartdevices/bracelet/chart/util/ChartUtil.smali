@@ -664,8 +664,6 @@
     if-le v2, p2, :cond_0
 
     iget p2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -673,6 +671,8 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

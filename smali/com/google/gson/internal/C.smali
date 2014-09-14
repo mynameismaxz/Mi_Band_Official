@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/reflect/Method;
+.field final synthetic a:Ljava/lang/reflect/Method;
 
-.field private synthetic b:I
+.field final synthetic b:I
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final newInstance(Ljava/lang/Class;)Ljava/lang/Object;
+.method public newInstance(Ljava/lang/Class;)Ljava/lang/Object;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {

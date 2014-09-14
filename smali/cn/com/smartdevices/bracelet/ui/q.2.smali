@@ -1,53 +1,53 @@
-.class final Lcn/com/smartdevices/bracelet/ui/q;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.class Lcn/com/smartdevices/bracelet/ui/q;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/q;->b:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailed(Ljava/lang/Object;)V
     .locals 0
+
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
-    .locals 2
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 1
 
-    if-eqz p3, :cond_0
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    new-instance v0, Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/q;->b:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    check-cast p1, Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Keeper;->keepBraceletStatisticTime(J)V
+    invoke-static {v0, p1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Ljava/lang/String;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public onStart()V
+    .locals 0
+
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+
     return-void
 .end method

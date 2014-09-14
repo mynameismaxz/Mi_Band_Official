@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/widget/m;
+.field final synthetic a:Landroid/support/v4/widget/E;
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/widget/m;)V
+.method constructor <init>(Landroid/support/v4/widget/E;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/widget/D;->a:Landroid/support/v4/widget/m;
+    iput-object p1, p0, Landroid/support/v4/widget/D;->a:Landroid/support/v4/widget/E;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClose()Z
+.method public onClose()Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/widget/D;->a:Landroid/support/v4/widget/m;
+    iget-object v0, p0, Landroid/support/v4/widget/D;->a:Landroid/support/v4/widget/E;
 
-    invoke-virtual {v0}, Landroid/support/v4/widget/m;->a()Z
+    invoke-interface {v0}, Landroid/support/v4/widget/E;->a()Z
 
     move-result v0
 

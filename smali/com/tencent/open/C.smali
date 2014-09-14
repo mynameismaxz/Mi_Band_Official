@@ -6,19 +6,21 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/TaskGuide;
+.field final synthetic c:Lcom/tencent/open/TaskGuide;
 
 
 # direct methods
 .method private constructor <init>(Lcom/tencent/open/TaskGuide;)V
     .locals 0
 
+    iput-object p1, p0, Lcom/tencent/open/C;->c:Lcom/tencent/open/TaskGuide;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;Lcom/tencent/open/t;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/C;-><init>(Lcom/tencent/open/TaskGuide;)V

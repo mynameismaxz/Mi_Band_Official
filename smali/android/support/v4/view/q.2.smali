@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/q;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/t;
+
 
 # static fields
 .field private static final a:I = 0xf7
@@ -127,7 +130,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1}, Landroid/support/v4/view/t;->a(I)I
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/q;->a(I)I
 
     move-result v1
 
@@ -137,7 +140,7 @@
 
     const/16 v3, 0x80
 
-    invoke-static {v1, p2, v0, v2, v3}, Landroid/support/v4/view/t;->a(IIIII)I
+    invoke-static {v1, p2, v0, v2, v3}, Landroid/support/v4/view/q;->a(IIIII)I
 
     move-result v1
 
@@ -147,7 +150,7 @@
 
     const/16 v4, 0x20
 
-    invoke-static {v1, p2, v2, v3, v4}, Landroid/support/v4/view/t;->a(IIIII)I
+    invoke-static {v1, p2, v2, v3, v4}, Landroid/support/v4/view/q;->a(IIIII)I
 
     move-result v1
 
@@ -175,7 +178,7 @@
 .method public b(I)Z
     .locals 1
 
-    invoke-virtual {p0, p1}, Landroid/support/v4/view/t;->a(I)I
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/q;->a(I)I
 
     move-result v0
 

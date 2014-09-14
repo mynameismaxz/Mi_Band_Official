@@ -121,7 +121,7 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p1, Ljava/lang/reflect/WildcardType;
@@ -147,7 +147,7 @@
     goto :goto_0
 .end method
 
-.method public final getLowerBounds()[Ljava/lang/reflect/Type;
+.method public getLowerBounds()[Ljava/lang/reflect/Type;
     .locals 3
 
     iget-object v0, p0, Lcom/google/gson/internal/c;->b:Ljava/lang/reflect/Type;
@@ -173,7 +173,7 @@
     goto :goto_0
 .end method
 
-.method public final getUpperBounds()[Ljava/lang/reflect/Type;
+.method public getUpperBounds()[Ljava/lang/reflect/Type;
     .locals 3
 
     const/4 v0, 0x1
@@ -189,7 +189,7 @@
     return-object v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/c;->b:Ljava/lang/reflect/Type;
@@ -223,7 +223,7 @@
     goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/c;->b:Ljava/lang/reflect/Type;
@@ -232,9 +232,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "? super "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/google/gson/internal/c;->b:Ljava/lang/reflect/Type;
 
@@ -267,9 +271,13 @@
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "? extends "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/google/gson/internal/c;->a:Ljava/lang/reflect/Type;
 

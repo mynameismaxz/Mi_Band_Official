@@ -6,9 +6,9 @@
 
 
 # static fields
-.field static final a:Landroid/view/animation/Interpolator; = null
+.field static final b:Ljava/lang/String; = "PullToRefresh-LoadingLayout"
 
-.field private static b:Ljava/lang/String; = "PullToRefresh-LoadingLayout"
+.field static final c:Landroid/view/animation/Interpolator;
 
 .field private static synthetic j:[I
 
@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private c:Landroid/widget/FrameLayout;
+.field private a:Landroid/widget/FrameLayout;
 
 .field private d:Z
 
@@ -47,7 +47,7 @@
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/view/animation/Interpolator;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/view/animation/Interpolator;
 
     return-void
 .end method
@@ -71,7 +71,7 @@
 
     iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a()[I
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b()[I
 
     move-result-object v0
 
@@ -87,12 +87,12 @@
 
     move-result-object v0
 
-    const v1, 0x7f030054
+    const v1, 0x7f030056
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     :goto_0
-    const v0, 0x7f070182
+    const v0, 0x7f070188
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->findViewById(I)Landroid/view/View;
 
@@ -100,11 +100,11 @@
 
     check-cast v0, Landroid/widget/FrameLayout;
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070185
+    const v1, 0x7f07018b
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -114,9 +114,9 @@
 
     iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070184
+    const v1, 0x7f07018a
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -126,9 +126,9 @@
 
     iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070186
+    const v1, 0x7f07018c
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -138,9 +138,9 @@
 
     iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070183
+    const v1, 0x7f070189
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -158,7 +158,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b()[I
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c()[I
 
     move-result-object v1
 
@@ -172,7 +172,7 @@
 
     sget-object v1, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
 
-    if-ne p3, v1, :cond_b
+    if-ne p3, v1, :cond_9
 
     const/16 v1, 0x50
 
@@ -225,7 +225,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     new-instance v0, Landroid/util/TypedValue;
 
@@ -237,39 +237,16 @@
 
     iget v0, v0, Landroid/util/TypedValue;->data:I
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3, v0}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(I)V
 
     :cond_1
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3, v0}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
-
-    :cond_2
     const/16 v0, 0xb
 
     invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     new-instance v0, Landroid/util/TypedValue;
 
@@ -281,84 +258,53 @@
 
     iget v0, v0, Landroid/util/TypedValue;->data:I
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(I)V
 
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3, v0}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
-
-    :cond_3
+    :cond_2
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(Landroid/content/res/ColorStateList;)V
 
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    :cond_4
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    :cond_5
+    :cond_3
     invoke-virtual {p4, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     invoke-virtual {p4, v2}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(Landroid/content/res/ColorStateList;)V
 
-    if-eqz v1, :cond_6
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    :cond_6
+    :cond_4
     const/4 v0, 0x0
 
     invoke-virtual {p4, v6}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_5
 
     invoke-virtual {p4, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_7
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b()[I
+    :cond_5
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c()[I
 
     move-result-object v1
 
@@ -374,15 +320,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_a
 
     invoke-virtual {p4, v7}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_8
+    :cond_6
     :goto_3
-    if-nez v0, :cond_9
+    if-nez v0, :cond_7
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -396,7 +342,7 @@
 
     move-result-object v0
 
-    :cond_9
+    :cond_7
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->reset()V
@@ -408,7 +354,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030053
+    const v1, 0x7f030055
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -417,7 +363,7 @@
     :pswitch_1
     sget-object v1, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;
 
-    if-ne p3, v1, :cond_a
+    if-ne p3, v1, :cond_8
 
     const/16 v1, 0x30
 
@@ -450,24 +396,24 @@
 
     goto/16 :goto_2
 
-    :cond_a
+    :cond_8
     move v1, v2
 
     goto :goto_4
 
-    :cond_b
+    :cond_9
     const/4 v1, 0x5
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_a
     const/16 v1, 0x11
 
     invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     const-string v0, "ptrDrawableTop"
 
@@ -490,7 +436,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_b
 
     const/16 v0, 0x8
 
@@ -500,14 +446,14 @@
 
     goto :goto_3
 
-    :cond_d
+    :cond_b
     const/16 v1, 0x12
 
     invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     const-string v0, "ptrDrawableBottom"
 
@@ -620,7 +566,63 @@
     goto :goto_0
 .end method
 
-.method private static synthetic a()[I
+.method private b(I)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p1}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p1}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method private b(Landroid/content/res/ColorStateList;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method static synthetic b()[I
     .locals 3
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->j:[I
@@ -682,63 +684,7 @@
     goto :goto_1
 .end method
 
-.method private b(I)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p1}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p1}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
-
-    :cond_1
-    return-void
-.end method
-
-.method private b(Landroid/content/res/ColorStateList;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method private static synthetic b()[I
+.method static synthetic c()[I
     .locals 3
 
     sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->k:[I
@@ -862,7 +808,7 @@
 .method public final getContentSize()I
     .locals 2
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a()[I
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b()[I
 
     move-result-object v0
 
@@ -876,7 +822,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getHeight()I
 
@@ -886,7 +832,7 @@
     return v0
 
     :pswitch_0
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getWidth()I
 
@@ -1171,48 +1117,11 @@
 .end method
 
 .method public setLastUpdatedLabel(Ljava/lang/CharSequence;)V
-    .locals 2
+    .locals 0
 
-    const/16 v1, 0x8
+    invoke-direct {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_0
-    :goto_0
     return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-ne v1, v0, :cond_0
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/TextView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto :goto_0
 .end method
 
 .method public final setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V

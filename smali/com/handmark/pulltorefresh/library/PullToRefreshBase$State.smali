@@ -172,7 +172,9 @@
     :cond_1
     aget-object v0, v2, v1
 
-    iget v4, v0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$State;->a:I
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$State;->a()I
+
+    move-result v4
 
     if-eq p0, v4, :cond_0
 
@@ -215,7 +217,7 @@
 
 
 # virtual methods
-.method final a()I
+.method a()I
     .locals 1
 
     iget v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshBase$State;->a:I

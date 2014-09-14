@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final getBody()Ljava/lang/String;
+.method public getBody()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/EmailAddressParsedResult;->c:Ljava/lang/String;
@@ -41,7 +41,7 @@
     return-object v0
 .end method
 
-.method public final getDisplayResult()Ljava/lang/String;
+.method public getDisplayResult()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -69,7 +69,7 @@
     return-object v0
 .end method
 
-.method public final getEmailAddress()Ljava/lang/String;
+.method public getEmailAddress()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/EmailAddressParsedResult;->a:Ljava/lang/String;
@@ -77,7 +77,7 @@
     return-object v0
 .end method
 
-.method public final getMailtoURI()Ljava/lang/String;
+.method public getMailtoURI()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/EmailAddressParsedResult;->d:Ljava/lang/String;
@@ -85,7 +85,7 @@
     return-object v0
 .end method
 
-.method public final getSubject()Ljava/lang/String;
+.method public getSubject()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/client/result/EmailAddressParsedResult;->b:Ljava/lang/String;

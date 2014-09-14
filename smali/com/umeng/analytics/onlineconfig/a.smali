@@ -36,13 +36,25 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->k:Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;
+    const-string v0, "last_config_time"
 
-    iput-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->l:Lcom/umeng/analytics/onlineconfig/c;
+    iput-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->h:Ljava/lang/String;
+
+    const-string v0, "report_policy"
+
+    iput-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->i:Ljava/lang/String;
+
+    const-string v0, "online_config"
+
+    iput-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->j:Ljava/lang/String;
+
+    iput-object v1, p0, Lcom/umeng/analytics/onlineconfig/a;->k:Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;
+
+    iput-object v1, p0, Lcom/umeng/analytics/onlineconfig/a;->l:Lcom/umeng/analytics/onlineconfig/c;
 
     const-wide/16 v0, 0x0
 
@@ -69,59 +81,7 @@
     return-object v0
 .end method
 
-.method private static a(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
-    .locals 3
-
-    invoke-static {p0}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/umeng/analytics/g;->g()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    iget-object v1, p1, Lcom/umeng/analytics/onlineconfig/b;->e:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, "umeng_last_config_time"
-
-    iget-object v2, p1, Lcom/umeng/analytics/onlineconfig/b;->e:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    :cond_0
-    iget v0, p1, Lcom/umeng/analytics/onlineconfig/b;->c:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_1
-
-    invoke-static {p0}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
-
-    move-result-object v0
-
-    iget v1, p1, Lcom/umeng/analytics/onlineconfig/b;->c:I
-
-    iget v2, p1, Lcom/umeng/analytics/onlineconfig/b;->d:I
-
-    invoke-virtual {v0, v1, v2}, Lcom/umeng/analytics/g;->a(II)V
-
-    :cond_1
-    return-void
-.end method
-
-.method static synthetic a(Lcom/umeng/analytics/onlineconfig/a;Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+.method private a(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
     .locals 3
 
     invoke-static {p1}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
@@ -173,18 +133,19 @@
     return-void
 .end method
 
+.method static synthetic a(Lcom/umeng/analytics/onlineconfig/a;Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/umeng/analytics/onlineconfig/a;->a(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+
+    return-void
+.end method
+
 .method static synthetic a(Lcom/umeng/analytics/onlineconfig/a;Lorg/json/JSONObject;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->k:Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;
+    invoke-direct {p0, p1}, Lcom/umeng/analytics/onlineconfig/a;->a(Lorg/json/JSONObject;)V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/umeng/analytics/onlineconfig/a;->k:Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;
-
-    invoke-interface {v0, p1}, Lcom/umeng/analytics/onlineconfig/UmengOnlineConfigureListener;->onDataReceived(Lorg/json/JSONObject;)V
-
-    :cond_0
     return-void
 .end method
 
@@ -204,7 +165,7 @@
 .end method
 
 .method private b(Landroid/content/Context;)Lorg/json/JSONObject;
-    .locals 5
+    .locals 4
 
     new-instance v0, Lorg/json/JSONObject;
 
@@ -285,19 +246,7 @@
 
     const-string v1, "last_config_time"
 
-    invoke-static {p1}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/umeng/analytics/g;->g()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    const-string v3, "umeng_last_config_time"
-
-    const-string v4, ""
-
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/umeng/analytics/onlineconfig/a;->c(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -322,107 +271,7 @@
     goto :goto_0
 .end method
 
-.method private static b(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
-    .locals 5
-
-    iget-object v0, p1, Lcom/umeng/analytics/onlineconfig/b;->a:Lorg/json/JSONObject;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p1, Lcom/umeng/analytics/onlineconfig/b;->a:Lorg/json/JSONObject;
-
-    invoke-virtual {v0}, Lorg/json/JSONObject;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    invoke-static {p0}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/umeng/analytics/g;->g()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    :try_start_0
-    iget-object v2, p1, Lcom/umeng/analytics/onlineconfig/b;->a:Lorg/json/JSONObject;
-
-    invoke-virtual {v2}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    const-string v0, "MobclickAgent"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v3, "get online setting params: "
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lu/aly/bj;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "MobclickAgent"
-
-    const-string v2, "save online config params"
-
-    invoke-static {v1, v2, v0}, Lu/aly/bj;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    :cond_2
-    :try_start_1
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v1, v0, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-.end method
-
-.method static synthetic b(Lcom/umeng/analytics/onlineconfig/a;Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+.method private b(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
     .locals 5
 
     iget-object v0, p2, Lcom/umeng/analytics/onlineconfig/b;->a:Lorg/json/JSONObject;
@@ -522,10 +371,18 @@
     goto :goto_1
 .end method
 
-.method private static c(Landroid/content/Context;)Ljava/lang/String;
+.method static synthetic b(Lcom/umeng/analytics/onlineconfig/a;Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/umeng/analytics/onlineconfig/a;->b(Landroid/content/Context;Lcom/umeng/analytics/onlineconfig/b;)V
+
+    return-void
+.end method
+
+.method private c(Landroid/content/Context;)Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
+    invoke-static {p1}, Lcom/umeng/analytics/g;->a(Landroid/content/Context;)Lcom/umeng/analytics/g;
 
     move-result-object v0
 

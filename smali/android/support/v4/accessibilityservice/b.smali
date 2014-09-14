@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/accessibilityservice/b;
+.class Landroid/support/v4/accessibilityservice/b;
 .super Landroid/support/v4/accessibilityservice/a;
 
 
@@ -13,10 +13,10 @@
 
 
 # virtual methods
-.method public final f(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+.method public f(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
+    invoke-static {p1}, Landroid/support/v4/accessibilityservice/f;->a(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
 
     move-result v0
 

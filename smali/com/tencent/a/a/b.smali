@@ -80,7 +80,7 @@
     .end sparse-switch
 .end method
 
-.method public final a(ILjava/lang/Thread;JLjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
+.method public a(ILjava/lang/Thread;JLjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
     .locals 6
 
     const-wide/16 v0, 0x3e8

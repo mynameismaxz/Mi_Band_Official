@@ -76,6 +76,8 @@
 
     sput-object v0, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->__instance:Lcn/com/smartdevices/bracelet/lua/LuaEvent;
 
+    sget-object v0, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->__instance:Lcn/com/smartdevices/bracelet/lua/LuaEvent;
+
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -542,20 +544,20 @@
 .method public setStep(Lcn/com/smartdevices/bracelet/analysis/ActiveItem;)V
     .locals 2
 
-    iget v0, p1, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
-
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
     iget v0, p1, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
 
-    :cond_0
+    if-nez v0, :cond_0
+
+    const-string v0, "\u6d3b\u52a8"
+
+    :goto_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->cInfo:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
 
     invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->setActiveItem(Lcn/com/smartdevices/bracelet/analysis/ActiveItem;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->cInfo:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
-
-    const/4 v1, 0x1
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -580,6 +582,20 @@
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->setShowActivity(Ljava/lang/Boolean;)V
 
     return-void
+
+    :cond_0
+    iget v0, p1, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
+
+    if-ne v0, v1, :cond_1
+
+    const-string v0, "\u8d70\u8def"
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, "\u8dd1\u6b65"
+
+    goto :goto_0
 .end method
 
 .method public setWeekReport(Lcn/com/smartdevices/bracelet/model/ReportData;)V

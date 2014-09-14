@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/net/e;
+.class Landroid/support/v4/net/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,10 +16,10 @@
 
 
 # virtual methods
-.method public final a(Landroid/net/ConnectivityManager;)Z
+.method public a(Landroid/net/ConnectivityManager;)Z
     .locals 1
 
-    invoke-virtual {p1}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z
+    invoke-static {p1}, Landroid/support/v4/net/h;->a(Landroid/net/ConnectivityManager;)Z
 
     move-result v0
 

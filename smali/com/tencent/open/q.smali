@@ -1,4 +1,4 @@
-.class final synthetic Lcom/tencent/open/q;
+.class synthetic Lcom/tencent/open/q;
 .super Ljava/lang/Object;
 
 

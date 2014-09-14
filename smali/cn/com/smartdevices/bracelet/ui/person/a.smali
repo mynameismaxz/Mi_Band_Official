@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/ui/person/a;
+.class Lcn/com/smartdevices/bracelet/ui/person/a;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetSportGoalActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetSportGoalActivity;
 
 .field private final synthetic b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -11,6 +11,8 @@
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetSportGoalActivity;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/person/a;->a:Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetSportGoalActivity;
 
     iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/person/a;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -21,7 +23,7 @@
 
 
 # virtual methods
-.method public final onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 4
 
     invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
@@ -59,7 +61,7 @@
     return-void
 .end method
 
-.method public final onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
     .locals 4
 
     invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;

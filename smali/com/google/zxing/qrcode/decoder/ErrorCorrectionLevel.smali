@@ -191,7 +191,7 @@
 
 
 # virtual methods
-.method public final getBits()I
+.method public getBits()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->b:I

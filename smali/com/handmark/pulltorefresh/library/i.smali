@@ -3,14 +3,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
+.field final synthetic b:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
 
 
 # direct methods
 .method public constructor <init>(Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/i;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
+    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/i;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/handmark/pulltorefresh/library/h;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -19,14 +19,14 @@
 
 
 # virtual methods
-.method protected final overScrollBy(IIIIIIIIZ)Z
+.method protected overScrollBy(IIIIIIIIZ)Z
     .locals 7
 
     invoke-super/range {p0 .. p9}, Lcom/handmark/pulltorefresh/library/h;->overScrollBy(IIIIIIIIZ)Z
 
     move-result v6
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/i;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/i;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
 
     move v1, p1
 

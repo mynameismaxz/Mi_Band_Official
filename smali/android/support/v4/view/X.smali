@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/X;
+.class Landroid/support/v4/view/X;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,20 +16,20 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/VelocityTracker;I)F
+.method public a(Landroid/view/VelocityTracker;I)F
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/VelocityTracker;->getXVelocity(I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/Z;->a(Landroid/view/VelocityTracker;I)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/VelocityTracker;I)F
+.method public b(Landroid/view/VelocityTracker;I)F
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/Z;->b(Landroid/view/VelocityTracker;I)F
 
     move-result v0
 

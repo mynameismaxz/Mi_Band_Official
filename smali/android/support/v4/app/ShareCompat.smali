@@ -45,9 +45,9 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Landroid/support/v4/app/Y;
+    new-instance v0, Landroid/support/v4/app/Z;
 
-    invoke-direct {v0}, Landroid/support/v4/app/Y;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/app/Z;-><init>()V
 
     sput-object v0, Landroid/support/v4/app/ShareCompat;->a:Landroid/support/v4/app/Y;
 
@@ -83,9 +83,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Could not find menu item with id "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -116,7 +120,7 @@
 
     sget-object v0, Landroid/support/v4/app/ShareCompat;->a:Landroid/support/v4/app/Y;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/app/Y;->a(Landroid/view/MenuItem;Landroid/support/v4/app/ShareCompat$IntentBuilder;)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/app/Y;->a(Landroid/view/MenuItem;Landroid/support/v4/app/ShareCompat$IntentBuilder;)V
 
     return-void
 .end method

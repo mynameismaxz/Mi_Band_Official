@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/content/s;
+.class Landroid/support/v4/content/s;
 .super Ljava/lang/Object;
 
 
@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field private a:Landroid/support/v4/content/ModernAsyncTask;
+.field final a:Landroid/support/v4/content/ModernAsyncTask;
 
-.field private b:[Ljava/lang/Object;
+.field final b:[Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[TData;"
@@ -38,9 +38,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroid/support/v4/content/j;->a:Landroid/support/v4/content/ModernAsyncTask;
+    iput-object p1, p0, Landroid/support/v4/content/s;->a:Landroid/support/v4/content/ModernAsyncTask;
 
-    iput-object p2, p0, Landroid/support/v4/content/j;->b:[Ljava/lang/Object;
+    iput-object p2, p0, Landroid/support/v4/content/s;->b:[Ljava/lang/Object;
 
     return-void
 .end method

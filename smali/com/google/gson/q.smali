@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/q;
+.class Lcom/google/gson/q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -121,7 +121,7 @@
     goto :goto_2
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;B)V
+.method synthetic constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;Lcom/google/gson/p;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/gson/q;-><init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
@@ -131,7 +131,7 @@
 
 
 # virtual methods
-.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -194,13 +194,13 @@
 
     move-object v5, p0
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/gson/o;-><init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;B)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/gson/o;-><init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;Lcom/google/gson/p;)V
 
     :goto_1
     return-object v0
 
     :cond_1
-    move v0, v6
+    const/4 v0, 0x0
 
     goto :goto_0
 
@@ -218,7 +218,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move-object v0, v6
 
     goto :goto_1
 .end method

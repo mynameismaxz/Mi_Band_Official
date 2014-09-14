@@ -146,7 +146,9 @@
 
     new-instance v1, Landroid/support/v4/view/Q;
 
-    invoke-direct {v1, p0, v0}, Landroid/support/v4/view/Q;-><init>(Landroid/support/v4/view/PagerTitleStrip;B)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Landroid/support/v4/view/Q;-><init>(Landroid/support/v4/view/PagerTitleStrip;Landroid/support/v4/view/P;)V
 
     iput-object v1, p0, Landroid/support/v4/view/PagerTitleStrip;->m:Landroid/support/v4/view/Q;
 
@@ -442,7 +444,7 @@
 
     move-result v6
 
-    div-int/lit8 v4, v3, 0x2
+    div-int/lit8 v2, v3, 0x2
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getWidth()I
 
@@ -450,60 +452,62 @@
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getHeight()I
 
-    move-result v8
+    move-result v4
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getPaddingLeft()I
 
-    move-result v9
+    move-result v8
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getPaddingRight()I
 
-    move-result v10
+    move-result v9
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getPaddingTop()I
 
-    move-result v11
+    move-result v10
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/PagerTitleStrip;->getPaddingBottom()I
 
-    move-result v12
+    move-result v11
 
-    add-int v2, v9, v4
+    add-int v12, v8, v2
 
-    add-int v13, v10, v4
+    add-int v13, v9, v2
 
-    sub-int v2, v7, v2
+    sub-int v2, v7, v12
 
-    sub-int v14, v2, v13
+    sub-int v12, v2, v13
 
     const/high16 v2, 0x3f00
 
     add-float v2, v2, p2
 
-    const/high16 v15, 0x3f80
+    const/high16 v14, 0x3f80
 
-    cmpl-float v15, v2, v15
+    cmpl-float v14, v2, v14
 
-    if-lez v15, :cond_1
+    if-lez v14, :cond_1
 
-    const/high16 v15, 0x3f80
+    const/high16 v14, 0x3f80
 
-    sub-float/2addr v2, v15
+    sub-float/2addr v2, v14
 
     :cond_1
     sub-int v13, v7, v13
 
-    int-to-float v14, v14
+    int-to-float v12, v12
 
-    mul-float/2addr v2, v14
+    mul-float/2addr v2, v12
 
     float-to-int v2, v2
 
     sub-int v2, v13, v2
 
-    sub-int v13, v2, v4
+    div-int/lit8 v12, v3, 0x2
 
-    add-int v14, v13, v3
+    sub-int v12, v2, v12
+
+    add-int v13, v12, v3
 
     move-object/from16 v0, p0
 
@@ -523,17 +527,17 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Landroid/support/v4/view/PagerTitleStrip;->d:Landroid/widget/TextView;
+    iget-object v14, v0, Landroid/support/v4/view/PagerTitleStrip;->d:Landroid/widget/TextView;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getBaseline()I
+    invoke-virtual {v14}, Landroid/widget/TextView;->getBaseline()I
 
-    move-result v4
+    move-result v14
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v15
 
-    invoke-static {v15, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v15, v14}, Ljava/lang/Math;->max(II)I
 
     move-result v15
 
@@ -541,17 +545,17 @@
 
     sub-int v3, v15, v3
 
-    sub-int/2addr v15, v4
+    sub-int v14, v15, v14
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Landroid/support/v4/view/PagerTitleStrip;->b:Landroid/widget/TextView;
+    iget-object v15, v0, Landroid/support/v4/view/PagerTitleStrip;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredHeight()I
+    invoke-virtual {v15}, Landroid/widget/TextView;->getMeasuredHeight()I
 
-    move-result v4
+    move-result v15
 
-    add-int/2addr v4, v2
+    add-int/2addr v15, v2
 
     move-object/from16 v0, p0
 
@@ -575,19 +579,17 @@
 
     move-result v17
 
-    add-int v17, v17, v15
+    add-int v17, v17, v14
 
-    move/from16 v0, v16
+    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
+    move-result v15
 
     move/from16 v0, v17
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v15, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v15
 
     move-object/from16 v0, p0
 
@@ -599,16 +601,16 @@
 
     sparse-switch v16, :sswitch_data_0
 
-    add-int v4, v11, v2
+    add-int v4, v10, v2
 
-    add-int v2, v11, v3
+    add-int/2addr v3, v10
 
-    add-int v3, v11, v15
+    add-int v2, v10, v14
 
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v8, v0, Landroid/support/v4/view/PagerTitleStrip;->c:Landroid/widget/TextView;
+    iget-object v10, v0, Landroid/support/v4/view/PagerTitleStrip;->c:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
@@ -618,59 +620,59 @@
 
     move-result v11
 
-    add-int/2addr v11, v2
+    add-int/2addr v11, v3
 
-    invoke-virtual {v8, v13, v2, v14, v11}, Landroid/widget/TextView;->layout(IIII)V
+    invoke-virtual {v10, v12, v3, v13, v11}, Landroid/widget/TextView;->layout(IIII)V
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/support/v4/view/PagerTitleStrip;->i:I
+    iget v3, v0, Landroid/support/v4/view/PagerTitleStrip;->i:I
 
-    sub-int v2, v13, v2
+    sub-int v3, v12, v3
 
-    sub-int/2addr v2, v5
+    sub-int/2addr v3, v5
 
-    invoke-static {v9, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v8, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v2
+    move-result v3
 
     move-object/from16 v0, p0
 
     iget-object v8, v0, Landroid/support/v4/view/PagerTitleStrip;->b:Landroid/widget/TextView;
 
-    add-int/2addr v5, v2
+    add-int/2addr v5, v3
 
     move-object/from16 v0, p0
 
-    iget-object v9, v0, Landroid/support/v4/view/PagerTitleStrip;->b:Landroid/widget/TextView;
+    iget-object v10, v0, Landroid/support/v4/view/PagerTitleStrip;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v9}, Landroid/widget/TextView;->getMeasuredHeight()I
+    invoke-virtual {v10}, Landroid/widget/TextView;->getMeasuredHeight()I
 
-    move-result v9
+    move-result v10
 
-    add-int/2addr v9, v4
+    add-int/2addr v10, v4
 
-    invoke-virtual {v8, v2, v4, v5, v9}, Landroid/widget/TextView;->layout(IIII)V
+    invoke-virtual {v8, v3, v4, v5, v10}, Landroid/widget/TextView;->layout(IIII)V
 
-    sub-int v2, v7, v10
+    sub-int v3, v7, v9
 
-    sub-int/2addr v2, v6
+    sub-int/2addr v3, v6
 
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/support/v4/view/PagerTitleStrip;->i:I
 
-    add-int/2addr v4, v14
+    add-int/2addr v4, v13
 
-    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
-    move-result v2
+    move-result v3
 
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v4/view/PagerTitleStrip;->d:Landroid/widget/TextView;
 
-    add-int v5, v2, v6
+    add-int v5, v3, v6
 
     move-object/from16 v0, p0
 
@@ -680,9 +682,9 @@
 
     move-result v6
 
-    add-int/2addr v6, v3
+    add-int/2addr v6, v2
 
-    invoke-virtual {v4, v2, v3, v5, v6}, Landroid/widget/TextView;->layout(IIII)V
+    invoke-virtual {v4, v3, v2, v5, v6}, Landroid/widget/TextView;->layout(IIII)V
 
     move/from16 v0, p2
 
@@ -713,32 +715,32 @@
     goto :goto_1
 
     :sswitch_0
-    sub-int/2addr v8, v11
+    sub-int/2addr v4, v10
 
-    sub-int/2addr v8, v12
+    sub-int/2addr v4, v11
 
-    sub-int v4, v8, v4
+    sub-int/2addr v4, v15
 
-    div-int/lit8 v8, v4, 0x2
+    div-int/lit8 v10, v4, 0x2
 
-    add-int v4, v8, v2
+    add-int v4, v10, v2
 
-    add-int v2, v8, v3
+    add-int/2addr v3, v10
 
-    add-int v3, v8, v15
+    add-int v2, v10, v14
 
     goto :goto_0
 
     :sswitch_1
-    sub-int/2addr v8, v12
+    sub-int/2addr v4, v11
 
-    sub-int/2addr v8, v4
+    sub-int v10, v4, v15
 
-    add-int v4, v8, v2
+    add-int v4, v10, v2
 
-    add-int v2, v8, v3
+    add-int/2addr v3, v10
 
-    add-int v3, v8, v15
+    add-int v2, v10, v14
 
     goto :goto_0
 
@@ -749,8 +751,10 @@
     .end sparse-switch
 .end method
 
-.method final a(ILandroid/support/v4/view/PagerAdapter;)V
+.method a(ILandroid/support/v4/view/PagerAdapter;)V
     .locals 6
+
+    const/4 v2, 0x1
 
     const/high16 v5, -0x8000
 
@@ -765,11 +769,9 @@
     move-result v0
 
     :goto_0
-    const/4 v2, 0x1
-
     iput-boolean v2, p0, Landroid/support/v4/view/PagerTitleStrip;->k:Z
 
-    if-lez p1, :cond_4
+    if-lt p1, v2, :cond_4
 
     if-eqz p2, :cond_4
 
@@ -905,7 +907,7 @@
     goto :goto_1
 .end method
 
-.method final a(Landroid/support/v4/view/PagerAdapter;Landroid/support/v4/view/PagerAdapter;)V
+.method a(Landroid/support/v4/view/PagerAdapter;Landroid/support/v4/view/PagerAdapter;)V
     .locals 1
 
     if-eqz p1, :cond_0

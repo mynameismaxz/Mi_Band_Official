@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private h:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
+.field private m:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
 
-.field private i:J
+.field private n:J
 
 
 # direct methods
@@ -16,66 +16,66 @@
 
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:J
+    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->n:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()V
+.method a()V
     .locals 0
 
     return-void
 .end method
 
-.method final a(F)V
+.method a(F)V
     .locals 0
 
     return-void
 .end method
 
-.method final a(J)Z
+.method a(J)Z
     .locals 6
 
     const-wide/16 v4, 0x0
 
-    iget v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->d:I
+    iget v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:I
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->d:I
+    iput v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:I
 
-    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->c:J
+    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:J
 
     cmp-long v0, v0, v4
 
     if-gez v0, :cond_2
 
-    iput-wide p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->b:J
+    iput-wide p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->g:J
 
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->m:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
 
     if-eqz v0, :cond_1
 
-    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->b:J
+    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->g:J
 
     sub-long v2, p1, v0
 
-    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:J
+    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->n:J
 
     cmp-long v0, v0, v4
 
     if-gez v0, :cond_3
 
     :goto_1
-    iput-wide p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:J
+    iput-wide p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->n:J
 
-    iget-object v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
+    iget-object v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->m:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
 
     move-object v1, p0
 
@@ -87,20 +87,20 @@
     return v0
 
     :cond_2
-    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->c:J
+    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:J
 
     sub-long v0, p1, v0
 
-    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->b:J
+    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->g:J
 
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->c:J
+    iput-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:J
 
     goto :goto_0
 
     :cond_3
-    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->i:J
+    iget-wide v0, p0, Lcom/nineoldandroids/animation/TimeAnimator;->n:J
 
     sub-long v4, p1, v0
 
@@ -110,7 +110,7 @@
 .method public setTimeListener(Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->h:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
+    iput-object p1, p0, Lcom/nineoldandroids/animation/TimeAnimator;->m:Lcom/nineoldandroids/animation/TimeAnimator$TimeListener;
 
     return-void
 .end method

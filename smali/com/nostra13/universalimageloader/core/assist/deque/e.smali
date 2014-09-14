@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field a:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TE;"
@@ -22,19 +22,19 @@
     .end annotation
 .end field
 
-.field private b:Lcom/nostra13/universalimageloader/core/assist/deque/a;
+.field b:Lcom/nostra13/universalimageloader/core/assist/deque/e;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/nostra13/universalimageloader/core/assist/deque/a",
+            "Lcom/nostra13/universalimageloader/core/assist/deque/e",
             "<TE;>;"
         }
     .end annotation
 .end field
 
-.field private c:Lcom/nostra13/universalimageloader/core/assist/deque/a;
+.field c:Lcom/nostra13/universalimageloader/core/assist/deque/e;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/nostra13/universalimageloader/core/assist/deque/a",
+            "Lcom/nostra13/universalimageloader/core/assist/deque/e",
             "<TE;>;"
         }
     .end annotation
@@ -52,7 +52,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/assist/deque/a;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/nostra13/universalimageloader/core/assist/deque/e;->a:Ljava/lang/Object;
 
     return-void
 .end method

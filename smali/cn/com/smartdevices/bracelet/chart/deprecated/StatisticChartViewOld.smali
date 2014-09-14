@@ -276,63 +276,9 @@
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;)V
-    .locals 2
+    .locals 0
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;-><init>()V
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->stepValue:I
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->value:I
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->index:I
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->index:I
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->b:Lcn/com/smartdevices/bracelet/chart/base/Renderer;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->setRenderer(Lcn/com/smartdevices/bracelet/chart/base/Renderer;)V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->d:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;-><init>()V
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->sleepValue:I
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->value:I
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->index:I
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->index:I
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->c:Lcn/com/smartdevices/bracelet/chart/base/Renderer;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$StatisticBarItem;->setRenderer(Lcn/com/smartdevices/bracelet/chart/base/Renderer;)V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->e:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;-><init>()V
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->index:I
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;->a:I
-
-    iget-object v1, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;->date:Ljava/lang/String;
-
-    iput-object v1, v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld$DateItem;->b:Ljava/lang/String;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->f:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld$StatisticChartData;)V
 
     return-void
 .end method
@@ -354,11 +300,9 @@
 .end method
 
 .method static synthetic b(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;Z)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->g:Z
+    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->g:Z
 
     return-void
 .end method
@@ -388,37 +332,9 @@
 .end method
 
 .method static synthetic f(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->d:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->fillStepData(Ljava/util/List;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->e:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->fillSleepData(Ljava/util/List;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->f:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->fillDates(Ljava/util/List;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartOld;->notifyChanged()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;->a()V
 
     return-void
 .end method

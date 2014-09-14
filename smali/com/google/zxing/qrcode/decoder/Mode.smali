@@ -457,7 +457,7 @@
 
 
 # virtual methods
-.method public final getBits()I
+.method public getBits()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Mode;->b:I
@@ -465,7 +465,7 @@
     return v0
 .end method
 
-.method public final getCharacterCountBits(Lcom/google/zxing/qrcode/decoder/Version;)I
+.method public getCharacterCountBits(Lcom/google/zxing/qrcode/decoder/Version;)I
     .locals 2
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionNumber()I

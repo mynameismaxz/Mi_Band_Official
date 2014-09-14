@@ -1,4 +1,4 @@
-.class final Lcom/loopj/android/http/k;
+.class Lcom/loopj/android/http/k;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/loopj/android/http/j;
+.field final synthetic a:Lcom/loopj/android/http/j;
 
 .field private final synthetic b:I
 
@@ -38,12 +38,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     iget-object v0, p0, Lcom/loopj/android/http/k;->a:Lcom/loopj/android/http/j;
 
-    iget-object v0, v0, Lcom/loopj/android/http/j;->a:Lcom/loopj/android/http/BaseJsonHttpResponseHandler;
+    invoke-static {v0}, Lcom/loopj/android/http/j;->a(Lcom/loopj/android/http/j;)Lcom/loopj/android/http/BaseJsonHttpResponseHandler;
+
+    move-result-object v0
 
     iget v1, p0, Lcom/loopj/android/http/k;->b:I
 

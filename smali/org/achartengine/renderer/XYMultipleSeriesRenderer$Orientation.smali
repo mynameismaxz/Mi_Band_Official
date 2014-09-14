@@ -117,7 +117,7 @@
 
 
 # virtual methods
-.method public final getAngle()I
+.method public getAngle()I
     .locals 1
 
     iget v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer$Orientation;->a:I

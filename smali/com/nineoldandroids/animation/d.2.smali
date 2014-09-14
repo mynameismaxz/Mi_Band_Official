@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/animation/d;
+.class Lcom/nineoldandroids/animation/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -109,13 +109,13 @@
 
     check-cast v0, Lcom/nineoldandroids/animation/c;
 
-    iget v4, v0, Lcom/nineoldandroids/animation/c;->b:I
+    iget v4, v0, Lcom/nineoldandroids/animation/c;->d:I
 
     iget v5, p0, Lcom/nineoldandroids/animation/d;->c:I
 
     if-ne v4, v5, :cond_3
 
-    iget-object v4, v0, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v4, v0, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     iget-object v4, v4, Lcom/nineoldandroids/animation/e;->a:Lcom/nineoldandroids/animation/Animator;
 
@@ -135,13 +135,13 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
     .locals 2
 
     iget v0, p0, Lcom/nineoldandroids/animation/d;->c:I
@@ -156,13 +156,13 @@
     return-void
 .end method
 
-.method public final onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
     .locals 1
 
     iget v0, p0, Lcom/nineoldandroids/animation/d;->c:I

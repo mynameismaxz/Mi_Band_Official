@@ -49,7 +49,161 @@
     return-void
 .end method
 
-.method private a()Lcom/google/zxing/common/PerspectiveTransform;
+.method public static quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+    .locals 2
+
+    invoke-static/range {p0 .. p7}, Lcom/google/zxing/common/PerspectiveTransform;->quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+
+    move-result-object v0
+
+    invoke-static/range {p8 .. p15}, Lcom/google/zxing/common/PerspectiveTransform;->squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/google/zxing/common/PerspectiveTransform;->a(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+    .locals 1
+
+    invoke-static/range {p0 .. p7}, Lcom/google/zxing/common/PerspectiveTransform;->squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/zxing/common/PerspectiveTransform;->a()Lcom/google/zxing/common/PerspectiveTransform;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+    .locals 10
+
+    sub-float v0, p7, p5
+
+    sub-float v1, p1, p3
+
+    add-float/2addr v1, p5
+
+    sub-float v1, v1, p7
+
+    const/4 v2, 0x0
+
+    cmpl-float v2, v0, v2
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
+
+    cmpl-float v2, v1, v2
+
+    if-nez v2, :cond_0
+
+    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
+
+    sub-float v1, p2, p0
+
+    sub-float v2, p4, p2
+
+    sub-float v4, p3, p1
+
+    sub-float v5, p5, p3
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/high16 v9, 0x3f80
+
+    move v3, p0
+
+    move v6, p1
+
+    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sub-float v2, p2, p4
+
+    sub-float v3, p6, p4
+
+    sub-float v4, p0, p2
+
+    add-float/2addr v4, p4
+
+    sub-float v4, v4, p6
+
+    sub-float v5, p3, p5
+
+    mul-float v6, v2, v0
+
+    mul-float v7, v3, v5
+
+    sub-float/2addr v6, v7
+
+    mul-float/2addr v0, v4
+
+    mul-float/2addr v3, v1
+
+    sub-float/2addr v0, v3
+
+    div-float v7, v0, v6
+
+    mul-float v0, v2, v1
+
+    mul-float v1, v4, v5
+
+    sub-float/2addr v0, v1
+
+    div-float v8, v0, v6
+
+    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
+
+    sub-float v1, p2, p0
+
+    mul-float v2, v7, p2
+
+    add-float/2addr v1, v2
+
+    sub-float v2, p6, p0
+
+    mul-float v3, v8, p6
+
+    add-float/2addr v2, v3
+
+    sub-float v3, p3, p1
+
+    mul-float v4, v7, p3
+
+    add-float/2addr v4, v3
+
+    sub-float v3, p7, p1
+
+    mul-float v5, v8, p7
+
+    add-float/2addr v5, v3
+
+    const/high16 v9, 0x3f80
+
+    move v3, p0
+
+    move v6, p1
+
+    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method a()Lcom/google/zxing/common/PerspectiveTransform;
     .locals 12
 
     new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
@@ -185,7 +339,7 @@
     return-object v0
 .end method
 
-.method private a(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
+.method a(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
     .locals 12
 
     new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
@@ -393,485 +547,7 @@
     return-object v0
 .end method
 
-.method public static quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-    .locals 14
-
-    invoke-static/range {p0 .. p7}, Lcom/google/zxing/common/PerspectiveTransform;->quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-
-    move-result-object v9
-
-    invoke-static/range {p8 .. p15}, Lcom/google/zxing/common/PerspectiveTransform;->squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-
-    move-result-object v10
-
-    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
-
-    iget v1, v10, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v2, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    mul-float/2addr v1, v2
-
-    iget v2, v10, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    mul-float/2addr v2, v3
-
-    add-float/2addr v1, v2
-
-    iget v2, v10, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    mul-float/2addr v2, v3
-
-    add-float/2addr v1, v2
-
-    iget v2, v10, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    mul-float/2addr v2, v3
-
-    iget v3, v10, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    mul-float/2addr v3, v4
-
-    add-float/2addr v2, v3
-
-    iget v3, v10, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    mul-float/2addr v3, v4
-
-    add-float/2addr v2, v3
-
-    iget v3, v10, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v3, v4
-
-    iget v4, v10, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v3, v4
-
-    iget v4, v10, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v3, v4
-
-    iget v4, v10, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    mul-float/2addr v4, v5
-
-    iget v5, v10, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    mul-float/2addr v5, v6
-
-    add-float/2addr v4, v5
-
-    iget v5, v10, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    mul-float/2addr v5, v6
-
-    add-float/2addr v4, v5
-
-    iget v5, v10, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    mul-float/2addr v5, v6
-
-    iget v6, v10, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    mul-float/2addr v6, v7
-
-    add-float/2addr v5, v6
-
-    iget v6, v10, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    mul-float/2addr v6, v7
-
-    add-float/2addr v5, v6
-
-    iget v6, v10, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v6, v7
-
-    iget v7, v10, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v7, v8
-
-    add-float/2addr v6, v7
-
-    iget v7, v10, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v7, v8
-
-    add-float/2addr v6, v7
-
-    iget v7, v10, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    mul-float/2addr v7, v8
-
-    iget v8, v10, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    mul-float/2addr v8, v11
-
-    add-float/2addr v7, v8
-
-    iget v8, v10, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    mul-float/2addr v8, v11
-
-    add-float/2addr v7, v8
-
-    iget v8, v10, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    mul-float/2addr v8, v11
-
-    iget v11, v10, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    iget v12, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    mul-float/2addr v11, v12
-
-    add-float/2addr v8, v11
-
-    iget v11, v10, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    iget v12, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    mul-float/2addr v11, v12
-
-    add-float/2addr v8, v11
-
-    iget v11, v10, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v12, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v11, v12
-
-    iget v12, v10, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    iget v13, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v12, v13
-
-    add-float/2addr v11, v12
-
-    iget v10, v10, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    iget v9, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v9, v10
-
-    add-float/2addr v9, v11
-
-    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
-
-    return-object v0
-.end method
-
-.method public static quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-    .locals 12
-
-    invoke-static/range {p0 .. p7}, Lcom/google/zxing/common/PerspectiveTransform;->squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-
-    move-result-object v9
-
-    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
-
-    iget v1, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    iget v2, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v1, v2
-
-    iget v2, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v2, v3
-
-    sub-float/2addr v1, v2
-
-    iget v2, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v2, v3
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v3, v4
-
-    sub-float/2addr v2, v3
-
-    iget v3, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v3, v4
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v4, v5
-
-    sub-float/2addr v3, v4
-
-    iget v4, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v4, v5
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v5, v6
-
-    sub-float/2addr v4, v5
-
-    iget v5, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->i:F
-
-    mul-float/2addr v5, v6
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v6, v7
-
-    sub-float/2addr v5, v6
-
-    iget v6, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->g:F
-
-    mul-float/2addr v6, v7
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->h:F
-
-    mul-float/2addr v7, v8
-
-    sub-float/2addr v6, v7
-
-    iget v7, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    mul-float/2addr v7, v8
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v10, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    mul-float/2addr v8, v10
-
-    sub-float/2addr v7, v8
-
-    iget v8, v9, Lcom/google/zxing/common/PerspectiveTransform;->c:F
-
-    iget v10, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    mul-float/2addr v8, v10
-
-    iget v10, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->f:F
-
-    mul-float/2addr v10, v11
-
-    sub-float/2addr v8, v10
-
-    iget v10, v9, Lcom/google/zxing/common/PerspectiveTransform;->a:F
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->e:F
-
-    mul-float/2addr v10, v11
-
-    iget v11, v9, Lcom/google/zxing/common/PerspectiveTransform;->b:F
-
-    iget v9, v9, Lcom/google/zxing/common/PerspectiveTransform;->d:F
-
-    mul-float/2addr v9, v11
-
-    sub-float v9, v10, v9
-
-    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
-
-    return-object v0
-.end method
-
-.method public static squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-    .locals 10
-
-    sub-float v0, p7, p5
-
-    sub-float v1, p1, p3
-
-    add-float/2addr v1, p5
-
-    sub-float v1, v1, p7
-
-    const/4 v2, 0x0
-
-    cmpl-float v2, v0, v2
-
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x0
-
-    cmpl-float v2, v1, v2
-
-    if-nez v2, :cond_0
-
-    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
-
-    sub-float v1, p2, p0
-
-    sub-float v2, p4, p2
-
-    sub-float v4, p3, p1
-
-    sub-float v5, p5, p3
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/high16 v9, 0x3f80
-
-    move v3, p0
-
-    move v6, p1
-
-    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sub-float v2, p2, p4
-
-    sub-float v3, p6, p4
-
-    sub-float v4, p0, p2
-
-    add-float/2addr v4, p4
-
-    sub-float v4, v4, p6
-
-    sub-float v5, p3, p5
-
-    mul-float v6, v2, v0
-
-    mul-float v7, v3, v5
-
-    sub-float/2addr v6, v7
-
-    mul-float/2addr v0, v4
-
-    mul-float/2addr v3, v1
-
-    sub-float/2addr v0, v3
-
-    div-float v7, v0, v6
-
-    mul-float v0, v2, v1
-
-    mul-float v1, v4, v5
-
-    sub-float/2addr v0, v1
-
-    div-float v8, v0, v6
-
-    new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
-
-    sub-float v1, p2, p0
-
-    mul-float v2, v7, p2
-
-    add-float/2addr v1, v2
-
-    sub-float v2, p6, p0
-
-    mul-float v3, v8, p6
-
-    add-float/2addr v2, v3
-
-    sub-float v3, p3, p1
-
-    mul-float v4, v7, p3
-
-    add-float/2addr v4, v3
-
-    sub-float v3, p7, p1
-
-    mul-float v5, v8, p7
-
-    add-float/2addr v5, v3
-
-    const/high16 v9, 0x3f80
-
-    move v3, p0
-
-    move v6, p1
-
-    invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final transformPoints([F)V
+.method public transformPoints([F)V
     .locals 17
 
     move-object/from16 v0, p1
@@ -967,7 +643,7 @@
     return-void
 .end method
 
-.method public final transformPoints([F[F)V
+.method public transformPoints([F[F)V
     .locals 7
 
     array-length v1, p1

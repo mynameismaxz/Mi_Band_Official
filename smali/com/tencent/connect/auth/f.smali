@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/auth/f;
+.class Lcom/tencent/connect/auth/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,16 +6,18 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/tauth/IUiListener;
+.field final synthetic a:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic b:Ljava/lang/Object;
+.field final synthetic b:Ljava/lang/Object;
 
-.field private synthetic c:Lcom/tencent/connect/auth/c;
+.field final synthetic c:Lcom/tencent/connect/auth/c;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/connect/auth/c;Lcom/tencent/tauth/IUiListener;Ljava/lang/Object;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/tencent/connect/auth/f;->c:Lcom/tencent/connect/auth/c;
 
     iput-object p2, p0, Lcom/tencent/connect/auth/f;->a:Lcom/tencent/tauth/IUiListener;
 
@@ -28,7 +30,7 @@
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/connect/auth/f;->a:Lcom/tencent/tauth/IUiListener;

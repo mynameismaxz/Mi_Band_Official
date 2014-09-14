@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/d;
+.class Lcom/tencent/connect/avatar/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
+.field final synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onGlobalLayout()V
+.method public onGlobalLayout()V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/d;->a:Lcom/tencent/connect/avatar/ImageActivity;

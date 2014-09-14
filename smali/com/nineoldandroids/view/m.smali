@@ -1,4 +1,4 @@
-.class final Lcom/nineoldandroids/view/m;
+.class Lcom/nineoldandroids/view/m;
 .super Ljava/lang/Object;
 
 
@@ -41,7 +41,7 @@
 
 
 # virtual methods
-.method final a(I)Z
+.method a(I)Z
     .locals 4
 
     const/4 v1, 0x0

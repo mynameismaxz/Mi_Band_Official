@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/hm/bleservice/d;
+.class Lcom/xiaomi/hm/bleservice/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/c;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/c;
 
 .field private final synthetic b:Landroid/content/Context;
 
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/d;->a:Lcom/xiaomi/hm/bleservice/c;

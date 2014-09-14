@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/B;
+.class Lcn/com/smartdevices/bracelet/view/B;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -26,32 +26,30 @@
     return-void
 .end method
 
-.method private static a(Lcn/com/smartdevices/bracelet/view/E;Lcn/com/smartdevices/bracelet/view/E;)I
-    .locals 2
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/E;->b:I
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/view/E;->b:I
-
-    sub-int/2addr v0, v1
-
-    return v0
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public a(Lcn/com/smartdevices/bracelet/view/E;Lcn/com/smartdevices/bracelet/view/E;)I
     .locals 2
-
-    check-cast p1, Lcn/com/smartdevices/bracelet/view/E;
-
-    check-cast p2, Lcn/com/smartdevices/bracelet/view/E;
 
     iget v0, p1, Lcn/com/smartdevices/bracelet/view/E;->b:I
 
     iget v1, p2, Lcn/com/smartdevices/bracelet/view/E;->b:I
 
     sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Lcn/com/smartdevices/bracelet/view/E;
+
+    check-cast p2, Lcn/com/smartdevices/bracelet/view/E;
+
+    invoke-virtual {p0, p1, p2}, Lcn/com/smartdevices/bracelet/view/B;->a(Lcn/com/smartdevices/bracelet/view/E;Lcn/com/smartdevices/bracelet/view/E;)I
+
+    move-result v0
 
     return v0
 .end method

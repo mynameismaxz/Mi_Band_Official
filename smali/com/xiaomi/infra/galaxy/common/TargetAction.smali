@@ -28,18 +28,30 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     invoke-static {p1}, Lcom/xiaomi/infra/galaxy/common/util/StringUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :cond_0
     const-string v0, "[_]"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
+    array-length v1, v0
+
+    const/4 v2, 0x4
+
+    if-eq v1, v2, :cond_1
+
+    :cond_1
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -76,37 +88,39 @@
 
     sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/APILevel;->User:Lcom/xiaomi/infra/galaxy/common/constants/APILevel;
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_2
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/TargetAction;->operation:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
     sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Batch:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/TargetAction;->operation:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
     sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Get:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/TargetAction;->operation:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
     sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Set:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/TargetAction;->operation:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
     sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Scan:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/TargetAction;->operation:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    sget-object v0, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Delete:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
+    sget-object v1, Lcom/xiaomi/infra/galaxy/common/constants/Operation;->Delete:Lcom/xiaomi/infra/galaxy/common/constants/Operation;
 
-    :cond_0
+    if-eq v0, v1, :cond_2
+
+    :cond_2
     return-void
 .end method
 

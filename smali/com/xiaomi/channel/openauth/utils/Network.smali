@@ -366,17 +366,15 @@
 
     move-result-object v0
 
-    move-object v2, v0
+    check-cast v0, Ljava/lang/String;
+
+    invoke-interface {p3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    invoke-interface {p3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v1, v2, v0}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v0, v2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -429,7 +427,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_7
 
     iput v0, p4, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->ResponseCode:I
 
@@ -455,22 +453,11 @@
 
     move-result-object v3
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_8
 
-    if-eqz v3, :cond_8
+    if-nez v3, :cond_8
 
     :cond_7
-    iget-object v4, p4, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->AllHeaders:Ljava/util/Map;
-
-    invoke-interface {v4, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v0, v0, 0x1
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_8
     new-instance v2, Ljava/io/BufferedReader;
 
     new-instance v0, Ljava/io/InputStreamReader;
@@ -511,6 +498,17 @@
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
 
     return-object v0
+
+    :cond_8
+    iget-object v4, p4, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->AllHeaders:Ljava/util/Map;
+
+    invoke-interface {v4, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v0, v0, 0x1
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4
 
     :cond_9
     invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -1817,10 +1815,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
     :cond_4
-    if-eqz p5, :cond_a
+    if-eqz p5, :cond_7
 
     invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
@@ -1844,7 +1842,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_7
 
     :cond_5
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
@@ -1875,31 +1873,20 @@
 
     move-result-object v3
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_9
 
-    if-eqz v3, :cond_a
+    if-nez v3, :cond_9
 
     :cond_7
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    new-instance v0, Lcom/xiaomi/channel/openauth/utils/Network$DoneHandlerInputStream;
 
-    move-result v4
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
-    if-nez v4, :cond_8
+    move-result-object v1
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-direct {v0, v1}, Lcom/xiaomi/channel/openauth/utils/Network$DoneHandlerInputStream;-><init>(Ljava/io/InputStream;)V
 
-    move-result v4
-
-    if-nez v4, :cond_8
-
-    iget-object v4, p5, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->AllHeaders:Ljava/util/Map;
-
-    invoke-interface {v4, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_8
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
+    return-object v0
 
     :catch_0
     move-exception v0
@@ -1927,9 +1914,9 @@
     :goto_4
     invoke-virtual {v2}, Ljava/security/KeyManagementException;->printStackTrace()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    :cond_9
+    :cond_8
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1946,16 +1933,31 @@
 
     goto :goto_1
 
+    :cond_9
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_a
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_b
+
     :cond_a
-    new-instance v0, Lcom/xiaomi/channel/openauth/utils/Network$DoneHandlerInputStream;
+    :goto_5
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    goto :goto_2
 
-    move-result-object v1
+    :cond_b
+    iget-object v4, p5, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->AllHeaders:Ljava/util/Map;
 
-    invoke-direct {v0, v1}, Lcom/xiaomi/channel/openauth/utils/Network$DoneHandlerInputStream;-><init>(Ljava/io/InputStream;)V
+    invoke-interface {v4, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    goto :goto_5
 
     :catch_2
     move-exception v2
@@ -2379,7 +2381,13 @@
 
     move-result-object v1
 
-    const-string v2, "://10.0.0.172"
+    const-string v2, "://"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "10.0.0.172"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2481,7 +2489,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v2, v4, :cond_7
+    if-ne v2, v4, :cond_3
 
     const/16 v2, 0x1388
 
@@ -2533,67 +2541,15 @@
 
     move-result-object v5
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_4
 
-    if-eqz v5, :cond_8
+    if-nez v5, :cond_4
+
+    move-object v0, v2
+
+    goto :goto_0
 
     :cond_3
-    if-eqz v3, :cond_4
-
-    const-string v6, "content-type"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    iput-object v5, v2, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->ContentType:Ljava/lang/String;
-
-    :cond_4
-    if-eqz v3, :cond_6
-
-    const-string v6, "location"
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    new-instance v3, Ljava/net/URI;
-
-    invoke-direct {v3, v5}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Ljava/net/URI;->isAbsolute()Z
-
-    move-result v5
-
-    if-nez v5, :cond_5
-
-    new-instance v5, Ljava/net/URI;
-
-    invoke-direct {v5, p0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v3}, Ljava/net/URI;->resolve(Ljava/net/URI;)Ljava/net/URI;
-
-    move-result-object v3
-
-    :cond_5
-    invoke-virtual {v3}, Ljava/net/URI;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->realUrl:Ljava/lang/String;
-
-    :cond_6
-    add-int/lit8 v3, v4, 0x1
-
-    move v4, v3
-
-    goto :goto_2
-
-    :cond_7
     const/16 v2, 0x3a98
 
     invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
@@ -2620,12 +2576,68 @@
     :goto_3
     move-object v0, v1
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    :cond_8
-    move-object v0, v2
+    :cond_4
+    if-eqz v3, :cond_5
 
-    goto/16 :goto_0
+    :try_start_1
+    const-string v6, "content-type"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    iput-object v5, v2, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->ContentType:Ljava/lang/String;
+
+    :cond_5
+    if-eqz v3, :cond_7
+
+    const-string v6, "location"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    new-instance v3, Ljava/net/URI;
+
+    invoke-direct {v3, v5}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/net/URI;->isAbsolute()Z
+
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    new-instance v5, Ljava/net/URI;
+
+    invoke-direct {v5, p0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v3}, Ljava/net/URI;->resolve(Ljava/net/URI;)Ljava/net/URI;
+
+    move-result-object v3
+
+    :cond_6
+    invoke-virtual {v3}, Ljava/net/URI;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/xiaomi/channel/openauth/utils/Network$HttpHeaderInfo;->realUrl:Ljava/lang/String;
+    :try_end_1
+    .catch Ljava/net/MalformedURLException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/net/URISyntaxException; {:try_start_1 .. :try_end_1} :catch_2
+
+    :cond_7
+    add-int/lit8 v3, v4, 0x1
+
+    move v4, v3
+
+    goto :goto_2
 
     :catch_1
     move-exception v0
@@ -2781,7 +2793,13 @@
 
     if-nez v2, :cond_3
 
-    if-eqz v3, :cond_4
+    if-nez v3, :cond_3
+
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_3
     invoke-interface {p2, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2789,13 +2807,6 @@
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
-
-    :cond_4
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public static getHttpUrlConnection(Landroid/content/Context;Ljava/net/URL;)Ljava/net/HttpURLConnection;
@@ -3349,6 +3360,8 @@
 
     :cond_4
     :goto_1
+    if-eqz v3, :cond_5
+
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
 
     :cond_5
@@ -3459,17 +3472,24 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     move-object v0, v1
 
+    :cond_0
     :goto_0
     return-object v0
 
-    :cond_0
+    :cond_1
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v0, "\r\n"
+
+    const-string v0, "--"
+
+    const-string v0, "*****"
 
     :try_start_0
     new-instance v0, Ljava/net/URL;
@@ -3579,7 +3599,13 @@
 
     move-result-object v2
 
-    const-string v4, "\"\r\n"
+    const-string v4, "\""
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, "\r\n"
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3613,7 +3639,7 @@
 
     const/4 v6, -0x1
 
-    if-ne v5, v6, :cond_1
+    if-ne v5, v6, :cond_4
 
     const-string v2, "\r\n"
 
@@ -3665,7 +3691,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_8
 
     invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
     :try_end_3
@@ -3673,10 +3699,18 @@
 
     move-result-object v0
 
+    if-eqz v4, :cond_2
+
     :try_start_4
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
 
+    :cond_2
+    if-eqz v3, :cond_3
+
     invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
+
+    :cond_3
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_4
@@ -3695,7 +3729,7 @@
 
     goto/16 :goto_0
 
-    :cond_1
+    :cond_4
     const/4 v6, 0x0
 
     :try_start_5
@@ -3715,28 +3749,28 @@
     move-object v3, v4
 
     :goto_3
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_5
 
     :try_start_6
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    :cond_2
-    if-eqz v2, :cond_3
+    :cond_5
+    if-eqz v2, :cond_6
 
     invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
 
-    :cond_3
-    if-eqz v1, :cond_4
+    :cond_6
+    if-eqz v1, :cond_7
 
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
 
-    :cond_4
+    :cond_7
     :goto_4
     throw v0
 
-    :cond_5
+    :cond_8
     :try_start_7
     invoke-virtual {v5, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_7

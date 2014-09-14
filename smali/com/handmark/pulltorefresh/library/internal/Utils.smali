@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Ljava/lang/String; = "PullToRefresh"
+.field static final a:Ljava/lang/String; = "PullToRefresh"
 
 
 # direct methods

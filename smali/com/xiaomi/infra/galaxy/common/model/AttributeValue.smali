@@ -198,6 +198,8 @@
 
     check-cast p0, [B
 
+    check-cast p0, [B
+
     invoke-static {p0}, Lcom/xiaomi/infra/galaxy/common/util/Base64Utils;->encode([B)Ljava/lang/String;
 
     move-result-object v2
@@ -490,9 +492,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "AttributeValue [type="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/xiaomi/infra/galaxy/common/model/AttributeValue;->type:Ljava/lang/String;
 

@@ -93,7 +93,7 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
+.method private a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,7 +107,7 @@
         }
     .end annotation
 
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -117,9 +117,9 @@
 
     move-result v1
 
-    add-int/lit8 v0, p2, 0x1
+    add-int/lit8 v0, p3, 0x1
 
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
 
     move-result v2
 
-    invoke-interface {p0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, p4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -139,9 +139,9 @@
 
     move-result v3
 
-    add-int/lit8 v0, p3, 0x1
+    add-int/lit8 v0, p4, 0x1
 
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -155,17 +155,17 @@
 
     sub-float/2addr v0, v2
 
-    mul-float/2addr v3, p4
+    mul-float/2addr v3, p5
 
     add-float/2addr v1, v3
 
-    invoke-virtual {p1, v1}, Lorg/achartengine/model/Point;->setX(F)V
+    invoke-virtual {p2, v1}, Lorg/achartengine/model/Point;->setX(F)V
 
-    mul-float/2addr v0, p4
+    mul-float/2addr v0, p5
 
     add-float/2addr v0, v2
 
-    invoke-virtual {p1, v0}, Lorg/achartengine/model/Point;->setY(F)V
+    invoke-virtual {p2, v0}, Lorg/achartengine/model/Point;->setY(F)V
 
     return-void
 .end method
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method protected drawPath(Landroid/graphics/Canvas;Ljava/util/List;Landroid/graphics/Paint;Z)V
-    .locals 11
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -187,15 +187,15 @@
         }
     .end annotation
 
-    const/4 v10, 0x1
+    new-instance v13, Landroid/graphics/Path;
 
-    const/4 v9, 0x0
+    invoke-direct {v13}, Landroid/graphics/Path;-><init>()V
 
-    new-instance v0, Landroid/graphics/Path;
+    const/4 v1, 0x0
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    move-object/from16 v0, p2
 
-    invoke-interface {p2, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -205,7 +205,11 @@
 
     move-result v2
 
-    invoke-interface {p2, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v1, 0x1
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -215,9 +219,9 @@
 
     move-result v1
 
-    invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->moveTo(FF)V
+    invoke-virtual {v13, v2, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
     move-result v1
 
@@ -225,55 +229,43 @@
 
     add-int/lit8 v1, v1, -0x4
 
-    move v7, v1
+    move v12, v1
 
     :goto_0
-    move v8, v9
+    const/4 v4, 0x0
 
     :goto_1
-    if-ge v8, v7, :cond_2
+    if-ge v4, v12, :cond_2
 
-    add-int/lit8 v1, v8, 0x2
+    add-int/lit8 v1, v4, 0x2
 
-    if-ge v1, v7, :cond_0
+    if-ge v1, v12, :cond_0
 
-    add-int/lit8 v3, v8, 0x2
+    add-int/lit8 v5, v4, 0x2
 
     :goto_2
-    add-int/lit8 v1, v8, 0x4
+    add-int/lit8 v1, v4, 0x4
 
-    if-ge v1, v7, :cond_1
+    if-ge v1, v12, :cond_1
 
-    add-int/lit8 v1, v8, 0x4
-
-    move v2, v1
+    add-int/lit8 v10, v4, 0x4
 
     :goto_3
-    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->c:Lorg/achartengine/model/Point;
+    iget-object v3, p0, Lorg/achartengine/chart/CubicLineChart;->c:Lorg/achartengine/model/Point;
 
-    iget v4, p0, Lorg/achartengine/chart/CubicLineChart;->b:F
+    iget v6, p0, Lorg/achartengine/chart/CubicLineChart;->b:F
 
-    invoke-static {p2, v1, v8, v3, v4}, Lorg/achartengine/chart/CubicLineChart;->a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
+    move-object v1, p0
 
-    iget-object v4, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
+    move-object/from16 v2, p2
 
-    invoke-interface {p2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-direct/range {v1 .. v6}, Lorg/achartengine/chart/CubicLineChart;->a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
 
-    move-result-object v1
+    iget-object v2, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
 
-    check-cast v1, Ljava/lang/Float;
+    move-object/from16 v0, p2
 
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    invoke-virtual {v4, v1}, Lorg/achartengine/model/Point;->setX(F)V
-
-    iget-object v4, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
-
-    add-int/lit8 v1, v3, 0x1
-
-    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -283,77 +275,105 @@
 
     move-result v1
 
-    invoke-virtual {v4, v1}, Lorg/achartengine/model/Point;->setY(F)V
+    invoke-virtual {v2, v1}, Lorg/achartengine/model/Point;->setX(F)V
 
-    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
+    iget-object v2, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
 
-    iget v4, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
+    add-int/lit8 v1, v5, 0x1
 
-    invoke-static {p2, v1, v3, v2, v4}, Lorg/achartengine/chart/CubicLineChart;->a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    invoke-virtual {v2, v1}, Lorg/achartengine/model/Point;->setY(F)V
+
+    iget-object v8, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
+
+    iget v11, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
+
+    move-object v6, p0
+
+    move-object/from16 v7, p2
+
+    move v9, v5
+
+    invoke-direct/range {v6 .. v11}, Lorg/achartengine/chart/CubicLineChart;->a(Ljava/util/List;Lorg/achartengine/model/Point;IIF)V
 
     iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->c:Lorg/achartengine/model/Point;
 
     invoke-virtual {v1}, Lorg/achartengine/model/Point;->getX()F
 
-    move-result v1
-
-    iget-object v2, p0, Lorg/achartengine/chart/CubicLineChart;->c:Lorg/achartengine/model/Point;
-
-    invoke-virtual {v2}, Lorg/achartengine/model/Point;->getY()F
-
-    move-result v2
-
-    iget-object v3, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
-
-    invoke-virtual {v3}, Lorg/achartengine/model/Point;->getX()F
-
-    move-result v3
-
-    iget-object v4, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
-
-    invoke-virtual {v4}, Lorg/achartengine/model/Point;->getY()F
-
-    move-result v4
-
-    iget-object v5, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
-
-    invoke-virtual {v5}, Lorg/achartengine/model/Point;->getX()F
-
-    move-result v5
-
-    iget-object v6, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
-
-    invoke-virtual {v6}, Lorg/achartengine/model/Point;->getY()F
-
     move-result v6
 
-    invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
+    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->c:Lorg/achartengine/model/Point;
 
-    add-int/lit8 v8, v8, 0x2
+    invoke-virtual {v1}, Lorg/achartengine/model/Point;->getY()F
+
+    move-result v7
+
+    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
+
+    invoke-virtual {v1}, Lorg/achartengine/model/Point;->getX()F
+
+    move-result v8
+
+    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->d:Lorg/achartengine/model/Point;
+
+    invoke-virtual {v1}, Lorg/achartengine/model/Point;->getY()F
+
+    move-result v9
+
+    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
+
+    invoke-virtual {v1}, Lorg/achartengine/model/Point;->getX()F
+
+    move-result v10
+
+    iget-object v1, p0, Lorg/achartengine/chart/CubicLineChart;->e:Lorg/achartengine/model/Point;
+
+    invoke-virtual {v1}, Lorg/achartengine/model/Point;->getY()F
+
+    move-result v11
+
+    move-object v5, v13
+
+    invoke-virtual/range {v5 .. v11}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
+
+    add-int/lit8 v4, v4, 0x2
 
     goto :goto_1
 
     :cond_0
-    move v3, v8
+    move v5, v4
 
     goto :goto_2
 
     :cond_1
-    move v2, v3
+    move v10, v5
 
     goto :goto_3
 
     :cond_2
     if-eqz p4, :cond_4
 
-    move v2, v7
+    move v2, v12
 
     :goto_4
-    add-int/lit8 v1, v7, 0x4
+    add-int/lit8 v1, v12, 0x4
 
     if-ge v2, v1, :cond_3
 
-    invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -365,7 +385,9 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -375,7 +397,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v3, v1}, Landroid/graphics/Path;->lineTo(FF)V
+    invoke-virtual {v13, v3, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
     add-int/lit8 v1, v2, 0x2
 
@@ -384,7 +406,11 @@
     goto :goto_4
 
     :cond_3
-    invoke-interface {p2, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -394,7 +420,11 @@
 
     move-result v2
 
-    invoke-interface {p2, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v1, 0x1
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -404,15 +434,17 @@
 
     move-result v1
 
-    invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
+    invoke-virtual {v13, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
     :cond_4
-    invoke-virtual {p1, v0, p3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    move-object/from16 v0, p3
+
+    invoke-virtual {p1, v13, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     return-void
 
     :cond_5
-    move v7, v1
+    move v12, v1
 
     goto/16 :goto_0
 .end method

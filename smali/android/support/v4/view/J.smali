@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/J;
+.class Landroid/support/v4/view/J;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/MotionEvent;)I
+.method public a(Landroid/view/MotionEvent;)I
     .locals 1
 
     const/4 v0, 0x1
@@ -24,7 +24,7 @@
     return v0
 .end method
 
-.method public final a(Landroid/view/MotionEvent;I)I
+.method public a(Landroid/view/MotionEvent;I)I
     .locals 1
 
     if-nez p2, :cond_0
@@ -40,7 +40,7 @@
     goto :goto_0
 .end method
 
-.method public final b(Landroid/view/MotionEvent;I)I
+.method public b(Landroid/view/MotionEvent;I)I
     .locals 2
 
     if-nez p2, :cond_0
@@ -59,7 +59,7 @@
     throw v0
 .end method
 
-.method public final c(Landroid/view/MotionEvent;I)F
+.method public c(Landroid/view/MotionEvent;I)F
     .locals 2
 
     if-nez p2, :cond_0
@@ -80,7 +80,7 @@
     throw v0
 .end method
 
-.method public final d(Landroid/view/MotionEvent;I)F
+.method public d(Landroid/view/MotionEvent;I)F
     .locals 2
 
     if-nez p2, :cond_0

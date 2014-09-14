@@ -103,7 +103,7 @@
 
     mul-int/2addr v0, v1
 
-    shl-int/lit8 v0, v0, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
     const/high16 v1, 0x50
 

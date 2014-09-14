@@ -1421,7 +1421,7 @@
 
 
 # virtual methods
-.method final a()[B
+.method a()[B
     .locals 11
 
     const/4 v1, 0x0

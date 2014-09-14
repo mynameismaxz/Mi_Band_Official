@@ -257,7 +257,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-ge v0, v2, :cond_6
+    if-ge v0, v2, :cond_1
 
     :goto_1
     sget-object v4, Lcom/xiaomi/infra/galaxy/common/util/Base64Utils;->base64DecodeChars:[B
@@ -270,12 +270,23 @@
 
     if-ge v1, v2, :cond_0
 
-    if-eq v4, v6, :cond_a
+    if-eq v4, v6, :cond_b
 
     :cond_0
-    if-eq v4, v6, :cond_6
+    if-ne v4, v6, :cond_3
+
+    :cond_1
+    invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
 
     :goto_2
+    return-object v0
+
+    :cond_2
+    move v1, v0
+
+    :cond_3
     sget-object v5, Lcom/xiaomi/infra/galaxy/common/util/Base64Utils;->base64DecodeChars:[B
 
     add-int/lit8 v0, v1, 0x1
@@ -284,12 +295,12 @@
 
     aget-byte v5, v5, v1
 
-    if-ge v0, v2, :cond_1
+    if-ge v0, v2, :cond_4
 
-    if-eq v5, v6, :cond_9
+    if-eq v5, v6, :cond_2
 
-    :cond_1
-    if-eq v5, v6, :cond_6
+    :cond_4
+    if-eq v5, v6, :cond_1
 
     shl-int/lit8 v1, v4, 0x2
 
@@ -306,26 +317,25 @@
 
     aget-byte v0, p0, v0
 
-    if-ne v0, v7, :cond_2
+    if-ne v0, v7, :cond_5
 
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
-    :goto_4
-    return-object v0
+    goto :goto_2
 
-    :cond_2
+    :cond_5
     sget-object v4, Lcom/xiaomi/infra/galaxy/common/util/Base64Utils;->base64DecodeChars:[B
 
     aget-byte v4, v4, v0
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_6
 
-    if-eq v4, v6, :cond_8
+    if-eq v4, v6, :cond_a
 
-    :cond_3
-    if-eq v4, v6, :cond_6
+    :cond_6
+    if-eq v4, v6, :cond_1
 
     and-int/lit8 v0, v5, 0xf
 
@@ -339,30 +349,30 @@
 
     invoke-virtual {v3, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    :goto_5
+    :goto_4
     add-int/lit8 v0, v1, 0x1
 
     aget-byte v1, p0, v1
 
-    if-ne v1, v7, :cond_4
+    if-ne v1, v7, :cond_7
 
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_4
+    :cond_7
     sget-object v5, Lcom/xiaomi/infra/galaxy/common/util/Base64Utils;->base64DecodeChars:[B
 
     aget-byte v1, v5, v1
 
-    if-ge v0, v2, :cond_5
+    if-ge v0, v2, :cond_8
 
-    if-eq v1, v6, :cond_7
+    if-eq v1, v6, :cond_9
 
-    :cond_5
-    if-eq v1, v6, :cond_6
+    :cond_8
+    if-eq v1, v6, :cond_1
 
     and-int/lit8 v4, v4, 0x3
 
@@ -374,29 +384,17 @@
 
     goto :goto_0
 
-    :cond_6
-    invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
+    :cond_9
+    move v1, v0
 
     goto :goto_4
 
-    :cond_7
-    move v1, v0
-
-    goto :goto_5
-
-    :cond_8
+    :cond_a
     move v0, v1
 
     goto :goto_3
 
-    :cond_9
-    move v1, v0
-
-    goto :goto_2
-
-    :cond_a
+    :cond_b
     move v0, v1
 
     goto :goto_1

@@ -6,59 +6,63 @@
 
 
 # instance fields
-.field private a:Ljavax/net/ssl/X509TrustManager;
+.field a:Ljavax/net/ssl/X509TrustManager;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 3
+    .locals 4
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     :try_start_0
-    const-string v0, "JKS"
+    const-string v1, "JKS"
 
-    invoke-static {v0}, Ljava/security/KeyStore;->getInstance(Ljava/lang/String;)Ljava/security/KeyStore;
+    invoke-static {v1}, Ljava/security/KeyStore;->getInstance(Ljava/lang/String;)Ljava/security/KeyStore;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
-
-    :goto_0
-    if-eqz v0, :cond_0
-
-    new-instance v1, Ljava/io/FileInputStream;
-
-    const-string v2, "trustedCerts"
-
-    invoke-direct {v1, v2}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "passphrase"
-
-    invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-
-    const-string v1, "SunX509"
-
-    const-string v2, "SunJSSE"
-
-    invoke-static {v1, v2}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
-
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+    :goto_0
+    new-array v3, v2, [Ljavax/net/ssl/TrustManager;
 
-    invoke-virtual {v1}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
+    if-eqz v1, :cond_0
+
+    new-instance v0, Ljava/io/FileInputStream;
+
+    const-string v3, "trustedCerts"
+
+    invoke-direct {v0, v3}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    const-string v3, "passphrase"
+
+    invoke-virtual {v3}, Ljava/lang/String;->toCharArray()[C
+
+    move-result-object v3
+
+    invoke-virtual {v1, v0, v3}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
+
+    const-string v0, "SunX509"
+
+    const-string v3, "SunJSSE"
+
+    invoke-static {v0, v3}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+
+    invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
 
     move-result-object v0
 
     :goto_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     array-length v2, v0
@@ -80,24 +84,26 @@
     return-void
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    move-object v0, v1
+    move-object v1, v0
 
     goto :goto_0
 
     :cond_0
     invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
+    invoke-static {v1}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+    check-cast v0, Ljava/security/KeyStore;
 
-    invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
+    invoke-virtual {v1, v0}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+
+    invoke-virtual {v1}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
 
     move-result-object v0
 

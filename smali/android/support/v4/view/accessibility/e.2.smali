@@ -1,33 +1,33 @@
-.class final Landroid/support/v4/view/accessibility/e;
-.super Landroid/support/v4/view/accessibility/h;
+.class Landroid/support/v4/view/accessibility/e;
+.super Landroid/support/v4/view/accessibility/g;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/support/v4/view/accessibility/h;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/view/accessibility/g;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Ljava/lang/Object;
-    .locals 2
+.method public a(Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Landroid/support/v4/view/accessibility/d;
+    new-instance v0, Landroid/support/v4/view/accessibility/f;
 
-    invoke-direct {v0, p0, p1}, Landroid/support/v4/view/accessibility/d;-><init>(Landroid/support/v4/view/accessibility/e;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)V
+    invoke-direct {v0, p0, p1}, Landroid/support/v4/view/accessibility/f;-><init>(Landroid/support/v4/view/accessibility/e;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)V
 
-    new-instance v1, Landroid/support/v4/view/accessibility/j;
+    invoke-static {v0}, Landroid/support/v4/view/accessibility/i;->a(Landroid/support/v4/view/accessibility/k;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0}, Landroid/support/v4/view/accessibility/j;-><init>(Landroid/support/v4/view/accessibility/d;)V
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
-.method public final a(Landroid/view/accessibility/AccessibilityManager;)Ljava/util/List;
+.method public a(Landroid/view/accessibility/AccessibilityManager;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -41,14 +41,14 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityManager;->getInstalledAccessibilityServiceList()Ljava/util/List;
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/i;->a(Landroid/view/accessibility/AccessibilityManager;)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/accessibility/AccessibilityManager;I)Ljava/util/List;
+.method public a(Landroid/view/accessibility/AccessibilityManager;I)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -62,45 +62,41 @@
         }
     .end annotation
 
-    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityManager;->getEnabledAccessibilityServiceList(I)Ljava/util/List;
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/i;->a(Landroid/view/accessibility/AccessibilityManager;I)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Z
+.method public a(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Z
     .locals 1
 
     iget-object v0, p2, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;->a:Ljava/lang/Object;
 
-    check-cast v0, Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityManager;->addAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
+    invoke-static {p1, v0}, Landroid/support/v4/view/accessibility/i;->a(Landroid/view/accessibility/AccessibilityManager;Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/accessibility/AccessibilityManager;)Z
+.method public b(Landroid/view/accessibility/AccessibilityManager;)Z
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
+    invoke-static {p1}, Landroid/support/v4/view/accessibility/i;->b(Landroid/view/accessibility/AccessibilityManager;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Z
+.method public b(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;)Z
     .locals 1
 
     iget-object v0, p2, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat;->a:Ljava/lang/Object;
 
-    check-cast v0, Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityManager;->removeAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
+    invoke-static {p1, v0}, Landroid/support/v4/view/accessibility/i;->b(Landroid/view/accessibility/AccessibilityManager;Ljava/lang/Object;)Z
 
     move-result v0
 

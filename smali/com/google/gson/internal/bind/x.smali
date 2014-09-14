@@ -22,12 +22,14 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/gson/stream/JsonReader;)Ljava/net/URI;
+
+# virtual methods
+.method public a(Lcom/google/gson/stream/JsonReader;)Ljava/net/URI;
     .locals 3
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v1
 
@@ -35,7 +37,7 @@
 
     if-ne v1, v2, :cond_1
 
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     :cond_0
     :goto_0
@@ -43,7 +45,7 @@
 
     :cond_1
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -73,42 +75,8 @@
     throw v1
 .end method
 
-.method private static a(Lcom/google/gson/stream/JsonWriter;Ljava/net/URI;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/net/URI;)V
     .locals 1
-
-    if-nez p1, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/net/URI;->toASCIIString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-static {p1}, Lcom/google/gson/internal/bind/x;->a(Lcom/google/gson/stream/JsonReader;)Ljava/net/URI;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p2, Ljava/net/URI;
 
     if-nez p2, :cond_0
 
@@ -125,4 +93,24 @@
     move-result-object v0
 
     goto :goto_0
+.end method
+
+.method public synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/x;->a(Lcom/google/gson/stream/JsonReader;)Ljava/net/URI;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p2, Ljava/net/URI;
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/x;->a(Lcom/google/gson/stream/JsonWriter;Ljava/net/URI;)V
+
+    return-void
 .end method

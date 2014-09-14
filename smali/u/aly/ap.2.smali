@@ -161,7 +161,7 @@
 
 
 # virtual methods
-.method public final a()I
+.method public a()I
     .locals 1
 
     iget v0, p0, Lu/aly/ap;->d:I

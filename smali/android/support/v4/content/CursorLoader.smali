@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field private b:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+.field final h:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/content/Loader",
@@ -26,17 +26,17 @@
     .end annotation
 .end field
 
-.field private c:Landroid/net/Uri;
+.field i:Landroid/net/Uri;
 
-.field private d:[Ljava/lang/String;
+.field j:[Ljava/lang/String;
 
-.field private e:Ljava/lang/String;
+.field k:Ljava/lang/String;
 
-.field private f:[Ljava/lang/String;
+.field l:[Ljava/lang/String;
 
-.field private g:Ljava/lang/String;
+.field m:Ljava/lang/String;
 
-.field private h:Landroid/database/Cursor;
+.field n:Landroid/database/Cursor;
 
 
 # direct methods
@@ -49,7 +49,7 @@
 
     invoke-direct {v0, p0}, Landroid/support/v4/content/Loader$ForceLoadContentObserver;-><init>(Landroid/support/v4/content/Loader;)V
 
-    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->b:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
 
     return-void
 .end method
@@ -63,17 +63,17 @@
 
     invoke-direct {v0, p0}, Landroid/support/v4/content/Loader$ForceLoadContentObserver;-><init>(Landroid/support/v4/content/Loader;)V
 
-    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->b:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
 
-    iput-object p2, p0, Landroid/support/v4/content/CursorLoader;->c:Landroid/net/Uri;
+    iput-object p2, p0, Landroid/support/v4/content/CursorLoader;->i:Landroid/net/Uri;
 
-    iput-object p3, p0, Landroid/support/v4/content/CursorLoader;->d:[Ljava/lang/String;
+    iput-object p3, p0, Landroid/support/v4/content/CursorLoader;->j:[Ljava/lang/String;
 
-    iput-object p4, p0, Landroid/support/v4/content/CursorLoader;->e:Ljava/lang/String;
+    iput-object p4, p0, Landroid/support/v4/content/CursorLoader;->k:Ljava/lang/String;
 
-    iput-object p5, p0, Landroid/support/v4/content/CursorLoader;->f:[Ljava/lang/String;
+    iput-object p5, p0, Landroid/support/v4/content/CursorLoader;->l:[Ljava/lang/String;
 
-    iput-object p6, p0, Landroid/support/v4/content/CursorLoader;->g:Ljava/lang/String;
+    iput-object p6, p0, Landroid/support/v4/content/CursorLoader;->m:Ljava/lang/String;
 
     return-void
 .end method
@@ -98,9 +98,9 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Landroid/support/v4/content/CursorLoader;->isStarted()Z
 
@@ -147,7 +147,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->c:Landroid/net/Uri;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->i:Landroid/net/Uri;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -157,7 +157,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->d:[Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->j:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->e:Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->k:Ljava/lang/String;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
@@ -181,7 +181,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->f:[Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->l:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->g:Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->m:Ljava/lang/String;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
@@ -205,7 +205,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -215,7 +215,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/support/v4/content/CursorLoader;->a:Z
+    iget-boolean v0, p0, Landroid/support/v4/content/CursorLoader;->u:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
@@ -225,7 +225,7 @@
 .method public getProjection()[Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->d:[Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->j:[Ljava/lang/String;
 
     return-object v0
 .end method
@@ -233,7 +233,7 @@
 .method public getSelection()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->e:Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->k:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -241,7 +241,7 @@
 .method public getSelectionArgs()[Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->f:[Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->l:[Ljava/lang/String;
 
     return-object v0
 .end method
@@ -249,7 +249,7 @@
 .method public getSortOrder()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->g:Ljava/lang/String;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->m:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -257,7 +257,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->c:Landroid/net/Uri;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->i:Landroid/net/Uri;
 
     return-object v0
 .end method
@@ -273,15 +273,15 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v4/content/CursorLoader;->c:Landroid/net/Uri;
+    iget-object v1, p0, Landroid/support/v4/content/CursorLoader;->i:Landroid/net/Uri;
 
-    iget-object v2, p0, Landroid/support/v4/content/CursorLoader;->d:[Ljava/lang/String;
+    iget-object v2, p0, Landroid/support/v4/content/CursorLoader;->j:[Ljava/lang/String;
 
-    iget-object v3, p0, Landroid/support/v4/content/CursorLoader;->e:Ljava/lang/String;
+    iget-object v3, p0, Landroid/support/v4/content/CursorLoader;->k:Ljava/lang/String;
 
-    iget-object v4, p0, Landroid/support/v4/content/CursorLoader;->f:[Ljava/lang/String;
+    iget-object v4, p0, Landroid/support/v4/content/CursorLoader;->l:[Ljava/lang/String;
 
-    iget-object v5, p0, Landroid/support/v4/content/CursorLoader;->g:Ljava/lang/String;
+    iget-object v5, p0, Landroid/support/v4/content/CursorLoader;->m:Ljava/lang/String;
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -291,7 +291,7 @@
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
-    iget-object v1, p0, Landroid/support/v4/content/CursorLoader;->b:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+    iget-object v1, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/support/v4/content/Loader$ForceLoadContentObserver;
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
@@ -343,11 +343,11 @@
 
     invoke-virtual {p0}, Landroid/support/v4/content/CursorLoader;->onStopLoading()V
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
 
@@ -355,14 +355,14 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iput-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     return-void
 .end method
@@ -370,11 +370,11 @@
 .method protected onStartLoading()V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     invoke-virtual {p0, v0}, Landroid/support/v4/content/CursorLoader;->deliverResult(Landroid/database/Cursor;)V
 
@@ -385,7 +385,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->h:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->n:Landroid/database/Cursor;
 
     if-nez v0, :cond_2
 
@@ -407,7 +407,7 @@
 .method public setProjection([Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->d:[Ljava/lang/String;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->j:[Ljava/lang/String;
 
     return-void
 .end method
@@ -415,7 +415,7 @@
 .method public setSelection(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->e:Ljava/lang/String;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->k:Ljava/lang/String;
 
     return-void
 .end method
@@ -423,7 +423,7 @@
 .method public setSelectionArgs([Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->f:[Ljava/lang/String;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->l:[Ljava/lang/String;
 
     return-void
 .end method
@@ -431,7 +431,7 @@
 .method public setSortOrder(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->g:Ljava/lang/String;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->m:Ljava/lang/String;
 
     return-void
 .end method
@@ -439,7 +439,7 @@
 .method public setUri(Landroid/net/Uri;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->c:Landroid/net/Uri;
+    iput-object p1, p0, Landroid/support/v4/content/CursorLoader;->i:Landroid/net/Uri;
 
     return-void
 .end method

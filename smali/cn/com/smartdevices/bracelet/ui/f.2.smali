@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/ui/f;
+.class Lcn/com/smartdevices/bracelet/ui/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/e;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/e;
 
 .field private final synthetic b:Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
 
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 4
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/f;->b:Lcn/com/smartdevices/bracelet/model/AlarmClockItem;

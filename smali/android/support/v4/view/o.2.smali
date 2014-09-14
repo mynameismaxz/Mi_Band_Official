@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/o;
+.class Landroid/support/v4/view/o;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,36 +16,36 @@
 
 
 # virtual methods
-.method public final a(II)I
+.method public a(II)I
     .locals 1
 
-    invoke-static {p1, p2}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+    invoke-static {p1, p2}, Landroid/support/v4/view/p;->a(II)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final a(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V
+.method public a(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V
     .locals 0
 
-    invoke-static/range {p1 .. p8}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V
+    invoke-static/range {p1 .. p8}, Landroid/support/v4/view/p;->a(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V
 
     return-void
 .end method
 
-.method public final a(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+.method public a(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
     .locals 0
 
-    invoke-static/range {p1 .. p6}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    invoke-static/range {p1 .. p6}, Landroid/support/v4/view/p;->a(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
     return-void
 .end method
 
-.method public final a(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+.method public a(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
     .locals 0
 
-    invoke-static {p1, p2, p3, p4}, Landroid/view/Gravity;->applyDisplay(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/view/p;->a(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
     return-void
 .end method

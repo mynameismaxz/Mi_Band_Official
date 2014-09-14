@@ -31,9 +31,7 @@
 
     new-instance v1, Lcom/umeng/analytics/social/q;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2, p3}, Lcom/umeng/analytics/social/q;-><init>([Ljava/lang/String;Lcom/umeng/analytics/social/UMSocialService$b;[Lcom/umeng/analytics/social/UMPlatformData;)V
+    invoke-direct {v1, v0, p1, p3}, Lcom/umeng/analytics/social/q;-><init>([Ljava/lang/String;Lcom/umeng/analytics/social/UMSocialService$b;[Lcom/umeng/analytics/social/UMPlatformData;)V
 
     const/4 v0, 0x0
 

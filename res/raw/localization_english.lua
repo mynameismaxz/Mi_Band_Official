@@ -56,7 +56,7 @@ localization_English_table = {
     activity_walk_format="%s Walked %d steps %s",
     activity_walk_consumed_format="Burned %d cal %s",
 
-    activity_activity_format="%s %s work out %s",
+    activity_activity_format="%s %s work out%s",
     last_night_sleeped_good_format="Last night, you slept for %d hr %d min. What a great sleep!",
     last_night_sleeped_normal_format="Last night, you slept for %d hr %d min.",
     deep_sleep_format="Deep sleep stage was %d hr %d min.",

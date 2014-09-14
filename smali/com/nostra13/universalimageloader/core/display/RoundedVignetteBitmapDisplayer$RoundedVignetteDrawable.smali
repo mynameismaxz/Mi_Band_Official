@@ -14,9 +14,11 @@
 
 # virtual methods
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
-    .locals 8
+    .locals 9
 
     const/4 v5, 0x3
+
+    const/high16 v8, 0x3f80
 
     const v7, 0x3f333333
 
@@ -35,6 +37,8 @@
     invoke-virtual {v2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v2
+
+    mul-float/2addr v2, v8
 
     div-float/2addr v2, v7
 
@@ -64,9 +68,7 @@
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
 
-    const/high16 v2, 0x3f80
-
-    invoke-virtual {v1, v2, v7}, Landroid/graphics/Matrix;->setScale(FF)V
+    invoke-virtual {v1, v8, v7}, Landroid/graphics/Matrix;->setScale(FF)V
 
     invoke-virtual {v0, v1}, Landroid/graphics/RadialGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
@@ -83,8 +85,6 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     return-void
-
-    nop
 
     :array_0
     .array-data 0x4

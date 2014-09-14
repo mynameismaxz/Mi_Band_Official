@@ -1,5 +1,8 @@
-.class final Landroid/support/v4/text/d;
+.class Landroid/support/v4/text/d;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/text/c;
 
 
 # direct methods
@@ -13,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/lang/String;
+.method public a(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     const/4 v0, 0x0
@@ -21,7 +24,7 @@
     return-object v0
 .end method
 
-.method public final b(Ljava/lang/String;)Ljava/lang/String;
+.method public b(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     return-object p1

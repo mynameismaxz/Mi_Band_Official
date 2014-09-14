@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/auth/n;
+.class Lcom/tencent/connect/auth/n;
 .super Landroid/os/Handler;
 
 
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
     iget v0, p1, Landroid/os/Message;->what:I

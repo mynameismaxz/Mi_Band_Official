@@ -32,7 +32,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030015
+    const v0, 0x7f030017
 
     return v0
 .end method
@@ -74,6 +74,10 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
+    move-result-object v2
+
+    iput-object v2, p0, Lcn/com/smartdevices/bracelet/ui/ApkUpgradeFragment;->b:Ljava/lang/String;
+
     const-string v2, "APK_PATH"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -90,7 +94,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ApkUpgradeFragment;->d:Ljava/lang/String;
 
-    const v0, 0x7f07008a
+    const v0, 0x7f07008f
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

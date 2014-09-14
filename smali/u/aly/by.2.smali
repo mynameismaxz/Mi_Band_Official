@@ -139,8 +139,17 @@
 
     iget-byte v3, v2, Lu/aly/ct;->b:B
 
-    if-eqz v3, :cond_2
+    if-nez v3, :cond_0
 
+    invoke-virtual {p0}, Lu/aly/cy;->k()V
+
+    new-instance v2, Lu/aly/by;
+
+    invoke-direct {v2, v0, v1}, Lu/aly/by;-><init>(ILjava/lang/String;)V
+
+    return-object v2
+
+    :cond_0
     iget-short v3, v2, Lu/aly/ct;->c:S
 
     packed-switch v3, :pswitch_data_0
@@ -159,7 +168,7 @@
 
     const/16 v4, 0xb
 
-    if-ne v3, v4, :cond_0
+    if-ne v3, v4, :cond_1
 
     invoke-virtual {p0}, Lu/aly/cy;->z()Ljava/lang/String;
 
@@ -167,7 +176,7 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     iget-byte v2, v2, Lu/aly/ct;->b:B
 
     invoke-static {p0, v2}, Lu/aly/db;->a(Lu/aly/cy;B)V
@@ -179,7 +188,7 @@
 
     const/16 v4, 0x8
 
-    if-ne v3, v4, :cond_1
+    if-ne v3, v4, :cond_2
 
     invoke-virtual {p0}, Lu/aly/cy;->w()I
 
@@ -187,21 +196,12 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     iget-byte v2, v2, Lu/aly/ct;->b:B
 
     invoke-static {p0, v2}, Lu/aly/db;->a(Lu/aly/cy;B)V
 
     goto :goto_1
-
-    :cond_2
-    invoke-virtual {p0}, Lu/aly/cy;->k()V
-
-    new-instance v2, Lu/aly/by;
-
-    invoke-direct {v2, v0, v1}, Lu/aly/by;-><init>(ILjava/lang/String;)V
-
-    return-object v2
 
     :pswitch_data_0
     .packed-switch 0x1

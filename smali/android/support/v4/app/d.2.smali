@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/d;
+.class Landroid/support/v4/app/d;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Landroid/support/v4/app/a;)V
     .locals 0
 
     invoke-direct {p0}, Landroid/support/v4/app/d;-><init>()V
@@ -24,7 +24,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
+.method public a(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     invoke-static {p1}, Landroid/support/v4/app/f;->a(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
@@ -34,7 +34,7 @@
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;Landroid/app/Activity;I)Ljava/lang/Object;
+.method public a(Ljava/lang/Object;Landroid/app/Activity;I)Ljava/lang/Object;
     .locals 1
 
     invoke-static {p1, p2, p3}, Landroid/support/v4/app/f;->a(Ljava/lang/Object;Landroid/app/Activity;I)Ljava/lang/Object;
@@ -44,7 +44,7 @@
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;Landroid/app/Activity;Landroid/graphics/drawable/Drawable;I)Ljava/lang/Object;
+.method public a(Ljava/lang/Object;Landroid/app/Activity;Landroid/graphics/drawable/Drawable;I)Ljava/lang/Object;
     .locals 1
 
     invoke-static {p1, p2, p3, p4}, Landroid/support/v4/app/f;->a(Ljava/lang/Object;Landroid/app/Activity;Landroid/graphics/drawable/Drawable;I)Ljava/lang/Object;

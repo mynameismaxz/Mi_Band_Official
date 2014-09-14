@@ -1,9 +1,9 @@
-.class final Lcom/tencent/connect/avatar/f;
+.class Lcom/tencent/connect/avatar/f;
 .super Landroid/view/View;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
+.field final synthetic a:Lcom/tencent/connect/avatar/ImageActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/widget/Button;)V
+.method public a(Landroid/widget/Button;)V
     .locals 5
 
     new-instance v0, Landroid/graphics/drawable/StateListDrawable;
@@ -75,7 +75,7 @@
     return-void
 .end method
 
-.method public final b(Landroid/widget/Button;)V
+.method public b(Landroid/widget/Button;)V
     .locals 5
 
     new-instance v0, Landroid/graphics/drawable/StateListDrawable;

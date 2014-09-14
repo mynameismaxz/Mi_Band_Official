@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/util/e;
+.class Lcn/com/smartdevices/bracelet/chart/util/e;
 .super Landroid/animation/AnimatorListenerAdapter;
 
 
@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
     check-cast p1, Landroid/animation/ObjectAnimator;

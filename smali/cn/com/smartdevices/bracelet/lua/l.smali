@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/lua/l;
+.class Lcn/com/smartdevices/bracelet/lua/l;
 .super Landroid/support/v4/widget/ViewDragHelper$Callback;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;Lcn/com/smartdevices/bracelet/lua/l;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/lua/l;-><init>(Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final clampViewPositionVertical(Landroid/view/View;II)I
+.method public clampViewPositionVertical(Landroid/view/View;II)I
     .locals 3
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
@@ -93,7 +93,7 @@
     goto :goto_0
 .end method
 
-.method public final getViewVerticalDragRange(Landroid/view/View;)I
+.method public getViewVerticalDragRange(Landroid/view/View;)I
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
@@ -106,7 +106,7 @@
     return v0
 .end method
 
-.method public final onViewCaptured(Landroid/view/View;I)V
+.method public onViewCaptured(Landroid/view/View;I)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
@@ -127,7 +127,7 @@
     return-void
 .end method
 
-.method public final onViewDragStateChanged(I)V
+.method public onViewDragStateChanged(I)V
     .locals 3
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
@@ -306,7 +306,7 @@
     goto :goto_0
 .end method
 
-.method public final onViewPositionChanged(Landroid/view/View;IIII)V
+.method public onViewPositionChanged(Landroid/view/View;IIII)V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
@@ -321,7 +321,7 @@
     return-void
 .end method
 
-.method public final onViewReleased(Landroid/view/View;FF)V
+.method public onViewReleased(Landroid/view/View;FF)V
     .locals 7
 
     const/high16 v6, 0x3f80
@@ -427,7 +427,7 @@
 
     move-result v2
 
-    add-float v3, v1, v6
+    add-float v3, v6, v1
 
     div-float/2addr v3, v5
 
@@ -564,7 +564,7 @@
 
     move-result v2
 
-    add-float v3, v1, v6
+    add-float v3, v6, v1
 
     div-float/2addr v3, v5
 
@@ -736,7 +736,7 @@
     goto :goto_4
 .end method
 
-.method public final tryCaptureView(Landroid/view/View;I)Z
+.method public tryCaptureView(Landroid/view/View;I)Z
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/l;->a:Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;

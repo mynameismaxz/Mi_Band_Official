@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/g;
+.class Lcom/google/gson/internal/g;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,22 +16,24 @@
 
 
 # instance fields
-.field private final a:Lcom/google/gson/internal/UnsafeAllocator;
+.field final synthetic a:Ljava/lang/Class;
 
-.field private synthetic b:Ljava/lang/Class;
+.field final synthetic b:Ljava/lang/reflect/Type;
 
-.field private synthetic c:Ljava/lang/reflect/Type;
+.field final synthetic c:Lcom/google/gson/internal/ConstructorConstructor;
 
-.field private synthetic d:Lcom/google/gson/internal/ConstructorConstructor;
+.field private final d:Lcom/google/gson/internal/UnsafeAllocator;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
     .locals 1
 
-    iput-object p2, p0, Lcom/google/gson/internal/g;->b:Ljava/lang/Class;
+    iput-object p1, p0, Lcom/google/gson/internal/g;->c:Lcom/google/gson/internal/ConstructorConstructor;
 
-    iput-object p3, p0, Lcom/google/gson/internal/g;->c:Ljava/lang/reflect/Type;
+    iput-object p2, p0, Lcom/google/gson/internal/g;->a:Ljava/lang/Class;
+
+    iput-object p3, p0, Lcom/google/gson/internal/g;->b:Ljava/lang/reflect/Type;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,14 +41,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/gson/internal/g;->a:Lcom/google/gson/internal/UnsafeAllocator;
+    iput-object v0, p0, Lcom/google/gson/internal/g;->d:Lcom/google/gson/internal/UnsafeAllocator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final construct()Ljava/lang/Object;
+.method public construct()Ljava/lang/Object;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -55,9 +57,9 @@
     .end annotation
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/gson/internal/g;->a:Lcom/google/gson/internal/UnsafeAllocator;
+    iget-object v0, p0, Lcom/google/gson/internal/g;->d:Lcom/google/gson/internal/UnsafeAllocator;
 
-    iget-object v1, p0, Lcom/google/gson/internal/g;->b:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/google/gson/internal/g;->a:Ljava/lang/Class;
 
     invoke-virtual {v0, v1}, Lcom/google/gson/internal/UnsafeAllocator;->newInstance(Ljava/lang/Class;)Ljava/lang/Object;
     :try_end_0
@@ -74,17 +76,27 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Unable to invoke no-args constructor for "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/google/gson/internal/g;->c:Ljava/lang/reflect/Type;
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/google/gson/internal/g;->b:Ljava/lang/reflect/Type;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, ". Register an InstanceCreator with Gson for this type may fix this problem."
+    const-string v3, ". "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "Register an InstanceCreator with Gson for this type may fix this problem."
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

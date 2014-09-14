@@ -1,4 +1,4 @@
-.class final Lcom/tencent/connect/avatar/j;
+.class Lcom/tencent/connect/avatar/j;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 2
 
     const-wide/16 v0, 0x12c

@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/view/u;
+.class Lcn/com/smartdevices/bracelet/view/u;
 .super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/RulerScrollView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/RulerScrollView;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 4
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
@@ -73,7 +73,7 @@
     return v0
 .end method
 
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
     const/4 v0, 0x1

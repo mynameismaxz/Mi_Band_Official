@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/util/ArrayList;
+.field final synthetic a:Ljava/util/ArrayList;
 
-.field private synthetic b:Landroid/os/Handler;
+.field final synthetic b:Landroid/os/Handler;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 8
 
     const/16 v7, 0x2710
@@ -98,9 +98,13 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v6, "share2qzone_temp"
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

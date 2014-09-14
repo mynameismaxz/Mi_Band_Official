@@ -1,14 +1,16 @@
-.class final Lcom/tencent/stat/d;
+.class Lcom/tencent/stat/d;
 .super Lorg/apache/http/impl/client/DefaultConnectionKeepAliveStrategy;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/stat/c;
+.field final synthetic a:Lcom/tencent/stat/c;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/stat/c;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/tencent/stat/d;->a:Lcom/tencent/stat/c;
 
     invoke-direct {p0}, Lorg/apache/http/impl/client/DefaultConnectionKeepAliveStrategy;-><init>()V
 
@@ -17,7 +19,7 @@
 
 
 # virtual methods
-.method public final getKeepAliveDuration(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)J
+.method public getKeepAliveDuration(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)J
     .locals 4
 
     invoke-super {p0, p1, p2}, Lorg/apache/http/impl/client/DefaultConnectionKeepAliveStrategy;->getKeepAliveDuration(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)J

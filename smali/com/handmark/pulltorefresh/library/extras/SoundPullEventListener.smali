@@ -124,7 +124,7 @@
 .end method
 
 .method public final onPullEvent(Lcom/handmark/pulltorefresh/library/PullToRefreshBase;Lcom/handmark/pulltorefresh/library/PullToRefreshBase$State;Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,41 +144,14 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v1}, Landroid/media/MediaPlayer;->stop()V
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v1}, Landroid/media/MediaPlayer;->release()V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->a(I)V
 
     :cond_0
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->a:Landroid/content/Context;
-
-    invoke-static {v1, v0}, Landroid/media/MediaPlayer;->create(Landroid/content/Context;I)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/extras/SoundPullEventListener;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
-
-    :cond_1
     return-void
 .end method

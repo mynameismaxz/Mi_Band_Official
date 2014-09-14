@@ -205,6 +205,8 @@
 
 .field public static final select_item_padding_left:I = 0x7f09007c
 
+.field public static final select_item_txt_padding_left:I = 0x7f09007f
+
 .field public static final setting_dlg_margin_left:I = 0x7f09005c
 
 .field public static final setting_dlg_padding_top:I = 0x7f09007b
@@ -216,6 +218,8 @@
 .field public static final share_item_size:I = 0x7f09007d
 
 .field public static final single_alarm_h:I = 0x7f090052
+
+.field public static final single_button_padding:I = 0x7f090080
 
 .field public static final statistic_data_item_margin_bottom:I = 0x7f09000f
 

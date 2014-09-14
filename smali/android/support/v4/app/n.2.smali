@@ -26,27 +26,9 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
-    .locals 1
-
-    new-instance v0, Landroid/support/v4/app/BackStackState;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/app/BackStackState;-><init>(Landroid/os/Parcel;)V
-
-    return-object v0
-.end method
-
-.method private static a(I)[Landroid/support/v4/app/BackStackState;
-    .locals 1
-
-    new-array v0, p0, [Landroid/support/v4/app/BackStackState;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
     .locals 1
 
     new-instance v0, Landroid/support/v4/app/BackStackState;
@@ -56,10 +38,30 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/app/BackStackState;
     .locals 1
 
     new-array v0, p1, [Landroid/support/v4/app/BackStackState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/n;->a(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/n;->a(I)[Landroid/support/v4/app/BackStackState;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -53,43 +53,85 @@
 
     move-result-object v0
 
-    const-string v1, "\'LUA_LIST\' (\'_id\' INTEGER PRIMARY KEY ,"
+    const-string v1, "\'LUA_LIST\' ("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'DATE\' TEXT,\'TIME\' TEXT,"
+    const-string v1, "\'_id\' INTEGER PRIMARY KEY ,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'TYPE\' TEXT,\'RIGHT\' TEXT,"
+    const-string v1, "\'DATE\' TEXT,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'INDEX\' TEXT,\'JSON_STRING\' TEXT,"
+    const-string v1, "\'TIME\' TEXT,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'SCRIPT_VERSION\' TEXT,\'LUA_ACTION_SCRIPT\' TEXT,"
+    const-string v1, "\'TYPE\' TEXT,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'TEXT1\' TEXT,\'TEXT2\' TEXT,"
+    const-string v1, "\'RIGHT\' TEXT,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\'START\' TEXT,\'STOP\' TEXT);"
+    const-string v1, "\'INDEX\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'JSON_STRING\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'SCRIPT_VERSION\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'LUA_ACTION_SCRIPT\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'TEXT1\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'TEXT2\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'START\' TEXT,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'STOP\' TEXT);"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -357,7 +399,9 @@
 
     new-instance v0, Lde/greenrobot/daobracelet/LuaList;
 
-    invoke-interface/range {p1 .. p2}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v1, p2, 0x0
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v1
 
@@ -503,7 +547,9 @@
     return-object v0
 
     :cond_0
-    invoke-interface/range {p1 .. p2}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v1, p2, 0x0
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
@@ -637,7 +683,9 @@
 
     const/4 v1, 0x0
 
-    invoke-interface {p1, p3}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v0, p3, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
@@ -805,7 +853,9 @@
     return-void
 
     :cond_0
-    invoke-interface {p1, p3}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v0, p3, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
 
@@ -876,7 +926,7 @@
 
     move-result-object v0
 
-    goto :goto_7
+    goto/16 :goto_7
 
     :cond_8
     add-int/lit8 v0, p3, 0x8
@@ -937,7 +987,9 @@
 .method public readKey(Landroid/database/Cursor;I)Ljava/lang/Long;
     .locals 2
 
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->isNull(I)Z
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
@@ -949,7 +1001,9 @@
     return-object v0
 
     :cond_0
-    invoke-interface {p1, p2}, Landroid/database/Cursor;->getLong(I)J
+    add-int/lit8 v0, p2, 0x0
+
+    invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 

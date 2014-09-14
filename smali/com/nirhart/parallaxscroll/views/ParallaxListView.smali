@@ -59,17 +59,17 @@
 .end method
 
 .method private a()V
-    .locals 5
-
-    const/4 v4, 0x0
+    .locals 3
 
     invoke-virtual {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildCount()I
 
     move-result v0
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_0
 
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -81,43 +81,8 @@
 
     iget v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->c:F
 
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
+    invoke-direct {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->c()V
 
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->is(Landroid/view/View;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    :cond_0
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setOffset(F)V
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setView(Landroid/view/View;)V
-
-    :cond_1
-    :goto_0
     iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
 
     int-to-float v0, v0
@@ -126,21 +91,8 @@
 
     invoke-virtual {v2, v0}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setOffset(F)V
 
-    :cond_2
+    :cond_0
     return-void
-
-    :cond_3
-    new-instance v2, Lcom/nirhart/parallaxscroll/views/ParallaxListView$ParallaxedListView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-direct {v2, p0, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxListView$ParallaxedListView;-><init>(Lcom/nirhart/parallaxscroll/views/ParallaxListView;Landroid/view/View;)V
-
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    goto :goto_0
 .end method
 
 .method private a(Landroid/view/View;)V
@@ -349,126 +301,21 @@
 .end method
 
 .method protected parallaxScroll()V
-    .locals 5
-
-    const/4 v4, 0x0
+    .locals 1
 
     iget-boolean v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->e:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildCount()I
+    invoke-direct {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->a()V
 
-    move-result v0
-
-    if-lez v0, :cond_2
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getTop()I
-
-    move-result v0
-
-    neg-int v0, v0
-
-    iget v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->c:F
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->is(Landroid/view/View;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    :cond_0
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setOffset(F)V
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setView(Landroid/view/View;)V
-
-    :cond_1
     :goto_0
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v1
-
-    invoke-virtual {v2, v0}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setOffset(F)V
-
-    :cond_2
-    :goto_1
     return-void
 
-    :cond_3
-    new-instance v2, Lcom/nirhart/parallaxscroll/views/ParallaxListView$ParallaxedListView;
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-direct {v2, p0, v3}, Lcom/nirhart/parallaxscroll/views/ParallaxListView$ParallaxedListView;-><init>(Lcom/nirhart/parallaxscroll/views/ParallaxListView;Landroid/view/View;)V
-
-    iput-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
+    :cond_0
+    invoke-direct {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->b()V
 
     goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildCount()I
-
-    move-result v0
-
-    if-lez v0, :cond_2
-
-    invoke-virtual {p0, v4}, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getTop()I
-
-    move-result v0
-
-    neg-int v0, v0
-
-    iget v1, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->c:F
-
-    iget-object v2, p0, Lcom/nirhart/parallaxscroll/views/ParallaxListView;->d:Lcom/nirhart/parallaxscroll/views/ParallaxedView;
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, v1
-
-    invoke-virtual {v2, v0}, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->setOffset(F)V
-
-    goto :goto_1
 .end method
 
 .method public setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V

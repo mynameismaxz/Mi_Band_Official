@@ -166,6 +166,8 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v0, ""
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -688,7 +690,7 @@
 .method public static animNumSwitch(IILandroid/widget/TextView;)Landroid/animation/Animator;
     .locals 10
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     const/4 v1, 0x0
 
@@ -700,9 +702,9 @@
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v0
 
@@ -711,7 +713,7 @@
     move v0, v1
 
     :goto_0
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v4
 
@@ -727,14 +729,14 @@
 
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v0, v2
+    move v0, v1
 
-    move v3, v1
+    move v2, v3
 
     :goto_1
     array-length v4, v6
 
-    if-lt v3, v4, :cond_1
+    if-lt v0, v4, :cond_1
 
     invoke-static {p1}, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil;->formatNumStyle(I)Ljava/lang/CharSequence;
 
@@ -755,9 +757,9 @@
     :goto_2
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v2
 
-    if-le v0, v3, :cond_5
+    if-le v0, v2, :cond_5
 
     const-string v0, "Text"
 
@@ -765,7 +767,7 @@
 
     move-result-object v0
 
-    new-array v2, v2, [Landroid/animation/PropertyValuesHolder;
+    new-array v2, v3, [Landroid/animation/PropertyValuesHolder;
 
     aput-object v0, v2, v1
 
@@ -796,7 +798,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v4
 
@@ -804,7 +806,7 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v2, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
@@ -817,7 +819,7 @@
     goto :goto_0
 
     :cond_1
-    aget v4, v6, v3
+    aget v4, v6, v0
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -832,16 +834,16 @@
     :goto_3
     if-lt v4, v8, :cond_2
 
-    mul-int/lit8 v0, v0, 0xa
+    mul-int/lit8 v2, v2, 0xa
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_2
     if-lez v5, :cond_4
 
-    add-int/2addr p0, v0
+    add-int/2addr p0, v2
 
     :cond_3
     :goto_4
@@ -858,12 +860,12 @@
     :cond_4
     if-gez v5, :cond_3
 
-    sub-int/2addr p0, v0
+    sub-int/2addr p0, v2
 
     goto :goto_4
 
     :cond_5
-    const/high16 v3, 0x3f80
+    const/high16 v2, 0x3f80
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -871,33 +873,33 @@
 
     int-to-float v5, v5
 
-    div-float/2addr v3, v5
+    div-float/2addr v2, v5
 
     int-to-float v5, v0
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v5, v2
 
     if-nez v0, :cond_6
 
-    move v3, v1
+    move v2, v1
 
     :goto_5
-    invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v5, v3}, Landroid/animation/Keyframe;->ofObject(FLjava/lang/Object;)Landroid/animation/Keyframe;
+    invoke-static {v5, v2}, Landroid/animation/Keyframe;->ofObject(FLjava/lang/Object;)Landroid/animation/Keyframe;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v4, v0
+    aput-object v2, v4, v0
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     :cond_6
-    add-int/lit8 v3, v0, -0x1
+    add-int/lit8 v2, v0, -0x1
 
     goto :goto_5
 .end method

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field private static final b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+.field private static final m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener",
@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field private final c:Landroid/webkit/WebChromeClient;
+.field private final n:Landroid/webkit/WebChromeClient;
 
 
 # direct methods
@@ -38,7 +38,7 @@
 
     invoke-direct {v0}, Lcom/handmark/pulltorefresh/library/m;-><init>()V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
 
     return-void
 .end method
@@ -52,17 +52,17 @@
 
     invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/n;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->setOnRefreshListener(Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
@@ -78,17 +78,17 @@
 
     invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/n;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->setOnRefreshListener(Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
@@ -104,17 +104,17 @@
 
     invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/n;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->setOnRefreshListener(Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
@@ -130,17 +130,17 @@
 
     invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/n;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->m:Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->setOnRefreshListener(Lcom/handmark/pulltorefresh/library/PullToRefreshBase$OnRefreshListener;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->c:Landroid/webkit/WebChromeClient;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->n:Landroid/webkit/WebChromeClient;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
@@ -198,7 +198,7 @@
 .method protected isReadyForPullEnd()Z
     .locals 3
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -208,7 +208,7 @@
 
     int-to-float v1, v0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -222,7 +222,7 @@
 
     move-result v1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -232,7 +232,7 @@
 
     int-to-float v2, v0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -262,7 +262,7 @@
 .method protected isReadyForPullStart()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -288,7 +288,7 @@
 
     invoke-super {p0, p1}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase;->onPtrRestoreInstanceState(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 
@@ -302,7 +302,7 @@
 
     invoke-super {p0, p1}, Lcom/handmark/pulltorefresh/library/PullToRefreshBase;->onPtrSaveInstanceState(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->a:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/PullToRefreshWebView;->l:Landroid/view/View;
 
     check-cast v0, Landroid/webkit/WebView;
 

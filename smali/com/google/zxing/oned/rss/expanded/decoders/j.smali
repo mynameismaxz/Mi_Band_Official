@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public final parseInformation()Ljava/lang/String;
+.method public parseInformation()Ljava/lang/String;
     .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;

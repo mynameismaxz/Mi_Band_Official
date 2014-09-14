@@ -164,7 +164,7 @@
 
 
 # virtual methods
-.method public final beginArray()Lcom/google/gson/stream/JsonWriter;
+.method public beginArray()Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     new-instance v0, Lcom/google/gson/JsonArray;
@@ -180,7 +180,7 @@
     return-object p0
 .end method
 
-.method public final beginObject()Lcom/google/gson/stream/JsonWriter;
+.method public beginObject()Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     new-instance v0, Lcom/google/gson/JsonObject;
@@ -196,7 +196,7 @@
     return-object p0
 .end method
 
-.method public final close()V
+.method public close()V
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
@@ -225,7 +225,7 @@
     return-void
 .end method
 
-.method public final endArray()Lcom/google/gson/stream/JsonWriter;
+.method public endArray()Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
@@ -278,7 +278,7 @@
     throw v0
 .end method
 
-.method public final endObject()Lcom/google/gson/stream/JsonWriter;
+.method public endObject()Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
@@ -331,13 +331,13 @@
     throw v0
 .end method
 
-.method public final flush()V
+.method public flush()V
     .locals 0
 
     return-void
 .end method
 
-.method public final get()Lcom/google/gson/JsonElement;
+.method public get()Lcom/google/gson/JsonElement;
     .locals 3
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
@@ -352,9 +352,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Expected one JSON element but was "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
 
@@ -376,7 +380,7 @@
     return-object v0
 .end method
 
-.method public final name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+.method public name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->c:Ljava/util/List;
@@ -419,7 +423,7 @@
     throw v0
 .end method
 
-.method public final nullValue()Lcom/google/gson/stream/JsonWriter;
+.method public nullValue()Lcom/google/gson/stream/JsonWriter;
     .locals 1
 
     sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
@@ -429,7 +433,7 @@
     return-object p0
 .end method
 
-.method public final value(D)Lcom/google/gson/stream/JsonWriter;
+.method public value(D)Lcom/google/gson/stream/JsonWriter;
     .locals 3
 
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->isLenient()Z
@@ -455,9 +459,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "JSON forbids NaN and infinities: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
@@ -485,7 +493,7 @@
     return-object p0
 .end method
 
-.method public final value(J)Lcom/google/gson/stream/JsonWriter;
+.method public value(J)Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     new-instance v0, Lcom/google/gson/JsonPrimitive;
@@ -501,7 +509,7 @@
     return-object p0
 .end method
 
-.method public final value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+.method public value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
     .locals 3
 
     if-nez p1, :cond_0
@@ -541,9 +549,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "JSON forbids NaN and infinities: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -567,7 +579,7 @@
     goto :goto_0
 .end method
 
-.method public final value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+.method public value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
     .locals 1
 
     if-nez p1, :cond_0
@@ -589,7 +601,7 @@
     goto :goto_0
 .end method
 
-.method public final value(Z)Lcom/google/gson/stream/JsonWriter;
+.method public value(Z)Lcom/google/gson/stream/JsonWriter;
     .locals 2
 
     new-instance v0, Lcom/google/gson/JsonPrimitive;

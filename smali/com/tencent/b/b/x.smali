@@ -75,7 +75,9 @@
     :cond_1
     iget-object v0, p0, Lcom/tencent/b/b/x;->a:Lcom/tencent/b/b/m;
 
-    invoke-static {v0}, Lcom/tencent/b/b/m;->g(Lcom/tencent/b/b/m;)Z
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/tencent/b/b/m;->a(Lcom/tencent/b/b/m;Z)Z
 
     return-void
 

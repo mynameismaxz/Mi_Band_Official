@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/R;
+.class Landroid/support/v4/app/R;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
+.method public a(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/app/Notification;
     .locals 5
 
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Builder;->r:Landroid/app/Notification;

@@ -1,23 +1,21 @@
-.class final enum Lcom/umeng/analytics/h;
+.class enum Lcom/umeng/analytics/h;
 .super Lcom/umeng/analytics/Gender;
 
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;II)V
-    .locals 2
+    .locals 1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v1, v0, v1}, Lcom/umeng/analytics/Gender;-><init>(Ljava/lang/String;IIB)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/umeng/analytics/Gender;-><init>(Ljava/lang/String;IILcom/umeng/analytics/Gender;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;

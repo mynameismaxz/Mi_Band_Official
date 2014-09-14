@@ -1,51 +1,47 @@
-.class final Lcn/com/smartdevices/bracelet/ui/bo;
+.class Lcn/com/smartdevices/bracelet/ui/bo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bo;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bo;->a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;Lcn/com/smartdevices/bracelet/ui/bo;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bo;-><init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
 
-    const/4 v0, 0x6
+    check-cast p1, Lcn/com/smartdevices/bracelet/ui/bm;
 
-    if-ne v0, p2, :cond_0
+    check-cast p2, Lcn/com/smartdevices/bracelet/ui/bm;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bo;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    iget v0, p2, Lcn/com/smartdevices/bracelet/ui/bm;->b:I
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bo;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    iget v1, p1, Lcn/com/smartdevices/bracelet/ui/bm;->b:I
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)Landroid/view/View;
+    sub-int/2addr v0, v1
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->onClick(Landroid/view/View;)V
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

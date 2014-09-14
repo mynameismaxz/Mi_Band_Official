@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
+.field final synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshGridView;
 
 
 # direct methods

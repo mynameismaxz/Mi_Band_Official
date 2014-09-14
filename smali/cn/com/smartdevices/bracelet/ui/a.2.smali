@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/ui/a;
+.class Lcn/com/smartdevices/bracelet/ui/a;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 1
 
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V

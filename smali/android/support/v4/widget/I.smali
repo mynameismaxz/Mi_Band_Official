@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/widget/I;
+.class Landroid/support/v4/widget/I;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private a:Landroid/view/View;
+.field final a:Landroid/view/View;
 
-.field private synthetic b:Landroid/support/v4/widget/SlidingPaneLayout;
+.field final synthetic b:Landroid/support/v4/widget/SlidingPaneLayout;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 3
 
     iget-object v0, p0, Landroid/support/v4/widget/I;->a:Landroid/view/View;

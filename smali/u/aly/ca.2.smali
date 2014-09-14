@@ -14,7 +14,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lu/aly/cP;-><init>(B)V
+    invoke-direct {v0, v1}, Lu/aly/cP;-><init>(Lu/aly/cP;)V
 
     sput-object v0, Lu/aly/ca;->a:Ljava/util/Comparator;
 

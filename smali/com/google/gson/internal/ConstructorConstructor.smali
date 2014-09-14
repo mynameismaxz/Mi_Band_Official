@@ -275,8 +275,8 @@
 
 
 # virtual methods
-.method public final get(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/internal/ObjectConstructor;
-    .locals 5
+.method public get(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/internal/ObjectConstructor;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -291,33 +291,12 @@
 
     invoke-virtual {p1}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-virtual {p1}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/google/gson/internal/ConstructorConstructor;->a:Ljava/util/Map;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/gson/InstanceCreator;
-
-    if-eqz v0, :cond_1
-
-    new-instance v2, Lcom/google/gson/internal/d;
-
-    invoke-direct {v2, p0, v0, v1}, Lcom/google/gson/internal/d;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/InstanceCreator;Ljava/lang/reflect/Type;)V
-
-    move-object v0, v2
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
     iget-object v0, p0, Lcom/google/gson/internal/ConstructorConstructor;->a:Ljava/util/Map;
 
     invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -326,180 +305,58 @@
 
     check-cast v0, Lcom/google/gson/InstanceCreator;
 
+    if-eqz v0, :cond_1
+
+    new-instance v1, Lcom/google/gson/internal/d;
+
+    invoke-direct {v1, p0, v0, v2}, Lcom/google/gson/internal/d;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/InstanceCreator;Ljava/lang/reflect/Type;)V
+
+    move-object v0, v1
+
+    :cond_0
+    :goto_0
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/internal/ConstructorConstructor;->a:Ljava/util/Map;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/gson/InstanceCreator;
+
     if-eqz v0, :cond_2
 
-    new-instance v2, Lcom/google/gson/internal/h;
+    new-instance v1, Lcom/google/gson/internal/h;
 
-    invoke-direct {v2, p0, v0, v1}, Lcom/google/gson/internal/h;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/InstanceCreator;Ljava/lang/reflect/Type;)V
+    invoke-direct {v1, p0, v0, v2}, Lcom/google/gson/internal/h;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/InstanceCreator;Ljava/lang/reflect/Type;)V
 
-    move-object v0, v2
+    move-object v0, v1
 
     goto :goto_0
 
     :cond_2
-    invoke-direct {p0, v2}, Lcom/google/gson/internal/ConstructorConstructor;->a(Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
+    invoke-direct {p0, v1}, Lcom/google/gson/internal/ConstructorConstructor;->a(Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    const-class v0, Ljava/util/Collection;
+    invoke-direct {p0, v2, v1}, Lcom/google/gson/internal/ConstructorConstructor;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    move-result-object v0
 
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    const-class v0, Ljava/util/SortedSet;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    new-instance v0, Lcom/google/gson/internal/j;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/j;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    :goto_1
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/google/gson/internal/g;
+    invoke-direct {p0, v2, v1}, Lcom/google/gson/internal/ConstructorConstructor;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
 
-    invoke-direct {v0, p0, v2, v1}, Lcom/google/gson/internal/g;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
+    move-result-object v0
 
     goto :goto_0
-
-    :cond_3
-    const-class v0, Ljava/util/EnumSet;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    new-instance v0, Lcom/google/gson/internal/k;
-
-    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/k;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/reflect/Type;)V
-
-    goto :goto_1
-
-    :cond_4
-    const-class v0, Ljava/util/Set;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    new-instance v0, Lcom/google/gson/internal/l;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/l;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_5
-    const-class v0, Ljava/util/Queue;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    new-instance v0, Lcom/google/gson/internal/m;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/m;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_6
-    new-instance v0, Lcom/google/gson/internal/n;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/n;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_7
-    const-class v0, Ljava/util/Map;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    const-class v0, Ljava/util/SortedMap;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    new-instance v0, Lcom/google/gson/internal/o;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/o;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_8
-    instance-of v0, v1, Ljava/lang/reflect/ParameterizedType;
-
-    if-eqz v0, :cond_9
-
-    const-class v3, Ljava/lang/String;
-
-    move-object v0, v1
-
-    check-cast v0, Ljava/lang/reflect/ParameterizedType;
-
-    invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
-
-    move-result-object v0
-
-    const/4 v4, 0x0
-
-    aget-object v0, v0, v4
-
-    invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_9
-
-    new-instance v0, Lcom/google/gson/internal/e;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/e;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_9
-    new-instance v0, Lcom/google/gson/internal/f;
-
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/f;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-
-    goto :goto_1
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/gson/internal/ConstructorConstructor;->a:Ljava/util/Map;

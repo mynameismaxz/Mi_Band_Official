@@ -240,7 +240,7 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/infra/galaxy/common/model/AccessMethod;->value:Ljava/lang/String;

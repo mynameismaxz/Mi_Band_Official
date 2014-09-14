@@ -1,15 +1,15 @@
-.class final Lcom/tencent/open/a/e;
+.class Lcom/tencent/open/a/e;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/String;
 
-.field private synthetic b:Landroid/content/Context;
+.field final synthetic b:Landroid/content/Context;
 
-.field private synthetic c:Landroid/os/Bundle;
+.field final synthetic c:Landroid/os/Bundle;
 
-.field private synthetic d:Lcom/tencent/open/a/b;
+.field final synthetic d:Lcom/tencent/open/a/b;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 8
 
     const/4 v5, 0x0
@@ -44,9 +44,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "ReportManager doUploadItems Thread start, url = "
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-object v4, p0, Lcom/tencent/open/a/e;->a:Ljava/lang/String;
 
@@ -102,9 +106,13 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v6, "ReportManager doUploadItems Thread request count = "
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -196,9 +204,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "ReportManager doUploadItems Thread end, url = "
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-object v4, p0, Lcom/tencent/open/a/e;->a:Ljava/lang/String;
 

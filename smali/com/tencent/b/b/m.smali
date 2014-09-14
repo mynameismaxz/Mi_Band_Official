@@ -156,6 +156,16 @@
     return-object p1
 .end method
 
+.method static synthetic a(Lcom/tencent/b/b/m;Z)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/tencent/b/b/m;->j:Z
+
+    return v0
+.end method
+
 .method static synthetic b(Lcom/tencent/b/b/m;)Lcom/tencent/b/b/m$b;
     .locals 1
 
@@ -207,16 +217,6 @@
     iget-object v0, p0, Lcom/tencent/b/b/m;->g:Ljava/util/List;
 
     return-object v0
-.end method
-
-.method static synthetic g(Lcom/tencent/b/b/m;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/tencent/b/b/m;->j:Z
-
-    return v0
 .end method
 
 

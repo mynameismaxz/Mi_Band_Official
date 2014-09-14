@@ -15,9 +15,9 @@
 
 .field public static final WIFIONLY:I = 0x5
 
-.field private static a:I = 0x2
+.field static final a:I = 0x2
 
-.field private static b:I = 0x3
+.field static final b:I = 0x3
 
 
 # direct methods

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/p;
+.class Lcom/tencent/open/p;
 .super Landroid/os/Handler;
 
 
@@ -19,16 +19,20 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
     const-string v0, "TAG"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "--handleMessage--msg.WHAT = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget v2, p1, Landroid/os/Message;->what:I
 

@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final close()V
+.method public close()V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -42,7 +42,7 @@
     throw v0
 .end method
 
-.method public final copyStringToBuffer(ILandroid/database/CharArrayBuffer;)V
+.method public copyStringToBuffer(ILandroid/database/CharArrayBuffer;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -52,7 +52,7 @@
     throw v0
 .end method
 
-.method public final deactivate()V
+.method public deactivate()V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -62,7 +62,7 @@
     throw v0
 .end method
 
-.method public final getBlob(I)[B
+.method public getBlob(I)[B
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -76,7 +76,7 @@
     return-object v0
 .end method
 
-.method public final getColumnCount()I
+.method public getColumnCount()I
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -86,7 +86,7 @@
     throw v0
 .end method
 
-.method public final getColumnIndex(Ljava/lang/String;)I
+.method public getColumnIndex(Ljava/lang/String;)I
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -96,7 +96,7 @@
     throw v0
 .end method
 
-.method public final getColumnIndexOrThrow(Ljava/lang/String;)I
+.method public getColumnIndexOrThrow(Ljava/lang/String;)I
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -106,7 +106,7 @@
     throw v0
 .end method
 
-.method public final getColumnName(I)Ljava/lang/String;
+.method public getColumnName(I)Ljava/lang/String;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -116,7 +116,7 @@
     throw v0
 .end method
 
-.method public final getColumnNames()[Ljava/lang/String;
+.method public getColumnNames()[Ljava/lang/String;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -126,7 +126,7 @@
     throw v0
 .end method
 
-.method public final getCount()I
+.method public getCount()I
     .locals 1
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -138,7 +138,7 @@
     return v0
 .end method
 
-.method public final getDouble(I)D
+.method public getDouble(I)D
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -152,7 +152,7 @@
     return-wide v0
 .end method
 
-.method public final getExtras()Landroid/os/Bundle;
+.method public getExtras()Landroid/os/Bundle;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -162,7 +162,7 @@
     throw v0
 .end method
 
-.method public final getFloat(I)F
+.method public getFloat(I)F
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -176,7 +176,7 @@
     return v0
 .end method
 
-.method public final getInt(I)I
+.method public getInt(I)I
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -190,7 +190,7 @@
     return v0
 .end method
 
-.method public final getLong(I)J
+.method public getLong(I)J
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -204,7 +204,7 @@
     return-wide v0
 .end method
 
-.method public final getNotificationUri()Landroid/net/Uri;
+.method public getNotificationUri()Landroid/net/Uri;
     .locals 1
 
     const/4 v0, 0x0
@@ -212,7 +212,7 @@
     return-object v0
 .end method
 
-.method public final getPosition()I
+.method public getPosition()I
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -220,7 +220,7 @@
     return v0
 .end method
 
-.method public final getShort(I)S
+.method public getShort(I)S
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -234,7 +234,7 @@
     return v0
 .end method
 
-.method public final getString(I)Ljava/lang/String;
+.method public getString(I)Ljava/lang/String;
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -248,7 +248,7 @@
     return-object v0
 .end method
 
-.method public final getType(I)I
+.method public getType(I)I
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -258,7 +258,7 @@
     throw v0
 .end method
 
-.method public final getWantsAllOnMoveCalls()Z
+.method public getWantsAllOnMoveCalls()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -268,7 +268,7 @@
     throw v0
 .end method
 
-.method public final isAfterLast()Z
+.method public isAfterLast()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -278,7 +278,7 @@
     throw v0
 .end method
 
-.method public final isBeforeFirst()Z
+.method public isBeforeFirst()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -288,7 +288,7 @@
     throw v0
 .end method
 
-.method public final isClosed()Z
+.method public isClosed()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -298,7 +298,7 @@
     throw v0
 .end method
 
-.method public final isFirst()Z
+.method public isFirst()Z
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -316,7 +316,7 @@
     goto :goto_0
 .end method
 
-.method public final isLast()Z
+.method public isLast()Z
     .locals 2
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -338,7 +338,7 @@
     goto :goto_0
 .end method
 
-.method public final isNull(I)Z
+.method public isNull(I)Z
     .locals 2
 
     iget-object v0, p0, Lde/greenrobot/dao/internal/FastCursor;->window:Landroid/database/CursorWindow;
@@ -352,7 +352,7 @@
     return v0
 .end method
 
-.method public final move(I)Z
+.method public move(I)Z
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -366,7 +366,7 @@
     return v0
 .end method
 
-.method public final moveToFirst()Z
+.method public moveToFirst()Z
     .locals 2
 
     const/4 v0, 0x0
@@ -383,7 +383,7 @@
     return v0
 .end method
 
-.method public final moveToLast()Z
+.method public moveToLast()Z
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->count:I
@@ -407,7 +407,7 @@
     goto :goto_0
 .end method
 
-.method public final moveToNext()Z
+.method public moveToNext()Z
     .locals 2
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -435,7 +435,7 @@
     goto :goto_0
 .end method
 
-.method public final moveToPosition(I)Z
+.method public moveToPosition(I)Z
     .locals 1
 
     if-ltz p1, :cond_0
@@ -457,7 +457,7 @@
     goto :goto_0
 .end method
 
-.method public final moveToPrevious()Z
+.method public moveToPrevious()Z
     .locals 1
 
     iget v0, p0, Lde/greenrobot/dao/internal/FastCursor;->position:I
@@ -481,7 +481,7 @@
     goto :goto_0
 .end method
 
-.method public final registerContentObserver(Landroid/database/ContentObserver;)V
+.method public registerContentObserver(Landroid/database/ContentObserver;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -491,7 +491,7 @@
     throw v0
 .end method
 
-.method public final registerDataSetObserver(Landroid/database/DataSetObserver;)V
+.method public registerDataSetObserver(Landroid/database/DataSetObserver;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -501,7 +501,7 @@
     throw v0
 .end method
 
-.method public final requery()Z
+.method public requery()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -511,7 +511,7 @@
     throw v0
 .end method
 
-.method public final respond(Landroid/os/Bundle;)Landroid/os/Bundle;
+.method public respond(Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -521,7 +521,7 @@
     throw v0
 .end method
 
-.method public final setNotificationUri(Landroid/content/ContentResolver;Landroid/net/Uri;)V
+.method public setNotificationUri(Landroid/content/ContentResolver;Landroid/net/Uri;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -531,7 +531,7 @@
     throw v0
 .end method
 
-.method public final unregisterContentObserver(Landroid/database/ContentObserver;)V
+.method public unregisterContentObserver(Landroid/database/ContentObserver;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -541,7 +541,7 @@
     throw v0
 .end method
 
-.method public final unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+.method public unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;

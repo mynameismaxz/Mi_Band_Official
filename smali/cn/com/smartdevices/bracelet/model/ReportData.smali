@@ -15,6 +15,8 @@
 
 .field public maxDateStr:Ljava/lang/String;
 
+.field public runDistance:I
+
 .field public steps:I
 
 .field public timeFrom:Ljava/lang/String;
@@ -43,6 +45,8 @@
     iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->distance:I
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->calories:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->runDistance:I
 
     const-string v0, ""
 
@@ -133,6 +137,14 @@
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->maxDateStr:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getRunDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->runDistance:I
+
+    return v0
 .end method
 
 .method public getSteps()I
@@ -332,7 +344,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ndistance:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "distance:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -344,7 +362,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ncalories:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "calories:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -356,7 +380,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ntimeFrom:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "timeFrom:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -368,7 +398,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ntimeTo:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "timeTo:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -380,7 +416,13 @@
 
     move-result-object v0
 
-    const-string v1, "\nmaxDateStr:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "maxDateStr:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -392,7 +434,13 @@
 
     move-result-object v0
 
-    const-string v1, "\nmaxDateStep:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "maxDateStep:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -404,7 +452,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ncontinueDays:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "continueDays:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -416,7 +470,13 @@
 
     move-result-object v0
 
-    const-string v1, "\nmaxContinueDays:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "maxContinueDays:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -428,7 +488,13 @@
 
     move-result-object v0
 
-    const-string v1, "\ntodayComplete:"
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "todayComplete:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

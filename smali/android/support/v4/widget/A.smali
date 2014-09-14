@@ -1,6 +1,9 @@
 .class Landroid/support/v4/widget/A;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/widget/z;
+
 
 # direct methods
 .method constructor <init>()V

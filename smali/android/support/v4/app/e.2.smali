@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/app/e;
+.class Landroid/support/v4/app/e;
 .super Landroid/graphics/drawable/Drawable;
 
 # interfaces
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final a()F
+.method public a()F
     .locals 1
 
     iget v0, p0, Landroid/support/v4/app/e;->b:F
@@ -42,7 +42,7 @@
     return v0
 .end method
 
-.method public final a(F)V
+.method public a(F)V
     .locals 0
 
     iput p1, p0, Landroid/support/v4/app/e;->b:F
@@ -52,19 +52,17 @@
     return-void
 .end method
 
-.method public final b(F)V
-    .locals 1
+.method public b(F)V
+    .locals 0
 
-    const v0, 0x3eaaaaab
-
-    iput v0, p0, Landroid/support/v4/app/e;->c:F
+    iput p1, p0, Landroid/support/v4/app/e;->c:F
 
     invoke-virtual {p0}, Landroid/support/v4/app/e;->invalidateSelf()V
 
     return-void
 .end method
 
-.method public final clearColorFilter()V
+.method public clearColorFilter()V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -74,7 +72,7 @@
     return-void
 .end method
 
-.method public final draw(Landroid/graphics/Canvas;)V
+.method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -116,7 +114,7 @@
     return-void
 .end method
 
-.method public final getChangingConfigurations()I
+.method public getChangingConfigurations()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -128,7 +126,7 @@
     return v0
 .end method
 
-.method public final getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+.method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
     .locals 1
 
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -138,7 +136,7 @@
     return-object v0
 .end method
 
-.method public final getCurrent()Landroid/graphics/drawable/Drawable;
+.method public getCurrent()Landroid/graphics/drawable/Drawable;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -150,7 +148,7 @@
     return-object v0
 .end method
 
-.method public final getIntrinsicHeight()I
+.method public getIntrinsicHeight()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -162,7 +160,7 @@
     return v0
 .end method
 
-.method public final getIntrinsicWidth()I
+.method public getIntrinsicWidth()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -174,7 +172,7 @@
     return v0
 .end method
 
-.method public final getMinimumHeight()I
+.method public getMinimumHeight()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -186,7 +184,7 @@
     return v0
 .end method
 
-.method public final getMinimumWidth()I
+.method public getMinimumWidth()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -198,7 +196,7 @@
     return v0
 .end method
 
-.method public final getOpacity()I
+.method public getOpacity()I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -210,7 +208,7 @@
     return v0
 .end method
 
-.method public final getPadding(Landroid/graphics/Rect;)Z
+.method public getPadding(Landroid/graphics/Rect;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -222,7 +220,7 @@
     return v0
 .end method
 
-.method public final getState()[I
+.method public getState()[I
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -234,7 +232,7 @@
     return-object v0
 .end method
 
-.method public final getTransparentRegion()Landroid/graphics/Region;
+.method public getTransparentRegion()Landroid/graphics/Region;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -246,7 +244,7 @@
     return-object v0
 .end method
 
-.method public final invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -259,7 +257,7 @@
     return-void
 .end method
 
-.method public final isStateful()Z
+.method public isStateful()Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -271,7 +269,7 @@
     return v0
 .end method
 
-.method protected final onBoundsChange(Landroid/graphics/Rect;)V
+.method protected onBoundsChange(Landroid/graphics/Rect;)V
     .locals 1
 
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
@@ -283,7 +281,7 @@
     return-void
 .end method
 
-.method protected final onStateChange([I)Z
+.method protected onStateChange([I)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -297,7 +295,7 @@
     return v0
 .end method
 
-.method public final scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+.method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -310,7 +308,7 @@
     return-void
 .end method
 
-.method public final setAlpha(I)V
+.method public setAlpha(I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -320,7 +318,7 @@
     return-void
 .end method
 
-.method public final setChangingConfigurations(I)V
+.method public setChangingConfigurations(I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -330,7 +328,7 @@
     return-void
 .end method
 
-.method public final setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+.method public setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -340,7 +338,7 @@
     return-void
 .end method
 
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
+.method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -350,7 +348,7 @@
     return-void
 .end method
 
-.method public final setDither(Z)V
+.method public setDither(Z)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -360,7 +358,7 @@
     return-void
 .end method
 
-.method public final setFilterBitmap(Z)V
+.method public setFilterBitmap(Z)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -370,7 +368,7 @@
     return-void
 .end method
 
-.method public final setState([I)Z
+.method public setState([I)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;
@@ -382,7 +380,7 @@
     return v0
 .end method
 
-.method public final setVisible(ZZ)Z
+.method public setVisible(ZZ)Z
     .locals 1
 
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
@@ -392,7 +390,7 @@
     return v0
 .end method
 
-.method public final unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+.method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/e;->a:Landroid/graphics/drawable/Drawable;

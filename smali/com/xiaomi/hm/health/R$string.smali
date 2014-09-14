@@ -57,17 +57,17 @@
 
 .field public static final app_name:I = 0x7f0c0006
 
-.field public static final back:I = 0x7f0c01b2
+.field public static final back:I = 0x7f0c01b6
 
-.field public static final battery_charge_full:I = 0x7f0c0165
+.field public static final battery_charge_full:I = 0x7f0c0169
 
-.field public static final battery_charging:I = 0x7f0c0167
+.field public static final battery_charging:I = 0x7f0c016b
 
-.field public static final battery_low_info:I = 0x7f0c0166
+.field public static final battery_low_info:I = 0x7f0c016a
 
 .field public static final before_min:I = 0x7f0c00d9
 
-.field public static final bin_weixin_device_not_connect:I = 0x7f0c01bf
+.field public static final bin_weixin_device_not_connect:I = 0x7f0c01c3
 
 .field public static final bind_bracelet:I = 0x7f0c005a
 
@@ -75,25 +75,31 @@
 
 .field public static final bind_new_mili:I = 0x7f0c007f
 
-.field public static final bind_weixin_failed:I = 0x7f0c0176
+.field public static final bind_weixin_failed:I = 0x7f0c017a
 
-.field public static final bind_weixin_now:I = 0x7f0c0175
+.field public static final bind_weixin_new_disable_tips:I = 0x7f0c01d3
 
-.field public static final bind_weixin_qrcode_name:I = 0x7f0c01ad
+.field public static final bind_weixin_new_now:I = 0x7f0c01d2
 
-.field public static final bind_weixin_save:I = 0x7f0c0178
+.field public static final bind_weixin_new_tips:I = 0x7f0c01d1
 
-.field public static final bind_weixin_succ:I = 0x7f0c0177
+.field public static final bind_weixin_now:I = 0x7f0c0179
 
-.field public static final bind_weixin_tips_1:I = 0x7f0c0173
+.field public static final bind_weixin_qrcode_name:I = 0x7f0c01b1
 
-.field public static final bind_weixin_tips_2:I = 0x7f0c0174
+.field public static final bind_weixin_save:I = 0x7f0c017c
 
-.field public static final bind_weixin_title:I = 0x7f0c0170
+.field public static final bind_weixin_succ:I = 0x7f0c017b
+
+.field public static final bind_weixin_tips_1:I = 0x7f0c0177
+
+.field public static final bind_weixin_tips_2:I = 0x7f0c0178
+
+.field public static final bind_weixin_title:I = 0x7f0c0174
 
 .field public static final blue:I = 0x7f0c0137
 
-.field public static final bluetooth:I = 0x7f0c019a
+.field public static final bluetooth:I = 0x7f0c019e
 
 .field public static final bmenu_device:I = 0x7f0c00cc
 
@@ -133,9 +139,11 @@
 
 .field public static final clock_closed:I = 0x7f0c00f7
 
+.field public static final closed:I = 0x7f0c01e2
+
 .field public static final cm:I = 0x7f0c005f
 
-.field public static final come_from_xiaomi_bracelet:I = 0x7f0c017e
+.field public static final come_from_xiaomi_bracelet:I = 0x7f0c0182
 
 .field public static final confirm:I = 0x7f0c00a8
 
@@ -145,11 +153,11 @@
 
 .field public static final content_too_short:I = 0x7f0c00df
 
-.field public static final continue_reach_goal:I = 0x7f0c0190
+.field public static final continue_reach_goal:I = 0x7f0c0194
 
-.field public static final continue_reach_goal_new_record:I = 0x7f0c01cc
+.field public static final continue_reach_goal_new_record:I = 0x7f0c01d0
 
-.field public static final continue_tips_format:I = 0x7f0c0191
+.field public static final continue_tips_format:I = 0x7f0c0195
 
 .field public static final daily_sporty:I = 0x7f0c0075
 
@@ -195,7 +203,7 @@
 
 .field public static final device_not_response:I = 0x7f0c0051
 
-.field public static final disable_debug_log:I = 0x7f0c01b4
+.field public static final disable_debug_log:I = 0x7f0c01b8
 
 .field public static final distance:I = 0x7f0c0072
 
@@ -219,29 +227,29 @@
 
 .field public static final dynamic_detail_step_title_today:I = 0x7f0c0112
 
-.field public static final dynamic_pull_connect_failed:I = 0x7f0c01a1
+.field public static final dynamic_pull_connect_failed:I = 0x7f0c01a5
 
-.field public static final dynamic_pull_connect_failed_hint:I = 0x7f0c01a2
+.field public static final dynamic_pull_connect_failed_hint:I = 0x7f0c01a6
 
-.field public static final dynamic_pull_connecting_bracelet:I = 0x7f0c01a5
+.field public static final dynamic_pull_connecting_bracelet:I = 0x7f0c01a9
 
-.field public static final dynamic_pull_last_sync_time:I = 0x7f0c01a4
+.field public static final dynamic_pull_last_sync_time:I = 0x7f0c01a8
 
-.field public static final dynamic_pull_not_sync_today:I = 0x7f0c01a3
+.field public static final dynamic_pull_not_sync_today:I = 0x7f0c01a7
 
-.field public static final dynamic_pull_pull_to_sync:I = 0x7f0c01aa
+.field public static final dynamic_pull_pull_to_sync:I = 0x7f0c01ae
 
-.field public static final dynamic_pull_release_to_sync:I = 0x7f0c01a9
+.field public static final dynamic_pull_release_to_sync:I = 0x7f0c01ad
 
-.field public static final dynamic_pull_sync_after_connected:I = 0x7f0c01a6
+.field public static final dynamic_pull_sync_after_connected:I = 0x7f0c01aa
 
-.field public static final dynamic_pull_sync_error:I = 0x7f0c01ac
+.field public static final dynamic_pull_sync_error:I = 0x7f0c01b0
 
-.field public static final dynamic_pull_syncing:I = 0x7f0c01a7
+.field public static final dynamic_pull_syncing:I = 0x7f0c01ab
 
-.field public static final dynamic_pull_syncing_progress:I = 0x7f0c01a8
+.field public static final dynamic_pull_syncing_progress:I = 0x7f0c01ac
 
-.field public static final dynamic_pull_update_report:I = 0x7f0c01ab
+.field public static final dynamic_pull_update_report:I = 0x7f0c01af
 
 .field public static final dynamic_sleep_active:I = 0x7f0c0115
 
@@ -277,7 +285,7 @@
 
 .field public static final dynamic_title_step:I = 0x7f0c010a
 
-.field public static final enable_debug_log:I = 0x7f0c01b3
+.field public static final enable_debug_log:I = 0x7f0c01b7
 
 .field public static final error_code:I = 0x7f0c00d1
 
@@ -301,17 +309,17 @@
 
 .field public static final find_bracelet:I = 0x7f0c012b
 
-.field public static final find_bracelet_warning:I = 0x7f0c01c5
+.field public static final find_bracelet_warning:I = 0x7f0c01c9
 
-.field public static final finding_bracelet:I = 0x7f0c0168
+.field public static final finding_bracelet:I = 0x7f0c016c
 
 .field public static final firmware_upgrade:I = 0x7f0c0010
 
 .field public static final firmware_version:I = 0x7f0c0133
 
-.field public static final first_use_days_today_format:I = 0x7f0c01c9
+.field public static final first_use_days_today_format:I = 0x7f0c01cd
 
-.field public static final first_use_remain_days_format:I = 0x7f0c01ca
+.field public static final first_use_remain_days_format:I = 0x7f0c01ce
 
 .field public static final found_bracelet_info:I = 0x7f0c004f
 
@@ -335,7 +343,13 @@
 
 .field public static final fw_failed_help_title2:I = 0x7f0c00f5
 
-.field public static final fw_upgrade:I = 0x7f0c01b5
+.field public static final fw_low_battery_tips:I = 0x7f0c01df
+
+.field public static final fw_low_battery_title:I = 0x7f0c01de
+
+.field public static final fw_low_battery_view_help:I = 0x7f0c01e0
+
+.field public static final fw_upgrade:I = 0x7f0c01b9
 
 .field public static final fw_upgrade_failed:I = 0x7f0c00cf
 
@@ -343,13 +357,13 @@
 
 .field public static final fw_upgrade_now:I = 0x7f0c013b
 
-.field public static final fw_upgrade_progress:I = 0x7f0c01b7
+.field public static final fw_upgrade_progress:I = 0x7f0c01bb
 
 .field public static final fw_upgrade_succ:I = 0x7f0c00ce
 
-.field public static final fw_upgrade_tips:I = 0x7f0c01b6
+.field public static final fw_upgrade_tips:I = 0x7f0c01ba
 
-.field public static final gen_qr_code:I = 0x7f0c01be
+.field public static final gen_qr_code:I = 0x7f0c01c2
 
 .field public static final get_help:I = 0x7f0c0055
 
@@ -363,13 +377,13 @@
 
 .field public static final goals_push_ten:I = 0x7f0c0030
 
-.field public static final gram:I = 0x7f0c0192
+.field public static final gram:I = 0x7f0c0196
 
 .field public static final green:I = 0x7f0c0139
 
-.field public static final half_marathon_format_0:I = 0x7f0c015f
+.field public static final half_marathon_format_0:I = 0x7f0c0162
 
-.field public static final half_marathon_format_1:I = 0x7f0c0160
+.field public static final half_marathon_format_1:I = 0x7f0c0163
 
 .field public static final help:I = 0x7f0c00e0
 
@@ -395,31 +409,33 @@
 
 .field public static final hour_1:I = 0x7f0c00dd
 
-.field public static final incoming_call_notify:I = 0x7f0c0179
+.field public static final in:I = 0x7f0c01e1
 
-.field public static final incoming_call_notify_tips:I = 0x7f0c017a
+.field public static final incoming_call_notify:I = 0x7f0c017d
+
+.field public static final incoming_call_notify_tips:I = 0x7f0c017e
 
 .field public static final input_precise_person_info:I = 0x7f0c0100
 
-.field public static final instruction_tip_1:I = 0x7f0c0187
+.field public static final instruction_tip_1:I = 0x7f0c018b
 
-.field public static final instruction_tip_2_1:I = 0x7f0c0188
+.field public static final instruction_tip_2_1:I = 0x7f0c018c
 
-.field public static final instruction_tip_2_2:I = 0x7f0c0189
+.field public static final instruction_tip_2_2:I = 0x7f0c018d
 
-.field public static final instruction_tip_2_3:I = 0x7f0c018a
+.field public static final instruction_tip_2_3:I = 0x7f0c018e
 
-.field public static final instruction_tip_2_4:I = 0x7f0c018b
+.field public static final instruction_tip_2_4:I = 0x7f0c018f
 
-.field public static final instruction_tip_2_5:I = 0x7f0c018c
+.field public static final instruction_tip_2_5:I = 0x7f0c0190
 
-.field public static final instruction_tip_3:I = 0x7f0c018d
+.field public static final instruction_tip_3:I = 0x7f0c0191
 
-.field public static final instruction_title:I = 0x7f0c0186
+.field public static final instruction_title:I = 0x7f0c018a
 
 .field public static final kg:I = 0x7f0c0064
 
-.field public static final kilogram:I = 0x7f0c0193
+.field public static final kilogram:I = 0x7f0c0197
 
 .field public static final km:I = 0x7f0c0077
 
@@ -443,21 +459,21 @@
 
 .field public static final male:I = 0x7f0c005d
 
-.field public static final marathon_format_0:I = 0x7f0c015d
+.field public static final marathon_format_0:I = 0x7f0c0160
 
-.field public static final marathon_format_1:I = 0x7f0c015e
+.field public static final marathon_format_1:I = 0x7f0c0161
 
 .field public static final mili_exit_login_info:I = 0x7f0c00a2
 
 .field public static final mili_exit_login_info_continue:I = 0x7f0c00a3
 
-.field public static final mili_exit_login_info_continue_tip:I = 0x7f0c01b0
+.field public static final mili_exit_login_info_continue_tip:I = 0x7f0c01b4
 
-.field public static final mili_exit_login_info_exiting:I = 0x7f0c01b1
+.field public static final mili_exit_login_info_exiting:I = 0x7f0c01b5
 
-.field public static final mili_exit_login_info_unbind:I = 0x7f0c01ae
+.field public static final mili_exit_login_info_unbind:I = 0x7f0c01b2
 
-.field public static final mili_exit_login_info_unlock:I = 0x7f0c01af
+.field public static final mili_exit_login_info_unlock:I = 0x7f0c01b3
 
 .field public static final mili_name:I = 0x7f0c0088
 
@@ -491,9 +507,9 @@
 
 .field public static final mon_sat:I = 0x7f0c009c
 
-.field public static final month:I = 0x7f0c01c3
+.field public static final month:I = 0x7f0c01c7
 
-.field public static final move_and_capture:I = 0x7f0c01c7
+.field public static final move_and_capture:I = 0x7f0c01cb
 
 .field public static final multi_devices_info:I = 0x7f0c004a
 
@@ -505,19 +521,19 @@
 
 .field public static final new_friend_cancel:I = 0x7f0c0065
 
-.field public static final new_record_born:I = 0x7f0c018e
+.field public static final new_record_born:I = 0x7f0c0192
 
-.field public static final new_record_format_str:I = 0x7f0c018f
+.field public static final new_record_format_str:I = 0x7f0c0193
 
 .field public static final new_version_available:I = 0x7f0c00f8
 
 .field public static final next_step:I = 0x7f0c0028
 
-.field public static final no_network_connection:I = 0x7f0c01bd
+.field public static final no_network_connection:I = 0x7f0c01c1
 
-.field public static final no_wear_bracelet:I = 0x7f0c019f
+.field public static final no_wear_bracelet:I = 0x7f0c01a3
 
-.field public static final no_wear_user_modified:I = 0x7f0c01a0
+.field public static final no_wear_user_modified:I = 0x7f0c01a4
 
 .field public static final noti_bracelet_low_battery_content:I = 0x7f0c0046
 
@@ -531,7 +547,7 @@
 
 .field public static final one_min:I = 0x7f0c00d8
 
-.field public static final one_week:I = 0x7f0c017c
+.field public static final one_week:I = 0x7f0c0180
 
 .field public static final orange:I = 0x7f0c013a
 
@@ -587,7 +603,7 @@
 
 .field public static final right_hand:I = 0x7f0c0130
 
-.field public static final runed:I = 0x7f0c01b8
+.field public static final runed:I = 0x7f0c01bc
 
 .field public static final s_mili:I = 0x7f0c007c
 
@@ -601,7 +617,15 @@
 
 .field public static final search_devices_title:I = 0x7f0c0067
 
-.field public static final second:I = 0x7f0c01c6
+.field public static final sec10:I = 0x7f0c01e4
+
+.field public static final sec15:I = 0x7f0c01e5
+
+.field public static final sec20:I = 0x7f0c01e6
+
+.field public static final sec3:I = 0x7f0c01e3
+
+.field public static final second:I = 0x7f0c01ca
 
 .field public static final select_from_camera:I = 0x7f0c00ec
 
@@ -621,15 +645,15 @@
 
 .field public static final set_sport_goal:I = 0x7f0c002b
 
-.field public static final setting_about_app:I = 0x7f0c019c
+.field public static final setting_about_app:I = 0x7f0c01a0
 
-.field public static final setting_about_fw:I = 0x7f0c019b
+.field public static final setting_about_fw:I = 0x7f0c019f
 
-.field public static final setting_feedback_address:I = 0x7f0c0199
+.field public static final setting_feedback_address:I = 0x7f0c019d
 
-.field public static final setting_feedback_hint:I = 0x7f0c0198
+.field public static final setting_feedback_hint:I = 0x7f0c019c
 
-.field public static final setting_feedback_send:I = 0x7f0c0197
+.field public static final setting_feedback_send:I = 0x7f0c019b
 
 .field public static final share:I = 0x7f0c0062
 
@@ -653,19 +677,21 @@
 
 .field public static final share_blog_weixin:I = 0x7f0c006d
 
-.field public static final share_continue_goal_format:I = 0x7f0c0161
+.field public static final share_continue_goal_format:I = 0x7f0c0164
+
+.field public static final share_continue_goal_format_run:I = 0x7f0c0165
 
 .field public static final share_goal_tips_fail:I = 0x7f0c0091
 
 .field public static final share_goal_tips_succ:I = 0x7f0c0090
 
-.field public static final share_miliao_too_old:I = 0x7f0c01c8
+.field public static final share_miliao_too_old:I = 0x7f0c01cc
 
-.field public static final share_play_ground_format:I = 0x7f0c015b
+.field public static final share_play_ground_format:I = 0x7f0c015d
 
-.field public static final share_sleep_description:I = 0x7f0c0162
+.field public static final share_sleep_description:I = 0x7f0c0166
 
-.field public static final share_sleep_description_average:I = 0x7f0c0163
+.field public static final share_sleep_description_average:I = 0x7f0c0167
 
 .field public static final share_sleep_title:I = 0x7f0c0152
 
@@ -675,9 +701,15 @@
 
 .field public static final share_step_description:I = 0x7f0c0159
 
-.field public static final share_step_description_monthly:I = 0x7f0c015c
+.field public static final share_step_description_monthly:I = 0x7f0c015e
 
-.field public static final share_step_description_weekly:I = 0x7f0c015a
+.field public static final share_step_description_monthly_run:I = 0x7f0c015f
+
+.field public static final share_step_description_run:I = 0x7f0c015a
+
+.field public static final share_step_description_weekly:I = 0x7f0c015b
+
+.field public static final share_step_description_weekly_run:I = 0x7f0c015c
 
 .field public static final share_step_goal_failed_title:I = 0x7f0c0158
 
@@ -687,37 +719,37 @@
 
 .field public static final share_step_goal_succ_title_today:I = 0x7f0c0155
 
-.field public static final share_step_walk:I = 0x7f0c017b
+.field public static final share_step_walk:I = 0x7f0c017f
 
 .field public static final share_to_content:I = 0x7f0c008f
 
-.field public static final share_to_content_sleep:I = 0x7f0c01c0
+.field public static final share_to_content_sleep:I = 0x7f0c01c4
 
-.field public static final share_to_content_step:I = 0x7f0c01c1
+.field public static final share_to_content_step:I = 0x7f0c01c5
 
-.field public static final share_to_miliao_path:I = 0x7f0c01b9
+.field public static final share_to_miliao_path:I = 0x7f0c01bd
 
-.field public static final share_to_miliao_target_feeds:I = 0x7f0c01ba
+.field public static final share_to_miliao_target_feeds:I = 0x7f0c01be
 
-.field public static final share_to_miliao_target_friends:I = 0x7f0c01bb
+.field public static final share_to_miliao_target_friends:I = 0x7f0c01bf
 
-.field public static final share_to_miliao_target_union:I = 0x7f0c01bc
+.field public static final share_to_miliao_target_union:I = 0x7f0c01c0
 
 .field public static final share_to_title:I = 0x7f0c008e
 
-.field public static final share_to_topic:I = 0x7f0c01c2
+.field public static final share_to_topic:I = 0x7f0c01c6
 
-.field public static final share_uninstall_client:I = 0x7f0c0196
+.field public static final share_uninstall_client:I = 0x7f0c019a
 
 .field public static final smart_alarm_clock:I = 0x7f0c0081
 
-.field public static final smart_alarm_notify:I = 0x7f0c0164
+.field public static final smart_alarm_notify:I = 0x7f0c0168
 
 .field public static final smart_wake_up:I = 0x7f0c0096
 
 .field public static final smart_wake_up_info:I = 0x7f0c0097
 
-.field public static final start:I = 0x7f0c019e
+.field public static final start:I = 0x7f0c01a2
 
 .field public static final start_download:I = 0x7f0c00fc
 
@@ -805,15 +837,15 @@
 
 .field public static final step:I = 0x7f0c0079
 
-.field public static final step1:I = 0x7f0c0171
+.field public static final step1:I = 0x7f0c0175
 
-.field public static final step2:I = 0x7f0c0172
+.field public static final step2:I = 0x7f0c0176
 
 .field public static final step_per_day:I = 0x7f0c0134
 
-.field public static final stop:I = 0x7f0c019d
+.field public static final stop:I = 0x7f0c01a1
 
-.field public static final sync_to_server:I = 0x7f0c0194
+.field public static final sync_to_server:I = 0x7f0c0198
 
 .field public static final system_low_info:I = 0x7f0c0059
 
@@ -857,43 +889,43 @@
 
 .field public static final unlock_screen:I = 0x7f0c0039
 
-.field public static final unlock_screen_help_info0:I = 0x7f0c0183
+.field public static final unlock_screen_help_info0:I = 0x7f0c0187
 
-.field public static final unlock_screen_help_info1:I = 0x7f0c0184
+.field public static final unlock_screen_help_info1:I = 0x7f0c0188
 
-.field public static final unlock_screen_help_info2:I = 0x7f0c0185
+.field public static final unlock_screen_help_info2:I = 0x7f0c0189
 
 .field public static final unlock_screen_help_tips:I = 0x7f0c014c
 
-.field public static final unlock_screen_help_title0:I = 0x7f0c0180
+.field public static final unlock_screen_help_title0:I = 0x7f0c0184
 
-.field public static final unlock_screen_help_title1:I = 0x7f0c0181
+.field public static final unlock_screen_help_title1:I = 0x7f0c0185
 
-.field public static final unlock_screen_help_title2:I = 0x7f0c0182
+.field public static final unlock_screen_help_title2:I = 0x7f0c0186
 
-.field public static final unlock_screen_invalid:I = 0x7f0c017f
+.field public static final unlock_screen_invalid:I = 0x7f0c0183
 
 .field public static final unlock_screen_invalid_helper:I = 0x7f0c00e1
 
-.field public static final unlock_screen_miui_version_low:I = 0x7f0c0195
+.field public static final unlock_screen_miui_version_low:I = 0x7f0c0199
 
-.field public static final unlock_screen_modify_unlock:I = 0x7f0c016f
+.field public static final unlock_screen_modify_unlock:I = 0x7f0c0173
 
 .field public static final unlock_screen_not_connect:I = 0x7f0c014b
 
-.field public static final unlock_screen_set_password:I = 0x7f0c016b
+.field public static final unlock_screen_set_password:I = 0x7f0c016f
 
-.field public static final unlock_screen_set_password_tips_has_set:I = 0x7f0c016a
+.field public static final unlock_screen_set_password_tips_has_set:I = 0x7f0c016e
 
-.field public static final unlock_screen_set_password_tips_set:I = 0x7f0c0169
+.field public static final unlock_screen_set_password_tips_set:I = 0x7f0c016d
 
-.field public static final unlock_screen_set_success:I = 0x7f0c016e
+.field public static final unlock_screen_set_success:I = 0x7f0c0172
 
-.field public static final unlock_screen_set_use_bracelet:I = 0x7f0c016d
+.field public static final unlock_screen_set_use_bracelet:I = 0x7f0c0171
 
-.field public static final unlock_screen_set_use_bracelet_tips:I = 0x7f0c016c
+.field public static final unlock_screen_set_use_bracelet_tips:I = 0x7f0c0170
 
-.field public static final until:I = 0x7f0c01cb
+.field public static final until_hit_goals:I = 0x7f0c01cf
 
 .field public static final upgrade:I = 0x7f0c00fa
 
@@ -905,11 +937,31 @@
 
 .field public static final wait:I = 0x7f0c00de
 
-.field public static final walked:I = 0x7f0c017d
+.field public static final walked:I = 0x7f0c0181
 
 .field public static final wear_hand:I = 0x7f0c012e
 
 .field public static final weared_days:I = 0x7f0c014d
+
+.field public static final weather_aqi:I = 0x7f0c01d4
+
+.field public static final weather_description_cloudy:I = 0x7f0c01da
+
+.field public static final weather_description_fine:I = 0x7f0c01d9
+
+.field public static final weather_description_fog:I = 0x7f0c01dc
+
+.field public static final weather_description_haze:I = 0x7f0c01dd
+
+.field public static final weather_description_overcast:I = 0x7f0c01db
+
+.field public static final weather_description_rain:I = 0x7f0c01d5
+
+.field public static final weather_description_rain_snow:I = 0x7f0c01d6
+
+.field public static final weather_description_sand:I = 0x7f0c01d8
+
+.field public static final weather_description_snow:I = 0x7f0c01d7
 
 .field public static final week:I = 0x7f0c0146
 
@@ -917,7 +969,7 @@
 
 .field public static final welcome:I = 0x7f0c000b
 
-.field public static final year:I = 0x7f0c01c4
+.field public static final year:I = 0x7f0c01c8
 
 .field public static final your_gender:I = 0x7f0c0140
 

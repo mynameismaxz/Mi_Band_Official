@@ -155,7 +155,7 @@
 .method public getPhase()F
     .locals 1
 
-    const/4 v0, 0x0
+    iget v0, p0, Lorg/achartengine/renderer/BasicStroke;->e:F
 
     return v0
 .end method

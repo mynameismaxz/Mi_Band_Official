@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method final a(FFF)Z
+.method a(FFF)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -79,7 +79,7 @@
     return v0
 .end method
 
-.method final b(FFF)Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+.method b(FFF)Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     .locals 4
 
     const/high16 v3, 0x4000

@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/connect/auth/QQToken;
+.field final synthetic a:Lcom/tencent/connect/auth/QQToken;
 
-.field private synthetic b:Landroid/content/Context;
+.field final synthetic b:Landroid/content/Context;
 
-.field private synthetic c:Ljava/lang/String;
+.field final synthetic c:Ljava/lang/String;
 
-.field private synthetic d:Landroid/os/Bundle;
+.field final synthetic d:Landroid/os/Bundle;
 
-.field private synthetic e:Ljava/lang/String;
+.field final synthetic e:Ljava/lang/String;
 
-.field private synthetic f:Lcom/tencent/tauth/IRequestListener;
+.field final synthetic f:Lcom/tencent/tauth/IRequestListener;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     :try_start_0

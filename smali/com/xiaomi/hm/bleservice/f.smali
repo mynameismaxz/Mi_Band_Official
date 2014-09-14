@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/hm/bleservice/f;
+.class Lcom/xiaomi/hm/bleservice/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
 .field private final synthetic b:Ljava/util/Map;
 
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public final onLeScan(Landroid/bluetooth/BluetoothDevice;I[B)V
+.method public onLeScan(Landroid/bluetooth/BluetoothDevice;I[B)V
     .locals 3
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V

@@ -532,7 +532,7 @@
     return-object v0
 .end method
 
-.method private static a(Lcom/google/zxing/common/BitArray;IZ[I[I)[I
+.method static a(Lcom/google/zxing/common/BitArray;IZ[I[I)[I
     .locals 11
 
     const/4 v10, 0x2
@@ -554,11 +554,11 @@
     move-result v0
 
     :goto_0
-    move v2, p2
+    move v5, v0
 
     move v1, v4
 
-    move v5, v0
+    move v2, p2
 
     :goto_1
     if-ge v5, v7, :cond_5
@@ -668,89 +668,12 @@
 .end method
 
 .method checkChecksum(Ljava/lang/String;)Z
-    .locals 6
+    .locals 1
 
-    const/16 v5, 0x9
+    invoke-static {p1}, Lcom/google/zxing/oned/UPCEANReader;->a(Ljava/lang/CharSequence;)Z
 
-    const/4 v0, 0x0
+    move-result v0
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    add-int/lit8 v1, v3, -0x2
-
-    move v2, v0
-
-    :goto_0
-    if-ltz v1, :cond_2
-
-    invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v4
-
-    add-int/lit8 v4, v4, -0x30
-
-    if-ltz v4, :cond_0
-
-    if-le v4, v5, :cond_1
-
-    :cond_0
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_1
-    add-int/2addr v2, v4
-
-    add-int/lit8 v1, v1, -0x2
-
-    goto :goto_0
-
-    :cond_2
-    mul-int/lit8 v2, v2, 0x3
-
-    add-int/lit8 v1, v3, -0x1
-
-    :goto_1
-    if-ltz v1, :cond_5
-
-    invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x30
-
-    if-ltz v3, :cond_3
-
-    if-le v3, v5, :cond_4
-
-    :cond_3
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object v0
-
-    throw v0
-
-    :cond_4
-    add-int/2addr v2, v3
-
-    add-int/lit8 v1, v1, -0x2
-
-    goto :goto_1
-
-    :cond_5
-    rem-int/lit8 v1, v2, 0xa
-
-    if-nez v1, :cond_6
-
-    const/4 v0, 0x1
-
-    :cond_6
     return v0
 .end method
 

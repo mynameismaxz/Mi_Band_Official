@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/media/e;
+.class Landroid/support/v4/media/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/d;
+.field final synthetic a:Landroid/support/v4/media/d;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onWindowAttached()V
+.method public onWindowAttached()V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/e;->a:Landroid/support/v4/media/d;
@@ -32,12 +32,12 @@
     return-void
 .end method
 
-.method public final onWindowDetached()V
+.method public onWindowDetached()V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/e;->a:Landroid/support/v4/media/d;
 
-    invoke-virtual {v0}, Landroid/support/v4/media/d;->i()V
+    invoke-virtual {v0}, Landroid/support/v4/media/d;->k()V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/A;
+.class Lcom/tencent/open/A;
 .super Ljava/lang/Object;
 
 
@@ -9,9 +9,9 @@
 
 .field c:Ljava/lang/String;
 
-.field d:I
+.field d:J
 
-.field private e:J
+.field e:I
 
 
 # direct methods
@@ -26,7 +26,9 @@
 
     iput-object p3, p0, Lcom/tencent/open/A;->c:Ljava/lang/String;
 
-    iput p6, p0, Lcom/tencent/open/A;->d:I
+    iput-wide p4, p0, Lcom/tencent/open/A;->d:J
+
+    iput p6, p0, Lcom/tencent/open/A;->e:I
 
     return-void
 .end method

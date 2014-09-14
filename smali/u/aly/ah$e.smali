@@ -111,15 +111,11 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ISLjava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    const/4 v0, 0x1
-
-    iput-short v0, p0, Lu/aly/ah$e;->c:S
+    iput-short p3, p0, Lu/aly/ah$e;->c:S
 
     iput-object p4, p0, Lu/aly/ah$e;->d:Ljava/lang/String;
 
@@ -232,7 +228,7 @@
 
 
 # virtual methods
-.method public final a()S
+.method public a()S
     .locals 1
 
     iget-short v0, p0, Lu/aly/ah$e;->c:S
@@ -240,7 +236,7 @@
     return v0
 .end method
 
-.method public final b()Ljava/lang/String;
+.method public b()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lu/aly/ah$e;->d:Ljava/lang/String;

@@ -1,31 +1,33 @@
-.class final Lcn/com/smartdevices/bracelet/chart/o;
+.class Lcn/com/smartdevices/bracelet/chart/o;
 .super Lcn/com/smartdevices/bracelet/chart/n;
 
 
 # instance fields
-.field private a:F
+.field final synthetic b:Lcn/com/smartdevices/bracelet/chart/StatisticChart;
 
-.field private b:I
+.field private c:F
 
-.field private synthetic c:Lcn/com/smartdevices/bracelet/chart/StatisticChart;
+.field private d:I
 
 
 # direct methods
 .method private constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;)V
     .locals 1
 
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/o;->b:Lcn/com/smartdevices/bracelet/chart/StatisticChart;
+
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/n;-><init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;B)V
+    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/n;-><init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;Lcn/com/smartdevices/bracelet/chart/n;)V
 
     const/16 v0, 0xa
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->b:I
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->d:I
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;Lcn/com/smartdevices/bracelet/chart/o;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/o;-><init>(Lcn/com/smartdevices/bracelet/chart/StatisticChart;)V
@@ -36,7 +38,7 @@
 .method static synthetic a(Lcn/com/smartdevices/bracelet/chart/o;)F
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->a:F
+    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->c:F
 
     return v0
 .end method
@@ -44,14 +46,14 @@
 .method static synthetic b(Lcn/com/smartdevices/bracelet/chart/o;)I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->b:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->d:I
 
     return v0
 .end method
 
 
 # virtual methods
-.method protected final itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 4
 
     iget v0, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
@@ -80,9 +82,9 @@
 
     iget v1, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/o;->a:F
+    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/o;->c:F
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/o;->b:I
+    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/o;->d:I
 
     invoke-static {v0, v1, v2, v3}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->itemLevelSize(IIFI)F
 
@@ -91,7 +93,7 @@
     goto :goto_0
 .end method
 
-.method protected final onRectChanged(Landroid/graphics/RectF;)V
+.method protected onRectChanged(Landroid/graphics/RectF;)V
     .locals 3
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/n;->onRectChanged(Landroid/graphics/RectF;)V
@@ -112,13 +114,13 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/o;->mMaxItemValue:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/o;->b:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/o;->d:I
 
     invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->updateLevelSize(IFI)F
 
     move-result v0
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->a:F
+    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/o;->c:F
 
     :cond_0
     return-void

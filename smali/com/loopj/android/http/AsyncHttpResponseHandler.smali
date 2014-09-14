@@ -16,27 +16,27 @@
 
 .field protected static final FINISH_MESSAGE:I = 0x3
 
+.field private static final LOG_TAG:Ljava/lang/String; = "AsyncHttpResponseHandler"
+
 .field protected static final PROGRESS_MESSAGE:I = 0x4
 
 .field protected static final RETRY_MESSAGE:I = 0x5
 
 .field protected static final START_MESSAGE:I = 0x2
 
-.field protected static final SUCCESS_MESSAGE:I = 0x0
-
-.field private static final a:Ljava/lang/String; = "AsyncHttpResponseHandler"
+.field protected static final SUCCESS_MESSAGE:I
 
 
 # instance fields
-.field private b:Ljava/lang/String;
+.field private handler:Landroid/os/Handler;
 
-.field private c:Landroid/os/Handler;
+.field private requestHeaders:[Lorg/apache/http/Header;
 
-.field private d:Z
+.field private requestURI:Ljava/net/URI;
 
-.field private e:Ljava/net/URI;
+.field private responseCharset:Ljava/lang/String;
 
-.field private f:[Lorg/apache/http/Header;
+.field private useSynchronousMode:Z
 
 
 # direct methods
@@ -49,11 +49,11 @@
 
     const-string v0, "UTF-8"
 
-    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->b:Ljava/lang/String;
+    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->responseCharset:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->e:Ljava/net/URI;
+    iput-object v1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestURI:Ljava/net/URI;
 
-    iput-object v1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->f:[Lorg/apache/http/Header;
+    iput-object v1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestHeaders:[Lorg/apache/http/Header;
 
     const/4 v0, 0x0
 
@@ -67,7 +67,7 @@
 .method public getCharset()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->b:Ljava/lang/String;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->responseCharset:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
@@ -77,7 +77,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->b:Ljava/lang/String;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->responseCharset:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -85,7 +85,7 @@
 .method public getRequestHeaders()[Lorg/apache/http/Header;
     .locals 1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->f:[Lorg/apache/http/Header;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestHeaders:[Lorg/apache/http/Header;
 
     return-object v0
 .end method
@@ -93,7 +93,7 @@
 .method public getRequestURI()Ljava/net/URI;
     .locals 1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->e:Ljava/net/URI;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestURI:Ljava/net/URI;
 
     return-object v0
 .end method
@@ -256,7 +256,7 @@
 .method public getUseSynchronousMode()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->d:Z
+    iget-boolean v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->useSynchronousMode:Z
 
     return v0
 .end method
@@ -485,7 +485,7 @@
 .method protected obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
     .locals 1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     if-nez v0, :cond_1
 
@@ -504,7 +504,7 @@
     return-object v0
 
     :cond_1
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     invoke-static {v0, p1, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
 
@@ -566,6 +566,10 @@
     if-lez p2, :cond_0
 
     int-to-double v0, p1
+
+    const-wide/high16 v6, 0x3ff0
+
+    mul-double/2addr v0, v6
 
     int-to-double v6, p2
 
@@ -644,7 +648,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     if-nez v0, :cond_2
 
@@ -656,7 +660,7 @@
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -740,7 +744,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     if-nez v0, :cond_2
 
@@ -762,7 +766,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -963,7 +967,7 @@
 .method public setCharset(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->b:Ljava/lang/String;
+    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->responseCharset:Ljava/lang/String;
 
     return-void
 .end method
@@ -971,7 +975,7 @@
 .method public setRequestHeaders([Lorg/apache/http/Header;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->f:[Lorg/apache/http/Header;
+    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestHeaders:[Lorg/apache/http/Header;
 
     return-void
 .end method
@@ -979,7 +983,7 @@
 .method public setRequestURI(Ljava/net/URI;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->e:Ljava/net/URI;
+    iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->requestURI:Ljava/net/URI;
 
     return-void
 .end method
@@ -1006,7 +1010,7 @@
     :cond_0
     if-nez p1, :cond_2
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     if-nez v0, :cond_2
 
@@ -1014,24 +1018,24 @@
 
     invoke-direct {v0, p0}, Lcom/loopj/android/http/f;-><init>(Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     :cond_1
     :goto_0
-    iput-boolean p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->d:Z
+    iput-boolean p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->useSynchronousMode:Z
 
     return-void
 
     :cond_2
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->c:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handler:Landroid/os/Handler;
 
     goto :goto_0
 .end method

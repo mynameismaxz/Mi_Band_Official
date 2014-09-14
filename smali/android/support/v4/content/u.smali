@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field a:[Ljava/lang/Object;
+.field b:[Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[TParams;"
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
+.method synthetic constructor <init>(Landroid/support/v4/content/o;)V
     .locals 0
 
     invoke-direct {p0}, Landroid/support/v4/content/u;-><init>()V

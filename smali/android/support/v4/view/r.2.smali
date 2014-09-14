@@ -1,52 +1,50 @@
 .class Landroid/support/v4/view/r;
-.super Landroid/support/v4/view/t;
+.super Landroid/support/v4/view/q;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/support/v4/view/t;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/view/q;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)Ljava/lang/Object;
+.method public a(Landroid/view/View;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+    invoke-static {p1}, Landroid/support/v4/view/u;->a(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/KeyEvent;)V
+.method public a(Landroid/view/KeyEvent;)V
     .locals 0
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->startTracking()V
+    invoke-static {p1}, Landroid/support/v4/view/u;->a(Landroid/view/KeyEvent;)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public a(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p3, Landroid/view/KeyEvent$DispatcherState;
-
-    invoke-virtual {p1, p2, p3, p4}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/view/u;->a(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/KeyEvent;)Z
+.method public b(Landroid/view/KeyEvent;)Z
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->isTracking()Z
+    invoke-static {p1}, Landroid/support/v4/view/u;->b(Landroid/view/KeyEvent;)Z
 
     move-result v0
 

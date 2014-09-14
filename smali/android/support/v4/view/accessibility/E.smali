@@ -1,6 +1,9 @@
 .class Landroid/support/v4/view/accessibility/E;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/view/accessibility/C;
+
 
 # direct methods
 .method constructor <init>()V
@@ -199,12 +202,12 @@
     return-void
 .end method
 
-.method public i(Ljava/lang/Object;)I
+.method public i(Ljava/lang/Object;)Landroid/os/Parcelable;
     .locals 1
 
     const/4 v0, 0x0
 
-    return v0
+    return-object v0
 .end method
 
 .method public i(Ljava/lang/Object;I)V
@@ -227,12 +230,12 @@
     return-void
 .end method
 
-.method public k(Ljava/lang/Object;)Landroid/os/Parcelable;
+.method public k(Ljava/lang/Object;)I
     .locals 1
 
     const/4 v0, 0x0
 
-    return-object v0
+    return v0
 .end method
 
 .method public l(Ljava/lang/Object;)I
@@ -243,23 +246,7 @@
     return v0
 .end method
 
-.method public m(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public n(Ljava/lang/Object;)I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public o(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.method public m(Ljava/lang/Object;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
     .locals 1
 
     const/4 v0, 0x0
@@ -267,7 +254,7 @@
     return-object v0
 .end method
 
-.method public p(Ljava/lang/Object;)Ljava/util/List;
+.method public n(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -288,7 +275,7 @@
     return-object v0
 .end method
 
-.method public q(Ljava/lang/Object;)I
+.method public o(Ljava/lang/Object;)I
     .locals 1
 
     const/4 v0, 0x0
@@ -296,7 +283,23 @@
     return v0
 .end method
 
-.method public r(Ljava/lang/Object;)I
+.method public p(Ljava/lang/Object;)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public q(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public r(Ljava/lang/Object;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -328,24 +331,24 @@
     return v0
 .end method
 
-.method public v(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public w(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public x(Ljava/lang/Object;)V
+.method public v(Ljava/lang/Object;)V
     .locals 0
 
     return-void
+.end method
+
+.method public w(Ljava/lang/Object;)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public x(Ljava/lang/Object;)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

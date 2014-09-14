@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private a:Landroid/app/Activity;
+.field a:Landroid/app/ProgressDialog;
 
-.field private b:Landroid/app/ProgressDialog;
+.field private b:Landroid/app/Activity;
 
 
 # direct methods
@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/c;
+.method private a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/j;
     .locals 3
 
     new-instance v0, Landroid/content/Intent;
@@ -38,19 +38,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    new-instance v1, Lcom/tencent/open/c;
+    new-instance v1, Lcom/tencent/open/j;
 
-    invoke-direct {v1}, Lcom/tencent/open/c;-><init>()V
+    invoke-direct {v1}, Lcom/tencent/open/j;-><init>()V
 
-    iput-object v0, v1, Lcom/tencent/open/c;->a:Landroid/content/Intent;
+    iput-object v0, v1, Lcom/tencent/open/j;->a:Landroid/content/Intent;
 
-    iput-object p0, v1, Lcom/tencent/open/c;->c:Landroid/os/Bundle;
+    iput-object p1, v1, Lcom/tencent/open/j;->c:Landroid/os/Bundle;
 
-    iput-object p2, v1, Lcom/tencent/open/c;->d:Ljava/lang/String;
+    iput-object p3, v1, Lcom/tencent/open/j;->d:Ljava/lang/String;
 
-    iput-object p3, v1, Lcom/tencent/open/c;->e:Lcom/tencent/tauth/IUiListener;
+    iput-object p4, v1, Lcom/tencent/open/j;->e:Lcom/tencent/tauth/IUiListener;
 
-    iput-object p1, v1, Lcom/tencent/open/c;->b:Ljava/lang/String;
+    iput-object p2, v1, Lcom/tencent/open/j;->b:Ljava/lang/String;
 
     return-object v1
 .end method
@@ -62,9 +62,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "SocialApiIml handleIntent "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -335,11 +339,11 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->isShowing()Z
 
@@ -352,22 +356,22 @@
 
     invoke-direct {v0, p1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     const-string v1, "\u8bf7\u7a0d\u5019"
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
     :cond_1
     const-string v0, "action_voice"
 
-    invoke-static {p2, v0, v5, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/c;
+    invoke-direct {p0, p2, v0, v5, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/j;
 
     move-result-object v0
 
@@ -375,7 +379,7 @@
 
     new-instance v2, Lcom/tencent/open/SocialApiIml$a;
 
-    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/c;)V
+    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/j;)V
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/tencent/open/SocialApiIml;->a(Landroid/app/Activity;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -401,7 +405,7 @@
 .method private a(Landroid/app/Activity;Ljava/lang/String;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.RequestFreegiftActivity"
 
@@ -601,7 +605,7 @@
 
     new-instance v0, Lcom/tencent/open/PKDialog;
 
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     iget-object v5, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
 
@@ -632,7 +636,7 @@
     :cond_3
     new-instance v0, Lcom/tencent/open/TDialog;
 
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     iget-object v5, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
 
@@ -648,37 +652,10 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/open/SocialApiIml;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    invoke-direct {p0}, Lcom/tencent/open/SocialApiIml;->c()V
 
-    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
-
-    :cond_0
     return-void
 .end method
 
@@ -699,181 +676,17 @@
 .end method
 
 .method static synthetic a(Lcom/tencent/open/SocialApiIml;Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
-    .locals 6
+    .locals 0
 
-    const-string v0, "openSDK_LOG"
+    invoke-direct/range {p0 .. p5}, Lcom/tencent/open/SocialApiIml;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
-    const-string v1, "OpenUi, showDialog --start"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {p1}, Landroid/webkit/CookieSyncManager;->createInstance(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;
-
-    const-string v0, "oauth_consumer_key"
-
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getAppId()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/QQToken;->isSessionValid()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "access_token"
-
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v1}, Lcom/tencent/connect/auth/QQToken;->getAccessToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    invoke-virtual {v0}, Lcom/tencent/connect/auth/QQToken;->getOpenId()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "openid"
-
-    invoke-virtual {p3, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    :try_start_0
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->mContext:Landroid/content/Context;
-
-    const-string v1, "pfStore"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "pf"
-
-    const-string v2, "openmobile_android"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "pf"
-
-    invoke-virtual {p3, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p3}, Lcom/tencent/utils/Util;->encodeUrl(Landroid/os/Bundle;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "OpenUi, showDialog TDialog"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "action_challenge"
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "action_brag"
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    :cond_2
-    const-string v0, "openSDK_LOG"
-
-    const-string v1, "OpenUi, showDialog PKDialog"
-
-    invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lcom/tencent/open/PKDialog;
-
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
-
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    move-object v2, p2
-
-    move-object v4, p5
-
-    invoke-direct/range {v0 .. v5}, Lcom/tencent/open/PKDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V
-
-    invoke-virtual {v0}, Lcom/tencent/open/PKDialog;->show()V
-
-    :goto_1
     return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const-string v0, "pf"
-
-    const-string v1, "openmobile_android"
-
-    invoke-virtual {p3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Lcom/tencent/open/TDialog;
-
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
-
-    iget-object v5, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
-
-    move-object v2, p2
-
-    move-object v4, p5
-
-    invoke-direct/range {v0 .. v5}, Lcom/tencent/open/TDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V
-
-    invoke-virtual {v0}, Lcom/tencent/open/TDialog;->show()V
-
-    goto :goto_1
 .end method
 
 .method static synthetic b(Lcom/tencent/open/SocialApiIml;)Landroid/app/Activity;
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     return-object v0
 .end method
@@ -889,7 +702,7 @@
 .method private c()V
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
@@ -897,11 +710,11 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->isShowing()Z
 
@@ -909,13 +722,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     :cond_0
     return-void
@@ -996,7 +809,7 @@
 .method public brag(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.BragActivity"
 
@@ -1040,7 +853,7 @@
 .method public challenge(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.ChallengeActivity"
 
@@ -1094,7 +907,7 @@
 .method public grade(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     invoke-virtual {p0}, Lcom/tencent/open/SocialApiIml;->composeActivityParams()Landroid/os/Bundle;
 
@@ -1128,15 +941,15 @@
 
     invoke-direct {v0, p1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     const-string v1, "\u8bf7\u7a0d\u5019..."
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
@@ -1144,7 +957,7 @@
 
     const-string v1, "action_grade"
 
-    invoke-static {p2, v1, v0, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/c;
+    invoke-direct {p0, p2, v1, v0, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/j;
 
     move-result-object v0
 
@@ -1152,7 +965,7 @@
 
     new-instance v2, Lcom/tencent/open/SocialApiIml$a;
 
-    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/c;)V
+    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/j;)V
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/tencent/open/SocialApiIml;->a(Landroid/app/Activity;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -1180,7 +993,7 @@
 .method public invite(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.AppInvitationActivity"
 
@@ -1224,7 +1037,7 @@
 .method public reactive(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.ReactiveActivity"
 
@@ -1262,15 +1075,15 @@
 
     invoke-direct {v0, p1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iput-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     const-string v1, "\u8bf7\u7a0d\u5019..."
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v0, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
@@ -1282,7 +1095,7 @@
 
     const-string v0, "action_reactive"
 
-    invoke-static {p2, v0, v5, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/c;
+    invoke-direct {p0, p2, v0, v5, p3}, Lcom/tencent/open/SocialApiIml;->a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)Lcom/tencent/open/j;
 
     move-result-object v0
 
@@ -1290,7 +1103,7 @@
 
     new-instance v2, Lcom/tencent/open/SocialApiIml$a;
 
-    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/c;)V
+    invoke-direct {v2, p0, v0}, Lcom/tencent/open/SocialApiIml$a;-><init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/open/j;)V
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/tencent/open/SocialApiIml;->a(Landroid/app/Activity;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -1330,7 +1143,7 @@
 .method public story(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V
     .locals 7
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     const-string v0, "com.tencent.open.agent.SendStoryActivity"
 
@@ -1378,9 +1191,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "voice params="
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1392,7 +1209,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/Activity;
 
     invoke-virtual {p0}, Lcom/tencent/open/SocialApiIml;->composeActivityParams()Landroid/os/Bundle;
 
@@ -1452,15 +1269,15 @@
 
     invoke-direct {v1, p1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iput-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     const-string v2, "\u8bf7\u7a0d\u5019\uff0c\u6b63\u5728\u67e5\u8be2\u2026"
 
     invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->b:Landroid/app/ProgressDialog;
+    iget-object v1, p0, Lcom/tencent/open/SocialApiIml;->a:Landroid/app/ProgressDialog;
 
     invoke-virtual {v1}, Landroid/app/ProgressDialog;->show()V
 
@@ -1594,9 +1411,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "<!DOCTYPE HTML><html lang=\"en-US\"><head><meta charset=\"UTF-8\"><title>localStorage Test</title><script type=\"text/javascript\">document.domain = \'qq.com\';localStorage[\""
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-object v3, p0, Lcom/tencent/open/SocialApiIml;->mToken:Lcom/tencent/connect/auth/QQToken;
 

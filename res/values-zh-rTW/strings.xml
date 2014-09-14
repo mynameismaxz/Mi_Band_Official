@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开加载</string>
+    <string name="pull_to_refresh_refreshing_label">正在加载…</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">加载更多</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
     <string name="app_name">小米手環</string>
     <string name="action_exit">退出</string>
     <string name="register">註冊</string>
@@ -354,18 +360,30 @@
     <string name="share_step_goal_failed_title">一共走了</string>
     <string name="share_step_description">"行走%1$s, 消耗熱量%2$s千卡
 "</string>
+    <string name="share_step_description_run">"走路%1$s, 跑步%2$s
+消耗熱量%3$s千卡
+"</string>
     <string name="share_step_description_weekly">"行程%1$s%2$s
 總計消耗%3$s千卡
 最高記錄%4$s一天走了%5$s步"</string>
+    <string name="share_step_description_weekly_run">"走路%1$s, 跑步%2$s
+%3$s
+最高記錄%4$s一天走了%5$s步"</string>
     <string name="share_play_ground_format">相當於繞標準操場跑%1$s圈</string>
-    <string name="share_step_description_monthly">"行程%1$s%2$s
+    <string name="share_step_description_monthly">"行程%1$s, %2$s
 總計消耗%3$s千卡, 節省%4$s升汽油
+最高記錄%5$s一天走了%6$s步"</string>
+    <string name="share_step_description_monthly_run">"走路%1$s, 跑步%2$s
+%3$s, 節省%4$s升汽油
 最高記錄%5$s一天走了%6$s步"</string>
     <string name="marathon_format_0">相當於%1$s個全程馬拉松的賽程</string>
     <string name="marathon_format_1">超過%1$s個全程馬拉松的賽程</string>
     <string name="half_marathon_format_0">相當於%1$s個半程馬拉松的賽程</string>
     <string name="half_marathon_format_1">超過%1$s個半程馬拉松的賽程</string>
     <string name="share_continue_goal_format">"總計行走%1$s, 日均%2$s步
+%3$s
+%4$s"</string>
+    <string name="share_continue_goal_format_run">"總計走路%1$s, 跑步%2$s
 %3$s
 %4$s"</string>
     <string name="share_sleep_description">"深睡%1$s小時%2$s分, 淺睡%3$s小時%4$s分
@@ -486,6 +504,18 @@
     <string name="share_miliao_too_old">米聊版本较低，不支持分享</string>
     <string name="first_use_days_today_format">已使用小于1天</string>
     <string name="first_use_remain_days_format">已使用%s天</string>
-    <string name="until">截至</string>
+    <string name="until_hit_goals">截至%s連續達標</string>
     <string name="continue_reach_goal_new_record">创造个人新记录</string>
+    <string name="bind_weixin_new_tips">"点击“微信接入”启动微信进入小米手环帐号页面，
+然后点击“关注”按钮即可完成接入"</string>
+    <string name="bind_weixin_new_now">正在进行微信接入，请稍候......</string>
+    <string name="bind_weixin_new_disable_tips">"接入微信关注小米手环服务号后即可通过微信查看当
+前步数，并且与朋友圈中的好友们一起PK运动排行"</string>
+    <string name="weather_aqi">空气质量%s</string>
+    <string name="in" />
+    <string name="closed">關閉</string>
+    <string name="sec3">3秒</string>
+    <string name="sec10">10秒</string>
+    <string name="sec15">15秒</string>
+    <string name="sec20">20秒</string>
 </resources>

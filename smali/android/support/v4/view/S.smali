@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/S;
+.class Landroid/support/v4/view/S;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/widget/TextView;)V
+.method public a(Landroid/widget/TextView;)V
     .locals 0
 
     invoke-virtual {p1}, Landroid/widget/TextView;->setSingleLine()V

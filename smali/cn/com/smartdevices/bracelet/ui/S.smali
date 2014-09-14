@@ -1,12 +1,12 @@
-.class final Lcn/com/smartdevices/bracelet/ui/S;
+.class Lcn/com/smartdevices/bracelet/ui/S;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Landroid/view/GestureDetector$OnGestureListener;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
 
 # direct methods
@@ -22,60 +22,104 @@
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public onDown(Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    return-void
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 2
 
-    const/4 v2, 0x1
-
-    const-string v0, "DynamicView"
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->k(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    move-result v1
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->h(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)I
+    cmpl-float v0, v0, v1
 
-    move-result v0
+    if-lez v0, :cond_0
 
-    if-eq v0, v2, :cond_1
+    const/high16 v0, 0x447a
+
+    cmpl-float v0, p3, v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
+
+    const/16 v1, 0x1017
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->g(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;
+    move-result v0
 
-    move-result-object v0
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->setScrollable(Z)V
+    move-result v1
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_1
+
+    const/high16 v0, -0x3b86
+
+    cmpg-float v0, p3, v0
+
+    if-gez v0, :cond_1
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
+
+    const/16 v1, 0x1018
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    goto :goto_0
 
     :cond_1
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+.method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public onShowPress(Landroid/view/MotionEvent;)V
     .locals 0
 
     return-void
+.end method
+
+.method public onSingleTapUp(Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

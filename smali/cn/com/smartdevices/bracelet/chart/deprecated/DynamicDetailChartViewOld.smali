@@ -169,31 +169,17 @@
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld$DynamicDetailChartData;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld$DynamicDetailChartData;->stepData:Ljava/util/List;
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->bindStepData(Ljava/util/List;)V
-
-    iget-object v0, p1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld$DynamicDetailChartData;->sleepData:Ljava/util/List;
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->bindSleepData(Ljava/util/List;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->notifyChanged()V
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld$DynamicDetailChartData;)V
 
     return-void
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;Z)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->i:Z
+    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->i:Z
 
     return-void
 .end method

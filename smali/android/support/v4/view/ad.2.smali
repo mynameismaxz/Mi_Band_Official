@@ -13,20 +13,20 @@
 
 
 # virtual methods
-.method final a()J
+.method a()J
     .locals 2
 
-    invoke-static {}, Landroid/animation/ValueAnimator;->getFrameDelay()J
+    invoke-static {}, Landroid/support/v4/view/ak;->a()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public final a(Landroid/view/View;ILandroid/graphics/Paint;)V
+.method public a(Landroid/view/View;ILandroid/graphics/Paint;)V
     .locals 0
 
-    invoke-virtual {p1, p2, p3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-static {p1, p2, p3}, Landroid/support/v4/view/ak;->a(Landroid/view/View;ILandroid/graphics/Paint;)V
 
     return-void
 .end method
@@ -34,7 +34,7 @@
 .method public a(Landroid/view/View;Landroid/graphics/Paint;)V
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayerType()I
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/ad;->g(Landroid/view/View;)I
 
     move-result v0
 
@@ -45,20 +45,20 @@
     return-void
 .end method
 
-.method public final c(Landroid/view/View;)F
+.method public f(Landroid/view/View;)F
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+    invoke-static {p1}, Landroid/support/v4/view/ak;->a(Landroid/view/View;)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public final d(Landroid/view/View;)I
+.method public g(Landroid/view/View;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayerType()I
+    invoke-static {p1}, Landroid/support/v4/view/ak;->b(Landroid/view/View;)I
 
     move-result v0
 

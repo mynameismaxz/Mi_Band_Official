@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/accessibility/x;
+.class Landroid/support/v4/view/accessibility/x;
 .super Ljava/lang/Object;
 
 
@@ -11,12 +11,12 @@
     return-void
 .end method
 
-.method public static a(Landroid/support/v4/view/accessibility/i;)Ljava/lang/Object;
+.method public static a(Landroid/support/v4/view/accessibility/z;)Ljava/lang/Object;
     .locals 1
 
     new-instance v0, Landroid/support/v4/view/accessibility/y;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/view/accessibility/y;-><init>(Landroid/support/v4/view/accessibility/i;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/view/accessibility/y;-><init>(Landroid/support/v4/view/accessibility/z;)V
 
     return-object v0
 .end method

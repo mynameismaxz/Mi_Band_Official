@@ -122,6 +122,8 @@
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
+    if-eqz v0, :cond_0
+
     :try_start_1
     new-instance v2, Ljava/io/BufferedReader;
 
@@ -140,8 +142,9 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
+    :cond_0
     :goto_0
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     const/16 v0, 0x3a
 
@@ -187,7 +190,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const-string v0, ""
 
     goto :goto_1
@@ -1310,8 +1313,6 @@
 .method public static r(Landroid/content/Context;)[I
     .locals 4
 
-    const/4 v1, 0x0
-
     const/4 v2, -0x1
 
     :try_start_0
@@ -1421,7 +1422,7 @@
     goto :goto_1
 
     :cond_3
-    move v0, v1
+    move v0, v2
 
     move v1, v2
 
@@ -1618,18 +1619,21 @@
 
     invoke-static {v2, v1}, Landroid/provider/Settings$System;->getConfiguration(Landroid/content/ContentResolver;Landroid/content/res/Configuration;)V
 
+    if-eqz v1, :cond_0
+
     iget-object v0, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    :cond_0
     :goto_0
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    :cond_0
+    :cond_1
     return-object v0
 
     :catch_0

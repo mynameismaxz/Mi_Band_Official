@@ -20,7 +20,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-static {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/b;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     :goto_0
     return-void
@@ -42,7 +42,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/b;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     :goto_0
     return-void
@@ -62,9 +62,7 @@
 
     if-lt v0, v1, :cond_0
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-static {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/a;->a(Landroid/view/View;I)V
 
     :cond_0
     return-void

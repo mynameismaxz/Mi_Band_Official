@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/f;
+.class Lcn/com/smartdevices/bracelet/view/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/DynamicView;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/f;->a:Lcn/com/smartdevices/bracelet/view/DynamicView;

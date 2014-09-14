@@ -1,9 +1,9 @@
-.class final Lcom/tencent/tauth/a;
+.class Lcom/tencent/tauth/a;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/tauth/LocationApi;
+.field final synthetic a:Lcom/tencent/tauth/LocationApi;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 4
 
     iget v0, p1, Landroid/os/Message;->what:I

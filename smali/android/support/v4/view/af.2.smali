@@ -13,88 +13,88 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;IIII)V
+.method public a(Landroid/view/View;IIII)V
     .locals 0
 
-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/view/View;->postInvalidate(IIII)V
+    invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/view/am;->a(Landroid/view/View;IIII)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/View;Ljava/lang/Runnable;)V
+.method public a(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/am;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/View;Ljava/lang/Runnable;J)V
+.method public a(Landroid/view/View;Ljava/lang/Runnable;J)V
     .locals 0
 
-    invoke-virtual {p1, p2, p3, p4}, Landroid/view/View;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
+    invoke-static {p1, p2, p3, p4}, Landroid/support/v4/view/am;->a(Landroid/view/View;Ljava/lang/Runnable;J)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/View;Z)V
+.method public a(Landroid/view/View;Z)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setHasTransientState(Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/am;->a(Landroid/view/View;Z)V
 
     return-void
 .end method
 
-.method public final a(Landroid/view/View;ILandroid/os/Bundle;)Z
+.method public a(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 1
 
-    invoke-virtual {p1, p2, p3}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+    invoke-static {p1, p2, p3}, Landroid/support/v4/view/am;->a(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final d(Landroid/view/View;I)V
-    .locals 0
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->setImportantForAccessibility(I)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/view/View;)Z
+.method public b(Landroid/view/View;)Z
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->hasTransientState()Z
+    invoke-static {p1}, Landroid/support/v4/view/am;->a(Landroid/view/View;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final f(Landroid/view/View;)V
+.method public c(Landroid/view/View;)V
     .locals 0
 
-    invoke-virtual {p1}, Landroid/view/View;->postInvalidateOnAnimation()V
+    invoke-static {p1}, Landroid/support/v4/view/am;->b(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public final g(Landroid/view/View;)I
+.method public d(Landroid/view/View;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getImportantForAccessibility()I
+    invoke-static {p1}, Landroid/support/v4/view/am;->c(Landroid/view/View;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final h(Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+.method public d(Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p1, p2}, Landroid/support/v4/view/am;->a(Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method public e(Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
     .locals 2
 
-    invoke-virtual {p1}, Landroid/view/View;->getAccessibilityNodeProvider()Landroid/view/accessibility/AccessibilityNodeProvider;
+    invoke-static {p1}, Landroid/support/v4/view/am;->d(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -113,10 +113,10 @@
     goto :goto_0
 .end method
 
-.method public final i(Landroid/view/View;)Landroid/view/ViewParent;
+.method public j(Landroid/view/View;)Landroid/view/ViewParent;
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getParentForAccessibility()Landroid/view/ViewParent;
+    invoke-static {p1}, Landroid/support/v4/view/am;->e(Landroid/view/View;)Landroid/view/ViewParent;
 
     move-result-object v0
 

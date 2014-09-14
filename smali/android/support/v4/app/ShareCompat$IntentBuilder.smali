@@ -215,7 +215,7 @@
 
 
 # virtual methods
-.method final a()Landroid/app/Activity;
+.method a()Landroid/app/Activity;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentBuilder;->a:Landroid/app/Activity;

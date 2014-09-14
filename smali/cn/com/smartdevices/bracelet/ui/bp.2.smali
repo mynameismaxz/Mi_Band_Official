@@ -1,46 +1,54 @@
-.class final Lcn/com/smartdevices/bracelet/ui/bp;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.class Lcn/com/smartdevices/bracelet/ui/bp;
+.super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bp;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bp;->a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bp;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    const-string v0, "intent"
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->getActivity()Landroid/app/Activity;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v0, :cond_0
+    const-string v2, "extra_download_id"
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bp;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    const-wide/16 v3, 0x0
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p2, v2, v3, v4}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-object v0
+    move-result-wide v2
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    :cond_0
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bp;->a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Utils;->queryDownloadStatus(Landroid/app/Activity;)V
+
     return-void
 .end method

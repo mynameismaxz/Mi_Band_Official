@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/text/h;
+.class Landroid/support/v4/text/h;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -8,11 +8,11 @@
 # static fields
 .field public static final a:Landroid/support/v4/text/h;
 
-.field private static c:Landroid/support/v4/text/h;
+.field public static final b:Landroid/support/v4/text/h;
 
 
 # instance fields
-.field private final b:Z
+.field private final c:Z
 
 
 # direct methods
@@ -33,6 +33,8 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/text/h;-><init>(Z)V
 
+    sput-object v0, Landroid/support/v4/text/h;->b:Landroid/support/v4/text/h;
+
     return-void
 .end method
 
@@ -41,14 +43,14 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Landroid/support/v4/text/h;->b:Z
+    iput-boolean p1, p0, Landroid/support/v4/text/h;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/CharSequence;II)I
+.method public a(Ljava/lang/CharSequence;II)I
     .locals 5
 
     const/4 v2, 0x0
@@ -82,7 +84,7 @@
     goto :goto_0
 
     :pswitch_0
-    iget-boolean v0, p0, Landroid/support/v4/text/h;->b:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/h;->c:Z
 
     if-eqz v0, :cond_1
 
@@ -98,7 +100,7 @@
     goto :goto_1
 
     :pswitch_1
-    iget-boolean v0, p0, Landroid/support/v4/text/h;->b:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/h;->c:Z
 
     if-eqz v0, :cond_0
 
@@ -109,7 +111,7 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    iget-boolean v0, p0, Landroid/support/v4/text/h;->b:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/h;->c:Z
 
     if-nez v0, :cond_0
 

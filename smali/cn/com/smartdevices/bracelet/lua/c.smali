@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/lua/c;
+.class Lcn/com/smartdevices/bracelet/lua/c;
 .super Ljava/lang/Object;
 
 
@@ -7,12 +7,14 @@
 
 .field b:Ljava/lang/Boolean;
 
-.field private synthetic c:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
+.field final synthetic c:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;)V
     .locals 1
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/c;->c:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

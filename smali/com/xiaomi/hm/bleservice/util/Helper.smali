@@ -2387,17 +2387,28 @@
 
     aget-byte v6, p0, v0
 
-    if-eqz v6, :cond_b
+    if-nez v6, :cond_3
 
+    move v1, v2
+
+    :cond_1
+    return v1
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_3
     add-int/lit8 v0, v3, 0x1
 
     aget-byte v3, p0, v3
 
-    if-eq v3, v12, :cond_1
+    if-eq v3, v12, :cond_4
 
     if-ne v3, v11, :cond_6
 
-    :cond_1
+    :cond_4
     move v3, v2
 
     :goto_2
@@ -2448,7 +2459,7 @@
     move v0, v2
 
     :goto_3
-    if-lt v0, v7, :cond_3
+    if-lt v0, v7, :cond_5
 
     add-int/lit8 v0, v3, 0x2
 
@@ -2458,12 +2469,7 @@
 
     goto :goto_2
 
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
+    :cond_5
     aget-object v8, p1, v0
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->parseUUID(Ljava/util/UUID;)Ljava/lang/String;
@@ -2474,13 +2480,8 @@
 
     move-result v8
 
-    if-eqz v8, :cond_5
+    if-nez v8, :cond_1
 
-    :cond_4
-    :goto_4
-    return v1
-
-    :cond_5
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
@@ -2495,7 +2496,7 @@
     :cond_7
     move v5, v2
 
-    :goto_5
+    :goto_4
     add-int/lit8 v3, v6, -0x1
 
     if-ge v5, v3, :cond_0
@@ -2508,7 +2509,7 @@
 
     move v0, v2
 
-    :goto_6
+    :goto_5
     const/16 v4, 0x10
 
     if-lt v0, v4, :cond_8
@@ -2699,7 +2700,7 @@
 
     move v0, v2
 
-    :goto_7
+    :goto_6
     if-lt v0, v7, :cond_9
 
     add-int/lit8 v0, v5, 0x10
@@ -2708,7 +2709,7 @@
 
     move v0, v3
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     :cond_8
     add-int/lit8 v4, v3, 0x1
@@ -2721,7 +2722,7 @@
 
     move v3, v4
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_9
     aget-object v8, p1, v0
@@ -2762,11 +2763,11 @@
 
     move-result v8
 
-    if-nez v8, :cond_4
+    if-nez v8, :cond_1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_a
     add-int/lit8 v3, v6, -0x1
@@ -2774,11 +2775,6 @@
     add-int/2addr v0, v3
 
     goto/16 :goto_1
-
-    :cond_b
-    move v1, v2
-
-    goto/16 :goto_4
 .end method
 
 .method public static parseAdvData([B)V
@@ -2810,8 +2806,16 @@
 
     aget-byte v6, p0, v0
 
-    if-eqz v6, :cond_13
+    if-nez v6, :cond_1
 
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
     add-int/lit8 v3, v4, 0x1
 
     aget-byte v5, p0, v4
@@ -2830,7 +2834,7 @@
     :goto_2
     add-int/lit8 v4, v6, -0x1
 
-    if-lt v3, v4, :cond_12
+    if-lt v3, v4, :cond_13
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2878,13 +2882,8 @@
 
     goto :goto_1
 
-    :cond_0
-    move v0, v2
-
-    goto :goto_0
-
     :pswitch_1
-    if-ne v6, v9, :cond_1
+    if-ne v6, v9, :cond_2
 
     move v0, v1
 
@@ -2927,7 +2926,7 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     move v0, v2
 
     goto :goto_3
@@ -2937,14 +2936,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_4
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_2
+    if-lt v5, v3, :cond_3
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2968,15 +2967,15 @@
 
     goto/16 :goto_1
 
-    :cond_2
+    :cond_3
     new-array v8, v9, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_5
-    if-lt v0, v9, :cond_3
+    if-lt v0, v9, :cond_4
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -2988,24 +2987,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x2
+    add-int/lit8 v0, v5, 0x2
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_4
 
-    :cond_3
-    add-int/lit8 v5, v4, 0x1
+    :cond_4
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_5
 
@@ -3014,14 +3013,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_6
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_4
+    if-lt v5, v3, :cond_5
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3045,15 +3044,15 @@
 
     goto/16 :goto_1
 
-    :cond_4
+    :cond_5
     new-array v8, v9, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_7
-    if-lt v0, v9, :cond_5
+    if-lt v0, v9, :cond_6
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -3065,24 +3064,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x2
+    add-int/lit8 v0, v5, 0x2
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_6
 
-    :cond_5
-    add-int/lit8 v5, v4, 0x1
+    :cond_6
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_7
 
@@ -3091,14 +3090,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_8
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_6
+    if-lt v5, v3, :cond_7
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3122,15 +3121,15 @@
 
     goto/16 :goto_1
 
-    :cond_6
+    :cond_7
     new-array v8, v10, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_9
-    if-lt v0, v10, :cond_7
+    if-lt v0, v10, :cond_8
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -3142,24 +3141,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x10
+    add-int/lit8 v0, v5, 0x10
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_8
 
-    :cond_7
-    add-int/lit8 v5, v4, 0x1
+    :cond_8
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_9
 
@@ -3168,14 +3167,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_a
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_8
+    if-lt v5, v3, :cond_9
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3199,15 +3198,15 @@
 
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     new-array v8, v10, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_b
-    if-lt v0, v10, :cond_9
+    if-lt v0, v10, :cond_a
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -3219,24 +3218,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x10
+    add-int/lit8 v0, v5, 0x10
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_a
 
-    :cond_9
-    add-int/lit8 v5, v4, 0x1
+    :cond_a
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_b
 
@@ -3245,14 +3244,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_c
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_a
+    if-lt v5, v3, :cond_b
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3276,15 +3275,15 @@
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_b
     new-array v8, v9, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_d
-    if-lt v0, v9, :cond_b
+    if-lt v0, v9, :cond_c
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -3296,24 +3295,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x2
+    add-int/lit8 v0, v5, 0x2
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_c
 
-    :cond_b
-    add-int/lit8 v5, v4, 0x1
+    :cond_c
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_d
 
@@ -3322,14 +3321,14 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    move v5, v2
+
     move v0, v3
 
-    move v3, v2
-
     :goto_e
-    add-int/lit8 v4, v6, -0x1
+    add-int/lit8 v3, v6, -0x1
 
-    if-lt v3, v4, :cond_c
+    if-lt v5, v3, :cond_d
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3353,15 +3352,15 @@
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_d
     new-array v8, v10, [B
 
-    move v4, v0
+    move v3, v0
 
     move v0, v2
 
     :goto_f
-    if-lt v0, v10, :cond_d
+    if-lt v0, v10, :cond_e
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -3373,24 +3372,24 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v3, 0x10
+    add-int/lit8 v0, v5, 0x10
 
-    move v3, v0
+    move v5, v0
 
-    move v0, v4
+    move v0, v3
 
     goto :goto_e
 
-    :cond_d
-    add-int/lit8 v5, v4, 0x1
+    :cond_e
+    add-int/lit8 v4, v3, 0x1
 
-    aget-byte v4, p0, v4
+    aget-byte v3, p0, v3
 
-    aput-byte v4, v8, v0
+    aput-byte v3, v8, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    move v4, v5
+    move v3, v4
 
     goto :goto_f
 
@@ -3406,57 +3405,6 @@
     :goto_10
     add-int/lit8 v4, v6, -0x1
 
-    if-lt v3, v4, :cond_e
-
-    new-instance v3, Ljava/lang/String;
-
-    invoke-direct {v3, v5}, Ljava/lang/String;-><init>([B)V
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "        name: "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    goto/16 :goto_1
-
-    :cond_e
-    add-int/lit8 v4, v0, 0x1
-
-    aget-byte v0, p0, v0
-
-    aput-byte v0, v5, v3
-
-    add-int/lit8 v0, v3, 0x1
-
-    move v3, v0
-
-    move v0, v4
-
-    goto :goto_10
-
-    :pswitch_9
-    add-int/lit8 v0, v6, -0x1
-
-    new-array v5, v0, [B
-
-    move v0, v3
-
-    move v3, v2
-
-    :goto_11
-    add-int/lit8 v4, v6, -0x1
-
     if-lt v3, v4, :cond_f
 
     new-instance v3, Ljava/lang/String;
@@ -3465,7 +3413,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "     (*)name: "
+    const-string v5, "        name: "
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3494,9 +3442,9 @@
 
     move v0, v4
 
-    goto :goto_11
+    goto :goto_10
 
-    :pswitch_a
+    :pswitch_9
     add-int/lit8 v0, v6, -0x1
 
     new-array v5, v0, [B
@@ -3505,18 +3453,18 @@
 
     move v3, v2
 
-    :goto_12
+    :goto_11
     add-int/lit8 v4, v6, -0x1
 
     if-lt v3, v4, :cond_10
 
-    invoke-static {v5}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
+    new-instance v3, Ljava/lang/String;
 
-    move-result-object v3
+    invoke-direct {v3, v5}, Ljava/lang/String;-><init>([B)V
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "    tx level: "
+    const-string v5, "     (*)name: "
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3545,9 +3493,9 @@
 
     move v0, v4
 
-    goto :goto_12
+    goto :goto_11
 
-    :pswitch_b
+    :pswitch_a
     add-int/lit8 v0, v6, -0x1
 
     new-array v5, v0, [B
@@ -3556,7 +3504,7 @@
 
     move v3, v2
 
-    :goto_13
+    :goto_12
     add-int/lit8 v4, v6, -0x1
 
     if-lt v3, v4, :cond_11
@@ -3567,7 +3515,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "    manufact: "
+    const-string v5, "    tx level: "
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3596,9 +3544,60 @@
 
     move v0, v4
 
-    goto :goto_13
+    goto :goto_12
+
+    :pswitch_b
+    add-int/lit8 v0, v6, -0x1
+
+    new-array v5, v0, [B
+
+    move v0, v3
+
+    move v3, v2
+
+    :goto_13
+    add-int/lit8 v4, v6, -0x1
+
+    if-lt v3, v4, :cond_12
+
+    invoke-static {v5}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "    manufact: "
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+
+    goto/16 :goto_1
 
     :cond_12
+    add-int/lit8 v4, v0, 0x1
+
+    aget-byte v0, p0, v0
+
+    aput-byte v0, v5, v3
+
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    move v0, v4
+
+    goto :goto_13
+
+    :cond_13
     add-int/lit8 v4, v0, 0x1
 
     aget-byte v0, p0, v0
@@ -3612,9 +3611,6 @@
     move v0, v4
 
     goto/16 :goto_2
-
-    :cond_13
-    return-void
 
     nop
 

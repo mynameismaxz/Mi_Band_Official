@@ -128,8 +128,14 @@
 
     move-result v5
 
-    if-nez v5, :cond_3
+    if-eqz v5, :cond_3
 
+    :goto_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_3
     new-instance v5, Lu/aly/ae;
 
     invoke-direct {v5, v4}, Lu/aly/ae;-><init>(Ljava/lang/String;)V
@@ -138,10 +144,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
+    goto :goto_3
 
     :catch_0
     move-exception v2
@@ -235,8 +238,6 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object v4, v0
 
@@ -250,6 +251,8 @@
     move-exception v0
 
     monitor-exit v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -388,8 +391,6 @@
     const-string v0, ";"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
@@ -397,6 +398,8 @@
     move-exception v0
 
     monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -428,8 +431,6 @@
     invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     return-void
@@ -438,6 +439,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -495,7 +498,10 @@
     :catchall_0
     move-exception v0
 
+    :try_start_1
     monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
@@ -514,7 +520,7 @@
 
     monitor-enter v2
 
-    :try_start_1
+    :try_start_2
     iget-object v3, p0, Lu/aly/z;->c:Ljava/util/ArrayList;
 
     new-instance v4, Lu/aly/x;
@@ -524,8 +530,6 @@
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     goto :goto_0
 
@@ -533,6 +537,8 @@
     move-exception v0
 
     monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw v0
 .end method

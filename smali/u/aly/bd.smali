@@ -207,13 +207,15 @@
 
     sput-object v0, Lu/aly/bd;->q:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/bd;->q:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/bV;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lu/aly/bV;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/bV;-><init>(Lu/aly/bV;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -225,7 +227,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lu/aly/bX;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/bX;-><init>(Lu/aly/bX;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -393,6 +395,8 @@
 
     aput-object v2, v0, v1
 
+    iput-object v0, p0, Lu/aly/bd;->v:[Lu/aly/bd$e;
+
     return-void
 .end method
 
@@ -448,6 +452,8 @@
     sget-object v2, Lu/aly/bd$e;->g:Lu/aly/bd$e;
 
     aput-object v2, v0, v1
+
+    iput-object v0, p0, Lu/aly/bd;->v:[Lu/aly/bd$e;
 
     iget-byte v0, p1, Lu/aly/bd;->u:B
 

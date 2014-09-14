@@ -232,80 +232,15 @@
 .end method
 
 .method public constructor <init>(ZII)V
-    .locals 5
+    .locals 1
 
-    if-eqz p1, :cond_0
-
-    const-string v0, "AsyncHttpClient"
-
-    const-string v1, "Beware! Using the fix is insecure, as it doesn\'t verify SSL certificates."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    if-gtz p2, :cond_1
-
-    const/16 p2, 0x50
-
-    const-string v0, "AsyncHttpClient"
-
-    const-string v1, "Invalid HTTP port number specified, defaulting to 80"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    if-gtz p3, :cond_2
-
-    const/16 p3, 0x1bb
-
-    const-string v0, "AsyncHttpClient"
-
-    const-string v1, "Invalid HTTPS port number specified, defaulting to 443"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_2
-    if-eqz p1, :cond_3
-
-    invoke-static {}, Lcom/loopj/android/http/MySSLSocketFactory;->getFixedSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
+    invoke-static {p1, p2, p3}, Lcom/loopj/android/http/AsyncHttpClient;->a(ZII)Lorg/apache/http/conn/scheme/SchemeRegistry;
 
     move-result-object v0
 
-    :goto_0
-    new-instance v1, Lorg/apache/http/conn/scheme/SchemeRegistry;
-
-    invoke-direct {v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
-
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "http"
-
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4, p2}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "https"
-
-    invoke-direct {v2, v3, v0, p3}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    invoke-direct {p0, v1}, Lcom/loopj/android/http/AsyncHttpClient;-><init>(Lorg/apache/http/conn/scheme/SchemeRegistry;)V
+    invoke-direct {p0, v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>(Lorg/apache/http/conn/scheme/SchemeRegistry;)V
 
     return-void
-
-    :cond_3
-    invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
-
-    move-result-object v0
-
-    goto :goto_0
 .end method
 
 .method static synthetic a(Lcom/loopj/android/http/AsyncHttpClient;)Ljava/util/Map;
@@ -316,15 +251,15 @@
     return-object v0
 .end method
 
-.method private static a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
+.method private a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
     .locals 3
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_0
+    if-eqz p1, :cond_0
 
     :try_start_0
-    invoke-virtual {p0, p1}, Lcom/loopj/android/http/RequestParams;->getEntity(Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
+    invoke-virtual {p1, p2}, Lcom/loopj/android/http/RequestParams;->getEntity(Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -337,11 +272,11 @@
     :catch_0
     move-exception v1
 
-    if-eqz p1, :cond_1
+    if-eqz p2, :cond_1
 
     const/4 v2, 0x0
 
-    invoke-interface {p1, v2, v0, v0, v1}, Lcom/loopj/android/http/ResponseHandlerInterface;->sendFailureMessage(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+    invoke-interface {p2, v2, v0, v0, v1}, Lcom/loopj/android/http/ResponseHandlerInterface;->sendFailureMessage(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
 
     goto :goto_0
 
@@ -351,19 +286,21 @@
     goto :goto_0
 .end method
 
-.method private static a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+.method private a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p0, p1}, Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;->setEntity(Lorg/apache/http/HttpEntity;)V
+    invoke-virtual {p1, p2}, Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;->setEntity(Lorg/apache/http/HttpEntity;)V
 
     :cond_0
-    return-object p0
+    return-object p1
 .end method
 
 .method private static a(ZII)Lorg/apache/http/conn/scheme/SchemeRegistry;
     .locals 5
+
+    const/4 v2, 0x1
 
     if-eqz p0, :cond_0
 
@@ -374,7 +311,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    if-gtz p1, :cond_1
+    if-ge p1, v2, :cond_1
 
     const/16 p1, 0x50
 
@@ -385,7 +322,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    if-gtz p2, :cond_2
+    if-ge p2, v2, :cond_2
 
     const/16 p2, 0x1bb
 
@@ -1149,7 +1086,7 @@
 .method public post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
     .locals 6
 
-    invoke-static {p3, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
+    invoke-direct {p0, p3, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
 
     move-result-object v3
 
@@ -1189,7 +1126,7 @@
 
     invoke-direct {v0, v3}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/net/URI;)V
 
-    invoke-static {v0, p3}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+    invoke-direct {p0, v0, p3}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
 
     move-result-object v3
 
@@ -1225,7 +1162,7 @@
 
     if-eqz p4, :cond_0
 
-    invoke-static {p4, p6}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
+    invoke-direct {p0, p4, p6}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
 
     move-result-object v0
 
@@ -1271,7 +1208,7 @@
 
     invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/net/URI;)V
 
-    invoke-static {v0, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+    invoke-direct {p0, v0, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
 
     move-result-object v3
 
@@ -1326,7 +1263,7 @@
 .method public put(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
     .locals 6
 
-    invoke-static {p3, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
+    invoke-direct {p0, p3, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lorg/apache/http/HttpEntity;
 
     move-result-object v3
 
@@ -1366,7 +1303,7 @@
 
     invoke-direct {v0, v3}, Lorg/apache/http/client/methods/HttpPut;-><init>(Ljava/net/URI;)V
 
-    invoke-static {v0, p3}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+    invoke-direct {p0, v0, p3}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
 
     move-result-object v3
 
@@ -1400,7 +1337,7 @@
 
     invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpPut;-><init>(Ljava/net/URI;)V
 
-    invoke-static {v0, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+    invoke-direct {p0, v0, p4}, Lcom/loopj/android/http/AsyncHttpClient;->a(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lorg/apache/http/HttpEntity;)Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
 
     move-result-object v3
 
@@ -1758,7 +1695,9 @@
 .method public setMaxConnections(I)V
     .locals 3
 
-    if-gtz p1, :cond_0
+    const/4 v0, 0x1
+
+    if-ge p1, v0, :cond_0
 
     const/16 p1, 0xa
 

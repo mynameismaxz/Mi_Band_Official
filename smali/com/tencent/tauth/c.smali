@@ -1,4 +1,4 @@
-.class final Lcom/tencent/tauth/c;
+.class Lcom/tencent/tauth/c;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field private synthetic a:[Ljava/lang/String;
+.field final synthetic a:[Ljava/lang/String;
 
-.field private synthetic b:Ljava/lang/String;
+.field final synthetic b:Ljava/lang/String;
 
-.field private synthetic c:Lcom/tencent/tauth/LocationApi;
+.field final synthetic c:Lcom/tencent/tauth/LocationApi;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 4
 
     iget-object v0, p0, Lcom/tencent/tauth/c;->a:[Ljava/lang/String;

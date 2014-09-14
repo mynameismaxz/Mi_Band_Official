@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/k;
+.class Lcom/tencent/open/k;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,49 +6,49 @@
 
 
 # instance fields
-.field private a:Lcom/tencent/tauth/IUiListener;
+.field final synthetic a:Lcom/tencent/open/SocialApiIml;
 
-.field private b:Ljava/lang/String;
+.field private b:Lcom/tencent/tauth/IUiListener;
 
 .field private c:Ljava/lang/String;
 
-.field private d:Landroid/os/Bundle;
+.field private d:Ljava/lang/String;
 
-.field private synthetic e:Lcom/tencent/open/SocialApiIml;
+.field private e:Landroid/os/Bundle;
 
 
 # direct methods
 .method constructor <init>(Lcom/tencent/open/SocialApiIml;Lcom/tencent/tauth/IUiListener;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/tencent/open/k;->e:Lcom/tencent/open/SocialApiIml;
+    iput-object p1, p0, Lcom/tencent/open/k;->a:Lcom/tencent/open/SocialApiIml;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/tencent/open/k;->a:Lcom/tencent/tauth/IUiListener;
+    iput-object p2, p0, Lcom/tencent/open/k;->b:Lcom/tencent/tauth/IUiListener;
 
-    iput-object p3, p0, Lcom/tencent/open/k;->b:Ljava/lang/String;
+    iput-object p3, p0, Lcom/tencent/open/k;->c:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/tencent/open/k;->c:Ljava/lang/String;
+    iput-object p4, p0, Lcom/tencent/open/k;->d:Ljava/lang/String;
 
-    iput-object p5, p0, Lcom/tencent/open/k;->d:Landroid/os/Bundle;
+    iput-object p5, p0, Lcom/tencent/open/k;->e:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel()V
+.method public onCancel()V
     .locals 1
 
-    iget-object v0, p0, Lcom/tencent/open/k;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, p0, Lcom/tencent/open/k;->b:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0}, Lcom/tencent/tauth/IUiListener;->onCancel()V
 
     return-void
 .end method
 
-.method public final onComplete(Ljava/lang/Object;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 7
 
     check-cast p1, Lorg/json/JSONObject;
@@ -67,27 +67,27 @@
     move-object v6, v0
 
     :goto_0
-    iget-object v0, p0, Lcom/tencent/open/k;->d:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/tencent/open/k;->e:Landroid/os/Bundle;
 
     const-string v1, "encrytoken"
 
     invoke-virtual {v0, v1, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/tencent/open/k;->e:Lcom/tencent/open/SocialApiIml;
+    iget-object v0, p0, Lcom/tencent/open/k;->a:Lcom/tencent/open/SocialApiIml;
 
-    iget-object v1, p0, Lcom/tencent/open/k;->e:Lcom/tencent/open/SocialApiIml;
+    iget-object v1, p0, Lcom/tencent/open/k;->a:Lcom/tencent/open/SocialApiIml;
 
     invoke-static {v1}, Lcom/tencent/open/SocialApiIml;->b(Lcom/tencent/open/SocialApiIml;)Landroid/app/Activity;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/tencent/open/k;->b:Ljava/lang/String;
+    iget-object v2, p0, Lcom/tencent/open/k;->c:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/tencent/open/k;->d:Landroid/os/Bundle;
+    iget-object v3, p0, Lcom/tencent/open/k;->e:Landroid/os/Bundle;
 
-    iget-object v4, p0, Lcom/tencent/open/k;->c:Ljava/lang/String;
+    iget-object v4, p0, Lcom/tencent/open/k;->d:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/tencent/open/k;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v5, p0, Lcom/tencent/open/k;->b:Lcom/tencent/tauth/IUiListener;
 
     invoke-static/range {v0 .. v5}, Lcom/tencent/open/SocialApiIml;->a(Lcom/tencent/open/SocialApiIml;Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;)V
 
@@ -103,9 +103,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/tencent/open/k;->e:Lcom/tencent/open/SocialApiIml;
+    iget-object v0, p0, Lcom/tencent/open/k;->a:Lcom/tencent/open/SocialApiIml;
 
-    iget-object v1, p0, Lcom/tencent/open/k;->e:Lcom/tencent/open/SocialApiIml;
+    iget-object v1, p0, Lcom/tencent/open/k;->a:Lcom/tencent/open/SocialApiIml;
 
     invoke-static {v1}, Lcom/tencent/open/SocialApiIml;->c(Lcom/tencent/open/SocialApiIml;)Landroid/content/Context;
 
@@ -132,16 +132,20 @@
     goto :goto_0
 .end method
 
-.method public final onError(Lcom/tencent/tauth/UiError;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 3
 
     const-string v0, "openSDK_LOG"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "OpenApi, EncryptTokenListener() onError"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p1, Lcom/tencent/tauth/UiError;->errorMessage:Ljava/lang/String;
 
@@ -155,7 +159,7 @@
 
     invoke-static {v0, v1}, Lcom/tencent/a/a/c;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/tencent/open/k;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, p0, Lcom/tencent/open/k;->b:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0, p1}, Lcom/tencent/tauth/IUiListener;->onError(Lcom/tencent/tauth/UiError;)V
 

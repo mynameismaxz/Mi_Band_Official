@@ -11,14 +11,6 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 8
 
@@ -129,20 +121,4 @@
     move-object v0, v1
 
     goto :goto_1
-.end method
-
-.method static a(Landroid/app/Activity;)V
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
-
-    return-void
-.end method
-
-.method private static a(Landroid/app/Activity;Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/app/Activity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-
-    return-void
 .end method

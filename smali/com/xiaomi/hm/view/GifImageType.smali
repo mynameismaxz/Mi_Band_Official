@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field private a:I
+.field final a:I
 
 
 # direct methods
@@ -86,6 +86,8 @@
     .locals 0
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lcom/xiaomi/hm/view/GifImageType;->a:I
 
     return-void
 .end method

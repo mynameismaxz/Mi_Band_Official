@@ -68,7 +68,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/BarcodeFormat;
+.method a()Lcom/google/zxing/BarcodeFormat;
     .locals 1
 
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
@@ -76,7 +76,7 @@
     return-object v0
 .end method
 
-.method public final decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->a:Lcom/google/zxing/oned/UPCEANReader;
@@ -92,7 +92,7 @@
     return-object v0
 .end method
 
-.method public final decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -119,7 +119,7 @@
     return-object v0
 .end method
 
-.method protected final decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
+.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->a:Lcom/google/zxing/oned/UPCEANReader;
@@ -131,7 +131,7 @@
     return v0
 .end method
 
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -158,7 +158,7 @@
     return-object v0
 .end method
 
-.method public final decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

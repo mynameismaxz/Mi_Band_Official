@@ -288,7 +288,7 @@
 
 
 # virtual methods
-.method public final updateCropWindow(FFFLandroid/graphics/Rect;F)V
+.method public updateCropWindow(FFFLandroid/graphics/Rect;F)V
     .locals 6
 
     iget-object v0, p0, Lcom/edmodo/cropper/cropwindow/handle/Handle;->a:Lcom/edmodo/cropper/cropwindow/handle/c;
@@ -308,7 +308,7 @@
     return-void
 .end method
 
-.method public final updateCropWindow(FFLandroid/graphics/Rect;F)V
+.method public updateCropWindow(FFLandroid/graphics/Rect;F)V
     .locals 1
 
     iget-object v0, p0, Lcom/edmodo/cropper/cropwindow/handle/Handle;->a:Lcom/edmodo/cropper/cropwindow/handle/c;

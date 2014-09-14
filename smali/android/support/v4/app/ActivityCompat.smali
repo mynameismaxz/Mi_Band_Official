@@ -20,7 +20,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/Activity;->finishAffinity()V
+    invoke-static {p0}, Landroid/support/v4/app/i;->a(Landroid/app/Activity;)V
 
     :goto_0
     return-void
@@ -40,7 +40,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
+    invoke-static {p0}, Landroid/support/v4/app/h;->a(Landroid/app/Activity;)V
 
     const/4 v0, 0x1
 
@@ -62,7 +62,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+    invoke-static {p0, p1, p2}, Landroid/support/v4/app/i;->a(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
 
     :goto_0
     return-void
@@ -82,7 +82,7 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
+    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/app/i;->a(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
 
     :goto_0
     return-void

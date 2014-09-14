@@ -737,7 +737,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.method a()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/n;->d:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
@@ -745,7 +745,7 @@
     return-object v0
 .end method
 
-.method final b()B
+.method b()B
     .locals 1
 
     iget-byte v0, p0, Lcom/google/zxing/qrcode/decoder/n;->e:B
@@ -753,7 +753,7 @@
     return v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -786,7 +786,7 @@
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/n;->d:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;

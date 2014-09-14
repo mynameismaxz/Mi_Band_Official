@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final available()I
+.method public available()I
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/common/BitSource;->a:[B
@@ -43,7 +43,7 @@
     return v0
 .end method
 
-.method public final getByteOffset()I
+.method public getByteOffset()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/common/BitSource;->b:I
@@ -51,7 +51,7 @@
     return v0
 .end method
 
-.method public final readBits(I)I
+.method public readBits(I)I
     .locals 8
 
     const/16 v7, 0xff
@@ -60,7 +60,9 @@
 
     const/4 v2, 0x0
 
-    if-lez p1, :cond_0
+    const/4 v0, 0x1
+
+    if-lt p1, v0, :cond_0
 
     const/16 v0, 0x20
 

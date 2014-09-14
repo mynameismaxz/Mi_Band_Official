@@ -142,8 +142,6 @@
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/base/BaseChart;->onItemsChanged(Ljava/util/List;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -151,6 +149,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -179,8 +179,6 @@
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/base/BaseChart;->onItemsChanged(Ljava/util/List;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -188,6 +186,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -209,8 +209,6 @@
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/base/BaseChart;->onItemsChanged(Ljava/util/List;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -218,6 +216,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -297,8 +297,6 @@
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/base/BaseChart;->onItemsChanged(Ljava/util/List;)V
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
@@ -306,6 +304,8 @@
     move-exception v0
 
     monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

@@ -480,7 +480,7 @@
 
 
 # virtual methods
-.method public final clone()Lde/greenrobot/dao/internal/DaoConfig;
+.method public clone()Lde/greenrobot/dao/internal/DaoConfig;
     .locals 1
 
     new-instance v0, Lde/greenrobot/dao/internal/DaoConfig;
@@ -490,7 +490,7 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic clone()Ljava/lang/Object;
+.method public bridge synthetic clone()Ljava/lang/Object;
     .locals 1
 
     invoke-virtual {p0}, Lde/greenrobot/dao/internal/DaoConfig;->clone()Lde/greenrobot/dao/internal/DaoConfig;
@@ -500,7 +500,7 @@
     return-object v0
 .end method
 
-.method public final getIdentityScope()Lde/greenrobot/dao/identityscope/IdentityScope;
+.method public getIdentityScope()Lde/greenrobot/dao/identityscope/IdentityScope;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -515,7 +515,7 @@
     return-object v0
 .end method
 
-.method public final initIdentityScope(Lde/greenrobot/dao/identityscope/IdentityScopeType;)V
+.method public initIdentityScope(Lde/greenrobot/dao/identityscope/IdentityScopeType;)V
     .locals 3
 
     sget-object v0, Lde/greenrobot/dao/identityscope/IdentityScopeType;->None:Lde/greenrobot/dao/identityscope/IdentityScopeType;
@@ -560,9 +560,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Unsupported type: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -577,7 +581,7 @@
     throw v0
 .end method
 
-.method public final setIdentityScope(Lde/greenrobot/dao/identityscope/IdentityScope;)V
+.method public setIdentityScope(Lde/greenrobot/dao/identityscope/IdentityScope;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

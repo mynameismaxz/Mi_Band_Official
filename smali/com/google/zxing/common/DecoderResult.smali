@@ -48,7 +48,7 @@
 
 
 # virtual methods
-.method public final getByteSegments()Ljava/util/List;
+.method public getByteSegments()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -63,7 +63,7 @@
     return-object v0
 .end method
 
-.method public final getECLevel()Ljava/lang/String;
+.method public getECLevel()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/common/DecoderResult;->d:Ljava/lang/String;
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public final getRawBytes()[B
+.method public getRawBytes()[B
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/common/DecoderResult;->a:[B
@@ -79,7 +79,7 @@
     return-object v0
 .end method
 
-.method public final getText()Ljava/lang/String;
+.method public getText()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/common/DecoderResult;->b:Ljava/lang/String;

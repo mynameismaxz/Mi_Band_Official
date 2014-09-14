@@ -26,29 +26,9 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Parcel;)Landroid/support/v4/app/Fragment$SavedState;
-    .locals 2
-
-    new-instance v0, Landroid/support/v4/app/Fragment$SavedState;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Landroid/support/v4/app/Fragment$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-.end method
-
-.method private static a(I)[Landroid/support/v4/app/Fragment$SavedState;
-    .locals 1
-
-    new-array v0, p0, [Landroid/support/v4/app/Fragment$SavedState;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Landroid/support/v4/app/Fragment$SavedState;
     .locals 2
 
     new-instance v0, Landroid/support/v4/app/Fragment$SavedState;
@@ -60,10 +40,30 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/app/Fragment$SavedState;
     .locals 1
 
     new-array v0, p1, [Landroid/support/v4/app/Fragment$SavedState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/p;->a(Landroid/os/Parcel;)Landroid/support/v4/app/Fragment$SavedState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/p;->a(I)[Landroid/support/v4/app/Fragment$SavedState;
+
+    move-result-object v0
 
     return-object v0
 .end method

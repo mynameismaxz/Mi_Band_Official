@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/channel/openauth/b;
+.class Lcom/xiaomi/channel/openauth/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -50,7 +50,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 5
 
     iget-object v0, p0, Lcom/xiaomi/channel/openauth/b;->a:Landroid/app/Activity;

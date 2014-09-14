@@ -3,14 +3,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
+.field final synthetic b:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
 
 
 # direct methods
 .method public constructor <init>(Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/g;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
+    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/g;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/handmark/pulltorefresh/library/f;-><init>(Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -19,14 +19,14 @@
 
 
 # virtual methods
-.method protected final overScrollBy(IIIIIIIIZ)Z
+.method protected overScrollBy(IIIIIIIIZ)Z
     .locals 7
 
     invoke-super/range {p0 .. p9}, Lcom/handmark/pulltorefresh/library/f;->overScrollBy(IIIIIIIIZ)Z
 
     move-result v6
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/g;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/g;->b:Lcom/handmark/pulltorefresh/library/PullToRefreshExpandableListView;
 
     move v1, p1
 

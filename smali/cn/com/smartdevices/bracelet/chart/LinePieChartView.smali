@@ -284,60 +284,14 @@
 .end method
 
 .method public setValue(J)V
-    .locals 5
-
-    const/high16 v1, 0x3f80
+    .locals 1
 
     long-to-float v0, p1
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->b:F
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->b:F
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->a()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->getMaxValue()F
-
-    move-result v0
-
-    div-float v0, v2, v0
-
-    cmpl-float v2, v0, v1
-
-    if-lez v2, :cond_0
-
-    move v0, v1
-
-    :cond_0
-    const-wide/high16 v1, 0x4089
-
-    float-to-double v3, v0
-
-    invoke-static {v3, v4}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v3
-
-    mul-double v0, v1, v3
-
-    double-to-long v0, v0
-
-    iput-wide v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mDuration:J
-
-    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mDuration:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_1
-
-    const-wide/16 v0, 0x1
-
-    iput-wide v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mDuration:J
-
-    :cond_1
     return-void
 .end method
 
@@ -352,51 +306,15 @@
 .end method
 
 .method public showLoading(J)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->c:Landroid/animation/Animator;
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_0
-
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->b()Landroid/animation/Animator;
 
     move-result-object v0
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/k;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/k;-><init>(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/l;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/l;-><init>(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    const-wide/16 v1, 0xdac
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
-
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->c:Landroid/animation/Animator;
 
@@ -426,12 +344,6 @@
 
     :cond_2
     return-void
-
-    :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-    .end array-data
 .end method
 
 .method public showNormalLine()V

@@ -172,122 +172,17 @@
 .end method
 
 .method private d(J)Ljava/io/File;
-    .locals 6
+    .locals 1
 
     invoke-virtual {p0, p1, p2}, Lcom/tencent/a/a/h;->a(J)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, v2}, Lcom/tencent/a/a/h;->b(Ljava/io/File;)[Ljava/io/File;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    array-length v0, v3
-
-    if-nez v0, :cond_2
-
-    :cond_0
-    new-instance v1, Ljava/io/File;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v3, "1"
-
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->j()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/tencent/a/a/h;->e(Ljava/io/File;)Ljava/io/File;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    :cond_1
-    return-object v1
-
-    :cond_2
-    invoke-virtual {p0, v3}, Lcom/tencent/a/a/h;->a([Ljava/io/File;)[Ljava/io/File;
-
-    array-length v0, v3
-
-    add-int/lit8 v0, v0, -0x1
-
-    aget-object v1, v3, v0
-
-    array-length v0, v3
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->e()I
-
-    move-result v4
-
-    sub-int/2addr v0, v4
-
-    invoke-virtual {v1}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    long-to-int v4, v4
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->d()I
-
-    move-result v5
-
-    if-le v4, v5, :cond_3
-
-    invoke-static {v1}, Lcom/tencent/a/a/h;->f(Ljava/io/File;)I
-
-    move-result v1
-
-    add-int/lit8 v4, v1, 0x1
-
-    new-instance v1, Ljava/io/File;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->j()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_1
-
-    aget-object v4, v3, v2
-
-    invoke-virtual {v4}, Ljava/io/File;->delete()Z
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private e(Ljava/io/File;)Ljava/io/File;
@@ -308,9 +203,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "1"
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/tencent/a/a/h;->j()Ljava/lang/String;
 
@@ -445,126 +344,17 @@
 
 # virtual methods
 .method public a()Ljava/io/File;
-    .locals 6
+    .locals 2
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lcom/tencent/a/a/h;->a(J)Ljava/io/File;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lcom/tencent/a/a/h;->b(Ljava/io/File;)[Ljava/io/File;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    array-length v0, v3
-
-    if-nez v0, :cond_2
-
-    :cond_0
-    new-instance v1, Ljava/io/File;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v3, "1"
-
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->j()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0, v1}, Lcom/tencent/a/a/h;->d(J)Ljava/io/File;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    :cond_1
-    return-object v1
-
-    :cond_2
-    invoke-virtual {p0, v3}, Lcom/tencent/a/a/h;->a([Ljava/io/File;)[Ljava/io/File;
-
-    array-length v0, v3
-
-    add-int/lit8 v0, v0, -0x1
-
-    aget-object v1, v3, v0
-
-    array-length v0, v3
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->e()I
-
-    move-result v4
-
-    sub-int/2addr v0, v4
-
-    invoke-virtual {v1}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    long-to-int v4, v4
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->d()I
-
-    move-result v5
-
-    if-le v4, v5, :cond_3
-
-    invoke-static {v1}, Lcom/tencent/a/a/h;->f(Ljava/io/File;)I
-
-    move-result v1
-
-    add-int/lit8 v4, v1, 0x1
-
-    new-instance v1, Ljava/io/File;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lcom/tencent/a/a/h;->j()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_1
-
-    aget-object v4, v3, v2
-
-    invoke-virtual {v4}, Ljava/io/File;->delete()Z
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public a(J)Ljava/io/File;

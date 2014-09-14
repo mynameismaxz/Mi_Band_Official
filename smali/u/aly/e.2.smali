@@ -38,6 +38,9 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
+    if-nez v0, :cond_0
+
+    :cond_0
     const/4 v1, 0x0
 
     :try_start_0
@@ -49,7 +52,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
     :try_end_0
@@ -63,7 +66,11 @@
     :catch_0
     move-exception v0
 
-    :cond_0
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_1
     move-object v0, v1
 
     goto :goto_0

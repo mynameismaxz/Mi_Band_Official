@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/e;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onFinish()V
+.method public onFinish()V
     .locals 2
 
     const-string v0, "Chart.DynamicDetailChartView"
@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method public final onJustify()V
+.method public onJustify()V
     .locals 2
 
     const-string v0, "Chart.DynamicDetailChartView"
@@ -46,7 +46,7 @@
     return-void
 .end method
 
-.method public final onScrollX(I)Z
+.method public onScrollX(I)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -54,7 +54,7 @@
     return v0
 .end method
 
-.method public final onScrollY(I)Z
+.method public onScrollY(I)Z
     .locals 5
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/e;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
@@ -162,7 +162,7 @@
     goto :goto_0
 .end method
 
-.method public final onStart()V
+.method public onStart()V
     .locals 2
 
     const-string v0, "Chart.DynamicDetailChartView"

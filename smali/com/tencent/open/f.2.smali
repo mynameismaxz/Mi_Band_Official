@@ -1,9 +1,9 @@
-.class final Lcom/tencent/open/f;
+.class Lcom/tencent/open/f;
 .super Lcom/tencent/open/a$a;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/PKDialog;
+.field final synthetic a:Lcom/tencent/open/PKDialog;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/PKDialog;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/PKDialog;Lcom/tencent/open/c;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/f;-><init>(Lcom/tencent/open/PKDialog;)V
@@ -25,7 +25,9 @@
     return-void
 .end method
 
-.method private a(Ljava/lang/String;)V
+
+# virtual methods
+.method public a(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/f;->a:Lcom/tencent/open/PKDialog;
@@ -53,7 +55,7 @@
     return-void
 .end method
 
-.method private b(Ljava/lang/String;)V
+.method public b(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/f;->a:Lcom/tencent/open/PKDialog;
@@ -77,7 +79,7 @@
     return-void
 .end method
 
-.method private c(Ljava/lang/String;)V
+.method public c(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/f;->a:Lcom/tencent/open/PKDialog;
@@ -97,7 +99,7 @@
     return-void
 .end method
 
-.method private d(Ljava/lang/String;)V
+.method public d(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/f;->a:Lcom/tencent/open/PKDialog;

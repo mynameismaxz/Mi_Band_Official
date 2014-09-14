@@ -1,4 +1,4 @@
-.class final Lcom/tencent/b/b/g;
+.class Lcom/tencent/b/b/g;
 .super Ljava/lang/Object;
 
 
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Z
+.method public a(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 7
 
     const/4 v3, 0x1
@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/tencent/b/b/g;->a:Lcom/tencent/b/b/a;
 
-    invoke-static {p1}, Lcom/tencent/b/b/a;->a(Ljava/lang/String;)I
+    invoke-static {v0, p1}, Lcom/tencent/b/b/a;->a(Lcom/tencent/b/b/a;Ljava/lang/String;)I
 
     move-result v0
 

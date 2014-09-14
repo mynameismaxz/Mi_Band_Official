@@ -1,9 +1,9 @@
-.class final Lcom/tencent/open/n;
+.class Lcom/tencent/open/n;
 .super Lcom/tencent/open/a$a;
 
 
 # instance fields
-.field private synthetic a:Lcom/tencent/open/TDialog;
+.field final synthetic a:Lcom/tencent/open/TDialog;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/TDialog;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/TDialog;Lcom/tencent/open/l;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/n;-><init>(Lcom/tencent/open/TDialog;)V
@@ -25,23 +25,19 @@
     return-void
 .end method
 
-.method private a()V
-    .locals 2
 
-    const-string v0, "TDialog"
+# virtual methods
+.method public a()V
+    .locals 1
 
-    const-string v1, "onCancelAddShare"
+    const-string v0, ""
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "cancel"
-
-    invoke-direct {p0, v0}, Lcom/tencent/open/n;->d(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/tencent/open/n;->e(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private a(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .locals 2
 
     const-string v0, "TDialog"
@@ -50,30 +46,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-direct {p0, p1}, Lcom/tencent/open/n;->c(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/tencent/open/n;->d(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private b()V
-    .locals 1
-
-    const-string v0, ""
-
-    invoke-direct {p0, v0}, Lcom/tencent/open/n;->d(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method private b(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/tencent/open/n;->c(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method private c()V
+.method public b()V
     .locals 2
 
     const-string v0, "TDialog"
@@ -84,12 +62,36 @@
 
     const-string v0, ""
 
-    invoke-direct {p0, v0}, Lcom/tencent/open/n;->d(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/tencent/open/n;->e(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private c(Ljava/lang/String;)V
+.method public b(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/tencent/open/n;->d(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "TDialog"
+
+    const-string v1, "onCancelAddShare"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v0, "cancel"
+
+    invoke-virtual {p0, v0}, Lcom/tencent/open/n;->e(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/n;->a:Lcom/tencent/open/TDialog;
@@ -117,16 +119,20 @@
     return-void
 .end method
 
-.method private d(Ljava/lang/String;)V
+.method public e(Ljava/lang/String;)V
     .locals 3
 
     const-string v0, "TDialog"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onCancel --msg = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -159,7 +165,7 @@
     return-void
 .end method
 
-.method private e(Ljava/lang/String;)V
+.method public f(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/n;->a:Lcom/tencent/open/TDialog;
@@ -179,7 +185,7 @@
     return-void
 .end method
 
-.method private f(Ljava/lang/String;)V
+.method public g(Ljava/lang/String;)V
     .locals 2
 
     iget-object v0, p0, Lcom/tencent/open/n;->a:Lcom/tencent/open/TDialog;

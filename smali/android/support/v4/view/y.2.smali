@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/y;
+.class Landroid/support/v4/view/y;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,74 +16,74 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public a(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginStart()I
+    invoke-static {p1}, Landroid/support/v4/view/z;->a(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/z;->a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
 
     return-void
 .end method
 
-.method public final b(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public b(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
+    invoke-static {p1}, Landroid/support/v4/view/z;->b(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/z;->b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
 
     return-void
 .end method
 
-.method public final c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->setLayoutDirection(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/z;->c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
 
     return-void
 .end method
 
-.method public final c(Landroid/view/ViewGroup$MarginLayoutParams;)Z
+.method public c(Landroid/view/ViewGroup$MarginLayoutParams;)Z
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->isMarginRelative()Z
+    invoke-static {p1}, Landroid/support/v4/view/z;->c(Landroid/view/ViewGroup$MarginLayoutParams;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final d(Landroid/view/ViewGroup$MarginLayoutParams;)I
+.method public d(Landroid/view/ViewGroup$MarginLayoutParams;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->getLayoutDirection()I
+    invoke-static {p1}, Landroid/support/v4/view/z;->d(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final d(Landroid/view/ViewGroup$MarginLayoutParams;I)V
+.method public d(Landroid/view/ViewGroup$MarginLayoutParams;I)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->resolveLayoutDirection(I)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/z;->d(Landroid/view/ViewGroup$MarginLayoutParams;I)V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class final Lcom/xiaomi/auth/b;
+.class Lcom/xiaomi/auth/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 4
 
     const/4 v0, 0x0
@@ -101,7 +101,7 @@
     goto :goto_0
 .end method
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 0
 
     return-void

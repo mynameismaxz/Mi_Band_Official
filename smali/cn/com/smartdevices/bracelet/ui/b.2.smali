@@ -1,9 +1,9 @@
-.class final Lcn/com/smartdevices/bracelet/ui/b;
+.class Lcn/com/smartdevices/bracelet/ui/b;
 .super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
 
     const-string v0, "AlarmActivity"

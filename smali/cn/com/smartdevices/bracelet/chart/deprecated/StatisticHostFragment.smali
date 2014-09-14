@@ -92,7 +92,7 @@
     invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
-    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;I)V
+    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;I)V
 
     const-string v1, "Statistic.Host"
 
@@ -339,7 +339,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;I)V
+    invoke-direct {p0, v1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;I)V
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->b()V
 
@@ -375,7 +375,7 @@
     goto :goto_0
 .end method
 
-.method private static a(Landroid/content/Context;I)V
+.method private a(Landroid/content/Context;I)V
     .locals 3
 
     const-string v0, "Statistic.Host"
@@ -386,7 +386,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -404,7 +404,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -414,7 +414,7 @@
 
     const-string v1, "Mode"
 
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
@@ -533,7 +533,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0c01c3
+    const v1, 0x7f0c01c7
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -551,7 +551,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0c01c4
+    const v1, 0x7f0c01c8
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -571,7 +571,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030046
+    const v0, 0x7f030048
 
     return v0
 .end method
@@ -601,7 +601,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07002e
+    const v1, 0x7f070033
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -617,7 +617,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07009f
+    const v1, 0x7f0700a4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -633,7 +633,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700cc
+    const v1, 0x7f0700d2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -647,7 +647,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070141
+    const v1, 0x7f070147
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -659,7 +659,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070142
+    const v1, 0x7f070148
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -671,7 +671,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070144
+    const v1, 0x7f07014a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -683,7 +683,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070145
+    const v1, 0x7f07014b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -713,11 +713,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 6
-
-    const/high16 v5, 0x7f07
-
-    const/4 v4, 0x1
+    .locals 1
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->onClick(Landroid/view/View;)V
 
@@ -740,92 +736,14 @@
     goto :goto_0
 
     :sswitch_1
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->buildDrawingCache()V
-
-    invoke-virtual {v0}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, "/tmp.jpg"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Utils;->saveBitmapToFile(Ljava/lang/String;Landroid/graphics/Bitmap;)V
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
-
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    const-class v3, Lcn/com/smartdevices/bracelet/ui/ShareActivity;
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    const-string v1, "date"
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->d:Landroid/widget/TextView;
-
-    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    const-string v1, "Mode"
-
-    invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    const-string v1, "Image"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const v1, 0x8001
-
-    invoke-virtual {p0, v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->startActivityForResult(Landroid/content/Intent;I)V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a()V
 
     goto :goto_0
 
     :sswitch_2
-    invoke-direct {p0, v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(I)V
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(I)V
 
     goto :goto_0
 
@@ -852,192 +770,37 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f07002e -> :sswitch_0
-        0x7f07009f -> :sswitch_1
-        0x7f070141 -> :sswitch_2
-        0x7f070142 -> :sswitch_3
-        0x7f070144 -> :sswitch_4
-        0x7f070145 -> :sswitch_5
+        0x7f070033 -> :sswitch_0
+        0x7f0700a4 -> :sswitch_1
+        0x7f070147 -> :sswitch_2
+        0x7f070148 -> :sswitch_3
+        0x7f07014a -> :sswitch_4
+        0x7f07014b -> :sswitch_5
     .end sparse-switch
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 6
-
-    const/16 v0, 0x101
+    .locals 1
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->onCreate(Landroid/os/Bundle;)V
 
     invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Lde/greenrobot/event/EventBus;->register(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Lde/greenrobot/event/EventBus;->register(Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v1, "StatisticViewMode"
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;)I
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v3, "Mode"
-
-    invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    and-int/lit8 v3, v1, 0x1
-
-    if-nez v3, :cond_0
-
-    and-int/lit8 v3, v1, 0x10
-
-    if-nez v3, :cond_0
-
-    const-string v3, "Statistic.Host"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Invalid Mode Code : "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->a(Landroid/content/Context;I)V
-
-    const-string v1, "Statistic.Host"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Read Mode : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v0
 
     sput v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
     return-void
-
-    :cond_0
-    and-int/lit16 v3, v1, 0x100
-
-    if-nez v3, :cond_1
-
-    and-int/lit16 v3, v1, 0x1000
-
-    if-nez v3, :cond_1
-
-    const-string v3, "Statistic.Host"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Invalid Mode Code : "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    and-int/lit8 v3, v1, 0x1
-
-    if-lez v3, :cond_2
-
-    and-int/lit8 v3, v1, 0x10
-
-    if-lez v3, :cond_2
-
-    const-string v3, "Statistic.Host"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Invalid Mode Code : "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_2
-    and-int/lit16 v3, v1, 0x100
-
-    if-lez v3, :cond_3
-
-    and-int/lit16 v3, v1, 0x1000
-
-    if-lez v3, :cond_3
-
-    const-string v3, "Statistic.Host"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Invalid Mode Code : "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public onDestroy()V

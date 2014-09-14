@@ -1,25 +1,25 @@
-.class final Lcn/com/smartdevices/bracelet/chart/deprecated/c;
+.class Lcn/com/smartdevices/bracelet/chart/deprecated/c;
 .super Lcn/com/smartdevices/bracelet/chart/deprecated/b;
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
 
 # direct methods
 .method private constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)V
     .locals 1
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;B)V
+    invoke-direct {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;Lcn/com/smartdevices/bracelet/chart/deprecated/b;)V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;Lcn/com/smartdevices/bracelet/chart/deprecated/c;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/c;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)V
@@ -29,14 +29,14 @@
 
 
 # virtual methods
-.method protected final itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 5
 
     const/high16 v4, 0x3f80
 
     iget v0, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
 
@@ -51,7 +51,7 @@
     return v0
 
     :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->d(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
@@ -79,7 +79,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)F
 
@@ -110,7 +110,7 @@
     goto :goto_0
 .end method
 
-.method protected final itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 1
 
     const/4 v0, 0x0
@@ -118,10 +118,10 @@
     return v0
 .end method
 
-.method protected final itemOffsetY(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemOffsetY(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 4
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->d(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
@@ -149,7 +149,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
     invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)F
 
@@ -165,7 +165,7 @@
 
     mul-float/2addr v1, v2
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/a;->b()F
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/a;->c()F
 
     move-result v0
 
@@ -174,7 +174,7 @@
     return v0
 .end method
 
-.method protected final itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
+.method protected itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
     .locals 3
 
     iget v0, p2, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I

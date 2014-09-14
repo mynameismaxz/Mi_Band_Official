@@ -30,9 +30,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/app/L;
+    new-instance v0, Landroid/support/v4/app/M;
 
-    invoke-direct {v0}, Landroid/support/v4/app/L;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/app/M;-><init>()V
 
     sput-object v0, Landroid/support/v4/app/NavUtils;->b:Landroid/support/v4/app/L;
 
@@ -52,7 +52,7 @@
 
     sget-object v0, Landroid/support/v4/app/NavUtils;->b:Landroid/support/v4/app/L;
 
-    invoke-virtual {v0, p0}, Landroid/support/v4/app/L;->a(Landroid/app/Activity;)Landroid/content/Intent;
+    invoke-interface {v0, p0}, Landroid/support/v4/app/L;->a(Landroid/app/Activity;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -203,7 +203,7 @@
 
     sget-object v1, Landroid/support/v4/app/NavUtils;->b:Landroid/support/v4/app/L;
 
-    invoke-virtual {v1, p0, v0}, Landroid/support/v4/app/L;->a(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
+    invoke-interface {v1, p0, v0}, Landroid/support/v4/app/L;->a(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -223,9 +223,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Activity "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -239,7 +243,13 @@
 
     move-result-object v1
 
-    const-string v2, " does not have a parent activity name specified. (Did you forget to add the android.support.PARENT_ACTIVITY <meta-data> "
+    const-string v2, " does not have a parent activity name specified."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " (Did you forget to add the android.support.PARENT_ACTIVITY <meta-data> "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -270,7 +280,7 @@
 
     sget-object v0, Landroid/support/v4/app/NavUtils;->b:Landroid/support/v4/app/L;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/app/L;->b(Landroid/app/Activity;Landroid/content/Intent;)V
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/app/L;->b(Landroid/app/Activity;Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -280,7 +290,7 @@
 
     sget-object v0, Landroid/support/v4/app/NavUtils;->b:Landroid/support/v4/app/L;
 
-    invoke-virtual {v0, p0, p1}, Landroid/support/v4/app/L;->a(Landroid/app/Activity;Landroid/content/Intent;)Z
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/app/L;->a(Landroid/app/Activity;Landroid/content/Intent;)Z
 
     move-result v0
 

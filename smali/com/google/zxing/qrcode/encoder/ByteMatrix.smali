@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final clear(B)V
+.method public clear(B)V
     .locals 4
 
     const/4 v1, 0x0
@@ -77,7 +77,7 @@
     return-void
 .end method
 
-.method public final get(II)B
+.method public get(II)B
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->a:[[B
@@ -89,7 +89,7 @@
     return v0
 .end method
 
-.method public final getArray()[[B
+.method public getArray()[[B
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->a:[[B
@@ -97,7 +97,7 @@
     return-object v0
 .end method
 
-.method public final getHeight()I
+.method public getHeight()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->c:I
@@ -105,7 +105,7 @@
     return v0
 .end method
 
-.method public final getWidth()I
+.method public getWidth()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->b:I
@@ -113,7 +113,7 @@
     return v0
 .end method
 
-.method public final set(IIB)V
+.method public set(IIB)V
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->a:[[B
@@ -125,7 +125,7 @@
     return-void
 .end method
 
-.method public final set(III)V
+.method public set(III)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->a:[[B
@@ -139,7 +139,7 @@
     return-void
 .end method
 
-.method public final set(IIZ)V
+.method public set(IIZ)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->a:[[B
@@ -163,7 +163,7 @@
     goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
 
     const/4 v1, 0x0

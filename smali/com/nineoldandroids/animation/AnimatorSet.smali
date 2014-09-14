@@ -381,7 +381,7 @@
     :cond_d
     iget-object v7, v0, Lcom/nineoldandroids/animation/e;->d:Ljava/util/ArrayList;
 
-    iget-object v8, v1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v8, v1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -391,7 +391,7 @@
 
     iget-object v7, v0, Lcom/nineoldandroids/animation/e;->d:Ljava/util/ArrayList;
 
-    iget-object v1, v1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v1, v1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -404,11 +404,9 @@
 .end method
 
 .method static synthetic a(Lcom/nineoldandroids/animation/AnimatorSet;Z)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->i:Z
+    iput-boolean p1, p0, Lcom/nineoldandroids/animation/AnimatorSet;->i:Z
 
     return-void
 .end method
@@ -439,7 +437,7 @@
 
 
 # virtual methods
-.method public final cancel()V
+.method public cancel()V
     .locals 3
 
     const/4 v0, 0x1
@@ -580,7 +578,7 @@
     goto :goto_1
 .end method
 
-.method public final bridge synthetic clone()Lcom/nineoldandroids/animation/Animator;
+.method public bridge synthetic clone()Lcom/nineoldandroids/animation/Animator;
     .locals 1
 
     invoke-virtual {p0}, Lcom/nineoldandroids/animation/AnimatorSet;->clone()Lcom/nineoldandroids/animation/AnimatorSet;
@@ -590,7 +588,7 @@
     return-object v0
 .end method
 
-.method public final clone()Lcom/nineoldandroids/animation/AnimatorSet;
+.method public clone()Lcom/nineoldandroids/animation/AnimatorSet;
     .locals 9
 
     const/4 v2, 0x0
@@ -799,30 +797,28 @@
 
     move-result-object v1
 
-    move-object v3, v1
+    check-cast v1, Lcom/nineoldandroids/animation/c;
 
-    check-cast v3, Lcom/nineoldandroids/animation/c;
+    iget-object v3, v1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
-    iget-object v1, v3, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    invoke-virtual {v4, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v1
-
-    check-cast v1, Lcom/nineoldandroids/animation/e;
+    check-cast v3, Lcom/nineoldandroids/animation/e;
 
     new-instance v7, Lcom/nineoldandroids/animation/c;
 
-    iget v3, v3, Lcom/nineoldandroids/animation/c;->b:I
+    iget v1, v1, Lcom/nineoldandroids/animation/c;->d:I
 
-    invoke-direct {v7, v1, v3}, Lcom/nineoldandroids/animation/c;-><init>(Lcom/nineoldandroids/animation/e;I)V
+    invoke-direct {v7, v3, v1}, Lcom/nineoldandroids/animation/c;-><init>(Lcom/nineoldandroids/animation/e;I)V
 
     invoke-virtual {v2, v7}, Lcom/nineoldandroids/animation/e;->a(Lcom/nineoldandroids/animation/c;)V
 
     goto :goto_2
 .end method
 
-.method public final end()V
+.method public end()V
     .locals 3
 
     const/4 v0, 0x1
@@ -978,7 +974,7 @@
     goto :goto_2
 .end method
 
-.method public final getChildAnimations()Ljava/util/ArrayList;
+.method public getChildAnimations()Ljava/util/ArrayList;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1023,7 +1019,7 @@
     goto :goto_0
 .end method
 
-.method public final getDuration()J
+.method public getDuration()J
     .locals 2
 
     iget-wide v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->l:J
@@ -1031,7 +1027,7 @@
     return-wide v0
 .end method
 
-.method public final getStartDelay()J
+.method public getStartDelay()J
     .locals 2
 
     iget-wide v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->j:J
@@ -1039,7 +1035,7 @@
     return-wide v0
 .end method
 
-.method public final isRunning()Z
+.method public isRunning()Z
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->e:Ljava/util/ArrayList;
@@ -1080,7 +1076,7 @@
     goto :goto_0
 .end method
 
-.method public final isStarted()Z
+.method public isStarted()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->i:Z
@@ -1088,7 +1084,7 @@
     return v0
 .end method
 
-.method public final play(Lcom/nineoldandroids/animation/Animator;)Lcom/nineoldandroids/animation/AnimatorSet$Builder;
+.method public play(Lcom/nineoldandroids/animation/Animator;)Lcom/nineoldandroids/animation/AnimatorSet$Builder;
     .locals 1
 
     if-eqz p1, :cond_0
@@ -1110,7 +1106,7 @@
     goto :goto_0
 .end method
 
-.method public final playSequentially(Ljava/util/List;)V
+.method public playSequentially(Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1192,7 +1188,7 @@
     goto :goto_0
 .end method
 
-.method public final varargs playSequentially([Lcom/nineoldandroids/animation/Animator;)V
+.method public varargs playSequentially([Lcom/nineoldandroids/animation/Animator;)V
     .locals 3
 
     const/4 v2, 0x1
@@ -1240,7 +1236,7 @@
     goto :goto_0
 .end method
 
-.method public final playTogether(Ljava/util/Collection;)V
+.method public playTogether(Ljava/util/Collection;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1305,7 +1301,7 @@
     goto :goto_0
 .end method
 
-.method public final varargs playTogether([Lcom/nineoldandroids/animation/Animator;)V
+.method public varargs playTogether([Lcom/nineoldandroids/animation/Animator;)V
     .locals 3
 
     const/4 v0, 0x1
@@ -1340,7 +1336,7 @@
     goto :goto_0
 .end method
 
-.method public final bridge synthetic setDuration(J)Lcom/nineoldandroids/animation/Animator;
+.method public bridge synthetic setDuration(J)Lcom/nineoldandroids/animation/Animator;
     .locals 1
 
     invoke-virtual {p0, p1, p2}, Lcom/nineoldandroids/animation/AnimatorSet;->setDuration(J)Lcom/nineoldandroids/animation/AnimatorSet;
@@ -1350,7 +1346,7 @@
     return-object v0
 .end method
 
-.method public final setDuration(J)Lcom/nineoldandroids/animation/AnimatorSet;
+.method public setDuration(J)Lcom/nineoldandroids/animation/AnimatorSet;
     .locals 2
 
     const-wide/16 v0, 0x0
@@ -1399,7 +1395,7 @@
     goto :goto_0
 .end method
 
-.method public final setInterpolator(Landroid/view/animation/Interpolator;)V
+.method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->e:Ljava/util/ArrayList;
@@ -1431,7 +1427,7 @@
     goto :goto_0
 .end method
 
-.method public final setStartDelay(J)V
+.method public setStartDelay(J)V
     .locals 0
 
     iput-wide p1, p0, Lcom/nineoldandroids/animation/AnimatorSet;->j:J
@@ -1439,7 +1435,7 @@
     return-void
 .end method
 
-.method public final setTarget(Ljava/lang/Object;)V
+.method public setTarget(Ljava/lang/Object;)V
     .locals 3
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->e:Ljava/util/ArrayList;
@@ -1489,7 +1485,7 @@
     goto :goto_0
 .end method
 
-.method public final setupEndValues()V
+.method public setupEndValues()V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->e:Ljava/util/ArrayList;
@@ -1521,7 +1517,7 @@
     goto :goto_0
 .end method
 
-.method public final setupStartValues()V
+.method public setupStartValues()V
     .locals 2
 
     iget-object v0, p0, Lcom/nineoldandroids/animation/AnimatorSet;->e:Ljava/util/ArrayList;
@@ -1553,7 +1549,7 @@
     goto :goto_0
 .end method
 
-.method public final start()V
+.method public start()V
     .locals 12
 
     const-wide/16 v10, 0x0
@@ -1815,13 +1811,13 @@
 
     check-cast v1, Lcom/nineoldandroids/animation/c;
 
-    iget-object v8, v1, Lcom/nineoldandroids/animation/c;->a:Lcom/nineoldandroids/animation/e;
+    iget-object v8, v1, Lcom/nineoldandroids/animation/c;->c:Lcom/nineoldandroids/animation/e;
 
     iget-object v8, v8, Lcom/nineoldandroids/animation/e;->a:Lcom/nineoldandroids/animation/Animator;
 
     new-instance v9, Lcom/nineoldandroids/animation/d;
 
-    iget v1, v1, Lcom/nineoldandroids/animation/c;->b:I
+    iget v1, v1, Lcom/nineoldandroids/animation/c;->d:I
 
     invoke-direct {v9, p0, v0, v1}, Lcom/nineoldandroids/animation/d;-><init>(Lcom/nineoldandroids/animation/AnimatorSet;Lcom/nineoldandroids/animation/e;I)V
 

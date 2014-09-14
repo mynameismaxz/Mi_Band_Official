@@ -1,11 +1,11 @@
-.class final Lcom/tencent/utils/d;
+.class Lcom/tencent/utils/d;
 .super Ljava/lang/Thread;
 
 
 # instance fields
-.field private synthetic a:Landroid/os/Bundle;
+.field final synthetic a:Landroid/os/Bundle;
 
-.field private synthetic b:Lcom/tencent/utils/OpenConfig;
+.field final synthetic b:Lcom/tencent/utils/OpenConfig;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 4
 
     :try_start_0

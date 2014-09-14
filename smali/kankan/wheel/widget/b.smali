@@ -1,9 +1,9 @@
-.class final Lkankan/wheel/widget/b;
+.class Lkankan/wheel/widget/b;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lkankan/wheel/widget/WheelScroller;
+.field final synthetic a:Lkankan/wheel/widget/WheelScroller;
 
 
 # direct methods
@@ -19,8 +19,10 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 4
+
+    const/4 v3, 0x1
 
     iget-object v0, p0, Lkankan/wheel/widget/b;->a:Lkankan/wheel/widget/WheelScroller;
 
@@ -79,7 +81,7 @@
 
     move-result v0
 
-    if-gtz v0, :cond_1
+    if-ge v0, v3, :cond_1
 
     iget-object v0, p0, Lkankan/wheel/widget/b;->a:Lkankan/wheel/widget/WheelScroller;
 
@@ -95,9 +97,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {v0, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
 
     :cond_1
     iget-object v0, p0, Lkankan/wheel/widget/b;->a:Lkankan/wheel/widget/WheelScroller;

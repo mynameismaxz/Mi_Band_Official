@@ -30,9 +30,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v4/widget/a;
+    new-instance v0, Landroid/support/v4/widget/j;
 
-    invoke-direct {v0}, Landroid/support/v4/widget/a;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/widget/j;-><init>()V
 
     sput-object v0, Landroid/support/v4/widget/EdgeEffectCompat;->b:Landroid/support/v4/widget/l;
 

@@ -57,7 +57,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcel;B)V
+.method synthetic constructor <init>(Landroid/os/Parcel;Lcom/tencent/connect/dataprovider/a;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/connect/dataprovider/DataType$TextAndMediaPath;-><init>(Landroid/os/Parcel;)V

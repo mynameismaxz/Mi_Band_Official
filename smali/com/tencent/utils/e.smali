@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/content/Context;
+.field final synthetic a:Landroid/content/Context;
 
-.field private synthetic b:Landroid/os/Bundle;
+.field final synthetic b:Landroid/os/Bundle;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 4
 
     :try_start_0

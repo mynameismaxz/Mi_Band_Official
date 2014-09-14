@@ -73,7 +73,7 @@
 
 
 # virtual methods
-.method public final addResultPoints([Lcom/google/zxing/ResultPoint;)V
+.method public addResultPoints([Lcom/google/zxing/ResultPoint;)V
     .locals 4
 
     const/4 v3, 0x0
@@ -118,7 +118,7 @@
     goto :goto_0
 .end method
 
-.method public final getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
+.method public getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/Result;->d:Lcom/google/zxing/BarcodeFormat;
@@ -126,7 +126,7 @@
     return-object v0
 .end method
 
-.method public final getRawBytes()[B
+.method public getRawBytes()[B
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/Result;->b:[B
@@ -134,7 +134,7 @@
     return-object v0
 .end method
 
-.method public final getResultMetadata()Ljava/util/Map;
+.method public getResultMetadata()Ljava/util/Map;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -152,7 +152,7 @@
     return-object v0
 .end method
 
-.method public final getResultPoints()[Lcom/google/zxing/ResultPoint;
+.method public getResultPoints()[Lcom/google/zxing/ResultPoint;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/Result;->c:[Lcom/google/zxing/ResultPoint;
@@ -160,7 +160,7 @@
     return-object v0
 .end method
 
-.method public final getText()Ljava/lang/String;
+.method public getText()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/Result;->a:Ljava/lang/String;
@@ -168,7 +168,7 @@
     return-object v0
 .end method
 
-.method public final getTimestamp()J
+.method public getTimestamp()J
     .locals 2
 
     iget-wide v0, p0, Lcom/google/zxing/Result;->f:J
@@ -176,7 +176,7 @@
     return-wide v0
 .end method
 
-.method public final putAllMetadata(Ljava/util/Map;)V
+.method public putAllMetadata(Ljava/util/Map;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -209,7 +209,7 @@
     goto :goto_0
 .end method
 
-.method public final putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
+.method public putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/zxing/Result;->e:Ljava/util/Map;
@@ -232,7 +232,7 @@
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/Result;->a:Ljava/lang/String;

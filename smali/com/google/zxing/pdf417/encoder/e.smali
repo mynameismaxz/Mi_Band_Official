@@ -212,7 +212,7 @@
 .method private static a(Ljava/lang/CharSequence;I)I
     .locals 4
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -222,11 +222,11 @@
 
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     :cond_0
     :goto_0
-    invoke-static {v1}, Lcom/google/zxing/pdf417/encoder/e;->a(C)Z
+    invoke-static {v0}, Lcom/google/zxing/pdf417/encoder/e;->a(C)Z
 
     move-result v3
 
@@ -234,7 +234,7 @@
 
     if-ge p1, v2, :cond_1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     add-int/lit8 p1, p1, 0x1
 
@@ -242,12 +242,12 @@
 
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 
     :cond_1
-    return v0
+    return v1
 .end method
 
 .method private static a(Ljava/lang/CharSequence;IILjava/lang/StringBuilder;I)I
@@ -307,9 +307,9 @@
     move v4, v1
 
     :goto_2
-    if-ge v4, v6, :cond_10
+    if-ge v3, v6, :cond_10
 
-    rem-int/lit8 v0, v4, 0x2
+    rem-int/lit8 v0, v3, 0x2
 
     if-eqz v0, :cond_e
 
@@ -318,24 +318,22 @@
     :goto_3
     if-eqz v0, :cond_f
 
-    mul-int/lit8 v0, v3, 0x1e
+    mul-int/lit8 v0, v4, 0x1e
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->charAt(I)C
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->charAt(I)C
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     int-to-char v0, v0
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :goto_4
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    move v4, v3
-
-    move v3, v0
+    move v4, v0
 
     goto :goto_2
 
@@ -571,7 +569,7 @@
     goto/16 :goto_3
 
     :cond_f
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->charAt(I)C
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v0
 
@@ -582,7 +580,7 @@
 
     if-eqz v0, :cond_11
 
-    mul-int/lit8 v0, v3, 0x1e
+    mul-int/lit8 v0, v4, 0x1e
 
     add-int/lit8 v0, v0, 0x1d
 
@@ -592,8 +590,6 @@
 
     :cond_11
     return p4
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -621,7 +617,7 @@
     move v3, p2
 
     :goto_0
-    if-ge v3, v4, :cond_5
+    if-ge v3, v4, :cond_7
 
     invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -642,16 +638,10 @@
 
     add-int v5, v3, v2
 
-    if-ge v5, v4, :cond_0
-
-    invoke-interface {p0, v5}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    goto :goto_1
+    if-lt v5, v4, :cond_1
 
     :cond_0
-    if-lt v2, v7, :cond_1
+    if-lt v2, v7, :cond_2
 
     sub-int v0, v3, p2
 
@@ -659,56 +649,68 @@
     return v0
 
     :cond_1
+    invoke-interface {p0, v5}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_2
     move v2, v0
 
     move v0, v1
 
     :goto_3
-    if-ge v0, v6, :cond_2
+    if-ge v0, v6, :cond_3
 
     invoke-static {v2}, Lcom/google/zxing/pdf417/encoder/e;->f(C)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     add-int/lit8 v0, v0, 0x1
 
     add-int v2, v3, v0
 
-    if-ge v2, v4, :cond_2
+    if-lt v2, v4, :cond_4
 
+    :cond_3
+    if-lt v0, v6, :cond_5
+
+    sub-int v0, v3, p2
+
+    goto :goto_2
+
+    :cond_4
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
 
     goto :goto_3
 
-    :cond_2
-    if-lt v0, v6, :cond_3
-
-    sub-int v0, v3, p2
-
-    goto :goto_2
-
-    :cond_3
+    :cond_5
     invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
     aget-byte v2, p1, v3
 
-    if-ne v2, v8, :cond_4
+    if-ne v2, v8, :cond_6
 
-    if-eq v0, v8, :cond_4
+    if-eq v0, v8, :cond_6
 
     new-instance v1, Lcom/google/zxing/WriterException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Non-encodable character detected: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -738,21 +740,21 @@
 
     throw v1
 
-    :cond_4
+    :cond_6
     add-int/lit8 v0, v3, 0x1
 
     move v3, v0
 
     goto :goto_0
 
-    :cond_5
+    :cond_7
     sub-int v0, v3, p2
 
     goto :goto_2
 .end method
 
 .method static a(Ljava/lang/String;Lcom/google/zxing/pdf417/encoder/Compaction;)Ljava/lang/String;
-    .locals 12
+    .locals 13
 
     const/16 v11, 0x386
 
@@ -793,7 +795,7 @@
 
     if-ne p1, v1, :cond_2
 
-    invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
+    invoke-static {p0}, Lcom/google/zxing/pdf417/encoder/e;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -833,9 +835,18 @@
 
     add-int v1, v5, v6
 
-    move v5, v1
+    move-object v5, v0
+
+    move v0, v1
 
     move v1, v2
+
+    :goto_2
+    move v12, v0
+
+    move-object v0, v5
+
+    move v5, v12
 
     goto :goto_1
 
@@ -868,12 +879,18 @@
 
     add-int/2addr v5, v9
 
-    goto :goto_1
+    move v12, v5
+
+    move-object v5, v0
+
+    move v0, v12
+
+    goto :goto_2
 
     :cond_6
     if-nez v0, :cond_7
 
-    invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
+    invoke-static {p0}, Lcom/google/zxing/pdf417/encoder/e;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -893,10 +910,16 @@
 
     invoke-static {v0, v5, v4, v2, v7}, Lcom/google/zxing/pdf417/encoder/e;->a([BIIILjava/lang/StringBuilder;)V
 
-    :goto_2
+    :goto_3
     add-int/2addr v5, v6
 
-    goto :goto_1
+    move v12, v5
+
+    move-object v5, v0
+
+    move v0, v12
+
+    goto :goto_2
 
     :cond_9
     invoke-static {v0, v5, v6, v3, v7}, Lcom/google/zxing/pdf417/encoder/e;->a([BIIILjava/lang/StringBuilder;)V
@@ -905,7 +928,7 @@
 
     move v3, v4
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_a
     move v1, v2
@@ -961,9 +984,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v7, "1"
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/16 v7, 0x31
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     add-int v7, p1, v1
 
@@ -1077,20 +1104,20 @@
 
     if-lt v1, v2, :cond_5
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     :goto_1
     const/4 v5, 0x6
 
-    if-ge v3, v5, :cond_1
+    if-ge v1, v5, :cond_1
 
     const/16 v5, 0x8
 
-    shl-long/2addr v1, v5
+    shl-long/2addr v2, v5
 
-    add-int v5, v0, v3
+    add-int v5, v0, v1
 
     aget-byte v5, p0, v5
 
@@ -1098,35 +1125,35 @@
 
     int-to-long v5, v5
 
-    add-long/2addr v1, v5
+    add-long/2addr v2, v5
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     :goto_2
     const/4 v5, 0x5
 
-    if-ge v3, v5, :cond_2
+    if-ge v1, v5, :cond_2
 
     const-wide/16 v5, 0x384
 
-    rem-long v5, v1, v5
+    rem-long v5, v2, v5
 
     long-to-int v5, v5
 
     int-to-char v5, v5
 
-    aput-char v5, v4, v3
+    aput-char v5, v4, v1
 
     const-wide/16 v5, 0x384
 
-    div-long/2addr v1, v5
+    div-long/2addr v2, v5
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
@@ -1253,7 +1280,7 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    if-ge v3, v4, :cond_4
+    if-ge v3, v4, :cond_5
 
     invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -1286,11 +1313,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
+    if-nez v1, :cond_4
 
     :cond_3
     sub-int/2addr v0, p1
@@ -1298,6 +1321,11 @@
     goto :goto_2
 
     :cond_4
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_5
     move v0, v3
 
     goto :goto_1

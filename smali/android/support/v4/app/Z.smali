@@ -1,6 +1,9 @@
 .class Landroid/support/v4/app/Z;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/support/v4/app/Y;
+
 
 # direct methods
 .method constructor <init>()V
@@ -16,7 +19,7 @@
 
     const/16 v4, 0x20
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     if-ge v0, p3, :cond_7
@@ -70,9 +73,13 @@
     :cond_3
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "&#"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -145,7 +152,7 @@
 
     move-result v2
 
-    invoke-static {v0, p1, v1, v2}, Landroid/support/v4/app/Y;->a(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;II)V
+    invoke-static {v0, p1, v1, v2}, Landroid/support/v4/app/Z;->a(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;II)V
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

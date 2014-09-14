@@ -1,4 +1,4 @@
-.class Lcom/google/zxing/qrcode/decoder/a;
+.class final Lcom/google/zxing/qrcode/decoder/a;
 .super Ljava/lang/Object;
 
 
@@ -69,7 +69,7 @@
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/qrcode/decoder/n;
+.method a()Lcom/google/zxing/qrcode/decoder/n;
     .locals 6
 
     const/4 v4, 0x7
@@ -190,8 +190,8 @@
     throw v0
 .end method
 
-.method final b()Lcom/google/zxing/qrcode/decoder/Version;
-    .locals 7
+.method b()Lcom/google/zxing/qrcode/decoder/Version;
+    .locals 8
 
     const/4 v1, 0x5
 
@@ -275,32 +275,32 @@
     goto :goto_0
 
     :cond_4
-    move v0, v1
+    move v7, v1
 
     move v1, v2
 
-    :goto_3
-    if-ltz v0, :cond_6
+    move v2, v7
 
-    add-int/lit8 v2, v5, -0x9
+    :goto_3
+    if-ltz v2, :cond_6
+
+    add-int/lit8 v0, v5, -0x9
 
     :goto_4
-    if-lt v2, v6, :cond_5
+    if-lt v0, v6, :cond_5
 
-    invoke-direct {p0, v0, v2, v1}, Lcom/google/zxing/qrcode/decoder/a;->a(III)I
+    invoke-direct {p0, v2, v0, v1}, Lcom/google/zxing/qrcode/decoder/a;->a(III)I
 
-    move-result v3
+    move-result v1
 
-    add-int/lit8 v1, v2, -0x1
-
-    move v2, v1
-
-    move v1, v3
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_4
 
     :cond_5
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v0, v2, -0x1
+
+    move v2, v0
 
     goto :goto_3
 
@@ -329,7 +329,7 @@
     throw v0
 .end method
 
-.method final c()[B
+.method c()[B
     .locals 15
 
     const/4 v4, 0x0

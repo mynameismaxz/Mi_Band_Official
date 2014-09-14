@@ -83,7 +83,7 @@
 
 
 # virtual methods
-.method public final bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+.method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/SMSMMSResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/SMSParsedResult;
@@ -93,7 +93,7 @@
     return-object v0
 .end method
 
-.method public final parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/SMSParsedResult;
+.method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/SMSParsedResult;
     .locals 8
 
     const/4 v1, 0x0

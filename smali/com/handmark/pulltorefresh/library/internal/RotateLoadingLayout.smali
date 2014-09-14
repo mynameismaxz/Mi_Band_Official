@@ -3,19 +3,19 @@
 
 
 # static fields
-.field private static b:I = 0x4b0
+.field static final a:I = 0x4b0
 
 
 # instance fields
-.field private final c:Landroid/view/animation/Animation;
+.field private final d:Landroid/view/animation/Animation;
 
-.field private final d:Landroid/graphics/Matrix;
-
-.field private e:F
+.field private final e:Landroid/graphics/Matrix;
 
 .field private f:F
 
-.field private final g:Z
+.field private g:F
+
+.field private final h:Z
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->g:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->h:Z
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
@@ -46,11 +46,11 @@
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -66,27 +66,27 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->a:Landroid/view/animation/Interpolator;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
     const-wide/16 v1, 0x4b0
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setRepeatCount(I)V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setRepeatMode(I)V
 
@@ -96,17 +96,17 @@
 .method private a()V
     .locals 2
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -119,7 +119,7 @@
 .method protected getDefaultDrawableResId()I
     .locals 1
 
-    const v0, 0x7f020058
+    const v0, 0x7f02005a
 
     return v0
 .end method
@@ -145,7 +145,7 @@
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->f:F
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -161,7 +161,7 @@
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->f:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->g:F
 
     :cond_0
     return-void
@@ -172,7 +172,7 @@
 
     const/high16 v2, 0x4334
 
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->g:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->h:Z
 
     if-eqz v0, :cond_0
 
@@ -181,17 +181,17 @@
     mul-float/2addr v0, p1
 
     :goto_0
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
-    iget v2, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:F
+    iget v2, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->f:F
 
-    iget v3, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->f:F
+    iget v3, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->g:F
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->e:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
@@ -228,7 +228,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->c:Landroid/view/animation/Animation;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
@@ -242,26 +242,13 @@
 .end method
 
 .method protected resetImpl()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->a()V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
-
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->d:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
-
-    :cond_0
     return-void
 .end method

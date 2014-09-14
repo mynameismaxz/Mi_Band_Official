@@ -666,7 +666,9 @@
 
     check-cast v0, Lcom/tencent/b/b/d$a;
 
-    cmp-long v2, v10, v10
+    sget-wide v2, Lcom/tencent/b/b/d;->h:J
+
+    cmp-long v2, v10, v2
 
     if-lez v2, :cond_8
 
@@ -675,7 +677,9 @@
     sput-wide v2, Lcom/tencent/b/b/d;->h:J
 
     :cond_8
-    cmp-long v2, v10, v10
+    sget-wide v2, Lcom/tencent/b/b/d;->i:J
+
+    cmp-long v2, v10, v2
 
     if-gez v2, :cond_9
 

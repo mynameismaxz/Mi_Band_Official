@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/view/q;
+.class Lcn/com/smartdevices/bracelet/view/q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;B)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;Lcn/com/smartdevices/bracelet/view/q;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/view/q;-><init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)V
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final onPageScrollStateChanged(I)V
+.method public onPageScrollStateChanged(I)V
     .locals 3
 
     if-nez p1, :cond_0
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public final onPageScrolled(IFI)V
+.method public onPageScrolled(IFI)V
     .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/q;->a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
@@ -123,7 +123,7 @@
     return-void
 .end method
 
-.method public final onPageSelected(I)V
+.method public onPageSelected(I)V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/q;->a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;

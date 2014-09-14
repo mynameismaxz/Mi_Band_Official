@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/media/f;
+.class Landroid/support/v4/media/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/d;
+.field final synthetic a:Landroid/support/v4/media/d;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onWindowFocusChanged(Z)V
+.method public onWindowFocusChanged(Z)V
     .locals 1
 
     if-eqz p1, :cond_0
@@ -37,7 +37,7 @@
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/f;->a:Landroid/support/v4/media/d;
 
-    invoke-virtual {v0}, Landroid/support/v4/media/d;->h()V
+    invoke-virtual {v0}, Landroid/support/v4/media/d;->j()V
 
     goto :goto_0
 .end method

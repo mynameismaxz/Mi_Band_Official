@@ -75,7 +75,7 @@
 
 
 # virtual methods
-.method public final decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 1
 
     const/4 v0, 0x0
@@ -89,7 +89,7 @@
     return-object v0
 .end method
 
-.method public final decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -112,7 +112,7 @@
     return-object v0
 .end method
 
-.method public final decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+.method public decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->b:[Lcom/google/zxing/Reader;
@@ -131,7 +131,7 @@
     return-object v0
 .end method
 
-.method public final reset()V
+.method public reset()V
     .locals 4
 
     iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->b:[Lcom/google/zxing/Reader;
@@ -159,7 +159,7 @@
     return-void
 .end method
 
-.method public final setHints(Ljava/util/Map;)V
+.method public setHints(Ljava/util/Map;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {

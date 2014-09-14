@@ -1,9 +1,9 @@
-.class final Lcom/xiaomi/hm/bleservice/b;
+.class Lcom/xiaomi/hm/bleservice/b;
 .super Landroid/os/Handler;
 
 
 # instance fields
-.field private synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/b;->a:Lcom/xiaomi/hm/bleservice/BLEService;

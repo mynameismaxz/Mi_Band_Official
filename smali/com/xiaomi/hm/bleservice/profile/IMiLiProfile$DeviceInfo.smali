@@ -131,7 +131,7 @@
 
 
 # virtual methods
-.method public final getFirmwareVersionBuild()I
+.method public getFirmwareVersionBuild()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
@@ -141,17 +141,19 @@
     return v0
 .end method
 
-.method public final getFirmwareVersionMajor()I
+.method public getFirmwareVersionMajor()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
 
-    ushr-int/lit8 v0, v0, 0x18
+    shr-int/lit8 v0, v0, 0x18
+
+    and-int/lit16 v0, v0, 0xff
 
     return v0
 .end method
 
-.method public final getFirmwareVersionMinor()I
+.method public getFirmwareVersionMinor()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
@@ -163,7 +165,7 @@
     return v0
 .end method
 
-.method public final getFirmwareVersionRevision()I
+.method public getFirmwareVersionRevision()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
@@ -175,7 +177,7 @@
     return v0
 .end method
 
-.method public final getFirmwareVersionStr()Ljava/lang/String;
+.method public getFirmwareVersionStr()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -239,7 +241,7 @@
     return-object v0
 .end method
 
-.method public final getProfileVersionBuild()I
+.method public getProfileVersionBuild()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->profileVersion:I
@@ -249,17 +251,19 @@
     return v0
 .end method
 
-.method public final getProfileVersionMajor()I
+.method public getProfileVersionMajor()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->profileVersion:I
 
-    ushr-int/lit8 v0, v0, 0x18
+    shr-int/lit8 v0, v0, 0x18
+
+    and-int/lit16 v0, v0, 0xff
 
     return v0
 .end method
 
-.method public final getProfileVersionMinor()I
+.method public getProfileVersionMinor()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->profileVersion:I
@@ -271,7 +275,7 @@
     return v0
 .end method
 
-.method public final getProfileVersionRevision()I
+.method public getProfileVersionRevision()I
     .locals 1
 
     iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->profileVersion:I
@@ -283,7 +287,7 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;

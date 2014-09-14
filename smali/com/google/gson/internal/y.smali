@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/Appendable;B)V
+.method synthetic constructor <init>(Ljava/lang/Appendable;Lcom/google/gson/internal/x;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/google/gson/internal/y;-><init>(Ljava/lang/Appendable;)V
@@ -35,19 +35,19 @@
 
 
 # virtual methods
-.method public final close()V
+.method public close()V
     .locals 0
 
     return-void
 .end method
 
-.method public final flush()V
+.method public flush()V
     .locals 0
 
     return-void
 .end method
 
-.method public final write(I)V
+.method public write(I)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/y;->a:Ljava/lang/Appendable;
@@ -59,7 +59,7 @@
     return-void
 .end method
 
-.method public final write([CII)V
+.method public write([CII)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/gson/internal/y;->b:Lcom/google/gson/internal/z;

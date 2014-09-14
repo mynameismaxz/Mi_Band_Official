@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IIB)V
+.method synthetic constructor <init>(Ljava/lang/String;IILcom/umeng/analytics/social/UMPlatformData$GENDER;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/umeng/analytics/social/UMPlatformData$GENDER;-><init>(Ljava/lang/String;II)V

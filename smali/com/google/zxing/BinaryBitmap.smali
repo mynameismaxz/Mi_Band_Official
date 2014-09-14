@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final crop(IIII)Lcom/google/zxing/BinaryBitmap;
+.method public crop(IIII)Lcom/google/zxing/BinaryBitmap;
     .locals 3
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -58,7 +58,7 @@
     return-object v1
 .end method
 
-.method public final getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
+.method public getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->b:Lcom/google/zxing/common/BitMatrix;
@@ -79,7 +79,7 @@
     return-object v0
 .end method
 
-.method public final getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
+.method public getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -91,7 +91,7 @@
     return-object v0
 .end method
 
-.method public final getHeight()I
+.method public getHeight()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -103,7 +103,7 @@
     return v0
 .end method
 
-.method public final getWidth()I
+.method public getWidth()I
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -115,7 +115,7 @@
     return v0
 .end method
 
-.method public final isCropSupported()Z
+.method public isCropSupported()Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -131,7 +131,7 @@
     return v0
 .end method
 
-.method public final isRotateSupported()Z
+.method public isRotateSupported()Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;
@@ -147,7 +147,7 @@
     return v0
 .end method
 
-.method public final rotateCounterClockwise()Lcom/google/zxing/BinaryBitmap;
+.method public rotateCounterClockwise()Lcom/google/zxing/BinaryBitmap;
     .locals 3
 
     iget-object v0, p0, Lcom/google/zxing/BinaryBitmap;->a:Lcom/google/zxing/Binarizer;

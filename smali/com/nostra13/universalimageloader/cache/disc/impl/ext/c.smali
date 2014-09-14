@@ -1,9 +1,9 @@
-.class final Lcom/nostra13/universalimageloader/cache/disc/impl/ext/c;
+.class Lcom/nostra13/universalimageloader/cache/disc/impl/ext/c;
 .super Ljava/io/FilterOutputStream;
 
 
 # instance fields
-.field private synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
+.field final synthetic a:Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;Ljava/io/OutputStream;B)V
+.method synthetic constructor <init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;Ljava/io/OutputStream;Lcom/nostra13/universalimageloader/cache/disc/impl/ext/a;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/nostra13/universalimageloader/cache/disc/impl/ext/c;-><init>(Lcom/nostra13/universalimageloader/cache/disc/impl/ext/DiskLruCache$Editor;Ljava/io/OutputStream;)V
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public final close()V
+.method public close()V
     .locals 2
 
     :try_start_0
@@ -52,7 +52,7 @@
     goto :goto_0
 .end method
 
-.method public final flush()V
+.method public flush()V
     .locals 2
 
     :try_start_0
@@ -77,7 +77,7 @@
     goto :goto_0
 .end method
 
-.method public final write(I)V
+.method public write(I)V
     .locals 2
 
     :try_start_0
@@ -102,7 +102,7 @@
     goto :goto_0
 .end method
 
-.method public final write([BII)V
+.method public write([BII)V
     .locals 2
 
     :try_start_0

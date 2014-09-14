@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/ap;
+.class Landroid/support/v4/view/ap;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,10 +16,10 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/ViewConfiguration;)I
+.method public a(Landroid/view/ViewConfiguration;)I
     .locals 1
 
-    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
+    invoke-static {p1}, Landroid/support/v4/view/ar;->a(Landroid/view/ViewConfiguration;)I
 
     move-result v0
 

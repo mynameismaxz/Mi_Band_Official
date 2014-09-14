@@ -1,9 +1,9 @@
-.class final Lcom/umeng/analytics/l;
+.class Lcom/umeng/analytics/l;
 .super Lcom/umeng/analytics/f;
 
 
 # instance fields
-.field private synthetic a:Lcom/umeng/analytics/d;
+.field final synthetic a:Lcom/umeng/analytics/d;
 
 .field private final synthetic b:Landroid/content/Context;
 
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public a()V
     .locals 2
 
     iget-object v0, p0, Lcom/umeng/analytics/l;->a:Lcom/umeng/analytics/d;

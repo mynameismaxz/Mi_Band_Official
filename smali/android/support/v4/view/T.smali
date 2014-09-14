@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/T;
+.class Landroid/support/v4/view/T;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -16,18 +16,10 @@
 
 
 # virtual methods
-.method public final a(Landroid/widget/TextView;)V
-    .locals 2
+.method public a(Landroid/widget/TextView;)V
+    .locals 0
 
-    new-instance v0, Landroid/support/v4/view/V;
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/support/v4/view/V;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+    invoke-static {p1}, Landroid/support/v4/view/U;->a(Landroid/widget/TextView;)V
 
     return-void
 .end method

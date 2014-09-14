@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/x;
+.class Lcom/tencent/open/x;
 .super Lcom/tencent/open/C;
 
 
@@ -14,12 +14,12 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/tencent/open/C;-><init>(Lcom/tencent/open/TaskGuide;B)V
+    invoke-direct {p0, p1, v0}, Lcom/tencent/open/C;-><init>(Lcom/tencent/open/TaskGuide;Lcom/tencent/open/t;)V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;B)V
+.method synthetic constructor <init>(Lcom/tencent/open/TaskGuide;Lcom/tencent/open/t;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/tencent/open/x;-><init>(Lcom/tencent/open/TaskGuide;)V
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method protected final a(Ljava/lang/Exception;)V
+.method protected a(Ljava/lang/Exception;)V
     .locals 5
 
     if-eqz p1, :cond_0
@@ -55,7 +55,7 @@
     :goto_0
     iget-object v0, p0, Lcom/tencent/open/x;->a:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0, v1}, Lcom/tencent/tauth/IUiListener;->onComplete(Ljava/lang/Object;)V
 
@@ -84,7 +84,7 @@
     :cond_1
     iget-object v0, p0, Lcom/tencent/open/x;->a:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     new-instance v1, Lcom/tencent/tauth/UiError;
 
@@ -101,7 +101,7 @@
     goto :goto_1
 .end method
 
-.method public final onComplete(Lorg/json/JSONObject;)V
+.method public onComplete(Lorg/json/JSONObject;)V
     .locals 3
 
     :try_start_0
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/tencent/open/x;->a:Lcom/tencent/open/TaskGuide;
 
@@ -130,28 +130,11 @@
 
     move-result-object v0
 
-    iget-object v1, v0, Lcom/tencent/open/E;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/tencent/open/E;->a()Z
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result v0
 
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, v0, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
-
-    array-length v0, v0
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_1
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/tencent/open/x;->a:Lcom/tencent/open/TaskGuide;
 
@@ -178,14 +161,14 @@
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :goto_2
+    :goto_1
     iget-object v0, p0, Lcom/tencent/open/x;->a:Lcom/tencent/open/TaskGuide;
 
-    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->a:Lcom/tencent/tauth/IUiListener;
+    iget-object v0, v0, Lcom/tencent/open/TaskGuide;->c:Lcom/tencent/tauth/IUiListener;
 
     invoke-interface {v0, v1}, Lcom/tencent/tauth/IUiListener;->onComplete(Ljava/lang/Object;)V
 
-    :goto_3
+    :goto_2
     return-void
 
     :catch_0
@@ -195,22 +178,17 @@
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
     :catch_1
     move-exception v0
 
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/tencent/open/x;->a(Ljava/lang/Exception;)V
 
-    goto :goto_3
+    goto :goto_2
 .end method

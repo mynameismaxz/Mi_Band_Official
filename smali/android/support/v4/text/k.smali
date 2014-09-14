@@ -97,35 +97,11 @@
     return v0
 
     :cond_2
-    iget-object v0, p0, Landroid/support/v4/text/k;->a:Landroid/support/v4/text/j;
-
-    invoke-interface {v0, p1, p2, p3}, Landroid/support/v4/text/j;->a(Ljava/lang/CharSequence;II)I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Landroid/support/v4/text/k;->a()Z
+    invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/text/k;->a(Ljava/lang/CharSequence;II)Z
 
     move-result v0
 
     goto :goto_0
-
-    :pswitch_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :pswitch_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method public isRtl([CII)Z

@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/media/b;
+.class Landroid/support/v4/media/b;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/media/TransportMediator;
+.field final synthetic a:Landroid/support/v4/media/TransportMediator;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onKeyDown(ILandroid/view/KeyEvent;)Z
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 1
 
     invoke-static {p1}, Landroid/support/v4/media/TransportMediator;->a(I)Z
@@ -33,7 +33,7 @@
 
     iget-object v0, p0, Landroid/support/v4/media/b;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->a:Landroid/support/v4/media/TransportPerformer;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/support/v4/media/TransportPerformer;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonDown(ILandroid/view/KeyEvent;)Z
 
@@ -48,7 +48,7 @@
     goto :goto_0
 .end method
 
-.method public final onKeyLongPress(ILandroid/view/KeyEvent;)Z
+.method public onKeyLongPress(ILandroid/view/KeyEvent;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
     return v0
 .end method
 
-.method public final onKeyMultiple(IILandroid/view/KeyEvent;)Z
+.method public onKeyMultiple(IILandroid/view/KeyEvent;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -64,7 +64,7 @@
     return v0
 .end method
 
-.method public final onKeyUp(ILandroid/view/KeyEvent;)Z
+.method public onKeyUp(ILandroid/view/KeyEvent;)Z
     .locals 1
 
     invoke-static {p1}, Landroid/support/v4/media/TransportMediator;->a(I)Z
@@ -75,7 +75,7 @@
 
     iget-object v0, p0, Landroid/support/v4/media/b;->a:Landroid/support/v4/media/TransportMediator;
 
-    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->a:Landroid/support/v4/media/TransportPerformer;
+    iget-object v0, v0, Landroid/support/v4/media/TransportMediator;->b:Landroid/support/v4/media/TransportPerformer;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/TransportPerformer;->onMediaButtonUp(ILandroid/view/KeyEvent;)Z
 

@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public final getInterpolation(F)F
+.method public getInterpolation(F)F
     .locals 3
 
     const/high16 v2, 0x3f80

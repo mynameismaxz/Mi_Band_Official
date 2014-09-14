@@ -276,7 +276,7 @@
 
 
 # virtual methods
-.method public final a()S
+.method public a()S
     .locals 1
 
     iget-short v0, p0, Lu/aly/at$e;->e:S
@@ -284,7 +284,7 @@
     return v0
 .end method
 
-.method public final b()Ljava/lang/String;
+.method public b()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lu/aly/at$e;->f:Ljava/lang/String;

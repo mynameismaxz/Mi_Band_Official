@@ -26,27 +26,9 @@
     return-void
 .end method
 
-.method private static a(Landroid/os/Parcel;)Landroid/support/v4/widget/DrawerLayout$SavedState;
-    .locals 1
-
-    new-instance v0, Landroid/support/v4/widget/DrawerLayout$SavedState;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/widget/DrawerLayout$SavedState;-><init>(Landroid/os/Parcel;)V
-
-    return-object v0
-.end method
-
-.method private static a(I)[Landroid/support/v4/widget/DrawerLayout$SavedState;
-    .locals 1
-
-    new-array v0, p0, [Landroid/support/v4/widget/DrawerLayout$SavedState;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Landroid/support/v4/widget/DrawerLayout$SavedState;
     .locals 1
 
     new-instance v0, Landroid/support/v4/widget/DrawerLayout$SavedState;
@@ -56,10 +38,30 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/widget/DrawerLayout$SavedState;
     .locals 1
 
     new-array v0, p1, [Landroid/support/v4/widget/DrawerLayout$SavedState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/widget/g;->a(Landroid/os/Parcel;)Landroid/support/v4/widget/DrawerLayout$SavedState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/widget/g;->a(I)[Landroid/support/v4/widget/DrawerLayout$SavedState;
+
+    move-result-object v0
 
     return-object v0
 .end method

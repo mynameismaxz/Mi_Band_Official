@@ -49,9 +49,9 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bS;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ca;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bS;-><init>(Lcn/com/smartdevices/bracelet/ui/UnBindActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ca;-><init>(Lcn/com/smartdevices/bracelet/ui/UnBindActivity;)V
 
     const-wide/16 v2, 0xbb8
 
@@ -63,11 +63,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 5
-
-    const-wide/16 v3, -0x1
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -79,41 +75,7 @@
     return-void
 
     :sswitch_0
-    const v0, 0x7f0c0151
-
-    invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/Utils;->showProgressDialog(Landroid/app/Activity;I)V
-
-    const-string v0, "switch"
-
-    const-string v1, "unbind device now!"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;-><init>()V
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepBraceletBtInfo(Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;)V
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Keeper;->keepSyncTime(J)V
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Keeper;->keepSyncRealStepTime(J)V
-
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Keeper;->keepNeedBind(I)V
-
-    invoke-static {p0, v2}, Lcn/com/smartdevices/bracelet/Utils;->switchBracelet(Landroid/content/Context;I)V
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bS;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bS;-><init>(Lcn/com/smartdevices/bracelet/ui/UnBindActivity;)V
-
-    const-wide/16 v2, 0xbb8
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->a()V
 
     const-string v0, "BraceletUnbind"
 
@@ -136,9 +98,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f07002e -> :sswitch_1
-        0x7f070095 -> :sswitch_0
-        0x7f070097 -> :sswitch_1
+        0x7f070033 -> :sswitch_1
+        0x7f07009a -> :sswitch_0
+        0x7f07009c -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -147,11 +109,11 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030030
+    const v0, 0x7f030032
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->setContentView(I)V
 
-    const v0, 0x7f07002e
+    const v0, 0x7f070033
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 
@@ -159,7 +121,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070095
+    const v0, 0x7f07009a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +129,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070097
+    const v0, 0x7f07009c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 
@@ -181,7 +143,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0700dd
+    const v0, 0x7f0700e3
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 

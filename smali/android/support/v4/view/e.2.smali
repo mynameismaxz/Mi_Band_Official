@@ -1,4 +1,4 @@
-.class final Landroid/support/v4/view/e;
+.class Landroid/support/v4/view/e;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,14 +6,16 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/AccessibilityDelegateCompat;
+.field final synthetic a:Landroid/support/v4/view/AccessibilityDelegateCompat;
 
-.field private synthetic b:Landroid/support/v4/view/d;
+.field final synthetic b:Landroid/support/v4/view/d;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/d;Landroid/support/v4/view/AccessibilityDelegateCompat;)V
     .locals 0
+
+    iput-object p1, p0, Landroid/support/v4/view/e;->b:Landroid/support/v4/view/d;
 
     iput-object p2, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
 
@@ -24,7 +26,7 @@
 
 
 # virtual methods
-.method public final dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -36,7 +38,7 @@
     return v0
 .end method
 
-.method public final getAccessibilityNodeProvider(Landroid/view/View;)Ljava/lang/Object;
+.method public getAccessibilityNodeProvider(Landroid/view/View;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -60,7 +62,7 @@
     goto :goto_0
 .end method
 
-.method public final onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -70,7 +72,7 @@
     return-void
 .end method
 
-.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Ljava/lang/Object;)V
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -84,7 +86,7 @@
     return-void
 .end method
 
-.method public final onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -94,7 +96,7 @@
     return-void
 .end method
 
-.method public final onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -106,7 +108,7 @@
     return v0
 .end method
 
-.method public final performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+.method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -118,7 +120,7 @@
     return v0
 .end method
 
-.method public final sendAccessibilityEvent(Landroid/view/View;I)V
+.method public sendAccessibilityEvent(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;
@@ -128,7 +130,7 @@
     return-void
 .end method
 
-.method public final sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/view/e;->a:Landroid/support/v4/view/AccessibilityDelegateCompat;

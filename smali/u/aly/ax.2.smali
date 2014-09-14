@@ -113,9 +113,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
-    const/4 v3, 0x0
+    const/16 v9, 0xc
 
     const/4 v6, 0x4
 
@@ -231,9 +231,7 @@
 
     const-string v1, "user_info"
 
-    const/16 v2, 0xc
-
-    invoke-direct {v0, v1, v2, v8}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
+    invoke-direct {v0, v1, v9, v8}, Lu/aly/ct;-><init>(Ljava/lang/String;BS)V
 
     sput-object v0, Lu/aly/ax;->x:Lu/aly/ct;
 
@@ -243,11 +241,15 @@
 
     sput-object v0, Lu/aly/ax;->y:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/ax;->y:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/bF;
 
-    invoke-direct {v2, v3}, Lu/aly/bF;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/bF;-><init>(Lu/aly/bF;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -257,7 +259,9 @@
 
     new-instance v2, Lu/aly/bH;
 
-    invoke-direct {v2, v3}, Lu/aly/bH;-><init>(B)V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lu/aly/bH;-><init>(Lu/aly/bH;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -419,11 +423,9 @@
 
     new-instance v4, Lu/aly/cq;
 
-    const/16 v5, 0xc
+    const-class v5, Lu/aly/bg;
 
-    const-class v6, Lu/aly/bg;
-
-    invoke-direct {v4, v5, v6}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
+    invoke-direct {v4, v9, v5}, Lu/aly/cq;-><init>(BLjava/lang/Class;)V
 
     invoke-direct {v2, v3, v7, v4}, Lu/aly/cl;-><init>(Ljava/lang/String;BLu/aly/cm;)V
 
@@ -521,6 +523,8 @@
 
     aput-object v2, v0, v1
 
+    iput-object v0, p0, Lu/aly/ax;->E:[Lu/aly/ax$e;
+
     return-void
 .end method
 
@@ -600,6 +604,8 @@
     sget-object v2, Lu/aly/ax$e;->k:Lu/aly/ax$e;
 
     aput-object v2, v0, v1
+
+    iput-object v0, p0, Lu/aly/ax;->E:[Lu/aly/ax$e;
 
     iget-byte v0, p1, Lu/aly/ax;->D:B
 

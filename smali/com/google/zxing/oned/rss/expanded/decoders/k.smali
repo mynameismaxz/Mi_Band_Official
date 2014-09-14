@@ -22,20 +22,18 @@
 .end method
 
 .method constructor <init>(Z)V
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/k;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/o;Z)V
+    invoke-direct {p0, v0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/k;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/o;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()Lcom/google/zxing/oned/rss/expanded/decoders/o;
+.method a()Lcom/google/zxing/oned/rss/expanded/decoders/o;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/k;->a:Lcom/google/zxing/oned/rss/expanded/decoders/o;
@@ -43,7 +41,7 @@
     return-object v0
 .end method
 
-.method final b()Z
+.method b()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/k;->b:Z

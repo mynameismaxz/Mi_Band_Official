@@ -39,7 +39,7 @@
 
     invoke-direct {p0}, Lu/aly/ac;-><init>()V
 
-    invoke-static {p1}, Lu/aly/ac;->a(Ljava/lang/Throwable;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lu/aly/ac;->a(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -48,12 +48,12 @@
     return-void
 .end method
 
-.method private static a(Ljava/lang/Throwable;)Ljava/lang/String;
+.method private a(Ljava/lang/Throwable;)Ljava/lang/String;
     .locals 4
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    if-nez p1, :cond_0
 
     :goto_0
     return-object v0
@@ -68,9 +68,9 @@
 
     invoke-direct {v3, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    invoke-virtual {p0, v3}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+    invoke-virtual {p1, v3}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
 

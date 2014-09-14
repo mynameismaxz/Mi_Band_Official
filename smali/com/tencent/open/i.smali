@@ -1,4 +1,4 @@
-.class final Lcom/tencent/open/i;
+.class Lcom/tencent/open/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/os/Bundle;
+.field final synthetic a:Landroid/os/Bundle;
 
-.field private synthetic b:Landroid/app/Activity;
+.field final synthetic b:Landroid/app/Activity;
 
-.field private synthetic c:Lcom/tencent/tauth/IUiListener;
+.field final synthetic c:Lcom/tencent/tauth/IUiListener;
 
-.field private synthetic d:Lcom/tencent/open/SocialApiIml;
+.field final synthetic d:Lcom/tencent/open/SocialApiIml;
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .locals 4
 
     iget-object v0, p0, Lcom/tencent/open/i;->a:Landroid/os/Bundle;
@@ -69,7 +69,7 @@
     return-void
 .end method
 
-.method public final b(Ljava/lang/String;)V
+.method public b(Ljava/lang/String;)V
     .locals 4
 
     iget-object v0, p0, Lcom/tencent/open/i;->a:Landroid/os/Bundle;

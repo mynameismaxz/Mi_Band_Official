@@ -45,7 +45,7 @@
 
 
 # virtual methods
-.method final a()Ljava/lang/String;
+.method a()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/o;->a:Ljava/lang/String;
@@ -53,7 +53,7 @@
     return-object v0
 .end method
 
-.method final b()Z
+.method b()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/o;->c:Z
@@ -61,7 +61,7 @@
     return v0
 .end method
 
-.method final c()I
+.method c()I
     .locals 1
 
     iget v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/o;->b:I

@@ -1,4 +1,4 @@
-.class final synthetic Lcom/google/zxing/aztec/decoder/a;
+.class synthetic Lcom/google/zxing/aztec/decoder/a;
 .super Ljava/lang/Object;
 
 

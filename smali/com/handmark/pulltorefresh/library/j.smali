@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;
+.field final synthetic a:Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;
 
 
 # direct methods
@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method protected final overScrollBy(IIIIIIIIZ)Z
+.method protected overScrollBy(IIIIIIIIZ)Z
     .locals 8
 
     invoke-super/range {p0 .. p9}, Landroid/widget/HorizontalScrollView;->overScrollBy(IIIIIIIIZ)Z
@@ -73,49 +73,10 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/j;->a:Lcom/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView;
 
-    const/4 v5, 0x0
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/j;->getChildCount()I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/j;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/j;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/j;->getPaddingLeft()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/j;->getPaddingRight()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v1, v3
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/j;->a()I
 
     move-result v5
 
-    :cond_0
     move v1, p1
 
     move v2, p3

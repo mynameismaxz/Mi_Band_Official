@@ -1,5 +1,8 @@
-.class final Landroid/support/v4/content/e;
+.class Landroid/support/v4/content/e;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/support/v4/content/d;
 
 
 # instance fields
@@ -28,16 +31,16 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/content/b;->b:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/support/v4/content/e;->b:Ljava/util/HashMap;
 
-    iput-object p1, p0, Landroid/support/v4/content/b;->a:Ljava/lang/String;
+    iput-object p1, p0, Landroid/support/v4/content/e;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/io/File;)Landroid/net/Uri;
+.method public a(Ljava/io/File;)Landroid/net/Uri;
     .locals 6
 
     :try_start_0
@@ -49,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Landroid/support/v4/content/b;->b:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/support/v4/content/e;->b:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -123,9 +126,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Failed to resolve canonical path for "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -146,9 +153,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Failed to find configured root that contains "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -240,7 +251,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/support/v4/content/b;->a:Ljava/lang/String;
+    iget-object v2, p0, Landroid/support/v4/content/e;->a:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
@@ -277,7 +288,7 @@
     goto/16 :goto_1
 .end method
 
-.method public final a(Landroid/net/Uri;)Ljava/io/File;
+.method public a(Landroid/net/Uri;)Ljava/io/File;
     .locals 4
 
     const/4 v2, 0x1
@@ -310,7 +321,7 @@
 
     move-result-object v1
 
-    iget-object v0, p0, Landroid/support/v4/content/b;->b:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/support/v4/content/e;->b:Ljava/util/HashMap;
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -324,9 +335,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Unable to find configured root for "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -381,9 +396,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Failed to resolve canonical path for "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -401,7 +420,7 @@
     return-object v1
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/io/File;)V
+.method public a(Ljava/lang/String;Ljava/io/File;)V
     .locals 4
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -426,7 +445,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v4/content/b;->b:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/support/v4/content/e;->b:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -439,9 +458,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Failed to resolve canonical path for "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

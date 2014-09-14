@@ -61,11 +61,13 @@
 
     sput-object v0, Lu/aly/cj;->a:Ljava/util/Map;
 
+    sget-object v0, Lu/aly/cj;->a:Ljava/util/Map;
+
     const-class v1, Lu/aly/di;
 
     new-instance v2, Lu/aly/cR;
 
-    invoke-direct {v2, v3}, Lu/aly/cR;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/cR;-><init>(Lu/aly/cR;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -75,7 +77,7 @@
 
     new-instance v2, Lu/aly/cT;
 
-    invoke-direct {v2, v3}, Lu/aly/cT;-><init>(B)V
+    invoke-direct {v2, v3}, Lu/aly/cT;-><init>(Lu/aly/cT;)V
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -162,7 +164,7 @@
 .end method
 
 .method private static a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 1
 
     instance-of v0, p0, Lu/aly/bz;
 
@@ -194,50 +196,20 @@
     :cond_2
     instance-of v0, p0, Ljava/util/List;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     check-cast p0, Ljava/util/List;
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {p0}, Lu/aly/cj;->a(Ljava/util/List;)Ljava/util/List;
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    move-object p0, v0
+    move-result-object p0
 
     goto :goto_0
 
     :cond_3
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lu/aly/cj;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_4
     instance-of v0, p0, Ljava/util/Set;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     check-cast p0, Ljava/util/Set;
 
@@ -247,7 +219,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     instance-of v0, p0, Ljava/util/Map;
 
     if-eqz v0, :cond_0

@@ -1,4 +1,4 @@
-.class final Lcom/tencent/stat/q;
+.class Lcom/tencent/stat/q;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -26,12 +26,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public run()V
     .locals 6
 
     iget-object v0, p0, Lcom/tencent/stat/q;->b:Lcom/tencent/stat/StatStore;
 
-    iget v0, v0, Lcom/tencent/stat/StatStore;->a:I
+    iget v0, v0, Lcom/tencent/stat/StatStore;->b:I
 
     if-nez v0, :cond_1
 
@@ -40,19 +40,23 @@
     return-void
 
     :cond_1
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Load "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/tencent/stat/q;->b:Lcom/tencent/stat/StatStore;
 
-    iget v2, v2, Lcom/tencent/stat/StatStore;->a:I
+    iget v2, v2, Lcom/tencent/stat/StatStore;->b:I
 
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -104,25 +108,29 @@
     :goto_1
     iget-object v0, p0, Lcom/tencent/stat/q;->b:Lcom/tencent/stat/StatStore;
 
-    iget v4, v0, Lcom/tencent/stat/StatStore;->a:I
+    iget v4, v0, Lcom/tencent/stat/StatStore;->b:I
 
     sub-int/2addr v4, v1
 
-    iput v4, v0, Lcom/tencent/stat/StatStore;->a:I
+    iput v4, v0, Lcom/tencent/stat/StatStore;->b:I
 
     iget-object v0, p0, Lcom/tencent/stat/q;->b:Lcom/tencent/stat/StatStore;
 
     invoke-static {v0, v3, v1}, Lcom/tencent/stat/StatStore;->b(Lcom/tencent/stat/StatStore;Ljava/util/List;I)V
 
-    invoke-static {}, Lcom/tencent/stat/StatStore;->a()Lcom/tencent/stat/common/StatLogger;
+    invoke-static {}, Lcom/tencent/stat/StatStore;->b()Lcom/tencent/stat/common/StatLogger;
 
     move-result-object v0
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Peek "
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 

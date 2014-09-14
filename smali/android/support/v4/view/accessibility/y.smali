@@ -3,14 +3,14 @@
 
 
 # instance fields
-.field private synthetic a:Landroid/support/v4/view/accessibility/i;
+.field final synthetic a:Landroid/support/v4/view/accessibility/z;
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/view/accessibility/i;)V
+.method constructor <init>(Landroid/support/v4/view/accessibility/z;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/i;
+    iput-object p1, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/z;
 
     invoke-direct {p0}, Landroid/view/accessibility/AccessibilityNodeProvider;-><init>()V
 
@@ -19,12 +19,12 @@
 
 
 # virtual methods
-.method public final createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+.method public createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/i;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/z;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/i;->a(I)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Landroid/support/v4/view/accessibility/z;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -33,7 +33,7 @@
     return-object v0
 .end method
 
-.method public final findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
+.method public findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -47,21 +47,21 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/i;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/z;
 
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/view/accessibility/i;->a(Ljava/lang/String;I)Ljava/util/List;
+    invoke-interface {v0, p1, p2}, Landroid/support/v4/view/accessibility/z;->a(Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final performAction(IILandroid/os/Bundle;)Z
+.method public performAction(IILandroid/os/Bundle;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/i;
+    iget-object v0, p0, Landroid/support/v4/view/accessibility/y;->a:Landroid/support/v4/view/accessibility/z;
 
-    invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/i;->a(IILandroid/os/Bundle;)Z
+    invoke-interface {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/z;->a(IILandroid/os/Bundle;)Z
 
     move-result v0
 

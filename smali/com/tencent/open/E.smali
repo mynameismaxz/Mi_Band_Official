@@ -1,13 +1,13 @@
-.class final Lcom/tencent/open/E;
+.class Lcom/tencent/open/E;
 .super Ljava/lang/Object;
 
 
 # instance fields
 .field a:Ljava/lang/String;
 
-.field b:[Lcom/tencent/open/A;
+.field b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field c:[Lcom/tencent/open/A;
 
 
 # direct methods
@@ -52,6 +52,10 @@
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
+    move-result-object v1
+
+    iput-object v1, v7, Lcom/tencent/open/E;->b:Ljava/lang/String;
+
     const-string v1, "step_info"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
@@ -66,7 +70,7 @@
 
     new-array v0, v10, [Lcom/tencent/open/A;
 
-    iput-object v0, v7, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
+    iput-object v0, v7, Lcom/tencent/open/E;->c:[Lcom/tencent/open/A;
 
     :cond_1
     const/4 v0, 0x0
@@ -114,7 +118,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/tencent/open/A;-><init>(ILjava/lang/String;Ljava/lang/String;JI)V
 
-    iget-object v1, v7, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
+    iget-object v1, v7, Lcom/tencent/open/E;->c:[Lcom/tencent/open/A;
 
     aput-object v0, v1, v8
 
@@ -132,7 +136,7 @@
 
 
 # virtual methods
-.method public final a()Z
+.method public a()Z
     .locals 1
 
     iget-object v0, p0, Lcom/tencent/open/E;->a:Ljava/lang/String;
@@ -143,11 +147,11 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
+    iget-object v0, p0, Lcom/tencent/open/E;->c:[Lcom/tencent/open/A;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/tencent/open/E;->b:[Lcom/tencent/open/A;
+    iget-object v0, p0, Lcom/tencent/open/E;->c:[Lcom/tencent/open/A;
 
     array-length v0, v0
 
