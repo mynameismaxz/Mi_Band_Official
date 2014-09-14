@@ -1,0 +1,13 @@
+version: 1.5.2
+apkFileName: Mi-Band-1.0.452_177.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '14'
+  targetSdkVersion: '18'
+packageInfo:
+  cur_package: com.xiaomi.hm.health
+  orig_package: com.xiaomi.hm.health
+compressionType: false
