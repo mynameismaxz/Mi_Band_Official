@@ -62,10 +62,8 @@
     <color name="orange">#ffff6d0c</color>
     <color name="bg_color_blue">#ff1898c4</color>
     <color name="bg_color_grey">#ff3c444f</color>
-    <color name="bg_color_grey_2">#ff3b434b</color>
     <color name="bg_color_red">#ffc84d67</color>
     <color name="bg_color_blue_dark">#ff1879cb</color>
-    <color name="bg_color_blue_2">#ff369dc1</color>
     <color name="bg_color_cyan">#ff30a791</color>
     <color name="bg_color_cyan_dark">#ff1daa69</color>
     <color name="bg_color_orange">#ffe16528</color>

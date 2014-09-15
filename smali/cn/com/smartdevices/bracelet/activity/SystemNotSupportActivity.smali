@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/activity/SystemNotSupportActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -9,7 +9,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -34,7 +34,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f0701be
+    .packed-switch 0x7f0701c2
         :pswitch_0
     .end packed-switch
 .end method
@@ -42,13 +42,13 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030060
+    const v0, 0x7f030061
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/SystemNotSupportActivity;->setContentView(I)V
 
-    const v0, 0x7f0701be
+    const v0, 0x7f0701c2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/SystemNotSupportActivity;->findViewById(I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageSystemNotSupport"
 
@@ -78,7 +78,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageSystemNotSupport"
 

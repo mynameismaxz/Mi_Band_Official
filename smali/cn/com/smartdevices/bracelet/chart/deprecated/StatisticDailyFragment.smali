@@ -318,7 +318,7 @@
 .method protected updateSleepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f070144
+    const v1, 0x7f070147
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -362,7 +362,7 @@
 .method protected updateSleepRiseTime(I)V
     .locals 2
 
-    const v1, 0x7f070142
+    const v1, 0x7f070145
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -406,7 +406,7 @@
 .method protected updateSleepStartTime(I)V
     .locals 2
 
-    const v1, 0x7f070140
+    const v1, 0x7f070143
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -450,7 +450,7 @@
 .method protected updateStepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f070135
+    const v1, 0x7f070138
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -502,7 +502,7 @@
 .method protected updateStepContinueTime(I)V
     .locals 2
 
-    const v1, 0x7f070132
+    const v1, 0x7f070135
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 

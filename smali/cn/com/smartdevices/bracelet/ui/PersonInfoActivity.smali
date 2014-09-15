@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/PersonInfoActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # static fields
@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -20,7 +20,7 @@
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 4
 
-    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
+    invoke-super {p0, p1, p2, p3}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onActivityResult(IILandroid/content/Intent;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -67,7 +67,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -99,7 +99,7 @@
 .method protected onPause()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     invoke-static {p0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->endSession(Landroid/content/Context;)V
 
@@ -109,7 +109,7 @@
 .method protected onResume()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-static {p0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->startSession(Landroid/content/Context;)V
 

@@ -28,11 +28,9 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 4
+    .locals 3
 
     const/4 v2, 0x0
-
-    const/16 v3, 0xa
 
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -85,7 +83,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -199,75 +197,13 @@
     :sswitch_4
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0, v3, v2}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;ILjava/lang/Object;)V
+    const/16 v1, 0xa
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;ILjava/lang/Object;)V
 
     goto/16 :goto_0
 
     :sswitch_5
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-
-    move-result v0
-
-    const/high16 v1, 0x42c8
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_3
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-
-    move-result v1
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-
-    move-result v2
-
-    add-float/2addr v1, v2
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;F)V
-
-    :cond_3
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;-><init>()V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;->b:Ljava/lang/Object;
-
-    iput v3, v0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;->a:I
-
-    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lde/greenrobot/event/EventBus;->postSticky(Ljava/lang/Object;)V
-
-    const/16 v0, 0x1011
-
-    const-wide/16 v1, 0x3e8
-
-    invoke-virtual {p0, v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/n;->sendEmptyMessageDelayed(IJ)Z
-
-    goto/16 :goto_0
-
-    :sswitch_6
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Ljava/lang/String;
@@ -342,8 +278,7 @@
         0x1001 -> :sswitch_1
         0x1002 -> :sswitch_2
         0x1003 -> :sswitch_3
-        0x1008 -> :sswitch_6
+        0x1008 -> :sswitch_5
         0x1010 -> :sswitch_4
-        0x1011 -> :sswitch_5
     .end sparse-switch
 .end method

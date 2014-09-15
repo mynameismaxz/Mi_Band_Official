@@ -5,13 +5,15 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "WeatherManager"
 
-.field public static final URL_REQUEST_CITY:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/positioning?longitude=%s&latitude=%s"
+.field public static final URL_REQUEST_CITY:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/positioning?longitude=%s&latitude=%s&source=mihealth"
 
-.field public static final URL_REQUEST_CITY_CODE:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s"
+.field public static final URL_REQUEST_CITY_CODE:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&source=mihealth"
 
-.field public static final URL_REQUEST_WEATHER:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=%s"
+.field public static final URL_REQUEST_WEATHER:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=%s&source=mihealth"
 
 .field public static final URL_WEATHER_BASE:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2"
+
+.field public static final URL_WEATHER_BASE_SOURCE:Ljava/lang/String; = "&source=mihealth"
 
 .field private static sManager:Lcn/com/smartdevices/bracelet/weather/WeatherManager;
 
@@ -19,21 +21,43 @@
 # instance fields
 .field private mContext:Landroid/content/Context;
 
+.field private mPrefs:Landroid/content/SharedPreferences;
+
 .field private mWeatherListener:Lcn/com/smartdevices/bracelet/weather/WeatherListener;
 
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 0
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
 
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
+
+    const-string v1, "WeatherManager"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
     return-void
 .end method
 
-.method static synthetic access$0(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)Landroid/content/Context;
+.method static synthetic access$0(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Lcn/com/smartdevices/bracelet/location/Location;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readOrRequestCityCode(Lcn/com/smartdevices/bracelet/location/Location;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
@@ -41,7 +65,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$1(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)Lcn/com/smartdevices/bracelet/weather/WeatherListener;
+.method static synthetic access$2(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readOrRequestWeather(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$3(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)Lcn/com/smartdevices/bracelet/weather/WeatherListener;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mWeatherListener:Lcn/com/smartdevices/bracelet/weather/WeatherListener;
@@ -68,8 +100,276 @@
     return-object v0
 .end method
 
+.method private readOrRequestCityCode(Lcn/com/smartdevices/bracelet/location/Location;)V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/location/Location;->getAddress()Lcn/com/smartdevices/bracelet/location/Location$Address;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    new-instance v0, Lcom/google/gson/Gson;
+
+    invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/location/Location;->getAddress()Lcn/com/smartdevices/bracelet/location/Location$Address;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readLastCityCode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readOrRequestWeather(Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->requestCityByLocation(Lcn/com/smartdevices/bracelet/location/Location;)V
+
+    goto :goto_0
+.end method
+
+.method private readOrRequestWeather(Ljava/lang/String;)V
+    .locals 5
+
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readLastWeatherInfo(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/weather/WeatherInfo;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;->getTime()J
+
+    move-result-wide v1
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    invoke-static {v1, v2, v3, v4}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->timeOffsetHours(JJ)I
+
+    move-result v1
+
+    const-string v2, "WeatherManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Read Weather Time Offset Hours : "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mWeatherListener:Lcn/com/smartdevices/bracelet/weather/WeatherListener;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mWeatherListener:Lcn/com/smartdevices/bracelet/weather/WeatherListener;
+
+    invoke-interface {v1, v0}, Lcn/com/smartdevices/bracelet/weather/WeatherListener;->onReceiveWeather(Lcn/com/smartdevices/bracelet/weather/WeatherInfo;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->requestWeather(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->requestWeather(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public static timeOffsetHours(JJ)I
+    .locals 7
+
+    const/16 v6, 0xb
+
+    const/4 v5, 0x6
+
+    const/4 v4, 0x1
+
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2, p3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    const/16 v0, 0x18
+
+    invoke-virtual {v1, v4}, Ljava/util/Calendar;->get(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v4}, Ljava/util/Calendar;->get(I)I
+
+    move-result v4
+
+    if-ne v3, v4, :cond_0
+
+    invoke-virtual {v1, v5}, Ljava/util/Calendar;->get(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v5}, Ljava/util/Calendar;->get(I)I
+
+    move-result v4
+
+    if-ne v3, v4, :cond_0
+
+    invoke-virtual {v2, v6}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    invoke-virtual {v1, v6}, Ljava/util/Calendar;->get(I)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    :cond_0
+    return v0
+.end method
+
 
 # virtual methods
+.method public readLastCityCode(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "WeatherManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Read Last City Code : "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " , "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public readLastWeatherInfo(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/weather/WeatherInfo;
+    .locals 5
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
+    invoke-interface {v1, p1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "WeatherManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Read Last Weather : "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " , "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    new-instance v0, Lcom/google/gson/Gson;
+
+    invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
+
+    const-class v2, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/weather/WeatherInfo;
+
+    :cond_0
+    return-object v0
+.end method
+
 .method public registerLocationChanged()V
     .locals 3
 
@@ -121,9 +421,9 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/positioning?longitude=%s&latitude=%s"
+    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/positioning?longitude=%s&latitude=%s&source=mihealth"
 
     const/4 v1, 0x2
 
@@ -157,36 +457,266 @@
 
     move-result-object v0
 
-    const-string v1, "WeatherManager"
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/location/Location;->getAddress()Lcn/com/smartdevices/bracelet/location/Location$Address;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getCountryCode()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_4
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "Request : "
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&countryCode="
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    move-result-object v0
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getCountryCode()Ljava/lang/String;
+
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getAdmin()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&adminArea="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getAdmin()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getLocality()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&locality="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getLocality()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_1
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getSubLocality()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&subLocality="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getSubLocality()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_2
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getThoroughfare()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&thoroughfare="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/location/Location$Address;->getThoroughfare()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_3
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
+
+    const-string v2, "WeatherRequestCity"
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
 
     sget-object v1, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
 
     new-instance v2, Lcn/com/smartdevices/bracelet/weather/WeatherManager$2;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$2;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)V
+    invoke-direct {v2, p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$2;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Lcn/com/smartdevices/bracelet/location/Location;)V
 
     invoke-virtual {v1, v0, v2}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
     return-void
+
+    :cond_4
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&countryCode=CN"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "&language=zh_CN"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto/16 :goto_0
 .end method
 
-.method public requestCityCode(Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;)V
+.method public requestCityCode(Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;Lcn/com/smartdevices/bracelet/location/Location;)V
     .locals 8
 
     const/4 v2, 0x0
@@ -199,6 +729,8 @@
 
     move-result-object v4
 
+    if-eqz v4, :cond_0
+
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -210,8 +742,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
+    :cond_0
     const-string v0, "WeatherManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -228,59 +761,22 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s"
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
-
-    const-string v4, ";,"
-
-    invoke-static {v3, v4}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v0
 
-    const-string v1, "WeatherManager"
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result v0
 
-    const-string v3, "Request : "
+    if-eqz v0, :cond_3
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
-
-    new-instance v2, Lcn/com/smartdevices/bracelet/weather/WeatherManager$3;
-
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$3;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)V
-
-    invoke-virtual {v1, v0, v2}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
+    :goto_1
     return-void
 
-    :cond_0
+    :cond_1
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -335,84 +831,183 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_2
 
     const-string v1, "|"
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
+    :cond_2
     move v1, v0
 
-    goto/16 :goto_0
+    goto :goto_0
+
+    :cond_3
+    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&source=mihealth"
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, ";,"
+
+    invoke-static {v3, v4}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
+
+    const-string v2, "WeatherRequestCityCode"
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+
+    new-instance v2, Lcn/com/smartdevices/bracelet/weather/WeatherManager$3;
+
+    invoke-direct {v2, p0, p2}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$3;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Lcn/com/smartdevices/bracelet/location/Location;)V
+
+    invoke-virtual {v1, v0, v2}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    goto :goto_1
 .end method
 
-.method protected requestWeather(Lcn/com/smartdevices/bracelet/weather/OriginalCityCodes;)V
-    .locals 4
+.method public requestWeather(Ljava/lang/String;)V
+    .locals 3
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/weather/OriginalCityCodes;->TYPE_XIAOMI:Ljava/lang/String;
+    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=%s&source=mihealth"
 
-    invoke-virtual {p1, v0}, Lcn/com/smartdevices/bracelet/weather/OriginalCityCodes;->getCityCode(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v1, "WeatherManager"
+    const/4 v2, 0x0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    aput-object p1, v1, v2
 
-    const-string v3, "Request Weather : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=%s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "WeatherManager"
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mContext:Landroid/content/Context;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "WeatherRequestWeather"
 
-    const-string v3, "Request : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
 
     sget-object v1, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
 
     new-instance v2, Lcn/com/smartdevices/bracelet/weather/WeatherManager$4;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$4;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;)V
+    invoke-direct {v2, p0, p1}, Lcn/com/smartdevices/bracelet/weather/WeatherManager$4;-><init>(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Ljava/lang/String;)V
 
     invoke-virtual {v1, v0, v2}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    return-void
+.end method
+
+.method public saveCityCode(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    const-string v0, "WeatherManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Save Last City Code : "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " , "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    return-void
+.end method
+
+.method public saveWeatherInfo(Ljava/lang/String;Lcn/com/smartdevices/bracelet/weather/WeatherInfo;)V
+    .locals 4
+
+    new-instance v0, Lcom/google/gson/Gson;
+
+    invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
+
+    invoke-virtual {v0, p2}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "WeatherManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Save Last Weather : "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     return-void
 .end method

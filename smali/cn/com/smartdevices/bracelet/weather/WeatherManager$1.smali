@@ -46,11 +46,12 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager$1;->this$0:Lcn/com/smartdevices/bracelet/weather/WeatherManager;
 
-    invoke-virtual {v1, v0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->requestCityByLocation(Lcn/com/smartdevices/bracelet/location/Location;)V
+    #calls: Lcn/com/smartdevices/bracelet/weather/WeatherManager;->readOrRequestCityCode(Lcn/com/smartdevices/bracelet/location/Location;)V
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->access$0(Lcn/com/smartdevices/bracelet/weather/WeatherManager;Lcn/com/smartdevices/bracelet/location/Location;)V
 
     return-void
 .end method

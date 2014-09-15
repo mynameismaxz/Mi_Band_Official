@@ -68,10 +68,10 @@
     <item type="id" name="search_devices_not_response">false</item>
     <item type="id" name="search_single_device_list_area">false</item>
     <item type="id" name="device_list_lv">false</item>
-    <item type="id" name="share_pic_iv">false</item>
     <item type="id" name="share_content_ll">false</item>
     <item type="id" name="share_background_v">false</item>
-    <item type="id" name="share_tips">false</item>
+    <item type="id" name="share_top_area">false</item>
+    <item type="id" name="share_title">false</item>
     <item type="id" name="share_main_content_area">false</item>
     <item type="id" name="share_main_content">false</item>
     <item type="id" name="share_main_content_hour_unit">false</item>
@@ -80,9 +80,12 @@
     <item type="id" name="share_main_content_unit">false</item>
     <item type="id" name="share_time">false</item>
     <item type="id" name="share_time_tips">false</item>
+    <item type="id" name="share_pic_iv">false</item>
+    <item type="id" name="dynamic_title">false</item>
     <item type="id" name="share_person_avatar_iv">false</item>
     <item type="id" name="share_person_name_tv">false</item>
     <item type="id" name="share_description">false</item>
+    <item type="id" name="share_from_mi_band_txt">false</item>
     <item type="id" name="share_cancel_btn">false</item>
     <item type="id" name="share_to_weixin_btn">false</item>
     <item type="id" name="share_to_pengyouquan_btn">false</item>
@@ -120,6 +123,7 @@
     <item type="id" name="CropImageView">false</item>
     <item type="id" name="ImageView_image">false</item>
     <item type="id" name="CropOverlayView">false</item>
+    <item type="id" name="toast_txt">false</item>
     <item type="id" name="bottom_bar_frame">false</item>
     <item type="id" name="left_button">false</item>
     <item type="id" name="bottom_bar_frame_split">false</item>
@@ -173,7 +177,6 @@
     <item type="id" name="modify_sleep_time_minute">false</item>
     <item type="id" name="dynamic_header">false</item>
     <item type="id" name="header_nav_left">false</item>
-    <item type="id" name="dynamic_title">false</item>
     <item type="id" name="header_nav_right">false</item>
     <item type="id" name="dynamic_subtitle">false</item>
     <item type="id" name="dynamic_lv">false</item>
@@ -313,6 +316,7 @@
     <item type="id" name="tab_host_item_2">false</item>
     <item type="id" name="tab_host_item_3">false</item>
     <item type="id" name="help_back_txt">false</item>
+    <item type="id" name="lua_list_item_icon">false</item>
     <item type="id" name="linearLayout1">false</item>
     <item type="id" name="imageView1">false</item>
     <item type="id" name="textView1">false</item>
@@ -378,7 +382,7 @@
     <item type="id" name="dragView">false</item>
     <item type="id" name="mili_top_bar">false</item>
     <item type="id" name="device_find_bracelet">false</item>
-    <item type="id" name="info_person_signature_value">false</item>
+    <item type="id" name="device_find_bracelet_tv">false</item>
     <item type="id" name="device_set_goal">false</item>
     <item type="id" name="device_set_goal_text">false</item>
     <item type="id" name="device_light_color">false</item>

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
@@ -22,18 +22,56 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+.method public onPreDraw()Z
+    .locals 7
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aP;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->p(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return v5
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aP;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0, v5}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->c(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;Z)V
+
+    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/upgrade/UpgradeUtil;->updateCheckState(Landroid/content/Context;)V
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aP;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    const-string v2, "onBleStatusChanged"
 
-    return-void
+    const-class v3, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;
+
+    new-array v4, v6, [Ljava/lang/Class;
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lde/greenrobot/event/EventBus;->registerSticky(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
+
+    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aP;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    const-string v2, "onBtOnOff"
+
+    const-class v3, Lcn/com/smartdevices/bracelet/eventbus/EventBtOnOff;
+
+    new-array v4, v6, [Ljava/lang/Class;
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lde/greenrobot/event/EventBus;->register(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
+
+    goto :goto_0
 .end method

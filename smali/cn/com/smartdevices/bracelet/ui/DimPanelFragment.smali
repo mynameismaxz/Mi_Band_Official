@@ -160,7 +160,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f07009a
+    .packed-switch 0x7f07009e
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -168,15 +168,28 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 3
 
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    const v1, 0x7f0e0004
+    const v0, 0x7f0e0005
 
-    invoke-virtual {p0, v0, v1}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->setStyle(II)V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const v0, 0x7f0e0019
+
+    :cond_0
+    invoke-virtual {p0, v1, v0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->setStyle(II)V
 
     return-void
 .end method
@@ -194,7 +207,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07009a
+    const v1, 0x7f07009e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +215,7 @@
 
     iput-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->mLeftButton:Landroid/view/View;
 
-    const v1, 0x7f07009c
+    const v1, 0x7f0700a0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -236,7 +249,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    const v1, 0x7f07009d
+    const v1, 0x7f0700a1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

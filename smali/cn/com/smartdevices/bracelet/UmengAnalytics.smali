@@ -99,6 +99,12 @@
 
 .field public static final EVENT_VIEW_STATISTIC:Ljava/lang/String; = "ViewStatistic"
 
+.field public static final EVENT_WEATHER_REQUEST_CITY:Ljava/lang/String; = "WeatherRequestCity"
+
+.field public static final EVENT_WEATHER_REQUEST_CITY_CODE:Ljava/lang/String; = "WeatherRequestCityCode"
+
+.field public static final EVENT_WEATHER_REQUEST_WEATHER:Ljava/lang/String; = "WeatherRequestWeather"
+
 .field public static final PAGE_ABOUT:Ljava/lang/String; = "PageAbout"
 
 .field public static final PAGE_ALARM:Ljava/lang/String; = "PageAlarm"
@@ -728,6 +734,22 @@
     invoke-static {p0, p1, p2, p3}, Lcom/umeng/analytics/MobclickAgent;->onEventValue(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;I)V
 
     goto :goto_0
+.end method
+
+.method public static exception(Landroid/content/Context;Ljava/lang/Exception;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/umeng/analytics/MobclickAgent;->reportError(Landroid/content/Context;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public static exception(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/umeng/analytics/MobclickAgent;->reportError(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public static startEvent(Landroid/content/Context;Ljava/lang/String;)V

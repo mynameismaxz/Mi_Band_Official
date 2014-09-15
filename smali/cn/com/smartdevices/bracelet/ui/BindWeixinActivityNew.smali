@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -39,7 +39,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->e:Landroid/widget/Button;
 
@@ -303,6 +303,8 @@
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->b()V
 
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->updateStatusBarTintAuto()V
+
     :cond_0
     :goto_0
     return-void
@@ -313,6 +315,8 @@
     if-ge v0, v3, :cond_0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->c()V
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->updateStatusBarTintAuto()V
 
     goto :goto_0
 .end method
@@ -352,7 +356,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -377,7 +381,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     const v0, 0x7f030001
 
@@ -487,7 +491,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Utils;->isBraceletConnected()Z
 

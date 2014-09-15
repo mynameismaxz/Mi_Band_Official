@@ -96,6 +96,48 @@
 
 
 # virtual methods
+.method public callLuaFunc(Ljava/lang/String;)V
+    .locals 3
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getInstance()Lcn/com/smartdevices/bracelet/lua/LuaManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getLuaState()Lorg/keplerproject/luajava/LuaState;
+
+    move-result-object v1
+
+    sget-object v2, Lorg/keplerproject/luajava/LuaState;->LUA_GLOBALSINDEX:Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2, p1}, Lorg/keplerproject/luajava/LuaState;->getField(ILjava/lang/String;)V
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/DaoManager;->getInstance()Lcn/com/smartdevices/bracelet/DaoManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/DaoManager;->getLuaListDao()Lde/greenrobot/daobracelet/LuaListDao;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/keplerproject/luajava/LuaState;->pushJavaObject(Ljava/lang/Object;)V
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->cInfo:Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
+
+    invoke-virtual {v1, v2}, Lorg/keplerproject/luajava/LuaState;->pushJavaObject(Ljava/lang/Object;)V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->callLua(II)V
+
+    return-void
+.end method
+
 .method public getConfigDynamicDataInfo()Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
     .locals 1
 

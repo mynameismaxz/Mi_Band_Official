@@ -1,76 +1,73 @@
 .class Lcn/com/smartdevices/bracelet/ui/bg;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bg;->b:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bg;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailed(Ljava/lang/Object;)V
+.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onLeftClicked(Landroid/app/DialogFragment;)V
     .locals 3
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bg;->b:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bg;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->c(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bg;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bg;->b:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    const-string v1, "UserLogout"
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
+    const-string v2, "Confirmed"
 
-    move-result-object v1
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    const v2, 0x7f0c0049
+    return-void
+.end method
 
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+.method public onRightClicked(Landroid/app/DialogFragment;)V
+    .locals 3
 
-    move-result-object v1
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bg;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    const-string v1, "UserLogout"
 
-    return-void
-.end method
+    const-string v2, "Canceled"
 
-.method public onFinish(Ljava/lang/Object;)V
-    .locals 2
-
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
-
-    const-string v0, "PersonInfoFragment"
-
-    const-string v1, "sync to bracelet ok"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public onStart()V
-    .locals 0
-
-    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

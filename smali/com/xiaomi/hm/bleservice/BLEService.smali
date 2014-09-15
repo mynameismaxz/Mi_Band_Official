@@ -1619,8 +1619,6 @@
 
     invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/BLEService;->onDestroy()V
-
     invoke-super {p0, p1}, Landroid/app/Service;->onTaskRemoved(Landroid/content/Intent;)V
 
     return-void

@@ -1,12 +1,12 @@
 .class public Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -16,21 +16,21 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     const v0, 0x7f030013
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;->setContentView(I)V
 
-    const v0, 0x7f070089
+    const v0, 0x7f07008c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cb;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ch;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cb;-><init>(Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ch;-><init>(Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -40,7 +40,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageUnlockInvaildHelp"
 
@@ -54,7 +54,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageUnlockInvaildHelp"
 

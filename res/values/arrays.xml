@@ -51,12 +51,12 @@
         <item>Keep practicing, winning will take care of itself.</item>
     </string-array>
     <string-array name="weather_aqi_descriptions">
-        <item>优</item>
-        <item>良</item>
-        <item>轻度污染</item>
-        <item>中度污染</item>
-        <item>重度污染</item>
-        <item>严重污染</item>
+        <item>Fine</item>
+        <item>Good</item>
+        <item>Moderate</item>
+        <item>Moderate</item>
+        <item>Unhealthy</item>
+        <item>Very Unhealthy</item>
     </string-array>
     <string-array name="weather_rains">
         <item>阵雨</item>

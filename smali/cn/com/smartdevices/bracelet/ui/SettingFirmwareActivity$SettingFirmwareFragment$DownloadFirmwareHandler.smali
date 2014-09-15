@@ -156,9 +156,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;->g:Landroid/app/ProgressDialog;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bE;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bI;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bE;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bI;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;)V
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
@@ -409,7 +409,7 @@
 
     const-string v2, "\u4e0b\u8f7d\u56fa\u4ef6\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5"
 
-    invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v2, v1}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -707,7 +707,7 @@
 
     const-string v2, "\u56fa\u4ef6\u6821\u9a8c\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5"
 
-    invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v2, v1}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 

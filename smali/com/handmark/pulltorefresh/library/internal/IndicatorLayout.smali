@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f020076
+    const v5, 0x7f020077
 
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -93,7 +93,7 @@
 
     const v0, 0x7f040010
 
-    const v6, 0x7f020078
+    const v6, 0x7f020079
 
     invoke-virtual {p0, v6}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 
@@ -185,7 +185,7 @@
 
     const v0, 0x7f04000f
 
-    const v7, 0x7f020077
+    const v7, 0x7f020078
 
     invoke-virtual {p0, v7}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 

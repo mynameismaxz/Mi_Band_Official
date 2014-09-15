@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -23,7 +23,7 @@
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
+    invoke-super {p0, p1, p2, p3}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onActivityResult(IILandroid/content/Intent;)V
 
     const/4 v0, 0x6
 
@@ -112,18 +112,18 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f070093 -> :sswitch_2
-        0x7f070167 -> :sswitch_1
-        0x7f070168 -> :sswitch_0
+        0x7f070096 -> :sswitch_2
+        0x7f07016b -> :sswitch_1
+        0x7f07016c -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030051
+    const v0, 0x7f030052
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->setContentView(I)V
 
@@ -159,7 +159,7 @@
 
     if-lez v1, :cond_0
 
-    const v0, 0x7f070166
+    const v0, 0x7f07016a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     :cond_0
-    const v0, 0x7f070168
+    const v0, 0x7f07016c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070167
+    const v0, 0x7f07016b
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070093
+    const v0, 0x7f070096
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -234,7 +234,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageBraceletConnectFailed"
 
@@ -248,7 +248,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageBraceletConnectFailed"
 

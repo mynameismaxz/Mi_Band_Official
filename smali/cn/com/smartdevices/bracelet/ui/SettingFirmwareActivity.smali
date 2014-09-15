@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # instance fields
@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     const/4 v0, 0x0
 
@@ -26,7 +26,7 @@
 
     const/4 v3, 0x0
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -112,7 +112,7 @@
 
     move-result v0
 
-    const v1, 0x7f0701ff
+    const v1, 0x7f070203
 
     if-ne v0, v1, :cond_1
 
@@ -133,7 +133,7 @@
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->confirmFwUpgrade()V
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 

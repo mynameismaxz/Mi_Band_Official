@@ -57,6 +57,10 @@
 
 .field public static final app_name:I = 0x7f0c0006
 
+.field public static final awake_format:I = 0x7f0c01e5
+
+.field public static final awake_format_1:I = 0x7f0c01e6
+
 .field public static final back:I = 0x7f0c01b6
 
 .field public static final battery_charge_full:I = 0x7f0c0169
@@ -139,7 +143,7 @@
 
 .field public static final clock_closed:I = 0x7f0c00f7
 
-.field public static final closed:I = 0x7f0c01e2
+.field public static final closed:I = 0x7f0c01e9
 
 .field public static final cm:I = 0x7f0c005f
 
@@ -204,6 +208,10 @@
 .field public static final device_not_response:I = 0x7f0c0051
 
 .field public static final disable_debug_log:I = 0x7f0c01b8
+
+.field public static final discard:I = 0x7f0c01e7
+
+.field public static final discard_alarm_change:I = 0x7f0c01e8
 
 .field public static final distance:I = 0x7f0c0072
 
@@ -457,6 +465,10 @@
 
 .field public static final look_device_list:I = 0x7f0c014f
 
+.field public static final main_ui_share_tips:I = 0x7f0c01e2
+
+.field public static final main_ui_sleep_share_tips:I = 0x7f0c01e4
+
 .field public static final male:I = 0x7f0c005d
 
 .field public static final marathon_format_0:I = 0x7f0c0160
@@ -587,6 +599,8 @@
 
 .field public static final pull_to_refresh_release_label:I = 0x7f0c0001
 
+.field public static final ran:I = 0x7f0c01e3
+
 .field public static final red:I = 0x7f0c0138
 
 .field public static final register:I = 0x7f0c0008
@@ -617,13 +631,13 @@
 
 .field public static final search_devices_title:I = 0x7f0c0067
 
-.field public static final sec10:I = 0x7f0c01e4
+.field public static final sec10:I = 0x7f0c01eb
 
-.field public static final sec15:I = 0x7f0c01e5
+.field public static final sec15:I = 0x7f0c01ec
 
-.field public static final sec20:I = 0x7f0c01e6
+.field public static final sec20:I = 0x7f0c01ed
 
-.field public static final sec3:I = 0x7f0c01e3
+.field public static final sec3:I = 0x7f0c01ea
 
 .field public static final second:I = 0x7f0c01ca
 

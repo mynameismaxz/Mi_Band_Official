@@ -242,7 +242,7 @@
     <string name="help_info_1">小米手環需要安卓4.4及以上版本</string>
     <string name="help_title_2">手環是否充電成功？</string>
     <string name="help_info_2">請確保手環按說明書的提示正確充電。如果是正常充電, 手環的指示燈會以綠色閃爍。</string>
-    <string name="help_info_3">如果你的手環已經和其他手機綁定, 並且綁定的手機不在手環附近, 這時你需要關閉已綁定手機的藍牙, 然後重新使用新手機搜尋手環</string>
+    <string name="help_info_3">如果你的手環已經和其他手機綁定, 並且綁定的手機仍在手環附近, 這時你需要關閉已綁定手機的藍牙, 然後重新使用新手機搜尋手環</string>
     <string name="help_info_4">"你可以聯繫我們的客服, 取得更多幫助與支持。
 
 客服電話：21921023
@@ -402,7 +402,7 @@
     <string name="unlock_screen_set_use_bracelet">第二步, 設定使用手環解鎖</string>
     <string name="unlock_screen_set_success">已成功設定手環解鎖</string>
     <string name="unlock_screen_modify_unlock">"如需修改請打開
-設定->安全和隱私->螢幕安全保護"</string>
+設定->安全和隱私"</string>
     <string name="bind_weixin_title">連結微信與好友們一起PK運動排行</string>
     <string name="step1">1. </string>
     <string name="step2">2. </string>
@@ -424,7 +424,7 @@
     <string name="unlock_screen_help_title2">嘗試重新設定手環解鎖</string>
     <string name="unlock_screen_help_info0">為了保證手機的安全性，只有當手環貼近手機時解鎖才有效，手機遠離手環將無法進行解鎖。</string>
     <string name="unlock_screen_help_info1">如果貼近手機仍然無法解鎖，可以嘗試將手機的藍牙關閉然後重新打開，稍等一會後，檢查手環解鎖功能是否恢復。</string>
-    <string name="unlock_screen_help_info2">如果重啟藍牙無效，可以前往系統設定->安全和隱私->螢幕安全保護->藍牙裝置解鎖中，刪除目前已經綁定的手環，然後返回小米手環應用中重新設定手環解鎖。</string>
+    <string name="unlock_screen_help_info2">如果重啟藍牙無效，可以前往系統設定->安全和隱私中，刪除目前已經綁定的手環，然後返回小米手環應用中重新設定手環解鎖。</string>
     <string name="instruction_title">如何玩轉小米手環</string>
     <string name="instruction_tip_1">"抬起手腕
 檢視運動
@@ -506,13 +506,31 @@
     <string name="first_use_remain_days_format">已使用%s天</string>
     <string name="until_hit_goals">截至%s連續達標</string>
     <string name="continue_reach_goal_new_record">创造个人新记录</string>
-    <string name="bind_weixin_new_tips">"点击“微信接入”启动微信进入小米手环帐号页面，
-然后点击“关注”按钮即可完成接入"</string>
-    <string name="bind_weixin_new_now">正在进行微信接入，请稍候......</string>
-    <string name="bind_weixin_new_disable_tips">"接入微信关注小米手环服务号后即可通过微信查看当
-前步数，并且与朋友圈中的好友们一起PK运动排行"</string>
-    <string name="weather_aqi">空气质量%s</string>
+    <string name="bind_weixin_new_tips">"點擊“微信接入”啟動微信進入小米手環帳號頁面，
+然後點擊“關注”按鈕即可完成接 入"</string>
+    <string name="bind_weixin_new_now">正在進行微信接入，請稍候......</string>
+    <string name="bind_weixin_new_disable_tips">"接入微信關注小米手環服務號碼後即可透過微信檢視目
+前步數，並且與朋 友圈中的好友們一起PK運動排行"</string>
+    <string name="weather_aqi">空氣品質%s</string>
+    <string name="weather_description_rain">有降水</string>
+    <string name="weather_description_rain_snow">有雨雪</string>
+    <string name="weather_description_snow">有降雪</string>
+    <string name="weather_description_sand">有沙塵</string>
+    <string name="weather_description_fine">晴</string>
+    <string name="weather_description_cloudy">多雲</string>
+    <string name="weather_description_overcast">陰</string>
+    <string name="weather_description_fog">霧</string>
+    <string name="weather_description_haze">霾</string>
     <string name="in" />
+    <string name="main_ui_share_tips">"今天共活动了%1$s%2$s
+%3$s"</string>
+    <string name="ran">跑了</string>
+    <string name="main_ui_sleep_share_tips">"浅睡%1$s%2$s
+入睡%3$s, 醒来%4$s"</string>
+    <string name="awake_format">, 清醒%1$s次</string>
+    <string name="awake_format_1">, 清醒1次</string>
+    <string name="discard">放棄更改</string>
+    <string name="discard_alarm_change">要放棄對該鬧鐘更改嗎？</string>
     <string name="closed">關閉</string>
     <string name="sec3">3秒</string>
     <string name="sec10">10秒</string>

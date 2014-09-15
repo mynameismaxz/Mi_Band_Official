@@ -87,7 +87,7 @@
 
     const v1, 0x7f0c0105
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -102,7 +102,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/i;->a:Landroid/app/Activity;
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/i;->a:Landroid/app/Activity;
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -132,7 +132,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/i;->a:Landroid/app/Activity;
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -149,7 +149,7 @@
 
     const v1, 0x7f0c0106
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 

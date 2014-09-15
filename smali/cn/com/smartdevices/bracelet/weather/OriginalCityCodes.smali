@@ -63,6 +63,12 @@
 
     const/4 v1, 0x0
 
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/OriginalCityCodes;->dataSources:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_1
+
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/OriginalCityCodes;->dataSources:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -74,14 +80,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
+    :cond_1
     move-object v0, v1
 
     :goto_0
     return-object v0
 
-    :cond_1
+    :cond_2
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -92,7 +99,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 

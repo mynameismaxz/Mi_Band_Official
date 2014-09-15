@@ -1,134 +1,114 @@
 .class Lcn/com/smartdevices/bracelet/ui/bL;
-.super Landroid/os/AsyncTask;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/String;",
-        "Ljava/lang/String;",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+.field private final synthetic c:Z
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    iput-boolean p2, p0, Lcn/com/smartdevices/bracelet/ui/bL;->c:Z
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Lcn/com/smartdevices/bracelet/ui/bL;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bL;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected varargs a([Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
+.method public onFailed(Ljava/lang/Object;)V
+    .locals 2
 
-    const/4 v2, 0x0
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->getDefaultPeripheral()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    move-result-object v0
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->c(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/view/animation/RotateAnimation;
 
-    check-cast v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+    move-result-object v1
 
-    move v1, v2
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Landroid/view/animation/Animation;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     :goto_0
-    const/16 v3, 0xa
-
-    if-lt v1, v3, :cond_0
-
-    :goto_1
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 
     :cond_0
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/bL;->isCancelled()Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    move-result v3
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->c:Z
 
-    if-eqz v3, :cond_1
-
-    const-string v0, "SettingFragment"
-
-    const-string v1, "ShowOffNofifyTask isCancelled"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v0, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_sendNotification(B)Z
-
-    const-string v3, "SettingFragment"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "vibrate : "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-wide/16 v3, 0xbb8
-
-    :try_start_0
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_2
-    add-int/lit8 v1, v1, 0x1
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
 
     goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    invoke-virtual {v3}, Ljava/lang/InterruptedException;->printStackTrace()V
-
-    goto :goto_2
 .end method
 
-.method protected varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 2
 
-    check-cast p1, [Ljava/lang/String;
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bL;->a([Ljava/lang/String;)Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->c(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/view/animation/RotateAnimation;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Landroid/view/animation/Animation;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    check-cast p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+
+    invoke-static {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;)V
+
+    :cond_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->d(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
 
     move-result-object v0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->c:Z
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
+
+    goto :goto_0
+.end method
+
+.method public onStart()V
+    .locals 0
+
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+
+    return-void
 .end method

@@ -104,9 +104,9 @@ localization_Chinese_table = {
     activity_walk_consumed_format="消耗了%d千卡%s",
 
     activity_activity_format="%s活动了%s, 共%s",
-    last_night_sleeped_good_format="昨晚睡了%d小时%d分钟, 睡得不错哦",
-    last_night_sleeped_normal_format="昨晚睡了%d小时%d分钟",
-    deep_sleep_format="深睡%d小时%d分钟",
+    last_night_sleeped_good_format="昨晚睡了%s, 睡得不错哦",
+    last_night_sleeped_normal_format="昨晚睡了%s",
+    deep_sleep_format="深睡%s",
 
     battery_low_info="手环电池电量低, 请及时充电",
     battery_very_low_info="手环电量过低即将关闭, 请充电",

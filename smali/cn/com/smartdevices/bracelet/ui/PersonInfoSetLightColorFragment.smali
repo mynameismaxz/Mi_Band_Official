@@ -245,7 +245,7 @@
 .method private a(Landroid/view/View;)V
     .locals 1
 
-    const v0, 0x7f0700e5
+    const v0, 0x7f0700e8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -253,7 +253,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->c:Landroid/view/View;
 
-    const v0, 0x7f0700e8
+    const v0, 0x7f0700eb
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -261,7 +261,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->e:Landroid/view/View;
 
-    const v0, 0x7f0700eb
+    const v0, 0x7f0700ee
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -269,23 +269,13 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->f:Landroid/view/View;
 
-    const v0, 0x7f0700ee
+    const v0, 0x7f0700f1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->d:Landroid/view/View;
-
-    const v0, 0x7f0700e6
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->g:Landroid/widget/TextView;
 
     const v0, 0x7f0700e9
 
@@ -295,7 +285,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->j:Landroid/widget/TextView;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->g:Landroid/widget/TextView;
 
     const v0, 0x7f0700ec
 
@@ -305,7 +295,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->i:Landroid/widget/TextView;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->j:Landroid/widget/TextView;
 
     const v0, 0x7f0700ef
 
@@ -315,15 +305,17 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->h:Landroid/widget/TextView;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->i:Landroid/widget/TextView;
 
-    const v0, 0x7f0700e4
+    const v0, 0x7f0700f2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSetLightColorFragment;->h:Landroid/widget/TextView;
 
     const v0, 0x7f0700e7
 
@@ -349,6 +341,14 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    const v0, 0x7f0700f0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
     return-void
 .end method
 
@@ -357,7 +357,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030033
+    const v0, 0x7f030035
 
     return v0
 .end method
@@ -420,10 +420,10 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f0700e4 -> :sswitch_0
-        0x7f0700e7 -> :sswitch_1
-        0x7f0700ea -> :sswitch_2
-        0x7f0700ed -> :sswitch_3
+        0x7f0700e7 -> :sswitch_0
+        0x7f0700ea -> :sswitch_1
+        0x7f0700ed -> :sswitch_2
+        0x7f0700f0 -> :sswitch_3
     .end sparse-switch
 .end method
 

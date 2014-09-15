@@ -235,6 +235,8 @@
 
 .field public static final REF_LUA_VERSION:Ljava/lang/String; = "Lua_version"
 
+.field public static final REF_PIC_URL:Ljava/lang/String; = "pic_url"
+
 .field public static final REF_PROGRESS_INFO:Ljava/lang/String; = "REF_PROGRESS_INFO"
 
 .field public static final REF_SEARCH_DEV_MODE:Ljava/lang/String; = "REF_SEARCH_DEV_MODE"
@@ -254,6 +256,8 @@
 .field public static final RE_GOALS_NORMAL:I = 0x1f40
 
 .field public static final SET_LATENCY_DELAY_TIMEOUT:I = 0x1d4c0
+
+.field public static final SHARE_FILE_NAME:Ljava/lang/String; = "share.jpg"
 
 .field public static final STR_FORMAT:Ljava/lang/String; = "utf-8"
 

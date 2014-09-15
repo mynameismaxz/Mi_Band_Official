@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030069
+    const v1, 0x7f03006a
 
     const/4 v2, 0x0
 
@@ -37,7 +37,7 @@
     move-result-object p2
 
     :cond_0
-    const v0, 0x7f0701f7
+    const v0, 0x7f0701fb
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const v0, 0x7f0701f8
+    const v0, 0x7f0701fc
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

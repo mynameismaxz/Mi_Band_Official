@@ -2,26 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
 
 
 # instance fields
 .field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
-.field private final synthetic b:I
-
-.field private final synthetic c:I
-
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;II)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
     .locals 0
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ab;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/ab;->b:I
-
-    iput p3, p0, Lcn/com/smartdevices/bracelet/ui/ab;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,26 +22,18 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onColorChanged(I)V
+    .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ab;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->h(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)Lcn/com/smartdevices/bracelet/DataManager;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/ab;->b:I
+    check-cast v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/ab;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->load(II)V
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x1012
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->updateStatusBarTint(I)V
 
     return-void
 .end method

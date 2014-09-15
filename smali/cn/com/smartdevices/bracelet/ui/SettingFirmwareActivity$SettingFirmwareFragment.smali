@@ -52,9 +52,9 @@
 .method private a()V
     .locals 1
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/bA;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/bE;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/bA;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/bE;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
 
     sput-object v0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->mHandler:Landroid/os/Handler;
 
@@ -125,7 +125,7 @@
 .method private a(Landroid/view/View;)V
     .locals 2
 
-    const v0, 0x7f070113
+    const v0, 0x7f070116
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -135,7 +135,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f070114
+    const v0, 0x7f070117
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -145,7 +145,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->d:Landroid/widget/TextView;
 
-    const v0, 0x7f070115
+    const v0, 0x7f070118
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -155,7 +155,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->e:Landroid/widget/TextView;
 
-    const v0, 0x7f070116
+    const v0, 0x7f070119
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,9 +167,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->f:Landroid/view/View;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bz;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bD;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bz;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bD;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -239,9 +239,9 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bD;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bH;
 
-    invoke-direct {v1, p0, p2}, Lcn/com/smartdevices/bracelet/ui/bD;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p2}, Lcn/com/smartdevices/bracelet/ui/bH;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;)V
 
     invoke-direct {v0, p1, p2, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;-><init>(Ljava/lang/String;Ljava/lang/String;Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
 
@@ -555,9 +555,9 @@
 
     const-string v3, "\u786e\u5b9a"
 
-    new-instance v4, Lcn/com/smartdevices/bracelet/ui/bB;
+    new-instance v4, Lcn/com/smartdevices/bracelet/ui/bF;
 
-    invoke-direct {v4, p0, v2}, Lcn/com/smartdevices/bracelet/ui/bB;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;)V
+    invoke-direct {v4, p0, v2}, Lcn/com/smartdevices/bracelet/ui/bF;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;)V
 
     invoke-virtual {v1, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -566,9 +566,9 @@
 
     const-string v0, "\u53d6\u6d88"
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bC;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bG;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bC;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bG;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
 
     invoke-virtual {v1, v0, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -609,7 +609,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v0, 0x7f030042
+    const v0, 0x7f030044
 
     const/4 v1, 0x0
 

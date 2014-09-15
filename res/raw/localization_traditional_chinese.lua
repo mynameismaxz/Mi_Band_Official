@@ -104,9 +104,9 @@ localization_zh_rTW_table = {
     activity_walk_consumed_format="消耗了%d千卡%s",
 
     activity_activity_format="%s活動了%s, 共%s",
-    last_night_sleeped_good_format="昨晚睡了%d小時%d分鐘, 睡得不錯哦",
-    last_night_sleeped_normal_format="昨晚睡了%d小時%d分鐘",
-    deep_sleep_format="深睡%d小時%d分鐘",
+    last_night_sleeped_good_format="昨晚睡了%s, 睡得不錯哦",
+    last_night_sleeped_normal_format="昨晚睡了%s",
+    deep_sleep_format="深睡%s",
 
     battery_low_info="手環電池電量低, 請及時充電",
     battery_very_low_info="手環電量過低即將關閉, 請充電",

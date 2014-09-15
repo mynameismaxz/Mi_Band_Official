@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # instance fields
@@ -16,7 +16,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;->a:Landroid/widget/ImageView;
 
@@ -48,7 +48,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;->getIntent()Landroid/content/Intent;
 
@@ -88,7 +88,7 @@
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;->setContentView(I)V
 
-    const v0, 0x7f07008a
+    const v0, 0x7f07008d
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;->findViewById(I)Landroid/view/View;
 
@@ -124,9 +124,9 @@
 
     move-result-object v2
 
-    new-instance v3, Lcn/com/smartdevices/bracelet/ui/bQ;
+    new-instance v3, Lcn/com/smartdevices/bracelet/ui/bU;
 
-    invoke-direct {v3, p0}, Lcn/com/smartdevices/bracelet/ui/bQ;-><init>(Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;)V
+    invoke-direct {v3, p0}, Lcn/com/smartdevices/bracelet/ui/bU;-><init>(Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;)V
 
     invoke-virtual {v0, v2, v1, v3}, Lcn/com/smartdevices/bracelet/BraceletImageLoader;->loadImageAsync(Ljava/lang/String;Lcom/nostra13/universalimageloader/core/assist/ImageSize;Lcom/nostra13/universalimageloader/core/listener/ImageLoadingListener;)V
 
@@ -136,7 +136,7 @@
 .method protected onDestroy()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ShowImageActivity;->c:Landroid/graphics/Bitmap;
 

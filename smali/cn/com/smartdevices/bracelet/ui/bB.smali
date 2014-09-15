@@ -2,22 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
-
-.field private final synthetic b:Ljava/lang/String;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bB;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/bB;->b:Ljava/lang/String;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bB;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,22 +22,25 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readBraceletBtInfo()Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bB;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bB;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;->address:Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bB;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/bB;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->getActivity()Landroid/app/Activity;
 
-    invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v0
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
+    :cond_0
     return-void
 .end method

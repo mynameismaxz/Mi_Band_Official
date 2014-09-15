@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout$PanelSlideListener;
 
 
 # instance fields
@@ -22,30 +22,80 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 2
+.method public onGetPullDownDistance()I
+    .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
-
-    return-void
+    return v0
 .end method
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+.method public onGetPullDownDockEnable()Ljava/lang/Boolean;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public onGetThreshhold()F
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public onGetThreshhold2()F
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public onLastSlideOffset(Landroid/view/View;F)V
     .locals 0
 
     return-void
 .end method
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 3
+.method public onPanelAnchored(Landroid/view/View;)V
+    .locals 2
 
-    const/16 v1, 0x8
+    const-string v0, "SettingFragment"
 
-    const/4 v2, 0x0
+    const-string v1, "onPanelAnchored"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onPanelCollapsed(Landroid/view/View;)V
+    .locals 2
+
+    const-string v0, "SettingFragment"
+
+    const-string v1, "onPanelCollapsed"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onPanelExpanded(Landroid/view/View;)V
+    .locals 2
+
+    const-string v0, "SettingFragment"
+
+    const-string v1, "onPanelExpanded"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
@@ -53,51 +103,24 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
+
+    return-void
+.end method
+
+.method public onPanelSlide(Landroid/view/View;Ljava/lang/Boolean;F)V
+    .locals 1
+
+    const/high16 v0, 0x3f80
+
+    cmpg-float v0, p3, v0
+
+    if-gtz v0, :cond_0
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->e(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/widget/TextView;
+    invoke-static {v0, p3}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;F)V
 
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->f(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    const v1, 0x7f02008f
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->g(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/chart/LinePieChartView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->setMode(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bJ;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->h(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    const v1, 0x7f0c016c
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
+    :cond_0
     return-void
 .end method

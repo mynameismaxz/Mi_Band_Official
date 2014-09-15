@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # instance fields
@@ -14,7 +14,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;->a:Landroid/widget/TextView;
 
@@ -50,7 +50,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     const v0, 0x7f030003
 
@@ -78,9 +78,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;->a:Landroid/widget/TextView;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ag;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ai;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ag;-><init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ai;-><init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -96,9 +96,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;->b:Landroid/widget/Button;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ah;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aj;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ah;-><init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aj;-><init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

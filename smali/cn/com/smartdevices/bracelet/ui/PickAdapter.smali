@@ -293,7 +293,9 @@
 .end method
 
 .method public getItem(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 9
+    .locals 10
+
+    const/16 v9, 0xc
 
     const/4 v4, 0x0
 
@@ -307,7 +309,7 @@
 
     rem-int v2, p1, v0
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_a
 
     const-string v0, "normal"
 
@@ -321,7 +323,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->p:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f03006b
+    const v1, 0x7f03006c
 
     invoke-virtual {v0, v1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -332,11 +334,11 @@
     move-object v1, v0
 
     :goto_0
-    new-instance v3, Lcn/com/smartdevices/bracelet/ui/bh;
+    new-instance v3, Lcn/com/smartdevices/bracelet/ui/bl;
 
-    invoke-direct {v3, p0, v4}, Lcn/com/smartdevices/bracelet/ui/bh;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;Lcn/com/smartdevices/bracelet/ui/bh;)V
+    invoke-direct {v3, p0, v4}, Lcn/com/smartdevices/bracelet/ui/bl;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;Lcn/com/smartdevices/bracelet/ui/bl;)V
 
-    const v0, 0x7f0701f9
+    const v0, 0x7f0701fd
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -344,9 +346,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
+    iput-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bl;->a:Landroid/widget/TextView;
 
-    iget-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
+    iget-object v0, v3, Lcn/com/smartdevices/bracelet/ui/bl;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -365,9 +367,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/ui/bh;
+    check-cast v0, Lcn/com/smartdevices/bracelet/ui/bl;
 
-    iget-object v3, v0, Lcn/com/smartdevices/bracelet/ui/bh;->a:Landroid/widget/TextView;
+    iget-object v3, v0, Lcn/com/smartdevices/bracelet/ui/bl;->a:Landroid/widget/TextView;
 
     const-string v0, "%02d"
 
@@ -437,7 +439,7 @@
 
     float-to-int v0, v0
 
-    if-ne p1, v4, :cond_6
+    if-ne p1, v4, :cond_7
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->k:I
 
@@ -453,7 +455,7 @@
     :cond_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->p:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f03006a
+    const v1, 0x7f03006b
 
     invoke-virtual {v0, v1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -511,7 +513,7 @@
 
     add-int/2addr v0, v2
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     const-string v2, "12"
 
@@ -521,6 +523,19 @@
     :goto_5
     if-ne v4, p1, :cond_0
 
+    if-eqz v0, :cond_4
+
+    const/16 v2, 0xb
+
+    if-eq v0, v2, :cond_4
+
+    if-eq v0, v9, :cond_4
+
+    const/16 v2, 0x17
+
+    if-ne v0, v2, :cond_0
+
+    :cond_4
     invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
     move-result-object v2
@@ -533,10 +548,8 @@
 
     goto :goto_2
 
-    :cond_4
-    const/16 v2, 0xc
-
-    if-le v0, v2, :cond_3
+    :cond_5
+    if-le v0, v9, :cond_3
 
     add-int/lit8 v2, v0, -0xc
 
@@ -563,11 +576,11 @@
 
     add-int/2addr v0, v2
 
-    if-gez v0, :cond_5
+    if-gez v0, :cond_6
 
     add-int/lit8 v0, v0, 0x18
 
-    :cond_5
+    :cond_6
     const-string v2, "%02d"
 
     new-array v5, v8, [Ljava/lang/Object;
@@ -586,16 +599,16 @@
 
     goto/16 :goto_2
 
-    :cond_6
+    :cond_7
     add-int/lit8 v0, v4, -0x1
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v0, :cond_8
 
     add-int/lit8 v0, v4, 0x1
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_9
 
-    :cond_7
+    :cond_8
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->d:F
 
     float-to-int v0, v0
@@ -606,7 +619,7 @@
 
     goto/16 :goto_3
 
-    :cond_8
+    :cond_9
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->e:F
 
     float-to-int v0, v0
@@ -617,7 +630,7 @@
 
     goto/16 :goto_3
 
-    :cond_9
+    :cond_a
     move-object v1, p2
 
     goto/16 :goto_1
@@ -631,7 +644,7 @@
 .end method
 
 .method public getItemsCount()I
-    .locals 1
+    .locals 3
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->j:Z
 
@@ -643,6 +656,26 @@
     return v0
 
     :cond_0
+    const-string v0, "PickAdapter"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "BASE_BUNDLE = "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->h:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/PickAdapter;->h:I
 
     goto :goto_0

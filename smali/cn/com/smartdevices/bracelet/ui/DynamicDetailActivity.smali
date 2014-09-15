@@ -1,12 +1,12 @@
 .class public Lcn/com/smartdevices/bracelet/ui/DynamicDetailActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -16,7 +16,9 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailActivity;->disableAutoUpdateStatusBarTint()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailActivity;->getIntent()Landroid/content/Intent;
 
@@ -77,7 +79,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -87,7 +89,7 @@
 .method protected onPause()V
     .locals 3
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const/4 v0, 0x1
 
@@ -111,7 +113,7 @@
 .method protected onResume()V
     .locals 2
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
 

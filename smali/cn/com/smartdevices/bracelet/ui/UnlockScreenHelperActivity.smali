@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -45,7 +45,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->d:Landroid/view/View;
 
@@ -470,6 +470,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->updateStatusBarTintAuto()V
+
     :cond_0
     :goto_0
     return-void
@@ -507,6 +509,8 @@
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->updateStatusBarTintAuto()V
 
     goto :goto_0
 .end method
@@ -557,23 +561,23 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f07007d -> :sswitch_1
-        0x7f070081 -> :sswitch_2
-        0x7f070083 -> :sswitch_0
-        0x7f070086 -> :sswitch_3
+        0x7f070080 -> :sswitch_1
+        0x7f070084 -> :sswitch_2
+        0x7f070086 -> :sswitch_0
+        0x7f070089 -> :sswitch_3
     .end sparse-switch
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     const v0, 0x7f030012
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->setContentView(I)V
 
-    const v0, 0x7f070081
+    const v0, 0x7f070084
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -585,7 +589,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070083
+    const v0, 0x7f070086
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -597,7 +601,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070084
+    const v0, 0x7f070087
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -607,7 +611,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->f:Landroid/widget/TextView;
 
-    const v0, 0x7f07007d
+    const v0, 0x7f070080
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -617,7 +621,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070085
+    const v0, 0x7f070088
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -627,7 +631,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->i:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f07007f
+    const v0, 0x7f070082
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -637,7 +641,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->j:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f070087
+    const v0, 0x7f07008a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -645,7 +649,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->l:Landroid/view/View;
 
-    const v0, 0x7f07007e
+    const v0, 0x7f070081
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -655,7 +659,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->k:Landroid/widget/TextView;
 
-    const v0, 0x7f070086
+    const v0, 0x7f070089
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -689,7 +693,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070080
+    const v0, 0x7f070083
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -699,7 +703,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->g:Landroid/widget/TextView;
 
-    const v0, 0x7f070082
+    const v0, 0x7f070085
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -709,7 +713,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->h:Landroid/widget/TextView;
 
-    const v0, 0x7f07007c
+    const v0, 0x7f07007f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -719,7 +723,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->n:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f070088
+    const v0, 0x7f07008b
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->findViewById(I)Landroid/view/View;
 
@@ -749,7 +753,7 @@
 .method protected onDestroy()V
     .locals 2
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
@@ -785,7 +789,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageUnlockHelp"
 
@@ -799,7 +803,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenHelperActivity;->a()V
 

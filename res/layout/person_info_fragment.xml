@@ -42,7 +42,7 @@
                 </LinearLayout>
             </LinearLayout>
             <RelativeLayout android:paddingTop="4.0dip" android:paddingBottom="6.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:minHeight="@dimen/item_height">
-                <TextView android:textSize="@dimen/mili_normal_txt_size" android:textColor="@color/alert_color" android:gravity="center" android:id="@id/mili_exit_login" android:background="@drawable/click_btn_bg_3" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="23.0dip" android:layout_marginRight="23.0dip" android:text="@string/exit_login" />
+                <TextView android:textSize="@dimen/click_button_text_size" android:textColor="@color/alert_color" android:gravity="center" android:id="@id/mili_exit_login" android:background="@drawable/click_btn_bg_3" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="23.0dip" android:layout_marginRight="23.0dip" android:text="@string/exit_login" />
             </RelativeLayout>
         </LinearLayout>
     </com.nirhart.parallaxscroll.views.ParallaxScrollView>

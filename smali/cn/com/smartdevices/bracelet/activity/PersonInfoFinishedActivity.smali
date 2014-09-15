@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # static fields
@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -32,7 +32,7 @@
 
     const/4 v2, 0x1
 
-    const v0, 0x7f07016b
+    const v0, 0x7f07016f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 
@@ -74,13 +74,13 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030052
+    const v0, 0x7f030053
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->setContentView(I)V
 
-    const v0, 0x7f07016d
+    const v0, 0x7f070171
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PagePersonGuideFinish"
 
@@ -116,7 +116,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PagePersonGuideFinish"
 

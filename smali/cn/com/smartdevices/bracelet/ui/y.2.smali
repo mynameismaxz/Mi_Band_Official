@@ -53,7 +53,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
 
     move-result-object v0
 

@@ -595,3 +595,24 @@
     :cond_0
     return-void
 .end method
+
+.method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 2
+
+    sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
+
+    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_NONE:I
+
+    if-le v0, v1, :cond_0
+
+    sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
+
+    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_ERROR:I
+
+    if-ge v0, v1, :cond_0
+
+    invoke-static {p0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
+    return-void
+.end method

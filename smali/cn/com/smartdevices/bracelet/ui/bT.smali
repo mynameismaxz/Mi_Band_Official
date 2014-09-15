@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Lcom/tencent/tauth/IUiListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/ShareActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/ShareActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bT;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bT;->a:Lcn/com/smartdevices/bracelet/ui/ShareActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,43 +22,19 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
+.method public onCancel()V
     .locals 0
 
     return-void
 .end method
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    const/4 v1, 0x1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bT;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->D(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setScrollable(Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bT;->a:Lcn/com/smartdevices/bracelet/ui/StatisticFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/StatisticFragment;->E(Lcn/com/smartdevices/bracelet/ui/StatisticFragment;)Lcn/com/smartdevices/bracelet/chart/StatisticChartView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/StatisticChartView;->setScrollable(Z)V
-
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
+.method public onComplete(Ljava/lang/Object;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
+.method public onError(Lcom/tencent/tauth/UiError;)V
     .locals 0
 
     return-void

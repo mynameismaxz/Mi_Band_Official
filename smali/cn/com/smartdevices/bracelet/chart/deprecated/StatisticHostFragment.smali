@@ -256,7 +256,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Utils;->saveBitmapToFile(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Utils;->saveBitmapToFile(Ljava/lang/String;Landroid/graphics/Bitmap;)Z
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -571,7 +571,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030048
+    const v0, 0x7f03004a
 
     return v0
 .end method
@@ -617,7 +617,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700a4
+    const v1, 0x7f0700a8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -633,7 +633,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700d2
+    const v1, 0x7f0700d5
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -647,7 +647,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070147
+    const v1, 0x7f07014a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -659,7 +659,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070148
+    const v1, 0x7f07014b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -671,7 +671,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07014a
+    const v1, 0x7f07014d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -683,7 +683,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07014b
+    const v1, 0x7f07014e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -771,11 +771,11 @@
     :sswitch_data_0
     .sparse-switch
         0x7f070033 -> :sswitch_0
-        0x7f0700a4 -> :sswitch_1
-        0x7f070147 -> :sswitch_2
-        0x7f070148 -> :sswitch_3
-        0x7f07014a -> :sswitch_4
-        0x7f07014b -> :sswitch_5
+        0x7f0700a8 -> :sswitch_1
+        0x7f07014a -> :sswitch_2
+        0x7f07014b -> :sswitch_3
+        0x7f07014d -> :sswitch_4
+        0x7f07014e -> :sswitch_5
     .end sparse-switch
 .end method
 

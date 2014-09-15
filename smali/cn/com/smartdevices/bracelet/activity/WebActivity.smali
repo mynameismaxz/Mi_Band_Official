@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/activity/WebActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     const/4 v0, 0x0
 
@@ -82,9 +82,9 @@
 
     const/4 v3, 0x1
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03002c
+    const v0, 0x7f03002e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->setContentView(I)V
 
@@ -289,7 +289,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_2
-    const v0, 0x7f0700d8
+    const v0, 0x7f0700db
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->findViewById(I)Landroid/view/View;
 
@@ -397,7 +397,7 @@
 .method protected onDestroy()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     return-void
 .end method
@@ -421,7 +421,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -431,7 +431,7 @@
 .method protected onPause()V
     .locals 3
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageWeb"
 
@@ -483,7 +483,7 @@
 .method protected onResume()V
     .locals 3
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageWeb"
 

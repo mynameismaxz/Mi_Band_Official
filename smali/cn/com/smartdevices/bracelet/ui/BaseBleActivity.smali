@@ -1,5 +1,5 @@
 .class public abstract Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # static fields
@@ -62,7 +62,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     const-wide/16 v0, -0x1
 
@@ -619,7 +619,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {p0, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {p0, v2, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v2
 
@@ -668,7 +668,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
 
@@ -688,7 +688,7 @@
 
     const/4 v2, -0x1
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->n:Ljava/lang/String;
 
@@ -868,7 +868,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->waitingNotify(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->waitingNotifyFwUpdate(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -882,7 +882,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->waitingNotify(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->waitingNotifyFwUpdate(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -941,7 +941,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->waitingNotify(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->waitingNotifyReset(Ljava/lang/Object;)V
 
     const/16 v0, 0x27
 
@@ -959,7 +959,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->waitingNotify(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->waitingNotifyReset(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -59,7 +59,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 

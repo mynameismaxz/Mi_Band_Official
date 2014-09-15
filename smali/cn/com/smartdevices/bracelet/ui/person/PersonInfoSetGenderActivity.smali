@@ -45,19 +45,19 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->b:Landroid/widget/ImageView;
 
-    const v1, 0x7f020086
+    const v1, 0x7f020087
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f02005d
+    const v1, 0x7f02005e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->d:Landroid/view/View;
 
-    const v1, 0x7f080040
+    const v1, 0x7f08003f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -93,19 +93,19 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f02005e
+    const v1, 0x7f02005f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->b:Landroid/widget/ImageView;
 
-    const v1, 0x7f020085
+    const v1, 0x7f020086
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetGenderActivity;->d:Landroid/view/View;
 
-    const v1, 0x7f08003f
+    const v1, 0x7f08003e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -154,7 +154,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080045
+    const v2, 0x7f080043
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -343,7 +343,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 

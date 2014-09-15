@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,7 +12,7 @@
 
 .field private c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-.field private d:Lcn/com/smartdevices/bracelet/ui/av;
+.field private d:Lcn/com/smartdevices/bracelet/ui/ax;
 
 .field private e:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -32,7 +32,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -137,7 +137,7 @@
 
     const/4 v2, 0x3
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     const v0, 0x7f030004
 
@@ -225,19 +225,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/av;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ax;
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/av;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/ax;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/av;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->b:Landroid/support/v4/view/ViewPager;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/av;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
@@ -253,9 +253,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/au;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aw;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/au;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aw;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
 
     invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
@@ -265,7 +265,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageInstruction"
 
@@ -279,7 +279,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageInstruction"
 

@@ -37,9 +37,9 @@
 .method public onPageSelected(I)V
     .locals 5
 
-    const v4, 0x7f070149
+    const v4, 0x7f07014c
 
-    const v3, 0x7f070146
+    const v3, 0x7f070149
 
     const/4 v2, 0x4
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppBaseTheme" parent="@*android:style/Theme.Light" />
+    <style name="AppBaseTheme" parent="@*android:style/Theme.Light.NoTitleBar" />
     <style name="AppTheme" parent="@style/AppBaseTheme">
-        <item name="android:textColorPrimary">@color/primary_text</item>
-        <item name="android:textColorPrimaryInverse">@color/primary_text_inverse</item>
         <item name="android:windowBackground">@color/window_bg</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_home_back</item>
     </style>
@@ -21,7 +20,8 @@
         <item name="android:textColor">@color/content_color</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="DimPanel" parent="@*android:style/Theme.Holo.Light.Panel">
+    <style name="DimPanelBase" parent="@*android:style/Theme.Holo.Light.Panel" />
+    <style name="DimPanel" parent="@style/DimPanelBase">
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowAnimationStyle">@*android:style/Animation.InputMethod</item>
         <item name="android:backgroundDimEnabled">true</item>
@@ -38,23 +38,16 @@
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
     </style>
-    <style name="MainActivityStyle">
-        <item name="android:windowBackground">@null</item>
-        <item name="android:windowNoTitle">true</item>
+    <style name="MainActivityStyle" parent="@style/AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowActionBar">false</item>
     </style>
-    <style name="MenuPanel" parent="@*android:style/Theme.Holo.Light.Panel">
-        <item name="android:windowIsFloating">false</item>
+    <style name="MenuPanel" parent="@style/DimPanel">
         <item name="android:windowAnimationStyle">@style/Menu</item>
-        <item name="android:backgroundDimEnabled">true</item>
     </style>
-    <style name="FwUpgradePanel" parent="@*android:style/Theme.Holo.Light.Panel">
-        <item name="android:windowIsFloating">false</item>
+    <style name="FwUpgradePanel" parent="@style/DimPanel">
         <item name="android:windowAnimationStyle">@style/FwUpgradeAnim</item>
-        <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="CustomActionBarStyle" parent="@*android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/bg_color_blue</item>
@@ -128,10 +121,11 @@
         <item name="android:checkable">true</item>
         <item name="android:selectable">true</item>
     </style>
-    <style name="FwUpgrade" parent="@*android:style/Theme.Light.NoTitleBar.Fullscreen">
+    <style name="FwUpgrade" parent="@style/AppTheme">
         <item name="android:windowBackground">@*android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/FwUpgradeAnim</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
     <style name="ListItemTitleText">
         <item name="android:textSize">@dimen/main_ui_item_title_size</item>

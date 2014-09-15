@@ -1,54 +1,36 @@
 .class Lcn/com/smartdevices/bracelet/ui/av;
-.super Landroid/support/v13/app/FragmentPagerAdapter;
+.super Landroid/webkit/WebChromeClient;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/av;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/av;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
-    invoke-direct {p0, p2}, Landroid/support/v13/app/FragmentPagerAdapter;-><init>(Landroid/app/FragmentManager;)V
+    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCount()I
-    .locals 1
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/av;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/av;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getItem(I)Landroid/app/Fragment;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/av;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)Landroid/widget/ProgressBar;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    add-int/lit8 v1, p2, 0x5
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    check-cast v0, Landroid/app/Fragment;
-
-    return-object v0
+    return-void
 .end method

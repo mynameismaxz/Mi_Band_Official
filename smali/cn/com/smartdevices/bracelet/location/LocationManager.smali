@@ -62,9 +62,9 @@
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/location/LocationOption;->setUpdateInterval(I)V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/location/b;
+    new-instance v0, Lcn/com/smartdevices/bracelet/location/c;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/b;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/location/c;-><init>(Lcn/com/smartdevices/bracelet/location/LocationManager;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->g:Lcn/com/smartdevices/bracelet/location/LocationListener;
 
@@ -159,7 +159,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "ServiceSystem"
 

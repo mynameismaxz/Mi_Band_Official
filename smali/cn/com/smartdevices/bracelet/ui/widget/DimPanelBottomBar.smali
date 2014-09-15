@@ -32,11 +32,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f03001b
+    const v1, 0x7f03001c
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f07009a
+    const v0, 0x7f07009e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f07009c
+    const v0, 0x7f0700a0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
@@ -56,13 +56,13 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f070099
+    const v0, 0x7f07009d
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    const v0, 0x7f07009b
+    const v0, 0x7f07009f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 

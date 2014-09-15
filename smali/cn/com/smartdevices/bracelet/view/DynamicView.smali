@@ -153,11 +153,11 @@
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->D:I
 
-    const v0, 0x7f030064
+    const v0, 0x7f030065
 
     invoke-static {p1, v0, p0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0701d7
+    const v0, 0x7f0701db
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +165,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->d:Landroid/view/View;
 
-    const v0, 0x7f0701cf
+    const v0, 0x7f0701d3
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -175,7 +175,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->c:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
 
-    const v0, 0x7f0701d2
+    const v0, 0x7f0701d6
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +185,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->e:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0701d0
+    const v0, 0x7f0701d4
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -193,7 +193,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->f:Landroid/view/View;
 
-    const v0, 0x7f0701d3
+    const v0, 0x7f0701d7
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -201,7 +201,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->g:Landroid/view/View;
 
-    const v0, 0x7f0701da
+    const v0, 0x7f0701de
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->h:Landroid/view/View;
 
-    const v0, 0x7f0701d1
+    const v0, 0x7f0701d5
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -219,7 +219,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->i:Lcn/com/smartdevices/bracelet/chart/DynamicPieChartView;
 
-    const v0, 0x7f0701d4
+    const v0, 0x7f0701d8
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +229,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->j:Landroid/widget/TextView;
 
-    const v0, 0x7f0701d8
+    const v0, 0x7f0701dc
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->k:Landroid/widget/TextView;
 
-    const v0, 0x7f0701d9
+    const v0, 0x7f0701dd
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->l:Landroid/widget/TextView;
 
-    const v0, 0x7f0701d6
+    const v0, 0x7f0701da
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -259,7 +259,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->m:Landroid/widget/TextView;
 
-    const v0, 0x7f0701d5
+    const v0, 0x7f0701d9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->n:Landroid/widget/TextView;
 
-    const v0, 0x7f0701db
+    const v0, 0x7f0701df
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->o:Landroid/widget/TextView;
 
-    const v0, 0x7f0701dc
+    const v0, 0x7f0701e0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->p:Landroid/widget/TextView;
 
-    const v0, 0x7f0701dd
+    const v0, 0x7f0701e1
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -299,7 +299,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->q:Landroid/widget/TextView;
 
-    const v0, 0x7f0701de
+    const v0, 0x7f0701e2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -309,7 +309,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->r:Landroid/widget/TextView;
 
-    const v0, 0x7f0701e0
+    const v0, 0x7f0701e4
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -319,7 +319,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/DynamicView;->s:Landroid/widget/TextView;
 
-    const v0, 0x7f0701df
+    const v0, 0x7f0701e3
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +367,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const v0, 0x7f0701e1
+    const v0, 0x7f0701e5
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const v0, 0x7f0701e2
+    const v0, 0x7f0701e6
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -408,7 +408,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f0701e3
+    const v0, 0x7f0701e7
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView;->findViewById(I)Landroid/view/View;
 
@@ -1104,7 +1104,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030065
+    const v1, 0x7f030066
 
     const/4 v2, 0x0
 

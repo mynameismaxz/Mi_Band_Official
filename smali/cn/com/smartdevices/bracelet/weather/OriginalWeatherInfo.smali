@@ -3,41 +3,9 @@
 
 
 # instance fields
-.field private accu_cc:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$AccuCC;
-
-.field private accu_f5:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$AccuF5;
-
-.field private alert:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private aqi:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$AQI;
 
-.field private forecast:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$Forecast;
-
-.field private index:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$Index;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private realtime:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$Realtime;
-
-.field private today:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$Today;
-
-.field private yestoday:Lcn/com/smartdevices/bracelet/weather/OriginalWeatherInfo$Yestoday;
 
 
 # direct methods

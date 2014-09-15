@@ -358,8 +358,8 @@
     goto/16 :goto_2
 .end method
 
-.method public static varargs animColorTrans(II[Landroid/view/View;)Landroid/animation/Animator;
-    .locals 9
+.method public static varargs animColorTrans(IILcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;[Landroid/view/View;)Landroid/animation/Animator;
+    .locals 10
 
     const/4 v0, 0x2
 
@@ -369,7 +369,7 @@
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    move-result-object v8
+    move-result-object v9
 
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
@@ -397,31 +397,43 @@
 
     new-instance v0, Lcn/com/smartdevices/bracelet/chart/util/l;
 
-    move-object v7, p2
+    move-object v7, p3
 
-    invoke-direct/range {v0 .. v7}, Lcn/com/smartdevices/bracelet/chart/util/l;-><init>(IIIIII[Landroid/view/View;)V
+    move-object v8, p2
 
-    invoke-virtual {v8, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-direct/range {v0 .. v8}, Lcn/com/smartdevices/bracelet/chart/util/l;-><init>(IIIIII[Landroid/view/View;Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;)V
+
+    invoke-virtual {v9, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    invoke-virtual {v8, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v9, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v0, 0x1f4
 
-    invoke-virtual {v8, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {v9, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    return-object v8
-
-    nop
+    return-object v9
 
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x0t 0x0t 0x80t 0x3ft
     .end array-data
+.end method
+
+.method public static varargs animColorTrans(II[Landroid/view/View;)Landroid/animation/Animator;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0, p2}, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil;->animColorTrans(IILcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;[Landroid/view/View;)Landroid/animation/Animator;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static animDateSwitch(Ljava/lang/String;Ljava/lang/String;Landroid/widget/TextView;Landroid/widget/TextView;)Landroid/animation/Animator;

@@ -1,5 +1,5 @@
 .class public Lcom/hm/cheneehealth/wxapi/WXEntryActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Lcom/tencent/mm/sdk/openapi/IWXAPIEventHandler;
@@ -19,7 +19,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -123,9 +123,9 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03001d
+    const v0, 0x7f03001e
 
     invoke-virtual {p0, v0}, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->setContentView(I)V
 
@@ -139,7 +139,7 @@
 
     iput-object v0, p0, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->c:Lcom/tencent/mm/sdk/openapi/IWXAPI;
 
-    const v0, 0x7f07009f
+    const v0, 0x7f0700a3
 
     invoke-virtual {p0, v0}, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->findViewById(I)Landroid/view/View;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0700a0
+    const v0, 0x7f0700a4
 
     invoke-virtual {p0, v0}, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +167,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f07009e
+    const v0, 0x7f0700a2
 
     invoke-virtual {p0, v0}, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 .method protected onNewIntent(Landroid/content/Intent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onNewIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Lcom/hm/cheneehealth/wxapi/WXEntryActivity;->setIntent(Landroid/content/Intent;)V
 
@@ -256,7 +256,7 @@
     :goto_0
     const/4 v1, 0x1
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v1
 

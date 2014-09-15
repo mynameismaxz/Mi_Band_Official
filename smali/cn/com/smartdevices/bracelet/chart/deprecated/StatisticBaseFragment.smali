@@ -100,7 +100,7 @@
 .method private a(Landroid/view/View;)V
     .locals 1
 
-    const v0, 0x7f070126
+    const v0, 0x7f070129
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mActiveStatisticChart:Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticChartViewOld;
 
-    const v0, 0x7f070128
+    const v0, 0x7f07012b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCount:Landroid/widget/TextView;
 
-    const v0, 0x7f07012b
+    const v0, 0x7f07012e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistance:Landroid/widget/TextView;
 
-    const v0, 0x7f07012a
+    const v0, 0x7f07012d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepDistanceUnit:Landroid/widget/TextView;
 
-    const v0, 0x7f07012e
+    const v0, 0x7f070131
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepCalorie:Landroid/widget/TextView;
 
-    const v0, 0x7f070136
+    const v0, 0x7f070139
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepAchievement:Landroid/widget/TextView;
 
-    const v0, 0x7f070130
+    const v0, 0x7f070133
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070131
+    const v0, 0x7f070134
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepActiveMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070133
+    const v0, 0x7f070136
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070134
+    const v0, 0x7f070137
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatStepContinueMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070138
+    const v0, 0x7f07013b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepHour:Landroid/widget/TextView;
 
-    const v0, 0x7f070139
+    const v0, 0x7f07013c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepMin:Landroid/widget/TextView;
 
-    const v0, 0x7f07013b
+    const v0, 0x7f07013e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepHour:Landroid/widget/TextView;
 
-    const v0, 0x7f07013c
+    const v0, 0x7f07013f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepDeepMin:Landroid/widget/TextView;
 
-    const v0, 0x7f07013e
+    const v0, 0x7f070141
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -250,7 +250,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowHour:Landroid/widget/TextView;
 
-    const v0, 0x7f07013f
+    const v0, 0x7f070142
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -260,7 +260,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepShallowMin:Landroid/widget/TextView;
 
-    const v0, 0x7f070145
+    const v0, 0x7f070148
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -270,7 +270,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepAchievement:Landroid/widget/TextView;
 
-    const v0, 0x7f070141
+    const v0, 0x7f070144
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -280,7 +280,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticBaseFragment;->mStatSleepStartTime:Landroid/widget/TextView;
 
-    const v0, 0x7f070143
+    const v0, 0x7f070146
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -694,7 +694,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f030047
+    const v0, 0x7f030049
 
     const/4 v1, 0x0
 

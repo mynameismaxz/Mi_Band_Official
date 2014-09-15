@@ -40,13 +40,13 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f03002f
+    const v0, 0x7f030031
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x7f030030
+    const v0, 0x7f030032
 
     goto :goto_0
 .end method
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0700df
+    const v0, 0x7f0700e2
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

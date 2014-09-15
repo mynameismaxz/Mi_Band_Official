@@ -42,11 +42,11 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f030061
+    const v0, 0x7f030062
 
     invoke-static {p1, v0, p0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0701c7
+    const v0, 0x7f0701cb
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->findViewById(I)Landroid/view/View;
 
@@ -56,7 +56,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->a:Lcn/com/smartdevices/bracelet/chart/DynamicShareChartView;
 
-    const v0, 0x7f0701c0
+    const v0, 0x7f0701c4
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0701c2
+    const v0, 0x7f0701c6
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->findViewById(I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f0701c6
+    const v0, 0x7f0701ca
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->d:Landroid/widget/TextView;
 
-    const v0, 0x7f0701c5
+    const v0, 0x7f0701c9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/ActiveShareDataView;->findViewById(I)Landroid/view/View;
 

@@ -69,11 +69,11 @@
     :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aw;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ay;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lcn/com/smartdevices/bracelet/ui/aw;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;Lcn/com/smartdevices/bracelet/ui/aw;)V
+    invoke-direct {v1, p0, v2}, Lcn/com/smartdevices/bracelet/ui/ay;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;Lcn/com/smartdevices/bracelet/ui/ay;)V
 
     invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->post(Ljava/lang/Runnable;)Z
 
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02007b
+    const v1, 0x7f02007c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 

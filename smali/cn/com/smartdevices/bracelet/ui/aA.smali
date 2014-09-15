@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,24 +22,12 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aA;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->dismiss()V
-
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->menuExitAnimation()V
 
     return-void
 .end method

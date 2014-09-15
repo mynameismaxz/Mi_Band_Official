@@ -23,7 +23,7 @@
 
 .field private static final j:I = 0x1010
 
-.field private static final k:I = 0x1011
+.field private static final k:Z
 
 .field public static mConnStatus:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;
 
@@ -379,14 +379,6 @@
     .end packed-switch
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;F)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
-
-    return-void
-.end method
-
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;I)V
     .locals 0
 
@@ -665,7 +657,7 @@
 .end method
 
 .method private b(Z)V
-    .locals 4
+    .locals 5
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readLastMonthReportDate()Ljava/lang/String;
 
@@ -681,7 +673,21 @@
 
     const-string v2, "chenee"
 
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "last month "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1369,14 +1375,6 @@
     return-void
 .end method
 
-.method static synthetic g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-    .locals 1
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
-
-    return v0
-.end method
-
 .method private g()V
     .locals 2
 
@@ -1419,6 +1417,14 @@
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->q:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1, v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    return-void
+.end method
+
+.method static synthetic g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l()V
 
     return-void
 .end method
@@ -1484,10 +1490,10 @@
     return v0
 .end method
 
-.method static synthetic h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
+.method static synthetic h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->A:F
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
     return v0
 .end method
@@ -1511,7 +1517,7 @@
 .method static synthetic i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b()V
 
     return-void
 .end method
@@ -1532,20 +1538,20 @@
     return-void
 .end method
 
-.method static synthetic j(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
-
-    return v0
-.end method
-
-.method static synthetic k(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+.method static synthetic j(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a()V
 
     return-void
+.end method
+
+.method static synthetic k(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
+
+    return v0
 .end method
 
 .method private k()Z
@@ -1873,9 +1879,17 @@
 .method static synthetic l(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p()V
 
     return-void
+.end method
+
+.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
+
+    return v0
 .end method
 
 .method private m()V
@@ -1907,20 +1921,12 @@
     return-void
 .end method
 
-.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p()V
-
-    return-void
-.end method
-
-.method static synthetic n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
+.method static synthetic n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
 
-    return v0
+    return-object v0
 .end method
 
 .method private n()V
@@ -1976,14 +1982,6 @@
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleStatisticTask;->work()V
 
     goto :goto_0
-.end method
-
-.method static synthetic o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
-
-    return-object v0
 .end method
 
 .method private o()V
@@ -2088,6 +2086,14 @@
     goto :goto_0
 .end method
 
+.method static synthetic o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o()V
+
+    return-void
+.end method
+
 .method private p()V
     .locals 7
 
@@ -2175,14 +2181,6 @@
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     goto :goto_1
-.end method
-
-.method static synthetic p(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o()V
-
-    return-void
 .end method
 
 .method private q()V
@@ -2437,12 +2435,6 @@
 
 .method private t()V
     .locals 2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
-
-    const/16 v1, 0x1011
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     const/4 v0, 0x0
 
@@ -2868,7 +2860,7 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, v0, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 

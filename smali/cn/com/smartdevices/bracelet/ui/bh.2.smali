@@ -1,28 +1,49 @@
 .class Lcn/com/smartdevices/bracelet/ui/bh;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
+
 
 # instance fields
-.field a:Landroid/widget/TextView;
-
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/PickAdapter;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bh;->b:Lcn/com/smartdevices/bracelet/ui/PickAdapter;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bh;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;Lcn/com/smartdevices/bracelet/ui/bh;)V
+
+# virtual methods
+.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bh;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;)V
+    return-void
+.end method
+
+.method public onLeftClicked(Landroid/app/DialogFragment;)V
+    .locals 1
+
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bh;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->d(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+
+    return-void
+.end method
+
+.method public onRightClicked(Landroid/app/DialogFragment;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
 
     return-void
 .end method

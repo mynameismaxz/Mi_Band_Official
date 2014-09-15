@@ -43,9 +43,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/by;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bC;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/by;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bC;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
 
     invoke-static {v0, p1, p2, v1}, Lcn/com/smartdevices/bracelet/webapi/WebAPI;->sendFeedback(Lcn/com/smartdevices/bracelet/model/LoginData;Ljava/lang/String;Ljava/lang/String;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
@@ -185,7 +185,7 @@
 
     const-string v1, "\u8054\u7cfb\u65b9\u5f0f\u65e0\u6548\uff0c\u8bf7\u91cd\u586b!"
 
-    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v1, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -200,7 +200,7 @@
 
     const-string v1, "\u8bf7\u586b\u5199\u53cd\u9988\u5185\u5bb9!"
 
-    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v1, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -212,7 +212,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v0, 0x7f030041
+    const v0, 0x7f030043
 
     const/4 v1, 0x0
 
@@ -220,7 +220,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f070111
+    const v0, 0x7f070114
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->a:Landroid/widget/EditText;
 
-    const v0, 0x7f070110
+    const v0, 0x7f070113
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->b:Landroid/widget/EditText;
 
-    const v0, 0x7f070112
+    const v0, 0x7f070115
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -254,9 +254,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->b:Landroid/widget/EditText;
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bw;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bA;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bw;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bA;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
@@ -268,9 +268,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bx;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/bB;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bx;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/bB;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

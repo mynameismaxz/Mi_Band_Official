@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->b:Landroid/view/View;
 
@@ -41,7 +41,7 @@
 
     const/4 v3, -0x1
 
-    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
+    invoke-super {p0, p1, p2, p3}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onActivityResult(IILandroid/content/Intent;)V
 
     const-string v0, "PersonInfoBaseActivity"
 
@@ -134,7 +134,7 @@
 .method public onBackPressed()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onBackPressed()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCancel()V
 
@@ -187,7 +187,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f07009a
+    .packed-switch 0x7f07009e
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -197,7 +197,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -205,7 +205,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    const v0, 0x7f07009c
+    const v0, 0x7f0700a0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f07009a
+    const v0, 0x7f07009e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 
@@ -235,7 +235,7 @@
 .method protected onDestroy()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     return-void
 .end method

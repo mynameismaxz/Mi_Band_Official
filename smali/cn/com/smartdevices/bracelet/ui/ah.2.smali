@@ -6,14 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/ag;
+
+.field private final synthetic b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/ag;
+
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,11 +27,20 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;->finish()V
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->uri:Landroid/net/Uri;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/ag;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/ag;->a(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
+
+    :cond_0
     return-void
 .end method

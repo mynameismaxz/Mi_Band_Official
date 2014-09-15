@@ -15,6 +15,8 @@
 
 .field public maxDateStr:Ljava/lang/String;
 
+.field public picture_url:Ljava/lang/String;
+
 .field public runDistance:I
 
 .field public steps:I
@@ -311,6 +313,8 @@
 
 .method public setType(Ljava/lang/String;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->type:Ljava/lang/String;
 
     return-void
 .end method

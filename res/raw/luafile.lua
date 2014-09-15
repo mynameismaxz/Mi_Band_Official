@@ -27,6 +27,14 @@ MODE_STEP = 0x01;
 MODE_SLEEP = 0x10;
 NEW_RECORD_MIN = 4000;
 
+function isNationalDay2014Prepare ()
+    dateTable = os.date("*t")
+    if (dateTable.year == 2014 and dateTable.month == 9 and dateTable.day >= 23 and dateTable.day <= 30) then
+        return true;
+    end
+    return false;
+end
+
 function getCaloriesString(calories)
     log('cal :'..calories)
     -- test
@@ -557,6 +565,39 @@ function unbindHint(listDao,ConfigInfo)
     replaceMsgByType(listDao,ConfigInfo,t)
 end
 
+function nationalDay2014Register(listDao, ConfigInfo)
+--    if (false == isNationalDay2014Prepare()) then
+--        log("Not in national day register range.")
+--        return
+--    end
+    log("Prepare for national day 2014.")
+
+    t = {}
+    t.t1 = "报名“国庆七天乐”。。。"
+    t.t2 = "小米手环抱回家。。。。。。。"
+    t.stype = "ND2014Register"
+    t.right = "top"
+
+    t.strScript = "function doAction(context, luaAction) \
+        local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.InstructionActivity');\
+        context:startActivity(intent)\
+    end";
+    replaceMsgByType(listDao,ConfigInfo,t)
+end
+
+function nationalDay2014(listDao, ConfigInfo)
+    t = {}
+    t.t1 = "七天乐活动已经开始啦。。。"
+    t.t2 = "。。。。。。。"
+    t.stype = "ND2014"
+    t.right = "top"
+
+    t.strScript = "function doAction(context, luaAction) \
+        local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.InstructionActivity');\
+        context:startActivity(intent)\
+    end";
+    replaceMsgByType(listDao,ConfigInfo,t)
+end
 
 --2001
 function newRecord(listDao,ConfigInfo)
@@ -840,7 +881,7 @@ function getDistanceString(meter)
             return m1..getString('km')
         end
     else
-        return string.format(getString('get_distance_format'), activityItem:getDistance())
+        return string.format(getString('get_distance_format'), meter)
     end
 end
 --3002
@@ -896,14 +937,8 @@ end
 function sleepGood(listDao,ConfigInfo)
     sleepInfo = ConfigInfo:getSleepInfo()
 
-
-    m = sleepInfo:getSleepCount() % 60
-    h = (sleepInfo:getSleepCount() - m ) / 60
-    t1 = string.format(getString('last_night_sleeped_good_format'), h, m)
-
-    m2 = sleepInfo:getNonRemCount() % 60
-    h2 = (sleepInfo:getNonRemCount() - m2) / 60
-    t2 = string.format(getString('deep_sleep_format'), h2, m2)
+    t1 = string.format(getString('last_night_sleeped_good_format'), getTimeString1(sleepInfo:getSleepCount()))
+    t2 = string.format(getString('deep_sleep_format'), getTimeString1(sleepInfo:getNonRemCount()))
 
     stype = "4001"
 
@@ -929,13 +964,9 @@ function sleepNormal(listDao,ConfigInfo)
 
     sleepInfo = ConfigInfo:getSleepInfo()
 
-    m = sleepInfo:getSleepCount() % 60
-    h = (sleepInfo:getSleepCount() - m ) / 60
-    t1 = string.format(getString('last_night_sleeped_normal_format'), h, m)
+    t1 = string.format(getString('last_night_sleeped_normal_format'), getTimeString1(sleepInfo:getSleepCount()))
+    t2 = string.format(getString('deep_sleep_format'), getTimeString1(sleepInfo:getNonRemCount()))
 
-    m2 = sleepInfo:getNonRemCount() % 60
-    h2 = (sleepInfo:getNonRemCount() - m2) / 60
-    t2 = string.format(getString('deep_sleep_format'), h2, m2)
 
     stype = "4001"
     strScript = "function doAction(context, luaAction) \
@@ -957,13 +988,8 @@ end
 function sleepBad(listDao,ConfigInfo)
     sleepInfo = ConfigInfo:getSleepInfo()
 
-    m = sleepInfo:getSleepCount() % 60
-    h = (sleepInfo:getSleepCount() - m) / 60
-    t1 = string.format(getString('last_night_sleeped_normal_format'), h, m)
-
-    m2 = sleepInfo:getNonRemCount() % 60
-    h2 = (sleepInfo:getNonRemCount() - m2) / 60
-    t2 = string.format(getString('deep_sleep_format'), h2, m2)
+    t1 = string.format(getString('last_night_sleeped_normal_format'), getTimeString1(sleepInfo:getSleepCount()))
+    t2 = string.format(getString('deep_sleep_format'), getTimeString1(sleepInfo:getNonRemCount()))
 
     stype = "4001"
     strScript = "function doAction(context, luaAction) \
@@ -1167,9 +1193,8 @@ function getDefaultMsgs(listDao, ConfigInfo)
         clearUnbindMsg(listDao,ConfigInfo)
     end
 
---  ConfigInfo:setShowUnlockInfo(false)
---    ConfigInfo:setShowUnlockInfo(true)
 end
+
 
 function getAchievementMsgs(listDao, ConfigInfo)
     --new record
@@ -1300,9 +1325,7 @@ function setLocale(locale)
     end
 
     setCurLocale(locale);
-    --todo reload all messages by locale
 
-    -- test:
     log("Test locale "..'ok'..'='..getString('ok'));
 end
 

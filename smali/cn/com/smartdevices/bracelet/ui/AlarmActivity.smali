@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/AlarmActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -78,7 +78,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -543,7 +543,7 @@
 .method private d()V
     .locals 2
 
-    const v0, 0x7f07008c
+    const v0, 0x7f07008f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->findViewById(I)Landroid/view/View;
 
@@ -587,7 +587,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f07008b
+    const v0, 0x7f07008e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->findViewById(I)Landroid/view/View;
 
@@ -1025,6 +1025,8 @@
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->a()V
 
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->updateStatusBarTintAuto()V
+
     :cond_0
     :goto_0
     return-void
@@ -1035,6 +1037,8 @@
     if-ge v0, v1, :cond_0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->b()V
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->updateStatusBarTintAuto()V
 
     goto :goto_0
 .end method
@@ -1065,7 +1069,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
@@ -1122,7 +1126,7 @@
 
     const/4 v0, 0x0
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
@@ -1154,31 +1158,35 @@
 
     if-nez v0, :cond_1
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    const-string v3, "Normal:"
 
-    const-string v3, "Normal"
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v2, ", Smart:"
 
-    const-string v2, "Smart"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->e:Landroid/app/Activity;
 
     const-string v2, "AlarmSetting"
 
-    invoke-static {v1, v2, v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/util/HashMap;)V
+    invoke-static {v1, v2, v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
@@ -1218,7 +1226,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     const-string v0, "PageAlarm"
 
@@ -1232,7 +1240,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->checkOnceAlarmIfExpired()V
 

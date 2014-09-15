@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,32 +22,84 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    new-instance v0, Landroid/os/Bundle;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->m(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;
 
-    const-string v1, "Days"
+    move-result-object v0
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    const/high16 v1, 0x3f80
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->a(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout;->smoothSlideTo(FI)Z
 
-    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCoded()I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    move-result v2
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->r(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/widget/ProgressBar;
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    const/16 v1, 0x8
 
-    const-class v2, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity$AlarmSimpleRepeatFragment;
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    invoke-static {v1, v2, v0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->showPanel(Landroid/app/Activity;Ljava/lang/Class;Landroid/os/Bundle;)V
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
+
+    const/high16 v1, 0x3f80
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->q(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->q(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->q(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aU;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->q(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

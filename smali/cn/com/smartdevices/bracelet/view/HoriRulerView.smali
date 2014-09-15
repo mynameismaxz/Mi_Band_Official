@@ -58,11 +58,11 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/HoriRulerView;->d:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f030057
+    const v1, 0x7f030058
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f07018d
+    const v0, 0x7f070191
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/HoriRulerView;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/HoriRulerView;->b:Lcn/com/smartdevices/bracelet/view/RulerScrollView;
 
-    const v0, 0x7f07018e
+    const v0, 0x7f070192
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/view/HoriRulerView;->findViewById(I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
     :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/HoriRulerView;->d:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f030058
+    const v1, 0x7f030059
 
     const/4 v2, 0x0
 
@@ -180,7 +180,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f070192
+    const v0, 0x7f070196
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

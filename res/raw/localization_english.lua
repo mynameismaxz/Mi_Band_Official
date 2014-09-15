@@ -44,7 +44,7 @@ localization_English_table = {
     week_continue_reach_goal="You have achieved your goal every day for an entire week! What an awesome week!",
     challenge_format="You have achieved your goal for %d days!",
     personal_best_format="Your highest record is %d days!",
-    active_time_format_0="%d hr",
+    active_time_format_0="%d min",
     active_time_format_1="%d hr",
     active_time_format_2="%d hr %d min",
     activie_run_format_0="Ran %s. Good job!",
@@ -56,10 +56,10 @@ localization_English_table = {
     activity_walk_format="%s Walked %d steps %s",
     activity_walk_consumed_format="Burned %d cal %s",
 
-    activity_activity_format="%s %s work out%s",
-    last_night_sleeped_good_format="Last night, you slept for %d hr %d min. What a great sleep!",
-    last_night_sleeped_normal_format="Last night, you slept for %d hr %d min.",
-    deep_sleep_format="Deep sleep stage was %d hr %d min.",
+    activity_activity_format="%s %s work out %s",
+    last_night_sleeped_good_format="Last night, you slept for %s. What a great sleep!",
+    last_night_sleeped_normal_format="Last night, you slept for %s.",
+    deep_sleep_format="Deep sleep stage was %s.",
 
     battery_low_info="Low in battery, please charge your Mi Band.",
     battery_very_low_info="Connect to power",

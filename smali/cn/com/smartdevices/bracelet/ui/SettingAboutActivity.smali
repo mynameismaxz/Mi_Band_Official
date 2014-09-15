@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 
 # static fields
@@ -16,7 +16,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     const/4 v0, 0x0
 
@@ -28,9 +28,9 @@
 .method private a()V
     .locals 3
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/bp;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/bt;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/bp;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/bt;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;->c:Landroid/content/BroadcastReceiver;
 
@@ -58,7 +58,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -98,7 +98,7 @@
 .method protected onDestroy()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity;->c:Landroid/content/BroadcastReceiver;
 
@@ -209,7 +209,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -219,7 +219,7 @@
 .method protected onPause()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
 
     invoke-static {p0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->endSession(Landroid/content/Context;)V
 
@@ -229,7 +229,7 @@
 .method protected onResume()V
     .locals 0
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     invoke-static {p0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->startSession(Landroid/content/Context;)V
 

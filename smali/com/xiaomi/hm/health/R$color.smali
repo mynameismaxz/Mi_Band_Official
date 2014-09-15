@@ -11,21 +11,17 @@
 
 .field public static final bg_color_blue:I = 0x7f08003c
 
-.field public static final bg_color_blue_2:I = 0x7f080041
+.field public static final bg_color_blue_dark:I = 0x7f08003f
 
-.field public static final bg_color_blue_dark:I = 0x7f080040
+.field public static final bg_color_cyan:I = 0x7f080040
 
-.field public static final bg_color_cyan:I = 0x7f080042
-
-.field public static final bg_color_cyan_dark:I = 0x7f080043
+.field public static final bg_color_cyan_dark:I = 0x7f080041
 
 .field public static final bg_color_grey:I = 0x7f08003d
 
-.field public static final bg_color_grey_2:I = 0x7f08003e
+.field public static final bg_color_orange:I = 0x7f080042
 
-.field public static final bg_color_orange:I = 0x7f080044
-
-.field public static final bg_color_red:I = 0x7f08003f
+.field public static final bg_color_red:I = 0x7f08003e
 
 .field public static final bg_mode_sleep:I = 0x7f080034
 
@@ -35,13 +31,13 @@
 
 .field public static final blue:I = 0x7f080038
 
-.field public static final btn_blue_color:I = 0x7f08004e
+.field public static final btn_blue_color:I = 0x7f08004c
 
-.field public static final btn_blue_stroke_color:I = 0x7f08004f
+.field public static final btn_blue_stroke_color:I = 0x7f08004d
 
-.field public static final button_cancel_color:I = 0x7f08004b
+.field public static final button_cancel_color:I = 0x7f080049
 
-.field public static final button_confirm_color:I = 0x7f08004c
+.field public static final button_confirm_color:I = 0x7f08004a
 
 .field public static final checked_false:I = 0x7f08002b
 
@@ -57,19 +53,19 @@
 
 .field public static final counter_text_bg:I = 0x7f080002
 
-.field public static final default_circle_indicator_fill_color:I = 0x7f080053
+.field public static final default_circle_indicator_fill_color:I = 0x7f080051
 
-.field public static final default_circle_indicator_page_color:I = 0x7f080054
+.field public static final default_circle_indicator_page_color:I = 0x7f080052
 
-.field public static final default_circle_indicator_stroke_color:I = 0x7f080055
+.field public static final default_circle_indicator_stroke_color:I = 0x7f080053
 
-.field public static final default_title_indicator_footer_color:I = 0x7f080050
+.field public static final default_title_indicator_footer_color:I = 0x7f08004e
 
-.field public static final default_title_indicator_selected_color:I = 0x7f080051
+.field public static final default_title_indicator_selected_color:I = 0x7f08004f
 
-.field public static final default_title_indicator_text_color:I = 0x7f080052
+.field public static final default_title_indicator_text_color:I = 0x7f080050
 
-.field public static final disable_text_color_dark:I = 0x7f080045
+.field public static final disable_text_color_dark:I = 0x7f080043
 
 .field public static final disabled_text_color:I = 0x7f080003
 
@@ -109,7 +105,7 @@
 
 .field public static final list_item_title:I = 0x7f080000
 
-.field public static final main_ui_bg:I = 0x7f080046
+.field public static final main_ui_bg:I = 0x7f080044
 
 .field public static final main_ui_content_color:I = 0x7f080011
 
@@ -119,11 +115,11 @@
 
 .field public static final main_ui_title_color:I = 0x7f080010
 
-.field public static final mask_view_bg:I = 0x7f08004d
+.field public static final mask_view_bg:I = 0x7f08004b
 
-.field public static final menu_item_normal:I = 0x7f080047
+.field public static final menu_item_normal:I = 0x7f080045
 
-.field public static final menu_item_pressed:I = 0x7f080048
+.field public static final menu_item_pressed:I = 0x7f080046
 
 .field public static final normal:I = 0x7f080008
 
@@ -135,7 +131,7 @@
 
 .field public static final orange:I = 0x7f08003b
 
-.field public static final person_page_digit_color:I = 0x7f08004a
+.field public static final person_page_digit_color:I = 0x7f080048
 
 .field public static final person_page_user_info_main_color:I = 0x7f080025
 
@@ -167,15 +163,15 @@
 
 .field public static final statistic_data_item_value_step:I = 0x7f080032
 
-.field public static final tab_host_title:I = 0x7f080056
+.field public static final tab_host_title:I = 0x7f080054
 
 .field public static final title_color:I = 0x7f080004
 
 .field public static final trans:I = 0x7f080023
 
-.field public static final txt_with_drawable:I = 0x7f080057
+.field public static final txt_with_drawable:I = 0x7f080055
 
-.field public static final wheel_band_bg:I = 0x7f080049
+.field public static final wheel_band_bg:I = 0x7f080047
 
 .field public static final window_bg:I = 0x7f08001e
 

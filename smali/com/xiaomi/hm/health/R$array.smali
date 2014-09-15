@@ -9,8 +9,6 @@
 
 .field public static final select_days_simple:I = 0x7f0d0003
 
-.field public static final weather_aqi_description:I = 0x7f0d000f
-
 .field public static final weather_aqi_descriptions:I = 0x7f0d0005
 
 .field public static final weather_cloudy:I = 0x7f0d000b

@@ -20,9 +20,11 @@
 
 .field private final synthetic g:[Landroid/view/View;
 
+.field private final synthetic h:Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
+
 
 # direct methods
-.method constructor <init>(IIIIII[Landroid/view/View;)V
+.method constructor <init>(IIIIII[Landroid/view/View;Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;)V
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->a:I
@@ -38,6 +40,8 @@
     iput p6, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->f:I
 
     iput-object p7, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->g:[Landroid/view/View;
+
+    iput-object p8, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->h:Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -126,11 +130,20 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-lt v0, v3, :cond_0
+    if-lt v0, v3, :cond_1
 
-    return-void
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->h:Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/util/l;->h:Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
+
+    invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;->onColorChanged(I)V
 
     :cond_0
+    return-void
+
+    :cond_1
     aget-object v4, v2, v0
 
     invoke-virtual {v4, v1}, Landroid/view/View;->setBackgroundColor(I)V

@@ -1,8 +1,5 @@
 .class Lcn/com/smartdevices/bracelet/ui/bo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
@@ -10,38 +7,39 @@
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bo;->a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;Lcn/com/smartdevices/bracelet/ui/bo;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bo;-><init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
+    .locals 0
 
-    check-cast p1, Lcn/com/smartdevices/bracelet/ui/bm;
+    return-void
+.end method
 
-    check-cast p2, Lcn/com/smartdevices/bracelet/ui/bm;
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 1
 
-    iget v0, p2, Lcn/com/smartdevices/bracelet/ui/bm;->b:I
+    if-eqz p3, :cond_0
 
-    iget v1, p1, Lcn/com/smartdevices/bracelet/ui/bm;->b:I
+    new-instance v0, Ljava/lang/String;
 
-    sub-int/2addr v0, v1
+    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    return v0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+
+    :cond_0
+    return-void
 .end method

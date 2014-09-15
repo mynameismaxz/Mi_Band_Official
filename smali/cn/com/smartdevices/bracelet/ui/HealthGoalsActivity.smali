@@ -1,5 +1,5 @@
 .class public Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
-.super Landroid/app/Activity;
+.super Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;-><init>()V
 
     return-void
 .end method
@@ -59,7 +59,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200b8
+    const v1, 0x7f0200b9
 
     invoke-virtual {v0, v1}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
@@ -318,9 +318,9 @@
 
     move-result v1
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/aq;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/as;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/aq;-><init>(Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/as;-><init>(Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;)V
 
     invoke-direct {v0, v1, v2}, Lcn/com/smartdevices/bracelet/BleTask/BleSetGoalsTask;-><init>(ILcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
 
@@ -391,9 +391,9 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03004c
+    const v0, 0x7f03004e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;->setContentView(I)V
 
@@ -411,7 +411,7 @@
 .method protected onDestroy()V
     .locals 2
 
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     const-string v0, "BraceletGoal"
 
@@ -445,7 +445,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -455,7 +455,7 @@
 .method protected onPause()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageBraceletGoal"
 
@@ -469,7 +469,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
 
     const-string v0, "PageBraceletGoal"
 
@@ -491,9 +491,9 @@
 
     iput-wide v1, p1, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ar;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/at;
 
-    invoke-direct {v1, p0, p1}, Lcn/com/smartdevices/bracelet/ui/ar;-><init>(Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
+    invoke-direct {v1, p0, p1}, Lcn/com/smartdevices/bracelet/ui/at;-><init>(Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
 
     invoke-static {v0, p1, v1}, Lcn/com/smartdevices/bracelet/webapi/WebAPI;->updateProfile(Lcn/com/smartdevices/bracelet/model/LoginData;Lcn/com/smartdevices/bracelet/model/PersonInfo;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 

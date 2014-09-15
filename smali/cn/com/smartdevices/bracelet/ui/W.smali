@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
 
 
 # instance fields
@@ -22,60 +22,21 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
-
-    const/4 v2, 0x1
-
-    const-string v0, "DynamicView"
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->k(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+.method public onColorChanged(I)V
+    .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->h(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_1
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->g(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->setScrollable(Z)V
+    if-eqz v0, :cond_0
 
-    :cond_1
-    return-void
-.end method
+    check-cast v0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->updateStatusBarTint(I)V
 
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-
+    :cond_0
     return-void
 .end method

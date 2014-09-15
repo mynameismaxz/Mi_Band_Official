@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200b6
+    const v1, 0x7f0200b7
 
     invoke-virtual {v0, v1}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 

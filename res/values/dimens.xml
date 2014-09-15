@@ -36,7 +36,7 @@
     <dimen name="info_title_margin_top">50.0dip</dimen>
     <dimen name="info_content_margin_bottom">12.0dip</dimen>
     <dimen name="info_bottom_margin_bottom">40.0dip</dimen>
-    <dimen name="click_button_text_size">14.0sp</dimen>
+    <dimen name="click_button_text_size">13.0sp</dimen>
     <dimen name="info_content_margin_left">35.0dip</dimen>
     <dimen name="click_button_space">15.0dip</dimen>
     <dimen name="input_hight">38.0dip</dimen>

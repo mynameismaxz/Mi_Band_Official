@@ -22,7 +22,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030038
+    const v0, 0x7f03003a
 
     return v0
 .end method
@@ -48,7 +48,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0700f7
+    const v0, 0x7f0700fa
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 

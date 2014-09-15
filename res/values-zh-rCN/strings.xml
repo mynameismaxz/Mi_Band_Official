@@ -149,8 +149,7 @@
     <string name="mili_unbind_question">解除绑定后, 手机将无法获取手环内的信息</string>
     <string name="share_to_title">小米手环</string>
     <string name="share_to_content">小米手环运动分享</string>
-    <string name="share_goal_tips_succ">"再伟大的目标
-也是一步一步走出来的"</string>
+    <string name="share_goal_tips_succ">再伟大的目标也是一步一步走出来的</string>
     <string name="share_goal_tips_fail">革命尚未成功, 足下仍需努力</string>
     <string name="person_info_goal_info">根据世界卫生组织的建议, 你每天需要进行中等强度的运动40分钟, 相当于快走8000步</string>
     <string name="person_info_goal_info_young">根据世界卫生组织的建议, 你每天需要进行中等强度的运动60分钟, 相当于快走12000步</string>
@@ -242,7 +241,7 @@
     <string name="help_info_1">小米手环需要安卓4.4及以上版本</string>
     <string name="help_title_2">手环是否充电成功？</string>
     <string name="help_info_2">请确保手环按说明书的提示正确充电。如果是正常充电, 手环的指示灯会以绿色闪烁。</string>
-    <string name="help_info_3">如果你的手环已经和其他手机绑定, 并且绑定的手机不在手环附近, 这时你需要关闭已绑定手机的蓝牙, 然后重新使用新手机搜索手环</string>
+    <string name="help_info_3">如果你的手环已经和其他手机绑定, 并且绑定的手机仍在手环附近, 这时你需要关闭已绑定手机的蓝牙, 然后重新使用新手机搜索手环</string>
     <string name="help_info_4">"你可以联系我们的客服, 获取更多帮助与支持。
 
 客服电话：400-100-5678
@@ -402,7 +401,7 @@
     <string name="unlock_screen_set_use_bracelet">第二步, 设置使用手环解锁</string>
     <string name="unlock_screen_set_success">已成功设置手环解锁</string>
     <string name="unlock_screen_modify_unlock">"如需修改请打开
-设置->安全和隐私->屏幕安全保护"</string>
+设置->安全和隐私"</string>
     <string name="bind_weixin_title">接入微信与好友们一起PK运动排行</string>
     <string name="step1">1. </string>
     <string name="step2">2. </string>
@@ -424,7 +423,7 @@
     <string name="unlock_screen_help_title2">尝试重新设置手环解锁</string>
     <string name="unlock_screen_help_info0">为了保证手机的安全性，只有当手环贴近手机时解锁才有效，手机远离手环将无法进行解锁。</string>
     <string name="unlock_screen_help_info1">如果贴近手机仍然无法解锁，可以尝试将手机的蓝牙关闭然后重新打开，稍等一会后，检查手环解锁功能是否恢复。</string>
-    <string name="unlock_screen_help_info2">如果重启蓝牙无效，可以前往系统设置->安全和隐私->屏幕安全保护->蓝牙设备解锁中，删除当前已经绑定的手环，然后返回小米手环应用中重新设置手环解锁。</string>
+    <string name="unlock_screen_help_info2">如果重启蓝牙无效，可以前往系统设置->安全和隐私中，删除当前已经绑定的手环，然后返回小米手环应用中重新设置手环解锁。</string>
     <string name="instruction_title">如何玩转小米手环</string>
     <string name="instruction_tip_1">"抬起手腕
 查看运动
@@ -526,4 +525,13 @@
 自动开始固件升级"</string>
     <string name="fw_low_battery_view_help">查看帮助</string>
     <string name="in" />
+    <string name="main_ui_share_tips">"今天共活动了%1$s%2$s
+%3$s"</string>
+    <string name="ran">跑了</string>
+    <string name="main_ui_sleep_share_tips">"浅睡%1$s%2$s
+入睡%3$s, 醒来%4$s"</string>
+    <string name="awake_format">, 清醒%1$s次</string>
+    <string name="awake_format_1">, 清醒1次</string>
+    <string name="discard">舍弃更改</string>
+    <string name="discard_alarm_change">要舍弃对该闹钟的更改吗？</string>
 </resources>
