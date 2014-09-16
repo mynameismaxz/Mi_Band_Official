@@ -50,4 +50,54 @@
         <item>Действуй!</item>
         <item>Тренируйся и победа сама к тебе придет.</item>
     </string-array>
+    <string-array name="weather_aqi_descriptions">
+        <item>Отлично</item>
+        <item>Хорошо</item>
+        <item>Низкое загрязнение</item>
+        <item>Среднее загрязнение</item>
+        <item>Тяжелое загрязнение</item>
+        <item>Сильное загрязнение</item>
+    </string-array>
+    <string-array name="weather_rains">
+        <item>Ливень</item>
+        <item>Гроза</item>
+        <item>Мелкий дождь</item>
+        <item>Умеренный дождь</item>
+        <item>Сильный дождь</item>
+        <item>Проливной дождь</item>
+        <item>Шторм</item>
+        <item>Ледяной дождь</item>
+        <item>Гроза с градом</item>
+    </string-array>
+    <string-array name="weather_rain_snows">
+        <item>Дождь со снегом</item>
+    </string-array>
+    <string-array name="weather_snows">
+        <item>Осадки</item>
+        <item>Маленький снегопад</item>
+        <item>Заснежено</item>
+        <item>Сильный снегопад</item>
+        <item>Метель</item>
+    </string-array>
+    <string-array name="weather_sands">
+        <item>Пыль</item>
+        <item>Песчаная буря</item>
+        <item>Песок и пыль</item>
+        <item>Хабуб</item>
+    </string-array>
+    <string-array name="weather_fine">
+        <item>Ясно</item>
+    </string-array>
+    <string-array name="weather_cloudy">
+        <item>Облачно</item>
+    </string-array>
+    <string-array name="weather_overcast">
+        <item>Пасмурно</item>
+    </string-array>
+    <string-array name="weather_fog">
+        <item>Туманно</item>
+    </string-array>
+    <string-array name="weather_haze">
+        <item>Мгла</item>
+    </string-array>
 </resources>

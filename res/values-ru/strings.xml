@@ -517,6 +517,25 @@ Mi Band поддерживает Android 4.4+."</string>
     <string name="share_miliao_too_old">Версия MiTalk слишком старая.</string>
     <string name="first_use_days_today_format">Меньше одного дня после первого использования.</string>
     <string name="first_use_remain_days_format">%s дней после первого использования.</string>
-    <string name="until">до </string>
+    <string name="until_hit_goals">Продолжить достижения цели до %s</string>
     <string name="continue_reach_goal_new_record">Создал новый персональный рекорд</string>
+    <string name="bind_weixin_new_tips">"Нажмите Доступ в WeChat, чтобы начать WeChat, указав свою страничку,
+затем нажмите Follow, что-бы завершить."</string>
+    <string name="bind_weixin_new_now">Доступ в WeChat, подождите...</string>
+    <string name="bind_weixin_new_disable_tips">"После входа в WeChat, вы сможете делится своими результатами
+со своими друзьями в кругах WeChat."</string>
+    <string name="weather_aqi">Погода - %s</string>
+    <string name="weather_description_rain">Дождь</string>
+    <string name="weather_description_rain_snow">Дождь со снегом</string>
+    <string name="weather_description_snow">Снег</string>
+    <string name="weather_description_sand">Песчаная буря</string>
+    <string name="weather_description_fine">Солнечно</string>
+    <string name="weather_description_cloudy">Облачно</string>
+    <string name="weather_description_overcast">Пасмурно</string>
+    <string name="weather_description_fog">Туманно</string>
+    <string name="weather_description_haze">Мгла</string>
+    <string name="fw_low_battery_title">Зарядите устройство для того, что-бы обновить прошивку</string>
+    <string name="fw_low_battery_tips">Осталось меньше 5% заряда. Зарядите устройство для того, чтоб-бы обновить прошивку.</string>
+    <string name="fw_low_battery_view_help">Справка</string>
+    <string name="in">В </string>
 </resources>

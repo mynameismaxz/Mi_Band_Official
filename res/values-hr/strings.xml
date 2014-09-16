@@ -499,6 +499,26 @@ Nemojte se zaustaviti, krenuti naprijed."</string>
     <string name="share_miliao_too_old">MiTalk verzija je prestara.</string>
     <string name="first_use_days_today_format">Manje od jednog dana od prvog korištenja.</string>
     <string name="first_use_remain_days_format">%s dana od prvog korištenja</string>
-    <string name="until">Sve dok</string>
     <string name="continue_reach_goal_new_record">Postignut novi rekord</string>
+    <string name="bind_weixin_new_tips">"点击“微信接入”启动微信进入小米手环帐号页面，
+然后点击“关注”按钮即可完成接入"</string>
+    <string name="bind_weixin_new_now">正在进行微信接入，请稍候......</string>
+    <string name="bind_weixin_new_disable_tips">"接入微信关注小米手环服务号后即可通过微信查看当
+前步数，并且与朋友圈中的好友们一起PK运动排行"</string>
+    <string name="weather_aqi">Kvaliteta zraka %s</string>
+    <string name="weather_description_rain">Kiša</string>
+    <string name="weather_description_rain_snow">Kiša s snijegom</string>
+    <string name="weather_description_snow">Snijeg</string>
+    <string name="weather_description_sand">Pijesak</string>
+    <string name="weather_description_fine">Vedro</string>
+    <string name="weather_description_cloudy">Oblacno</string>
+    <string name="weather_description_overcast">Naoblaka</string>
+    <string name="weather_description_fog">Magla</string>
+    <string name="weather_description_haze">Sumaglica</string>
+    <string name="fw_low_battery_title">Za ažuriranje Firmwarea treba napuniti MiBand</string>
+    <string name="fw_low_battery_tips">"MiBand je napunjen samo na 5%. Spojite ga na punjac
+i ažuriranje ce se automatski pokrenuti nakon što se MiBand napuni."</string>
+    <string name="fw_low_battery_view_help">Pomoc</string>
+    <string name="in">V</string>
+    <string name="until">Sve dok</string>
 </resources>

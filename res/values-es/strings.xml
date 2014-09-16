@@ -451,8 +451,7 @@ No se pare, siga adelante."</string>
     <string name="setting_feedback_address">¿Cómo podemos contactar contigo?</string>
     <string name="bluetooth">Bluetooth </string>
     <string name="setting_about_fw">Versión de firmware </string>
-    <string name="setting_about_app">"Versión de la aplicación
-Traducción por WaPeR32"</string>
+    <string name="setting_about_app">Versión de la App </string>
     <string name="stop">Final</string>
     <string name="start">Inicio</string>
     <string name="no_wear_bracelet">No usó su MiBand anoche.</string>
@@ -499,6 +498,24 @@ Traducción por WaPeR32"</string>
     <string name="share_miliao_too_old">La versión de MiTalk es demasiado antigua.</string>
     <string name="first_use_days_today_format">Menos de un día desde el primer uso.</string>
     <string name="first_use_remain_days_format">%s días desde el primer uso</string>
-    <string name="until">Desde </string>
+    <string name="until_hit_goals">Continúa alcanzando metas hasta %s</string>
     <string name="continue_reach_goal_new_record">Creado un nuevo récord</string>
+    <string name="bind_weixin_new_tips">Haga clic en Acceso a microcanales para iniciar un microcanal en la página de la cuenta de la MiBand, luego haga clic en el botón Seguir para completar el acceso</string>
+    <string name="bind_weixin_new_now">Acceso a microcanales en curso, espere por favor...</string>
+    <string name="bind_weixin_new_disable_tips">"接入微信关注小米手环服务号后即可通过微信查看当
+前步数，并且与朋友圈中的好友们一起PK运动排行"</string>
+    <string name="weather_aqi">Calidad del aire%s</string>
+    <string name="weather_description_rain">Precipitaciones</string>
+    <string name="weather_description_rain_snow">Lluvia y nieve</string>
+    <string name="weather_description_snow">Nevadas</string>
+    <string name="weather_description_sand">Arena</string>
+    <string name="weather_description_fine">Soleado</string>
+    <string name="weather_description_cloudy">Nublado</string>
+    <string name="weather_description_overcast">Cubierto</string>
+    <string name="weather_description_fog">Niebla</string>
+    <string name="weather_description_haze">Neblina</string>
+    <string name="fw_low_battery_title">Por favor, cargue para actualizar el nuevo firmware</string>
+    <string name="fw_low_battery_tips" formatted="false">La carga de la batería es inferior al 5%, no se puede actualizar el firmware. Por encima del 5% de la carga, se abrirá la app e iniciará automáticamente la actualización del firmware</string>
+    <string name="fw_low_battery_view_help">Ayuda</string>
+    <string name="in">En </string>
 </resources>

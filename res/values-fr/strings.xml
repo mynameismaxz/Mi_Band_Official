@@ -474,7 +474,7 @@ Traduction par Rockman18"</string>
     <string name="share_to_miliao_path">Partager avec</string>
     <string name="share_to_miliao_target_feeds">Cercle</string>
     <string name="share_to_miliao_target_friends">Amis</string>
-    <string name="share_to_miliao_target_union">"Potes d'entraînement"</string>
+    <string name="share_to_miliao_target_union">Work out buddies</string>
     <string name="no_network_connection">Réseau déconnecté</string>
     <string name="gen_qr_code">Générer QR code</string>
     <string name="bin_weixin_device_not_connect">Mi Band non connecté.</string>
@@ -489,6 +489,26 @@ Traduction par Rockman18"</string>
     <string name="share_miliao_too_old">La version de MiTalk est trop ancienne.</string>
     <string name="first_use_days_today_format">"Moins d'un jour depuis la première utilisation."</string>
     <string name="first_use_remain_days_format">%s jours depuis la première utilisation</string>
-	<string name="until">Depuis </string>
     <string name="continue_reach_goal_new_record">Nouveau record créé</string>
+    <string name="bind_weixin_new_tips">"Cliquez sur 'Accéder à WeChat' pour le démarrer dans l'application Mi Band,
+Puis cliquez sur 'Suivre' pour terminer l'accès"</string>
+    <string name="bind_weixin_new_now">Accès à WeChat en cours, veuillez patienter...</string>
+    <string name="bind_weixin_new_disable_tips">"接入微信关注小米手环服务号后即可通过微信查看当
+前步数，并且与朋友圈中的好友们一起PK运动排行"</string>
+    <string name="weather_aqi">"Qualité de l'air : %s"</string>
+    <string name="weather_description_rain">Pluvieux</string>
+    <string name="weather_description_rain_snow">Neige fondue</string>
+    <string name="weather_description_snow">Neige</string>
+    <string name="weather_description_sand">Sable</string>
+    <string name="weather_description_fine">Ensoleillé</string>
+    <string name="weather_description_cloudy">Nuageux</string>
+    <string name="weather_description_overcast">Couvert</string>
+    <string name="weather_description_fog">Brouillard</string>
+    <string name="weather_description_haze">Brume</string>
+    <string name="fw_low_battery_title">Veuillez brancher pour mettre à jour le nouveau firmware</string>
+    <string name="fw_low_battery_tips" formatted="false">"La batterie est en dessous de 5%, le firmware ne peut pas être mis à jour. L'APP s'ouvrira à 5%
+et la mise à jour du firmware démarrera automatiquement"</string>
+    <string name="fw_low_battery_view_help">"Voir l'aide"</string>
+    <string name="in">Dans </string>
+    <string name="until">Depuis </string>
 </resources>

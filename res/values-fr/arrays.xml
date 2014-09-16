@@ -50,4 +50,54 @@
         <item>Just do it.</item>
         <item>"Continues à t'entraîner, la victoire n'en sera que meilleure."</item>
     </string-array>
+    <string-array name="weather_aqi_descriptions">
+        <item>Excellent</item>
+        <item>Bon</item>
+        <item>Pollution légère</item>
+        <item>Pollution modérée</item>
+        <item>Pollution sérieuse</item>
+        <item>Pollution critique</item>
+    </string-array>
+    <string-array name="weather_rains">
+        <item>Averses</item>
+        <item>Orageux</item>
+        <item>Pluie fine</item>
+        <item>Pluie légère</item>
+        <item>Pluie modérée</item>
+        <item>Pluie forte</item>
+        <item>Pluie torrentielle</item>
+        <item>Grésil</item>
+        <item>Orage de grêle</item>
+    </string-array>
+    <string-array name="weather_rain_snows">
+        <item>Neige fondue</item>
+    </string-array>
+    <string-array name="weather_snows">
+        <item>Averses de neige</item>
+        <item>Neige légère</item>
+        <item>Neige modérée</item>
+        <item>Neige forte</item>
+        <item>Blizzard</item>
+    </string-array>
+    <string-array name="weather_sands">
+        <item>Poussières</item>
+        <item>Sable en suspension</item>
+        <item>Tempête de sable</item>
+        <item>Tempête de sable forte</item>
+    </string-array>
+    <string-array name="weather_fine">
+        <item>Ensoleillé</item>
+    </string-array>
+    <string-array name="weather_cloudy">
+        <item>Nuagueux</item>
+    </string-array>
+    <string-array name="weather_overcast">
+        <item>Couvert</item>
+    </string-array>
+    <string-array name="weather_fog">
+        <item>Brouillard</item>
+    </string-array>
+    <string-array name="weather_haze">
+        <item>Brume</item>
+    </string-array>
 </resources>

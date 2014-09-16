@@ -50,4 +50,54 @@
         <item>Sólo hazlo.</item>
         <item>Siga practicando, ganando cuidará de sí mismo.</item>
     </string-array>
+    <string-array name="weather_aqi_descriptions">
+        <item>Excelente</item>
+        <item>Bueno</item>
+        <item>Contaminación lumínica</item>
+        <item>Moderadamente contaminado</item>
+        <item>Altos niveles de contaminación</item>
+        <item>Contaminación grave</item>
+    </string-array>
+    <string-array name="weather_rains">
+        <item>Chubasco</item>
+        <item>Tormenta</item>
+        <item>Lluvia ligera</item>
+        <item>Llovizna helada</item>
+        <item>Lluvia torrencial</item>
+        <item>Diluvio</item>
+        <item>Lluvia torrencial</item>
+        <item>Lluvia helada</item>
+        <item>Tormenta acompañada de granizo</item>
+    </string-array>
+    <string-array name="weather_rain_snows">
+        <item>Aguanieve</item>
+    </string-array>
+    <string-array name="weather_snows">
+        <item>Nevada</item>
+        <item>Nieve ligera</item>
+        <item>Nieve moderada</item>
+        <item>Fuertes nevadas</item>
+        <item>Ventisca</item>
+    </string-array>
+    <string-array name="weather_sands">
+        <item>Polvo</item>
+        <item>Arena en suspensión</item>
+        <item>Tormenta de arena</item>
+        <item>Tormenta de arena fuerte</item>
+    </string-array>
+    <string-array name="weather_fine">
+        <item>Soleado</item>
+    </string-array>
+    <string-array name="weather_cloudy">
+        <item>Nublado</item>
+    </string-array>
+    <string-array name="weather_overcast">
+        <item>Cubierto</item>
+    </string-array>
+    <string-array name="weather_fog">
+        <item>Niebla</item>
+    </string-array>
+    <string-array name="weather_haze">
+        <item>Neblina</item>
+    </string-array>
 </resources>
