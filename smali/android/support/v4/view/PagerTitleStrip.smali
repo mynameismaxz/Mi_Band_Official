@@ -8,9 +8,9 @@
 # static fields
 .field private static final f:Ljava/lang/String; = "PagerTitleStrip"
 
-.field private static final o:[I = null
+.field private static final o:[I
 
-.field private static final p:[I = null
+.field private static final p:[I
 
 .field private static final q:F = 0.6f
 
@@ -109,11 +109,11 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x34t 0x0t 0x1t 0x1t
-        0x95t 0x0t 0x1t 0x1t
-        0x98t 0x0t 0x1t 0x1t
-        0xaft 0x0t 0x1t 0x1t
+    .array-data 4
+        0x1010034
+        0x1010095
+        0x1010098
+        0x10100af
     .end array-data
 .end method
 
@@ -140,7 +140,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTitleStrip;->g:I
 
-    const/high16 v1, -0x4080
+    const/high16 v1, -0x40800000
 
     iput v1, p0, Landroid/support/v4/view/PagerTitleStrip;->h:F
 
@@ -323,7 +323,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4180
+    const/high16 v1, 0x41800000
 
     mul-float/2addr v0, v1
 
@@ -478,17 +478,17 @@
 
     sub-int v12, v2, v13
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     add-float v2, v2, p2
 
-    const/high16 v14, 0x3f80
+    const/high16 v14, 0x3f800000
 
     cmpl-float v14, v2, v14
 
     if-lez v14, :cond_1
 
-    const/high16 v14, 0x3f80
+    const/high16 v14, 0x3f800000
 
     sub-float/2addr v2, v14
 
@@ -756,7 +756,7 @@
 
     const/4 v2, 0x1
 
-    const/high16 v5, -0x8000
+    const/high16 v5, -0x80000000
 
     const/4 v3, 0x0
 
@@ -942,7 +942,7 @@
 
     iput v0, p0, Landroid/support/v4/view/PagerTitleStrip;->g:I
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     iput v0, p0, Landroid/support/v4/view/PagerTitleStrip;->h:F
 
@@ -1093,9 +1093,9 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    const/high16 v9, 0x4000
+    const/high16 v9, 0x40000000
 
-    const/high16 v8, -0x8000
+    const/high16 v8, -0x80000000
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -1219,7 +1219,7 @@
 .method public setNonPrimaryAlpha(F)V
     .locals 3
 
-    const/high16 v0, 0x437f
+    const/high16 v0, 0x437f0000
 
     mul-float/2addr v0, p1
 

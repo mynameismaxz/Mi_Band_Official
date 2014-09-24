@@ -19,11 +19,11 @@
 
 .field public static final h:I = 0x7
 
-.field private static final j:Lu/aly/dd; = null
+.field private static final j:Lu/aly/dd;
 
-.field private static final k:Lu/aly/ct; = null
+.field private static final k:Lu/aly/ct;
 
-.field private static final l:Lu/aly/ct; = null
+.field private static final l:Lu/aly/ct;
 
 .field private static final m:J = 0x1L
 

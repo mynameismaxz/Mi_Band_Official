@@ -35,7 +35,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
-    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->updateStatusBarTint(I)V
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->applyStatusBarTint(I)V
 
     :cond_0
     return-void

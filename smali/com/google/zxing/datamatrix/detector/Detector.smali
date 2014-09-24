@@ -28,7 +28,7 @@
 .method private static a(F)I
     .locals 1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     add-float/2addr v0, p0
 
@@ -543,25 +543,25 @@
 
     move-result-object v1
 
-    const/high16 v5, 0x3f00
+    const/high16 v5, 0x3f000000
 
-    const/high16 v6, 0x3f00
+    const/high16 v6, 0x3f000000
 
     move/from16 v0, p5
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     sub-float v7, v2, v3
 
-    const/high16 v8, 0x3f00
+    const/high16 v8, 0x3f000000
 
     move/from16 v0, p5
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     sub-float v9, v2, v3
 
@@ -569,17 +569,17 @@
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     sub-float v10, v2, v3
 
-    const/high16 v11, 0x3f00
+    const/high16 v11, 0x3f000000
 
     move/from16 v0, p6
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     sub-float v12, v2, v3
 

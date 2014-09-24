@@ -175,7 +175,7 @@
 .method a(FFLandroid/graphics/Rect;F)V
     .locals 7
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     invoke-virtual {p0}, Lcom/edmodo/cropper/cropwindow/handle/c;->a()Lcom/edmodo/cropper/cropwindow/edge/EdgePair;
 

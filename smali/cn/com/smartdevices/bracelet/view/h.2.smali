@@ -43,7 +43,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/h;->a:Lcn/com/smartdevices/bracelet/view/DynamicView;
 

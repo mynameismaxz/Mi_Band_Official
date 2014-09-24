@@ -54,7 +54,7 @@
 
     invoke-direct {v3, v0}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/params/HttpParams;)V
 
-    const/high16 v0, 0x2
+    const/high16 v0, 0x20000
 
     new-array v4, v0, [B
 

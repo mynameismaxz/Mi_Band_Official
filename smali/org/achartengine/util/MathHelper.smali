@@ -32,11 +32,11 @@
 .method private static a(D)D
     .locals 10
 
-    const-wide/high16 v0, 0x4014
+    const-wide/high16 v0, 0x4014000000000000L
 
-    const-wide/high16 v4, 0x4000
+    const-wide/high16 v4, 0x4000000000000000L
 
-    const-wide/high16 v2, 0x4024
+    const-wide/high16 v2, 0x4024000000000000L
 
     invoke-static {p0, p1}, Ljava/lang/Math;->log10(D)D
 
@@ -81,7 +81,7 @@
 
     if-gtz v9, :cond_0
 
-    const-wide/high16 v0, 0x3ff0
+    const-wide/high16 v0, 0x3ff0000000000000L
 
     cmpl-double v0, v6, v0
 
@@ -189,7 +189,7 @@
 
     const/4 v3, 0x2
 
-    const-wide/high16 v4, -0x4010
+    const-wide/high16 v4, -0x4010000000000000L
 
     mul-double/2addr v1, v4
 

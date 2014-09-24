@@ -36,7 +36,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0c00da
+    const v0, 0x7f0d01b9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f0c0018
+    const v0, 0x7f0d005e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -89,7 +89,7 @@
     :cond_1
     new-instance v0, Ljava/text/SimpleDateFormat;
 
-    const v1, 0x7f0c001f
+    const v1, 0x7f0d0055
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -113,7 +113,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0022
+    const v1, 0x7f0d0057
 
     const/4 v2, 0x2
 
@@ -153,7 +153,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0c00da
+    const v0, 0x7f0d01b9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -195,7 +195,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f0c0018
+    const v0, 0x7f0d005e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -204,7 +204,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0c0023
+    const v0, 0x7f0d0058
 
     const/4 v1, 0x3
 
@@ -258,9 +258,9 @@
 
     invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;-><init>()V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/s;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/u;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/s;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/u;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;)V
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader;->setLoadCallback(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;)V
 
@@ -292,7 +292,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x7f0d
+    const v1, 0x7f07000d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -304,7 +304,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0001
+    const v1, 0x7f07000e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 .method protected updateSleepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f070147
+    const v1, 0x7f0a014c
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -362,7 +362,7 @@
 .method protected updateSleepRiseTime(I)V
     .locals 2
 
-    const v1, 0x7f070145
+    const v1, 0x7f0a014a
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -406,7 +406,7 @@
 .method protected updateSleepStartTime(I)V
     .locals 2
 
-    const v1, 0x7f070143
+    const v1, 0x7f0a0148
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -450,7 +450,7 @@
 .method protected updateStepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f070138
+    const v1, 0x7f0a013d
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -502,7 +502,7 @@
 .method protected updateStepContinueTime(I)V
     .locals 2
 
-    const v1, 0x7f070135
+    const v1, 0x7f0a013a
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 

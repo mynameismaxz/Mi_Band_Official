@@ -86,13 +86,21 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Keeper;->keepSyncRealStepTime(J)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->d(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)I
+
+    move-result v0
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepRealtimeSteps(I)V
 
     const-string v0, "DDDD"
 
@@ -128,6 +136,8 @@
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->g(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1011

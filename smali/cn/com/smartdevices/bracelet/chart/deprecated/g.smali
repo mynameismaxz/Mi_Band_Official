@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
 
-.field private final synthetic b:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->b:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->a:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,7 +29,7 @@
 .method public hasData(I)Z
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->b:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->a:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
 
     invoke-interface {v0, p1}, Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;->hasData(I)Z
 
@@ -41,7 +41,7 @@
 .method public loadData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->b:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;
 
     invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->loadDayActiveData(I)Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$ItemData;
 
@@ -59,7 +59,7 @@
 .method public onToItem(I)V
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->b:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/g;->a:Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;
 
     invoke-interface {v0, p1}, Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;->onToItem(I)V
 

@@ -115,7 +115,7 @@
 
     aput-object v0, v3, v4
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     aget v2, p0, v4
 
@@ -202,7 +202,7 @@
 
     aput-object v0, v3, v4
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     aget v2, p0, v4
 
@@ -409,7 +409,7 @@
 
     aput-object v0, v3, v4
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     aget-object v2, p0, v4
 
@@ -573,7 +573,7 @@
     goto :goto_0
 
     :cond_3
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v1, p1, v1
 

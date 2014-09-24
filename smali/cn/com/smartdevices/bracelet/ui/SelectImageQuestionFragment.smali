@@ -76,7 +76,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f070104
+    .packed-switch 0x7f0a0109
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070104
+    const v1, 0x7f0a0109
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -105,7 +105,7 @@
 
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f070105
+    const v1, 0x7f0a010a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

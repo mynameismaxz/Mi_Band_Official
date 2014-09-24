@@ -20,7 +20,7 @@
 
     invoke-direct {p0}, Lorg/achartengine/chart/XYChart;-><init>()V
 
-    const/high16 v0, 0x4040
+    const/high16 v0, 0x40400000
 
     iput v0, p0, Lorg/achartengine/chart/ScatterChart;->c:F
 
@@ -32,7 +32,7 @@
 
     invoke-direct {p0, p1, p2}, Lorg/achartengine/chart/XYChart;-><init>(Lorg/achartengine/model/XYMultipleSeriesDataset;Lorg/achartengine/renderer/XYMultipleSeriesRenderer;)V
 
-    const/high16 v0, 0x4040
+    const/high16 v0, 0x40400000
 
     iput v0, p0, Lorg/achartengine/chart/ScatterChart;->c:F
 
@@ -112,7 +112,7 @@
 
     iget v1, p0, Lorg/achartengine/chart/ScatterChart;->c:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -394,7 +394,7 @@
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
     .locals 6
 
-    const/high16 v2, 0x4120
+    const/high16 v2, 0x41200000
 
     move-object v0, p2
 

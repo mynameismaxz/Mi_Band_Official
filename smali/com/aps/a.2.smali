@@ -1328,8 +1328,8 @@
 
     sput-object v7, Lcom/aps/f;->a:Ljava/lang/String;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_0
     :goto_1
@@ -1388,8 +1388,8 @@
 
     sput-object v7, Lcom/aps/f;->b:Ljava/lang/String;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/SecurityException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_4
     :goto_2
@@ -1442,8 +1442,8 @@
 
     invoke-virtual {v15}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/SecurityException; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     move-result-object v7
 
@@ -5507,8 +5507,8 @@
     :try_start_3
     invoke-direct {p0}, Lcom/aps/a;->t()Lcom/aps/c;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Lcom/amap/api/location/core/AMapLocException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     move-result-object v0
 
@@ -6034,8 +6034,8 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_1
     :goto_1

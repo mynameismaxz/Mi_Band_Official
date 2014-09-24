@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final a:Landroid/support/v4/app/b; = null
+.field private static final a:Landroid/support/v4/app/b;
 
 .field private static final b:I = 0x102002c
 
@@ -290,7 +290,7 @@
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->i:Landroid/support/v4/app/e;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/e;->a(F)V
 
@@ -309,9 +309,9 @@
 .method public onDrawerSlide(Landroid/view/View;F)V
     .locals 4
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->i:Landroid/support/v4/app/e;
 
@@ -472,7 +472,7 @@
 
     iget-object v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle;->i:Landroid/support/v4/app/e;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/e;->a(F)V
 

@@ -96,11 +96,11 @@
 
     check-cast v0, Landroid/os/Bundle;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_3
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0, v2}, Lcom/xiaomi/channel/sdk/e;->cancel(Z)Z
 
@@ -119,11 +119,11 @@
 
     check-cast v0, Landroid/os/Bundle;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_3
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-virtual {p0, v2}, Lcom/xiaomi/channel/sdk/e;->cancel(Z)Z
 

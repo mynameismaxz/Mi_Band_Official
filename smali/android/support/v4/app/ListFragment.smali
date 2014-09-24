@@ -66,7 +66,7 @@
 
     const v5, 0x10a0001
 
-    const/high16 v4, 0x10a
+    const/high16 v4, 0x10a0000
 
     const/16 v3, 0x8
 

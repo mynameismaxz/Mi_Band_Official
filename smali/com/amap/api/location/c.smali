@@ -751,8 +751,8 @@
 
     iget-boolean v0, v0, Lcom/amap/api/location/a;->e:Z
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     if-nez v0, :cond_6
 
@@ -762,8 +762,8 @@
 
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_3
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     if-eqz v1, :cond_3
 
@@ -841,8 +841,8 @@
 
     invoke-direct {p0, v0}, Lcom/amap/api/location/c;->a(Lcom/aps/c;)Lcom/amap/api/location/AMapLocation;
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     move-result-object v0
 

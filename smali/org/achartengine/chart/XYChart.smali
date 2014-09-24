@@ -156,7 +156,7 @@
 .method private a(Landroid/graphics/Canvas;FZ)V
     .locals 3
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     if-eqz p3, :cond_0
 
@@ -639,7 +639,7 @@
 
     iget v4, v0, Lorg/achartengine/chart/XYChart;->a:F
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     cmpg-float v4, v4, v5
 
@@ -649,7 +649,7 @@
 
     iget v4, v0, Lorg/achartengine/chart/XYChart;->b:F
 
-    const/high16 v5, -0x4080
+    const/high16 v5, -0x40800000
 
     mul-float/2addr v4, v5
 
@@ -2593,11 +2593,11 @@
 
     move-result v6
 
-    const/high16 v9, 0x4080
+    const/high16 v9, 0x40800000
 
     mul-float/2addr v6, v9
 
-    const/high16 v9, 0x4040
+    const/high16 v9, 0x40400000
 
     div-float/2addr v6, v9
 
@@ -2664,7 +2664,7 @@
 
     int-to-float v13, v6
 
-    const/high16 v15, -0x3d4c
+    const/high16 v15, -0x3d4c0000
 
     move-object/from16 v9, p0
 
@@ -2698,7 +2698,7 @@
 
     int-to-float v13, v6
 
-    const/high16 v15, -0x3d4c
+    const/high16 v15, -0x3d4c0000
 
     move-object/from16 v9, p0
 
@@ -2920,7 +2920,7 @@
 
     add-float v13, v4, v6
 
-    const/high16 v15, -0x3d4c
+    const/high16 v15, -0x3d4c0000
 
     move-object/from16 v9, p0
 
@@ -4049,7 +4049,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     div-float/2addr v4, v5
 
@@ -4083,11 +4083,11 @@
 
     move-result v3
 
-    const/high16 v4, 0x4080
+    const/high16 v4, 0x40800000
 
     mul-float/2addr v3, v4
 
-    const/high16 v4, 0x4040
+    const/high16 v4, 0x40400000
 
     div-float/2addr v3, v4
 
@@ -4269,7 +4269,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     div-float/2addr v4, v5
 
@@ -4299,11 +4299,11 @@
 
     move-result v3
 
-    const/high16 v4, 0x4080
+    const/high16 v4, 0x40800000
 
     mul-float/2addr v3, v4
 
-    const/high16 v4, 0x4040
+    const/high16 v4, 0x40400000
 
     div-float/2addr v3, v4
 

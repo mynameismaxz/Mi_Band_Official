@@ -46,7 +46,7 @@
 .method public constructor <init>(Landroid/view/View;)V
     .locals 2
 
-    const/high16 v1, -0x8000
+    const/high16 v1, -0x80000000
 
     invoke-direct {p0}, Landroid/support/v4/view/AccessibilityDelegateCompat;-><init>()V
 
@@ -794,7 +794,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/support/v4/widget/ExploreByTouchHelper;->j:I
 
@@ -802,7 +802,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    const/high16 v0, 0x1
+    const/high16 v0, 0x10000
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v4/widget/ExploreByTouchHelper;->sendEventForVirtualView(II)Z
 
@@ -824,7 +824,7 @@
 
     const/4 v0, 0x1
 
-    const/high16 v4, -0x8000
+    const/high16 v4, -0x80000000
 
     const/4 v1, 0x0
 
@@ -985,7 +985,7 @@
 
     const/4 v0, 0x0
 
-    const/high16 v1, -0x8000
+    const/high16 v1, -0x80000000
 
     if-eq p1, v1, :cond_0
 

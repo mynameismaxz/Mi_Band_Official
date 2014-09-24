@@ -22,7 +22,7 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)V
     .locals 7
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     const/4 v3, 0x1
 
@@ -58,7 +58,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x4434
+    const/high16 v2, 0x44340000
 
     move v5, v3
 
@@ -119,7 +119,7 @@
 .method protected getDefaultDrawableResId()I
     .locals 1
 
-    const v0, 0x7f02005b
+    const v0, 0x7f02005c
 
     return v0
 .end method
@@ -127,7 +127,7 @@
 .method public onLoadingDrawableSet(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     if-eqz p1, :cond_0
 
@@ -170,13 +170,13 @@
 .method protected onPullImpl(F)V
     .locals 4
 
-    const/high16 v2, 0x4334
+    const/high16 v2, 0x43340000
 
     iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->h:Z
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x42b4
+    const/high16 v0, 0x42b40000
 
     mul-float/2addr v0, p1
 
@@ -200,7 +200,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/high16 v1, 0x43b4
+    const/high16 v1, 0x43b40000
 
     mul-float/2addr v1, p1
 

@@ -206,8 +206,8 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/tencent/a/a/e;->a(Ljava/io/Writer;[C)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v0, p0, Lcom/tencent/a/a/a;->h:Lcom/tencent/a/a/e;
 

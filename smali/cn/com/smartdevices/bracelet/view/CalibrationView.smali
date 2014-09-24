@@ -92,7 +92,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->i:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x4040
+    const/high16 v1, 0x40400000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -108,7 +108,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/CalibrationView;->i:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 

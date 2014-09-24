@@ -12,7 +12,7 @@
 
 .field private c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-.field private d:Lcn/com/smartdevices/bracelet/ui/ax;
+.field private d:Lcn/com/smartdevices/bracelet/ui/az;
 
 .field private e:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -37,20 +37,20 @@
     return-void
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;I)I
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->f:I
+
+    return p1
+.end method
+
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->e:Ljava/util/ArrayList;
 
     return-object v0
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->f:I
-
-    return-void
 .end method
 
 .method static synthetic a(Ljava/io/InputStream;)[B
@@ -89,8 +89,15 @@
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_0
+    if-eq v2, v3, :cond_0
 
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v3, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->flush()V
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -98,13 +105,6 @@
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v1, v3, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
-
-    goto :goto_0
 .end method
 
 
@@ -127,7 +127,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f070033
+    .packed-switch 0x7f0a0034
         :pswitch_0
     .end packed-switch
 .end method
@@ -143,7 +143,7 @@
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->setContentView(I)V
 
-    const v0, 0x7f070033
+    const v0, 0x7f0a0034
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->findViewById(I)Landroid/view/View;
 
@@ -157,7 +157,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070034
+    const v0, 0x7f0a0035
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +167,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->b:Landroid/support/v4/view/ViewPager;
 
-    const v0, 0x7f070035
+    const v0, 0x7f0a0036
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->findViewById(I)Landroid/view/View;
 
@@ -225,19 +225,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ax;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/az;
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/ax;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/az;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/az;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->b:Landroid/support/v4/view/ViewPager;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/az;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
@@ -253,9 +253,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aw;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ay;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aw;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ay;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
 
     invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 

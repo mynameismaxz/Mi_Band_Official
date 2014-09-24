@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final a:Ljava/lang/String; = null
+.field public static final a:Ljava/lang/String;
 
 .field private static final b:Ljava/lang/String; = "helper"
 
@@ -732,7 +732,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v4, 0x4090
+    const-wide/high16 v4, 0x4090000000000000L
 
     div-double/2addr v0, v4
 
@@ -777,7 +777,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v4, 0x4130
+    const-wide/high16 v4, 0x4130000000000000L
 
     div-double/2addr v0, v4
 
@@ -816,7 +816,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v4, 0x41d0
+    const-wide/high16 v4, 0x41d0000000000000L
 
     div-double/2addr v0, v4
 

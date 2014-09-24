@@ -57,22 +57,18 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/o;->b:Lcn/com/smartdevices/bracelet/ui/n;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/n;->a(Lcn/com/smartdevices/bracelet/ui/n;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->e(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     goto :goto_0
 
     :cond_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/o;->b:Lcn/com/smartdevices/bracelet/ui/n;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/n;->a(Lcn/com/smartdevices/bracelet/ui/n;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->e(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->f(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     goto :goto_0
 .end method

@@ -5,7 +5,7 @@
 # static fields
 .field private static final a:Ljava/lang/String; = "XIAOMIANALYTICS"
 
-.field private static final b:Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker; = null
+.field private static final b:Lcom/xiaomi/miui/analyticstracker/AnalyticsTracker;
 
 .field private static final c:Ljava/lang/String; = "_timed_event_"
 

@@ -194,7 +194,7 @@
 .method public b(Landroid/app/Activity;Landroid/content/Intent;)V
     .locals 1
 
-    const/high16 v0, 0x400
+    const/high16 v0, 0x4000000
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 

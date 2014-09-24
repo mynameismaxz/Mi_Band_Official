@@ -219,7 +219,7 @@
 .method public isOnPieChart(Lorg/achartengine/model/Point;)Z
     .locals 6
 
-    const-wide/high16 v4, 0x4000
+    const-wide/high16 v4, 0x4000000000000000L
 
     iget v0, p0, Lorg/achartengine/chart/PieMapper;->c:I
 

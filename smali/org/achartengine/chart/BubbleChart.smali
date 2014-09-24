@@ -78,7 +78,7 @@
 
     move-result-wide v1
 
-    const-wide/high16 v3, 0x4034
+    const-wide/high16 v3, 0x4034000000000000L
 
     div-double v10, v3, v1
 
@@ -103,7 +103,7 @@
 
     mul-double/2addr v1, v10
 
-    const-wide/high16 v3, 0x4000
+    const-wide/high16 v3, 0x4000000000000000L
 
     add-double v4, v1, v3
 
@@ -230,11 +230,11 @@
 
     invoke-virtual {p6, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     add-float v3, p3, v0
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     move-object v0, p0
 
@@ -297,7 +297,7 @@
 
     move-result-wide v1
 
-    const-wide/high16 v3, 0x4034
+    const-wide/high16 v3, 0x4034000000000000L
 
     div-double v10, v3, v1
 
@@ -318,7 +318,7 @@
 
     mul-double/2addr v1, v10
 
-    const-wide/high16 v3, 0x4000
+    const-wide/high16 v3, 0x4000000000000000L
 
     add-double v2, v1, v3
 

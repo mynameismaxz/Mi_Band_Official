@@ -435,9 +435,9 @@
 
     if-eqz v8, :cond_8
 
-    const/high16 v8, 0x42b4
+    const/high16 v8, 0x42b40000
 
-    const/high16 v9, 0x4000
+    const/high16 v9, 0x40000000
 
     div-float v9, v14, v9
 
@@ -628,11 +628,11 @@
 
     move/from16 v31, v0
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     div-float v32, v22, v8
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     div-float v33, v10, v8
 

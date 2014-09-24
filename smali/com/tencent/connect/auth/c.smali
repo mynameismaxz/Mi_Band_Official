@@ -183,37 +183,37 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setId(I)V
 
-    const/high16 v3, 0x4270
+    const/high16 v3, 0x42700000
 
     mul-float/2addr v3, v0
 
     float-to-int v3, v3
 
-    const/high16 v4, 0x4270
+    const/high16 v4, 0x42700000
 
     mul-float/2addr v4, v0
 
     float-to-int v4, v4
 
-    const/high16 v5, 0x4160
+    const/high16 v5, 0x41600000
 
     mul-float/2addr v5, v0
 
     float-to-int v5, v5
 
-    const/high16 v5, 0x4190
+    const/high16 v5, 0x41900000
 
     mul-float/2addr v5, v0
 
     float-to-int v5, v5
 
-    const/high16 v6, 0x40c0
+    const/high16 v6, 0x40c00000
 
     mul-float/2addr v6, v0
 
     float-to-int v6, v6
 
-    const/high16 v7, 0x4190
+    const/high16 v7, 0x41900000
 
     mul-float/2addr v7, v0
 
@@ -239,7 +239,7 @@
 
     invoke-virtual {v2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/high16 v3, 0x4160
+    const/high16 v3, 0x41600000
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextSize(F)V
 
@@ -269,7 +269,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setId(I)V
 
-    const/high16 v3, 0x4339
+    const/high16 v3, 0x43390000
 
     mul-float/2addr v3, v0
 
@@ -297,7 +297,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    const/high16 v4, 0x4120
+    const/high16 v4, 0x41200000
 
     mul-float/2addr v4, v0
 
@@ -307,7 +307,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v6, 0x40a0
+    const/high16 v6, 0x40a00000
 
     mul-float/2addr v6, v0
 
@@ -371,7 +371,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v7, 0x4140
+    const/high16 v7, 0x41400000
 
     mul-float/2addr v7, v0
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTextColor(I)V
 
-    const/high16 v5, 0x41a0
+    const/high16 v5, 0x41a00000
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTextSize(F)V
 
@@ -453,7 +453,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v7, 0x4234
+    const/high16 v7, 0x42340000
 
     mul-float/2addr v7, v0
 
@@ -461,7 +461,7 @@
 
     invoke-direct {v5, v6, v7}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    const/high16 v6, 0x4160
+    const/high16 v6, 0x41600000
 
     mul-float/2addr v6, v0
 
@@ -469,7 +469,7 @@
 
     iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    const/high16 v6, 0x4080
+    const/high16 v6, 0x40800000
 
     mul-float/2addr v6, v0
 
@@ -477,7 +477,7 @@
 
     iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
@@ -491,7 +491,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    const/high16 v5, 0x41a0
+    const/high16 v5, 0x41a00000
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTextSize(F)V
 
@@ -521,7 +521,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v7, 0x4234
+    const/high16 v7, 0x42340000
 
     mul-float/2addr v7, v0
 
@@ -529,11 +529,11 @@
 
     invoke-direct {v5, v6, v7}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    const/high16 v6, 0x4080
+    const/high16 v6, 0x40800000
 
     mul-float/2addr v6, v0
 
@@ -551,7 +551,7 @@
 
     float-to-int v2, v2
 
-    const/high16 v3, 0x4323
+    const/high16 v3, 0x43230000
 
     mul-float/2addr v3, v0
 
@@ -561,7 +561,7 @@
 
     invoke-direct {v4, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    const/high16 v2, 0x4160
+    const/high16 v2, 0x41600000
 
     mul-float/2addr v2, v0
 
@@ -569,13 +569,13 @@
 
     const/4 v3, 0x0
 
-    const/high16 v5, 0x4140
+    const/high16 v5, 0x41400000
 
     mul-float/2addr v5, v0
 
     float-to-int v5, v5
 
-    const/high16 v6, 0x4140
+    const/high16 v6, 0x41400000
 
     mul-float/2addr v6, v0
 
@@ -611,7 +611,7 @@
 
     invoke-direct {v2, v3}, Landroid/graphics/drawable/PaintDrawable;-><init>(I)V
 
-    const/high16 v3, 0x40a0
+    const/high16 v3, 0x40a00000
 
     mul-float/2addr v0, v3
 

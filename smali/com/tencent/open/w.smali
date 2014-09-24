@@ -41,7 +41,7 @@
 
     const/4 v1, 0x1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
 

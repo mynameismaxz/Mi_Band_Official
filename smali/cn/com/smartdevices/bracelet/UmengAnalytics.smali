@@ -15,6 +15,8 @@
 
 .field public static final EVENT_ALARM_SETTING:Ljava/lang/String; = "AlarmSetting"
 
+.field public static final EVENT_BINDED_USER_START:Ljava/lang/String; = "BindedUserStart"
+
 .field public static final EVENT_BLE_CONNECT:Ljava/lang/String; = "BleConnect"
 
 .field public static final EVENT_BLE_DISCONNECT:Ljava/lang/String; = "BleDisconnect"
@@ -53,11 +55,21 @@
 
 .field public static final EVENT_DYNAMIC_REALSTEP_UPDATE:Ljava/lang/String; = "DynamicRealStepUpdate"
 
-.field public static final EVENT_EXCEPT_REAL_DETAIL_STEP_UNEQUAL:Ljava/lang/String; = "ExceptRealDetailStepUnequal"
+.field public static final EVENT_EXCEPT_REALTIME_LESS_DETAIL_STEP:Ljava/lang/String; = "ExceptRealtimeLessDetailStep"
 
-.field public static final EVENT_EXCEPT_REAL_STAT_STEP_UNEQUAL:Ljava/lang/String; = "ExceptRealStatisticStepUnequal"
+.field public static final EVENT_EXCEPT_REALTIME_MORE_DETAIL_STEP:Ljava/lang/String; = "ExceptRealtimeMoreDetailStep"
 
 .field public static final EVENT_FIRMWARE_UPGRADE:Ljava/lang/String; = "FirmwareUpgrade"
+
+.field public static final EVENT_GAME_DISLIKE:Ljava/lang/String; = "Game_Dislike"
+
+.field public static final EVENT_GAME_VIEW_SIGNUP:Ljava/lang/String; = "Game_ViewSignup"
+
+.field public static final EVENT_INCOMING_CALL:Ljava/lang/String; = "IncomingCall"
+
+.field public static final EVENT_LOCATION_EXCEPTION:Ljava/lang/String; = "LocationException"
+
+.field public static final EVENT_LOCATION_START:Ljava/lang/String; = "LocationStart"
 
 .field public static final EVENT_SHARE:Ljava/lang/String; = "Share"
 
@@ -99,11 +111,17 @@
 
 .field public static final EVENT_VIEW_STATISTIC:Ljava/lang/String; = "ViewStatistic"
 
+.field public static final EVENT_WEATHER_EXCEPTION:Ljava/lang/String; = "WeatherException"
+
+.field public static final EVENT_WEATHER_OK:Ljava/lang/String; = "WeatherOK"
+
 .field public static final EVENT_WEATHER_REQUEST_CITY:Ljava/lang/String; = "WeatherRequestCity"
 
 .field public static final EVENT_WEATHER_REQUEST_CITY_CODE:Ljava/lang/String; = "WeatherRequestCityCode"
 
 .field public static final EVENT_WEATHER_REQUEST_WEATHER:Ljava/lang/String; = "WeatherRequestWeather"
+
+.field public static final EVENT_WEATHER_START:Ljava/lang/String; = "WeatherStart"
 
 .field public static final PAGE_ABOUT:Ljava/lang/String; = "PageAbout"
 
@@ -199,6 +217,14 @@
 
 .field public static final VALUE_BIND_WECHART_QRCODE:Ljava/lang/String; = "BindWeChatQrcode"
 
+.field public static final VALUE_CALL_IDLE:Ljava/lang/String; = "CallIdle"
+
+.field public static final VALUE_CALL_NOTIFY:Ljava/lang/String; = "CallNotify"
+
+.field public static final VALUE_CALL_OFFHOOK:Ljava/lang/String; = "CallOffhook"
+
+.field public static final VALUE_CALL_RING:Ljava/lang/String; = "CallRing"
+
 .field public static final VALUE_CANCELED:Ljava/lang/String; = "Canceled"
 
 .field public static final VALUE_CONFIRMED:Ljava/lang/String; = "Confirmed"
@@ -248,6 +274,8 @@
 .field public static final VALUE_SHARE_TO_WEIBO:Ljava/lang/String; = "ShareToWeibo"
 
 .field public static final VALUE_SHARE_TYPE_CONTINUE_DAYS:Ljava/lang/String; = "ShareContinueDays"
+
+.field public static final VALUE_SHARE_TYPE_EVENT:Ljava/lang/String; = "ShareEvent"
 
 .field public static final VALUE_SHARE_TYPE_MONTHLY_SLEEP:Ljava/lang/String; = "ShareMonthlySleep"
 
@@ -348,9 +376,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -399,9 +431,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Page : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -433,9 +469,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Session : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -467,9 +507,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -511,9 +555,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -555,9 +603,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -641,9 +693,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -697,9 +753,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -777,9 +837,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -828,9 +892,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Page : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -862,9 +930,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Session : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

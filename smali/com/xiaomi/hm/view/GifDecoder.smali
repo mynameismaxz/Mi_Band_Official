@@ -442,7 +442,7 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    const/high16 v8, -0x100
+    const/high16 v8, -0x1000000
 
     shl-int/lit8 v4, v4, 0x10
 
@@ -1049,8 +1049,8 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/view/GifDecoder;->P:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -2285,8 +2285,8 @@
 
     iput v0, p0, Lcom/xiaomi/hm/view/GifDecoder;->S:I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_b
     :goto_5
@@ -2319,8 +2319,8 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->await()V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_4
 
@@ -2362,8 +2362,8 @@
 
     invoke-interface {v0, v1}, Lcom/xiaomi/hm/view/GifAction;->parseReturn(I)V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     goto :goto_5
 
@@ -2646,8 +2646,8 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lockInterruptibly()V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_1
     :try_start_1
@@ -2700,8 +2700,8 @@
 
     iput v2, p0, Lcom/xiaomi/hm/view/GifDecoder;->V:I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_3
     iget-object v1, p0, Lcom/xiaomi/hm/view/GifDecoder;->P:Ljava/util/concurrent/locks/ReentrantLock;
@@ -2716,8 +2716,8 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->await()V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_1
 
@@ -2729,8 +2729,8 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/view/GifDecoder;->P:Ljava/util/concurrent/locks/ReentrantLock;
 

@@ -1192,6 +1192,11 @@
 
 .method public writeEncryToken(Landroid/content/Context;)V
     .locals 8
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled"
+        }
+    .end annotation
 
     const/4 v7, 0x1
 

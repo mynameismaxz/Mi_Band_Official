@@ -143,8 +143,8 @@
     :try_start_0
     invoke-virtual {p0, v0, v1, v2}, Ljava/io/InputStream;->read([BII)I
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v1
 

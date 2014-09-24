@@ -31,7 +31,7 @@
 
     const/4 v7, 0x2
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     new-instance v0, Lorg/achartengine/renderer/BasicStroke;
 
@@ -39,7 +39,7 @@
 
     sget-object v2, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
-    const/high16 v3, 0x4080
+    const/high16 v3, 0x40800000
 
     const/4 v4, 0x0
 
@@ -55,7 +55,7 @@
 
     sget-object v2, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
-    const/high16 v3, 0x4120
+    const/high16 v3, 0x41200000
 
     new-array v4, v7, [F
 
@@ -73,7 +73,7 @@
 
     sget-object v2, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
-    const/high16 v3, 0x40a0
+    const/high16 v3, 0x40a00000
 
     new-array v4, v7, [F
 
@@ -90,15 +90,15 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x20t 0x41t
-        0x0t 0x0t 0x20t 0x41t
+    .array-data 4
+        0x41200000
+        0x41200000
     .end array-data
 
     :array_1
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x40t
-        0x0t 0x0t 0x20t 0x41t
+    .array-data 4
+        0x40000000
+        0x41200000
     .end array-data
 .end method
 

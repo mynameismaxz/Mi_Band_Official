@@ -473,8 +473,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     const-string v0, ".. Resume loading [%s]"
@@ -1418,8 +1418,8 @@
     :cond_3
     invoke-direct {p0}, Lcom/nostra13/universalimageloader/core/l;->d()Landroid/graphics/Bitmap;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/nostra13/universalimageloader/core/p; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
@@ -1573,8 +1573,8 @@
 
     invoke-direct {p0}, Lcom/nostra13/universalimageloader/core/l;->o()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Lcom/nostra13/universalimageloader/core/p; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
@@ -1618,8 +1618,8 @@
 
     invoke-static {v2, v3}, Lcom/nostra13/universalimageloader/utils/L;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/nostra13/universalimageloader/core/p; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_1
 

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field private static final synthetic ENUM$VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
+.field private static final synthetic $VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
 
 .field public static final enum NONWEAR:Lcn/com/smartdevices/bracelet/model/SportMode;
 
@@ -123,13 +123,18 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcn/com/smartdevices/bracelet/model/SportMode;->ENUM$VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
+    sput-object v0, Lcn/com/smartdevices/bracelet/model/SportMode;->$VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
@@ -151,17 +156,15 @@
 .end method
 
 .method public static values()[Lcn/com/smartdevices/bracelet/model/SportMode;
-    .locals 4
+    .locals 1
 
-    const/4 v3, 0x0
+    sget-object v0, Lcn/com/smartdevices/bracelet/model/SportMode;->$VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/model/SportMode;->ENUM$VALUES:[Lcn/com/smartdevices/bracelet/model/SportMode;
+    invoke-virtual {v0}, [Lcn/com/smartdevices/bracelet/model/SportMode;->clone()Ljava/lang/Object;
 
-    array-length v1, v0
+    move-result-object v0
 
-    new-array v2, v1, [Lcn/com/smartdevices/bracelet/model/SportMode;
+    check-cast v0, [Lcn/com/smartdevices/bracelet/model/SportMode;
 
-    invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v2
+    return-object v0
 .end method

@@ -24,7 +24,7 @@
 
     const/4 v0, 0x0
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/zxing/qrcode/detector/Detector;->b(IIII)F
 
@@ -190,7 +190,7 @@
 .method private a(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
     .locals 6
 
-    const/high16 v5, 0x40e0
+    const/high16 v5, 0x40e00000
 
     invoke-virtual {p1}, Lcom/google/zxing/ResultPoint;->getX()F
 
@@ -273,7 +273,7 @@
     :cond_1
     add-float/2addr v0, v1
 
-    const/high16 v1, 0x4160
+    const/high16 v1, 0x41600000
 
     div-float/2addr v0, v1
 
@@ -283,7 +283,7 @@
 .method private static a(F)I
     .locals 1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     add-float/2addr v0, p0
 
@@ -524,7 +524,7 @@
     goto :goto_4
 
     :cond_8
-    const/high16 v2, 0x7fc0
+    const/high16 v2, 0x7fc00000
 
     goto :goto_8
 
@@ -631,7 +631,7 @@
 
     int-to-float v1, v0
 
-    const/high16 v2, 0x4060
+    const/high16 v2, 0x40600000
 
     sub-float v3, v1, v2
 
@@ -645,20 +645,20 @@
 
     move-result v14
 
-    const/high16 v1, 0x4040
+    const/high16 v1, 0x40400000
 
     sub-float v6, v3, v1
 
     move v5, v6
 
     :goto_0
-    const/high16 v1, 0x4060
+    const/high16 v1, 0x40600000
 
-    const/high16 v2, 0x4060
+    const/high16 v2, 0x40600000
 
-    const/high16 v4, 0x4060
+    const/high16 v4, 0x40600000
 
-    const/high16 v7, 0x4060
+    const/high16 v7, 0x40600000
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/ResultPoint;->getX()F
 
@@ -747,7 +747,7 @@
 
     add-float/2addr v0, v1
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -821,7 +821,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v6, 0x4040
+    const/high16 v6, 0x40400000
 
     mul-float v0, p4, p1
 
@@ -957,7 +957,7 @@
 
     move-result v5
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     cmpg-float v0, v5, v0
 
@@ -1026,9 +1026,9 @@
 
     add-float/2addr v8, v9
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
-    const/high16 v10, 0x4040
+    const/high16 v10, 0x40400000
 
     int-to-float v7, v7
 

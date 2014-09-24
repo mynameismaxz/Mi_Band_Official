@@ -10,7 +10,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const/high16 v0, 0x7f04
+    const/high16 v0, 0x7f040000
 
     sput v0, Lcom/xiaomi/miui/analyticstracker/R$string;->app_name:I
 

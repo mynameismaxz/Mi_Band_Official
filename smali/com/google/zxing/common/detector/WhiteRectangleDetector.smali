@@ -178,7 +178,7 @@
 .method private static a(F)I
     .locals 1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     add-float/2addr v0, p0
 
@@ -362,11 +362,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f80
+    const/high16 v11, 0x3f800000
 
     sub-float/2addr v7, v11
 
-    const/high16 v11, 0x3f80
+    const/high16 v11, 0x3f800000
 
     add-float/2addr v8, v11
 
@@ -378,11 +378,11 @@
 
     new-instance v8, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     add-float/2addr v3, v9
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     add-float/2addr v4, v9
 
@@ -394,11 +394,11 @@
 
     new-instance v4, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     sub-float/2addr v5, v7
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     sub-float/2addr v6, v7
 
@@ -410,11 +410,11 @@
 
     new-instance v4, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     add-float/2addr v1, v5
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     sub-float/2addr v2, v5
 
@@ -434,11 +434,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f80
+    const/high16 v11, 0x3f800000
 
     add-float/2addr v7, v11
 
-    const/high16 v11, 0x3f80
+    const/high16 v11, 0x3f800000
 
     add-float/2addr v8, v11
 
@@ -450,11 +450,11 @@
 
     new-instance v8, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     add-float/2addr v3, v9
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     sub-float/2addr v4, v9
 
@@ -466,11 +466,11 @@
 
     new-instance v4, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     sub-float/2addr v5, v7
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     add-float/2addr v6, v7
 
@@ -482,11 +482,11 @@
 
     new-instance v4, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     sub-float/2addr v1, v5
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     sub-float/2addr v2, v5
 

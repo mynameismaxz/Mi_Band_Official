@@ -222,11 +222,11 @@
 
     move-result-wide v0
 
-    const-wide/high16 v2, 0x4034
+    const-wide/high16 v2, 0x4034000000000000L
 
     mul-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x4008
+    const-wide/high16 v2, 0x4008000000000000L
 
     add-double/2addr v0, v2
 

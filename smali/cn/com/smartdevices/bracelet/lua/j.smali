@@ -4,10 +4,22 @@
 
 # instance fields
 .field public a:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "code"
+    .end annotation
+.end field
 
 .field public b:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "message"
+    .end annotation
+.end field
 
 .field public c:Lcn/com/smartdevices/bracelet/lua/k;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "data"
+    .end annotation
+.end field
 
 .field final synthetic d:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 

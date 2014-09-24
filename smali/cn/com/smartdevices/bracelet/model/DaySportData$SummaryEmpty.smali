@@ -139,7 +139,7 @@
 .method public getUserSleepEnd()I
     .locals 1
 
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     return v0
 .end method
@@ -147,7 +147,7 @@
 .method public getUserSleepStart()I
     .locals 1
 
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     return v0
 .end method

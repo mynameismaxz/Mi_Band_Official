@@ -42,11 +42,11 @@
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
     .locals 6
 
-    const/high16 v1, 0x40a0
+    const/high16 v1, 0x40a00000
 
     sub-float v2, p4, v1
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     add-float v3, p3, v0
 

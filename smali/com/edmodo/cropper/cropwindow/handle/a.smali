@@ -26,7 +26,7 @@
 .method a(FFLandroid/graphics/Rect;F)V
     .locals 5
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 

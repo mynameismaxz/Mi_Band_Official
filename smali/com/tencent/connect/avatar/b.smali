@@ -42,7 +42,7 @@
 
     const/4 v2, 0x0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
@@ -110,7 +110,7 @@
 
     const/4 v2, 0x0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -236,7 +236,7 @@
 .method private a(Landroid/graphics/PointF;)V
     .locals 7
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
@@ -502,21 +502,21 @@
 
     new-instance v0, Landroid/view/animation/ScaleAnimation;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget v2, p0, Lcom/tencent/connect/avatar/b;->o:F
 
     div-float/2addr v1, v2
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     iget v4, p0, Lcom/tencent/connect/avatar/b;->o:F
 
     div-float/2addr v3, v4
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     iget-object v5, p0, Lcom/tencent/connect/avatar/b;->m:Landroid/graphics/PointF;
 
@@ -584,11 +584,11 @@
 
     new-instance v0, Landroid/view/animation/ScaleAnimation;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget v2, p0, Lcom/tencent/connect/avatar/b;->o:F
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     iget v4, p0, Lcom/tencent/connect/avatar/b;->o:F
 
@@ -762,9 +762,9 @@
 .method private c()V
     .locals 7
 
-    const/high16 v6, 0x4500
+    const/high16 v6, 0x45000000
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/b;->h:Landroid/graphics/Bitmap;
 
@@ -980,7 +980,7 @@
 
     const/4 v3, 0x2
 
-    const/high16 v2, 0x4120
+    const/high16 v2, 0x41200000
 
     const/4 v4, 0x1
 

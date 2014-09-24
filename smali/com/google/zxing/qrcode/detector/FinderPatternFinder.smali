@@ -79,7 +79,7 @@
 
     const/4 v7, 0x0
 
-    const/high16 v0, 0x7fc0
+    const/high16 v0, 0x7fc00000
 
     iget-object v2, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->c:Lcom/google/zxing/common/BitMatrix;
 
@@ -332,7 +332,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -390,7 +390,7 @@
 
     const/4 v7, 0x0
 
-    const/high16 v0, 0x7fc0
+    const/high16 v0, 0x7fc00000
 
     iget-object v2, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->c:Lcom/google/zxing/common/BitMatrix;
 
@@ -1651,7 +1651,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40e0
+    const/high16 v1, 0x40e00000
 
     div-float v6, v0, v1
 

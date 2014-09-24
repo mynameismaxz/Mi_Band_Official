@@ -85,7 +85,7 @@
 .method public getPageWidth(I)F
     .locals 1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     return v0
 .end method

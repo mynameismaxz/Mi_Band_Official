@@ -46,7 +46,7 @@
 
     iput v0, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iget v1, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
 
@@ -82,7 +82,7 @@
 
     iput p3, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iget v1, p0, Lorg/achartengine/chart/CubicLineChart;->a:F
 

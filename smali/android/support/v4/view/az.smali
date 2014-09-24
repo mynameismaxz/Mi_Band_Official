@@ -19,7 +19,7 @@
 .method public getInterpolation(F)F
     .locals 3
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     sub-float v0, p1, v2
 

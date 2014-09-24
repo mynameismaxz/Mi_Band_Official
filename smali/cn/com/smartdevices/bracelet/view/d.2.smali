@@ -51,7 +51,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 4
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     const/4 v2, 0x0
 
@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const/high16 v1, -0x3ccc
+    const/high16 v1, -0x3ccc0000
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setRotationY(F)V
 

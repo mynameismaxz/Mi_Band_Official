@@ -14,15 +14,15 @@
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/base/BarChart;-><init>(Landroid/content/Context;)V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/j;
+    new-instance v0, Lcn/com/smartdevices/bracelet/chart/k;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/j;-><init>(Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/k;-><init>(Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mXAxis:Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mXAxis:Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
-    const/high16 v1, 0x4110
+    const/high16 v1, 0x41100000
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mDensity:F
 
@@ -36,7 +36,7 @@
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mMaxItemValue:I
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mDensity:F
 
@@ -56,7 +56,7 @@
 
     invoke-virtual {p0, v3, v3, v3, v0}, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->setPadding(FFFF)V
 
-    const/high16 v0, 0x40e0
+    const/high16 v0, 0x40e00000
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mDensity:F
 
@@ -148,15 +148,15 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mXAxis:Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/j;
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/k;
 
-    iget v1, v0, Lcn/com/smartdevices/bracelet/chart/j;->c:F
+    iget v1, v0, Lcn/com/smartdevices/bracelet/chart/k;->c:F
 
     check-cast p2, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;
 
     iget v2, p2, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;->index:I
 
-    iget v0, v0, Lcn/com/smartdevices/bracelet/chart/j;->offset:I
+    iget v0, v0, Lcn/com/smartdevices/bracelet/chart/k;->offset:I
 
     sub-int v0, v2, v0
 
@@ -174,13 +174,13 @@
 
     move-result v0
 
-    const/high16 v1, 0x4190
+    const/high16 v1, 0x41900000
 
     div-float/2addr v0, v1
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mItemPadding:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     mul-float/2addr v1, v2
 
@@ -194,9 +194,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart;->mXAxis:Lcn/com/smartdevices/bracelet/chart/base/BarChart$Axis;
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/j;
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/k;
 
-    iput p1, v0, Lcn/com/smartdevices/bracelet/chart/j;->offset:I
+    iput p1, v0, Lcn/com/smartdevices/bracelet/chart/k;->offset:I
 
     return-void
 .end method

@@ -34,12 +34,20 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     const-string v0, "com.xiaomi.hm.health.ACTION_DEVICE_UNBIND_APPLICATION"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_0
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
 .end method

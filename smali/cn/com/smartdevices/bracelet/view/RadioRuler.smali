@@ -134,7 +134,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x4170
+    const/high16 v1, 0x41700000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
@@ -159,13 +159,13 @@
 
     if-ne v0, v1, :cond_0
 
-    const/high16 v0, 0x44c8
+    const/high16 v0, 0x44c80000
 
     :goto_0
     return v0
 
     :cond_0
-    const/high16 v0, 0x42dc
+    const/high16 v0, 0x42dc0000
 
     goto :goto_0
 .end method
@@ -173,7 +173,7 @@
 .method private a(F)V
     .locals 4
 
-    const/high16 v3, 0x4396
+    const/high16 v3, 0x43960000
 
     const/4 v2, 0x0
 
@@ -236,7 +236,7 @@
     :cond_2
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    const/high16 v1, -0x3c6a
+    const/high16 v1, -0x3c6a0000
 
     cmpg-float v0, v0, v1
 
@@ -263,48 +263,45 @@
 .method private a(Landroid/graphics/Canvas;)V
     .locals 6
 
-    const/high16 v5, 0x4316
+    const/high16 v5, 0x43160000
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    const/high16 v1, 0x4288
+    const/high16 v1, 0x42880000
 
     add-float/2addr v1, v0
 
     const/4 v0, -0x1
 
     :goto_0
-    const/high16 v2, 0x4448
+    const/high16 v2, 0x44480000
 
     cmpg-float v2, v1, v2
 
-    if-lez v2, :cond_0
+    if-gtz v2, :cond_1
 
-    return-void
-
-    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     const/4 v2, 0x0
 
     cmpg-float v2, v1, v2
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_0
 
     add-float/2addr v1, v5
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
 
     packed-switch v2, :pswitch_data_0
 
-    const/high16 v2, 0x42a8
+    const/high16 v2, 0x42a80000
 
     int-to-float v3, v0
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     mul-float/2addr v3, v4
 
@@ -315,19 +312,25 @@
     :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     iget v3, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    const/high16 v3, 0x4170
+    const/high16 v3, 0x41700000
 
     iget-object v4, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->f:Landroid/graphics/Paint;
 
@@ -338,11 +341,11 @@
     goto :goto_0
 
     :pswitch_0
-    const/high16 v2, 0x43fa
+    const/high16 v2, 0x43fa0000
 
     int-to-float v3, v0
 
-    const/high16 v4, 0x4120
+    const/high16 v4, 0x41200000
 
     mul-float/2addr v3, v4
 
@@ -351,6 +354,9 @@
     iput v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->u:F
 
     goto :goto_1
+
+    :cond_1
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x3ea
@@ -361,11 +367,11 @@
 .method private b()F
     .locals 5
 
-    const/high16 v4, 0x4120
+    const/high16 v4, 0x41200000
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    const/high16 v1, 0x4170
+    const/high16 v1, 0x41700000
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->divide(FF)F
 
@@ -389,11 +395,11 @@
     :pswitch_0
     const v0, 0x402ccccd
 
-    const/high16 v2, 0x42a7
+    const/high16 v2, 0x42a70000
 
     int-to-float v1, v1
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-static {v3, v4}, Lcn/com/smartdevices/bracelet/view/RadioRuler$FloatUtility;->divide(FF)F
 
@@ -414,7 +420,7 @@
     goto :goto_0
 
     :pswitch_1
-    const/high16 v0, 0x41d8
+    const/high16 v0, 0x41d80000
 
     const v2, 0x43f78000
 
@@ -471,11 +477,8 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    return-void
-
-    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->v:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrX()I
@@ -489,6 +492,9 @@
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/RadioRuler;->invalidate()V
 
     goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
 
@@ -496,11 +502,11 @@
 .method public DrawRuler(Landroid/graphics/Canvas;)V
     .locals 7
 
-    const/high16 v6, 0x4396
+    const/high16 v6, 0x43960000
 
     const/4 v5, 0x0
 
-    const/high16 v4, 0x41a0
+    const/high16 v4, 0x41a00000
 
     const/4 v3, 0x0
 
@@ -512,9 +518,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "startview position is "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
@@ -532,9 +542,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "scroll distance position is "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
@@ -556,7 +570,7 @@
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    const/high16 v1, -0x3d38
+    const/high16 v1, -0x3d380000
 
     cmpg-float v0, v0, v1
 
@@ -564,7 +578,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->a:Landroid/graphics/Bitmap;
 
-    const/high16 v1, 0x4461
+    const/high16 v1, 0x44610000
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
@@ -591,7 +605,7 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->h:F
 
-    const/high16 v2, 0x4416
+    const/high16 v2, 0x44160000
 
     add-float/2addr v1, v2
 
@@ -715,7 +729,7 @@
     :pswitch_2
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->g:F
 
-    const/high16 v1, 0x4170
+    const/high16 v1, 0x41700000
 
     rem-float/2addr v0, v1
 
@@ -748,9 +762,9 @@
 .method public setFreq(IF)V
     .locals 4
 
-    const/high16 v3, 0x41d8
+    const/high16 v3, 0x41d80000
 
-    const/high16 v2, 0x4170
+    const/high16 v2, 0x41700000
 
     packed-switch p1, :pswitch_data_0
 
@@ -762,7 +776,7 @@
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/RadioRuler;->s:I
 
-    const/high16 v0, 0x42a7
+    const/high16 v0, 0x42a70000
 
     sub-float v0, p2, v0
 
@@ -789,7 +803,7 @@
 
     sub-float v0, p2, v0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     div-float/2addr v0, v1
 
@@ -848,9 +862,9 @@
 .method public smoothScrollToFreq(F)V
     .locals 4
 
-    const/high16 v3, 0x41d8
+    const/high16 v3, 0x41d80000
 
-    const/high16 v2, 0x4170
+    const/high16 v2, 0x41700000
 
     const/4 v0, 0x0
 
@@ -868,7 +882,7 @@
     return-void
 
     :pswitch_0
-    const/high16 v0, 0x42a7
+    const/high16 v0, 0x42a70000
 
     sub-float v0, p1, v0
 
@@ -889,7 +903,7 @@
 
     sub-float v0, p1, v0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     div-float/2addr v0, v1
 

@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
+.field final synthetic a:Ljava/util/Map;
 
-.field private final synthetic b:Ljava/util/Map;
+.field final synthetic b:Lcom/xiaomi/hm/bleservice/BLEService;
 
 
 # direct methods
 .method constructor <init>(Lcom/xiaomi/hm/bleservice/BLEService;Ljava/util/Map;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/xiaomi/hm/bleservice/f;->a:Lcom/xiaomi/hm/bleservice/BLEService;
+    iput-object p1, p0, Lcom/xiaomi/hm/bleservice/f;->b:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    iput-object p2, p0, Lcom/xiaomi/hm/bleservice/f;->b:Ljava/util/Map;
+    iput-object p2, p0, Lcom/xiaomi/hm/bleservice/f;->a:Ljava/util/Map;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,9 +37,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "device: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -67,9 +71,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "scanRecord: "
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-static {p3}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
 
@@ -104,10 +112,10 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->a:Lcom/xiaomi/hm/bleservice/BLEService;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->b:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Device:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$5(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/bluetooth/BluetoothDevice;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Device:Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$500(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v0
 
@@ -117,10 +125,10 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/f;->a:Lcom/xiaomi/hm/bleservice/BLEService;
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/f;->b:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Device:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$5(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/bluetooth/BluetoothDevice;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Device:Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$500(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v1
 
@@ -130,8 +138,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_2
+
     :cond_2
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->b:Ljava/util/Map;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->a:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
@@ -143,7 +155,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->b:Ljava/util/Map;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/f;->a:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
@@ -169,7 +181,8 @@
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->access$6()Landroid/support/v4/content/LocalBroadcastManager;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->c_BroadcastManager:Landroid/support/v4/content/LocalBroadcastManager;
+    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->access$600()Landroid/support/v4/content/LocalBroadcastManager;
 
     move-result-object v1
 

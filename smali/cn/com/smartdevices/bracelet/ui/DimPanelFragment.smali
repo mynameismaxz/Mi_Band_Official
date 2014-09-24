@@ -160,7 +160,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f07009e
+    .packed-switch 0x7f0a00a0
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -174,7 +174,7 @@
 
     const/4 v1, 0x0
 
-    const v0, 0x7f0e0005
+    const v0, 0x7f0e0008
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->getActivity()Landroid/app/Activity;
 
@@ -207,7 +207,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07009e
+    const v1, 0x7f0a00a0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -215,7 +215,7 @@
 
     iput-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->mLeftButton:Landroid/view/View;
 
-    const v1, 0x7f0700a0
+    const v1, 0x7f0a00a2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    const v1, 0x7f0700a1
+    const v1, 0x7f0a00a3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

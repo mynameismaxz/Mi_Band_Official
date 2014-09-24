@@ -89,7 +89,7 @@
 
     const/4 v1, 0x1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     invoke-direct {v0, p2, v1, v2}, Lorg/achartengine/tools/Zoom;-><init>(Lorg/achartengine/chart/AbstractChart;ZF)V
 
@@ -346,7 +346,7 @@
 
     float-to-double v10, v8
 
-    const-wide/high16 v12, 0x3fd0
+    const-wide/high16 v12, 0x3fd0000000000000L
 
     cmpg-double v10, v10, v12
 
@@ -354,7 +354,7 @@
 
     float-to-double v10, v9
 
-    const-wide/high16 v12, 0x3fd0
+    const-wide/high16 v12, 0x3fd0000000000000L
 
     cmpg-double v10, v10, v12
 
@@ -528,7 +528,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x4040
+    const/high16 v3, 0x40400000
 
     div-float/2addr v2, v3
 
@@ -560,11 +560,11 @@
 
     move-result v2
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     mul-float/2addr v2, v3
 
-    const/high16 v3, 0x4040
+    const/high16 v3, 0x40400000
 
     div-float/2addr v2, v3
 
@@ -617,11 +617,11 @@
 
     if-ne v0, v1, :cond_c
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     iput v0, p0, Lorg/achartengine/TouchHandler;->b:F
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     iput v0, p0, Lorg/achartengine/TouchHandler;->c:F
 

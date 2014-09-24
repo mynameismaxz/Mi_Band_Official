@@ -160,8 +160,8 @@
 
     invoke-direct {v1, v0}, Ljava/io/ObjectInputStream;-><init>(Ljava/io/InputStream;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
     invoke-virtual {v1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
@@ -170,8 +170,8 @@
 
     check-cast v0, Ljava/util/Map;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-virtual {v1}, Ljava/io/ObjectInputStream;->close()V
 

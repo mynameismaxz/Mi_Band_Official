@@ -79,7 +79,7 @@
 .method private a()V
     .locals 5
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->b:F
 
@@ -100,7 +100,7 @@
     move v0, v1
 
     :cond_0
-    const-wide/high16 v1, 0x4089
+    const-wide/high16 v1, 0x4089000000000000L
 
     float-to-double v3, v0
 
@@ -132,6 +132,11 @@
 
 .method private b()Landroid/animation/Animator;
     .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -143,15 +148,15 @@
 
     move-result-object v0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/k;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/k;-><init>(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
     new-instance v1, Lcn/com/smartdevices/bracelet/chart/l;
 
     invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/l;-><init>(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/m;
+
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/m;-><init>(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -176,10 +181,42 @@
     return-object v0
 
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
+    .array-data 4
+        0x0
+        0x3f800000
     .end array-data
+.end method
+
+.method static synthetic b(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    return-object v0
+.end method
+
+.method static synthetic d(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    return-object v0
+.end method
+
+.method static synthetic e(Lcn/com/smartdevices/bracelet/chart/LinePieChartView;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    return-object v0
 .end method
 
 
@@ -208,7 +245,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChartView;->mAnimFactor:F
 

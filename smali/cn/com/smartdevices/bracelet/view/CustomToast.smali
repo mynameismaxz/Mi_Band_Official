@@ -44,11 +44,13 @@
 
     move-result-object v2
 
-    const v0, 0x7f07009c
+    const v0, 0x7f0a009e
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
 
     check-cast v0, Landroid/widget/TextView;
 

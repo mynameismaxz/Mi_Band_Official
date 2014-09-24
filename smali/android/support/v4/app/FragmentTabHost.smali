@@ -382,7 +382,7 @@
 
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-direct {v2, v5, v4, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
@@ -684,6 +684,8 @@
 
 .method public setup()V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     new-instance v0, Ljava/lang/IllegalStateException;
 

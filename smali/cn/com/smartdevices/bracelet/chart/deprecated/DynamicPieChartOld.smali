@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->j:Landroid/graphics/Matrix;
 
-    const/high16 v0, 0x41a0
+    const/high16 v0, 0x41a00000
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 
@@ -146,7 +146,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->o:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -204,7 +204,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -212,7 +212,7 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->n:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     mul-float/2addr v1, v2
 
@@ -224,13 +224,13 @@
 
     mul-float v0, p6, p7
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v1, v0, v1
 
     if-lez v1, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     :cond_0
     iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->c:Z
@@ -249,7 +249,7 @@
 
     if-nez v2, :cond_1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     :cond_1
     const/4 v2, 0x3
@@ -268,7 +268,7 @@
 
     const/4 v3, 0x2
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     aput v4, v2, v3
 
@@ -280,7 +280,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->j:Landroid/graphics/Matrix;
 
-    const/high16 v2, -0x3d4c
+    const/high16 v2, -0x3d4c0000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mRotate:F
 
@@ -301,7 +301,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     :goto_0
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpg-float v1, v0, v1
 
@@ -309,7 +309,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->m:Landroid/graphics/RectF;
 
-    const/high16 v2, -0x3d4c
+    const/high16 v2, -0x3d4c0000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mRotate:F
 
@@ -319,11 +319,11 @@
 
     add-float/2addr v2, v3
 
-    const/high16 v3, 0x43b4
+    const/high16 v3, 0x43b40000
 
     iget v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->l:F
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     mul-float/2addr v4, v5
 
@@ -370,7 +370,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -378,7 +378,7 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->n:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     mul-float/2addr v1, v2
 
@@ -480,10 +480,10 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0xfft 0xfft 0xfft 0x0t
-        0xfft 0xfft 0xfft 0xfft
-        0xfft 0xfft 0xfft 0x0t
+    .array-data 4
+        0xffffff
+        -0x1
+        0xffffff
     .end array-data
 
     :pswitch_data_0
@@ -498,7 +498,7 @@
 .method protected onRectChanged(Landroid/graphics/RectF;)V
     .locals 7
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/base/PieChart;->onRectChanged(Landroid/graphics/RectF;)V
 
@@ -650,7 +650,7 @@
 
     add-float/2addr v1, v2
 
-    const/high16 v2, 0x4180
+    const/high16 v2, 0x41800000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 
@@ -664,7 +664,7 @@
 
     iget v1, p1, Landroid/graphics/RectF;->top:F
 
-    const/high16 v2, 0x4100
+    const/high16 v2, 0x41000000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 
@@ -680,7 +680,7 @@
 
     iget v1, v1, Landroid/graphics/RectF;->left:F
 
-    const/high16 v2, 0x4200
+    const/high16 v2, 0x42000000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 
@@ -696,7 +696,7 @@
 
     iget v1, v1, Landroid/graphics/RectF;->top:F
 
-    const/high16 v2, 0x41c0
+    const/high16 v2, 0x41c00000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartOld;->mDensity:F
 

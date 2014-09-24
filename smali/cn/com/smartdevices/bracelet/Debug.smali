@@ -162,15 +162,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -295,15 +295,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->b()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v2, "  "
 
@@ -376,15 +376,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -400,8 +400,8 @@
     return-void
 .end method
 
-.method public static l(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 6
+.method public static isEnabled()Z
+    .locals 2
 
     sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
 
@@ -411,9 +411,43 @@
 
     sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
 
-    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_WARN:I
+    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_ERROR:I
 
     if-ge v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isEnaledFile()Z
+    .locals 1
+
+    sget-boolean v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_FILE:Z
+
+    return v0
+.end method
+
+.method public static l(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 6
+
+    sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
+
+    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_NONE:I
+
+    if-le v0, v1, :cond_1
+
+    sget v0, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LEVEL:I
+
+    sget v1, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_WARN:I
+
+    if-ge v0, v1, :cond_1
 
     const/16 v2, 0x3e8
 
@@ -426,12 +460,8 @@
 
     div-int/2addr v1, v2
 
-    if-le v0, v1, :cond_1
+    if-gt v0, v1, :cond_1
 
-    :cond_0
-    return-void
-
-    :cond_1
     mul-int v3, v0, v2
 
     add-int/lit8 v1, v0, 0x1
@@ -442,24 +472,24 @@
 
     move-result v4
 
-    if-le v1, v4, :cond_2
+    if-le v1, v4, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    :cond_2
+    :cond_0
     new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->a()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v4
 
     invoke-virtual {p1, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -478,6 +508,9 @@
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    :cond_1
+    return-void
 .end method
 
 .method public static line()V
@@ -572,15 +605,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

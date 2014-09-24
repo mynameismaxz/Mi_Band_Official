@@ -239,7 +239,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     cmpl-float v1, v1, v2
 

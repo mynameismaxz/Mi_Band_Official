@@ -3,17 +3,17 @@
 
 
 # static fields
-.field public static final ANYRTL_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final ANYRTL_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final LOCALE:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final LOCALE:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field public static final RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
 .field private static final a:I = 0x0
 

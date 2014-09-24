@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final DEFAULT:Lcom/google/gson/internal/Excluder; = null
+.field public static final DEFAULT:Lcom/google/gson/internal/Excluder;
 
 .field private static final a:D = -1.0
 
@@ -62,7 +62,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/high16 v0, -0x4010
+    const-wide/high16 v0, -0x4010000000000000L
 
     iput-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D
 
@@ -389,7 +389,7 @@
 
     iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D
 
-    const-wide/high16 v3, -0x4010
+    const-wide/high16 v3, -0x4010000000000000L
 
     cmpl-double v0, v0, v3
 
@@ -515,7 +515,7 @@
     :cond_0
     iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D
 
-    const-wide/high16 v3, -0x4010
+    const-wide/high16 v3, -0x4010000000000000L
 
     cmpl-double v0, v0, v3
 

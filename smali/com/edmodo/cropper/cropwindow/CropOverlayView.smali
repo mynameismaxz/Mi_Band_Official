@@ -7,17 +7,13 @@
 
 .field private static final a:I = 0x6
 
-#the value of this static final field might be set in the static constructor
-.field private static final b:F = 0.0f
+.field private static final b:F
 
-#the value of this static final field might be set in the static constructor
-.field private static final c:F = 0.0f
+.field private static final c:F
 
-#the value of this static final field might be set in the static constructor
-.field private static final d:F = 0.0f
+.field private static final d:F
 
-#the value of this static final field might be set in the static constructor
-.field private static final e:F = 0.0f
+.field private static final e:F
 
 .field private static final f:F = 20.0f
 
@@ -90,7 +86,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     invoke-static {}, Lcom/edmodo/cropper/util/PaintUtil;->getCornerThickness()F
 
@@ -310,7 +306,7 @@
 
     iput v1, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->s:F
 
-    const/high16 v1, 0x40c0
+    const/high16 v1, 0x40c00000
 
     invoke-static {v2, v1, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
@@ -358,7 +354,7 @@
 
     iput v1, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->C:F
 
-    const/high16 v1, 0x41a0
+    const/high16 v1, 0x41a00000
 
     invoke-static {v2, v1, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
@@ -374,7 +370,7 @@
 .method private a(Landroid/graphics/Canvas;)V
     .locals 11
 
-    const/high16 v9, 0x4040
+    const/high16 v9, 0x40400000
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
@@ -460,7 +456,7 @@
 
     const/4 v10, 0x1
 
-    const/high16 v9, 0x4000
+    const/high16 v9, 0x40000000
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
@@ -556,7 +552,7 @@
 
     :cond_0
     :goto_0
-    const/high16 v0, -0x5000
+    const/high16 v0, -0x50000000
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
@@ -585,9 +581,9 @@
 
     const v3, 0x3dcccccd
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
-    const/high16 v4, 0x4270
+    const/high16 v4, 0x42700000
 
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
@@ -1136,7 +1132,7 @@
 .method public static showGuidelines()Z
     .locals 3
 
-    const/high16 v2, 0x42c8
+    const/high16 v2, 0x42c80000
 
     sget-object v0, Lcom/edmodo/cropper/cropwindow/edge/Edge;->LEFT:Lcom/edmodo/cropper/cropwindow/edge/Edge;
 
@@ -1201,7 +1197,7 @@
 
     const/4 v7, 0x2
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -1249,7 +1245,7 @@
     :goto_0
     iget v0, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->F:I
 
-    if-ne v0, v7, :cond_2
+    if-ne v0, v7, :cond_3
 
     iget-object v5, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->n:Landroid/graphics/Paint;
 
@@ -1267,7 +1263,7 @@
 
     const/4 v5, 0x1
 
-    if-ne v0, v5, :cond_0
+    if-ne v0, v5, :cond_2
 
     iget-object v0, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->v:Lcom/edmodo/cropper/cropwindow/handle/Handle;
 
@@ -1278,6 +1274,13 @@
     goto :goto_0
 
     :cond_2
+    iget v0, p0, Lcom/edmodo/cropper/cropwindow/CropOverlayView;->A:I
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_3
     sub-float v0, v3, v1
 
     div-float/2addr v0, v6

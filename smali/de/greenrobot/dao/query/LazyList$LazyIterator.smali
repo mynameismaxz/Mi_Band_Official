@@ -72,7 +72,7 @@
 
     iget-object v1, p0, Lde/greenrobot/dao/query/LazyList$LazyIterator;->this$0:Lde/greenrobot/dao/query/LazyList;
 
-    #getter for: Lde/greenrobot/dao/query/LazyList;->size:I
+    # getter for: Lde/greenrobot/dao/query/LazyList;->size:I
     invoke-static {v1}, Lde/greenrobot/dao/query/LazyList;->access$000(Lde/greenrobot/dao/query/LazyList;)I
 
     move-result v1
@@ -120,7 +120,7 @@
 
     iget-object v1, p0, Lde/greenrobot/dao/query/LazyList$LazyIterator;->this$0:Lde/greenrobot/dao/query/LazyList;
 
-    #getter for: Lde/greenrobot/dao/query/LazyList;->size:I
+    # getter for: Lde/greenrobot/dao/query/LazyList;->size:I
     invoke-static {v1}, Lde/greenrobot/dao/query/LazyList;->access$000(Lde/greenrobot/dao/query/LazyList;)I
 
     move-result v1
@@ -152,7 +152,7 @@
 
     iget-object v2, p0, Lde/greenrobot/dao/query/LazyList$LazyIterator;->this$0:Lde/greenrobot/dao/query/LazyList;
 
-    #getter for: Lde/greenrobot/dao/query/LazyList;->size:I
+    # getter for: Lde/greenrobot/dao/query/LazyList;->size:I
     invoke-static {v2}, Lde/greenrobot/dao/query/LazyList;->access$000(Lde/greenrobot/dao/query/LazyList;)I
 
     move-result v2

@@ -554,7 +554,7 @@
 
     const-wide/16 v1, -0x1
 
-    const/high16 v3, 0x4120
+    const/high16 v3, 0x41200000
 
     const-string v5, "lbs"
 

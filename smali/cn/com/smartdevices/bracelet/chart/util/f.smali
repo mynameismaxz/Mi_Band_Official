@@ -1,4 +1,4 @@
-.class Lcn/com/smartdevices/bracelet/chart/util/f;
+.class final Lcn/com/smartdevices/bracelet/chart/util/f;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private final synthetic a:Landroid/widget/TextView;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field private final synthetic b:Landroid/widget/TextView;
+.field final synthetic b:Landroid/widget/TextView;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -41,7 +41,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     sub-float/2addr v1, v0
 

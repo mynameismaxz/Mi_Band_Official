@@ -6,22 +6,22 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+.field final synthetic a:I
 
-.field private final synthetic b:I
+.field final synthetic b:I
 
-.field private final synthetic c:I
+.field final synthetic c:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;II)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ad;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ad;->c:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
-    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/ad;->b:I
+    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/ad;->a:I
 
-    iput p3, p0, Lcn/com/smartdevices/bracelet/ui/ad;->c:I
+    iput p3, p0, Lcn/com/smartdevices/bracelet/ui/ad;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,15 +33,15 @@
 .method public run()V
     .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ad;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ad;->c:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->h(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)Lcn/com/smartdevices/bracelet/DataManager;
 
     move-result-object v0
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/ad;->b:I
+    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/ad;->a:I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/ad;->c:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/ad;->b:I
 
     invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->load(II)V
 

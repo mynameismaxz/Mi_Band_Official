@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/api/share/WeiboDownloader$1;->val$context:Landroid/content/Context;
 
-    #calls: Lcom/sina/weibo/sdk/api/share/WeiboDownloader;->downloadWeibo(Landroid/content/Context;)V
+    # invokes: Lcom/sina/weibo/sdk/api/share/WeiboDownloader;->downloadWeibo(Landroid/content/Context;)V
     invoke-static {v0}, Lcom/sina/weibo/sdk/api/share/WeiboDownloader;->access$0(Landroid/content/Context;)V
 
     return-void

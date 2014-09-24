@@ -27,7 +27,7 @@
 
     const-wide/16 v6, 0x2710
 
-    const/high16 v3, 0x4
+    const/high16 v3, 0x40000
 
     const/16 v4, 0x2000
 

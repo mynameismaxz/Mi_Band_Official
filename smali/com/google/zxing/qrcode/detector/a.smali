@@ -73,7 +73,7 @@
 
     const/4 v8, 0x2
 
-    const/high16 v0, 0x7fc0
+    const/high16 v0, 0x7fc00000
 
     const/4 v7, 0x1
 
@@ -270,7 +270,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -330,7 +330,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v3, 0x4040
+    const/high16 v3, 0x40400000
 
     div-float v3, v0, v3
 
@@ -396,7 +396,7 @@
 
     iget v2, p0, Lcom/google/zxing/qrcode/detector/a;->g:F
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float v3, v2, v1
 

@@ -79,7 +79,7 @@
 
     iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;->mIsAttached:Z
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;->mAnimFactor:F
 
@@ -98,6 +98,11 @@
 
 .method private a(FZ)V
     .locals 1
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     if-eqz p2, :cond_1
 
@@ -275,7 +280,7 @@
 .method public refresh()V
     .locals 2
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     const/4 v1, 0x0
 
@@ -307,7 +312,7 @@
     return-void
 
     :cond_0
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     goto :goto_0
 .end method

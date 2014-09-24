@@ -252,7 +252,7 @@
 .method a(DDI)V
     .locals 6
 
-    const-wide/high16 v4, 0x4059
+    const-wide/high16 v4, 0x4059000000000000L
 
     iget-object v0, p0, Lcom/umeng/analytics/game/d;->x:Landroid/content/Context;
 
@@ -368,7 +368,7 @@
 
     const-string v1, "coin"
 
-    const-wide/high16 v2, 0x4059
+    const-wide/high16 v2, 0x4059000000000000L
 
     mul-double/2addr v2, p1
 
@@ -534,7 +534,7 @@
 
     mul-double/2addr v2, p3
 
-    const-wide/high16 v4, 0x4059
+    const-wide/high16 v4, 0x4059000000000000L
 
     mul-double/2addr v2, v4
 
@@ -743,7 +743,7 @@
 
     mul-double/2addr v2, p3
 
-    const-wide/high16 v4, 0x4059
+    const-wide/high16 v4, 0x4059000000000000L
 
     mul-double/2addr v2, v4
 

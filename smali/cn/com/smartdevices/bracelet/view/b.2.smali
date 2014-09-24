@@ -63,7 +63,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     const/4 v2, 0x0
 
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    const/high16 v1, -0x3d4c
+    const/high16 v1, -0x3d4c0000
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setRotationY(F)V
 
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x4396
+    const/high16 v1, 0x43960000
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 

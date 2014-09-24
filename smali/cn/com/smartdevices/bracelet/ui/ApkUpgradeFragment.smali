@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ApkUpgradeFragment;->d:Ljava/lang/String;
 
-    const v0, 0x7f070092
+    const v0, 0x7f0a0094
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c00fc
+    const v1, 0x7f0d0183
 
     invoke-static {v0, v1, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -204,7 +204,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0c00f9
+    const v2, 0x7f0d006b
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

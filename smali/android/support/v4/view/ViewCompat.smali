@@ -29,7 +29,7 @@
 
 .field public static final OVER_SCROLL_NEVER:I = 0x2
 
-.field static final a:Landroid/support/v4/view/ah; = null
+.field static final a:Landroid/support/v4/view/ah;
 
 .field private static final b:J = 0xaL
 

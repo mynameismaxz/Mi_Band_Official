@@ -60,7 +60,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     cmpg-float v2, v1, v2
 
@@ -82,7 +82,7 @@
 .method b(FFF)Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     .locals 4
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     invoke-virtual {p0}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->getX()F
 

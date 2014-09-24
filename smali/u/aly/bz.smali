@@ -1,48 +1,47 @@
-.class public interface abstract Lu/aly/bz;
+.class Lu/aly/bZ;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Lu/aly/dh;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lu/aly/bz",
-        "<**>;F::",
-        "Lu/aly/cg;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/io/Serializable;"
-    }
-.end annotation
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lu/aly/bZ;)V
+    .locals 0
+
+    invoke-direct {p0}, Lu/aly/bZ;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lu/aly/cy;)V
+.method public a()Lu/aly/bY;
+    .locals 2
+
+    new-instance v0, Lu/aly/bY;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lu/aly/bY;-><init>(Lu/aly/bY;)V
+
+    return-object v0
 .end method
 
-.method public abstract b(I)Lu/aly/cg;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TF;"
-        }
-    .end annotation
-.end method
+.method public synthetic b()Lu/aly/dg;
+    .locals 1
 
-.method public abstract b()V
-.end method
+    invoke-virtual {p0}, Lu/aly/bZ;->a()Lu/aly/bY;
 
-.method public abstract b(Lu/aly/cy;)V
-.end method
+    move-result-object v0
 
-.method public abstract g()Lu/aly/bz;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lu/aly/bz",
-            "<TT;TF;>;"
-        }
-    .end annotation
+    return-object v0
 .end method

@@ -239,7 +239,7 @@
 
     sub-float v15, v15, v16
 
-    const/high16 v16, 0x3f80
+    const/high16 v16, 0x3f800000
 
     sub-float v15, v15, v16
 
@@ -271,7 +271,7 @@
 
     sub-float v15, v15, v16
 
-    const/high16 v16, 0x3f80
+    const/high16 v16, 0x3f800000
 
     sub-float v15, v15, v16
 
@@ -720,7 +720,7 @@
 
     sub-float/2addr v5, v6
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     sub-float/2addr v5, v6
 

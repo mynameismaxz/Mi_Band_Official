@@ -24,6 +24,11 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/base/a;->a:Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;
 

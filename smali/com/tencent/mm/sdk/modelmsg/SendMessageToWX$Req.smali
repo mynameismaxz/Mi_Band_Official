@@ -84,7 +84,7 @@
 
     check-cast v0, Lcom/tencent/mm/sdk/modelmsg/WXFileObject;
 
-    const/high16 v1, 0x190
+    const/high16 v1, 0x1900000
 
     invoke-virtual {v0, v1}, Lcom/tencent/mm/sdk/modelmsg/WXFileObject;->setContentLengthLimit(I)V
 

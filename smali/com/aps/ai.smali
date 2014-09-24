@@ -1133,7 +1133,7 @@
 
     const/4 v7, 0x0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -1301,7 +1301,7 @@
 
     const/4 v8, 0x0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     new-instance v1, Ljava/util/ArrayList;
 

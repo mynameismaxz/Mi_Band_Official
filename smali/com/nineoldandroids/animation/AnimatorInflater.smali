@@ -3,15 +3,15 @@
 
 
 # static fields
-.field private static final a:[I = null
+.field private static final a:[I
 
 .field private static final b:I = 0x0
 
-.field private static final c:[I = null
+.field private static final c:[I
 
 .field private static final d:I = 0x0
 
-.field private static final e:[I = null
+.field private static final e:[I
 
 .field private static final f:I = 0x0
 
@@ -69,15 +69,15 @@
     return-void
 
     :array_0
-    .array-data 0x4
-        0x41t 0x1t 0x1t 0x1t
-        0x98t 0x1t 0x1t 0x1t
-        0xbet 0x1t 0x1t 0x1t
-        0xbft 0x1t 0x1t 0x1t
-        0xc0t 0x1t 0x1t 0x1t
-        0xdet 0x2t 0x1t 0x1t
-        0xdft 0x2t 0x1t 0x1t
-        0xe0t 0x2t 0x1t 0x1t
+    .array-data 4
+        0x1010141
+        0x1010198
+        0x10101be
+        0x10101bf
+        0x10101c0
+        0x10102de
+        0x10102df
+        0x10102e0
     .end array-data
 .end method
 
@@ -864,9 +864,9 @@
 
     invoke-static {p0, v1}, Lcom/nineoldandroids/animation/AnimatorInflater;->a(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)Lcom/nineoldandroids/animation/Animator;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 

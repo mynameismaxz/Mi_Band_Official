@@ -56,7 +56,7 @@
 .method private a(IIF)I
     .locals 6
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
@@ -430,7 +430,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     cmpg-float v2, v2, v3
 
@@ -440,7 +440,7 @@
 
     if-gez v2, :cond_4
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     add-float p5, p3, v2
 
@@ -479,7 +479,7 @@
     goto :goto_2
 
     :cond_4
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     sub-float p5, p3, v2
 
@@ -636,7 +636,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     mul-float/2addr v5, v10
 
@@ -739,7 +739,7 @@
 
     add-float v3, v1, v2
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     mul-float v1, v1, p6
 
@@ -841,7 +841,7 @@
 
     int-to-float v5, v9
 
-    const/high16 v6, 0x3fc0
+    const/high16 v6, 0x3fc00000
 
     sub-float/2addr v5, v6
 
@@ -939,7 +939,7 @@
 
     add-float/2addr v1, v2
 
-    const/high16 v2, 0x4040
+    const/high16 v2, 0x40400000
 
     sub-float v5, v1, v2
 
@@ -962,11 +962,11 @@
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
     .locals 6
 
-    const/high16 v0, 0x40c0
+    const/high16 v0, 0x40c00000
 
     sub-float v2, p4, v0
 
-    const/high16 v1, 0x4140
+    const/high16 v1, 0x41400000
 
     add-float v3, p3, v1
 
@@ -1093,7 +1093,7 @@
 .method protected getCoeficient()F
     .locals 1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     return v0
 .end method
@@ -1130,7 +1130,7 @@
 
     if-lez v1, :cond_0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -1181,7 +1181,7 @@
 
     if-nez v1, :cond_1
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     :cond_1
     iget-object v1, p0, Lorg/achartengine/chart/BarChart;->mType:Lorg/achartengine/chart/BarChart$Type;
@@ -1203,7 +1203,7 @@
 
     float-to-double v2, v2
 
-    const-wide/high16 v4, 0x3ff0
+    const-wide/high16 v4, 0x3ff0000000000000L
 
     iget-object v6, p0, Lorg/achartengine/chart/BarChart;->mRenderer:Lorg/achartengine/renderer/XYMultipleSeriesRenderer;
 

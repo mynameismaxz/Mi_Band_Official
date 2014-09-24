@@ -152,6 +152,8 @@
 
 .method public getNotification()Landroid/app/Notification;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-static {}, Landroid/support/v4/app/NotificationCompat;->a()Landroid/support/v4/app/Q;
 

@@ -119,6 +119,8 @@
 
 .method public static disableLogging()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -167,6 +169,8 @@
 
 .method public static enableLogging()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v0, 0x1
 

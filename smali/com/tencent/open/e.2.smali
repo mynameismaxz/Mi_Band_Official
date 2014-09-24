@@ -140,6 +140,9 @@
 
 .method public onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V
     .locals 0
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x8
+    .end annotation
 
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->proceed()V
 

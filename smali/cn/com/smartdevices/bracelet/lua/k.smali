@@ -4,12 +4,28 @@
 
 # instance fields
 .field public a:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "content"
+    .end annotation
+.end field
 
 .field public b:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "packdata"
+    .end annotation
+.end field
 
 .field public c:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "version"
+    .end annotation
+.end field
 
 .field public d:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "sync_time"
+    .end annotation
+.end field
 
 .field final synthetic e:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 

@@ -142,7 +142,7 @@
 
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
-    const/high16 v6, 0x40
+    const/high16 v6, 0x400000
 
     iget v3, v4, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
@@ -206,9 +206,9 @@
 
     const/4 v5, -0x2
 
-    const/high16 v6, 0x41c0
+    const/high16 v6, 0x41c00000
 
-    const/high16 v10, 0x4190
+    const/high16 v10, 0x41900000
 
     const/4 v9, 0x0
 
@@ -238,7 +238,7 @@
 
     iget-object v0, p0, Lcom/tencent/connect/avatar/ImageActivity;->a:Landroid/widget/RelativeLayout;
 
-    const/high16 v3, -0x100
+    const/high16 v3, -0x1000000
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setBackgroundColor(I)V
 
@@ -304,7 +304,7 @@
 
     new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    const/high16 v3, 0x42a0
+    const/high16 v3, 0x42a00000
 
     invoke-static {p0, v3}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -366,7 +366,7 @@
 
     invoke-direct {v1, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/high16 v3, 0x40e0
+    const/high16 v3, 0x40e00000
 
     invoke-static {p0, v3}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -412,7 +412,7 @@
 
     new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    const/high16 v3, 0x4270
+    const/high16 v3, 0x42700000
 
     invoke-static {p0, v3}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -438,7 +438,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const/high16 v1, 0x4120
+    const/high16 v1, 0x41200000
 
     invoke-static {p0, v1}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -454,13 +454,13 @@
 
     invoke-direct {v1, p0, p0}, Lcom/tencent/connect/avatar/f;-><init>(Lcom/tencent/connect/avatar/ImageActivity;Landroid/content/Context;)V
 
-    const/high16 v3, 0x4160
+    const/high16 v3, 0x41600000
 
     invoke-static {p0, v3}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
     move-result v3
 
-    const/high16 v4, 0x40e0
+    const/high16 v4, 0x40e00000
 
     invoke-static {p0, v4}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -474,13 +474,13 @@
 
     new-instance v5, Landroid/widget/RelativeLayout$LayoutParams;
 
-    const/high16 v6, 0x429c
+    const/high16 v6, 0x429c0000
 
     invoke-static {p0, v6}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
     move-result v6
 
-    const/high16 v7, 0x4234
+    const/high16 v7, 0x42340000
 
     invoke-static {p0, v7}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -526,13 +526,13 @@
 
     new-instance v5, Landroid/widget/RelativeLayout$LayoutParams;
 
-    const/high16 v6, 0x429c
+    const/high16 v6, 0x429c0000
 
     invoke-static {p0, v6}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
     move-result v6
 
-    const/high16 v7, 0x4234
+    const/high16 v7, 0x42340000
 
     invoke-static {p0, v7}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -592,7 +592,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/high16 v3, 0x4040
+    const/high16 v3, 0x40400000
 
     invoke-static {p0, v3}, Lcom/tencent/connect/avatar/c;->a(Landroid/content/Context;F)I
 
@@ -927,7 +927,7 @@
 
     const/16 v7, 0x11
 
-    const/high16 v5, 0x4180
+    const/high16 v5, 0x41800000
 
     const/4 v6, 0x0
 

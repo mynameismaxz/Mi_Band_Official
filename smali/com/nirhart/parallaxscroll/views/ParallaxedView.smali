@@ -108,6 +108,11 @@
 
 .method public setOffset(F)V
     .locals 2
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/nirhart/parallaxscroll/views/ParallaxedView;->view:Ljava/lang/ref/WeakReference;
 

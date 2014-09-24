@@ -158,7 +158,7 @@
     return v0
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x35t
         0x36t
         0x2bt
@@ -701,7 +701,7 @@
     return v0
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x37t
         0x38t
         0x39t
@@ -733,7 +733,7 @@
     nop
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x27t
         0x28t
         0x29t
@@ -759,7 +759,7 @@
     return v0
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x21t
         0x22t
         0x23t
@@ -927,7 +927,7 @@
     return-object v0
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x27t
         0x28t
         0x29t
@@ -939,7 +939,7 @@
     nop
 
     :array_1
-    .array-data 0x1
+    .array-data 1
         0x21t
         0x22t
         0x23t
@@ -951,7 +951,7 @@
     nop
 
     :array_2
-    .array-data 0x1
+    .array-data 1
         0x1bt
         0x1ct
         0x1dt
@@ -963,7 +963,7 @@
     nop
 
     :array_3
-    .array-data 0x1
+    .array-data 1
         0x15t
         0x16t
         0x17t
@@ -975,7 +975,7 @@
     nop
 
     :array_4
-    .array-data 0x1
+    .array-data 1
         0xft
         0x10t
         0x11t
@@ -987,7 +987,7 @@
     nop
 
     :array_5
-    .array-data 0x1
+    .array-data 1
         0x9t
         0xat
         0xbt

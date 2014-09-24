@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lcn/com/smartdevices/bracelet/ui/MainMenuFragment$MenuListener;
 
 
 # instance fields
@@ -22,30 +22,30 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
+.method public onDismiss()V
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->e(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;Z)Z
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->y(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    move-result v0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->z(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    move-result-object v0
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->C(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
-
-    move-result-object v1
-
-    const/high16 v2, 0x4448
-
-    sub-float v0, v2, v0
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
+    invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
 
     return-void
 .end method

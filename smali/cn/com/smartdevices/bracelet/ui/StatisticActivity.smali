@@ -18,7 +18,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/StatisticActivity;->disableAutoUpdateStatusBarTint()V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/StatisticActivity;->disableAutoApplyStatusBarTint()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/StatisticActivity;->getIntent()Landroid/content/Intent;
 

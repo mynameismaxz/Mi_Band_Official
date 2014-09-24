@@ -20,7 +20,7 @@
 
 .field public static final aI:Ljava/lang/String; = "CREATE TABLE update_download (_id INTEGER PRIMARY KEY AUTOINCREMENT,package_name TEXT,download_id INTEGER, version_code INTEGER, apk_url TEXT, apk_hash TEXT, diff_url TEXT, diff_hash TEXT, apk_path TEXT, UNIQUE(package_name));"
 
-.field public static final aJ:[Ljava/lang/String; = null
+.field public static final aJ:[Ljava/lang/String;
 
 .field public static final av:Ljava/lang/String; = "version_code"
 

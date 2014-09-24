@@ -26,6 +26,8 @@
 
 .field private battery:I
 
+.field private bonus:I
+
 .field private continueDay:I
 
 .field private continueReport:Lcn/com/smartdevices/bracelet/model/ReportData;
@@ -34,9 +36,13 @@
 
 .field private forceRefresh:Ljava/lang/Boolean;
 
+.field private goal:I
+
 .field private isBind:Ljava/lang/Boolean;
 
 .field private luaAction:Lcn/com/smartdevices/bracelet/lua/LuaAction;
+
+.field private mGameInfo:Ljava/lang/String;
 
 .field private mLuaVersion:Ljava/lang/String;
 
@@ -59,6 +65,10 @@
 .field private recordDate:Ljava/lang/String;
 
 .field private recordStep:I
+
+.field private right:Ljava/lang/String;
+
+.field private serverTimeStamp:J
 
 .field private showActivity:Ljava/lang/Boolean;
 
@@ -86,9 +96,23 @@
 
 .field private sleepPercent:I
 
+.field private subTitle:Ljava/lang/String;
+
 .field private supportUnlock:Ljava/lang/Boolean;
 
+.field private timeStamp:J
+
+.field private timeStamp1:J
+
+.field private timeStamp2:J
+
+.field private title:Ljava/lang/String;
+
 .field private totalSteps:I
+
+.field private type:Ljava/lang/String;
+
+.field private url:Ljava/lang/String;
 
 .field private weekReport:Lcn/com/smartdevices/bracelet/model/ReportData;
 
@@ -406,6 +430,14 @@
     return v0
 .end method
 
+.method public getBonus()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->bonus:I
+
+    return v0
+.end method
+
 .method public getContinueDay()I
     .locals 1
 
@@ -436,6 +468,22 @@
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->forceRefresh:Ljava/lang/Boolean;
 
     return-object v0
+.end method
+
+.method public getGameInfo()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->mGameInfo:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getGoal()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->goal:I
+
+    return v0
 .end method
 
 .method public getIsBind()Ljava/lang/Boolean;
@@ -556,6 +604,22 @@
     return v0
 .end method
 
+.method public getRight()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->right:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getServerTimeStamp()J
+    .locals 2
+
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->serverTimeStamp:J
+
+    return-wide v0
+.end method
+
 .method public getShowActivity()Ljava/lang/Boolean;
     .locals 1
 
@@ -660,10 +724,50 @@
     return v0
 .end method
 
+.method public getSubTitle()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->subTitle:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getSupportUnlock()Ljava/lang/Boolean;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->supportUnlock:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public getTimeStamp()J
+    .locals 2
+
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp:J
+
+    return-wide v0
+.end method
+
+.method public getTimeStamp1()J
+    .locals 2
+
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp1:J
+
+    return-wide v0
+.end method
+
+.method public getTimeStamp2()J
+    .locals 2
+
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp2:J
+
+    return-wide v0
+.end method
+
+.method public getTitle()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->title:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -674,6 +778,22 @@
     iget v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->totalSteps:I
 
     return v0
+.end method
+
+.method public getType()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUrl()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->url:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getWeekReport()Lcn/com/smartdevices/bracelet/model/ReportData;
@@ -767,6 +887,14 @@
     return-void
 .end method
 
+.method public setBonus(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->bonus:I
+
+    return-void
+.end method
+
 .method public setContinueDay(I)V
     .locals 0
 
@@ -799,6 +927,22 @@
     return-void
 .end method
 
+.method public setGameInfo(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->mGameInfo:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setGoal(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->goal:I
+
+    return-void
+.end method
+
 .method public setIsBind(Ljava/lang/Boolean;)V
     .locals 0
 
@@ -809,6 +953,8 @@
 
 .method public setLuaAction(Landroid/content/Context;)V
     .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->luaAction:Lcn/com/smartdevices/bracelet/lua/LuaAction;
 
     invoke-static {p1}, Lcn/com/smartdevices/bracelet/lua/LuaAction;->getInstance(Landroid/content/Context;)Lcn/com/smartdevices/bracelet/lua/LuaAction;
 
@@ -903,6 +1049,22 @@
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->recordStep:I
+
+    return-void
+.end method
+
+.method public setRight(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->right:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setServerTimeStamp(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->serverTimeStamp:J
 
     return-void
 .end method
@@ -1011,6 +1173,14 @@
     return-void
 .end method
 
+.method public setSubTitle(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->subTitle:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public setSupportUnlock(Ljava/lang/Boolean;)V
     .locals 0
 
@@ -1019,10 +1189,58 @@
     return-void
 .end method
 
+.method public setTimeStamp(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp:J
+
+    return-void
+.end method
+
+.method public setTimeStamp1(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp1:J
+
+    return-void
+.end method
+
+.method public setTimeStamp2(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->timeStamp2:J
+
+    return-void
+.end method
+
+.method public setTitle(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->title:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public setTotalSteps(I)V
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->totalSteps:I
+
+    return-void
+.end method
+
+.method public setType(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->type:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setUrl(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->url:Ljava/lang/String;
 
     return-void
 .end method

@@ -65,12 +65,12 @@
     return v0
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;F)V
+.method static synthetic a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;F)F
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;->e:F
 
-    return-void
+    return p1
 .end method
 
 
@@ -124,7 +124,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v0, v2
 

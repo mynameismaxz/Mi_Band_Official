@@ -65,7 +65,7 @@
 
     const/4 v1, 0x2
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     const/4 v3, 0x2
 
@@ -87,7 +87,7 @@
 
     const/4 v1, 0x2
 
-    const/high16 v2, -0x4080
+    const/high16 v2, -0x40800000
 
     const/4 v3, 0x2
 
@@ -117,7 +117,7 @@
 
     const/4 v5, 0x2
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     const/4 v7, 0x2
 
@@ -139,7 +139,7 @@
 
     const/4 v5, 0x2
 
-    const/high16 v6, -0x4080
+    const/high16 v6, -0x40800000
 
     const/4 v7, 0x2
 
@@ -309,7 +309,7 @@
 
     move-result-object v3
 
-    const v1, 0x7f070160
+    const v1, 0x7f0a0165
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -325,7 +325,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f070161
+    const v1, 0x7f0a0166
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +341,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f07015f
+    const v1, 0x7f0a0164
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -20,14 +20,6 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/s;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public run()V

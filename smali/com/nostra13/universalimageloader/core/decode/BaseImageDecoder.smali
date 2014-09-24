@@ -75,7 +75,7 @@
 
     const/4 v9, 0x2
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     const/4 v6, 0x1
 
@@ -174,7 +174,7 @@
     :cond_1
     if-eqz p4, :cond_2
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     invoke-virtual {v5, v0, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout android:background="@color/main_ui_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.nirhart.parallaxscroll.views.ParallaxScrollView android:background="@*android:color/white" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" app:parallax_factor="1.0"
+    <com.nirhart.parallaxscroll.views.ParallaxScrollView android:background="@android:color/white" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" app:parallax_factor="1.0"
       xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
         <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
             <include android:id="@id/person_info_user_info_area" layout="@layout/person_page_user_info" />

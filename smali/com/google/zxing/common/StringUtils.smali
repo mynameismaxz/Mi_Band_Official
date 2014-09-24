@@ -7,7 +7,7 @@
 
 .field public static final SHIFT_JIS:Ljava/lang/String; = "SJIS"
 
-.field private static final a:Ljava/lang/String; = null
+.field private static final a:Ljava/lang/String;
 
 .field private static final b:Ljava/lang/String; = "EUC_JP"
 

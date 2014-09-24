@@ -8,7 +8,7 @@
 # static fields
 .field static a:Landroid/widget/Toast; = null
 
-.field private static final b:Ljava/lang/String; = null
+.field private static final b:Ljava/lang/String;
 
 .field private static final c:I = 0xb9
 
@@ -116,7 +116,7 @@
 
     iput-object p4, p0, Lcom/tencent/open/PKDialog;->j:Lcom/tencent/tauth/IUiListener;
 
-    const/high16 v0, 0x4339
+    const/high16 v0, 0x43390000
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -224,11 +224,11 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    const/high16 v0, 0x1000
+    const/high16 v0, 0x10000000
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
@@ -319,7 +319,7 @@
 
     iget-object v0, p0, Lcom/tencent/open/PKDialog;->m:Lcom/tencent/open/b/a;
 
-    const/high16 v1, 0x6600
+    const/high16 v1, 0x66000000
 
     invoke-virtual {v0, v1}, Lcom/tencent/open/b/a;->setBackgroundColor(I)V
 
@@ -582,6 +582,11 @@
 
 .method private d()V
     .locals 6
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled"
+        }
+    .end annotation
 
     const/4 v5, 0x0
 

@@ -25,9 +25,9 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 6
 
-    const/high16 v5, 0x4396
+    const/high16 v5, 0x43960000
 
-    const/high16 v4, 0x42c8
+    const/high16 v4, 0x42c80000
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -45,9 +45,9 @@
 
     move-result-object v1
 
-    const/high16 v2, -0x3d4c
+    const/high16 v2, -0x3d4c0000
 
-    const/high16 v3, 0x42b4
+    const/high16 v3, 0x42b40000
 
     mul-float/2addr v3, v0
 
@@ -71,13 +71,13 @@
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    const/high16 v1, 0x4248
+    const/high16 v1, 0x42480000
 
     cmpg-float v1, v0, v1
 
     if-gez v1, :cond_0
 
-    const/high16 v1, 0x3f00
+    const/high16 v1, 0x3f000000
 
     mul-float/2addr v0, v1
 

@@ -30,7 +30,7 @@
 .method private static a(F)I
     .locals 1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     add-float/2addr v0, p0
 
@@ -194,7 +194,7 @@
 .method private a()Lcom/google/zxing/aztec/detector/b;
     .locals 12
 
-    const/high16 v11, 0x4080
+    const/high16 v11, 0x40800000
 
     const/4 v10, -0x1
 
@@ -655,35 +655,35 @@
 
     move-result-object v1
 
-    const/high16 v5, 0x3f00
+    const/high16 v5, 0x3f000000
 
-    const/high16 v6, 0x3f00
+    const/high16 v6, 0x3f000000
 
     int-to-float v2, v3
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     sub-float v7, v2, v4
 
-    const/high16 v8, 0x3f00
+    const/high16 v8, 0x3f000000
 
     int-to-float v2, v3
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     sub-float v9, v2, v4
 
     int-to-float v2, v3
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     sub-float v10, v2, v4
 
-    const/high16 v11, 0x3f00
+    const/high16 v11, 0x3f000000
 
     int-to-float v2, v3
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     sub-float v12, v2, v4
 
@@ -1561,7 +1561,7 @@
 
     float-to-double v9, v8
 
-    const-wide/high16 v11, 0x3fe8
+    const-wide/high16 v11, 0x3fe8000000000000L
 
     cmpg-double v9, v9, v11
 
@@ -1569,7 +1569,7 @@
 
     float-to-double v8, v8
 
-    const-wide/high16 v10, 0x3ff4
+    const-wide/high16 v10, 0x3ff4000000000000L
 
     cmpl-double v8, v8, v10
 
@@ -1639,7 +1639,7 @@
     :goto_2
     iput-boolean v0, p0, Lcom/google/zxing/aztec/detector/Detector;->b:Z
 
-    const/high16 v0, 0x3fc0
+    const/high16 v0, 0x3fc00000
 
     iget v1, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 
@@ -2033,7 +2033,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     iget v5, p0, Lcom/google/zxing/aztec/detector/Detector;->e:I
 

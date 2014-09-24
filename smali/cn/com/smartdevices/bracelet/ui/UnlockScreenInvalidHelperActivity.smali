@@ -22,15 +22,15 @@
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;->setContentView(I)V
 
-    const v0, 0x7f07008c
+    const v0, 0x7f0a008e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ch;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cm;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ch;-><init>(Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cm;-><init>(Lcn/com/smartdevices/bracelet/ui/UnlockScreenInvalidHelperActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

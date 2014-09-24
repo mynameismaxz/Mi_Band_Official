@@ -124,7 +124,7 @@
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->A:F
 
@@ -192,9 +192,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onStatusChanged:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -379,14 +383,6 @@
     .end packed-switch
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n:I
-
-    return-void
-.end method
-
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;ILjava/lang/Object;)V
     .locals 0
 
@@ -418,9 +414,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "bracelet statistic info:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -546,14 +546,8 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -596,13 +590,23 @@
 
     const/4 v0, 0x1
 
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
     goto :goto_0
 .end method
 
 .method static synthetic b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
-    .locals 1
+    .locals 2
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n:I
 
     return v0
 .end method
@@ -640,22 +644,6 @@
     return-void
 .end method
 
-.method static synthetic b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
-
-    return-void
-.end method
-
-.method static synthetic b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->C:Z
-
-    return-void
-.end method
-
 .method private b(Z)V
     .locals 5
 
@@ -675,9 +663,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "last month "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->toString()Ljava/lang/String;
 
@@ -733,6 +725,22 @@
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/lua/LuaEvent;->setMonthReport(Lcn/com/smartdevices/bracelet/model/ReportData;)V
 
     goto :goto_0
+.end method
+
+.method static synthetic b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->C:Z
+
+    return p1
+.end method
+
+.method static synthetic c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n:I
+
+    return v0
 .end method
 
 .method private c()V
@@ -849,13 +857,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     iget-object v5, v0, Lcn/com/smartdevices/bracelet/model/ReportInfo;->reportDate:Ljava/lang/String;
 
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v4
 
     const-string v5, ","
 
@@ -923,16 +931,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->k()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private d()V
     .locals 4
 
@@ -963,20 +961,22 @@
     return-void
 .end method
 
-.method static synthetic d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->j()V
-
-    return-void
-.end method
-
 .method static synthetic d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b(Z)V
 
     return-void
+.end method
+
+.method static synthetic d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->k()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private e()V
@@ -1037,9 +1037,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "profileStatus:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1079,9 +1083,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "profileStatus:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1174,7 +1182,7 @@
 .method static synthetic e(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->i()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->j()V
 
     return-void
 .end method
@@ -1188,9 +1196,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "mHandler:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
 
@@ -1208,9 +1220,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "mHandler:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
 
@@ -1237,9 +1253,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "last sync time:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     new-instance v2, Ljava/util/Date;
 
@@ -1285,9 +1305,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "last sync time:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     new-instance v2, Ljava/util/Date;
 
@@ -1370,7 +1394,7 @@
 .method static synthetic f(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->i()V
 
     return-void
 .end method
@@ -1424,7 +1448,7 @@
 .method static synthetic g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n()V
 
     return-void
 .end method
@@ -1436,7 +1460,7 @@
 
     move-result-wide v1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     const-wide/16 v3, -0x1
 
@@ -1470,7 +1494,7 @@
 
     mul-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x3ff0
+    const-wide/high16 v2, 0x3ff0000000000000L
 
     add-double/2addr v0, v2
 
@@ -1480,7 +1504,7 @@
 
     add-int/2addr v0, v1
 
-    const/high16 v1, 0x42c8
+    const/high16 v1, 0x42c80000
 
     int-to-float v0, v0
 
@@ -1490,12 +1514,12 @@
     return v0
 .end method
 
-.method static synthetic h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
-    .locals 1
+.method static synthetic h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
 
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l()V
 
-    return v0
+    return-void
 .end method
 
 .method private i()V
@@ -1514,12 +1538,12 @@
     return-void
 .end method
 
-.method static synthetic i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
+.method static synthetic i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
+    .locals 1
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b()V
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
-    return-void
+    return v0
 .end method
 
 .method private j()V
@@ -1541,17 +1565,17 @@
 .method static synthetic j(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b()V
 
     return-void
 .end method
 
-.method static synthetic k(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
-    .locals 1
+.method static synthetic k(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a()V
 
-    return v0
+    return-void
 .end method
 
 .method private k()Z
@@ -1590,9 +1614,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "new fw length:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
@@ -1662,9 +1690,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "new fw version:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1725,9 +1757,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "bracelet PCBVersion is : "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     iget v0, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->hardwareVersion:I
 
@@ -1757,6 +1793,14 @@
     goto/16 :goto_0
 .end method
 
+.method static synthetic l(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)F
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->z:F
+
+    return v0
+.end method
+
 .method private l()V
     .locals 7
 
@@ -1783,9 +1827,25 @@
     :goto_0
     array-length v4, v3
 
-    if-lt v0, v4, :cond_1
+    if-ge v0, v4, :cond_4
 
-    move v2, v1
+    aget-object v4, v3, v0
+
+    invoke-virtual {v4}, Landroid/net/NetworkInfo;->getType()I
+
+    move-result v4
+
+    if-ne v4, v2, :cond_1
+
+    aget-object v4, v3, v0
+
+    invoke-virtual {v4}, Landroid/net/NetworkInfo;->isConnected()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_0
@@ -1804,7 +1864,9 @@
 
     move-result v4
 
-    if-ne v4, v2, :cond_2
+    const/16 v5, 0x9
+
+    if-ne v4, v5, :cond_2
 
     aget-object v4, v3, v0
 
@@ -1812,9 +1874,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
-    move v1, v2
+    move v6, v2
+
+    move v2, v1
+
+    move v1, v6
 
     goto :goto_1
 
@@ -1825,9 +1891,7 @@
 
     move-result v4
 
-    const/16 v5, 0x9
-
-    if-ne v4, v5, :cond_3
+    if-nez v4, :cond_3
 
     aget-object v4, v3, v0
 
@@ -1835,7 +1899,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     move v6, v2
 
@@ -1846,56 +1910,20 @@
     goto :goto_1
 
     :cond_3
-    aget-object v4, v3, v0
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    aget-object v4, v3, v0
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    move v6, v2
-
-    move v2, v1
-
-    move v1, v6
-
-    goto :goto_1
-
-    :cond_4
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
-.end method
 
-.method static synthetic l(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
+    :cond_4
+    move v2, v1
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p()V
-
-    return-void
-.end method
-
-.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
-    .locals 1
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
-
-    return v0
+    goto :goto_1
 .end method
 
 .method private m()V
     .locals 2
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfoBaseNeedSync()Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     move-result-object v0
 
@@ -1921,12 +1949,24 @@
     return-void
 .end method
 
-.method static synthetic n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
-    .locals 1
+.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p()V
 
-    return-object v0
+    return-void
+.end method
+
+.method static synthetic n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
+    .locals 2
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
+
+    add-int/lit8 v1, v0, -0x1
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->B:I
+
+    return v0
 .end method
 
 .method private n()V
@@ -1982,6 +2022,14 @@
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleStatisticTask;->work()V
 
     goto :goto_0
+.end method
+
+.method static synthetic o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->l:Landroid/os/Handler;
+
+    return-object v0
 .end method
 
 .method private o()V
@@ -2086,14 +2134,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o()V
-
-    return-void
-.end method
-
 .method private p()V
     .locals 7
 
@@ -2135,8 +2175,23 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/model/UploadData;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/UploadData;->toJSONObject()Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    goto :goto_1
+
+    :cond_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->p:Ljava/lang/String;
 
     invoke-virtual {v4}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
@@ -2166,21 +2221,14 @@
     invoke-static/range {v0 .. v5}, Lcn/com/smartdevices/bracelet/webapi/WebAPI;->syncToServer(Lcn/com/smartdevices/bracelet/model/LoginData;Ljava/lang/String;IILjava/lang/String;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
     goto :goto_0
+.end method
 
-    :cond_2
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+.method static synthetic p(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    .locals 0
 
-    move-result-object v0
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o()V
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/model/UploadData;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/UploadData;->toJSONObject()Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    goto :goto_1
+    return-void
 .end method
 
 .method private q()V
@@ -2343,9 +2391,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "sync data progress:"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v2}, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->toString()Ljava/lang/String;
 
@@ -2480,9 +2532,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "connect:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getName()Ljava/lang/String;
 
@@ -2756,9 +2812,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "topActivity:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
 
@@ -2778,9 +2838,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "topActivity:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
 
@@ -2854,7 +2918,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f0c000d
+    const v0, 0x7f0d0098
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->getString(I)Ljava/lang/String;
 
@@ -2944,9 +3008,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onCreate:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     sget-object v2, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->mConnStatus:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;
 
@@ -3018,9 +3086,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onDeviceBatteryStatusChanged:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3042,8 +3114,23 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_1
 
+    :cond_0
+    :goto_0
+    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
+
+    move-result-object v0
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/eventbus/EventBatteryStatus;
+
+    invoke-direct {v1, p1, p2}, Lcn/com/smartdevices/bracelet/eventbus/EventBatteryStatus;-><init>(BI)V
+
+    invoke-virtual {v0, v1}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
     const/4 v0, 0x2
 
     if-eq p1, v0, :cond_0
@@ -3056,18 +3143,11 @@
 
     if-eq p1, v0, :cond_0
 
-    :cond_0
-    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
+    const/4 v0, 0x4
 
-    move-result-object v0
+    if-ne p1, v0, :cond_0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/eventbus/EventBatteryStatus;
-
-    invoke-direct {v1, p1, p2}, Lcn/com/smartdevices/bracelet/eventbus/EventBatteryStatus;-><init>(BI)V
-
-    invoke-virtual {v0, v1}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
-
-    return-void
+    goto :goto_0
 .end method
 
 .method public onDeviceConnected()V
@@ -3119,9 +3199,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "MSG_BRACELET_FOUND "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getName()Ljava/lang/String;
 
@@ -3173,9 +3257,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "FOUND last device:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->m:Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;
 
@@ -3234,9 +3322,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onPause====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3272,9 +3364,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onPause====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3320,9 +3416,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onResume====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3358,9 +3458,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onResume====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3450,9 +3554,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onStop====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3488,9 +3596,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onStop====isBroughtToBackground:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->v:Z
 
@@ -3545,9 +3657,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onTogglePairResult:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -3563,9 +3679,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onTogglePairResult:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -3605,9 +3725,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "isEnterInBackground:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-boolean v3, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->x:Z
 
@@ -3639,9 +3763,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "isEnterInBackground:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget-boolean v3, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->x:Z
 
@@ -3798,9 +3926,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "startSyncData isSyncDataRunning:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->C:Z
 
@@ -3818,9 +3950,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "startSyncData isSyncDataRunning:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->C:Z
 

@@ -178,7 +178,7 @@
 
     add-double/2addr v3, v5
 
-    const-wide/high16 v5, 0x4000
+    const-wide/high16 v5, 0x4000000000000000L
 
     div-double v14, v3, v5
 
@@ -192,7 +192,7 @@
 
     add-double/2addr v3, v5
 
-    const-wide/high16 v5, 0x4000
+    const-wide/high16 v5, 0x4000000000000000L
 
     div-double v16, v3, v5
 
@@ -216,25 +216,25 @@
 
     sub-double/2addr v5, v8
 
-    const-wide/high16 v8, 0x4000
+    const-wide/high16 v8, 0x4000000000000000L
 
     div-double v8, v3, v8
 
     sub-double v8, v14, v8
 
-    const-wide/high16 v10, 0x4000
+    const-wide/high16 v10, 0x4000000000000000L
 
     div-double v10, v3, v10
 
     add-double/2addr v10, v14
 
-    const-wide/high16 v18, 0x4000
+    const-wide/high16 v18, 0x4000000000000000L
 
     div-double v18, v5, v18
 
     sub-double v18, v16, v18
 
-    const-wide/high16 v20, 0x4000
+    const-wide/high16 v20, 0x4000000000000000L
 
     div-double v20, v5, v20
 
@@ -330,7 +330,7 @@
 
     iget v2, v0, Lorg/achartengine/tools/Zoom;->b:F
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     cmpg-float v2, v2, v8
 
@@ -368,7 +368,7 @@
 
     iget v4, v0, Lorg/achartengine/tools/Zoom;->b:F
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     cmpg-float v4, v4, v8
 
@@ -455,13 +455,13 @@
     if-nez p1, :cond_6
 
     :cond_5
-    const-wide/high16 v2, 0x4000
+    const-wide/high16 v2, 0x4000000000000000L
 
     div-double v2, v5, v2
 
     sub-double v3, v14, v2
 
-    const-wide/high16 v10, 0x4000
+    const-wide/high16 v10, 0x4000000000000000L
 
     div-double/2addr v5, v10
 
@@ -491,13 +491,13 @@
     if-nez p1, :cond_8
 
     :cond_7
-    const-wide/high16 v2, 0x4000
+    const-wide/high16 v2, 0x4000000000000000L
 
     div-double v2, v8, v2
 
     sub-double v3, v16, v2
 
-    const-wide/high16 v5, 0x4000
+    const-wide/high16 v5, 0x4000000000000000L
 
     div-double v5, v8, v5
 

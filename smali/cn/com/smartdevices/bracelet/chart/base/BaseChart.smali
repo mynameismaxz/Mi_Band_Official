@@ -2,8 +2,8 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcn/com/smartdevices/bracelet/chart/base/Chart;
 .implements Lcn/com/smartdevices/bracelet/chart/base/Chart$Item;
+.implements Lcn/com/smartdevices/bracelet/chart/base/Chart;
 
 
 # annotations
@@ -231,7 +231,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     invoke-virtual {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/base/BaseChart;->draw(Landroid/graphics/Canvas;F)V
 

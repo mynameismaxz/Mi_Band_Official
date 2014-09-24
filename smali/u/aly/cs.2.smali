@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static final d:Lu/aly/dd; = null
+.field private static final d:Lu/aly/dd;
 
-.field private static final e:Lu/aly/ct; = null
+.field private static final e:Lu/aly/ct;
 
-.field private static final f:[B = null
+.field private static final f:[B
 
 .field private static final h:B = -0x7et
 

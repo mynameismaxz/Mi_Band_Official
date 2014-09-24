@@ -33,16 +33,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_0
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    :goto_0
-    return-object v0
+    if-eqz v3, :cond_2
 
     :cond_0
     const-string v0, "data"
@@ -76,14 +67,24 @@
     move-result-object v0
 
     iput-object v0, v1, Lcn/com/smartdevices/bracelet/model/ShareBackgroundItem;->unReachedBgUrl:Ljava/lang/String;
+
+    :cond_1
+    :goto_0
+    move-object v0, v1
+
+    :goto_1
+    return-object v0
+
+    :cond_2
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
-    :goto_1
-    move-object v0, v1
+    move-result v3
 
-    goto :goto_0
+    if-nez v3, :cond_0
+
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -96,5 +97,5 @@
 
     invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_0
 .end method

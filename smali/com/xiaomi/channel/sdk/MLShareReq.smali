@@ -18,6 +18,8 @@
 # direct methods
 .method public constructor <init>(ILcom/xiaomi/channel/sdk/MLShareMessage;I)V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0, p2, p3}, Lcom/xiaomi/channel/sdk/MLShareReq;-><init>(Lcom/xiaomi/channel/sdk/MLShareMessage;I)V
 

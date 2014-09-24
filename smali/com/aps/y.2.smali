@@ -734,7 +734,7 @@
 
     aget-wide v6, v5, v6
 
-    const-wide/high16 v8, 0x4059
+    const-wide/high16 v8, 0x4059000000000000L
 
     mul-double/2addr v6, v8
 
@@ -754,7 +754,7 @@
 
     aget-wide v5, v5, v6
 
-    const-wide/high16 v7, 0x4059
+    const-wide/high16 v7, 0x4059000000000000L
 
     mul-double/2addr v5, v7
 
@@ -774,7 +774,7 @@
 
     aget-wide v5, v4, v5
 
-    const-wide/high16 v7, 0x4059
+    const-wide/high16 v7, 0x4059000000000000L
 
     mul-double/2addr v5, v7
 
@@ -794,7 +794,7 @@
 
     aget-wide v5, v4, v5
 
-    const-wide/high16 v7, 0x4059
+    const-wide/high16 v7, 0x4059000000000000L
 
     mul-double/2addr v5, v7
 
@@ -1220,7 +1220,7 @@
 
     if-eqz v0, :cond_2
 
-    const/high16 v3, 0x42b4
+    const/high16 v3, 0x42b40000
 
     invoke-virtual {v0}, Landroid/location/GpsSatellite;->getElevation()F
 

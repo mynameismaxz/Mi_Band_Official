@@ -64,7 +64,7 @@
 
     iget-object v2, p0, Lcom/sina/weibo/sdk/auth/WeiboAuth;->mAuthInfo:Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mAppKey:Ljava/lang/String;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mAppKey:Ljava/lang/String;
     invoke-static {v2}, Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->access$0(Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -75,7 +75,7 @@
 
     iget-object v2, p0, Lcom/sina/weibo/sdk/auth/WeiboAuth;->mAuthInfo:Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mRedirectUrl:Ljava/lang/String;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mRedirectUrl:Ljava/lang/String;
     invoke-static {v2}, Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->access$1(Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -86,7 +86,7 @@
 
     iget-object v2, p0, Lcom/sina/weibo/sdk/auth/WeiboAuth;->mAuthInfo:Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mScope:Ljava/lang/String;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mScope:Ljava/lang/String;
     invoke-static {v2}, Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->access$2(Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -113,7 +113,7 @@
 
     iget-object v2, p0, Lcom/sina/weibo/sdk/auth/WeiboAuth;->mAuthInfo:Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mPackageName:Ljava/lang/String;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mPackageName:Ljava/lang/String;
     invoke-static {v2}, Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->access$3(Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -124,7 +124,7 @@
 
     iget-object v2, p0, Lcom/sina/weibo/sdk/auth/WeiboAuth;->mAuthInfo:Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mKeyHash:Ljava/lang/String;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->mKeyHash:Ljava/lang/String;
     invoke-static {v2}, Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;->access$4(Lcom/sina/weibo/sdk/auth/WeiboAuth$AuthInfo;)Ljava/lang/String;
 
     move-result-object v2

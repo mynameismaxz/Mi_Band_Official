@@ -117,7 +117,7 @@
     goto :goto_1
 .end method
 
-.method synthetic constructor <init>(Landroid/app/Activity;ZZLcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;)V
+.method synthetic constructor <init>(Landroid/app/Activity;ZZLcn/com/smartdevices/bracelet/ui/ck;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;-><init>(Landroid/app/Activity;ZZ)V
@@ -127,6 +127,11 @@
 
 .method private a(Landroid/app/Activity;)F
     .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     new-instance v0, Landroid/util/DisplayMetrics;
 
@@ -187,6 +192,9 @@
 
 .method private a(Landroid/content/Context;)I
     .locals 4
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xe
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -249,6 +257,9 @@
 
 .method private b(Landroid/content/Context;)I
     .locals 4
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xe
+    .end annotation
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -290,6 +301,9 @@
 
 .method private c(Landroid/content/Context;)I
     .locals 4
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xe
+    .end annotation
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -321,6 +335,9 @@
 
 .method private d(Landroid/content/Context;)Z
     .locals 6
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xe
+    .end annotation
 
     const/4 v1, 0x1
 
@@ -340,7 +357,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -356,13 +373,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
-    :cond_0
     :goto_0
     return v0
 
-    :cond_1
+    :cond_0
     const-string v0, "0"
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->a()Ljava/lang/String;
@@ -379,7 +395,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v2
@@ -388,11 +404,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_2
 
+    :goto_1
     move v0, v1
 
     goto :goto_0
+
+    :cond_2
+    move v1, v0
+
+    goto :goto_1
 
     :cond_3
     move v0, v2
@@ -522,7 +544,7 @@
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;->n:F
 
-    const/high16 v1, 0x4416
+    const/high16 v1, 0x44160000
 
     cmpl-float v0, v0, v1
 
@@ -530,15 +552,16 @@
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;->m:Z
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    :cond_0
+    const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_0
-    const/4 v0, 0x1
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

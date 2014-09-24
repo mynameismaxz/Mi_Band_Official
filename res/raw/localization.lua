@@ -13,10 +13,15 @@ en_US = 'en_US'
 en_GB = 'en_GB'
 en = 'en'
 g_CurLocale = ""
+DEBUG = false
 -------------Globals----------------
 
 __log = nil
 function log(msg, right)
+    if DEBUG == false then
+        return
+    end
+
     if __log == nil then __log = luajava.bindClass("android.util.Log") end
 
     if right == 'w' then

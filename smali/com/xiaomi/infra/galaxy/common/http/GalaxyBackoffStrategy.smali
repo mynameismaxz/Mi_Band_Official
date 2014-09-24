@@ -49,7 +49,7 @@
     return v0
 
     :cond_1
-    const-wide/high16 v0, 0x4000
+    const-wide/high16 v0, 0x4000000000000000L
 
     add-int/lit8 v2, p1, -0x1
 

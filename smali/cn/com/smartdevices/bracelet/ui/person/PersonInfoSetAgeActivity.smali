@@ -57,15 +57,15 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v2, "-"
 
-    const-string v0, "-"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -85,9 +85,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "birthday = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -135,7 +139,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 14
 
-    const v2, 0x7f080005
+    const v2, 0x7f090014
 
     const/4 v12, 0x5
 
@@ -147,7 +151,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f07004f
+    const v0, 0x7f0a0050
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->findViewById(I)Landroid/view/View;
 
@@ -163,13 +167,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200b7
+    const v1, 0x7f0200b9
 
     invoke-virtual {v0, v1}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v0
 
-    const v1, 0x7f0c0102
+    const v1, 0x7f0d000c
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->getString(I)Ljava/lang/String;
 
@@ -177,9 +181,9 @@
 
     const/16 v3, 0xc
 
-    const/high16 v4, 0x4220
+    const/high16 v4, 0x42200000
 
-    const/high16 v5, 0x40b0
+    const/high16 v5, 0x40b00000
 
     invoke-virtual/range {v0 .. v5}, Lkankan/wheel/widget/WheelView;->setCenterStyle(Ljava/lang/String;IIFF)Lkankan/wheel/widget/WheelView;
 
@@ -195,7 +199,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f080004
+    const v5, 0x7f090052
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -213,7 +217,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08002d
+    const v2, 0x7f090016
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

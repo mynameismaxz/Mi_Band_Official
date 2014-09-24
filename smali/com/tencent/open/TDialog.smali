@@ -285,7 +285,7 @@
 
     iget-object v0, p0, Lcom/tencent/open/TDialog;->k:Landroid/widget/FrameLayout;
 
-    const/high16 v1, 0x108
+    const/high16 v1, 0x1080000
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
@@ -492,6 +492,11 @@
 
 .method private d()V
     .locals 6
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled"
+        }
+    .end annotation
 
     const/4 v5, 0x0
 

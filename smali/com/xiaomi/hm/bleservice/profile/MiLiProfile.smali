@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final CLASS_NAME:Ljava/lang/String; = null
+.field private static final CLASS_NAME:Ljava/lang/String;
 
 .field private static final COMMAND_CONFIRM_ACTIVITY_DATA_TRANSFER_COMPLETE:B = 0xat
 
@@ -38,25 +38,25 @@
 
 .field public static final CONNECTION_LATENCY_LEVEL_MEDIUM:B = 0x1t
 
-.field public static final INTENT_ACTION_AUTHENTICATION_FAILED:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_AUTHENTICATION_FAILED:Ljava/lang/String;
 
-.field public static final INTENT_ACTION_AUTHENTICATION_SUCCESS:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_AUTHENTICATION_SUCCESS:Ljava/lang/String;
 
-.field public static final INTENT_ACTION_DEVICE_BATTERY_STATUS_CHANGED:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_DEVICE_BATTERY_STATUS_CHANGED:Ljava/lang/String;
 
-.field public static final INTENT_ACTION_DEVICE_STATUS_CHANGED:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_DEVICE_STATUS_CHANGED:Ljava/lang/String;
 
-.field public static final INTENT_ACTION_INITIALIZATION_FAILED:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_INITIALIZATION_FAILED:Ljava/lang/String;
 
-.field public static final INTENT_ACTION_INITIALIZATION_SUCCESS:Ljava/lang/String; = null
+.field public static final INTENT_ACTION_INITIALIZATION_SUCCESS:Ljava/lang/String;
 
-.field private static final INTENT_PREFIX:Ljava/lang/String; = null
+.field private static final INTENT_PREFIX:Ljava/lang/String;
 
 .field public static final MODE_REGULAR_DATA_LEN_BYTE:B = 0x0t
 
 .field public static final MODE_REGULAR_DATA_LEN_MINITE:B = 0x1t
 
-.field private static final PACKAGE_NAME:Ljava/lang/String; = null
+.field private static final PACKAGE_NAME:Ljava/lang/String;
 
 .field public static final PROFILE_STATE_AUTHENTICATION_FAILED:I = 0x4
 
@@ -131,17 +131,17 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-class v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".VERSION: "
 
@@ -183,13 +183,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->PACKAGE_NAME:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, "."
 
@@ -211,13 +211,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_INITIALIZATION_SUCCESS"
 
@@ -233,13 +233,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_INITIALIZATION_FAILED"
 
@@ -255,13 +255,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_AUTHENTICATION_SUCCESS"
 
@@ -277,13 +277,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_AUTHENTICATION_FAILED"
 
@@ -299,13 +299,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_DEVICE_STATUS_CHANGED"
 
@@ -321,13 +321,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_PREFIX:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, ".INTENT_ACTION_DEVICE_BATTERY_STATUS_CHANGED"
 
@@ -424,7 +424,7 @@
     return-void
 .end method
 
-.method static synthetic access$1(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
+.method static synthetic access$000(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->onRealtimeStepsChanged(I)V
@@ -432,7 +432,7 @@
     return-void
 .end method
 
-.method static synthetic access$2(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
+.method static synthetic access$100(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceOutputStream:Ljava/io/PipedOutputStream;
@@ -552,6 +552,11 @@
 
 .method private initCharacteristics()Z
     .locals 4
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     const/4 v2, 0x1
 
@@ -1439,9 +1444,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "timestamp: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-static {}, Ljava/text/DateFormat;->getDateTimeInstance()Ljava/text/DateFormat;
 
@@ -1494,9 +1503,13 @@
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "totalLen: "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     div-int/lit8 v3, v1, 0x3
 
@@ -1549,9 +1562,13 @@
     :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "len: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     div-int/lit8 v4, v1, 0x3
 
@@ -1578,20 +1595,8 @@
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_1
-    if-gtz v1, :cond_1
+    if-lez v1, :cond_1
 
-    invoke-direct {p0, v0, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->confirmActivityDataTransferComplete(Ljava/util/Calendar;I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    const/4 v0, 0x0
-
-    :goto_2
-    return-object v0
-
-    :cond_1
     iget-object v4, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceInputStream:Ljava/io/PipedInputStream;
 
     invoke-virtual {v4}, Ljava/io/PipedInputStream;->read()I
@@ -1633,6 +1638,18 @@
     iput v5, v4, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
 
     goto :goto_1
+
+    :cond_1
+    invoke-direct {p0, v0, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->confirmActivityDataTransferComplete(Ljava/util/Calendar;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const/4 v0, 0x0
+
+    :goto_2
+    return-object v0
 
     :cond_2
     new-instance v1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ActivityDataFragment;
@@ -2258,8 +2275,22 @@
     move v0, v7
 
     :goto_2
-    if-lt v0, v5, :cond_3
+    if-ge v0, v5, :cond_3
 
+    aget-byte v3, v8, v0
+
+    aput-byte v3, v2, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    move v0, v7
+
+    goto :goto_1
+
+    :cond_3
     invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Helper;->CRC8([B)I
 
     move-result v0
@@ -2274,9 +2305,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "0x"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -2316,20 +2351,6 @@
 
     goto :goto_0
 
-    :cond_2
-    move v0, v7
-
-    goto :goto_1
-
-    :cond_3
-    aget-byte v3, v8, v0
-
-    aput-byte v3, v2, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
     :cond_4
     invoke-static {v8, v7}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToInt([BI)I
 
@@ -2358,15 +2379,8 @@
     :goto_3
     array-length v0, v6
 
-    if-lt v7, v0, :cond_5
+    if-ge v7, v0, :cond_5
 
-    new-instance v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
-
-    invoke-direct/range {v0 .. v6}, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;-><init>(IBBBB[B)V
-
-    goto :goto_0
-
-    :cond_5
     add-int/lit8 v0, v7, 0x8
 
     aget-byte v0, v8, v0
@@ -2376,6 +2390,13 @@
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
+
+    :cond_5
+    new-instance v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
+
+    invoke-direct/range {v0 .. v6}, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;-><init>(IBBBB[B)V
+
+    goto :goto_0
 .end method
 
 .method public _notify(B)Z
@@ -2653,7 +2674,9 @@
 .end method
 
 .method public _setLEParams(IIIII)Z
-    .locals 4
+    .locals 5
+
+    const/4 v4, 0x0
 
     invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
 
@@ -2663,13 +2686,11 @@
 
     new-array v1, v1, [B
 
-    const/4 v2, 0x0
+    and-int/lit16 v2, p1, 0xff
 
-    and-int/lit16 v3, p1, 0xff
+    int-to-byte v2, v2
 
-    int-to-byte v3, v3
-
-    aput-byte v3, v1, v2
+    aput-byte v2, v1, v4
 
     const/4 v2, 0x1
 
@@ -2734,6 +2755,14 @@
     int-to-byte v3, v3
 
     aput-byte v3, v1, v2
+
+    const/16 v2, 0x8
+
+    aput-byte v4, v1, v2
+
+    const/16 v2, 0x9
+
+    aput-byte v4, v1, v2
 
     const/16 v2, 0xa
 
@@ -2809,22 +2838,8 @@
     aput-byte v2, v0, v1
 
     :goto_1
-    if-lt v1, v4, :cond_1
+    if-ge v1, v4, :cond_1
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {p0, v1, v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
-
-    move-result v0
-
-    return v0
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
     add-int/lit8 v2, v1, 0x1
 
     aget-byte v3, p1, v1
@@ -2834,6 +2849,20 @@
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    invoke-virtual {p0, v1, v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public authenticate(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
@@ -3111,9 +3140,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "dataType: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     const-string v4, "%02x"
 
@@ -3663,14 +3696,6 @@
     goto :goto_1
 .end method
 
-.method public bridge synthetic refreshGatt()V
-    .locals 0
-
-    invoke-super {p0}, Lcom/xiaomi/hm/bleservice/gatt/GattPeripheral;->refreshGatt()V
-
-    return-void
-.end method
-
 .method public resetActivitySyncingProgress()V
     .locals 2
 
@@ -3724,9 +3749,13 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "totalPackets = "
 
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3751,32 +3780,28 @@
     move v4, v1
 
     :goto_0
-    if-lt v3, v6, :cond_1
+    if-ge v3, v6, :cond_4
 
-    rem-int/lit8 v0, v5, 0x14
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_sync()Z
-
-    const-string v0, "transferFirmwareData: complete"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    move v1, v2
-
-    :cond_0
-    :goto_1
-    return v1
-
-    :cond_1
     new-array v7, v9, [B
 
     move v0, v1
 
-    :goto_2
-    if-lt v0, v9, :cond_3
+    :goto_1
+    if-ge v0, v9, :cond_0
 
+    mul-int/lit8 v8, v3, 0x14
+
+    add-int/2addr v8, v0
+
+    aget-byte v8, p1, v8
+
+    aput-byte v8, v7, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_0
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
     invoke-virtual {p0, v0, v7}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
@@ -3785,8 +3810,13 @@
 
     invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
+    :cond_1
+    :goto_2
+    return v1
+
+    :cond_2
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
     iget v7, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;->progress:I
@@ -3799,9 +3829,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v7, "transferedPackets = "
 
-    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3815,33 +3849,35 @@
 
     const/16 v4, 0x3e8
 
-    if-lt v0, v4, :cond_2
+    if-lt v0, v4, :cond_3
 
     invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_sync()Z
 
     move v0, v1
 
-    :cond_2
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     move v4, v0
 
     goto :goto_0
 
-    :cond_3
-    mul-int/lit8 v8, v3, 0x14
+    :cond_4
+    rem-int/lit8 v0, v5, 0x14
 
-    add-int/2addr v8, v0
+    if-nez v0, :cond_5
 
-    aget-byte v8, p1, v8
+    invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_sync()Z
 
-    aput-byte v8, v7, v0
+    const-string v0, "transferFirmwareData: complete"
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+
+    move v1, v2
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     rem-int/lit8 v0, v5, 0x14
 
     new-array v3, v0, [B
@@ -3851,8 +3887,21 @@
     :goto_3
     rem-int/lit8 v7, v5, 0x14
 
-    if-lt v0, v7, :cond_5
+    if-ge v0, v7, :cond_6
 
+    mul-int/lit8 v7, v6, 0x14
+
+    add-int/2addr v7, v0
+
+    aget-byte v7, p1, v7
+
+    aput-byte v7, v3, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_3
+
+    :cond_6
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
     invoke-virtual {p0, v0, v3}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
@@ -3861,7 +3910,7 @@
 
     invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -3879,9 +3928,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "transferedPackets = "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3901,20 +3954,7 @@
 
     move v1, v2
 
-    goto :goto_1
-
-    :cond_5
-    mul-int/lit8 v7, v6, 0x14
-
-    add-int/2addr v7, v0
-
-    aget-byte v7, p1, v7
-
-    aput-byte v7, v3, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
+    goto/16 :goto_2
 .end method
 
 .method public sendFirmwareInfo(IIII)Z
@@ -4376,13 +4416,40 @@
 
     array-length v3, v3
 
-    if-lt v0, v3, :cond_1
+    if-ge v0, v3, :cond_1
 
+    add-int/lit8 v3, v0, 0x9
+
+    iget-object v4, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->alias:[B
+
+    aget-byte v4, v4, v0
+
+    aput-byte v4, v2, v3
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
     new-array v0, v5, [B
 
     :goto_2
-    if-lt v1, v5, :cond_2
+    if-ge v1, v5, :cond_2
 
+    aget-byte v3, v2, v1
+
+    aput-byte v3, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_2
     invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Helper;->CRC8([B)I
 
     move-result v0
@@ -4397,9 +4464,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "0x"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -4440,33 +4511,6 @@
     move-result v0
 
     return v0
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    add-int/lit8 v3, v0, 0x9
-
-    iget-object v4, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->alias:[B
-
-    aget-byte v4, v4, v0
-
-    aput-byte v4, v2, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    aget-byte v3, v2, v1
-
-    aput-byte v3, v0, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
 .end method
 
 .method public setWearLocation(B)Z

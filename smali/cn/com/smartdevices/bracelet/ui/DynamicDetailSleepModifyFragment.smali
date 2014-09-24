@@ -120,7 +120,7 @@
 .method private a(Landroid/view/View;)V
     .locals 14
 
-    const v0, 0x7f0700cc
+    const v0, 0x7f0a00ce
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0700cd
+    const v0, 0x7f0a00cf
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f0700ce
+    const v0, 0x7f0a00d0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->d:Lkankan/wheel/widget/WheelView;
 
-    const v0, 0x7f0700cf
+    const v0, 0x7f0a00d1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -241,7 +241,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0017
+    const v1, 0x7f0d005b
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -262,7 +262,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f08003c
+    const v6, 0x7f090003
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -272,7 +272,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f080011
+    const v7, 0x7f090036
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -306,21 +306,21 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200b9
+    const v2, 0x7f0200bb
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0c00dd
+    const v2, 0x7f0d00cd
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f08003c
+    const v3, 0x7f090003
 
-    const/high16 v4, 0x4190
+    const/high16 v4, 0x41900000
 
     invoke-virtual {v1, v2, v3, v4}, Lkankan/wheel/widget/WheelView;->setCenterStyle(Ljava/lang/String;IF)Lkankan/wheel/widget/WheelView;
 
@@ -356,7 +356,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f08003c
+    const v6, 0x7f090003
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -366,7 +366,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f080011
+    const v7, 0x7f090036
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -396,21 +396,21 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200b9
+    const v2, 0x7f0200bb
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0c00d3
+    const v2, 0x7f0d00f8
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f08003c
+    const v3, 0x7f090003
 
-    const/high16 v4, 0x4190
+    const/high16 v4, 0x41900000
 
     invoke-virtual {v1, v2, v3, v4}, Lkankan/wheel/widget/WheelView;->setCenterStyle(Ljava/lang/String;IF)Lkankan/wheel/widget/WheelView;
 
@@ -435,7 +435,7 @@
     :sswitch_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v1, 0x7f0c011f
+    const v1, 0x7f0d006d
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -444,7 +444,7 @@
     :sswitch_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0120
+    const v1, 0x7f0d006c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -453,7 +453,7 @@
     :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0018
+    const v1, 0x7f0d005e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -714,7 +714,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0017
+    const v1, 0x7f0d005b
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -725,7 +725,7 @@
     :cond_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0018
+    const v1, 0x7f0d005e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -934,9 +934,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Sleep Time Modified : "
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1134,7 +1138,7 @@
 .method public onScrollingFinished(Lkankan/wheel/widget/WheelView;)V
     .locals 9
 
-    const/high16 v6, -0x8000
+    const/high16 v6, -0x80000000
 
     const/4 v8, 0x0
 
@@ -1156,9 +1160,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "Selection Time : "
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1224,9 +1232,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "Selection Time Is Before : "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     aget v4, v0, v8
 
@@ -1306,9 +1318,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "Selection Time Is After : "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     aget v3, v0, v8
 
@@ -1381,9 +1397,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "Selection Time Is After : "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     aget v4, v0, v8
 

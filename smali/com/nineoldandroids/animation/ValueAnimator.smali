@@ -925,7 +925,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     iget v0, p0, Lcom/nineoldandroids/animation/ValueAnimator;->i:I
 
@@ -1406,7 +1406,7 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     invoke-virtual {p0, v0}, Lcom/nineoldandroids/animation/ValueAnimator;->a(F)V
 

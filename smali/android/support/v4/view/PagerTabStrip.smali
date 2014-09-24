@@ -72,7 +72,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/PagerTitleStrip;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -116,7 +116,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4040
+    const/high16 v1, 0x40400000
 
     mul-float/2addr v1, v0
 
@@ -126,7 +126,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->o:I
 
-    const/high16 v1, 0x40c0
+    const/high16 v1, 0x40c00000
 
     mul-float/2addr v1, v0
 
@@ -136,7 +136,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->p:I
 
-    const/high16 v1, 0x4280
+    const/high16 v1, 0x42800000
 
     mul-float/2addr v1, v0
 
@@ -144,7 +144,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->q:I
 
-    const/high16 v1, 0x4180
+    const/high16 v1, 0x41800000
 
     mul-float/2addr v1, v0
 
@@ -154,7 +154,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->s:I
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     mul-float/2addr v1, v0
 
@@ -164,7 +164,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->y:I
 
-    const/high16 v1, 0x4200
+    const/high16 v1, 0x42000000
 
     mul-float/2addr v0, v1
 
@@ -301,7 +301,7 @@
 
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/view/PagerTitleStrip;->a(IFZ)V
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     sub-float v2, p2, v2
 
@@ -309,11 +309,11 @@
 
     move-result v2
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     mul-float/2addr v2, v3
 
-    const/high16 v3, 0x437f
+    const/high16 v3, 0x437f0000
 
     mul-float/2addr v2, v3
 
@@ -433,7 +433,7 @@
 
     iget-object v0, p0, Landroid/support/v4/view/PagerTabStrip;->t:Landroid/graphics/Paint;
 
-    const/high16 v1, -0x100
+    const/high16 v1, -0x1000000
 
     iget v2, p0, Landroid/support/v4/view/PagerTabStrip;->n:I
 
@@ -642,7 +642,7 @@
 
     if-nez v0, :cond_0
 
-    const/high16 v0, -0x100
+    const/high16 v0, -0x1000000
 
     and-int/2addr v0, p1
 

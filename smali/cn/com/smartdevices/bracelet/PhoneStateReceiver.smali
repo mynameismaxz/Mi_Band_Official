@@ -83,7 +83,7 @@
     return-void
 .end method
 
-.method private static a(I)V
+.method private static a(Landroid/content/Context;I)V
     .locals 4
 
     const-string v0, "PhoneState"
@@ -92,23 +92,27 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Ljava/util/Timer;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
+    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    sput-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
+    new-instance v1, Ljava/util/Timer;
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/d;
+    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/d;-><init>()V
+    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
 
-    sput-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
+    new-instance v1, Lcn/com/smartdevices/bracelet/d;
+
+    invoke-direct {v1, v0}, Lcn/com/smartdevices/bracelet/d;-><init>(Ljava/lang/ref/WeakReference;)V
+
+    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
 
     sget-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
 
     sget-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
 
-    int-to-long v2, p0
+    int-to-long v2, p1
 
     invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
@@ -157,6 +161,12 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v0, "IncomingCall"
+
+    const-string v1, "CallIdle"
+
+    invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a()V
 
     goto :goto_0
@@ -166,9 +176,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "RINGING :"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     const-string v3, "incoming_number"
 
@@ -186,13 +200,19 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v0, "IncomingCall"
+
+    const-string v2, "CallRing"
+
+    invoke-static {p1, v0, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getInComingCallTime()I
 
     move-result v0
 
     mul-int/lit16 v0, v0, 0x3e8
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a(I)V
+    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a(Landroid/content/Context;I)V
 
     goto :goto_0
 
@@ -201,9 +221,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "incoming ACCEPT :"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     const-string v2, "incoming_number"
 
@@ -221,9 +245,17 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v0, "IncomingCall"
+
+    const-string v1, "CallOffhook"
+
+    invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a()V
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

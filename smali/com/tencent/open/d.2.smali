@@ -6,6 +6,12 @@
 .field protected jsBridge:Lcom/tencent/open/a;
 
 .field protected final mChromeClient:Landroid/webkit/WebChromeClient;
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

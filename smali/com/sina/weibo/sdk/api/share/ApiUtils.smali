@@ -13,7 +13,7 @@
 
 .field private static final WEIBO_IDENTITY_ACTION:Ljava/lang/String; = "com.sina.weibo.action.sdkidentity"
 
-.field private static final WEIBO_NAME_URI:Landroid/net/Uri; = null
+.field private static final WEIBO_NAME_URI:Landroid/net/Uri;
 
 .field private static final WEIBO_SIGN:Ljava/lang/String; = "18da2bf10352443a00a5e046d9fca6bd"
 
@@ -167,11 +167,11 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_e
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_6
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
@@ -203,11 +203,11 @@
 
     invoke-static {p0, p1}, Lcom/sina/weibo/sdk/api/share/ApiUtils;->validateWeiboSign(Landroid/content/Context;Ljava/lang/String;)Z
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_d
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_c
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_b
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-result v3
 
@@ -237,11 +237,11 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_d
     .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_c
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_b
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_1
 
@@ -293,11 +293,11 @@
 
     iput v3, v0, Lcom/sina/weibo/sdk/api/share/ApiUtils$WeiboInfo;->supportApi:I
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_6} :catch_0
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_d
     .catch Lorg/json/JSONException; {:try_start_6 .. :try_end_6} :catch_c
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_b
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     if-eqz v2, :cond_1
 
@@ -626,8 +626,8 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v1
 
@@ -668,17 +668,17 @@
 
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-result-object v2
 
     :try_start_2
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     move-result v0
 
@@ -710,8 +710,8 @@
 
     iput v2, v0, Lcom/sina/weibo/sdk/api/share/ApiUtils$WeiboInfo;->supportApi:I
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     if-eqz v1, :cond_1
 
@@ -725,8 +725,8 @@
     :try_start_4
     invoke-virtual {v2}, Ljava/lang/NumberFormatException;->printStackTrace()V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     move v2, v0
 

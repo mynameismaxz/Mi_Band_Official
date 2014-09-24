@@ -49,6 +49,8 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

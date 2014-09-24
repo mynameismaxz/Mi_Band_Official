@@ -332,10 +332,10 @@
 
     invoke-virtual {v2, v1}, Ljava/util/BitSet;->get(I)Z
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_4
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v3
 
@@ -361,8 +361,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_7
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :cond_2
     :goto_1
@@ -389,8 +389,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     goto :goto_1
 
@@ -414,8 +414,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_1
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     goto :goto_1
 
@@ -439,8 +439,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_1
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_5
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
     goto :goto_1
 
@@ -464,8 +464,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_1
     .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_6
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
 
     :cond_3
     :goto_2
@@ -575,9 +575,9 @@
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
     .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/lang/OutOfMemoryError; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :try_start_5
     iget-object v1, p0, Lcom/aps/bc;->a:Ljava/io/RandomAccessFile;
@@ -591,8 +591,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     :cond_2
     :goto_1
@@ -667,9 +667,9 @@
 
     invoke-direct {v1, v2, v3, v4}, Lcom/aps/ae;-><init>(Ljava/io/File;Ljava/util/ArrayList;[I)V
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
     .catch Ljava/io/FileNotFoundException; {:try_start_8 .. :try_end_8} :catch_0
     .catch Ljava/lang/OutOfMemoryError; {:try_start_8 .. :try_end_8} :catch_2
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     :try_start_9
     iget-object v2, p0, Lcom/aps/bc;->a:Ljava/io/RandomAccessFile;
@@ -683,8 +683,8 @@
 
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_5
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     :cond_4
     :goto_2
@@ -701,7 +701,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x50
+    const/high16 v3, 0x500000
 
     if-lt v2, v3, :cond_9
 
@@ -732,8 +732,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_0
     .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_1
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
 
     move-object v1, v0
 
@@ -762,8 +762,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_0
     .catch Ljava/io/IOException; {:try_start_e .. :try_end_e} :catch_4
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
 
     :cond_7
     :goto_3
@@ -794,8 +794,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_10
-    .catchall {:try_start_10 .. :try_end_10} :catchall_0
     .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_3
+    .catchall {:try_start_10 .. :try_end_10} :catchall_0
 
     :cond_8
     :goto_4
@@ -937,9 +937,9 @@
 
     invoke-virtual {v1, v2}, Ljava/io/RandomAccessFile;->write([B)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     :cond_2
     :try_start_3
@@ -954,8 +954,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_5
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :cond_3
     :goto_2
@@ -1013,8 +1013,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     goto :goto_2
 
@@ -1038,8 +1038,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     goto :goto_2
 
@@ -1063,8 +1063,8 @@
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_0
     .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_4
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
 
     :cond_5
     :goto_3

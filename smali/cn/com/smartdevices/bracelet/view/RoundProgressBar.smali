@@ -98,7 +98,7 @@
 
     move-result-object v0
 
-    const/high16 v1, -0x1
+    const/high16 v1, -0x10000
 
     invoke-virtual {v0, v3, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
@@ -122,7 +122,7 @@
 
     const/4 v1, 0x4
 
-    const/high16 v2, 0x4170
+    const/high16 v2, 0x41700000
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
@@ -132,7 +132,7 @@
 
     const/4 v1, 0x2
 
-    const/high16 v2, 0x40a0
+    const/high16 v2, 0x40a00000
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
@@ -202,6 +202,14 @@
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/RoundProgressBar;->i:I
 
     return v0
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;I)I
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/view/RoundProgressBar;->i:I
+
+    return p1
 .end method
 
 .method private a(IFF)V
@@ -275,14 +283,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/view/RoundProgressBar;->i:I
-
-    return-void
-.end method
-
 .method static synthetic a(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;IFF)V
     .locals 0
 
@@ -299,12 +299,12 @@
     return v0
 .end method
 
-.method static synthetic b(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;I)V
+.method static synthetic b(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;I)I
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/view/RoundProgressBar;->h:I
 
-    return-void
+    return p1
 .end method
 
 .method static synthetic c(Lcn/com/smartdevices/bracelet/view/RoundProgressBar;)I
@@ -406,11 +406,11 @@
 
     const/4 v4, 0x1
 
-    const/high16 v9, 0x43b4
+    const/high16 v9, 0x43b40000
 
-    const/high16 v2, -0x3d4c
+    const/high16 v2, -0x3d4c0000
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -496,7 +496,7 @@
 
     div-float/2addr v1, v5
 
-    const/high16 v5, 0x42c8
+    const/high16 v5, 0x42c80000
 
     mul-float/2addr v1, v5
 
@@ -506,11 +506,11 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v7
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v6
 
     const-string v7, "%"
 
@@ -538,15 +538,15 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-direct {v6, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v6, "%"
 
-    const-string v1, "%"
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -771,6 +771,11 @@
 
 .method public declared-synchronized setProgress(I)V
     .locals 2
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     monitor-enter p0
 

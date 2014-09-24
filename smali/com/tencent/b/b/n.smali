@@ -1411,7 +1411,7 @@
 
     const/4 v10, 0x4
 
-    const-wide/high16 v8, 0x4024
+    const-wide/high16 v8, 0x4024000000000000L
 
     const/4 v1, 0x0
 
@@ -1569,7 +1569,7 @@
 
     if-lt v1, v7, :cond_b
 
-    const-wide/high16 v0, 0x4044
+    const-wide/high16 v0, 0x4044000000000000L
 
     :goto_1
     iput-wide v0, v4, Lcom/tencent/b/a/a/d;->e:D
@@ -1874,7 +1874,7 @@
 
     if-ne v1, v7, :cond_c
 
-    const-wide/high16 v0, 0x404e
+    const-wide/high16 v0, 0x404e000000000000L
 
     goto/16 :goto_1
 
@@ -1924,19 +1924,19 @@
     goto/16 :goto_1
 
     :cond_10
-    const-wide/high16 v0, 0x4059
+    const-wide/high16 v0, 0x4059000000000000L
 
     cmpg-double v0, v5, v0
 
     if-gtz v0, :cond_11
 
-    const-wide/high16 v0, 0x3ff0
+    const-wide/high16 v0, 0x3ff0000000000000L
 
     sub-double v0, v5, v0
 
     div-double/2addr v0, v8
 
-    const-wide/high16 v5, 0x3ff0
+    const-wide/high16 v5, 0x3ff0000000000000L
 
     add-double/2addr v0, v5
 
@@ -1947,13 +1947,13 @@
     goto :goto_4
 
     :cond_11
-    const-wide/high16 v0, 0x4059
+    const-wide/high16 v0, 0x4059000000000000L
 
     cmpl-double v0, v5, v0
 
     if-lez v0, :cond_12
 
-    const-wide/high16 v0, 0x4089
+    const-wide/high16 v0, 0x4089000000000000L
 
     cmpg-double v0, v5, v0
 
@@ -2896,8 +2896,8 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_1
     :try_start_2
@@ -3153,8 +3153,8 @@
 
     invoke-virtual {v0}, Lcom/tencent/b/b/f;->a()V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     :goto_0

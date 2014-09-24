@@ -174,13 +174,13 @@
 
     if-ne v3, v4, :cond_5
 
-    const/high16 v3, 0x1000
+    const/high16 v3, 0x10000000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v3
 
-    const/high16 v4, 0x800
+    const/high16 v4, 0x8000000
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 

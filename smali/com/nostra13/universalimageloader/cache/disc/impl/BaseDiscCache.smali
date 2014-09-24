@@ -8,7 +8,7 @@
 # static fields
 .field public static final DEFAULT_BUFFER_SIZE:I = 0x8000
 
-.field public static final DEFAULT_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat; = null
+.field public static final DEFAULT_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat;
 
 .field public static final DEFAULT_COMPRESS_QUALITY:I = 0x64
 

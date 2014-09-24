@@ -20,7 +20,7 @@
 .method protected draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
     .locals 5
 
-    const/high16 v2, 0x41f0
+    const/high16 v2, 0x41f00000
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->needDraw:Z
 
@@ -35,7 +35,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -92,7 +92,7 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    const/high16 v1, 0x4108
+    const/high16 v1, 0x41080000
 
     iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->mDensity:F
 
@@ -142,7 +142,7 @@
 
     sub-float v1, v2, v1
 
-    const/high16 v2, 0x4120
+    const/high16 v2, 0x41200000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->mDensity:F
 
@@ -154,7 +154,7 @@
 
     iget v2, p2, Landroid/graphics/RectF;->top:F
 
-    const/high16 v3, 0x4158
+    const/high16 v3, 0x41580000
 
     iget v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->mDensity:F
 
@@ -206,7 +206,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 

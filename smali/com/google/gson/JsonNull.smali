@@ -21,6 +21,8 @@
 
 .method public constructor <init>()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
 

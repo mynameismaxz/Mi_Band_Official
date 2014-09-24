@@ -21,8 +21,7 @@
 
 .field private static final d:I = 0x2
 
-#the value of this static final field might be set in the static constructor
-.field private static final e:I = 0x0
+.field private static final e:I
 
 .field private static final f:I = -0x1
 
@@ -70,6 +69,8 @@
     .locals 2
 
     const/4 v0, 0x0
+
+    check-cast v0, Landroid/util/AttributeSet;
 
     const v1, 0x1010084
 
@@ -269,7 +270,7 @@
 
     const/4 v1, 0x5
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     const/4 v3, 0x0
 
@@ -733,7 +734,7 @@
     if-eqz v1, :cond_0
 
     :try_start_0
-    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 

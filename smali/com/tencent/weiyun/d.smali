@@ -184,7 +184,7 @@
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/high16 v2, 0x4
+    const/high16 v2, 0x40000
 
     new-array v11, v2, [B
 

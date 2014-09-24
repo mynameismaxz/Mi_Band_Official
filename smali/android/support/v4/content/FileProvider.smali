@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final a:[Ljava/lang/String; = null
+.field private static final a:[Ljava/lang/String;
 
 .field private static final b:Ljava/lang/String; = "android.support.FILE_PROVIDER_PATHS"
 
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x1000
+    const/high16 v0, 0x10000000
 
     :goto_0
     return v0
@@ -119,7 +119,7 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    const/high16 v0, 0x2c00
+    const/high16 v0, 0x2c000000
 
     goto :goto_0
 
@@ -132,7 +132,7 @@
 
     if-eqz v0, :cond_3
 
-    const/high16 v0, 0x2a00
+    const/high16 v0, 0x2a000000
 
     goto :goto_0
 
@@ -145,7 +145,7 @@
 
     if-eqz v0, :cond_4
 
-    const/high16 v0, 0x3800
+    const/high16 v0, 0x38000000
 
     goto :goto_0
 
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_5
 
-    const/high16 v0, 0x3c00
+    const/high16 v0, 0x3c000000
 
     goto :goto_0
 
@@ -211,9 +211,9 @@
     :try_start_1
     invoke-static {p0, p1}, Landroid/support/v4/content/FileProvider;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/support/v4/content/d;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v0
 

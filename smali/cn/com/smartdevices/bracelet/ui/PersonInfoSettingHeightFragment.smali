@@ -48,7 +48,7 @@
 
     move-result-object v15
 
-    const v1, 0x7f0700f8
+    const v1, 0x7f0a00fd
 
     invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -64,13 +64,13 @@
 
     iget-object v1, v0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSettingHeightFragment;->b:Lkankan/wheel/widget/WheelView;
 
-    const v2, 0x7f0200b9
+    const v2, 0x7f0200bb
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0c005f
+    const v2, 0x7f0d0046
 
     move-object/from16 v0, p0
 
@@ -78,7 +78,7 @@
 
     move-result-object v2
 
-    const/high16 v3, 0x41e0
+    const/high16 v3, 0x41e00000
 
     invoke-virtual {v1, v2, v3}, Lkankan/wheel/widget/WheelView;->setCenterStyle(Ljava/lang/String;F)Lkankan/wheel/widget/WheelView;
 
@@ -102,7 +102,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f08000c
+    const v7, 0x7f090027
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -112,7 +112,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f080011
+    const v8, 0x7f090036
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColor(I)I
 

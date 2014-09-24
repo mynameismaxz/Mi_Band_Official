@@ -111,7 +111,7 @@
 
     int-to-float v2, v9
 
-    const/high16 v3, 0x3fc0
+    const/high16 v3, 0x3fc00000
 
     sub-float/2addr v2, v3
 
@@ -243,7 +243,7 @@
 
     add-float/2addr v1, v2
 
-    const/high16 v2, 0x4040
+    const/high16 v2, 0x40400000
 
     sub-float v5, v1, v2
 
@@ -412,7 +412,7 @@
 .method protected getCoeficient()F
     .locals 1
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     return v0
 .end method

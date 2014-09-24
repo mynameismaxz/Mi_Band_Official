@@ -45,9 +45,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "MSG_BRACELET_FOUND:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothDevice;->getName()Ljava/lang/String;
 
@@ -308,7 +312,7 @@
 
     const-wide/16 v1, -0x1
 
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;J)V
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;J)J
 
     goto/16 :goto_0
 

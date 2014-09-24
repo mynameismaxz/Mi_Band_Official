@@ -149,8 +149,8 @@
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v0
 
@@ -184,8 +184,8 @@
     :try_start_3
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     move-result v0
 

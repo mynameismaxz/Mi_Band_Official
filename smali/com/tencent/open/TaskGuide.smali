@@ -1585,6 +1585,11 @@
 
 .method public showWindow()V
     .locals 6
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "ResourceAsColor"
+        }
+    .end annotation
 
     new-instance v0, Landroid/os/Handler;
 

@@ -147,9 +147,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Get Location Service : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -229,11 +233,17 @@
 .end method
 
 .method public requestLocation()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 
     if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->d:Landroid/content/Context;
+
+    const-string v1, "LocationStart"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/LocationManager;->e:Lcn/com/smartdevices/bracelet/location/LocationService;
 

@@ -212,8 +212,8 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_1
     add-int/lit8 v0, v1, 0x1
@@ -295,8 +295,8 @@
 
     iput-object v1, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     const-string v1, "delete from olddata;"
@@ -308,8 +308,8 @@
 
     invoke-virtual {v2, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
     iget-object v0, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
@@ -736,8 +736,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     iget v2, p0, Lcom/tencent/open/a/d;->d:I
@@ -811,8 +811,8 @@
 
     iput-object v1, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     const-string v1, "delete from newdata;"
@@ -824,8 +824,8 @@
 
     invoke-virtual {v2, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     const/4 v0, 0x0
 
@@ -919,8 +919,8 @@
 
     iput-object v0, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     iget-object v0, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
@@ -1145,8 +1145,8 @@
 
     iput-object v0, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     iget-object v0, p0, Lcom/tencent/open/a/d;->b:Landroid/database/sqlite/SQLiteDatabase;

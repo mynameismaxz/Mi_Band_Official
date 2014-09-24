@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final k:Ljava/util/Map; = null
+.field public static final k:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -35,29 +35,29 @@
     .end annotation
 .end field
 
-.field private static final l:Lu/aly/dd; = null
+.field private static final l:Lu/aly/dd;
 
-.field private static final m:Lu/aly/ct; = null
+.field private static final m:Lu/aly/ct;
 
-.field private static final n:Lu/aly/ct; = null
+.field private static final n:Lu/aly/ct;
 
-.field private static final o:Lu/aly/ct; = null
+.field private static final o:Lu/aly/ct;
 
-.field private static final p:Lu/aly/ct; = null
+.field private static final p:Lu/aly/ct;
 
-.field private static final q:Lu/aly/ct; = null
+.field private static final q:Lu/aly/ct;
 
-.field private static final r:Lu/aly/ct; = null
+.field private static final r:Lu/aly/ct;
 
-.field private static final s:Lu/aly/ct; = null
+.field private static final s:Lu/aly/ct;
 
-.field private static final t:Lu/aly/ct; = null
+.field private static final t:Lu/aly/ct;
 
-.field private static final u:Lu/aly/ct; = null
+.field private static final u:Lu/aly/ct;
 
-.field private static final v:Lu/aly/ct; = null
+.field private static final v:Lu/aly/ct;
 
-.field private static final w:Ljava/util/Map; = null
+.field private static final w:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",

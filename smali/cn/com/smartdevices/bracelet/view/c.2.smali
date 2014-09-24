@@ -25,13 +25,13 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 7
 
-    const/high16 v6, 0x43c8
+    const/high16 v6, 0x43c80000
 
-    const/high16 v5, 0x4248
+    const/high16 v5, 0x42480000
 
-    const/high16 v4, 0x42c8
+    const/high16 v4, 0x42c80000
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -61,7 +61,7 @@
 
     move-result-object v1
 
-    const/high16 v2, -0x3cb8
+    const/high16 v2, -0x3cb80000
 
     mul-float/2addr v2, v0
 
@@ -140,7 +140,7 @@
 
     move-result-object v1
 
-    const/high16 v2, 0x43e1
+    const/high16 v2, 0x43e10000
 
     mul-float/2addr v2, v0
 

@@ -90,7 +90,7 @@
 
     iput-wide v0, p0, Lcom/amap/api/location/a;->o:J
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     iput v0, p0, Lcom/amap/api/location/a;->p:F
 

@@ -24,6 +24,11 @@
 # virtual methods
 .method public display(Landroid/graphics/Bitmap;Lcom/nostra13/universalimageloader/core/imageaware/ImageAware;Lcom/nostra13/universalimageloader/core/assist/LoadedFrom;)V
     .locals 4
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     instance-of v0, p2, Lcom/nostra13/universalimageloader/core/imageaware/ImageViewAware;
 

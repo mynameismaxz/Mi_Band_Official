@@ -126,7 +126,7 @@
 
     iput-object v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->a:Ljava/lang/String;
 
-    const/high16 v0, 0x4170
+    const/high16 v0, 0x41700000
 
     iput v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->b:F
 
@@ -148,13 +148,13 @@
 
     iput v3, p0, Lorg/achartengine/renderer/DefaultRenderer;->l:I
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     iput v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->m:F
 
     iput-boolean v2, p0, Lorg/achartengine/renderer/DefaultRenderer;->n:Z
 
-    const/high16 v0, 0x4140
+    const/high16 v0, 0x41400000
 
     iput v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->o:F
 
@@ -184,7 +184,7 @@
 
     iput-object v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->w:[I
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iput v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->x:F
 
@@ -194,7 +194,7 @@
 
     iput-boolean v1, p0, Lorg/achartengine/renderer/DefaultRenderer;->A:Z
 
-    const/high16 v0, 0x3fc0
+    const/high16 v0, 0x3fc00000
 
     iput v0, p0, Lorg/achartengine/renderer/DefaultRenderer;->B:F
 
@@ -219,11 +219,11 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x14t 0x0t 0x0t 0x0t
-        0x1et 0x0t 0x0t 0x0t
-        0xat 0x0t 0x0t 0x0t
-        0x14t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x14
+        0x1e
+        0xa
+        0x14
     .end array-data
 .end method
 

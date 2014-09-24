@@ -3,7 +3,7 @@
 
 
 # static fields
-.field protected static final a:Ljava/lang/String; = null
+.field protected static final a:Ljava/lang/String;
 
 .field public static final b:Ljava/lang/String; = ""
 

@@ -98,7 +98,7 @@
 .method public checkArgs()Z
     .locals 4
 
-    const/high16 v3, 0xa0
+    const/high16 v3, 0xa00000
 
     const/4 v0, 0x0
 

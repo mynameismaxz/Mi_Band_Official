@@ -238,9 +238,9 @@
     :try_start_0
     invoke-static {p1, p6}, Lcom/tencent/b/b/i;->a(Ljava/lang/String;Z)Ljava/net/HttpURLConnection;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
     .catch Lcom/tencent/b/b/j; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     move-result-object v3
 
@@ -338,9 +338,9 @@
 
     invoke-direct {v2, v4}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Lcom/tencent/b/b/j; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :try_start_2
     invoke-virtual {v2, p4}, Ljava/io/DataOutputStream;->write([B)V
@@ -349,9 +349,9 @@
 
     invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_3
     .catch Lcom/tencent/b/b/j; {:try_start_2 .. :try_end_2} :catch_5
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     :cond_4
     :try_start_3
@@ -387,9 +387,9 @@
     :cond_6
     invoke-static {v0}, Lcom/tencent/b/b/d;->a(I)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Lcom/tencent/b/b/j; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     if-eqz v3, :cond_7
 
@@ -406,9 +406,9 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Lcom/tencent/b/b/j; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     goto :goto_0
 
@@ -451,9 +451,9 @@
 
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Lcom/tencent/b/b/j; {:try_start_6 .. :try_end_6} :catch_0
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     goto/16 :goto_1
 
@@ -547,9 +547,9 @@
 
     throw v0
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
     .catch Lcom/tencent/b/b/j; {:try_start_8 .. :try_end_8} :catch_0
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
     :catchall_2
     move-exception v0
@@ -727,8 +727,8 @@
 
     check-cast v0, Ljava/net/HttpURLConnection;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
     const-string v2, "GET"
@@ -773,8 +773,8 @@
 
     invoke-static {v2}, Lcom/tencent/b/b/i;->a(I)V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :goto_2
     if-eqz v0, :cond_4
@@ -834,8 +834,8 @@
     :try_start_6
     invoke-static {v2}, Lcom/tencent/b/b/i;->a(I)V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     goto :goto_2
 

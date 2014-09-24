@@ -193,7 +193,7 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     :goto_1
     invoke-virtual {v2, v1, p2, p3, v0}, Landroid/media/RemoteControlClient;->setPlaybackState(IJF)V
@@ -263,7 +263,7 @@
 
     iget-object v2, p0, Landroid/support/v4/media/d;->g:Landroid/content/Intent;
 
-    const/high16 v3, 0x1000
+    const/high16 v3, 0x10000000
 
     invoke-static {v0, v1, v2, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 

@@ -7,7 +7,7 @@
         <View android:background="@color/item_stroke" android:layout_width="fill_parent" android:layout_height="@dimen/round_bg_stroke" />
         <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/wheel_hight">
             <include layout="@layout/wheel_left_band" />
-            <LinearLayout android:background="@*android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
                 <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
                     <TextView android:textSize="12.0sp" android:textColor="@color/bg_color_blue" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/modify_sleep_today_yesterday" android:layout_width="55.0dip" android:layout_height="wrap_content" />
                     <kankan.wheel.widget.WheelView android:id="@id/modify_sleep_time_hour" android:layout_width="fill_parent" android:layout_height="fill_parent" />

@@ -230,7 +230,7 @@
     move v1, v0
 
     :goto_0
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     if-nez p3, :cond_2
 

@@ -144,9 +144,9 @@
     :try_start_0
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
@@ -218,9 +218,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_4
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-result v1
 
@@ -234,9 +234,9 @@
     :try_start_2
     const-string v0, "10.0.0.200"
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_5
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :cond_1
     move-object v1, v0
@@ -325,9 +325,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/lang/SecurityException; {:try_start_3 .. :try_end_3} :catch_4
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     move-result v1
 
@@ -341,9 +341,9 @@
     :try_start_4
     const-string v0, "10.0.0.172"
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/lang/SecurityException; {:try_start_4 .. :try_end_4} :catch_5
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :cond_5
     move-object v1, v0
@@ -885,12 +885,12 @@
 
     invoke-static {v0, v7}, Lcom/aps/l;->a(Landroid/content/Context;Landroid/net/NetworkInfo;)Lorg/apache/http/client/HttpClient;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
     .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_2b
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_6
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     move-result-object v7
 
@@ -901,12 +901,12 @@
 
     invoke-direct {v6, v0}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_3
     .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_2c
     .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_25
     .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_1f
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_19
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_13
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
     :try_start_2
     new-instance v5, Lorg/apache/http/entity/ByteArrayEntity;
@@ -1001,12 +1001,12 @@
 
     invoke-interface {v5}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_4
     .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_26
     .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_20
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_1a
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_14
+    .catchall {:try_start_2 .. :try_end_2} :catchall_4
 
     move-result-object v5
 
@@ -1063,12 +1063,12 @@
 
     invoke-direct {v4, v5}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_5
     .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_3} :catch_2d
     .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_27
     .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_3} :catch_21
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_1b
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_15
+    .catchall {:try_start_3 .. :try_end_3} :catchall_5
 
     :goto_2
     if-eqz v4, :cond_b
@@ -1078,12 +1078,12 @@
 
     invoke-direct {v3, v4, v9}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_6
     .catch Ljava/net/UnknownHostException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/net/SocketException; {:try_start_4 .. :try_end_4} :catch_28
     .catch Ljava/net/SocketTimeoutException; {:try_start_4 .. :try_end_4} :catch_22
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_4 .. :try_end_4} :catch_1c
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_16
+    .catchall {:try_start_4 .. :try_end_4} :catchall_6
 
     :goto_3
     :try_start_5
@@ -1093,12 +1093,12 @@
 
     invoke-direct {v2, v3, v9}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_7
     .catch Ljava/net/UnknownHostException; {:try_start_5 .. :try_end_5} :catch_2e
     .catch Ljava/net/SocketException; {:try_start_5 .. :try_end_5} :catch_29
     .catch Ljava/net/SocketTimeoutException; {:try_start_5 .. :try_end_5} :catch_23
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_5 .. :try_end_5} :catch_1d
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_17
+    .catchall {:try_start_5 .. :try_end_5} :catchall_7
 
     :try_start_6
     const-string v1, ""
@@ -1112,12 +1112,12 @@
 
     invoke-virtual {v10, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_8
     .catch Ljava/net/UnknownHostException; {:try_start_6 .. :try_end_6} :catch_0
     .catch Ljava/net/SocketException; {:try_start_6 .. :try_end_6} :catch_2a
     .catch Ljava/net/SocketTimeoutException; {:try_start_6 .. :try_end_6} :catch_24
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_6 .. :try_end_6} :catch_1e
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_18
+    .catchall {:try_start_6 .. :try_end_6} :catchall_8
 
     goto :goto_4
 
@@ -1226,12 +1226,12 @@
 
     invoke-direct {v3, v5, v9}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_6
     .catch Ljava/net/UnknownHostException; {:try_start_c .. :try_end_c} :catch_1
     .catch Ljava/net/SocketException; {:try_start_c .. :try_end_c} :catch_28
     .catch Ljava/net/SocketTimeoutException; {:try_start_c .. :try_end_c} :catch_22
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_c .. :try_end_c} :catch_1c
     .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_16
+    .catchall {:try_start_c .. :try_end_c} :catchall_6
 
     goto :goto_3
 
@@ -1262,12 +1262,12 @@
 
     invoke-virtual {v10, v1, v9}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
     :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_8
     .catch Ljava/net/UnknownHostException; {:try_start_d .. :try_end_d} :catch_0
     .catch Ljava/net/SocketException; {:try_start_d .. :try_end_d} :catch_2a
     .catch Ljava/net/SocketTimeoutException; {:try_start_d .. :try_end_d} :catch_24
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_d .. :try_end_d} :catch_1e
     .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_18
+    .catchall {:try_start_d .. :try_end_d} :catchall_8
 
     move-object v1, v8
 
@@ -1346,12 +1346,12 @@
 
     throw v5
     :try_end_12
-    .catchall {:try_start_12 .. :try_end_12} :catchall_4
     .catch Ljava/net/UnknownHostException; {:try_start_12 .. :try_end_12} :catch_2
     .catch Ljava/net/SocketException; {:try_start_12 .. :try_end_12} :catch_26
     .catch Ljava/net/SocketTimeoutException; {:try_start_12 .. :try_end_12} :catch_20
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_12 .. :try_end_12} :catch_1a
     .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_14
+    .catchall {:try_start_12 .. :try_end_12} :catchall_4
 
     :catch_2
     move-exception v5
@@ -2171,11 +2171,11 @@
 
     invoke-static {v0, v12}, Lcom/aps/l;->a(Landroid/content/Context;Landroid/net/NetworkInfo;)Lorg/apache/http/client/HttpClient;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
     .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_13
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_e
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_9
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move-result-object v10
 
@@ -2188,11 +2188,11 @@
 
     invoke-direct {v9, v8}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
     .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_14
     .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_f
     .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_a
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_5
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     const/4 v7, 0x0
 
@@ -2261,11 +2261,11 @@
 
     invoke-interface {v7}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_3
     .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_15
     .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_10
     .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_b
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_6
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     move-result-object v7
 
@@ -2276,11 +2276,11 @@
 
     invoke-direct {v6, v7, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_4
     .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_3} :catch_16
     .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_11
     .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_3} :catch_c
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_7
+    .catchall {:try_start_3 .. :try_end_3} :catchall_4
 
     :try_start_4
     new-instance v4, Ljava/io/BufferedReader;
@@ -2289,11 +2289,11 @@
 
     invoke-direct {v4, v6, v8}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_5
     .catch Ljava/net/UnknownHostException; {:try_start_4 .. :try_end_4} :catch_17
     .catch Ljava/net/SocketException; {:try_start_4 .. :try_end_4} :catch_12
     .catch Ljava/net/SocketTimeoutException; {:try_start_4 .. :try_end_4} :catch_d
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_4 .. :try_end_4} :catch_8
+    .catchall {:try_start_4 .. :try_end_4} :catchall_5
 
     :try_start_5
     const-string v5, ""
@@ -2307,11 +2307,11 @@
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/net/UnknownHostException; {:try_start_5 .. :try_end_5} :catch_0
     .catch Ljava/net/SocketException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Ljava/net/SocketTimeoutException; {:try_start_5 .. :try_end_5} :catch_2
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_5 .. :try_end_5} :catch_3
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     goto :goto_2
 
@@ -2403,11 +2403,11 @@
 
     invoke-virtual {v2, v5, v8}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/net/UnknownHostException; {:try_start_6 .. :try_end_6} :catch_0
     .catch Ljava/net/SocketException; {:try_start_6 .. :try_end_6} :catch_1
     .catch Ljava/net/SocketTimeoutException; {:try_start_6 .. :try_end_6} :catch_2
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     const/4 v2, 0x0
 
@@ -3092,12 +3092,12 @@
 
     invoke-static {v0, v12}, Lcom/aps/l;->a(Landroid/content/Context;Landroid/net/NetworkInfo;)Lorg/apache/http/client/HttpClient;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_3
     .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_16
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_13
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_10
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_d
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_a
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     move-result-object v8
 
@@ -3112,12 +3112,12 @@
 
     invoke-direct {v6, v14}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_4
     .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_17
     .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_14
     .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_11
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_e
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_b
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     :try_start_2
     const-string v7, "UTF-8"
@@ -3313,12 +3313,12 @@
 
     invoke-direct {v1, v3, v7}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_15
     .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_12
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_f
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_c
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :try_start_3
     const-string v2, ""
@@ -3332,12 +3332,12 @@
 
     invoke-virtual {v10, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
     .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_3} :catch_3
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_4
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_5
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     goto :goto_3
 
@@ -3434,12 +3434,12 @@
 
     invoke-direct {v1, v5, v7}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_1
     .catch Ljava/net/UnknownHostException; {:try_start_7 .. :try_end_7} :catch_1
     .catch Ljava/net/SocketException; {:try_start_7 .. :try_end_7} :catch_15
     .catch Ljava/net/SocketTimeoutException; {:try_start_7 .. :try_end_7} :catch_12
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_7 .. :try_end_7} :catch_f
     .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_c
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     move-object v3, v1
 
@@ -3459,12 +3459,12 @@
 
     invoke-virtual {v10, v2, v9}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
     .catch Ljava/net/UnknownHostException; {:try_start_8 .. :try_end_8} :catch_0
     .catch Ljava/net/SocketException; {:try_start_8 .. :try_end_8} :catch_2
     .catch Ljava/net/SocketTimeoutException; {:try_start_8 .. :try_end_8} :catch_3
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_8 .. :try_end_8} :catch_4
     .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_5
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     const/4 v9, 0x0
 
@@ -3577,12 +3577,12 @@
 
     throw v1
     :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_1
     .catch Ljava/net/UnknownHostException; {:try_start_b .. :try_end_b} :catch_1
     .catch Ljava/net/SocketException; {:try_start_b .. :try_end_b} :catch_15
     .catch Ljava/net/SocketTimeoutException; {:try_start_b .. :try_end_b} :catch_12
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_b .. :try_end_b} :catch_f
     .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_c
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
 
     :catch_1
     move-exception v1

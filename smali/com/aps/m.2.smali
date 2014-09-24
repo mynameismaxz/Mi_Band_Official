@@ -64,9 +64,9 @@
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Lorg/xml/sax/SAXException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_2
     :goto_2
@@ -163,8 +163,8 @@
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_2
     :goto_2

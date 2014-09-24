@@ -131,7 +131,7 @@
     return-void
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x30t
         0x31t
         0x32t
@@ -167,7 +167,7 @@
     nop
 
     :array_1
-    .array-data 0x1
+    .array-data 1
         0x3bt
         0x3ct
         0x3et

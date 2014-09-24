@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final a:Ljava/util/HashMap; = null
+.field private static final a:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",

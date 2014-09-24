@@ -10,7 +10,7 @@
 
 .field private static final B:I = 0x7
 
-.field private static final a:[C = null
+.field private static final a:[C
 
 .field private static final b:J = -0xcccccccccccccccL
 
@@ -1611,7 +1611,7 @@
 
     if-eqz v5, :cond_16
 
-    const-wide/high16 v1, -0x8000
+    const-wide/high16 v1, -0x8000000000000000L
 
     cmp-long v1, v7, v1
 

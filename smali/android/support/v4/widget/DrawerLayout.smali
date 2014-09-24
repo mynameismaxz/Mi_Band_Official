@@ -118,13 +118,13 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 5
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     const/4 v3, 0x1
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/high16 v0, -0x6700
+    const/high16 v0, -0x67000000
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout;->k:I
 
@@ -146,11 +146,11 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4280
+    const/high16 v1, 0x42800000
 
     mul-float/2addr v1, v0
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     add-float/2addr v1, v2
 
@@ -158,7 +158,7 @@
 
     iput v1, p0, Landroid/support/v4/widget/DrawerLayout;->j:I
 
-    const/high16 v1, 0x43c8
+    const/high16 v1, 0x43c80000
 
     mul-float/2addr v0, v1
 
@@ -593,7 +593,7 @@
     :cond_6
     iget v0, v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:F
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     cmpl-float v0, v0, v2
 
@@ -1380,7 +1380,7 @@
 
     iget v2, p0, Landroid/support/v4/widget/DrawerLayout;->k:I
 
-    const/high16 v3, -0x100
+    const/high16 v3, -0x1000000
 
     and-int/2addr v2, v3
 
@@ -1467,7 +1467,7 @@
 
     div-float v2, v4, v2
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     invoke-static {v2, v4}, Ljava/lang/Math;->min(FF)F
 
@@ -1493,7 +1493,7 @@
 
     iget-object v0, p0, Landroid/support/v4/widget/DrawerLayout;->B:Landroid/graphics/drawable/Drawable;
 
-    const/high16 v1, 0x437f
+    const/high16 v1, 0x437f0000
 
     mul-float/2addr v1, v2
 
@@ -1550,7 +1550,7 @@
 
     div-float/2addr v2, v3
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
@@ -1576,7 +1576,7 @@
 
     iget-object v0, p0, Landroid/support/v4/widget/DrawerLayout;->C:Landroid/graphics/drawable/Drawable;
 
-    const/high16 v1, 0x437f
+    const/high16 v1, 0x437f0000
 
     mul-float/2addr v1, v2
 
@@ -2465,9 +2465,9 @@
 
     const/4 v4, 0x0
 
-    const/high16 v7, -0x8000
+    const/high16 v7, -0x80000000
 
-    const/high16 v10, 0x4000
+    const/high16 v10, 0x40000000
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -3116,7 +3116,7 @@
 
     check-cast v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     iput v1, v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:F
 

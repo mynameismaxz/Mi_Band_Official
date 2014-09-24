@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private a:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+.field private mContentView:Landroid/view/View;
 
-.field private b:Landroid/view/View;
+.field private mDisableStatusBarTintAuto:Z
 
-.field private c:Z
+.field private mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
 
 
 # direct methods
@@ -19,26 +19,26 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Z
+.method static synthetic access$000(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Z
     .locals 1
 
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->c:Z
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mDisableStatusBarTintAuto:Z
 
     return v0
 .end method
 
-.method static synthetic b(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Landroid/view/View;
+.method static synthetic access$100(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Landroid/view/View;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->b:Landroid/view/View;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method static synthetic c(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+.method static synthetic access$200(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->a:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
 
     return-object v0
 .end method
@@ -60,21 +60,91 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    :cond_0
+    const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_0
-    const/4 v0, 0x1
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
 
 # virtual methods
+.method public applyStatusBarTint(I)V
+    .locals 1
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->setTintColor(I)V
+
+    goto :goto_0
+.end method
+
+.method public applyStatusBarTintAuto()V
+    .locals 2
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cj;
+
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cj;-><init>(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
+.end method
+
+.method public applyStatusBarTintRes(I)V
+    .locals 1
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->setTintResource(I)V
+
+    goto :goto_0
+.end method
+
 .method public configStatusBarTint()V
     .locals 2
 
@@ -92,9 +162,9 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->a:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->a:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
 
     const/4 v1, 0x1
 
@@ -108,17 +178,17 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->b:Landroid/view/View;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
 
     goto :goto_0
 .end method
 
-.method public disableAutoUpdateStatusBarTint()V
+.method public disableAutoApplyStatusBarTint()V
     .locals 1
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->c:Z
+    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mDisableStatusBarTintAuto:Z
 
     return-void
 .end method
@@ -141,56 +211,7 @@
     :cond_0
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->configStatusBarTint()V
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->updateStatusBarTintAuto()V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->applyStatusBarTintAuto()V
 
     return-void
-.end method
-
-.method public updateStatusBarTint(I)V
-    .locals 1
-
-    invoke-static {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->a:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
-
-    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->setTintColor(I)V
-
-    goto :goto_0
-.end method
-
-.method public updateStatusBarTintAuto()V
-    .locals 2
-
-    invoke-static {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->isNotSupport(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->b:Landroid/view/View;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->b:Landroid/view/View;
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cf;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cf;-><init>(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_0
 .end method

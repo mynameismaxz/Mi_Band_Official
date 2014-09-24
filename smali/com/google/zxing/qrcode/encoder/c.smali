@@ -758,11 +758,11 @@
 
     div-double v0, v2, v0
 
-    const-wide/high16 v2, 0x4059
+    const-wide/high16 v2, 0x4059000000000000L
 
     mul-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x4049
+    const-wide/high16 v2, 0x4049000000000000L
 
     sub-double/2addr v0, v2
 

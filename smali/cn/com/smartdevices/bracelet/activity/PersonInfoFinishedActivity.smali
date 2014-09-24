@@ -32,7 +32,7 @@
 
     const/4 v2, 0x1
 
-    const v0, 0x7f07016f
+    const v0, 0x7f0a0174
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 
@@ -80,7 +80,7 @@
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->setContentView(I)V
 
-    const v0, 0x7f070171
+    const v0, 0x7f0a0176
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 

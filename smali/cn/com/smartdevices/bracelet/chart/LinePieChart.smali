@@ -48,7 +48,7 @@
 
     const v4, 0x3faa3d71
 
-    const/high16 v3, 0x4080
+    const/high16 v3, 0x40800000
 
     const/4 v2, 0x1
 
@@ -62,7 +62,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020076
+    const v1, 0x7f020078
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -249,7 +249,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -345,15 +345,15 @@
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->mRotate:F
 
-    const/high16 v2, 0x43b4
+    const/high16 v2, 0x43b40000
 
     mul-float/2addr v0, v2
 
     invoke-virtual {p1, v0, p3, p4}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    const/high16 v2, 0x4387
+    const/high16 v2, 0x43870000
 
-    const/high16 v3, 0x43b4
+    const/high16 v3, 0x43b40000
 
     const/4 v4, 0x0
 
@@ -368,7 +368,7 @@
     return-void
 
     :pswitch_0
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     sub-float p6, v0, p6
 
@@ -419,7 +419,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_4
+    if-ne v0, v2, :cond_6
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->d:I
 
@@ -447,7 +447,12 @@
 
     goto :goto_1
 
-    nop
+    :cond_6
+    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->h:I
+
+    if-nez v0, :cond_4
+
+    goto :goto_1
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -457,9 +462,9 @@
     .end packed-switch
 
     :array_0
-    .array-data 0x4
-        0xfft 0xfft 0xfft 0x44t
-        0xfft 0xfft 0xfft 0xfft
+    .array-data 4
+        0x44ffffff
+        -0x1
     .end array-data
 .end method
 
@@ -468,7 +473,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v4, 0x41f8
+    const/high16 v4, 0x41f80000
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/chart/base/PieChart;->onRectChanged(Landroid/graphics/RectF;)V
 
@@ -484,7 +489,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x4178
+    const/high16 v2, 0x41780000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->mDensity:F
 
@@ -498,7 +503,7 @@
 
     iget v1, p1, Landroid/graphics/RectF;->top:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/LinePieChart;->mDensity:F
 

@@ -516,7 +516,7 @@
 
     mul-double v7, v7, v32
 
-    const-wide/high16 v9, 0x4000
+    const-wide/high16 v9, 0x4000000000000000L
 
     sub-double/2addr v7, v9
 
@@ -593,7 +593,7 @@
 
     const/4 v9, 0x0
 
-    const/high16 v10, 0x43b4
+    const/high16 v10, 0x43b40000
 
     const/4 v11, 0x1
 
@@ -680,7 +680,7 @@
 
     iput v0, p0, Lorg/achartengine/chart/DoughnutChart;->b:I
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     add-float/2addr v0, p3
 

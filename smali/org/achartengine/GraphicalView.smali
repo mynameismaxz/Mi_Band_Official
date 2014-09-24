@@ -549,7 +549,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v3, 0x3f20
+    const/high16 v3, 0x3f200000
 
     mul-float/2addr v1, v3
 
@@ -565,7 +565,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v6, 0x4030
+    const/high16 v6, 0x40300000
 
     mul-float/2addr v5, v6
 
@@ -583,7 +583,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v6, 0x3fe0
+    const/high16 v6, 0x3fe00000
 
     mul-float/2addr v5, v6
 
@@ -601,7 +601,7 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x3f40
+    const/high16 v4, 0x3f400000
 
     mul-float/2addr v3, v4
 
@@ -833,7 +833,7 @@
     invoke-virtual {p0, v0}, Lorg/achartengine/GraphicalView;->setDrawingCacheBackgroundColor(I)V
 
     :cond_1
-    const/high16 v0, 0x10
+    const/high16 v0, 0x100000
 
     invoke-virtual {p0, v0}, Lorg/achartengine/GraphicalView;->setDrawingCacheQuality(I)V
 

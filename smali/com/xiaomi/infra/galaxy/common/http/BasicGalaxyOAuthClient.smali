@@ -177,8 +177,8 @@
 
     invoke-interface {v1, v3}, Lorg/apache/commons/logging/Log;->error(Ljava/lang/Object;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move v1, v2
 
@@ -197,8 +197,8 @@
 
     invoke-virtual {v1, v5}, Lcom/xiaomi/infra/galaxy/common/http/ClientConfiguration;->setAppId(Ljava/lang/String;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
@@ -334,8 +334,8 @@
 
     throw v1
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :catchall_0
     move-exception v1
@@ -557,8 +557,8 @@
 
     invoke-virtual {v5, v1}, Lcom/xiaomi/infra/galaxy/common/auth/SessionCredentials;->setStorageAccessTokenResult(Lcom/xiaomi/infra/galaxy/common/model/StorageAccessTokenResult;)V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     move v1, v3
 

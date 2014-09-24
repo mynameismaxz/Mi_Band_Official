@@ -55,7 +55,7 @@
 .method public setupAnimation(Landroid/view/View;IILcom/nineoldandroids/view/ViewPropertyAnimator;)V
     .locals 2
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {p4, v1}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->scaleX(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 

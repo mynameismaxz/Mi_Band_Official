@@ -27,7 +27,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0xa0
+    const/high16 v0, 0xa00000
 
     iput v0, p0, Lcom/tencent/mm/sdk/modelmsg/WXFileObject;->c:I
 
@@ -43,7 +43,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0xa0
+    const/high16 v0, 0xa00000
 
     iput v0, p0, Lcom/tencent/mm/sdk/modelmsg/WXFileObject;->c:I
 
@@ -57,7 +57,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0xa0
+    const/high16 v0, 0xa00000
 
     iput v0, p0, Lcom/tencent/mm/sdk/modelmsg/WXFileObject;->c:I
 

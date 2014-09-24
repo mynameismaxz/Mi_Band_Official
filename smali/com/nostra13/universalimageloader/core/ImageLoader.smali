@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = null
+.field public static final TAG:Ljava/lang/String;
 
 .field static final a:Ljava/lang/String; = "Initialize ImageLoader with configuration"
 
@@ -188,6 +188,8 @@
 
 .method public clearDiscCache()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/core/ImageLoader;->clearDiskCache()V
 
@@ -739,6 +741,8 @@
 
 .method public getDiscCache()Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0}, Lcom/nostra13/universalimageloader/core/ImageLoader;->getDiskCache()Lcom/nostra13/universalimageloader/cache/disc/DiskCache;
 

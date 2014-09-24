@@ -11,6 +11,10 @@
 
 .field public static final API_TYPE_GET_DATA_NEW_IF:Ljava/lang/String; = "huami.health.getDataNew.json"
 
+.field public static final API_TYPE_GET_GAME_BRIEFINFO_IF:Ljava/lang/String; = "huami.health.gethuodongconfig.json"
+
+.field public static final API_TYPE_GET_GAME_REGISTER_IF:Ljava/lang/String; = "huami.health.detectuserwhetherjoinhuodong.json"
+
 .field public static final API_TYPE_GET_LUA_SCRIPT_IF:Ljava/lang/String; = "huami.health.getluapackdata.json"
 
 .field public static final API_TYPE_GET_LUA_VERSION_IF:Ljava/lang/String; = "huami.health.getlatestluaversion.json"
@@ -39,7 +43,7 @@
 
 .field public static final BASE_URL_NO_HTTPS:Ljava/lang/String; = "http://hm.xiaomi.com/"
 
-.field public static final CLIENT_ID:Ljava/lang/Long; = null
+.field public static final CLIENT_ID:Ljava/lang/Long;
 
 .field public static final LOGIN_URL:Ljava/lang/String; = "https://hm.xiaomi.com/huami.health.login.json"
 
@@ -124,6 +128,8 @@
 .field public static final PARAM_SYS_LANGUAGE:Ljava/lang/String; = "lang"
 
 .field public static final PARAM_SYS_USER_ID:Ljava/lang/String; = "userid"
+
+.field public static final PARAM_SYS_USER_NAME:Ljava/lang/String; = "username"
 
 .field public static final PARAM_SYS_USER_SECURITY:Ljava/lang/String; = "security"
 

@@ -482,8 +482,8 @@
     :cond_0
     sget-object v0, Lcom/amap/api/location/LocationManagerProxy;->b:Lcom/amap/api/location/LocationManagerProxy;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
     monitor-exit v1
@@ -531,8 +531,8 @@
     :cond_0
     sget-object v0, Lcom/amap/api/location/LocationManagerProxy;->b:Lcom/amap/api/location/LocationManagerProxy;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
     monitor-exit v1
@@ -805,6 +805,8 @@
 
 .method public destory()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     :try_start_0
     invoke-virtual {p0}, Lcom/amap/api/location/LocationManagerProxy;->destroy()V
@@ -1799,6 +1801,8 @@
 
 .method public requestLocationUpdates(Ljava/lang/String;JFLcom/amap/api/location/AMapLocationListener;)V
     .locals 7
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v6, 0x0
 

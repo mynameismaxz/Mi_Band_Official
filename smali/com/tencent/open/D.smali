@@ -42,7 +42,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     new-instance v0, Landroid/widget/TextView;
 
@@ -66,7 +66,7 @@
 
     iget-object v0, p0, Lcom/tencent/open/D;->b:Landroid/widget/TextView;
 
-    const/high16 v1, 0x4170
+    const/high16 v1, 0x41700000
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
 
@@ -142,7 +142,7 @@
 
     iget-object v0, p0, Lcom/tencent/open/D;->c:Landroid/widget/Button;
 
-    const/high16 v1, 0x4180
+    const/high16 v1, 0x41800000
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTextSize(F)V
 

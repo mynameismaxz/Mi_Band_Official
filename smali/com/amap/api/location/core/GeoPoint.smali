@@ -46,7 +46,7 @@
 
     const-wide/16 v4, 0x0
 
-    const-wide/high16 v2, -0x8000
+    const-wide/high16 v2, -0x8000000000000000L
 
     const-wide/16 v0, 0x1
 
@@ -70,7 +70,7 @@
 .method public constructor <init>(II)V
     .locals 4
 
-    const-wide/high16 v2, -0x8000
+    const-wide/high16 v2, -0x8000000000000000L
 
     const-wide/16 v0, 0x1
 
@@ -98,7 +98,7 @@
 .method public constructor <init>(JJ)V
     .locals 4
 
-    const-wide/high16 v2, -0x8000
+    const-wide/high16 v2, -0x8000000000000000L
 
     const-wide/16 v0, 0x1
 
@@ -122,7 +122,7 @@
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
 
-    const-wide/high16 v2, -0x8000
+    const-wide/high16 v2, -0x8000000000000000L
 
     const-wide/16 v0, 0x1
 
@@ -255,13 +255,13 @@
 
     iget-wide v0, p0, Lcom/amap/api/location/core/GeoPoint;->d:D
 
-    const-wide/high16 v2, 0x401c
+    const-wide/high16 v2, 0x401c000000000000L
 
     mul-double/2addr v0, v2
 
     iget-wide v2, p0, Lcom/amap/api/location/core/GeoPoint;->c:D
 
-    const-wide/high16 v4, 0x4026
+    const-wide/high16 v4, 0x4026000000000000L
 
     mul-double/2addr v2, v4
 

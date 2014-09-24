@@ -131,7 +131,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40e0
+    const/high16 v1, 0x40e00000
 
     div-float/2addr v0, v1
 
@@ -238,7 +238,7 @@
     throw v0
 
     :cond_5
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     div-float v0, v3, v0
 

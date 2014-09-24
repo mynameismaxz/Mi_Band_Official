@@ -1,40 +1,47 @@
-.class public Lu/aly/cf;
-.super Ljava/lang/Exception;
+.class Lu/aly/cF;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:J = 0x1L
+# interfaces
+.implements Lu/aly/dh;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
+.method synthetic constructor <init>(Lu/aly/cF;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Lu/aly/cF;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+# virtual methods
+.method public a()Lu/aly/cE;
+    .locals 2
 
-    return-void
+    new-instance v0, Lu/aly/cE;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lu/aly/cE;-><init>(Lu/aly/cE;)V
+
+    return-object v0
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
+.method public synthetic b()Lu/aly/dg;
+    .locals 1
 
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lu/aly/cF;->a()Lu/aly/cE;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

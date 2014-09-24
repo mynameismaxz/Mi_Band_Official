@@ -556,7 +556,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, -0x7fff
+    const/high16 v0, -0x7fff0000
 
     iget-byte v1, p1, Lu/aly/cw;->b:B
 
@@ -828,11 +828,11 @@
 
     if-gez v1, :cond_1
 
-    const/high16 v0, -0x1
+    const/high16 v0, -0x10000
 
     and-int/2addr v0, v1
 
-    const/high16 v2, -0x7fff
+    const/high16 v2, -0x7fff0000
 
     if-eq v0, v2, :cond_0
 

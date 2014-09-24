@@ -3,35 +3,35 @@
 
 
 # static fields
-.field public static final fortune:I = 0x7f0d0004
+.field public static final fortune:I = 0x7f070000
 
-.field public static final months:I = 0x7f0d0002
+.field public static final months:I = 0x7f070001
 
-.field public static final select_days_simple:I = 0x7f0d0003
+.field public static final select_days_simple:I = 0x7f070002
 
-.field public static final weather_aqi_descriptions:I = 0x7f0d0005
+.field public static final weather_aqi_descriptions:I = 0x7f070003
 
-.field public static final weather_cloudy:I = 0x7f0d000b
+.field public static final weather_cloudy:I = 0x7f070004
 
-.field public static final weather_fine:I = 0x7f0d000a
+.field public static final weather_fine:I = 0x7f070005
 
-.field public static final weather_fog:I = 0x7f0d000d
+.field public static final weather_fog:I = 0x7f070006
 
-.field public static final weather_haze:I = 0x7f0d000e
+.field public static final weather_haze:I = 0x7f070007
 
-.field public static final weather_overcast:I = 0x7f0d000c
+.field public static final weather_overcast:I = 0x7f070008
 
-.field public static final weather_rain_snows:I = 0x7f0d0007
+.field public static final weather_rain_snows:I = 0x7f070009
 
-.field public static final weather_rains:I = 0x7f0d0006
+.field public static final weather_rains:I = 0x7f07000a
 
-.field public static final weather_sands:I = 0x7f0d0009
+.field public static final weather_sands:I = 0x7f07000b
 
-.field public static final weather_snows:I = 0x7f0d0008
+.field public static final weather_snows:I = 0x7f07000c
 
-.field public static final weeks:I = 0x7f0d0000
+.field public static final weeks:I = 0x7f07000d
 
-.field public static final weeks_short:I = 0x7f0d0001
+.field public static final weeks_short:I = 0x7f07000e
 
 
 # direct methods

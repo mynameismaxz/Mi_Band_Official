@@ -99,6 +99,9 @@
 
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 7
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x13
+    .end annotation
 
     const/4 v6, 0x1
 
@@ -161,7 +164,7 @@
 
     move-result-object v1
 
-    const/high16 v2, 0x400
+    const/high16 v2, 0x4000000
 
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -172,7 +175,7 @@
     iput-boolean v6, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->c:Z
 
     :cond_0
-    const/high16 v2, 0x800
+    const/high16 v2, 0x8000000
 
     iget v1, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -191,7 +194,7 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v1, p1, v2, v3, v4}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;-><init>(Landroid/app/Activity;ZZLcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;)V
+    invoke-direct {v1, p1, v2, v3, v4}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;-><init>(Landroid/app/Activity;ZZLcn/com/smartdevices/bracelet/ui/ck;)V
 
     iput-object v1, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->b:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager$SystemBarConfig;
 
@@ -230,9 +233,9 @@
     throw v0
 
     :array_0
-    .array-data 0x4
-        0xeft 0x3t 0x1t 0x1t
-        0xf0t 0x3t 0x1t 0x1t
+    .array-data 4
+        0x10103ef
+        0x10103f0
     .end array-data
 .end method
 
@@ -296,7 +299,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->g:Landroid/view/View;
 
-    const/high16 v1, -0x6700
+    const/high16 v1, -0x67000000
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
@@ -353,7 +356,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->h:Landroid/view/View;
 
-    const/high16 v1, -0x6700
+    const/high16 v1, -0x67000000
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
@@ -415,6 +418,9 @@
 
 .method public setNavigationBarAlpha(F)V
     .locals 2
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->d:Z
 
@@ -508,6 +514,9 @@
 
 .method public setStatusBarAlpha(F)V
     .locals 2
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;->c:Z
 

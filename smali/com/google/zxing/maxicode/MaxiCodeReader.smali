@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final a:[Lcom/google/zxing/ResultPoint; = null
+.field private static final a:[Lcom/google/zxing/ResultPoint;
 
 .field private static final b:I = 0x1e
 

@@ -65,15 +65,15 @@
 
     mul-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x4000
+    const-wide/high16 v2, 0x4000000000000000L
 
     mul-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x4154
+    const-wide/high16 v2, 0x4154000000000000L
 
     div-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x3ff0
+    const-wide/high16 v2, 0x3ff0000000000000L
 
     cmpl-double v2, v0, v2
 
@@ -105,7 +105,7 @@
 
     mul-int/lit8 v0, v0, 0x2
 
-    const/high16 v1, 0x50
+    const/high16 v1, 0x500000
 
     if-le v0, v1, :cond_0
 

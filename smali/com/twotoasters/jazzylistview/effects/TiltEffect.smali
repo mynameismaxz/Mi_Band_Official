@@ -61,7 +61,7 @@
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationY(Landroid/view/View;F)V
 
-    const/high16 v0, 0x42fe
+    const/high16 v0, 0x42fe0000
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
@@ -71,7 +71,7 @@
 .method public setupAnimation(Landroid/view/View;IILcom/nineoldandroids/view/ViewPropertyAnimator;)V
     .locals 2
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x437f
+    const/high16 v1, 0x437f0000
 
     invoke-virtual {v0, v1}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->alpha(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 

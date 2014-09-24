@@ -37,7 +37,7 @@
 
     invoke-virtual {p4, v0, v1}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->setDuration(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 
-    const/high16 v0, 0x437f
+    const/high16 v0, 0x437f0000
 
     invoke-virtual {p4, v0}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->alpha(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 

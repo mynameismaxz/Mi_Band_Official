@@ -436,7 +436,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const/high16 v0, 0x4190
+    const/high16 v0, 0x41900000
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextSize(F)V
 
@@ -504,7 +504,7 @@
 
     iget-object v0, p0, Lcom/tencent/connect/auth/AuthDialog;->h:Landroid/widget/FrameLayout;
 
-    const/high16 v1, 0x108
+    const/high16 v1, 0x1080000
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
@@ -534,6 +534,11 @@
 
 .method private e()V
     .locals 7
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled"
+        }
+    .end annotation
 
     const/4 v2, 0x0
 

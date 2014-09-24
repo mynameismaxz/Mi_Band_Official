@@ -475,7 +475,7 @@
 .method public onViewReleased(Landroid/view/View;FF)V
     .locals 6
 
-    const/high16 v5, 0x3f00
+    const/high16 v5, 0x3f000000
 
     const/4 v4, 0x0
 

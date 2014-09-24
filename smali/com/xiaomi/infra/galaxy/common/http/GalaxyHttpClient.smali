@@ -276,8 +276,8 @@
 
     invoke-virtual {v1, v2}, Ljava/io/InputStream;->mark(I)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
@@ -387,8 +387,8 @@
     :cond_8
     invoke-direct {p0, p1, v10}, Lcom/xiaomi/infra/galaxy/common/http/GalaxyHttpClient;->resetRequestAfterError(Lcom/xiaomi/infra/galaxy/common/BasicGalaxyRequest;Ljava/lang/Exception;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     add-int/lit8 v1, v8, 0x1
 
@@ -1086,8 +1086,8 @@
     :try_start_0
     invoke-direct {p0, p1, p2, p3, v1}, Lcom/xiaomi/infra/galaxy/common/http/GalaxyHttpClient;->executeHelper(Lcom/xiaomi/infra/galaxy/common/BasicGalaxyRequest;Ljava/lang/Class;Lcom/xiaomi/infra/galaxy/common/http/ExecutionContext;Lorg/apache/http/client/HttpClient;)Ljava/lang/Object;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/xiaomi/infra/galaxy/common/GalaxyClientException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 

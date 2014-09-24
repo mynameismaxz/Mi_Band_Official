@@ -65,7 +65,7 @@
     goto :goto_0
 
     :array_0
-    .array-data 0x1
+    .array-data 1
         0x41t
         0x42t
         0x43t
@@ -133,7 +133,7 @@
     .end array-data
 
     :array_1
-    .array-data 0x1
+    .array-data 1
         0x41t
         0x42t
         0x43t

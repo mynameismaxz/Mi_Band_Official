@@ -113,7 +113,7 @@
 .method public onPageScrolled(IFI)V
     .locals 2
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     cmpl-float v0, p2, v0
 

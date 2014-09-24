@@ -14,9 +14,9 @@
 .method private static a(IIII)Landroid/graphics/Rect;
     .locals 10
 
-    const-wide/high16 v2, 0x7ff0
+    const-wide/high16 v2, 0x7ff0000000000000L
 
-    const-wide/high16 v0, 0x7ff0
+    const-wide/high16 v0, 0x7ff0000000000000L
 
     if-ge p2, p0, :cond_0
 
@@ -36,13 +36,13 @@
     div-double/2addr v0, v4
 
     :cond_1
-    const-wide/high16 v4, 0x7ff0
+    const-wide/high16 v4, 0x7ff0000000000000L
 
     cmpl-double v4, v2, v4
 
     if-nez v4, :cond_2
 
-    const-wide/high16 v4, 0x7ff0
+    const-wide/high16 v4, 0x7ff0000000000000L
 
     cmpl-double v4, v0, v4
 
@@ -80,7 +80,7 @@
 
     sub-double/2addr v6, v2
 
-    const-wide/high16 v8, 0x4000
+    const-wide/high16 v8, 0x4000000000000000L
 
     div-double/2addr v6, v8
 
@@ -152,7 +152,7 @@
 
     sub-double/2addr v0, v4
 
-    const-wide/high16 v6, 0x4000
+    const-wide/high16 v6, 0x4000000000000000L
 
     div-double/2addr v0, v6
 
@@ -171,7 +171,7 @@
 
     sub-double/2addr v0, v4
 
-    const-wide/high16 v6, 0x4000
+    const-wide/high16 v6, 0x4000000000000000L
 
     div-double/2addr v0, v6
 
@@ -185,7 +185,7 @@
 
     sub-double/2addr v6, v2
 
-    const-wide/high16 v8, 0x4000
+    const-wide/high16 v8, 0x4000000000000000L
 
     div-double/2addr v6, v8
 

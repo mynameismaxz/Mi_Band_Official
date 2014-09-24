@@ -263,7 +263,7 @@
     goto :goto_2
 
     :cond_3
-    const/high16 v2, 0x42c8
+    const/high16 v2, 0x42c80000
 
     cmpl-float v2, v4, v2
 
@@ -292,7 +292,7 @@
     invoke-direct/range {v2 .. v7}, Lcom/google/zxing/multi/GenericMultipleBarcodeReader;->a(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;Ljava/util/List;II)V
 
     :cond_4
-    const/high16 v2, 0x42c8
+    const/high16 v2, 0x42c80000
 
     cmpl-float v2, v10, v2
 

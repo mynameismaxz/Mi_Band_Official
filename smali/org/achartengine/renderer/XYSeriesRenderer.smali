@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {p0}, Lorg/achartengine/renderer/SimpleSeriesRenderer;-><init>()V
 
@@ -108,6 +108,8 @@
 
 .method public isFillBelowLine()Z
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Lorg/achartengine/renderer/XYSeriesRenderer;->b:Ljava/util/List;
 
@@ -138,6 +140,8 @@
 
 .method public setFillBelowLine(Z)V
     .locals 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Lorg/achartengine/renderer/XYSeriesRenderer;->b:Ljava/util/List;
 
@@ -174,6 +178,8 @@
 
 .method public setFillBelowLineColor(I)V
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Lorg/achartengine/renderer/XYSeriesRenderer;->b:Ljava/util/List;
 

@@ -21,7 +21,7 @@
 
 .field private static final ar:I = 0x2
 
-.field private static final au:Landroid/support/v4/view/aH; = null
+.field private static final au:Landroid/support/v4/view/aH;
 
 .field private static final b:Z = false
 
@@ -862,7 +862,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v10, 0x3f80
+    const/high16 v10, 0x3f800000
 
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->p:Landroid/support/v4/view/PagerAdapter;
 
@@ -2240,7 +2240,7 @@
 .method a(F)F
     .locals 4
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     sub-float v0, p1, v0
 
@@ -2332,7 +2332,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->setWillNotDraw(Z)V
 
-    const/high16 v0, 0x4
+    const/high16 v0, 0x40000
 
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->setDescendantFocusability(I)V
 
@@ -2370,7 +2370,7 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->N:I
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     mul-float/2addr v3, v2
 
@@ -2396,7 +2396,7 @@
 
     iput-object v1, p0, Landroid/support/v4/view/ViewPager;->af:Landroid/support/v4/widget/EdgeEffectCompat;
 
-    const/high16 v0, 0x41c8
+    const/high16 v0, 0x41c80000
 
     mul-float/2addr v0, v2
 
@@ -2404,7 +2404,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->Z:I
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     mul-float/2addr v0, v2
 
@@ -2412,7 +2412,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->aa:I
 
-    const/high16 v0, 0x4180
+    const/high16 v0, 0x41800000
 
     mul-float/2addr v0, v2
 
@@ -2803,7 +2803,7 @@
 
     add-int/lit8 v9, v8, 0x1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     cmpg-float v2, v6, v2
 
@@ -2968,7 +2968,7 @@
     goto/16 :goto_7
 
     :cond_b
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     iget v7, v10, Landroid/support/v4/view/aC;->d:F
 
@@ -3122,7 +3122,7 @@
 
     div-float/2addr v2, v5
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     add-float/2addr v2, v5
 
@@ -3419,7 +3419,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
@@ -3506,7 +3506,7 @@
 
     if-lez v6, :cond_2
 
-    const/high16 v0, 0x447a
+    const/high16 v0, 0x447a0000
 
     int-to-float v6, v6
 
@@ -3568,7 +3568,7 @@
 
     add-float/2addr v0, v8
 
-    const/high16 v5, 0x42c8
+    const/high16 v5, 0x42c80000
 
     mul-float/2addr v0, v5
 
@@ -3859,7 +3859,7 @@
 
     move-result v2
 
-    const/high16 v0, 0x6
+    const/high16 v0, 0x60000
 
     if-eq v2, v0, :cond_1
 
@@ -3902,7 +3902,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v0, 0x4
+    const/high16 v0, 0x40000
 
     if-ne v2, v0, :cond_2
 
@@ -5280,7 +5280,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x4387
+    const/high16 v4, 0x43870000
 
     invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -5349,7 +5349,7 @@
 
     sub-int/2addr v3, v4
 
-    const/high16 v4, 0x42b4
+    const/high16 v4, 0x42b40000
 
     invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -5363,7 +5363,7 @@
 
     iget v5, p0, Landroid/support/v4/view/ViewPager;->B:F
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     add-float/2addr v5, v6
 
@@ -6131,7 +6131,7 @@
 
     add-float/2addr v14, v3
 
-    const/high16 v15, 0x3f00
+    const/high16 v15, 0x3f000000
 
     add-float/2addr v14, v15
 
@@ -6356,7 +6356,7 @@
 
     if-lez v0, :cond_a
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     mul-float/2addr v0, v9
 
@@ -6830,7 +6830,7 @@
 
     float-to-int v1, v1
 
-    const/high16 v12, 0x4000
+    const/high16 v12, 0x40000000
 
     invoke-static {v1, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -6840,7 +6840,7 @@
 
     sub-int/2addr v12, v3
 
-    const/high16 v13, 0x4000
+    const/high16 v13, 0x40000000
 
     invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -7046,9 +7046,9 @@
 
     and-int/lit8 v4, v1, 0x70
 
-    const/high16 v2, -0x8000
+    const/high16 v2, -0x80000000
 
-    const/high16 v1, -0x8000
+    const/high16 v1, -0x80000000
 
     const/16 v7, 0x30
 
@@ -7080,7 +7080,7 @@
     :goto_2
     if-eqz v7, :cond_6
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     :cond_2
     :goto_3
@@ -7090,7 +7090,7 @@
 
     if-eq v4, v11, :cond_e
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     iget v2, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->width:I
 
@@ -7107,7 +7107,7 @@
 
     if-eq v11, v12, :cond_c
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     iget v11, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->height:I
 
@@ -7161,7 +7161,7 @@
     :cond_6
     if-eqz v6, :cond_2
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     goto :goto_3
 
@@ -7177,7 +7177,7 @@
     goto :goto_6
 
     :cond_8
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     invoke-static {v3, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -7185,7 +7185,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->C:I
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     invoke-static {v5, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -7247,7 +7247,7 @@
 
     float-to-int v0, v0
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 

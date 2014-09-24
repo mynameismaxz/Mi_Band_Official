@@ -94,7 +94,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -158,7 +158,7 @@
 
     if-ltz v0, :cond_1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/chart/base/PieChart;->mRate:F
 

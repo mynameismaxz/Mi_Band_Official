@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0700e3
+    const v0, 0x7f0a00e8
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -127,7 +127,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c007b
+    const v1, 0x7f0d01c6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -138,9 +138,9 @@
     :goto_0
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDeviceNameTask;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aW;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aZ;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aW;-><init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aZ;-><init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->c:Ljava/lang/String;
 
@@ -157,7 +157,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 

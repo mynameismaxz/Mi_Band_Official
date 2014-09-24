@@ -113,7 +113,7 @@
 .method public handleTouch(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     const/4 v0, 0x1
 
@@ -259,7 +259,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     mul-float/2addr v3, v4
 

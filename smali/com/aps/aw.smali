@@ -30,7 +30,7 @@
 
     sput v0, Lcom/aps/aw;->d:I
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     sput v0, Lcom/aps/aw;->f:F
 

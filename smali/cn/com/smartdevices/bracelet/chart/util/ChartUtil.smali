@@ -12,7 +12,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     sput v0, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->a:F
 
@@ -32,7 +32,7 @@
 .method public static colorToColor(IIF)I
     .locals 10
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
@@ -176,7 +176,7 @@
 .method public static drawBitmapCenter(Landroid/graphics/Canvas;FFFZZLandroid/graphics/Bitmap;Landroid/graphics/Paint;)V
     .locals 2
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     if-eqz p4, :cond_0
 
@@ -224,7 +224,7 @@
 .method public static drawTextCenter(Landroid/graphics/Canvas;Landroid/graphics/RectF;Ljava/lang/String;Landroid/graphics/Paint;)V
     .locals 5
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     new-instance v0, Landroid/graphics/Rect;
 
@@ -284,7 +284,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     new-instance v0, Landroid/graphics/Rect;
 
@@ -352,7 +352,7 @@
 
     add-float/2addr v1, v4
 
-    const/high16 v4, 0x40c0
+    const/high16 v4, 0x40c00000
 
     add-float/2addr v1, v4
 
@@ -416,7 +416,7 @@
 
     if-gez v0, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     sput v0, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->a:F
 
@@ -466,7 +466,7 @@
 
     if-gez v0, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     sput v0, Lcn/com/smartdevices/bracelet/chart/util/ChartUtil;->b:F
 
@@ -497,7 +497,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4040
+    const/high16 v1, 0x40400000
 
     div-float/2addr v0, v1
 
@@ -578,7 +578,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -608,7 +608,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -618,7 +618,7 @@
 .end method
 
 .method public static updateMaxItemValue(Ljava/util/List;II)I
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -634,38 +634,42 @@
     :try_start_0
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v2
 
-    :cond_0
+    move v1, p2
+
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    monitor-exit p0
-
-    return p2
-
-    :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;
 
-    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
+    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->index:I
 
-    if-lt v2, p1, :cond_0
+    if-lt v3, p1, :cond_1
 
-    iget v2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
+    iget v3, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
 
-    if-le v2, p2, :cond_0
+    if-le v3, v1, :cond_1
 
-    iget p2, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
+    iget v0, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->value:I
+
+    :goto_1
+    move v1, v0
 
     goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return v1
 
     :catchall_0
     move-exception v0
@@ -675,4 +679,9 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method

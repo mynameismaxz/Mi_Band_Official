@@ -107,8 +107,8 @@
 
     invoke-direct {v0, v1, v2}, Ljava/sql/Time;-><init>(J)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/text/ParseException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 

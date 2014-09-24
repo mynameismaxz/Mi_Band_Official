@@ -45,7 +45,7 @@
 
     if-lez v0, :cond_0
 
-    const/high16 v0, 0x447a
+    const/high16 v0, 0x447a0000
 
     cmpl-float v0, p3, v0
 
@@ -76,7 +76,7 @@
 
     if-lez v0, :cond_1
 
-    const/high16 v0, -0x3b86
+    const/high16 v0, -0x3b860000
 
     cmpg-float v0, p3, v0
 

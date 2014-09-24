@@ -55,7 +55,7 @@
 
     iput v0, p0, Lorg/achartengine/renderer/SimpleSeriesRenderer;->c:I
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     iput v0, p0, Lorg/achartengine/renderer/SimpleSeriesRenderer;->d:F
 
@@ -63,7 +63,7 @@
 
     iput-object v0, p0, Lorg/achartengine/renderer/SimpleSeriesRenderer;->e:Landroid/graphics/Paint$Align;
 
-    const/high16 v0, 0x40a0
+    const/high16 v0, 0x40a00000
 
     iput v0, p0, Lorg/achartengine/renderer/SimpleSeriesRenderer;->f:F
 

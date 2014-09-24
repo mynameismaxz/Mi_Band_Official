@@ -3,7 +3,7 @@
 
 
 # static fields
-.field static final a:Landroid/support/v4/widget/L; = null
+.field static final a:Landroid/support/v4/widget/L;
 
 .field private static final b:Ljava/lang/String; = "SlidingPaneLayout"
 
@@ -128,7 +128,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 5
 
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     const/4 v3, 0x1
 
@@ -162,7 +162,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4200
+    const/high16 v1, 0x42000000
 
     mul-float/2addr v1, v0
 
@@ -204,7 +204,7 @@
 
     iget-object v1, p0, Landroid/support/v4/widget/SlidingPaneLayout;->t:Landroid/support/v4/widget/ViewDragHelper;
 
-    const/high16 v2, 0x43c8
+    const/high16 v2, 0x43c80000
 
     mul-float/2addr v0, v2
 
@@ -218,7 +218,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     iget-object v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->k:Landroid/view/View;
 
@@ -405,7 +405,7 @@
 
     if-eqz p3, :cond_3
 
-    const/high16 v1, -0x100
+    const/high16 v1, -0x1000000
 
     and-int/2addr v1, p3
 
@@ -553,7 +553,7 @@
 
     if-nez v1, :cond_0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {p0, v1, p2}, Landroid/support/v4/widget/SlidingPaneLayout;->a(FI)Z
 
@@ -959,6 +959,8 @@
 
 .method public canSlide()Z
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-boolean v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->j:Z
 
@@ -1548,7 +1550,7 @@
 
     iget v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->l:F
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v0, v0, v1
 
@@ -1885,7 +1887,7 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     :goto_0
     iput v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->l:F
@@ -2039,7 +2041,7 @@
 
     if-eqz v0, :cond_5
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iget v1, p0, Landroid/support/v4/widget/SlidingPaneLayout;->l:F
 
@@ -2154,7 +2156,7 @@
 
     move-result v0
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     if-eq v3, v4, :cond_3
 
@@ -2164,7 +2166,7 @@
 
     if-eqz v4, :cond_2
 
-    const/high16 v4, -0x8000
+    const/high16 v4, -0x80000000
 
     if-ne v3, v4, :cond_1
 
@@ -2312,7 +2314,7 @@
 
     if-nez v1, :cond_1f
 
-    const/high16 v1, -0x8000
+    const/high16 v1, -0x80000000
 
     const/16 v0, 0x12c
 
@@ -2413,7 +2415,7 @@
 
     sub-int v3, v10, v3
 
-    const/high16 v4, -0x8000
+    const/high16 v4, -0x80000000
 
     invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2426,7 +2428,7 @@
 
     if-ne v4, v13, :cond_b
 
-    const/high16 v4, -0x8000
+    const/high16 v4, -0x80000000
 
     invoke-static {v1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2443,7 +2445,7 @@
 
     move-result v4
 
-    const/high16 v13, -0x8000
+    const/high16 v13, -0x80000000
 
     if-ne v9, v13, :cond_7
 
@@ -2493,7 +2495,7 @@
 
     sub-int v3, v10, v3
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2504,7 +2506,7 @@
     :cond_a
     iget v3, v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->width:I
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2519,7 +2521,7 @@
 
     if-ne v4, v13, :cond_c
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     invoke-static {v1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2530,7 +2532,7 @@
     :cond_c
     iget v4, v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->height:I
 
-    const/high16 v13, 0x4000
+    const/high16 v13, 0x40000000
 
     invoke-static {v4, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2652,14 +2654,14 @@
 
     if-ne v3, v4, :cond_15
 
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
     :goto_b
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     invoke-static {v12, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2692,7 +2694,7 @@
 
     if-ne v3, v4, :cond_16
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2703,7 +2705,7 @@
     :cond_16
     iget v0, v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->height:I
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     invoke-static {v0, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2716,7 +2718,7 @@
 
     move-result v0
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     invoke-static {v0, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2743,7 +2745,7 @@
 
     if-ne v3, v8, :cond_19
 
-    const/high16 v3, -0x8000
+    const/high16 v3, -0x80000000
 
     invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2760,7 +2762,7 @@
 
     sub-int v0, v10, v0
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     invoke-static {v0, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2779,7 +2781,7 @@
 
     if-ne v3, v8, :cond_1a
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2790,7 +2792,7 @@
     :cond_1a
     iget v3, v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->height:I
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     invoke-static {v3, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2803,7 +2805,7 @@
 
     move-result v3
 
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
     invoke-static {v3, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2830,7 +2832,7 @@
 
     add-int/2addr v0, v4
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     invoke-static {v0, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -3185,6 +3187,8 @@
 
 .method public smoothSlideClosed()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0}, Landroid/support/v4/widget/SlidingPaneLayout;->closePane()Z
 
@@ -3193,6 +3197,8 @@
 
 .method public smoothSlideOpen()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0}, Landroid/support/v4/widget/SlidingPaneLayout;->openPane()Z
 

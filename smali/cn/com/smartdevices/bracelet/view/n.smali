@@ -37,7 +37,7 @@
 
     const v1, 0x3e478084
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     sub-float/2addr v2, v1
 
@@ -59,7 +59,7 @@
 
     int-to-float v0, v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;->a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;F)V
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;->a(Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;F)F
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/n;->a:Lcn/com/smartdevices/bracelet/view/DynamicView$FlowBgView;
 

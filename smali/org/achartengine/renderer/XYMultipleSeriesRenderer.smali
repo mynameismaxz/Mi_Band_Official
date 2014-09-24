@@ -144,7 +144,7 @@
 
     iput-object v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->a:Ljava/lang/String;
 
-    const/high16 v0, 0x4140
+    const/high16 v0, 0x41400000
 
     iput v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->c:F
 
@@ -192,7 +192,7 @@
 
     iput-object v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->w:Ljava/util/Map;
 
-    const/high16 v0, 0x4040
+    const/high16 v0, 0x40400000
 
     iput v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->x:F
 
@@ -212,7 +212,7 @@
 
     iput v5, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->D:F
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     iput v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->E:F
 
@@ -228,7 +228,7 @@
 
     iput-boolean v2, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->I:Z
 
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     iput v0, p0, Lorg/achartengine/renderer/XYMultipleSeriesRenderer;->K:F
 

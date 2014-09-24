@@ -154,7 +154,7 @@
 .method public startWPAConversation(Ljava/lang/String;Ljava/lang/String;)I
     .locals 7
 
-    const/high16 v6, 0x1
+    const/high16 v6, 0x10000
 
     const/4 v4, 0x2
 

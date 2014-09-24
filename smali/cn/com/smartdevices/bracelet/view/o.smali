@@ -24,6 +24,11 @@
 # virtual methods
 .method public onGlobalLayout()V
     .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -44,7 +49,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/o;->a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->b(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/support/v4/view/ViewPager;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/support/v4/view/ViewPager;
 
     move-result-object v1
 
@@ -52,13 +57,13 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;I)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;I)I
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/o;->a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/view/o;->a:Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->c(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)I
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->b(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)I
 
     move-result v1
 

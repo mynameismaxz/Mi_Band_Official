@@ -27,8 +27,8 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$3(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$300(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
 
     move-result-object v0
 
@@ -36,8 +36,8 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$3(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$300(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
 
     move-result-object v0
 
@@ -51,8 +51,8 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$3(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$300(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
 
     move-result-object v0
 
@@ -67,14 +67,18 @@
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "Quiting HandlerThread postponed for 500ms... (due to m_State="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$3(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_GattPeripheral:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$300(Lcom/xiaomi/hm/bleservice/BLEService;)Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
 
     move-result-object v1
 
@@ -100,8 +104,8 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Handler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$1(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/os/Handler;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Handler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$200(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -119,8 +123,8 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/e;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    #getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_HandlerThread:Landroid/os/HandlerThread;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$4(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/os/HandlerThread;
+    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_HandlerThread:Landroid/os/HandlerThread;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$400(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/os/HandlerThread;
 
     move-result-object v0
 

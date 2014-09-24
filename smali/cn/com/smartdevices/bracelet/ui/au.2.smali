@@ -1,52 +1,91 @@
 .class Lcn/com/smartdevices/bracelet/ui/au;
-.super Landroid/webkit/WebViewClient;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/au;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/au;->b:Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
 
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .locals 2
+.method public onFailed(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/au;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/au;->b:Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/au;->b:Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
+
+    const v2, 0x7f0d0040
+
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     return-void
 .end method
 
-.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 2
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/au;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)Landroid/widget/ProgressBar;
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "\u8bbe\u5b9a\u76ee\u6807\u6210\u529f!"
+
+    :goto_0
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/au;->b:Lcn/com/smartdevices/bracelet/ui/HealthGoalsActivity;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
+    :cond_0
+    return-void
+
+    :cond_1
+    const-string v0, "\u8bbe\u5b9a\u76ee\u6807\u5931\u8d25!"
+
+    goto :goto_0
+.end method
+
+.method public onStart()V
+    .locals 0
+
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
 
     return-void
 .end method

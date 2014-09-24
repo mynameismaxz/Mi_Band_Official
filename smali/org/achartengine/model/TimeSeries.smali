@@ -44,7 +44,7 @@
 .method protected getPadding()D
     .locals 2
 
-    const-wide/high16 v0, 0x3ff0
+    const-wide/high16 v0, 0x3ff0000000000000L
 
     return-wide v0
 .end method

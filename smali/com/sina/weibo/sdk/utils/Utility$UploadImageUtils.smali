@@ -27,7 +27,7 @@
     throw v0
 
     :cond_0
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->doesExisted(Ljava/lang/String;)Z
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->doesExisted(Ljava/lang/String;)Z
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$0(Ljava/lang/String;)Z
 
     move-result v0
@@ -98,7 +98,7 @@
 
     if-gt v3, p1, :cond_4
 
-    const-wide/high16 v3, 0x4000
+    const-wide/high16 v3, 0x4000000000000000L
 
     int-to-double v5, v0
 
@@ -139,10 +139,10 @@
     goto :goto_1
 
     :cond_5
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->deleteDependon(Ljava/lang/String;)Z
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->deleteDependon(Ljava/lang/String;)Z
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$1(Ljava/lang/String;)Z
 
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->makesureFileExist(Ljava/lang/String;)V
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->makesureFileExist(Ljava/lang/String;)V
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$2(Ljava/lang/String;)V
 
     new-instance v1, Ljava/io/FileOutputStream;
@@ -211,7 +211,7 @@
     throw v0
 
     :cond_0
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->doesExisted(Ljava/lang/String;)Z
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->doesExisted(Ljava/lang/String;)Z
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$0(Ljava/lang/String;)Z
 
     move-result v0
@@ -284,7 +284,7 @@
 
     if-gt v4, v2, :cond_4
 
-    const-wide/high16 v4, 0x4000
+    const-wide/high16 v4, 0x4000000000000000L
 
     int-to-double v6, v0
 
@@ -325,10 +325,10 @@
     goto :goto_1
 
     :cond_5
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->deleteDependon(Ljava/lang/String;)Z
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->deleteDependon(Ljava/lang/String;)Z
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$1(Ljava/lang/String;)Z
 
-    #calls: Lcom/sina/weibo/sdk/utils/Utility;->makesureFileExist(Ljava/lang/String;)V
+    # invokes: Lcom/sina/weibo/sdk/utils/Utility;->makesureFileExist(Ljava/lang/String;)V
     invoke-static {p0}, Lcom/sina/weibo/sdk/utils/Utility;->access$2(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -352,7 +352,7 @@
 
     div-float v1, v2, v1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     cmpg-float v2, v1, v2
 

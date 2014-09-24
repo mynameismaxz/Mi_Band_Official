@@ -96,7 +96,7 @@
 
     new-instance v0, Ljava/util/LinkedHashMap;
 
-    const/high16 v3, 0x3f40
+    const/high16 v3, 0x3f400000
 
     invoke-direct {v0, v1, v3, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
@@ -1048,8 +1048,8 @@
 
     invoke-direct {p0, v2}, Lcom/aps/g;->d(Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -1907,8 +1907,8 @@
 
     aput-object v5, v6, v1
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     add-int/lit8 v1, v1, 0x1
 

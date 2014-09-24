@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/p;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     :cond_0
     :goto_0
@@ -63,7 +63,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/p;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
 
     move-result v0
 
@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/p;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->j(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     goto :goto_0
 
@@ -117,7 +117,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/p;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->h(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->i(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
 
     move-result v0
 
@@ -125,7 +125,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/p;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->j(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->k(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     goto :goto_0
 

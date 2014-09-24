@@ -483,7 +483,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x104
+    const/high16 v1, 0x1040000
 
     const/4 v2, 0x0
 

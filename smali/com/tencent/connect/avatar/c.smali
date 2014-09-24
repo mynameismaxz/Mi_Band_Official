@@ -26,7 +26,7 @@
 
     mul-float/2addr v0, p1
 
-    const/high16 v1, 0x3f00
+    const/high16 v1, 0x3f000000
 
     add-float/2addr v0, v1
 

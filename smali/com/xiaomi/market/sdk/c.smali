@@ -217,8 +217,8 @@
 
     check-cast v0, Ljava/net/HttpURLConnection;
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_5
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     const/16 v1, 0x2710
 
@@ -250,16 +250,16 @@
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :goto_3
     :try_start_3
     invoke-virtual {p0, v0}, Lcom/xiaomi/market/sdk/c;->a(Ljava/net/HttpURLConnection;)Ljava/net/HttpURLConnection;
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Lcom/xiaomi/market/sdk/d; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     move-result-object v3
 
@@ -320,8 +320,8 @@
 
     sget-object v1, Lcom/xiaomi/market/sdk/g;->I:Lcom/xiaomi/market/sdk/g;
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_3
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     if-ne v0, v1, :cond_6
 
@@ -338,8 +338,8 @@
 
     invoke-direct {v1, v6, v7}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_6
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     const/16 v6, 0x400
 
@@ -359,16 +359,16 @@
 
     invoke-virtual {p5}, Lcom/xiaomi/market/sdk/i;->flush()V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_5
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     if-eqz v1, :cond_6
 
     :try_start_7
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_4
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     :cond_6
     if-eqz v3, :cond_1
@@ -406,8 +406,8 @@
     :try_start_8
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     goto/16 :goto_2
 
@@ -472,8 +472,8 @@
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
     :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_1
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     goto/16 :goto_3
 
@@ -498,8 +498,8 @@
     :try_start_b
     iget-object v1, v1, Lcom/xiaomi/market/sdk/d;->F:Lcom/xiaomi/market/sdk/g;
     :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_1
+    .catchall {:try_start_b .. :try_end_b} :catchall_0
 
     if-eqz v0, :cond_a
 
@@ -516,8 +516,8 @@
     :try_start_c
     invoke-virtual {p5, v6, v8, v7}, Lcom/xiaomi/market/sdk/i;->write([BII)V
     :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_5
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_3
+    .catchall {:try_start_c .. :try_end_c} :catchall_5
 
     goto/16 :goto_4
 
@@ -567,8 +567,8 @@
     :try_start_e
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
     :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_3
     .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_4
+    .catchall {:try_start_e .. :try_end_e} :catchall_3
 
     :cond_c
     if-eqz v3, :cond_0
@@ -591,8 +591,8 @@
     :cond_d
     throw v0
     :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_3
     .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_4
+    .catchall {:try_start_f .. :try_end_f} :catchall_3
 
     :catch_4
     move-exception v0
@@ -1242,8 +1242,8 @@
 
     iput-object v2, p0, Lcom/xiaomi/market/sdk/c;->v:Lorg/json/JSONObject;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
     :try_start_1
@@ -1274,8 +1274,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 

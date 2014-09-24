@@ -237,7 +237,7 @@
 
     move-result-wide v1
 
-    const-wide/high16 v3, 0x4024
+    const-wide/high16 v3, 0x4024000000000000L
 
     sub-double v5, p2, v1
 
@@ -249,7 +249,7 @@
 
     double-to-int v3, v3
 
-    const-wide/high16 v4, 0x4024
+    const-wide/high16 v4, 0x4024000000000000L
 
     sub-double v1, p2, v1
 
@@ -363,7 +363,7 @@
 
     move-result v8
 
-    const/high16 v1, 0x40a0
+    const/high16 v1, 0x40a00000
 
     move-object/from16 v0, p9
 
@@ -806,11 +806,11 @@
 
     if-nez v2, :cond_8
 
-    const-wide/high16 v2, 0x3fe0
+    const-wide/high16 v2, 0x3fe0000000000000L
 
     mul-double/2addr v10, v2
 
-    const-wide/high16 v2, 0x3ff8
+    const-wide/high16 v2, 0x3ff8000000000000L
 
     mul-double/2addr v12, v2
 
@@ -851,7 +851,7 @@
 
     sub-double v8, v12, v10
 
-    const-wide/high16 v18, 0x403e
+    const-wide/high16 v18, 0x403e000000000000L
 
     div-double v24, v8, v18
 
@@ -864,7 +864,7 @@
 
     sub-double v2, v12, v10
 
-    const-wide/high16 v8, 0x4024
+    const-wide/high16 v8, 0x4024000000000000L
 
     div-double/2addr v2, v8
 

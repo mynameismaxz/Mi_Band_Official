@@ -182,7 +182,7 @@
 .method public drawLegendShape(Landroid/graphics/Canvas;Lorg/achartengine/renderer/SimpleSeriesRenderer;FFILandroid/graphics/Paint;)V
     .locals 7
 
-    const/high16 v0, 0x41f0
+    const/high16 v0, 0x41f00000
 
     add-float v3, p3, v0
 
@@ -206,7 +206,7 @@
 
     iget-object v0, p0, Lorg/achartengine/chart/LineChart;->b:Lorg/achartengine/chart/ScatterChart;
 
-    const/high16 v1, 0x40a0
+    const/high16 v1, 0x40a00000
 
     add-float v3, p3, v1
 
@@ -709,7 +709,7 @@
 
     move-result v4
 
-    const/high16 v12, 0x3f80
+    const/high16 v12, 0x3f800000
 
     add-float/2addr v4, v12
 

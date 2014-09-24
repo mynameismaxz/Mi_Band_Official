@@ -8,6 +8,9 @@
 
 # static fields
 .field public static final FLAG_AUTO_REQUERY:I = 0x1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final FLAG_REGISTER_CONTENT_OBSERVER:I = 0x2
 
@@ -35,6 +38,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/database/Cursor;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -451,6 +456,8 @@
 
 .method protected init(Landroid/content/Context;Landroid/database/Cursor;Z)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     if-eqz p3, :cond_0
 

@@ -31,7 +31,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$1;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$0(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
 
     move-result-object v0
@@ -40,7 +40,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$1;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$0(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
 
     move-result-object v0

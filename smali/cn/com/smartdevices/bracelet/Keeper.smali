@@ -157,9 +157,13 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v4, "alarmStr ="
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -407,6 +411,24 @@
     return-void
 .end method
 
+.method public static keepGameFailed(Z)V
+    .locals 2
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "REF_GAME_FAILED"
+
+    invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    return-void
+.end method
+
 .method public static keepIsPlayEnterAnimation(Ljava/lang/Boolean;)V
     .locals 3
 
@@ -489,24 +511,6 @@
     const-string v1, "security"
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    return-void
-.end method
-
-.method public static keepLuaVersion(I)V
-    .locals 2
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "Lua_version"
-
-    invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
@@ -772,6 +776,24 @@
     const-string v1, "push_alias"
 
     invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    return-void
+.end method
+
+.method public static keepRealtimeSteps(I)V
+    .locals 2
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "dynamic_realtime_steps"
+
+    invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
@@ -1154,6 +1176,22 @@
     return v0
 .end method
 
+.method public static readGameFailed()Z
+    .locals 3
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v1, "REF_GAME_FAILED"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static readIsPlayEnterAnimation()Ljava/lang/Boolean;
     .locals 3
 
@@ -1191,9 +1229,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "last calendar="
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1259,7 +1301,7 @@
 
     const-string v1, "latestDBLuaVersion"
 
-    const-string v2, "20140101"
+    const-string v2, "20990101001"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1316,22 +1358,6 @@
     iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/LoginData;->security:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public static readLuaVersion()I
-    .locals 3
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    const-string v1, "Lua_version"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public static readMorningAlarms()Ljava/util/ArrayList;
@@ -1660,6 +1686,162 @@
     return-object v0
 .end method
 
+.method public static readPersonInfoBase()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    .locals 5
+
+    new-instance v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_uid"
+
+    iget-wide v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
+
+    invoke-interface {v1, v2, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    iput-wide v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_gender"
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gender:I
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->gender:I
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_height"
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->height:I
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_weight"
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->weight:I
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_age"
+
+    iget v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->age:I
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->age:I
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_mili_config"
+
+    const-string v3, ""
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/model/MiliConfig;->fromJsonStr(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/model/MiliConfig;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
+
+    return-object v0
+.end method
+
+.method public static readPersonInfoBaseConfig()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    .locals 4
+
+    new-instance v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_mili_config"
+
+    const-string v3, ""
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/model/MiliConfig;->fromJsonStr(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/model/MiliConfig;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
+
+    return-object v0
+.end method
+
+.method public static readPersonInfoBaseNeedSync()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    .locals 4
+
+    new-instance v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_need_sync_server"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->setNeedSyncServer(I)V
+
+    return-object v0
+.end method
+
+.method public static readPersonInfoBaseUID()Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    .locals 5
+
+    new-instance v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v2, "person_info_uid"
+
+    iget-wide v3, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
+
+    invoke-interface {v1, v2, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    iput-wide v1, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->uid:J
+
+    return-object v0
+.end method
+
 .method public static readPlayEnterAnimationType()I
     .locals 3
 
@@ -1690,6 +1872,22 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static readRealtimeSteps()I
+    .locals 3
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v1, "dynamic_realtime_steps"
+
+    const/4 v2, -0x1
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static readShareBgItem()Lcn/com/smartdevices/bracelet/model/ShareBackgroundItem;
@@ -1870,6 +2068,22 @@
     const-string v1, "push_uuid"
 
     const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static readUserName()Ljava/lang/String;
+    .locals 3
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
+
+    const-string v1, "person_info_nickname"
+
+    const-string v2, ""
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

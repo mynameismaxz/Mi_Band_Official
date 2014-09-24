@@ -6,14 +6,11 @@
 
 
 # static fields
-#the value of this static final field might be set in the static constructor
-.field private static final e:I = 0x0
+.field private static final e:I
 
-#the value of this static final field might be set in the static constructor
-.field private static final f:I = 0x0
+.field private static final f:I
 
-#the value of this static final field might be set in the static constructor
-.field private static final g:I = 0x0
+.field private static final g:I
 
 .field private static final h:I = 0x1
 
@@ -941,7 +938,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     cmpl-float v5, v5, v6
 
@@ -951,7 +948,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     cmpl-float v5, v5, v6
 

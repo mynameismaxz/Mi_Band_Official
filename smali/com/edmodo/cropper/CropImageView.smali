@@ -11,7 +11,7 @@
 
 .field public static final DEFAULT_GUIDELINES:I = 0x1
 
-.field private static final a:Landroid/graphics/Rect; = null
+.field private static final a:Landroid/graphics/Rect;
 
 .field private static final b:I = 0x0
 
@@ -161,8 +161,8 @@
 
     iput v0, p0, Lcom/edmodo/cropper/CropImageView;->o:I
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -194,7 +194,7 @@
 .method private static a(III)I
     .locals 1
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     if-ne p0, v0, :cond_0
 
@@ -202,7 +202,7 @@
     return p1
 
     :cond_0
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     if-ne p0, v0, :cond_1
 
@@ -233,7 +233,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f07009a
+    const v0, 0x7f0a009c
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -247,7 +247,7 @@
 
     invoke-virtual {p0, v0}, Lcom/edmodo/cropper/CropImageView;->setImageResource(I)V
 
-    const v0, 0x7f07009b
+    const v0, 0x7f0a009d
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -405,7 +405,7 @@
 .method public getCroppedImage(II)Landroid/graphics/Bitmap;
     .locals 10
 
-    const/high16 v8, 0x42c8
+    const/high16 v8, 0x42c80000
 
     iget-object v0, p0, Lcom/edmodo/cropper/CropImageView;->g:Landroid/graphics/Bitmap;
 
@@ -501,9 +501,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, ", actualCropWidth="
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
@@ -568,9 +572,13 @@
 
     new-instance v8, Ljava/lang/StringBuilder;
 
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v9, "scaleWidth = "
 
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
@@ -656,7 +664,7 @@
 .method protected onMeasure(II)V
     .locals 12
 
-    const-wide/high16 v3, 0x7ff0
+    const-wide/high16 v3, 0x7ff0000000000000L
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 

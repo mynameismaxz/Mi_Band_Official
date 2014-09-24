@@ -24,9 +24,9 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 11
 
-    const-wide/high16 v7, 0x7ff8
+    const-wide/high16 v7, 0x7ff8000000000000L
 
-    const-wide/high16 v9, 0x7ff8
+    const-wide/high16 v9, 0x7ff8000000000000L
 
     move-object v0, p0
 

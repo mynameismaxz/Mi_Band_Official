@@ -28,7 +28,7 @@
 .method public static getCornerThickness()F
     .locals 1
 
-    const/high16 v0, 0x4000
+    const/high16 v0, 0x40000000
 
     return v0
 .end method
@@ -36,7 +36,7 @@
 .method public static getLineThickness()F
     .locals 1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     return v0
 .end method
@@ -64,7 +64,7 @@
 
     const/4 v3, 0x1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -106,7 +106,7 @@
 
     const/4 v0, 0x1
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 

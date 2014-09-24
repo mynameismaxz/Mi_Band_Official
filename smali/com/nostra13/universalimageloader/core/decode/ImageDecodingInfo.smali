@@ -147,6 +147,9 @@
 
 .method private b(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
     .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xa
+    .end annotation
 
     iget-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inPreferQualityOverSpeed:Z
 
@@ -157,6 +160,9 @@
 
 .method private c(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/BitmapFactory$Options;)V
     .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
 
     iget-object v0, p1, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 

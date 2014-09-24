@@ -9,7 +9,7 @@
     </item>
     <item>
         <shape>
-            <solid android:color="@*android:color/white" />
+            <solid android:color="@android:color/white" />
             <corners android:topRightRadius="@dimen/btn_bg_radius" android:bottomRightRadius="@dimen/btn_bg_radius" />
         </shape>
     </item>

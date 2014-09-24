@@ -254,8 +254,8 @@
 
     invoke-direct {v2, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
     invoke-static {v2}, Lu/aly/bv;->b(Ljava/io/InputStream;)[B
@@ -272,8 +272,8 @@
 
     invoke-virtual {v4, v1, v3}, Lu/aly/cc;->a(Lu/aly/bz;[B)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     invoke-static {v2}, Lu/aly/bv;->c(Ljava/io/InputStream;)V
 

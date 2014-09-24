@@ -70,7 +70,7 @@
 
     sub-float/2addr v0, v2
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v0, v2
 

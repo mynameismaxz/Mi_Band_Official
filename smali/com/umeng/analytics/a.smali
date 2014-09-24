@@ -13,9 +13,9 @@
 
 .field public static final e:Ljava/lang/String; = "MobclickAgent"
 
-.field public static final f:[Ljava/lang/String; = null
+.field public static final f:[Ljava/lang/String;
 
-.field public static final g:[Ljava/lang/String; = null
+.field public static final g:[Ljava/lang/String;
 
 .field public static final h:Ljava/lang/String; = "umeng_net_report_policy"
 

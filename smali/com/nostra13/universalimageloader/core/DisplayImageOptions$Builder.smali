@@ -310,6 +310,8 @@
 
 .method public cacheInMemory()Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -328,6 +330,8 @@
 
 .method public cacheOnDisc()Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -340,6 +344,8 @@
 
 .method public cacheOnDisc(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0, p1}, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->cacheOnDisk(Z)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
 
@@ -638,6 +644,8 @@
 
 .method public showStubImage(I)Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iput p1, p0, Lcom/nostra13/universalimageloader/core/DisplayImageOptions$Builder;->a:I
 

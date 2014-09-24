@@ -269,6 +269,11 @@
 
 .method private initWebView()V
     .locals 6
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled"
+        }
+    .end annotation
 
     const/4 v5, 0x1
 
@@ -370,7 +375,7 @@
 
     iget v3, v2, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v4, 0x4120
+    const/high16 v4, 0x41200000
 
     mul-float/2addr v3, v4
 
@@ -416,7 +421,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    const/high16 v3, 0x41c8
+    const/high16 v3, 0x41c80000
 
     iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 

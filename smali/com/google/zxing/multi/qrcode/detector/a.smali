@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final a:[Lcom/google/zxing/qrcode/detector/FinderPatternInfo; = null
+.field private static final a:[Lcom/google/zxing/qrcode/detector/FinderPatternInfo;
 
 .field private static final b:F = 180.0f
 
@@ -223,7 +223,7 @@
 
     move-result v3
 
-    const/high16 v9, 0x3f00
+    const/high16 v9, 0x3f000000
 
     cmpl-float v3, v3, v9
 
@@ -298,7 +298,7 @@
 
     move-result v10
 
-    const/high16 v11, 0x3f00
+    const/high16 v11, 0x3f000000
 
     cmpl-float v10, v10, v11
 
@@ -375,19 +375,19 @@
 
     move-result v13
 
-    const/high16 v14, 0x4000
+    const/high16 v14, 0x40000000
 
     mul-float/2addr v13, v14
 
     div-float/2addr v12, v13
 
-    const/high16 v13, 0x4334
+    const/high16 v13, 0x43340000
 
     cmpl-float v13, v12, v13
 
     if-gtz v13, :cond_7
 
-    const/high16 v13, 0x4110
+    const/high16 v13, 0x41100000
 
     cmpg-float v12, v12, v13
 
@@ -528,11 +528,11 @@
 
     int-to-float v3, v8
 
-    const/high16 v5, 0x4364
+    const/high16 v5, 0x43640000
 
     div-float/2addr v3, v5
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     mul-float/2addr v3, v5
 

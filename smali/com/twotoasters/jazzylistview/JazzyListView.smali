@@ -112,9 +112,9 @@
 
     invoke-virtual {v0, p1}, Lcom/twotoasters/jazzylistview/JazzyHelper;->setSimulateGridWithList(Z)V
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/twotoasters/jazzylistview/JazzyListView;->setClipChildren(Z)V
@@ -122,7 +122,7 @@
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

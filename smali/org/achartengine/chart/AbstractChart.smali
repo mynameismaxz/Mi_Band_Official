@@ -455,9 +455,9 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/high16 v3, 0x42b4
+    const/high16 v3, 0x42b40000
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     div-float v4, p10, v4
 
@@ -555,11 +555,11 @@
 
     move-result v12
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     div-float v3, v12, v3
 
-    const/high16 v5, 0x4120
+    const/high16 v5, 0x41200000
 
     invoke-static {v3, v5}, Ljava/lang/Math;->max(FF)F
 
@@ -710,7 +710,7 @@
     :cond_5
     if-eqz p15, :cond_7
 
-    const/high16 v3, 0x4000
+    const/high16 v3, 0x40000000
 
     div-float v3, v12, v3
 
@@ -800,7 +800,7 @@
 .method protected drawLegend(Landroid/graphics/Canvas;Lorg/achartengine/renderer/DefaultRenderer;[Ljava/lang/String;IIIIIILandroid/graphics/Paint;Z)I
     .locals 19
 
-    const/high16 v5, 0x4200
+    const/high16 v5, 0x42000000
 
     invoke-virtual/range {p2 .. p2}, Lorg/achartengine/renderer/DefaultRenderer;->isShowLegend()Z
 
@@ -931,7 +931,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v4, 0x4120
+    const/high16 v4, 0x41200000
 
     add-float/2addr v4, v11
 
@@ -998,7 +998,7 @@
 
     sub-float/2addr v4, v11
 
-    const/high16 v5, 0x4120
+    const/high16 v5, 0x41200000
 
     sub-float/2addr v4, v5
 
@@ -1020,7 +1020,7 @@
 
     sub-float/2addr v4, v11
 
-    const/high16 v5, 0x4120
+    const/high16 v5, 0x41200000
 
     sub-float/2addr v4, v5
 
@@ -1070,11 +1070,11 @@
 
     add-float v4, v7, v11
 
-    const/high16 v5, 0x40a0
+    const/high16 v5, 0x40a00000
 
     add-float v13, v4, v5
 
-    const/high16 v4, 0x40a0
+    const/high16 v4, 0x40a00000
 
     add-float v14, v8, v4
 
@@ -1836,11 +1836,11 @@
 
     move-result v0
 
-    const/high16 v1, 0x4080
+    const/high16 v1, 0x40800000
 
     mul-float/2addr v0, v1
 
-    const/high16 v1, 0x4040
+    const/high16 v1, 0x40400000
 
     div-float/2addr v0, v1
 

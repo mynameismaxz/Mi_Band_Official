@@ -465,7 +465,7 @@
 
     iput-wide v1, p0, Lcom/tencent/weiyun/f;->m:J
 
-    const/high16 v1, 0x8
+    const/high16 v1, 0x80000
 
     :try_start_0
     const-string v2, "SHA-1"

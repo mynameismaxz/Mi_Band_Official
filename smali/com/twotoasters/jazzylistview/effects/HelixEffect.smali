@@ -23,7 +23,7 @@
 .method public initView(Landroid/view/View;II)V
     .locals 1
 
-    const/high16 v0, 0x4334
+    const/high16 v0, 0x43340000
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 

@@ -46,7 +46,7 @@
 .method private a(Landroid/content/Context;)V
     .locals 5
 
-    const/high16 v4, 0x40
+    const/high16 v4, 0x400000
 
     const/4 v3, 0x1
 
@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x320
+    const/high16 v1, 0x3200000
 
     invoke-virtual {v0, v1}, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;->discCacheSize(I)Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration$Builder;
 
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020059
+    const v1, 0x7f02005a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

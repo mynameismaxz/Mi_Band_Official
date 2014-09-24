@@ -101,7 +101,7 @@
 .method private constructor <init>(Landroid/view/View;)V
     .locals 2
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
@@ -178,9 +178,9 @@
 .method private a(Landroid/graphics/Matrix;Landroid/view/View;)V
     .locals 10
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     const/4 v8, 0x0
 

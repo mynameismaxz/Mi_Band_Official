@@ -152,11 +152,11 @@
 
     iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v2, 0x41a0
+    const/high16 v2, 0x41a00000
 
     mul-float/2addr v1, v2
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     add-float/2addr v1, v2
 
@@ -200,7 +200,7 @@
 .method private a(F)F
     .locals 4
 
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     sub-float v0, p1, v0
 
@@ -332,7 +332,7 @@
 .method private a(III)I
     .locals 4
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     if-nez p1, :cond_0
 
@@ -382,7 +382,7 @@
 
     if-lez v1, :cond_1
 
-    const/high16 v2, 0x447a
+    const/high16 v2, 0x447a0000
 
     int-to-float v1, v1
 
@@ -422,7 +422,7 @@
 
     add-float/2addr v0, v3
 
-    const/high16 v1, 0x4380
+    const/high16 v1, 0x43800000
 
     mul-float/2addr v0, v1
 
@@ -778,7 +778,7 @@
     return v0
 
     :cond_1
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     mul-float/2addr v2, v3
 
@@ -1428,7 +1428,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     div-float/2addr v2, p1
 

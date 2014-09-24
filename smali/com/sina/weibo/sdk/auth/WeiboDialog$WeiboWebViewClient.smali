@@ -58,7 +58,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mIsDetached:Z
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mIsDetached:Z
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$3(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Z
 
     move-result v0
@@ -67,7 +67,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$4(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$4(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -86,7 +86,7 @@
     :cond_0
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mWebView:Landroid/webkit/WebView;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mWebView:Landroid/webkit/WebView;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$5(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/webkit/WebView;
 
     move-result-object v0
@@ -121,7 +121,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mWeibo:Lcom/sina/weibo/sdk/auth/WeiboAuth;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mWeibo:Lcom/sina/weibo/sdk/auth/WeiboAuth;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$1(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Lcom/sina/weibo/sdk/auth/WeiboAuth;
 
     move-result-object v0
@@ -150,7 +150,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #calls: Lcom/sina/weibo/sdk/auth/WeiboDialog;->handleRedirectUrl(Ljava/lang/String;)V
+    # invokes: Lcom/sina/weibo/sdk/auth/WeiboDialog;->handleRedirectUrl(Ljava/lang/String;)V
     invoke-static {v0, p2}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$2(Lcom/sina/weibo/sdk/auth/WeiboDialog;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Landroid/webkit/WebView;->stopLoading()V
@@ -168,7 +168,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mIsDetached:Z
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mIsDetached:Z
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$3(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Z
 
     move-result v0
@@ -177,7 +177,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$4(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -186,7 +186,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$4(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -199,7 +199,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mLoadingDlg:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$4(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -254,7 +254,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$0(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
 
     move-result-object v0
@@ -263,7 +263,7 @@
 
     iget-object v0, p0, Lcom/sina/weibo/sdk/auth/WeiboDialog$WeiboWebViewClient;->this$0:Lcom/sina/weibo/sdk/auth/WeiboDialog;
 
-    #getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
+    # getter for: Lcom/sina/weibo/sdk/auth/WeiboDialog;->mListener:Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
     invoke-static {v0}, Lcom/sina/weibo/sdk/auth/WeiboDialog;->access$0(Lcom/sina/weibo/sdk/auth/WeiboDialog;)Lcom/sina/weibo/sdk/auth/WeiboAuthListener;
 
     move-result-object v0

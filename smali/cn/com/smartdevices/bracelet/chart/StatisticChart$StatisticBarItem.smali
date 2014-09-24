@@ -63,7 +63,7 @@
     return-void
 
     :cond_1
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     cmpl-float v0, p4, v0
 
@@ -78,7 +78,7 @@
     move/from16 v2, p5
 
     :goto_1
-    const/high16 v4, -0x4080
+    const/high16 v4, -0x40800000
 
     cmpl-float v4, p5, v4
 
@@ -127,7 +127,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -218,7 +218,7 @@
 
     move-result v7
 
-    const/high16 v9, -0x4080
+    const/high16 v9, -0x40800000
 
     cmpl-float v9, p4, v9
 
@@ -231,7 +231,7 @@
     move v9, v5
 
     :goto_4
-    const/high16 v11, -0x4080
+    const/high16 v11, -0x40800000
 
     cmpl-float v11, p5, v11
 
@@ -376,7 +376,7 @@
 
     move-result v8
 
-    const/high16 v9, 0x4000
+    const/high16 v9, 0x40000000
 
     div-float/2addr v8, v9
 

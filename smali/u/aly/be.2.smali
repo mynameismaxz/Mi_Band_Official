@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final c:Ljava/util/Map; = null
+.field public static final c:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -35,13 +35,13 @@
     .end annotation
 .end field
 
-.field private static final d:Lu/aly/dd; = null
+.field private static final d:Lu/aly/dd;
 
-.field private static final e:Lu/aly/ct; = null
+.field private static final e:Lu/aly/ct;
 
-.field private static final f:Lu/aly/ct; = null
+.field private static final f:Lu/aly/ct;
 
-.field private static final g:Ljava/util/Map; = null
+.field private static final g:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",

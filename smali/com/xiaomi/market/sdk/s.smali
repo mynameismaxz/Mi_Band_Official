@@ -272,7 +272,7 @@
 .method public static a(JLandroid/content/Context;)Ljava/lang/String;
     .locals 8
 
-    const-wide/high16 v4, 0x3ff0
+    const-wide/high16 v4, 0x3ff0000000000000L
 
     const/4 v7, 0x1
 

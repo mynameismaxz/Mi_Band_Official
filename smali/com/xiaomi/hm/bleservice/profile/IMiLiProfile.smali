@@ -25,17 +25,35 @@
 
 .field public static final NOTIFY_FW_CHECK_SUCCESS:I = 0xc
 
-.field public static final NOTIFY_LOW_BATTERY:I = 0x11
-
 .field public static final NOTIFY_NORMAL:I = 0x0
 
-.field public static final NOTIFY_PAIR_CANCEL:I = 0xd
+.field public static final NOTIFY_PAIR_CANCEL:I = 0xef
 
 .field public static final NOTIFY_RESET_AUTHENTICATION_FAILED:I = 0x9
 
 .field public static final NOTIFY_RESET_AUTHENTICATION_SUCCESS:I = 0xa
 
 .field public static final NOTIFY_SET_LATENCY_SUCCESS:I = 0x8
+
+.field public static final NOTIFY_STATUS_MOTOR_ALARM:I = 0x11
+
+.field public static final NOTIFY_STATUS_MOTOR_AUTH:I = 0x13
+
+.field public static final NOTIFY_STATUS_MOTOR_AUTH_SUCCESS:I = 0x15
+
+.field public static final NOTIFY_STATUS_MOTOR_CALL:I = 0xe
+
+.field public static final NOTIFY_STATUS_MOTOR_DISCONNECT:I = 0xf
+
+.field public static final NOTIFY_STATUS_MOTOR_GOAL:I = 0x12
+
+.field public static final NOTIFY_STATUS_MOTOR_NOTIFY:I = 0xd
+
+.field public static final NOTIFY_STATUS_MOTOR_SHUTDOWN:I = 0x14
+
+.field public static final NOTIFY_STATUS_MOTOR_SMART_ALARM:I = 0x10
+
+.field public static final NOTIFY_STATUS_MOTOR_TEST:I = 0x16
 
 .field public static final NOTIFY_UNKNOWN:I = -0x1
 

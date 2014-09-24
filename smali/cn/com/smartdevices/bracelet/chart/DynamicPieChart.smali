@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020068
+    const v1, 0x7f02006a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020067
+    const v1, 0x7f020069
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -186,7 +186,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->m:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -218,7 +218,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     div-float/2addr v0, v1
 
@@ -287,7 +287,7 @@
 
     move-result v2
 
-    const/high16 v4, 0x4000
+    const/high16 v4, 0x40000000
 
     div-float/2addr v2, v4
 
@@ -297,7 +297,7 @@
 
     iget v4, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     mul-float/2addr v4, v5
 
@@ -311,7 +311,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     div-float/2addr v2, v5
 
@@ -321,7 +321,7 @@
 
     iget v5, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->l:F
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     mul-float/2addr v5, v6
 
@@ -338,26 +338,8 @@
     :goto_0
     const/16 v6, 0xc8
 
-    if-lt v2, v6, :cond_1
+    if-ge v2, v6, :cond_0
 
-    :cond_0
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
-
-    const/4 v3, 0x0
-
-    mul-int/lit8 v4, p6, 0x4
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, p5
-
-    invoke-virtual {v0, v2, v3, v4, v1}, Landroid/graphics/Canvas;->drawLines([FIILandroid/graphics/Paint;)V
-
-    return-void
-
-    :cond_1
     int-to-float v6, v2
 
     mul-float/2addr v6, v3
@@ -475,6 +457,23 @@
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
+
+    :cond_0
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->p:[F
+
+    const/4 v3, 0x0
+
+    mul-int/lit8 v4, p6, 0x4
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p5
+
+    invoke-virtual {v0, v2, v3, v4, v1}, Landroid/graphics/Canvas;->drawLines([FIILandroid/graphics/Paint;)V
+
+    return-void
 .end method
 
 
@@ -527,13 +526,13 @@
     :goto_1
     mul-float v0, p6, p7
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v1, v0, v1
 
     if-lez v1, :cond_1
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     :cond_1
     iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->f:Z
@@ -544,7 +543,7 @@
 
     iget v1, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->mRotate:F
 
-    const/high16 v2, 0x43b4
+    const/high16 v2, 0x43b40000
 
     mul-float/2addr v1, v2
 
@@ -570,7 +569,7 @@
     :cond_3
     iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->j:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x4348
+    const/high16 v1, 0x43480000
 
     mul-float/2addr v0, v1
 
@@ -656,7 +655,7 @@
 
     if-gtz v1, :cond_7
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpg-float v1, v0, v1
 
@@ -665,7 +664,7 @@
     :cond_7
     iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->j:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x4348
+    const/high16 v1, 0x43480000
 
     mul-float/2addr v0, v1
 
@@ -686,7 +685,7 @@
     goto :goto_2
 
     :cond_8
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v0, v0, v1
 
@@ -724,7 +723,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x41f8
+    const/high16 v5, 0x41f80000
 
     const/4 v4, 0x0
 
@@ -742,7 +741,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x4178
+    const/high16 v2, 0x41780000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->mDensity:F
 
@@ -756,7 +755,7 @@
 
     iget v1, p1, Landroid/graphics/RectF;->top:F
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/chart/DynamicPieChart;->mDensity:F
 

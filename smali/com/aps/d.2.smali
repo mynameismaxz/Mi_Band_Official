@@ -62,7 +62,7 @@
 
     iput-wide v0, p0, Lcom/aps/d;->d:J
 
-    const/high16 v0, 0x10
+    const/high16 v0, 0x100000
 
     iput v0, p0, Lcom/aps/d;->e:I
 
@@ -358,7 +358,7 @@
 
     move-result v8
 
-    const/high16 v9, 0x4396
+    const/high16 v9, 0x43960000
 
     cmpl-float v8, v8, v9
 
@@ -501,7 +501,7 @@
 
     if-eqz v10, :cond_9
 
-    const-wide/high16 v10, 0x3ff0
+    const-wide/high16 v10, 0x3ff0000000000000L
 
     :goto_8
     aput-wide v10, v19, v9
@@ -514,7 +514,7 @@
 
     if-eqz v4, :cond_a
 
-    const-wide/high16 v10, 0x3ff0
+    const-wide/high16 v10, 0x3ff0000000000000L
 
     :goto_9
     aput-wide v10, v20, v9
@@ -822,7 +822,7 @@
 
     if-eqz v2, :cond_2
 
-    const-wide/high16 v2, 0x3ff0
+    const-wide/high16 v2, 0x3ff0000000000000L
 
     :goto_3
     aput-wide v2, v8, v1
@@ -833,7 +833,7 @@
 
     if-eqz v0, :cond_3
 
-    const-wide/high16 v2, 0x3ff0
+    const-wide/high16 v2, 0x3ff0000000000000L
 
     :goto_4
     aput-wide v2, v9, v1
@@ -1466,7 +1466,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4396
+    const/high16 v1, 0x43960000
 
     cmpl-float v0, v0, v1
 
@@ -1476,7 +1476,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x4120
+    const/high16 v1, 0x41200000
 
     cmpg-float v0, v0, v1
 

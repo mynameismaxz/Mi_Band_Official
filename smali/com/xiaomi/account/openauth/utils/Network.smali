@@ -11,11 +11,11 @@
 
 .field public static final CONNECTION_TIMEOUT:I = 0x2710
 
-.field public static final ContentTypePattern_Charset:Ljava/util/regex/Pattern; = null
+.field public static final ContentTypePattern_Charset:Ljava/util/regex/Pattern;
 
-.field public static final ContentTypePattern_MimeType:Ljava/util/regex/Pattern; = null
+.field public static final ContentTypePattern_MimeType:Ljava/util/regex/Pattern;
 
-.field public static final ContentTypePattern_XmlEncoding:Ljava/util/regex/Pattern; = null
+.field public static final ContentTypePattern_XmlEncoding:Ljava/util/regex/Pattern;
 
 .field public static final NETWORK_TYPE_3GNET:Ljava/lang/String; = "3gnet"
 
@@ -701,10 +701,10 @@
 
     invoke-virtual {v1, v2, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lorg/apache/http/ParseException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string v0, "RESPONSE_CODE"
 
@@ -741,10 +741,10 @@
 
     invoke-direct {v0, p1}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Lorg/apache/http/ParseException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
@@ -1136,8 +1136,8 @@
 
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v3
 
@@ -1149,8 +1149,8 @@
     :cond_0
     invoke-virtual {v3, v0}, Ljava/io/InputStream;->read([B)I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v4
 
@@ -1198,8 +1198,8 @@
 
     invoke-static {p3}, Lcom/xiaomi/account/openauth/utils/Network;->isWifi(Landroid/content/Context;)Z
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_7
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     move-result v4
 

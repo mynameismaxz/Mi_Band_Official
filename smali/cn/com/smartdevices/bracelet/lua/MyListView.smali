@@ -107,7 +107,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x4348
+    const/high16 v1, 0x43480000
 
     mul-float/2addr v0, v1
 

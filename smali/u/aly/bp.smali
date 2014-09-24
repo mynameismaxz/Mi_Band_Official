@@ -1,70 +1,47 @@
-.class public abstract Lu/aly/bp;
+.class Lu/aly/bP;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field protected static b:Ljava/lang/String;
-
-.field protected static c:Ljava/lang/String;
-
-
-# instance fields
-.field protected d:Ljava/lang/String;
+# interfaces
+.implements Lu/aly/dh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "POST"
-
-    sput-object v0, Lu/aly/bp;->b:Ljava/lang/String;
-
-    const-string v0, "GET"
-
-    sput-object v0, Lu/aly/bp;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lu/aly/bp;->d:Ljava/lang/String;
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lu/aly/bP;)V
+    .locals 0
+
+    invoke-direct {p0}, Lu/aly/bP;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lorg/json/JSONObject;
-.end method
+.method public a()Lu/aly/bO;
+    .locals 2
 
-.method public a(Ljava/lang/String;)V
-    .locals 0
+    new-instance v0, Lu/aly/bO;
 
-    iput-object p1, p0, Lu/aly/bp;->d:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    return-void
-.end method
-
-.method public abstract b()Ljava/lang/String;
-.end method
-
-.method protected c()Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lu/aly/bp;->b:Ljava/lang/String;
+    invoke-direct {v0, v1}, Lu/aly/bO;-><init>(Lu/aly/bO;)V
 
     return-object v0
 .end method
 
-.method public d()Ljava/lang/String;
+.method public synthetic b()Lu/aly/dg;
     .locals 1
 
-    iget-object v0, p0, Lu/aly/bp;->d:Ljava/lang/String;
+    invoke-virtual {p0}, Lu/aly/bP;->a()Lu/aly/bO;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -12,7 +12,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/high16 v0, -0x8000
+    const/high16 v0, -0x80000000
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

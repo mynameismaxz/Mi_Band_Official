@@ -47,7 +47,7 @@
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
-    const/high16 v0, 0x42a0
+    const/high16 v0, 0x42a00000
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setRotationX(Landroid/view/View;F)V
 
@@ -57,7 +57,7 @@
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
-    const/high16 v0, 0x4120
+    const/high16 v0, 0x41200000
 
     invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setRotation(Landroid/view/View;F)V
 
@@ -67,7 +67,7 @@
 .method public setupAnimation(Landroid/view/View;IILcom/nineoldandroids/view/ViewPropertyAnimator;)V
     .locals 2
 
-    const/high16 v0, -0x3d60
+    const/high16 v0, -0x3d600000
 
     invoke-virtual {p4, v0}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->rotationXBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 
@@ -81,7 +81,7 @@
 
     move-result-object v0
 
-    const/high16 v1, -0x3ee0
+    const/high16 v1, -0x3ee00000
 
     invoke-virtual {v0, v1}, Lcom/nineoldandroids/view/ViewPropertyAnimator;->rotationBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
 

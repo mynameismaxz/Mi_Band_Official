@@ -30,7 +30,7 @@
 .method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
     .locals 9
 
-    const/high16 v8, 0x3f00
+    const/high16 v8, 0x3f000000
 
     const/4 v1, 0x0
 

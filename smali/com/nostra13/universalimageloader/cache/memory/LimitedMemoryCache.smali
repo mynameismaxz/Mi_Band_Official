@@ -49,7 +49,7 @@
 
     iput-object v0, p0, Lcom/nostra13/universalimageloader/cache/memory/LimitedMemoryCache;->d:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const/high16 v0, 0x100
+    const/high16 v0, 0x1000000
 
     if-le p1, v0, :cond_0
 

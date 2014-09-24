@@ -66,6 +66,8 @@
 
 .method public openTransaction()Landroid/support/v4/app/FragmentTransaction;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 

@@ -63,7 +63,7 @@
 
     int-to-double v0, p1
 
-    const-wide/high16 v2, 0x4020
+    const-wide/high16 v2, 0x4020000000000000L
 
     div-double/2addr v0, v2
 
@@ -171,7 +171,7 @@
 
     int-to-double v0, p1
 
-    const-wide/high16 v2, 0x4020
+    const-wide/high16 v2, 0x4020000000000000L
 
     div-double/2addr v0, v2
 

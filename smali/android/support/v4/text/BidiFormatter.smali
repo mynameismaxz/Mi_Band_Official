@@ -15,9 +15,9 @@
 
 .field private static final f:C = '\u200f'
 
-.field private static final g:Ljava/lang/String; = null
+.field private static final g:Ljava/lang/String;
 
-.field private static final h:Ljava/lang/String; = null
+.field private static final h:Ljava/lang/String;
 
 .field private static final i:Ljava/lang/String; = ""
 
@@ -25,9 +25,9 @@
 
 .field private static final k:I = 0x2
 
-.field private static final l:Landroid/support/v4/text/BidiFormatter; = null
+.field private static final l:Landroid/support/v4/text/BidiFormatter;
 
-.field private static final m:Landroid/support/v4/text/BidiFormatter; = null
+.field private static final m:Landroid/support/v4/text/BidiFormatter;
 
 .field private static final q:I = -0x1
 

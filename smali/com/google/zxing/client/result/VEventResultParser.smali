@@ -49,7 +49,7 @@
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/CalendarParsedResult;
     .locals 12
 
-    const-wide/high16 v9, 0x7ff8
+    const-wide/high16 v9, 0x7ff8000000000000L
 
     const/4 v11, 0x0
 

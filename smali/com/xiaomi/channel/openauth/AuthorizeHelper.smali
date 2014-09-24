@@ -208,7 +208,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x1
+    const/high16 v1, 0x10000
 
     invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 

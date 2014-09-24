@@ -82,7 +82,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     cmpg-float v2, v1, v2
 

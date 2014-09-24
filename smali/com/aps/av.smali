@@ -177,8 +177,8 @@
 
     invoke-direct {v0, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
     new-instance v5, Ljava/io/ByteArrayOutputStream;
@@ -202,8 +202,8 @@
 
     invoke-virtual {v5, v1, v7, v6}, Ljava/io/ByteArrayOutputStream;->write([BII)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     goto :goto_0
 
@@ -324,8 +324,8 @@
     :cond_2
     invoke-virtual {v5}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :try_start_4
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
@@ -772,7 +772,7 @@
 
     iput v4, p0, Lcom/aps/av;->e:I
 
-    const/high16 v4, 0x3f8
+    const/high16 v4, 0x3f80000
 
     and-int/2addr v4, v0
 
@@ -782,7 +782,7 @@
 
     iput v4, p0, Lcom/aps/av;->f:I
 
-    const/high16 v4, 0x7c00
+    const/high16 v4, 0x7c000000
 
     and-int/2addr v0, v4
 
@@ -874,8 +874,8 @@
 
     invoke-direct {v3, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     iget v4, p0, Lcom/aps/av;->h:I
@@ -1087,8 +1087,8 @@
 
     invoke-virtual {v3, v7}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_5
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V

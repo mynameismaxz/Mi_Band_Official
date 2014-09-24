@@ -86,6 +86,14 @@
     return-object v0
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->o:Ljava/lang/String;
+
+    return-object p1
+.end method
+
 .method private a()V
     .locals 2
 
@@ -143,7 +151,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->r:Landroid/widget/Button;
 
-    const v1, 0x7f0c0129
+    const v1, 0x7f0d0186
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
@@ -173,7 +181,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080011
+    const v1, 0x7f090036
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -189,7 +197,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080003
+    const v1, 0x7f090020
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -212,14 +220,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->a(I)V
-
-    return-void
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;Ljava/lang/String;)V
-    .locals 0
-
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->o:Ljava/lang/String;
 
     return-void
 .end method
@@ -299,12 +299,71 @@
     move v2, v8
 
     :goto_0
-    if-lt v2, v6, :cond_0
+    if-ge v2, v6, :cond_2
 
+    move v0, v8
+
+    :goto_1
+    if-ge v0, v6, :cond_1
+
+    invoke-virtual {v3, v0, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    mul-int/lit16 v4, v2, 0x1f4
+
+    add-int/2addr v4, v0
+
+    const/high16 v5, -0x1000000
+
+    aput v5, v1, v4
+
+    :goto_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    mul-int/lit16 v4, v2, 0x1f4
+
+    add-int/2addr v4, v0
+
+    const/4 v5, -0x1
+
+    aput v5, v1, v4
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v0
+
+    move-object v1, v0
+
+    move v0, v8
+
+    :goto_3
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_4
+    return v0
+
+    :cond_1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_2
     const/16 v0, 0x1f4
 
     const/16 v2, 0x1f4
 
+    :try_start_1
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -340,81 +399,22 @@
     const/16 v3, 0x64
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result v0
 
-    :try_start_1
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    :goto_1
-    return v0
-
-    :cond_0
-    move v0, v8
-
-    :goto_2
-    if-lt v0, v6, :cond_1
-
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_1
     :try_start_2
-    invoke-virtual {v3, v0, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    mul-int/lit16 v4, v2, 0x1f4
-
-    add-int/2addr v4, v0
-
-    const/high16 v5, -0x100
-
-    aput v5, v1, v4
-
-    :goto_3
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    mul-int/lit16 v4, v2, 0x1f4
-
-    add-int/2addr v4, v0
-
-    const/4 v5, -0x1
-
-    aput v5, v1, v4
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_3
-
-    :catch_0
-    move-exception v0
-
-    move-object v1, v0
-
-    move v0, v8
-
-    :goto_4
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_1
+    goto :goto_4
 
     :catch_1
     move-exception v1
 
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method private c()V
@@ -565,7 +565,7 @@
 .method private h()V
     .locals 1
 
-    const v0, 0x7f0c0179
+    const v0, 0x7f0d002a
 
     invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/Utils;->showProgressDialog(Landroid/app/Activity;I)V
 
@@ -604,18 +604,18 @@
     return-void
 .end method
 
-.method static synthetic l(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/media/MediaScannerConnection;
+.method static synthetic l(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->p:Landroid/media/MediaScannerConnection;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->q:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Ljava/lang/String;
+.method static synthetic m(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/media/MediaScannerConnection;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->q:Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->p:Landroid/media/MediaScannerConnection;
 
     return-object v0
 .end method
@@ -631,9 +631,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "onBleStatusChanged, status = "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -703,7 +707,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0c01c1
+    const v0, 0x7f0d010c
 
     const/4 v1, 0x0
 
@@ -732,7 +736,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f070024
+    .packed-switch 0x7f0a0024
         :pswitch_3
         :pswitch_0
         :pswitch_0
@@ -749,11 +753,13 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const/high16 v0, 0x7f03
+    const/high16 v0, 0x7f030000
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->setContentView(I)V
 
     new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
@@ -763,11 +769,9 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, "/"
 
@@ -775,7 +779,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0006
+    const v1, 0x7f0d001a
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->getString(I)Ljava/lang/String;
 
@@ -804,15 +808,15 @@
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     const-string v1, "/"
 
@@ -820,7 +824,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c01b1
+    const v1, 0x7f0d002b
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->getString(I)Ljava/lang/String;
 
@@ -842,7 +846,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->q:Ljava/lang/String;
 
-    const v0, 0x7f070029
+    const v0, 0x7f0a0029
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->findViewById(I)Landroid/view/View;
 
@@ -856,7 +860,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070028
+    const v0, 0x7f0a0028
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->findViewById(I)Landroid/view/View;
 
@@ -870,7 +874,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f07002a
+    const v0, 0x7f0a002a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->findViewById(I)Landroid/view/View;
 
@@ -878,7 +882,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->s:Landroid/view/View;
 
-    const v0, 0x7f070024
+    const v0, 0x7f0a0024
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->findViewById(I)Landroid/view/View;
 

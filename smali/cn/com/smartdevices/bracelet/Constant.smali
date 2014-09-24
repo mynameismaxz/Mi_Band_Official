@@ -85,6 +85,8 @@
 
 .field public static final DEVICE_STATUS_Unknown:I = -0x1
 
+.field public static final DISLIKE:Ljava/lang/String; = "dislike"
+
 .field public static final FEMALE:I = 0x0
 
 .field public static final GOAL_MAX_STEPS:I = 0x7530
@@ -104,6 +106,10 @@
 .field public static final IN_COMING_CALL_TIME_START:I = 0x3
 
 .field public static final KEEP_XML:Ljava/lang/String; = "keeper"
+
+.field public static final KEY_ACTION_BAR_COLOR:Ljava/lang/String; = "ActionBarColor"
+
+.field public static final KEY_EVENT_PAGE_TYPE:Ljava/lang/String; = "EventPageType"
 
 .field public static final KEY_HAS_BINDED:Ljava/lang/String; = "miliao_has_binded"
 
@@ -147,6 +153,8 @@
 
 .field public static final KEY_KEEP_PUSH_ALIAS:Ljava/lang/String; = "push_alias"
 
+.field public static final KEY_KEEP_REALTIME_STEPS:Ljava/lang/String; = "dynamic_realtime_steps"
+
 .field public static final KEY_KEEP_SECURITY:Ljava/lang/String; = "security"
 
 .field public static final KEY_KEEP_SYNC_BRACELET_TIME:Ljava/lang/String; = "sync_bracelet_time"
@@ -162,6 +170,8 @@
 .field public static final KEY_MILIAO_ICON_URL:Ljava/lang/String; = "miliao_icon_url"
 
 .field public static final KEY_MILIAO_NICK_NAME:Ljava/lang/String; = "miliao_nick_name"
+
+.field public static final KEY_SHOW_SHARE:Ljava/lang/String; = "ShowShare"
 
 .field public static final KEY_WEBTYPE:Ljava/lang/String; = "web_type"
 
@@ -233,6 +243,8 @@
 
 .field public static final REF_DAYS:Ljava/lang/String; = "Days"
 
+.field public static final REF_GAME_FAILED:Ljava/lang/String; = "REF_GAME_FAILED"
+
 .field public static final REF_LUA_VERSION:Ljava/lang/String; = "Lua_version"
 
 .field public static final REF_PIC_URL:Ljava/lang/String; = "pic_url"
@@ -289,7 +301,7 @@
 
 .field public static final WHEEL_CENTER_TEXT_SIZE_LARGE:I = 0x10
 
-.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f08003c
+.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f090003
 
 .field public static final WHEEL_CENTER_UNIT_TEXT_SIZE:I = 0xa
 

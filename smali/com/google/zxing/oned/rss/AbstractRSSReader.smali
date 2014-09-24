@@ -222,7 +222,7 @@
 
     const v1, 0x7fffffff
 
-    const/high16 v4, -0x8000
+    const/high16 v4, -0x80000000
 
     array-length v6, p0
 

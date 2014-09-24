@@ -271,7 +271,7 @@
 
     new-array v0, v0, [F
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     aput v2, v0, v1
 

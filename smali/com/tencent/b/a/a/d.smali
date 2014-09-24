@@ -89,7 +89,7 @@
 
     iput-wide v3, p0, Lcom/tencent/b/a/a/d;->c:D
 
-    const-wide/high16 v0, -0x4010
+    const-wide/high16 v0, -0x4010000000000000L
 
     iput-wide v0, p0, Lcom/tencent/b/a/a/d;->d:D
 
@@ -193,7 +193,7 @@
 
     iput-wide v3, p0, Lcom/tencent/b/a/a/d;->c:D
 
-    const-wide/high16 v0, -0x4010
+    const-wide/high16 v0, -0x4010000000000000L
 
     iput-wide v0, p0, Lcom/tencent/b/a/a/d;->d:D
 

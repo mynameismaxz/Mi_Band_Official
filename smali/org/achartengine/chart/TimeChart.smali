@@ -226,7 +226,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     div-float/2addr v4, v5
 
@@ -258,11 +258,11 @@
 
     move-result v3
 
-    const/high16 v4, 0x4080
+    const/high16 v4, 0x40800000
 
     mul-float/2addr v3, v4
 
-    const/high16 v4, 0x4040
+    const/high16 v4, 0x40400000
 
     div-float/2addr v3, v4
 
@@ -615,7 +615,7 @@
     if-gtz v2, :cond_a
 
     :goto_4
-    const-wide/high16 v6, 0x4000
+    const-wide/high16 v6, 0x4000000000000000L
 
     div-double v6, v0, v6
 
@@ -623,7 +623,7 @@
 
     if-gez v2, :cond_b
 
-    const-wide/high16 v6, 0x4000
+    const-wide/high16 v6, 0x4000000000000000L
 
     div-double/2addr v0, v6
 
@@ -635,7 +635,7 @@
 
     if-lez v2, :cond_b
 
-    const-wide/high16 v6, 0x4000
+    const-wide/high16 v6, 0x4000000000000000L
 
     mul-double/2addr v0, v6
 

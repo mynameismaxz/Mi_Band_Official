@@ -39,7 +39,7 @@
 
     iput-wide v0, p0, Lorg/achartengine/renderer/DialRenderer;->a:D
 
-    const-wide/high16 v0, 0x403e
+    const-wide/high16 v0, 0x403e000000000000L
 
     iput-wide v0, p0, Lorg/achartengine/renderer/DialRenderer;->b:D
 

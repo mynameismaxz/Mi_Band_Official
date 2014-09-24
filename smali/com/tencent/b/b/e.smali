@@ -402,8 +402,8 @@
 
     iget-object v0, p0, Lcom/tencent/b/b/e;->c:Lcom/tencent/b/b/p;
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     if-nez v0, :cond_4
 
@@ -460,8 +460,8 @@
 
     iput v0, p0, Lcom/tencent/b/b/e;->i:I
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :goto_1
     const/4 v0, 0x1
@@ -483,8 +483,8 @@
     :try_start_6
     iput v0, p0, Lcom/tencent/b/b/e;->i:I
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     goto :goto_1
 

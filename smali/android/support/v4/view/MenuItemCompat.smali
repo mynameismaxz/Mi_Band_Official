@@ -13,7 +13,7 @@
 
 .field public static final SHOW_AS_ACTION_WITH_TEXT:I = 0x4
 
-.field static final a:Landroid/support/v4/view/E; = null
+.field static final a:Landroid/support/v4/view/E;
 
 .field private static final b:Ljava/lang/String; = "MenuItemCompat"
 

@@ -3,13 +3,13 @@
 
 
 # static fields
-.field static final E:Landroid/view/animation/Interpolator; = null
+.field static final E:Landroid/view/animation/Interpolator;
 
-.field static final F:Landroid/view/animation/Interpolator; = null
+.field static final F:Landroid/view/animation/Interpolator;
 
-.field static final G:Landroid/view/animation/Interpolator; = null
+.field static final G:Landroid/view/animation/Interpolator;
 
-.field static final H:Landroid/view/animation/Interpolator; = null
+.field static final H:Landroid/view/animation/Interpolator;
 
 .field static final I:I = 0xdc
 
@@ -29,8 +29,7 @@
 
 .field static final b:Ljava/lang/String; = "FragmentManager"
 
-#the value of this static final field might be set in the static constructor
-.field static final c:Z = false
+.field static final c:Z
 
 .field static final d:Ljava/lang/String; = "android:target_req_state"
 
@@ -185,9 +184,9 @@
 
     const/4 v0, 0x0
 
-    const/high16 v4, 0x4020
+    const/high16 v4, 0x40200000
 
-    const/high16 v3, 0x3fc0
+    const/high16 v3, 0x3fc00000
 
     sput-boolean v0, Landroid/support/v4/app/v;->a:Z
 
@@ -284,11 +283,11 @@
 
     const/4 v5, 0x1
 
-    const/high16 v6, 0x3f00
+    const/high16 v6, 0x3f000000
 
     const/4 v7, 0x1
 
-    const/high16 v8, 0x3f00
+    const/high16 v8, 0x3f000000
 
     move v1, p1
 
@@ -777,7 +776,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     iget v0, p1, Landroid/support/v4/app/Fragment;->V:I
 
@@ -859,7 +858,7 @@
     :pswitch_0
     iget-object v0, p0, Landroid/support/v4/app/v;->t:Landroid/support/v4/app/FragmentActivity;
 
-    const/high16 v1, 0x3f90
+    const/high16 v1, 0x3f900000
 
     invoke-static {v0, v1, v3, v4, v3}, Landroid/support/v4/app/v;->a(Landroid/content/Context;FFFF)Landroid/view/animation/Animation;
 

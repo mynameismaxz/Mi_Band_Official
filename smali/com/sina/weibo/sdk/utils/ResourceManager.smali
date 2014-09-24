@@ -39,9 +39,9 @@
 
 .field private static final NETWORK_NOT_AVAILABLE_ZH_TW:Ljava/lang/String; = "\u7121\u6cd5\u9023\u63a5\u5230\u7db2\u7edc\uff0c\u8acb\u6aa2\u67e5\u7db2\u7edc\u914d\u7f6e"
 
-.field private static final PRE_INSTALL_DRAWBLE_PATHS:[Ljava/lang/String; = null
+.field private static final PRE_INSTALL_DRAWBLE_PATHS:[Ljava/lang/String;
 
-.field private static final TAG:Ljava/lang/String; = null
+.field private static final TAG:Ljava/lang/String;
 
 .field public static final dimen_dialog_bottom_margin:I = 0x4
 
@@ -55,7 +55,7 @@
 
 .field public static final drawable_dialog_close_button:I = 0x2
 
-.field private static final sDrawableMap:Landroid/util/SparseArray; = null
+.field private static final sDrawableMap:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray",
@@ -66,7 +66,7 @@
     .end annotation
 .end field
 
-.field private static final sLanguageMap:Ljava/util/HashMap; = null
+.field private static final sLanguageMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -80,7 +80,7 @@
     .end annotation
 .end field
 
-.field private static final sLayoutMap:Landroid/util/SparseIntArray; = null
+.field private static final sLayoutMap:Landroid/util/SparseIntArray;
 
 .field public static final string_loading:I = 0x1
 
@@ -630,8 +630,8 @@
     :try_start_0
     invoke-virtual {v0, p1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v7
 
@@ -690,8 +690,8 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/graphics/drawable/NinePatchDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;[BLandroid/graphics/Rect;Ljava/lang/String;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :goto_0
     if-eqz v7, :cond_0
@@ -719,8 +719,8 @@
 
     invoke-direct {v0, v1, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
@@ -953,8 +953,8 @@
 
     invoke-static {v2, v3}, Lcom/sina/weibo/sdk/utils/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v1, :cond_2
 

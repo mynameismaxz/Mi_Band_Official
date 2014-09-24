@@ -96,7 +96,7 @@
 
     iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentBuilder;->b:Landroid/content/Intent;
 
-    const/high16 v1, 0x8
+    const/high16 v1, 0x80000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 

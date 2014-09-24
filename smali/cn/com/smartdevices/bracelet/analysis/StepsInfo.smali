@@ -3,6 +3,8 @@
 
 
 # static fields
+.field public static KEY_ACTIVITY_LIST:Ljava/lang/String; = null
+
 .field public static KEY_CALORIES:Ljava/lang/String; = null
 
 .field public static KEY_CONTINUS_ACTIVE_TIME:Ljava/lang/String; = null
@@ -101,6 +103,10 @@
     const-string v0, "runDist"
 
     sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_STEP_RUN_DISTANCE:Ljava/lang/String;
+
+    const-string v0, "actives"
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_ACTIVITY_LIST:Ljava/lang/String;
 
     return-void
 .end method
@@ -375,9 +381,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "rundist = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     iget v3, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->g:I
 

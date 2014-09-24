@@ -83,9 +83,9 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x95t 0x0t 0x1t 0x1t
-        0x98t 0x0t 0x1t 0x1t
+    .array-data 4
+        0x1010095
+        0x1010098
     .end array-data
 .end method
 
@@ -128,7 +128,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/view/q;-><init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;Lcn/com/smartdevices/bracelet/view/q;)V
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/view/q;-><init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;Lcn/com/smartdevices/bracelet/view/o;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->d:Lcn/com/smartdevices/bracelet/view/q;
 
@@ -140,11 +140,11 @@
 
     iput v6, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->l:I
 
-    const/high16 v0, 0x1a00
+    const/high16 v0, 0x1a000000
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->m:I
 
-    const/high16 v0, 0x1a00
+    const/high16 v0, 0x1a000000
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->n:I
 
@@ -186,7 +186,7 @@
 
     iput v4, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->A:I
 
-    const v0, 0x7f02000a
+    const v0, 0x7f02000b
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->B:I
 
@@ -488,7 +488,7 @@
 
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {v0, v4, v5, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
@@ -514,10 +514,26 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/widget/LinearLayout;
+.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;F)F
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->i:F
+
+    return p1
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;I)I
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->h:I
+
+    return p1
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/support/v4/view/ViewPager;
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->e:Landroid/widget/LinearLayout;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->f:Landroid/support/v4/view/ViewPager;
 
     return-object v0
 .end method
@@ -532,11 +548,8 @@
     :goto_0
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->g:I
 
-    if-lt v1, v0, :cond_0
+    if-ge v1, v0, :cond_2
 
-    return-void
-
-    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->e:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -549,7 +562,7 @@
 
     instance-of v3, v0, Landroid/widget/TextView;
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     check-cast v0, Landroid/widget/TextView;
 
@@ -571,19 +584,19 @@
 
     iget-boolean v3, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->p:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0xe
 
-    if-lt v3, v4, :cond_2
+    if-lt v3, v4, :cond_1
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAllCaps(Z)V
 
-    :cond_1
+    :cond_0
     :goto_1
     add-int/lit8 v0, v1, 0x1
 
@@ -591,12 +604,12 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -609,6 +622,9 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
+
+    :cond_2
+    return-void
 .end method
 
 .method private a(II)V
@@ -693,22 +709,6 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;F)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->i:F
-
-    return-void
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->h:I
-
-    return-void
-.end method
-
 .method static synthetic a(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;II)V
     .locals 0
 
@@ -717,12 +717,12 @@
     return-void
 .end method
 
-.method static synthetic b(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/support/v4/view/ViewPager;
+.method static synthetic b(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)I
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->f:Landroid/support/v4/view/ViewPager;
+    iget v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->h:I
 
-    return-object v0
+    return v0
 .end method
 
 .method private b(II)V
@@ -772,12 +772,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic c(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)I
+.method static synthetic c(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)Landroid/widget/LinearLayout;
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->h:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->e:Landroid/widget/LinearLayout;
 
-    return v0
+    return-object v0
 .end method
 
 
@@ -912,23 +912,8 @@
     :goto_0
     iget v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->g:I
 
-    if-lt v1, v0, :cond_0
+    if-ge v1, v0, :cond_1
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a()V
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/view/o;
-
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/view/o;-><init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    return-void
-
-    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->f:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
@@ -937,7 +922,7 @@
 
     instance-of v0, v0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip$IconTabProvider;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->f:Landroid/support/v4/view/ViewPager;
 
@@ -960,7 +945,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->f:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
@@ -971,19 +956,34 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v1, v0}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a(ILjava/lang/String;)V
 
     goto :goto_1
+
+    :cond_1
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->a()V
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/view/o;
+
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/view/o;-><init>(Lcn/com/smartdevices/bracelet/view/PagerSlidingTabStrip;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    return-void
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     const/4 v6, 0x0
 

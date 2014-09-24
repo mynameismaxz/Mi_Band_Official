@@ -33,7 +33,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->updateStatusBarTint(I)V
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->applyStatusBarTint(I)V
 
     return-void
 .end method

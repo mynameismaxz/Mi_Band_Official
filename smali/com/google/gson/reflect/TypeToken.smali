@@ -699,6 +699,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     invoke-virtual {p1}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -720,6 +723,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     invoke-virtual {p0, p1}, Lcom/google/gson/reflect/TypeToken;->isAssignableFrom(Ljava/lang/reflect/Type;)Z
 
     move-result v0
@@ -729,6 +735,8 @@
 
 .method public isAssignableFrom(Ljava/lang/reflect/Type;)Z
     .locals 5
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v1, 0x1
 

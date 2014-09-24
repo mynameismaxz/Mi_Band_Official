@@ -63,7 +63,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f40
+    const/high16 v2, 0x3f400000
 
     const/4 v3, 0x1
 

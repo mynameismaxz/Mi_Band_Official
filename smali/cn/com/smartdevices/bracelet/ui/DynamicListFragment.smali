@@ -20,7 +20,7 @@
 
 .field private c:Landroid/widget/ListView;
 
-.field private d:Lcn/com/smartdevices/bracelet/ui/ag;
+.field private d:Lcn/com/smartdevices/bracelet/ui/ah;
 
 
 # direct methods
@@ -93,17 +93,17 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ag;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ah;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/ag;-><init>(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;Lcn/com/smartdevices/bracelet/ui/ag;)V
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/ah;-><init>(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;Lcn/com/smartdevices/bracelet/ui/ag;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->d:Lcn/com/smartdevices/bracelet/ui/ag;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->d:Lcn/com/smartdevices/bracelet/ui/ah;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->c:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->d:Lcn/com/smartdevices/bracelet/ui/ag;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->d:Lcn/com/smartdevices/bracelet/ui/ah;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -139,7 +139,7 @@
 
     const/4 v3, -0x1
 
-    const/high16 v4, 0x43c3
+    const/high16 v4, 0x43c30000
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->getActivity()Landroid/app/Activity;
 

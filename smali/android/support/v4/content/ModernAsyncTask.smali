@@ -24,13 +24,13 @@
 
 .field private static final c:I = 0x80
 
-.field public static final d:Ljava/util/concurrent/Executor; = null
+.field public static final d:Ljava/util/concurrent/Executor;
 
 .field private static final e:I = 0x1
 
-.field private static final f:Ljava/util/concurrent/ThreadFactory; = null
+.field private static final f:Ljava/util/concurrent/ThreadFactory;
 
-.field private static final g:Ljava/util/concurrent/BlockingQueue; = null
+.field private static final g:Ljava/util/concurrent/BlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/BlockingQueue",
