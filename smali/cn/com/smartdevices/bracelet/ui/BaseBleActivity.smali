@@ -91,14 +91,6 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;J)J
-    .locals 0
-
-    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->k:J
-
-    return-wide p1
-.end method
-
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)Ljava/lang/String;
     .locals 1
 
@@ -188,13 +180,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onBatteryLowNotification:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -224,13 +212,13 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    const v1, 0x7f0d0111
+    const v1, 0x7f0c0045
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v1, 0x7f0d010f
+    const v1, 0x7f0c0046
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -238,13 +226,13 @@
 
     if-nez p1, :cond_1
 
-    const v1, 0x7f0d0112
+    const v1, 0x7f0c0047
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v1, 0x7f0d0110
+    const v1, 0x7f0c0048
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -326,6 +314,14 @@
     return-void
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->k:J
+
+    return-void
+.end method
+
 .method static synthetic b(Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;)Landroid/os/Handler;
     .locals 1
 
@@ -363,7 +359,7 @@
     return-void
 
     :pswitch_0
-    const v0, 0x7f0d011a
+    const v0, 0x7f0c01ea
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -380,7 +376,7 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    const v2, 0x7f0d0113
+    const v2, 0x7f0c01e9
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -421,7 +417,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f0d0117
+    const v0, 0x7f0c01eb
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -432,7 +428,7 @@
     goto :goto_1
 
     :pswitch_2
-    const v0, 0x7f0d0118
+    const v0, 0x7f0c01ec
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -443,7 +439,7 @@
     goto :goto_1
 
     :pswitch_3
-    const v0, 0x7f0d011c
+    const v0, 0x7f0c01ed
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -454,7 +450,7 @@
     goto :goto_1
 
     :pswitch_4
-    const v0, 0x7f0d0114
+    const v0, 0x7f0c01ee
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -465,7 +461,7 @@
     goto :goto_1
 
     :pswitch_5
-    const v0, 0x7f0d0119
+    const v0, 0x7f0c01ef
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -476,7 +472,7 @@
     goto :goto_1
 
     :pswitch_6
-    const v0, 0x7f0d0115
+    const v0, 0x7f0c01f0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -487,7 +483,7 @@
     goto :goto_1
 
     :pswitch_7
-    const v0, 0x7f0d011b
+    const v0, 0x7f0c01f1
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -498,7 +494,7 @@
     goto :goto_1
 
     :pswitch_8
-    const v0, 0x7f0d0116
+    const v0, 0x7f0c01f2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -509,7 +505,7 @@
     goto :goto_1
 
     :pswitch_9
-    const v0, 0x7f0d011d
+    const v0, 0x7f0c01f3
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->getString(I)Ljava/lang/String;
 
@@ -561,13 +557,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onDeviceStatusChanged:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -583,13 +575,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onDeviceStatusChanged:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -601,32 +589,19 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/16 v0, 0xd
-
-    if-lt p1, v0, :cond_0
-
-    const/16 v0, 0x16
-
-    if-gt p1, v0, :cond_0
-
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->b(I)V
-
-    :goto_0
-    return-void
-
-    :cond_0
     packed-switch p1, :pswitch_data_0
 
+    :goto_0
     :pswitch_0
-    goto :goto_0
+    return-void
 
     :pswitch_1
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onFwUpgradeFailed()V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onDeviceSetLatencySuccess()V
 
     goto :goto_0
 
     :pswitch_2
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onDeviceSetLatencySuccess()V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/BaseBleActivity;->onFwUpgradeFailed()V
 
     goto :goto_0
 
@@ -667,14 +642,14 @@
 
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1
+        :pswitch_2
         :pswitch_3
         :pswitch_0
         :pswitch_0
         :pswitch_5
         :pswitch_4
         :pswitch_0
-        :pswitch_2
+        :pswitch_1
         :pswitch_8
         :pswitch_9
         :pswitch_6
@@ -822,7 +797,7 @@
 
     if-nez v2, :cond_1
 
-    const v2, 0x7f0d0018
+    const v2, 0x7f0c00db
 
     const/4 v3, 0x0
 
@@ -935,13 +910,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onDeviceBatteryStatusChanged:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -967,13 +938,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onDeviceBatteryStatusChanged:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1226,13 +1193,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "current latency level set level:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1264,13 +1227,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "waklock acquire......"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

@@ -309,7 +309,7 @@
 
     move-result-object v3
 
-    const v1, 0x7f0a0165
+    const v1, 0x7f070165
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -325,7 +325,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f0a0166
+    const v1, 0x7f070166
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +341,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    const v1, 0x7f0a0164
+    const v1, 0x7f070164
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

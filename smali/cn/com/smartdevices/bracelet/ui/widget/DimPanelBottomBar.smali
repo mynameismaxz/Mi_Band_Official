@@ -36,7 +36,7 @@
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0a00a0
+    const v0, 0x7f0700a0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f0a00a2
+    const v0, 0x7f0700a2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
@@ -56,13 +56,13 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0a009f
+    const v0, 0x7f07009f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    const v0, 0x7f0a00a1
+    const v0, 0x7f0700a1
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/widget/DimPanelBottomBar;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090039
+    const v2, 0x7f080010
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -112,7 +112,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090039
+    const v2, 0x7f080010
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -138,13 +138,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "left:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,7 +182,7 @@
 
     const v0, 0x7f020055
 
-    const v10, 0x7f090014
+    const v10, 0x7f080005
 
     invoke-virtual {v4, v10}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -295,7 +291,7 @@
 
     invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
 
-    const v0, 0x7f090053
+    const v0, 0x7f080023
 
     invoke-virtual {v3, v0}, Landroid/view/View;->setBackgroundResource(I)V
 

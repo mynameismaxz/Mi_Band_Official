@@ -42,7 +42,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f0d0059
+    const v0, 0x7f0c001b
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;->getString(I)Ljava/lang/String;
 
@@ -76,7 +76,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const v0, 0x7f0d0052
+    const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;->getString(I)Ljava/lang/String;
 
@@ -85,7 +85,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0d005c
+    const v0, 0x7f0c0025
 
     const/4 v1, 0x2
 
@@ -137,7 +137,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f0d0059
+    const v0, 0x7f0c001b
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;->getString(I)Ljava/lang/String;
 
@@ -171,7 +171,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const v0, 0x7f0d0052
+    const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;->getString(I)Ljava/lang/String;
 
@@ -182,13 +182,13 @@
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     iget v1, p1, Lcn/com/smartdevices/bracelet/model/SportDay;->year:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;->b:[Ljava/lang/String;
 
@@ -216,9 +216,9 @@
 
     invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;-><init>()V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/w;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/u;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/w;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/u;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticMonthlyFragment;)V
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader;->setLoadCallback(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;)V
 
@@ -250,7 +250,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070001
+    const v1, 0x7f0d0002
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -268,7 +268,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a014c
+    const v1, 0x7f07014c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -288,7 +288,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a014a
+    const v1, 0x7f07014a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -308,7 +308,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0148
+    const v1, 0x7f070148
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -328,7 +328,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a013d
+    const v1, 0x7f07013d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -355,7 +355,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a013a
+    const v1, 0x7f07013a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

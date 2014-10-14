@@ -51,17 +51,8 @@
     move v0, v1
 
     :goto_0
-    if-ge v0, v3, :cond_0
+    if-lt v0, v3, :cond_0
 
-    aget-object v4, v2, v0
-
-    invoke-virtual {v4, v1}, Landroid/view/View;->setActivated(Z)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHostItems:[Landroid/view/View;
 
     aget-object v0, v0, p1
@@ -75,6 +66,15 @@
     invoke-virtual {v0, p1}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
     return-void
+
+    :cond_0
+    aget-object v4, v2, v0
+
+    invoke-virtual {v4, v1}, Landroid/view/View;->setActivated(Z)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 .end method
 
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a015d
+    const v1, 0x7f07015d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a015c
+    const v1, 0x7f07015c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,8 +167,29 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_0
+    if-lt v1, v0, :cond_0
 
+    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
+
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->getChildFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;Landroid/app/FragmentManager;)V
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mAdapter:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mPager:Landroid/support/v4/view/ViewPager;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mAdapter:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
+
+    invoke-direct {p0, v2}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->a(I)V
+
+    return-void
+
+    :cond_0
     const/4 v0, 0x0
 
     packed-switch v1, :pswitch_data_0
@@ -203,7 +224,7 @@
     :pswitch_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a015e
+    const v3, 0x7f07015e
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +239,7 @@
     :pswitch_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a015f
+    const v3, 0x7f07015f
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -233,7 +254,7 @@
     :pswitch_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a0160
+    const v3, 0x7f070160
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -244,27 +265,6 @@
     move-object v3, v0
 
     goto :goto_1
-
-    :cond_0
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->getChildFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;Landroid/app/FragmentManager;)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mAdapter:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mPager:Landroid/support/v4/view/ViewPager;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mAdapter:Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTabAdapter;
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
-
-    invoke-direct {p0, v2}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->a(I)V
-
-    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -324,7 +324,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0a015e
+    .packed-switch 0x7f07015e
         :pswitch_0
         :pswitch_1
         :pswitch_2
@@ -434,13 +434,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Save Current Item : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -483,13 +479,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Restore Last Item : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

@@ -47,13 +47,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onActivityResult: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->getLocalClassName()Ljava/lang/String;
 
@@ -99,13 +95,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "finish page: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->getLocalClassName()Ljava/lang/String;
 
@@ -195,7 +187,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f0a00a0
+    .packed-switch 0x7f0700a0
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -213,7 +205,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    const v0, 0x7f0a00a2
+    const v0, 0x7f0700a2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 
@@ -225,7 +217,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a00a0
+    const v0, 0x7f0700a0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
 
@@ -255,13 +247,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onNext(), personInfo = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 

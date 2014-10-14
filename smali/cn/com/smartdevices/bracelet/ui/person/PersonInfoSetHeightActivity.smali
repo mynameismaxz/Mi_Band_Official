@@ -41,13 +41,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "height = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetHeightActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -87,7 +83,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 14
 
-    const v2, 0x7f090014
+    const v2, 0x7f080005
 
     const/16 v11, 0xf
 
@@ -97,7 +93,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a0056
+    const v0, 0x7f070056
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetHeightActivity;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +117,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0046
+    const v1, 0x7f0c005f
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetHeightActivity;->getString(I)Ljava/lang/String;
 
@@ -149,7 +145,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f090052
+    const v5, 0x7f080004
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -167,7 +163,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090016
+    const v2, 0x7f08002d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

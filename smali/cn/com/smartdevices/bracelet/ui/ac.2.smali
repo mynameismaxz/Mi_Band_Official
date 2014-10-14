@@ -86,7 +86,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 

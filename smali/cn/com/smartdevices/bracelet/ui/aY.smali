@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,42 +22,32 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 3
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    new-instance v0, Landroid/os/Bundle;
 
-    move-result-object v0
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    check-cast v0, Ljava/lang/Float;
+    const-string v1, "Days"
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
-    move-result v0
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->a(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    move-result-object v2
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->e(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCoded()I
 
-    move-result-object v1
+    move-result v2
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setScaleX(F)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->e(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    const-class v2, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity$AlarmSimpleRepeatFragment;
 
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setScaleY(F)V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aY;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->e(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-static {v1, v2, v0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->showPanel(Landroid/app/Activity;Ljava/lang/Class;Landroid/os/Bundle;)V
 
     return-void
 .end method

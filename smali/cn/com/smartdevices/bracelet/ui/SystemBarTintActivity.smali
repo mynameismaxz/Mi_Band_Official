@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Z
+.method static synthetic access$0(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mDisableStatusBarTintAuto:Z
@@ -27,7 +27,7 @@
     return v0
 .end method
 
-.method static synthetic access$100(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Landroid/view/View;
+.method static synthetic access$1(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
@@ -35,7 +35,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
+.method static synthetic access$2(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mSystemBarTintManager:Lcn/com/smartdevices/bracelet/ui/SystemBarTintManager;
@@ -60,16 +60,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    :cond_0
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    :cond_1
-    const/4 v0, 0x0
+    :cond_0
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -116,9 +115,9 @@
     :cond_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->mContentView:Landroid/view/View;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cj;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/cg;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cj;-><init>(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/cg;-><init>(Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 

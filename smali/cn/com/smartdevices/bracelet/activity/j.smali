@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/webkit/WebView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
-.field final synthetic b:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+.field private final synthetic b:Landroid/webkit/WebView;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;Landroid/webkit/WebView;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Landroid/webkit/WebView;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Landroid/webkit/WebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,9 +29,9 @@
 .method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
-    const v1, 0x7f0a0097
+    const v1, 0x7f070097
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 
@@ -41,7 +41,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Landroid/webkit/WebView;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Landroid/webkit/WebView;
 
     const/4 v1, 0x0
 

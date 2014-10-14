@@ -57,15 +57,15 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "-"
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "-"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -85,13 +85,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "birthday = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -139,7 +135,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 14
 
-    const v2, 0x7f090014
+    const v2, 0x7f080005
 
     const/4 v12, 0x5
 
@@ -151,7 +147,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a0050
+    const v0, 0x7f070050
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +169,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d000c
+    const v1, 0x7f0c0102
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->getString(I)Ljava/lang/String;
 
@@ -199,7 +195,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f090052
+    const v5, 0x7f080004
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -217,7 +213,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090016
+    const v2, 0x7f08002d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

@@ -25,7 +25,7 @@
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/b;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
     # invokes: Lcom/xiaomi/hm/bleservice/BLEService;->handleMessage(Landroid/os/Message;)V
-    invoke-static {v0, p1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$000(Lcom/xiaomi/hm/bleservice/BLEService;Landroid/os/Message;)V
+    invoke-static {v0, p1}, Lcom/xiaomi/hm/bleservice/BLEService;->access$0(Lcom/xiaomi/hm/bleservice/BLEService;Landroid/os/Message;)V
 
     return-void
 .end method

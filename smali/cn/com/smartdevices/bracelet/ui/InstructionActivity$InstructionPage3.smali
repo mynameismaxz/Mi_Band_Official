@@ -69,7 +69,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage3;->mTip:Landroid/widget/TextSwitcher;
 
-    const v2, 0x7f0d00d8
+    const v2, 0x7f0c0191
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage3;->getString(I)Ljava/lang/String;
 

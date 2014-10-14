@@ -97,13 +97,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "after waiting..."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     sget-object v3, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->d:Ljava/lang/Object;
 
@@ -143,13 +139,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "waitingNotify:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -193,13 +185,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "waitingNotifyReset:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -268,13 +256,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "after waitingReset..."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     sget-object v3, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->f:Ljava/lang/Object;
 
@@ -463,13 +447,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "user info:\n"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->a:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
 
@@ -487,13 +467,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "user info:\n"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->a:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;
 
@@ -530,13 +506,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Person info is InValid! "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -554,13 +526,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Person info is InValid! "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -754,19 +722,15 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_14
 
     sget-object v2, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "new time:"
 
-    const-string v3, "new time:"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v0, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -814,15 +778,11 @@
 
     sget-object v2, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "new time:"
 
-    const-string v3, "new time:"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v0, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -871,7 +831,7 @@
     :goto_3
     iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
 
-    if-eq v0, v12, :cond_14
+    if-eq v0, v12, :cond_10
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -879,19 +839,15 @@
 
     move-result v0
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_15
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setGoal:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -933,159 +889,8 @@
 
     move-result v0
 
-    if-ge v7, v0, :cond_10
+    if-lt v7, v0, :cond_16
 
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCoded()I
-
-    move-result v5
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Set alarm at: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", alarm = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->toJson()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Set alarm at: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->toJson()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    int-to-byte v1, v7
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->isEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_f
-
-    move v2, v9
-
-    :goto_6
-    int-to-byte v2, v2
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCalendar()Ljava/util/Calendar;
-
-    move-result-object v3
-
-    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getDuration()I
-
-    move-result v4
-
-    int-to-byte v4, v4
-
-    int-to-byte v5, v5
-
-    invoke-virtual/range {v0 .. v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setTimer(BBLjava/util/Calendar;BB)Z
-
-    invoke-virtual {v6, v10}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->setUpdate(Z)V
-
-    add-int/lit8 v0, v7, 0x1
-
-    move v7, v0
-
-    goto :goto_5
-
-    :cond_d
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
-
-    const-string v1, "can not get bracelet time after _setDateTime"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
-
-    const-string v1, "can not get bracelet time after _setDateTime"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_3
-
-    :cond_e
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
-
-    const-string v1, "day sport goals is inValid!"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_4
-
-    :cond_f
-    move v2, v10
-
-    goto :goto_6
-
-    :cond_10
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
@@ -1118,8 +923,8 @@
 
     const/16 v0, 0x606
 
-    :cond_11
-    :goto_7
+    :cond_d
+    :goto_6
     shr-int/lit8 v1, v0, 0x10
 
     and-int/lit16 v1, v1, 0xff
@@ -1140,13 +945,9 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "setColorTheme r="
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1184,7 +985,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_e
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -1192,8 +993,8 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_12
-    :goto_8
+    :cond_e
+    :goto_7
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
@@ -1224,18 +1025,14 @@
 
     move v0, v10
 
-    :goto_9
+    :goto_8
     sget-object v1, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "setWearLocation : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1253,7 +1050,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_f
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -1261,14 +1058,14 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_13
-    :goto_a
+    :cond_f
+    :goto_9
     iput v12, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
 
-    :cond_14
+    :cond_10
     iget-boolean v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->enableSteps:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_13
 
     iget-object v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->date:Ljava/lang/String;
 
@@ -1284,7 +1081,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_11
 
     iput v10, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1292,13 +1089,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "switch date:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->date:Ljava/lang/String;
 
@@ -1330,25 +1123,21 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_15
+    :cond_11
     iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
     if-ge v0, v9, :cond_1e
 
-    :goto_b
-    if-nez v9, :cond_16
+    :goto_a
+    if-nez v9, :cond_12
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setRealtimeSteps:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1372,13 +1161,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setRealtimeSteps:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1398,10 +1183,10 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_16
+    :cond_12
     iput-boolean v10, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->enableSteps:Z
 
-    :cond_17
+    :cond_13
     invoke-static {v11}, Lcn/com/smartdevices/bracelet/Keeper;->keepSwitchOperator(Lcn/com/smartdevices/bracelet/model/SwitchOperator;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
@@ -1414,13 +1199,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "battery info : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1436,13 +1217,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "battery info : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1464,13 +1241,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "device info : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1486,13 +1259,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "device info : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1510,6 +1279,149 @@
 
     goto/16 :goto_2
 
+    :cond_14
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
+
+    const-string v1, "can not get bracelet time after _setDateTime"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
+
+    const-string v1, "can not get bracelet time after _setDateTime"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_3
+
+    :cond_15
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
+
+    const-string v1, "day sport goals is inValid!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_4
+
+    :cond_16
+    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCoded()I
+
+    move-result v5
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Set alarm at: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", alarm = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->toJson()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Set alarm at: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->toJson()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    int-to-byte v1, v7
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->isEnabled()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    move v2, v9
+
+    :goto_b
+    int-to-byte v2, v2
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getCalendar()Ljava/util/Calendar;
+
+    move-result-object v3
+
+    invoke-virtual {v6}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->getDuration()I
+
+    move-result v4
+
+    int-to-byte v4, v4
+
+    int-to-byte v5, v5
+
+    invoke-virtual/range {v0 .. v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setTimer(BBLjava/util/Calendar;BB)Z
+
+    invoke-virtual {v6, v10}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->setUpdate(Z)V
+
+    add-int/lit8 v0, v7, 0x1
+
+    move v7, v0
+
+    goto/16 :goto_5
+
+    :cond_17
+    move v2, v10
+
+    goto :goto_b
+
     :cond_18
     const-string v2, "GREEN"
 
@@ -1521,7 +1433,7 @@
 
     const v0, 0x40500
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_19
     const-string v2, "RED"
@@ -1534,7 +1446,7 @@
 
     const v0, 0x60102
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_1a
     const-string v2, "ORANGE"
@@ -1543,11 +1455,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_d
 
     const v0, 0x60200
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_1b
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
@@ -1556,7 +1468,7 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_1c
     const-string v1, "RIGHT_HAND"
@@ -1569,7 +1481,7 @@
 
     move v0, v9
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_1d
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
@@ -1578,20 +1490,16 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     :cond_1e
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setRealtimeSteps:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1609,13 +1517,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setRealtimeSteps:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1637,12 +1541,12 @@
 
     move-result v9
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :cond_1f
     move v0, v10
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_20
     move v6, v10

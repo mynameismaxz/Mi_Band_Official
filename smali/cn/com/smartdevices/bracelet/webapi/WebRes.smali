@@ -453,13 +453,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseUserInfo dataObj:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
@@ -703,13 +699,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "miliConfig="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -767,13 +759,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "getWebStatus:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
@@ -877,13 +865,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "parseMicroBlog:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
@@ -998,7 +982,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_5
+    if-ne v0, v3, :cond_6
 
     const-string v0, "share_sport_data"
 
@@ -1111,25 +1095,45 @@
 
     move-result v4
 
-    if-ge v0, v4, :cond_6
+    if-lt v0, v4, :cond_7
 
-    invoke-virtual {v3, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    const-string v0, "likeuserlist"
 
-    move-result-object v4
+    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
+    move-result-object v0
 
-    move-result-object v4
+    if-eqz v0, :cond_5
 
-    iget-object v5, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v3
 
-    add-int/lit8 v0, v0, 0x1
+    if-lez v3, :cond_5
 
-    goto :goto_0
+    iget-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
+
+    if-nez v3, :cond_8
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    const/16 v4, 0x8
+
+    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
+
+    :goto_1
+    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
+
+    move-result v3
+
+    if-lt v1, v3, :cond_9
 
     :cond_5
+    return-object v2
+
+    :cond_6
     iget-object v0, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->shareContent:Lcn/com/smartdevices/bracelet/model/ShareContent;
 
     iget v0, v0, Lcn/com/smartdevices/bracelet/model/ShareContent;->shareType:I
@@ -1146,7 +1150,7 @@
 
     move v0, v1
 
-    :goto_1
+    :goto_2
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v4
@@ -1185,42 +1189,33 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_6
-    const-string v0, "likeuserlist"
+    :cond_7
+    invoke-virtual {v3, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
 
-    if-eqz v0, :cond_8
+    move-result-object v4
 
-    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
+    iget-object v5, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
 
-    move-result v3
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-lez v3, :cond_8
+    add-int/lit8 v0, v0, 0x1
 
+    goto :goto_0
+
+    :cond_8
     iget-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
 
-    if-nez v3, :cond_7
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    new-instance v3, Ljava/util/ArrayList;
+    goto :goto_1
 
-    const/16 v4, 0x8
-
-    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
-
-    :goto_2
-    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_8
-
+    :cond_9
     new-instance v3, Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     invoke-direct {v3}, Lcn/com/smartdevices/bracelet/model/PersonInfo;-><init>()V
@@ -1239,13 +1234,9 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v6, "Add like relation: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v3, v3, Lcn/com/smartdevices/bracelet/model/PersonInfo;->nickname:Ljava/lang/String;
 
@@ -1275,17 +1266,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
-
-    :cond_7
-    iget-object v3, v2, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->likePersons:Ljava/util/ArrayList;
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
-
-    goto :goto_2
-
-    :cond_8
-    return-object v2
+    goto/16 :goto_1
 .end method
 
 .method private static e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
@@ -1295,13 +1276,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseComment:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
@@ -1381,13 +1358,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "getWebStatus:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1550,13 +1523,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "get avatar Url: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1664,13 +1633,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "parseDownload:\n"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1804,13 +1769,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "parseDownload:"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
@@ -1853,13 +1814,9 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v6, "list Size:"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1972,13 +1929,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseFriendList:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2112,13 +2065,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseMicroBlogs:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2231,13 +2180,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parsePushMessage:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2398,13 +2343,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseShareBackground:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2516,13 +2457,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "parseUserInfo :"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2686,13 +2623,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "parseWeixinQR:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2789,6 +2722,8 @@
     const-string v2, "ok"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
@@ -2799,6 +2734,7 @@
     goto :goto_0
 
     :cond_1
+    :try_start_1
     const-string v1, "data"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
@@ -2810,8 +2746,8 @@
     const-string v1, "phone"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v0
 

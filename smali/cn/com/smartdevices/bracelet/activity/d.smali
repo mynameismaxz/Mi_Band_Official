@@ -26,7 +26,7 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/d;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
-    const v2, 0x7f0d01dd
+    const v2, 0x7f0c00d0
 
     invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->getString(I)Ljava/lang/String;
 

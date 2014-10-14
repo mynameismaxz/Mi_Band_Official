@@ -48,13 +48,9 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v6, "MainActivity onCreate, Person:"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -162,13 +158,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "extras is :"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -234,13 +226,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Screen metrics ="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -270,7 +258,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_3
 
     :cond_0
     const-class v1, Lcn/com/smartdevices/bracelet/activity/SystemLowActivity;
@@ -287,26 +275,21 @@
     :cond_1
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v1, v4, :cond_2
+    if-ge v1, v4, :cond_3
 
     invoke-static {p0}, Lcn/com/smartdevices/bracelet/Utils;->isSupportBle(Landroid/content/Context;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Utils;->checkDeviceCompatible()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_3
 
     :cond_2
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/activity/MainActivity;->a()V
-
-    goto :goto_0
-
-    :cond_3
     const-class v1, Lcn/com/smartdevices/bracelet/activity/SystemNotSupportActivity;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
@@ -314,6 +297,11 @@
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MainActivity;->startActivity(Landroid/content/Intent;)V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/activity/MainActivity;->finish()V
+
+    goto :goto_0
+
+    :cond_3
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/activity/MainActivity;->a()V
 
     goto :goto_0
 .end method

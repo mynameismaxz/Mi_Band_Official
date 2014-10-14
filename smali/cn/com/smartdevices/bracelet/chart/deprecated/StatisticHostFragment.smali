@@ -77,13 +77,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Invalid Mode Code : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -102,13 +98,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Read Mode : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
@@ -139,13 +131,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Invalid Mode Code : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -172,13 +160,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Invalid Mode Code : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -205,13 +189,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Invalid Mode Code : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -223,18 +203,18 @@
 
     invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Debug;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_3
     move v0, v1
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private a()V
     .locals 5
 
-    const v4, 0x7f0a001e
+    const/high16 v4, 0x7f070000
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getView()Landroid/view/View;
 
@@ -252,8 +232,6 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v3
@@ -262,9 +240,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v3, "/tmp.jpg"
 
@@ -402,13 +382,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Save Mode : "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
@@ -539,7 +515,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0d01ed
+    const v1, 0x7f0c0146
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -557,7 +533,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0d0101
+    const v1, 0x7f0c01c7
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -575,7 +551,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0d01f0
+    const v1, 0x7f0c01c8
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -607,9 +583,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->mPager:Landroid/support/v4/view/ViewPager;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/v;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/t;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/v;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/t;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
@@ -625,7 +601,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0034
+    const v1, 0x7f070034
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -641,7 +617,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00aa
+    const v1, 0x7f0700aa
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -657,7 +633,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00d7
+    const v1, 0x7f0700d7
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -671,7 +647,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a014f
+    const v1, 0x7f07014f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -683,7 +659,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0150
+    const v1, 0x7f070150
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -695,7 +671,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0152
+    const v1, 0x7f070152
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -707,7 +683,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0153
+    const v1, 0x7f070153
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -794,12 +770,12 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f0a0034 -> :sswitch_0
-        0x7f0a00aa -> :sswitch_1
-        0x7f0a014f -> :sswitch_2
-        0x7f0a0150 -> :sswitch_3
-        0x7f0a0152 -> :sswitch_4
-        0x7f0a0153 -> :sswitch_5
+        0x7f070034 -> :sswitch_0
+        0x7f0700aa -> :sswitch_1
+        0x7f07014f -> :sswitch_2
+        0x7f070150 -> :sswitch_3
+        0x7f070152 -> :sswitch_4
+        0x7f070153 -> :sswitch_5
     .end sparse-switch
 .end method
 

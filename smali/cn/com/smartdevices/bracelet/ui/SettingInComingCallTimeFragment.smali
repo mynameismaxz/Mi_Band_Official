@@ -52,7 +52,7 @@
 
     move-result-object v15
 
-    const v1, 0x7f0a011f
+    const v1, 0x7f07011f
 
     invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0144
+    const v2, 0x7f0c01ca
 
     move-object/from16 v0, p0
 
@@ -112,7 +112,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f090027
+    const v7, 0x7f08000c
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -122,7 +122,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f090036
+    const v8, 0x7f080011
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColor(I)I
 

@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,30 +22,18 @@
 
 
 # virtual methods
-.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
-    const/4 v0, 0x6
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
 
-    if-ne v0, p2, :cond_0
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bE;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)Landroid/view/View;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->onClick(Landroid/view/View;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;)V
 
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

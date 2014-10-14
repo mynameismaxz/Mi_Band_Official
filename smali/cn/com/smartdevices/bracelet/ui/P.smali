@@ -3,18 +3,18 @@
 
 
 # instance fields
-.field final synthetic b:Ljava/lang/String;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
-.field final synthetic c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.field private final synthetic c:Ljava/lang/String;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Ljava/lang/String;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Ljava/lang/String;
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
@@ -38,7 +38,7 @@
 
     if-ne v0, v2, :cond_1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
 
@@ -54,7 +54,7 @@
 
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->c(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
 
@@ -65,7 +65,7 @@
 
     if-ne v0, v1, :cond_2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
 
@@ -84,7 +84,7 @@
     :cond_2
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
 
@@ -106,11 +106,11 @@
 
     invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     new-instance v1, Ljava/io/File;
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Ljava/lang/String;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Ljava/lang/String;
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -122,7 +122,7 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->a(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;I)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->c:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/P;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->a(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
 

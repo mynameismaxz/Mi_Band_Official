@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.field private final synthetic b:Ljava/lang/String;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/N;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/N;->a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/N;->a:Ljava/lang/String;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/N;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,11 +33,11 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/N;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/N;->a:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/BraceletBtInfo;->address:Ljava/lang/String;
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/N;->a:Ljava/lang/String;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/N;->b:Ljava/lang/String;
 
     invoke-static {v1, v0, v2}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->a(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;Ljava/lang/String;Ljava/lang/String;)V
 

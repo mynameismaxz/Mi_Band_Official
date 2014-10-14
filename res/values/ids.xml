@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="gridview" />
-    <item type="id" name="scrollview" />
     <item type="id" name="webview" />
+    <item type="id" name="scrollview" />
     <item type="id" name="bind_weixin_home_back">false</item>
     <item type="id" name="bind_weixin_help_iv">false</item>
     <item type="id" name="bind_weixin_tips_tv_0">false</item>

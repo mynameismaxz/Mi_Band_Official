@@ -48,7 +48,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0a00fe
+    const v0, 0x7f0700fe
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -119,7 +119,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d004b
+    const v1, 0x7f0c00df
 
     const/4 v2, 0x0
 
@@ -141,7 +141,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v2}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
     move-result-object v2
 

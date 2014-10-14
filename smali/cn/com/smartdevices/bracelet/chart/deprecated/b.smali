@@ -1,663 +1,358 @@
 .class Lcn/com/smartdevices/bracelet/chart/deprecated/b;
-.super Lcn/com/smartdevices/bracelet/chart/base/BarChart$YAxis;
-
-
-# static fields
-.field static final a:F = 24.0f
-
-.field static final b:F = 1440.0f
+.super Lcn/com/smartdevices/bracelet/chart/base/BarChart;
 
 
 # instance fields
-.field final synthetic c:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-.field private d:I
-
-.field private e:F
-
-.field private f:Landroid/graphics/Paint;
-
-.field private g:Landroid/graphics/Paint;
-
-.field private h:Landroid/graphics/Paint;
-
-.field private i:Landroid/graphics/RectF;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
 
 # direct methods
-.method public constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)V
-    .locals 4
+.method private constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)V
+    .locals 0
 
-    const/4 v3, 0x1
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->c:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$YAxis;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
-
-    const/16 v0, 0x18
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
-
-    new-instance v0, Landroid/text/TextPaint;
-
-    invoke-direct {v0, v3}, Landroid/text/TextPaint;-><init>(I)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f:Landroid/graphics/Paint;
-
-    const v1, 0x4dffffff
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f:Landroid/graphics/Paint;
-
-    const/high16 v1, 0x41100000
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mDensity:F
-
-    mul-float/2addr v1, v2
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
-
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->g:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->g:Landroid/graphics/Paint;
-
-    const v1, 0x1affffff
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->h:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->h:Landroid/graphics/Paint;
-
-    const v1, 0x33ffffff
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->h:Landroid/graphics/Paint;
-
-    const/high16 v1, 0x3f800000
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->h:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/b;I)I
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;Lcn/com/smartdevices/bracelet/chart/deprecated/b;)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)V
 
-    return p1
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 2
+.method public notifyChanged()V
+    .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    const/4 v0, 0x1
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
+    iput-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mNeedRealign:Z
 
-    sub-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    mul-float/2addr v0, v1
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->c:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;F)F
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart;->notifyChanged()V
 
     return-void
 .end method
 
-.method public b()F
-    .locals 2
+.method protected realignItems(Landroid/graphics/RectF;Ljava/util/List;)V
+    .locals 13
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/graphics/RectF;",
+            "Ljava/util/List",
+            "<+",
+            "Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;",
+            ">;)V"
+        }
+    .end annotation
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    const/4 v11, 0x1
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    const/high16 v10, 0x3f800000
 
-    int-to-float v1, v1
+    const/high16 v9, 0x42700000
 
-    mul-float/2addr v0, v1
+    const/4 v8, 0x0
 
-    return v0
-.end method
+    if-eqz p1, :cond_0
 
-.method public c()F
-    .locals 3
+    if-eqz p2, :cond_0
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    move-result v0
 
-    int-to-float v1, v1
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    mul-float/2addr v1, v2
-
-    sub-float/2addr v0, v1
-
-    return v0
-.end method
-
-.method public d()F
-    .locals 2
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
-
-    int-to-float v0, v0
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    mul-float/2addr v0, v1
-
-    return v0
-.end method
-
-.method protected doScroll(F)V
-    .locals 2
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    div-float/2addr v0, v1
-
-    float-to-int v0, v0
-
-    neg-int v0, v0
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
-
-    return-void
-.end method
-
-.method protected draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
-    .locals 11
-
-    const/4 v4, 0x0
-
-    const/4 v1, 0x0
-
-    const/high16 v10, 0x40000000
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    iget v2, p2, Landroid/graphics/RectF;->bottom:F
-
-    iput v2, v0, Landroid/graphics/RectF;->bottom:F
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    iget v2, v0, Landroid/graphics/RectF;->bottom:F
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->c:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)F
-
-    move-result v3
-
-    sub-float/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/RectF;->bottom:F
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    iget v2, v0, Landroid/graphics/RectF;->bottom:F
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->c()F
-
-    move-result v3
-
-    add-float/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/RectF;->bottom:F
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    invoke-virtual {v2}, Landroid/graphics/RectF;->width()F
-
-    move-result v2
-
-    div-float/2addr v2, v10
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    div-float/2addr v3, v10
-
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->g:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v2, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    invoke-virtual {v2}, Landroid/graphics/RectF;->width()F
-
-    move-result v2
-
-    div-float/2addr v2, v10
-
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    div-float/2addr v3, v10
-
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->h:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v2, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    new-instance v5, Landroid/graphics/Rect;
-
-    invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
-
-    move v0, v1
-
-    :goto_0
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
-
-    sub-int/2addr v2, v3
-
-    if-ge v0, v2, :cond_4
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    rem-int/2addr v2, v3
-
-    add-int/2addr v2, v0
-
-    if-gez v2, :cond_0
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    add-int/2addr v2, v3
+    if-nez v0, :cond_1
 
     :cond_0
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    if-le v2, v3, :cond_1
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    rem-int/2addr v2, v3
+    :goto_0
+    return-void
 
     :cond_1
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    if-ne v2, v3, :cond_2
-
-    move v2, v1
+    move-result-object v6
 
     :cond_2
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
-
-    iget v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    div-float/2addr v3, v6
-
-    const/high16 v6, 0x3f800000
-
-    rem-float/2addr v3, v6
-
-    cmpl-float v3, v3, v4
-
-    if-nez v3, :cond_3
-
-    move v3, v4
-
     :goto_1
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v2
+    move-result v0
 
-    iget-object v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f:Landroid/graphics/Paint;
+    if-nez v0, :cond_3
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    invoke-virtual {v6, v2, v1, v7, v5}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
-
-    iget v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->stroke:I
-
-    invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
-
-    move-result v7
-
-    sub-int/2addr v6, v7
-
-    int-to-float v6, v6
-
-    div-float/2addr v6, v10
-
-    iget v7, p2, Landroid/graphics/RectF;->left:F
-
-    add-float/2addr v6, v7
-
-    int-to-float v7, v0
-
-    iget v8, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    mul-float/2addr v7, v8
-
-    iget v8, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
-
-    invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    add-float/2addr v8, v9
-
-    div-float/2addr v8, v10
-
-    add-float/2addr v7, v8
-
-    iget v8, p2, Landroid/graphics/RectF;->top:F
-
-    add-float/2addr v7, v8
-
-    iget v8, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingTop:F
-
-    add-float/2addr v7, v8
-
-    add-float/2addr v3, v7
-
-    iget-object v7, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v2, v6, v3, v7}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    add-int/lit8 v0, v0, 0x1
+    iput-boolean v8, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mNeedRealign:Z
 
     goto :goto_0
 
     :cond_3
-    iget v3, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget v6, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    move-result-object v0
 
-    rem-float/2addr v3, v6
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;
 
-    goto :goto_1
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->getRect()Landroid/graphics/RectF;
+
+    move-result-object v1
+
+    if-nez v1, :cond_8
+
+    new-instance v1, Landroid/graphics/RectF;
+
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->setRect(Landroid/graphics/RectF;)V
+
+    move-object v2, v1
+
+    :goto_2
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mNeedRealign:Z
+
+    if-nez v1, :cond_4
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->getRect()Landroid/graphics/RectF;
+
+    move-result-object v1
+
+    if-nez v1, :cond_9
 
     :cond_4
-    return-void
-.end method
+    invoke-virtual {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->itemWidth(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
 
-.method public e()F
-    .locals 3
+    move-result v3
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
-
-    neg-int v0, v0
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
-
-    rem-int/2addr v0, v1
-
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f()Z
+    invoke-virtual {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->itemHeight(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    move v12, v1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
+    move v1, v3
 
-    neg-int v0, v0
+    move v3, v12
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    :goto_3
+    iget v4, p1, Landroid/graphics/RectF;->top:F
 
-    rem-int/2addr v0, v1
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mItemPadding:F
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    add-float/2addr v4, v5
 
-    add-int/2addr v0, v1
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingTop:F
 
-    :cond_0
-    int-to-float v0, v0
+    add-float/2addr v4, v5
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    iput v4, v2, Landroid/graphics/RectF;->top:F
 
-    mul-float/2addr v0, v1
+    iget v4, v2, Landroid/graphics/RectF;->top:F
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
+    add-float/2addr v4, v3
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    iput v4, v2, Landroid/graphics/RectF;->bottom:F
 
-    rem-float/2addr v1, v2
+    iget-boolean v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mMirrored:Z
 
-    add-float/2addr v0, v1
+    if-nez v4, :cond_a
 
-    return v0
-.end method
+    iget v4, p1, Landroid/graphics/RectF;->left:F
 
-.method public f()Z
-    .locals 4
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingLeft:F
 
-    const/4 v3, 0x0
+    add-float/2addr v4, v5
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
+    iput v4, v2, Landroid/graphics/RectF;->left:F
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    iget v4, v2, Landroid/graphics/RectF;->left:F
 
-    int-to-float v1, v1
+    add-float/2addr v1, v4
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    iput v1, v2, Landroid/graphics/RectF;->right:F
 
-    mul-float/2addr v1, v2
+    :goto_4
+    instance-of v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/c;
 
-    sub-float/2addr v0, v1
+    if-nez v1, :cond_6
 
-    cmpg-float v0, v0, v3
+    move-object v1, v0
 
-    if-gez v0, :cond_0
+    check-cast v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mScroll:F
+    iput-boolean v11, v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->a:Z
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
-    int-to-float v1, v1
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    move-result v4
 
-    mul-float/2addr v1, v2
+    div-int/lit8 v5, v4, 0x3c
 
-    sub-float/2addr v0, v1
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->b()F
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
 
-    move-result v1
+    move-result v4
 
-    rem-float/2addr v0, v1
+    rem-int/lit8 v4, v4, 0x3c
 
-    cmpg-float v0, v0, v3
+    iget-object v7, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
-    if-gez v0, :cond_0
+    invoke-static {v7}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
 
-    const/4 v0, 0x1
+    move-result v7
 
-    :goto_0
-    return v0
+    if-gez v7, :cond_5
 
-    :cond_0
-    const/4 v0, 0x0
+    add-int/lit8 v5, v5, -0x1
 
-    goto :goto_0
-.end method
+    add-int/lit8 v4, v4, 0x3c
 
-.method public g()I
-    .locals 2
+    :cond_5
+    iget v7, v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->index:I
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->offset:I
+    if-ne v7, v5, :cond_b
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    iget v5, v2, Landroid/graphics/RectF;->top:F
 
-    div-int/2addr v0, v1
+    int-to-float v4, v4
 
-    return v0
-.end method
+    div-float/2addr v4, v9
 
-.method public h()F
-    .locals 3
+    mul-float/2addr v3, v4
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->g()I
+    add-float/2addr v3, v5
 
-    move-result v0
+    sub-float/2addr v3, v10
 
-    neg-int v0, v0
+    iput v3, v2, Landroid/graphics/RectF;->bottom:F
 
-    int-to-float v0, v0
+    iput-boolean v8, v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->a:Z
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->b()F
+    :cond_6
+    :goto_5
+    invoke-virtual {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->itemOffsetX(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
 
     move-result v1
 
-    mul-float/2addr v0, v1
+    invoke-virtual {p0, p1, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->itemOffsetY(Landroid/graphics/RectF;Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;)F
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->f()Z
+    move-result v3
 
-    move-result v1
+    invoke-virtual {v2, v1, v3}, Landroid/graphics/RectF;->offset(FF)V
 
-    if-eqz v1, :cond_0
+    iput-boolean v11, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->needDraw:Z
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->g()I
+    iget v1, v2, Landroid/graphics/RectF;->bottom:F
 
-    move-result v0
+    iget v3, p1, Landroid/graphics/RectF;->top:F
 
-    neg-int v0, v0
+    cmpg-float v1, v1, v3
 
-    int-to-float v0, v0
+    if-ltz v1, :cond_7
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->b()F
+    iget v1, v2, Landroid/graphics/RectF;->top:F
 
-    move-result v1
+    iget v2, p1, Landroid/graphics/RectF;->bottom:F
 
-    mul-float/2addr v0, v1
+    cmpl-float v1, v1, v2
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    if-lez v1, :cond_2
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->d:I
+    :cond_7
+    iput-boolean v8, v0, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->needDraw:Z
 
-    int-to-float v2, v2
+    goto/16 :goto_1
 
-    mul-float/2addr v1, v2
+    :cond_8
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->getRect()Landroid/graphics/RectF;
 
-    add-float/2addr v0, v1
+    move-result-object v1
 
-    :cond_0
-    return v0
-.end method
+    move-object v2, v1
 
-.method protected onRectChanged(Landroid/graphics/RectF;)V
-    .locals 3
+    goto/16 :goto_2
 
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+    :cond_9
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->getRect()Landroid/graphics/RectF;
 
-    move-result v0
+    move-result-object v1
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingTop:F
+    invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
 
-    sub-float/2addr v0, v1
+    move-result v3
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingBottom:F
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/chart/base/BarChart$BarItem;->getRect()Landroid/graphics/RectF;
 
-    sub-float/2addr v0, v1
+    move-result-object v1
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->c:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)F
+    invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
 
     move-result v1
 
-    sub-float/2addr v0, v1
+    move v12, v1
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->value:I
+    move v1, v3
 
-    int-to-float v1, v1
+    move v3, v12
 
-    div-float/2addr v0, v1
+    goto/16 :goto_3
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->e:F
+    :cond_a
+    iget v4, p1, Landroid/graphics/RectF;->right:F
 
-    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a()V
+    iget v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->mPaddingRight:F
 
-    new-instance v0, Landroid/graphics/RectF;
+    sub-float/2addr v4, v5
 
-    invoke-direct {v0, p1}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
+    iput v4, v2, Landroid/graphics/RectF;->right:F
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
+    iget v4, v2, Landroid/graphics/RectF;->right:F
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
+    sub-float v1, v4, v1
 
-    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+    iput v1, v2, Landroid/graphics/RectF;->left:F
 
-    move-result v0
+    goto :goto_4
 
-    const/high16 v1, 0x40000000
+    :cond_b
+    iget v4, v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->index:I
 
-    div-float/2addr v0, v1
+    iget-object v5, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->i:Landroid/graphics/RectF;
+    invoke-static {v5}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
 
-    iget v2, v1, Landroid/graphics/RectF;->top:F
+    move-result v5
 
-    sub-float v0, v2, v0
+    div-int/lit8 v5, v5, 0x3c
 
-    iput v0, v1, Landroid/graphics/RectF;->top:F
+    if-ne v4, v5, :cond_6
 
-    return-void
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/b;->a:Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    rem-float/2addr v4, v9
+
+    div-float/2addr v4, v9
+
+    mul-float/2addr v3, v4
+
+    add-float/2addr v3, v10
+
+    iput v3, v2, Landroid/graphics/RectF;->top:F
+
+    iput-boolean v8, v1, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->a:Z
+
+    goto :goto_5
 .end method

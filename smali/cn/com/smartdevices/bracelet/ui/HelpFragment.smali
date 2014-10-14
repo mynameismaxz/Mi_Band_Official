@@ -20,15 +20,15 @@
 
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/aw;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/au;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/aw;-><init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/au;-><init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->d:Landroid/webkit/WebViewClient;
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ax;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/av;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/ax;-><init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/ui/av;-><init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->e:Landroid/webkit/WebChromeClient;
 
@@ -84,7 +84,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a:Ljava/lang/String;
 
-    const v0, 0x7f0a0023
+    const v0, 0x7f070022
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->b:Landroid/webkit/WebView;
 
-    const v0, 0x7f0a00df
+    const v0, 0x7f0700df
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -1,54 +1,35 @@
 .class Lcn/com/smartdevices/bracelet/ui/az;
-.super Landroid/support/v13/app/FragmentPagerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
-    invoke-direct {p0, p2}, Landroid/support/v13/app/FragmentPagerAdapter;-><init>(Landroid/app/FragmentManager;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCount()I
+.method public onPreDraw()Z
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->a(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
+    const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public getItem(I)Landroid/app/Fragment;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Fragment;
-
-    return-object v0
 .end method

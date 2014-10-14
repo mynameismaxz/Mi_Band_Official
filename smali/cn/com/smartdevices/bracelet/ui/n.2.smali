@@ -17,6 +17,14 @@
     return-void
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/n;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
@@ -46,9 +54,15 @@
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
 
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;I)V
+
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)I
 
     move-result v0
 
@@ -118,13 +132,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "MSG_LOAD_DATA_COMPLETE......................"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     new-instance v2, Ljava/util/Date;
 
@@ -159,7 +169,7 @@
     :sswitch_3
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Z
 
     move-result v0
 
@@ -180,7 +190,7 @@
     :cond_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/n;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->g(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->f(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
 
     goto/16 :goto_0
 
@@ -202,13 +212,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "MSG_START_SYNC_DATA......................"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     new-instance v2, Ljava/util/Date;
 
@@ -236,13 +242,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "MSG_START_SYNC_DATA......................"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     new-instance v2, Ljava/util/Date;
 

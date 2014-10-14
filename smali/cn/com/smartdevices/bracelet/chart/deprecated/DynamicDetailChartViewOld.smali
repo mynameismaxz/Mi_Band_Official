@@ -63,9 +63,9 @@
 
     invoke-direct {p0, p1, p2, p3}, Lcn/com/smartdevices/bracelet/chart/base/BaseChartView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/h;
+    new-instance v0, Lcn/com/smartdevices/bracelet/chart/deprecated/e;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/h;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/e;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)V
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->j:Lcn/com/smartdevices/bracelet/chart/base/ChartScroller$ScrollingListener;
 
@@ -140,12 +140,12 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)I
+.method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->h:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
 
-    return v0
+    return-object v0
 .end method
 
 .method private a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld$DynamicDetailChartData;)V
@@ -176,44 +176,28 @@
     return-void
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;Z)Z
+.method static synthetic a(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;Z)V
     .locals 0
 
     iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->i:Z
 
-    return p1
+    return-void
 .end method
 
-.method static synthetic b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Z
+.method static synthetic b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->h:I
+
+    return v0
+.end method
+
+.method static synthetic c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->i:Z
 
     return v0
-.end method
-
-.method static synthetic c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
 .end method
 
 
@@ -243,8 +227,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->addSleepData(Ljava/util/List;)V
+
+    return-void
+
+    :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -297,15 +290,6 @@
 
     goto :goto_1
 
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->addSleepData(Ljava/util/List;)V
-
-    return-void
-
     nop
 
     :pswitch_data_0
@@ -341,8 +325,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->addStepData(Ljava/util/List;)V
+
+    return-void
+
+    :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -369,7 +362,7 @@
 
     const/16 v4, 0x1f4
 
-    if-lt v0, v4, :cond_0
+    if-lt v0, v4, :cond_1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->e:Lcn/com/smartdevices/bracelet/chart/base/Renderer;
 
@@ -380,21 +373,12 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->f:Lcn/com/smartdevices/bracelet/chart/base/Renderer;
 
     invoke-virtual {v3, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld$DynamicDetailBarItem;->setRenderer(Lcn/com/smartdevices/bracelet/chart/base/Renderer;)V
 
     goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicDetailChartOld;->addStepData(Ljava/util/List;)V
-
-    return-void
 .end method
 
 .method public clearData()V
@@ -546,13 +530,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Consumed : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -614,13 +594,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Refresh : "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

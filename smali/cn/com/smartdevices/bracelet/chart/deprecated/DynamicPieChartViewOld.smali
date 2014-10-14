@@ -185,15 +185,15 @@
 
     move-result-object v0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/m;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/l;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/m;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/l;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/n;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/m;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/n;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/m;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -222,38 +222,6 @@
         0x0
         0x3f800000
     .end array-data
-.end method
-
-.method static synthetic b(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;)Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/DynamicPieChartViewOld;->mChart:Lcn/com/smartdevices/bracelet/chart/base/BaseChart;
-
-    return-object v0
 .end method
 
 

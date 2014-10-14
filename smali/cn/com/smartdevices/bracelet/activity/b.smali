@@ -20,6 +20,14 @@
     return-void
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public run()V
@@ -63,7 +71,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->a(Lcn/com/smartdevices/bracelet/activity/LoginActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->a(Lcn/com/smartdevices/bracelet/activity/LoginActivity;Landroid/animation/ValueAnimator;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 

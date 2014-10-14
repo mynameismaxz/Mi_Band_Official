@@ -301,7 +301,7 @@
 
 .field public static final WHEEL_CENTER_TEXT_SIZE_LARGE:I = 0x10
 
-.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f090003
+.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f08003c
 
 .field public static final WHEEL_CENTER_UNIT_TEXT_SIZE:I = 0xa
 

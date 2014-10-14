@@ -70,8 +70,6 @@
 
     const/4 v0, 0x0
 
-    check-cast v0, Landroid/util/AttributeSet;
-
     const v1, 0x1010084
 
     invoke-direct {p0, p1, v0, v1}, Lcom/readystatesoftware/viewbadger/BadgeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -734,7 +732,7 @@
     if-eqz v1, :cond_0
 
     :try_start_0
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v1
 

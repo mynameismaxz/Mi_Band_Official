@@ -20,7 +20,7 @@
 .method protected formatDate(Lcn/com/smartdevices/bracelet/model/SportDay;)Ljava/lang/String;
     .locals 9
 
-    const v8, 0x7f0d0055
+    const v8, 0x7f0c001f
 
     const/4 v7, 0x2
 
@@ -87,8 +87,6 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     new-array v3, v7, [Ljava/lang/Object;
 
     iget v4, v0, Lcn/com/smartdevices/bracelet/model/SportDay;->mon:I
@@ -113,13 +111,15 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, " - "
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, " - "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -161,7 +161,7 @@
 .method protected formatDateShort(Lcn/com/smartdevices/bracelet/model/SportDay;)Ljava/lang/String;
     .locals 9
 
-    const v8, 0x7f0d0056
+    const v8, 0x7f0c0021
 
     const/4 v7, 0x2
 
@@ -228,8 +228,6 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     new-array v3, v7, [Ljava/lang/Object;
 
     iget v4, v0, Lcn/com/smartdevices/bracelet/model/SportDay;->mon:I
@@ -254,13 +252,15 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "-"
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "-"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -308,9 +308,9 @@
 
     invoke-direct {v0}, Lcn/com/smartdevices/bracelet/chart/data/AsyncChartDataLoader;-><init>()V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/x;
+    new-instance v1, Lcn/com/smartdevices/bracelet/chart/deprecated/v;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/x;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticWeeklyFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/v;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticWeeklyFragment;)V
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader;->setLoadCallback(Lcn/com/smartdevices/bracelet/chart/data/ChartDataLoader$LoadCallback;)V
 
@@ -340,7 +340,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a014c
+    const v1, 0x7f07014c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a014a
+    const v1, 0x7f07014a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -380,7 +380,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0148
+    const v1, 0x7f070148
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -400,7 +400,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a013d
+    const v1, 0x7f07013d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -427,7 +427,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a013a
+    const v1, 0x7f07013a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

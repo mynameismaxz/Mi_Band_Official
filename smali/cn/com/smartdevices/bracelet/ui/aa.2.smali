@@ -93,7 +93,7 @@
 
     const/16 v1, 0x10
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
 
     :cond_0
     :goto_0
@@ -126,7 +126,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aa;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
 
     goto :goto_0
 .end method

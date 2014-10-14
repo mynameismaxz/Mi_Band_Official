@@ -1,4 +1,4 @@
-.class final Lcn/com/smartdevices/bracelet/i;
+.class Lcn/com/smartdevices/bracelet/i;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/app/Activity;
+.field private final synthetic a:Landroid/app/Activity;
 
-.field final synthetic b:Ljava/lang/String;
+.field private final synthetic b:Ljava/lang/String;
 
-.field final synthetic c:Z
+.field private final synthetic c:Z
 
 
 # direct methods
@@ -38,7 +38,7 @@
         }
     .end annotation
 
-    const v1, 0x7f0d0105
+    const v1, 0x7f0c0026
 
     const/4 v2, 0x1
 
@@ -53,13 +53,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "\u6709\u66f4\u65b0\uff0c UpdateResponse\u4e3a\u672c\u6b21\u66f4\u65b0\u7684\u8be6\u7ec6\u4fe1\u606f: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -94,7 +90,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/i;->a:Landroid/app/Activity;
 
-    const v1, 0x7f0d0017
+    const v1, 0x7f0c0105
 
     invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -156,7 +152,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/i;->a:Landroid/app/Activity;
 
-    const v1, 0x7f0d00e0
+    const v1, 0x7f0c0106
 
     invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

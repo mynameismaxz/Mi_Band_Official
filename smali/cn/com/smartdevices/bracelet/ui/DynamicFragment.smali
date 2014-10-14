@@ -124,14 +124,6 @@
     return v0
 .end method
 
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->n:I
-
-    return p1
-.end method
-
 .method private a()Landroid/animation/ValueAnimator;
     .locals 6
 
@@ -195,7 +187,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    const v1, 0x7f0d008e
+    const v1, 0x7f0c0109
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->updateTitle(I)V
 
@@ -220,7 +212,7 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    const v1, 0x7f0d008f
+    const v1, 0x7f0c010a
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->updateTitle(I)V
 
@@ -304,13 +296,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "CurrentTime : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -343,13 +331,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "LastSyncTime : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -388,7 +372,7 @@
 
     if-lt v0, v10, :cond_2
 
-    const v0, 0x7f0d0087
+    const v0, 0x7f0c0119
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getString(I)Ljava/lang/String;
 
@@ -418,13 +402,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "LastSyncRealStepTime : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -446,7 +426,7 @@
 
     if-ge v2, v3, :cond_5
 
-    const v0, 0x7f0d008a
+    const v0, 0x7f0c011a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getString(I)Ljava/lang/String;
 
@@ -469,7 +449,7 @@
 
     if-nez v0, :cond_3
 
-    const v0, 0x7f0d008d
+    const v0, 0x7f0c0118
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getString(I)Ljava/lang/String;
 
@@ -478,7 +458,7 @@
     goto :goto_1
 
     :cond_3
-    const v0, 0x7f0d0085
+    const v0, 0x7f0c010c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getString(I)Ljava/lang/String;
 
@@ -522,7 +502,7 @@
 
     if-ltz v2, :cond_6
 
-    const v2, 0x7f0d0088
+    const v2, 0x7f0c011b
 
     new-array v3, v9, [Ljava/lang/Object;
 
@@ -543,7 +523,7 @@
     goto :goto_3
 
     :cond_6
-    const v2, 0x7f0d0089
+    const v2, 0x7f0c011c
 
     new-array v3, v9, [Ljava/lang/Object;
 
@@ -560,13 +540,21 @@
     goto :goto_3
 
     :cond_7
-    const v0, 0x7f0d0086
+    const v0, 0x7f0c010b
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_3
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->n:I
+
+    return-void
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;Ljava/lang/String;Ljava/lang/String;)V
@@ -625,13 +613,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Dynamic Current Day : "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7}, Lcn/com/smartdevices/bracelet/model/SportDay;->formatString()Ljava/lang/String;
 
@@ -703,13 +687,9 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v8, "Dynamic Show Previous Day\'s Sleep Info: "
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -771,13 +751,9 @@
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v9, "Dynamic Step Info : "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
+    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -863,13 +839,9 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v7, "set Steps="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v7, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->e:I
 
@@ -890,13 +862,9 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v8, "setRealtimeSteps="
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v8, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->e:I
 
@@ -914,13 +882,9 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v8, "Dynamic Real-Step : "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1012,9 +976,9 @@
 
     move-result-object v2
 
-    if-nez p1, :cond_c
+    if-eqz p1, :cond_c
 
-    move v0, v5
+    move v0, v1
 
     :goto_7
     invoke-virtual {v2, v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->notifyDataSetChanged(Z)V
@@ -1025,10 +989,10 @@
 
     move-result-object v0
 
-    if-nez p1, :cond_d
+    if-eqz p1, :cond_d
 
     :goto_8
-    invoke-virtual {v0, v5}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->notifyDataSetChanged(Z)V
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment$DynamicViewFragment;->notifyDataSetChanged(Z)V
 
     goto/16 :goto_0
 
@@ -1113,12 +1077,12 @@
     goto/16 :goto_6
 
     :cond_c
-    move v0, v1
+    move v0, v5
 
     goto :goto_7
 
     :cond_d
-    move v5, v1
+    move v1, v5
 
     goto :goto_8
 
@@ -1197,14 +1161,6 @@
     return-void
 .end method
 
-.method static synthetic c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)I
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->e:I
-
-    return p1
-.end method
-
 .method private c()V
     .locals 0
 
@@ -1215,6 +1171,14 @@
     .locals 0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c()V
+
+    return-void
+.end method
+
+.method static synthetic c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->e:I
 
     return-void
 .end method
@@ -1394,13 +1358,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onBleStatusChanged:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1512,7 +1472,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09000a
+    const v1, 0x7f080034
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1520,7 +1480,7 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->j:I
 
-    const v1, 0x7f09000b
+    const v1, 0x7f080035
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1528,7 +1488,7 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->k:I
 
-    const v1, 0x7f09000c
+    const v1, 0x7f080036
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1557,7 +1517,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0a0035
+    const v0, 0x7f070035
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1567,7 +1527,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->f:Landroid/support/v4/view/ViewPager;
 
-    const v0, 0x7f0a0036
+    const v0, 0x7f070036
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1634,7 +1594,7 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->setVPHight()V
 
@@ -1686,19 +1646,16 @@
 
     sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    :goto_0
-    return-void
-
-    :cond_0
     sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     sput-object v1, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
 
-    goto :goto_0
+    :cond_0
+    return-void
 .end method
 
 .method public onGoalsSettingChanged(Lcn/com/smartdevices/bracelet/eventbus/EventGoalsUpdated;)V
@@ -1850,13 +1807,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "process:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1899,9 +1852,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1914,13 +1867,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "set bind mode:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v3, p0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->q:Ljava/lang/Boolean;
 
@@ -1966,7 +1915,7 @@
     return-void
 
     :cond_0
-    move v0, v1
+    const/4 v0, 0x1
 
     goto :goto_0
 

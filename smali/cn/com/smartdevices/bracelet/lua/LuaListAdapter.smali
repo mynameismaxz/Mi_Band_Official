@@ -242,7 +242,7 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;)Landroid/content/Context;
+.method static synthetic access$0(Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->mContext:Landroid/content/Context;
@@ -271,7 +271,7 @@
 .end method
 
 .method private getNewList(Ljava/util/List;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -281,8 +281,6 @@
             ">;)V"
         }
     .end annotation
-
-    const/4 v5, 0x1
 
     const/4 v2, 0x0
 
@@ -329,8 +327,20 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_3
+    if-lt v1, v0, :cond_4
 
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->newItemCount:I
+
+    :cond_3
+    iput-object v3, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->infoList:Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_4
     new-instance v4, Lcn/com/smartdevices/bracelet/lua/c;
 
     invoke-direct {v4, p0}, Lcn/com/smartdevices/bracelet/lua/c;-><init>(Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;)V
@@ -357,18 +367,6 @@
 
     goto :goto_1
 
-    :cond_3
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->newItemCount:I
-
-    :cond_4
-    iput-object v3, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->infoList:Ljava/util/List;
-
-    goto :goto_0
-
     :cond_5
     move v1, v2
 
@@ -377,7 +375,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_4
+    if-ge v1, v0, :cond_3
 
     new-instance v4, Lcn/com/smartdevices/bracelet/lua/c;
 
@@ -401,7 +399,7 @@
 
     move-result v0
 
-    if-ne v0, v5, :cond_6
+    if-eqz v0, :cond_6
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->newItemCount:I
 
@@ -409,7 +407,9 @@
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->newItemCount:I
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -450,8 +450,16 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_2
+    if-lt v1, v0, :cond_0
 
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    :goto_1
+    return-object v0
+
+    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->infoList:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -480,41 +488,33 @@
 
     move-result-object v3
 
-    if-ne v4, v3, :cond_1
+    if-ne v4, v3, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    :goto_1
-    return-object v0
-
-    :cond_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     goto :goto_1
 
     :cond_1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_2
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_0
-
-    :cond_2
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    goto :goto_1
 .end method
 
 
@@ -610,9 +610,7 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 10
-
-    const/4 v9, 0x1
+    .locals 9
 
     const/16 v8, 0x8
 
@@ -646,7 +644,7 @@
 
     move-result-object v5
 
-    const v1, 0x7f0a0165
+    const v1, 0x7f070165
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -660,9 +658,11 @@
 
     sget-object v2, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
-    invoke-virtual {v1, v2, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
+    const/4 v6, 0x1
 
-    const v1, 0x7f0a0166
+    invoke-virtual {v1, v2, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
+
+    const v1, 0x7f070166
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -672,7 +672,7 @@
 
     iput-object v1, v4, Lcn/com/smartdevices/bracelet/lua/d;->b:Landroid/widget/TextView;
 
-    const v1, 0x7f0a0162
+    const v1, 0x7f070162
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -706,7 +706,7 @@
 
     move-result-object v2
 
-    const/high16 v6, 0x7f090000
+    const v6, 0x7f080027
 
     invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -764,7 +764,7 @@
 
     move-result v1
 
-    if-ne v1, v9, :cond_2
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->animT2B:Landroid/view/animation/Animation;
 
@@ -802,7 +802,7 @@
 
     move-result-object v1
 
-    const v6, 0x7f090021
+    const v6, 0x7f08004e
 
     invoke-virtual {v1, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -847,7 +847,7 @@
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const v1, 0x7f0a0163
+    const v1, 0x7f070163
 
     invoke-virtual {v5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -993,8 +993,11 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_0
+    if-lt v1, v0, :cond_0
 
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->infoList:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1014,9 +1017,6 @@
     move v1, v0
 
     goto :goto_0
-
-    :cond_0
-    return-void
 .end method
 
 .method public setList(Ljava/util/List;)V

@@ -123,13 +123,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "BleFwUpgradeTask after waiting..."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     sget-object v3, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->e:Ljava/lang/Object;
 
@@ -194,13 +190,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "BleFwUpgradeTask after waitingFwUpdate..."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     sget-object v3, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->g:Ljava/lang/Object;
 
@@ -240,13 +232,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "waitingNotify:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -290,13 +278,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "waitingNotifyFwUpdate:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -435,13 +419,9 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "new firmware version:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -463,13 +443,9 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "0x"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/4 v5, 0x4
 
@@ -497,13 +473,9 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v6, "0x"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/4 v6, 0x5
 
@@ -539,19 +511,19 @@
 
     iget-object v4, p0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
+    invoke-virtual {v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
+
+    move-result-object v4
+
+    iget v4, v4, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
+
     iget-object v5, p0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    invoke-virtual {v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
-
-    move-result-object v5
-
-    iget v5, v5, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;->firmwareVersion:I
 
     iget-object v6, p0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->c:[B
 
     array-length v6, v6
 
-    invoke-virtual {v4, v5, v0, v6, v3}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->sendFirmwareInfo(IIII)Z
+    invoke-virtual {v5, v4, v0, v6, v3}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->sendFirmwareInfo(IIII)Z
 
     move-result v0
 
@@ -676,6 +648,16 @@
     invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_reboot()Z
 
     move-result v0
+
+    if-eqz v0, :cond_8
+
+    const v3, 0x90902
+
+    if-gt v4, v3, :cond_8
+
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/BleTask/BleFwUpgradeTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    invoke-virtual {v3}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->refreshGatt()V
 
     :cond_8
     if-eqz v0, :cond_9

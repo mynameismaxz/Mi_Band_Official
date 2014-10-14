@@ -1,5 +1,8 @@
 .class Lcn/com/smartdevices/bracelet/ui/bN;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # instance fields
@@ -12,65 +15,65 @@
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bN;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
-    .locals 3
-
-    const-string v0, "SettingFragment"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "updateProfile onFailed: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
+
+    if-eqz p2, :cond_0
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bN;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->clearNeedSyncServer()V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->enableInComingCallTime()V
+
+    :goto_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bN;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->setNeedSyncServer(I)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bN;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     move-result-object v0
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepPersonInfo(Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
 
-    const-string v0, "SettingFragment"
+    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
 
-    const-string v1, "send person info to server ok!"
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v1, Lcn/com/smartdevices/bracelet/eventbus/EventSettingFragmentUpdate;
+
+    invoke-direct {v1}, Lcn/com/smartdevices/bracelet/eventbus/EventSettingFragmentUpdate;-><init>()V
+
+    invoke-virtual {v0, v1}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
 
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bN;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->disableInComingCallTime()V
+
+    goto :goto_0
 .end method

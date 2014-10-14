@@ -33,7 +33,9 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/c;->a:Lcn/com/smartdevices/bracelet/activity/b;
 
-    iget-object v1, v1, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/b;->a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    move-result-object v1
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->e(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)Landroid/view/View;
 
@@ -47,7 +49,9 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/c;->a:Lcn/com/smartdevices/bracelet/activity/b;
 
-    iget-object v1, v1, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/b;->a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    move-result-object v1
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->f(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)Landroid/view/View;
 
@@ -61,7 +65,9 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/c;->a:Lcn/com/smartdevices/bracelet/activity/b;
 
-    iget-object v1, v1, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/b;->a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    move-result-object v1
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->a(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)Landroid/widget/TextView;
 
@@ -75,7 +81,9 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/c;->a:Lcn/com/smartdevices/bracelet/activity/b;
 
-    iget-object v1, v1, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/b;->a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    move-result-object v1
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->b(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)Landroid/widget/Button;
 
@@ -89,7 +97,9 @@
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/c;->a:Lcn/com/smartdevices/bracelet/activity/b;
 
-    iget-object v1, v1, Lcn/com/smartdevices/bracelet/activity/b;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/b;->a(Lcn/com/smartdevices/bracelet/activity/b;)Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    move-result-object v1
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->c(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)Landroid/widget/Button;
 

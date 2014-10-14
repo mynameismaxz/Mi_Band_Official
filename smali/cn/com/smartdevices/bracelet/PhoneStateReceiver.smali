@@ -9,6 +9,8 @@
 
 .field private static c:Ljava/util/TimerTask;
 
+.field private static d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -19,6 +21,8 @@
     sput-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
 
     sput-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
     return-void
 .end method
@@ -31,7 +35,59 @@
     return-void
 .end method
 
-.method private static a()V
+.method static synthetic a()Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
+    .locals 1
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
+
+    return-object v0
+.end method
+
+.method private static a(Landroid/content/Context;I)V
+    .locals 4
+
+    const-string v0, "PhoneState"
+
+    const-string v1, "in startTimerTask"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    new-instance v1, Ljava/util/Timer;
+
+    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
+
+    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/d;
+
+    invoke-direct {v1, v0}, Lcn/com/smartdevices/bracelet/d;-><init>(Ljava/lang/ref/WeakReference;)V
+
+    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
+
+    sget-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
+
+    int-to-long v2, p1
+
+    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;)V
+    .locals 0
+
+    sput-object p0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
+
+    return-void
+.end method
+
+.method private static b()V
     .locals 3
 
     const/4 v2, 0x0
@@ -80,42 +136,21 @@
     sput-object v2, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
 
     :cond_1
-    return-void
-.end method
+    sget-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
-.method private static a(Landroid/content/Context;I)V
-    .locals 4
+    if-eqz v0, :cond_2
 
-    const-string v0, "PhoneState"
+    new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
-    const-string v1, "in startTimerTask"
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v2, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;-><init>(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;I)V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;->work()V
 
-    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    sput-object v2, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->d:Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
-    new-instance v1, Ljava/util/Timer;
-
-    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
-
-    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/d;
-
-    invoke-direct {v1, v0}, Lcn/com/smartdevices/bracelet/d;-><init>(Ljava/lang/ref/WeakReference;)V
-
-    sput-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b:Ljava/util/Timer;
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->c:Ljava/util/TimerTask;
-
-    int-to-long v2, p1
-
-    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
-
+    :cond_2
     return-void
 .end method
 
@@ -167,7 +202,7 @@
 
     invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b()V
 
     goto :goto_0
 
@@ -176,13 +211,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "RINGING :"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v3, "incoming_number"
 
@@ -221,13 +252,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "incoming ACCEPT :"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v2, "incoming_number"
 
@@ -251,7 +278,7 @@
 
     invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b()V
 
     goto :goto_0
 

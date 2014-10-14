@@ -27,7 +27,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/s;
 
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/s;->a(Lcn/com/smartdevices/bracelet/ui/s;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+
+    move-result-object v0
 
     const/4 v1, 0x1
 

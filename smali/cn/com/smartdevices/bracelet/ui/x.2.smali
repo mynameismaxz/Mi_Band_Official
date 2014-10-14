@@ -3,22 +3,22 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/DataManager;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-.field final synthetic b:Ljava/util/ArrayList;
+.field private final synthetic b:Lcn/com/smartdevices/bracelet/DataManager;
 
-.field final synthetic c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+.field private final synthetic c:Ljava/util/ArrayList;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Lcn/com/smartdevices/bracelet/DataManager;Ljava/util/ArrayList;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/x;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/DataManager;
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/DataManager;
 
-    iput-object p3, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Ljava/util/ArrayList;
+    iput-object p3, p0, Lcn/com/smartdevices/bracelet/ui/x;->c:Ljava/util/ArrayList;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
@@ -38,13 +38,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "syncToServer onFailure:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -56,7 +52,7 @@
 
     invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Ljava/lang/String;
 
@@ -64,13 +60,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "syncToServer onFailure:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -102,9 +94,9 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/DataManager;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/DataManager;
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/x;->c:Ljava/util/ArrayList;
 
     const/4 v3, 0x1
 
@@ -115,13 +107,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "syncToServer onSuccess:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -133,7 +121,7 @@
 
     invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
     invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Ljava/lang/String;
 
@@ -141,13 +129,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "syncToServer onSuccess:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

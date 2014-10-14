@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0a00e7
+    const v0, 0x7f0700e7
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -70,19 +70,19 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0d00ef
+    const v1, 0x7f0c01b2
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v3, 0x7f0d00f0
+    const v3, 0x7f0c01b3
 
     invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f0d00ed
+    const v4, 0x7f0c01b4
 
     invoke-virtual {p0, v4}, Lcn/com/smartdevices/bracelet/ui/MiliExitLoginFragment;->getString(I)Ljava/lang/String;
 
@@ -100,13 +100,13 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v5, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -127,13 +127,13 @@
     :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

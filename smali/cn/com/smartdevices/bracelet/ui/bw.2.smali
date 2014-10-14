@@ -2,46 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bw;->a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bw;->a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;Lcn/com/smartdevices/bracelet/ui/bq;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bw;-><init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public onLongClick(Landroid/view/View;)Z
+    .locals 1
 
-    check-cast p1, Lcn/com/smartdevices/bracelet/ui/bu;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bw;->a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;
 
-    check-cast p2, Lcn/com/smartdevices/bracelet/ui/bu;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;)V
 
-    iget v0, p2, Lcn/com/smartdevices/bracelet/ui/bu;->b:I
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/ui/bu;->b:I
-
-    sub-int/2addr v0, v1
+    const/4 v0, 0x1
 
     return v0
 .end method
