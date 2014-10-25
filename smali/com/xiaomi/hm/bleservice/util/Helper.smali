@@ -2219,7 +2219,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-eqz p0, :cond_0
 
@@ -2311,14 +2311,14 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     const/4 v0, 0x4
 
     if-gt p2, v0, :cond_1
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     move v0, v2
 
@@ -2377,7 +2377,7 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     move v0, v2
 
@@ -2753,7 +2753,7 @@
 
     move-result-object v9
 
-    invoke-static {v9}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v9}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Helper;->parseUUID(Ljava/util/UUID;)Ljava/lang/String;
 
@@ -2797,7 +2797,7 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     move v0, v2
 
@@ -2878,7 +2878,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -2888,7 +2888,7 @@
     move v0, v1
 
     :goto_3
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     add-int/lit8 v0, v3, 0x1
 
@@ -2922,7 +2922,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -2963,7 +2963,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3040,7 +3040,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3117,7 +3117,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3194,7 +3194,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3271,7 +3271,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3348,7 +3348,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3425,7 +3425,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3476,7 +3476,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3527,7 +3527,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -3578,7 +3578,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     goto/16 :goto_1
 

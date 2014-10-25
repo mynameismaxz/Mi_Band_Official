@@ -21,7 +21,11 @@
 
 .field public static final API_TYPE_GET_LUA_VERSION_LIST_IF:Ljava/lang/String; = "huami.health.getlatestluaversionlist.json"
 
+.field public static final API_TYPE_GET_SERVER_TIME_IF:Ljava/lang/String; = "huami.health.getSysTime.json"
+
 .field public static final API_TYPE_GET_USER_INFO_IF:Ljava/lang/String; = "huami.health.getUserInfo.json"
+
+.field public static final API_TYPE_LOGIN_OUT_IF:Ljava/lang/String; = "huami.health.loginout.json"
 
 .field public static final API_TYPE_SEND_FEEDBACK_IF:Ljava/lang/String; = "huami.health.report.json"
 
@@ -126,6 +130,8 @@
 .field public static final PARAM_SYS_CALL_ID:Ljava/lang/String; = "callid"
 
 .field public static final PARAM_SYS_LANGUAGE:Ljava/lang/String; = "lang"
+
+.field public static final PARAM_SYS_TIMEZONE:Ljava/lang/String; = "timezone"
 
 .field public static final PARAM_SYS_USER_ID:Ljava/lang/String; = "userid"
 

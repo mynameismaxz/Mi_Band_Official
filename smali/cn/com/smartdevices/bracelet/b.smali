@@ -52,11 +52,13 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v1, Ljava/lang/String;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p3}, Ljava/lang/String;-><init>([B)V
+    new-instance v2, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->parseDownload(Ljava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
+
+    invoke-static {v1, v2, v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->parseDownload(ILjava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
 
     move-result-object v1
 

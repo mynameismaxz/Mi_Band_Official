@@ -244,23 +244,27 @@
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ne v1, v4, :cond_1
+    if-ne v0, v4, :cond_1
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readLoginData()Lcn/com/smartdevices/bracelet/model/LoginData;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/LoginData;->isValid()Z
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/LoginData;->isValid()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :cond_0
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
     const-class v1, Lcn/com/smartdevices/bracelet/activity/SystemLowActivity;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
@@ -273,23 +277,27 @@
     return-void
 
     :cond_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v1, v4, :cond_3
+    if-ge v0, v4, :cond_3
 
-    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Utils;->isSupportBle(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/BLEManager;->isSupportBle(Landroid/content/Context;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/Utils;->checkDeviceCompatible()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :cond_2
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
     const-class v1, Lcn/com/smartdevices/bracelet/activity/SystemNotSupportActivity;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;

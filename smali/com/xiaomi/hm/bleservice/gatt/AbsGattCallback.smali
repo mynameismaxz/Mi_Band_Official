@@ -143,7 +143,7 @@
 
     sput v3, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_RSSIStatus:I
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Landroid/os/HandlerThread;
 
@@ -155,7 +155,7 @@
 
     const-string v0, "********************************"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -173,11 +173,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "********************************"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_GattQueueThread:Landroid/os/HandlerThread;
 
@@ -241,7 +241,7 @@
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_field_BluetoothGatt_mClientIf:Ljava/lang/reflect/Field;
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iput-object p1, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Context:Landroid/content/Context;
 
@@ -306,23 +306,7 @@
     return-object v0
 .end method
 
-.method private static isConnected(Landroid/bluetooth/BluetoothGatt;)Z
-    .locals 1
-
-    if-nez p0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method private printClientIf(Landroid/bluetooth/BluetoothGatt;)V
+.method private getClientIf(Landroid/bluetooth/BluetoothGatt;)I
     .locals 3
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_field_BluetoothGatt_mClientIf:Ljava/lang/reflect/Field;
@@ -365,19 +349,19 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
 
     :goto_1
-    return-void
+    return v0
 
     :catch_0
     move-exception v0
@@ -391,6 +375,9 @@
 
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
+    :goto_2
+    const/4 v0, -0x1
+
     goto :goto_1
 
     :catch_2
@@ -398,7 +385,49 @@
 
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    goto :goto_1
+    goto :goto_2
+.end method
+
+.method private static isConnected(Landroid/bluetooth/BluetoothGatt;)Z
+    .locals 1
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method private printClientIf(Landroid/bluetooth/BluetoothGatt;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "mClientIf = "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->getClientIf(Landroid/bluetooth/BluetoothGatt;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method private static declared-synchronized synchronizedReadCharacteristic(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;)I
@@ -409,7 +438,7 @@
     monitor-enter v1
 
     :try_start_0
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -435,11 +464,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     new-instance v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback$16;
 
@@ -513,7 +542,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_condGattOperationComplete:Ljava/util/concurrent/locks/Condition;
 
@@ -529,7 +558,7 @@
 
     const-string v0, "GATT OPERATION TIMEOUT"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -553,7 +582,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -608,7 +637,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_6
     .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
@@ -631,7 +660,7 @@
     :try_start_8
     const-string v0, "NO CONNECTION"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
     :try_end_8
     .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
@@ -647,7 +676,7 @@
     monitor-enter v1
 
     :try_start_0
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -673,11 +702,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     new-instance v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback$18;
 
@@ -751,7 +780,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_condGattOperationComplete:Ljava/util/concurrent/locks/Condition;
 
@@ -767,7 +796,7 @@
 
     const-string v0, "GATT OPERATION TIMEOUT"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -791,7 +820,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -846,7 +875,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_6
     .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
@@ -869,7 +898,7 @@
     :try_start_8
     const-string v0, "NO CONNECTION"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
     :try_end_8
     .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
@@ -885,7 +914,7 @@
     monitor-enter v1
 
     :try_start_0
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -921,13 +950,13 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     new-instance v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback$17;
 
@@ -1001,7 +1030,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_condGattOperationComplete:Ljava/util/concurrent/locks/Condition;
 
@@ -1017,7 +1046,7 @@
 
     const-string v0, "GATT OPERATION TIMEOUT"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1041,7 +1070,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -1096,7 +1125,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_6
     .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
@@ -1119,7 +1148,7 @@
     :try_start_8
     const-string v0, "NO CONNECTION"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
     :try_end_8
     .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
@@ -1135,7 +1164,7 @@
     monitor-enter v1
 
     :try_start_0
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1171,13 +1200,13 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {p2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     new-instance v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback$19;
 
@@ -1251,7 +1280,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_condGattOperationComplete:Ljava/util/concurrent/locks/Condition;
 
@@ -1267,7 +1296,7 @@
 
     const-string v0, "GATT OPERATION TIMEOUT"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1291,7 +1320,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -1346,7 +1375,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_6
     .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
@@ -1369,7 +1398,7 @@
     :try_start_8
     const-string v0, "NO CONNECTION"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
     :try_end_8
     .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_0
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
@@ -1412,7 +1441,7 @@
 .method protected cleanupInternal()V
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1430,7 +1459,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_State:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
 
@@ -1454,7 +1483,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1479,7 +1508,7 @@
 
     const-string v0, "RELEASE: c_condGattOperationComplete"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_condGattOperationComplete:Ljava/util/concurrent/locks/Condition;
 
@@ -1510,7 +1539,7 @@
 
     const-string v0, "RELEASE: c_RSSILock"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_RSSILock:Ljava/lang/Object;
 
@@ -1557,7 +1586,7 @@
 .method public final connect()V
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Executor:Ljava/util/concurrent/ExecutorService;
 
@@ -1575,7 +1604,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1593,7 +1622,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_State:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
 
@@ -1617,7 +1646,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     :cond_0
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;->CONNECTING:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
@@ -1630,7 +1659,7 @@
 
     const-string v0, "connect back..."
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     :cond_1
     iput-boolean v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_isClean:Z
@@ -1647,7 +1676,24 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    if-nez v0, :cond_2
+
+    const-string v0, "xxx"
+
+    const-string v1, "connectGatt return null, now disable bluetooth!!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Context:Landroid/content/Context;
+
+    check-cast v0, Lcom/xiaomi/hm/bleservice/BLEService;
+
+    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->disableBluetooth()V
+
+    :cond_2
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -1655,7 +1701,7 @@
 .method public final disconnect()V
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Executor:Ljava/util/concurrent/ExecutorService;
 
@@ -1671,7 +1717,7 @@
 .method protected disconnectInternal()V
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1689,7 +1735,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_State:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
 
@@ -1705,7 +1751,7 @@
 
     const-string v0, "Illegal state: m_State != STATE_CONNECTING && m_State != STATE_CONNECTED"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1713,7 +1759,7 @@
     :cond_0
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;->DISCONNECTING:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
 
@@ -1745,11 +1791,11 @@
 .method public final getService(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -1782,11 +1828,11 @@
         }
     .end annotation
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -1818,7 +1864,7 @@
 .method public final onCharacteristicChanged(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;)V
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -1827,7 +1873,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     invoke-virtual {p2}, Landroid/bluetooth/BluetoothGattCharacteristic;->getValue()[B
 
@@ -1851,7 +1897,29 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
+
+    const-string v0, "Profile"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Characteristic Changed: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToHexString([B)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_NotifyCBs:Ljava/util/Map;
 
@@ -1861,7 +1929,7 @@
 
     check-cast v0, Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Executor:Ljava/util/concurrent/ExecutorService;
 
@@ -1894,21 +1962,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p3, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_2
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1932,7 +2000,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_GattOperationLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -1957,7 +2025,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2013,21 +2081,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p3, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_2
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2051,7 +2119,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_GattOperationLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -2076,7 +2144,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2126,16 +2194,16 @@
 .end method
 
 .method public final onConnectionStateChange(Landroid/bluetooth/BluetoothGatt;II)V
-    .locals 3
+    .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_4
 
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2157,7 +2225,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2173,7 +2241,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2187,7 +2255,7 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2204,7 +2272,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2219,7 +2287,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
@@ -2234,7 +2302,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     invoke-direct {p0, p1}, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->printClientIf(Landroid/bluetooth/BluetoothGatt;)V
 
@@ -2242,29 +2310,30 @@
     iput-object p1, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     :cond_2
-    if-nez p2, :cond_6
+    if-nez p2, :cond_7
 
     packed-switch p3, :pswitch_data_0
 
     :pswitch_0
     const-string v0, ">>> UNEXPECTED <<<"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
+    :cond_3
     :goto_3
     return-void
 
-    :cond_3
+    :cond_4
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     const-string v0, ""
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     const-string v0, ""
 
     goto :goto_2
@@ -2276,15 +2345,15 @@
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "=================== CONNECTED ==================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2307,15 +2376,15 @@
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "================== DISCONNECTED ================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Executor:Ljava/util/concurrent/ExecutorService;
 
@@ -2326,31 +2395,6 @@
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
     goto :goto_3
-
-    :cond_6
-    const/16 v0, 0x85
-
-    if-eq p2, v0, :cond_7
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "status: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 
     :cond_7
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2365,11 +2409,21 @@
 
     move-result-object v0
 
+    const-string v1, ",status:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2385,7 +2439,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2399,7 +2453,7 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2416,7 +2470,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -2431,7 +2485,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_c
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
@@ -2446,7 +2500,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     invoke-direct {p0, p1}, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->printClientIf(Landroid/bluetooth/BluetoothGatt;)V
 
@@ -2457,15 +2511,15 @@
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     const-string v0, "=============== CONNECTION FAILED ==============="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Executor:Ljava/util/concurrent/ExecutorService;
 
@@ -2475,14 +2529,57 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    goto/16 :goto_3
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
+
+    invoke-direct {p0, v0}, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->getClientIf(Landroid/bluetooth/BluetoothGatt;)I
+
+    move-result v0
+
+    const/16 v1, 0xa
+
+    if-gt v0, v1, :cond_a
+
+    if-nez v0, :cond_3
 
     :cond_a
+    const-string v1, "xxx"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "clientIf is "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ", now disable bluetooth!!!"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Context:Landroid/content/Context;
+
+    check-cast v0, Lcom/xiaomi/hm/bleservice/BLEService;
+
+    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->disableBluetooth()V
+
+    goto/16 :goto_3
+
+    :cond_b
     const-string v0, ""
 
     goto :goto_4
 
-    :cond_b
+    :cond_c
     const-string v0, ""
 
     goto :goto_5
@@ -2504,21 +2601,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p3, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_2
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2542,7 +2639,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_GattOperationLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -2567,7 +2664,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2623,21 +2720,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p3, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_2
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2661,7 +2758,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_GattOperationLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -2686,7 +2783,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2742,21 +2839,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p3, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_2
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2772,7 +2869,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     sget-object v1, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_RSSILock:Ljava/lang/Object;
 
@@ -2799,7 +2896,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2854,25 +2951,25 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p2, :cond_0
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_1
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     const-string v0, ">>> UNEXPECTED <<<"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     return-void
 
@@ -2894,21 +2991,21 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     if-nez p2, :cond_0
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
     if-ne v0, p1, :cond_1
 
     :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez p2, :cond_2
 
@@ -2956,7 +3053,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     const/4 v1, 0x1
 
@@ -2964,7 +3061,7 @@
 
     iget-object v1, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v1, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -3025,7 +3122,7 @@
     :try_start_2
     const-string v1, "WAIT: readRemoteRSSI()"
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
 
     sget-object v1, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->c_RSSILock:Ljava/lang/Object;
 
@@ -3039,11 +3136,11 @@
 
     const-string v1, "GATT OPERATION TIMEOUT"
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     const-string v1, "CONTINUE: readRemoteRSSI()"
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -3064,7 +3161,7 @@
     :try_start_4
     const-string v1, "CONTINUE: readRemoteRSSI()"
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG_LOCK(Ljava/lang/String;)V
     :try_end_4
     .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -3122,9 +3219,9 @@
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
-    invoke-static {p2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_NotifyCBs:Ljava/util/Map;
 
@@ -3136,7 +3233,7 @@
 
     move-result v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v2, :cond_1
 
@@ -3151,7 +3248,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-eqz v2, :cond_0
 
@@ -3208,7 +3305,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_NotifyCBs:Ljava/util/Map;
 
@@ -3222,7 +3319,7 @@
 
     const-string v2, "m_State != STATE_CONNECTED"
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -3230,7 +3327,7 @@
 
     const-string v2, "m_Gatt != null, trying to unregister locally..."
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -3238,7 +3335,7 @@
 
     move-result v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v2, :cond_1
 
@@ -3254,7 +3351,7 @@
     :cond_2
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/gatt/AbsGattCallback;->m_Gatt:Landroid/bluetooth/BluetoothGatt;
 
@@ -3262,7 +3359,7 @@
 
     move-result v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-eqz v2, :cond_0
 
@@ -3272,7 +3369,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-eqz v2, :cond_0
 

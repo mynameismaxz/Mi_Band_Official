@@ -120,7 +120,7 @@
 .method private a(Landroid/view/View;)V
     .locals 14
 
-    const v0, 0x7f0700ce
+    const v0, 0x7f0700fe
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0700cf
+    const v0, 0x7f0700ff
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f0700d0
+    const v0, 0x7f070100
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->d:Lkankan/wheel/widget/WheelView;
 
-    const v0, 0x7f0700d1
+    const v0, 0x7f070101
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -306,13 +306,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200bb
+    const v2, 0x7f0200da
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0c00dd
+    const v2, 0x7f0c00e5
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->getString(I)Ljava/lang/String;
 
@@ -396,13 +396,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200bb
+    const v2, 0x7f0200da
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0c00d3
+    const v2, 0x7f0c00db
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
     :sswitch_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v1, 0x7f0c011f
+    const v1, 0x7f0c0128
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -444,7 +444,7 @@
     :sswitch_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;->b:Landroid/widget/TextView;
 
-    const v1, 0x7f0c0120
+    const v1, 0x7f0c0129
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -606,9 +606,9 @@
 
     move-result-object v4
 
-    new-instance v5, Lcn/com/smartdevices/bracelet/ui/Z;
+    new-instance v5, Lcn/com/smartdevices/bracelet/ui/H;
 
-    invoke-direct {v5, p0}, Lcn/com/smartdevices/bracelet/ui/Z;-><init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;)V
+    invoke-direct {v5, p0}, Lcn/com/smartdevices/bracelet/ui/H;-><init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailSleepModifyFragment;)V
 
     move v3, v2
 
@@ -680,7 +680,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030027
+    const v0, 0x7f030032
 
     return v0
 .end method

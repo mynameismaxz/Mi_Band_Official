@@ -1,67 +1,114 @@
 .class Lcn/com/smartdevices/bracelet/ui/bF;
-.super Landroid/os/Handler;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+.field private final synthetic c:Z
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    iput-boolean p2, p0, Lcn/com/smartdevices/bracelet/ui/bF;->c:Z
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public onFailed(Ljava/lang/Object;)V
     .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
-    sparse-switch v0, :sswitch_data_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->c(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/view/animation/RotateAnimation;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Landroid/view/animation/Animation;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     :goto_0
     return-void
 
-    :sswitch_0
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->c:Z
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;)V
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->c(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/view/animation/RotateAnimation;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->c(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;Lcn/com/smartdevices/bracelet/upgrade/OtaVersionInfo;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Landroid/view/animation/Animation;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    check-cast p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+
+    invoke-static {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;)V
+
+    :cond_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->d(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->b:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/bF;->c:Z
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;Z)V
 
     goto :goto_0
+.end method
 
-    :sswitch_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bF;->a:Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;
+.method public onStart()V
+    .locals 0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment;)V
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
 
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x1002 -> :sswitch_1
-    .end sparse-switch
+    return-void
 .end method

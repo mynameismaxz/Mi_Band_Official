@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ai;->a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ai;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,9 +25,9 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ai;->a:Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ai;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;->a(Lcn/com/smartdevices/bracelet/ui/FwLowBatteryActivity;)V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->menuExitAnimation()V
 
     return-void
 .end method

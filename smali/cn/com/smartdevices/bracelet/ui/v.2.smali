@@ -1,81 +1,75 @@
 .class Lcn/com/smartdevices/bracelet/ui/v;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Landroid/os/Handler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-.field private final synthetic b:Z
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
 
-    iput-boolean p2, p0, Lcn/com/smartdevices/bracelet/ui/v;->b:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/v;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/v;->b:Z
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/v;->b:Z
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->generateSleepReport()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->generateActivitiesReport()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->o(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/v;->b:Z
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->a(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;Z)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/w;
-
-    iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/ui/v;->b:Z
-
-    invoke-direct {v1, p0, v2}, Lcn/com/smartdevices/bracelet/ui/w;-><init>(Lcn/com/smartdevices/bracelet/ui/v;Z)V
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->runOnUiThread(Ljava/lang/Runnable;)V
-
+    :goto_0
+    :pswitch_0
     return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    const v1, 0x7f0c0182
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->b(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+
+    goto :goto_0
+
+    :pswitch_3
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/v;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->b(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
 .end method

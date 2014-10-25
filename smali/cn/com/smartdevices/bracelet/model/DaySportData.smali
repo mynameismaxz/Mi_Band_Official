@@ -575,7 +575,7 @@
     :try_start_0
     const-string v0, "v"
 
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
     invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 

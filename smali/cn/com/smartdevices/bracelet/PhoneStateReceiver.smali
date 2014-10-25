@@ -196,11 +196,9 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "IncomingCall"
+    const-string v0, "Call_Idle"
 
-    const-string v1, "CallIdle"
-
-    invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b()V
 
@@ -231,12 +229,23 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "IncomingCall"
+    const-string v0, "incoming_number"
 
-    const-string v2, "CallRing"
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p1, v0, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v0
 
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "Call_Ring"
+
+    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
+    :cond_1
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getInComingCallTime()I
 
     move-result v0
@@ -272,17 +281,26 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "IncomingCall"
+    const-string v0, "incoming_number"
 
-    const-string v1, "CallOffhook"
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p1, v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v0
 
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "Call_Offhook"
+
+    invoke-static {p1, v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
+    :cond_2
     invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->b()V
 
-    goto :goto_0
-
-    nop
+    goto/16 :goto_0
 
     :pswitch_data_0
     .packed-switch 0x0

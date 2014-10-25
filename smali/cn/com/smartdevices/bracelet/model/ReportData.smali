@@ -7,6 +7,8 @@
 
 .field public continueDays:I
 
+.field public continueStatus:I
+
 .field public distance:I
 
 .field public maxContinueDays:I
@@ -18,6 +20,8 @@
 .field public picture_url:Ljava/lang/String;
 
 .field public runDistance:I
+
+.field public skips:I
 
 .field public steps:I
 
@@ -70,6 +74,10 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->todayComplete:I
 
+    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->skips:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueStatus:I
+
     return-void
 .end method
 
@@ -105,6 +113,14 @@
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueDays:I
+
+    return v0
+.end method
+
+.method public getContinueStatus()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueStatus:I
 
     return v0
 .end method
@@ -145,6 +161,14 @@
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->runDistance:I
+
+    return v0
+.end method
+
+.method public getSkips()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->skips:I
 
     return v0
 .end method
@@ -223,6 +247,14 @@
     return-void
 .end method
 
+.method public setContinueStatus(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueStatus:I
+
+    return-void
+.end method
+
 .method public setDistance(I)V
     .locals 0
 
@@ -251,6 +283,14 @@
     .locals 0
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->maxDateStr:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setSkips(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->skips:I
 
     return-void
 .end method
@@ -513,6 +553,30 @@
     const-string v1, "\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "skips = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->skips:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "continueStatus = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueStatus:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

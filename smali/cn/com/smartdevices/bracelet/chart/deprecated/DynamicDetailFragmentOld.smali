@@ -666,13 +666,13 @@
 
     const/4 v4, 0x0
 
-    const v0, 0x7f030020
+    const v0, 0x7f03002a
 
     invoke-virtual {p1, v0, p2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    const v0, 0x7f0700a7
+    const v0, 0x7f0700d0
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

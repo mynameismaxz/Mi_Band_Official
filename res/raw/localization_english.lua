@@ -42,8 +42,16 @@ localization_English_table = {
     new_record_format="New record, %d steps, %s %d",
     today_goal_reached="Congrats! You have achieved your goal today. ",
     week_continue_reach_goal="You have achieved your goal every day for an entire week! What an awesome week!",
+
     challenge_format="You have achieved your goal for %d days!",
     personal_best_format="Your highest record is %d days!",
+    continue_with_skips_title="You didn't hit your goal yesterday, don't worry, we have used a cheat note to cover you up ;)",
+    personal_best_with_skips_format="Just made the highest record for %d days! Also, there are %d cheat notes left ;)",
+    continue_used_n_skips_format="You've hit your goal for %d days! You still have %d cheat notes ;)",
+    continue_used_0_skips_format="You've hit your goal for %d days! You have no cheat notes left.",
+    personal_best_on_skip_day_title="You've hit your goal for %d days! To reward you, we give you a cheat note as gift ;) You can cheat when you don't hit goal for a day with each note.",
+    personal_best_on_skip_day_info="You will earn a cheat note once you hit your goal for 7 days straight. We will use them automatically when you miss your goal. One cheat note exchanges for one day.",
+
     active_time_format_0="%d min",
     active_time_format_1="%d hr",
     active_time_format_2="%d hr %d min",
@@ -55,6 +63,10 @@ localization_English_table = {
     get_distance_format=", a total of %d m.",
     activity_walk_format="%s Walked %d steps %s",
     activity_walk_consumed_format="Burned %d cal %s",
+
+    activity_rope_skipping_format="%s Skipped rope %d time(s)",
+    activity_situp_format="%s Did %d sit-ups",
+    activity_consumed_format="Burned %d cal %s",
 
     activity_activity_format="%s %s work out %s",
     last_night_sleeped_good_format="Last night, you slept for %s. What a great sleep!",
@@ -103,4 +115,9 @@ localization_English_table = {
     game_share_to_hit_bonus="一个不小心中奖了，快来围观给我点赞吧",
     game_share_to_not_hit_bonus="没有抽中，就当是给下次中奖攒人品了",
     less_than_one="小于1",
+
+    ---====== Weather tips ===============
+    weather_tips_title_0 = "Heavy pollution, try to stay indoor.",
+    weather_tips_title_1 = "Heavy pollution, try to stay indoor.",
+    weather_tips_info = "Situps, rope skipping and plank are great indoor sports!",
 }

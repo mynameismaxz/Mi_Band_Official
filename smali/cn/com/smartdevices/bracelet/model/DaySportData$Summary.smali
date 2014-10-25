@@ -24,25 +24,31 @@
 .method public abstract getSleepWakeTime()I
 .end method
 
-.method public abstract getStepActiveTime()I
-.end method
-
-.method public abstract getStepCalorie()I
-.end method
-
-.method public abstract getStepContinueTime()I
+.method public abstract getStepCalories()I
 .end method
 
 .method public abstract getStepDistance()I
 .end method
 
+.method public abstract getStepDuration()I
+.end method
+
+.method public abstract getStepRunCalories()I
+.end method
+
 .method public abstract getStepRunDistance()I
 .end method
 
-.method public abstract getStepRunTime()I
+.method public abstract getStepRunDuration()I
 .end method
 
-.method public abstract getStepWalkTime()I
+.method public abstract getStepWalkCalories()I
+.end method
+
+.method public abstract getStepWalkDistance()I
+.end method
+
+.method public abstract getStepWalkDuration()I
 .end method
 
 .method public abstract getSteps()I

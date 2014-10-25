@@ -25,25 +25,44 @@
 .method public notify([B)V
     .locals 3
 
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    array-length v2, p1
+
+    if-ne v2, v0, :cond_1
+
+    :goto_0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
+
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
-    const-string v0, "============= DEVICE STATUS CHANGED ============="
+    const-string v0, "========== NOTIFICATION STATUS CHANGED =========="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
-    new-instance v0, Landroid/content/Intent;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_DEVICE_STATUS_CHANGED:Ljava/lang/String;
+    # getter for: Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$1(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_DEVICE:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    # getter for: Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$1(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+
+    move-result-object v0
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
@@ -51,21 +70,15 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    aget-byte v1, p1, v1
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_PARAM:Ljava/lang/String;
+    invoke-virtual {v0, v2, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;->sendOnDeviceStatusChangedMsg(Landroid/bluetooth/BluetoothDevice;I)V
 
-    const/16 v2, 0x10
-
-    aget-byte v2, p1, v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;B)Landroid/content/Intent;
-
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->getBroadcastManager()Landroid/support/v4/content/LocalBroadcastManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/support/v4/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)Z
-
+    :cond_0
     return-void
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
 .end method

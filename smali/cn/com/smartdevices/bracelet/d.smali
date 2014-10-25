@@ -38,11 +38,9 @@
 
     check-cast v0, Landroid/content/Context;
 
-    const-string v1, "IncomingCall"
+    const-string v1, "Call_Notify"
 
-    const-string v2, "CallNotify"
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
 
     :cond_0
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;

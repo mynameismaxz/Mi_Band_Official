@@ -97,7 +97,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03004d
+    const v0, 0x7f03005a
 
     return v0
 .end method
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07015d
+    const v1, 0x7f07019f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07015c
+    const v1, 0x7f07019e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -224,7 +224,7 @@
     :pswitch_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f07015e
+    const v3, 0x7f0701a0
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
     :pswitch_1
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f07015f
+    const v3, 0x7f0701a1
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -254,7 +254,7 @@
     :pswitch_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;->mTabHost:Landroid/view/ViewGroup;
 
-    const v3, 0x7f070160
+    const v3, 0x7f0701a2
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -324,7 +324,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f07015e
+    .packed-switch 0x7f0701a0
         :pswitch_0
         :pswitch_1
         :pswitch_2

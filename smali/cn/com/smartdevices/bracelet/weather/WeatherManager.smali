@@ -7,7 +7,7 @@
 
 .field public static final URL_REQUEST_CITY:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/positioning?longitude=%s&latitude=%s&source=mihealth"
 
-.field public static final URL_REQUEST_CITY_CODE:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&source=mihealth"
+.field public static final URL_REQUEST_CITY_CODE:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&longitude=%s&latitude=%s&phoneCode=%s&areaCode=%s&source=mihealth"
 
 .field public static final URL_REQUEST_WEATHER:Ljava/lang/String; = "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=%s&source=mihealth"
 
@@ -263,6 +263,22 @@
 
 
 # virtual methods
+.method public clearLastWeatherInfo()V
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/weather/WeatherManager;->mPrefs:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    return-void
+.end method
+
 .method public getContext()Landroid/content/Context;
     .locals 1
 
@@ -847,9 +863,9 @@
     goto :goto_0
 
     :cond_3
-    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&source=mihealth"
+    const-string v0, "http://weatherapi.market.xiaomi.com/wtr-v2/city/datasource?cityNames=%s&longitude=%s&latitude=%s&phoneCode=%s&areaCode=%s&source=mihealth"
 
-    const/4 v1, 0x1
+    const/4 v1, 0x5
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -860,6 +876,54 @@
     const-string v5, ";,"
 
     invoke-static {v4, v5}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;->getMetaData()Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;->getX()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;->getMetaData()Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;->getY()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v2
+
+    const/4 v2, 0x3
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;->getMetaData()Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;->getPhoneCode()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v2
+
+    const/4 v2, 0x4
+
+    invoke-virtual {p1}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$CityInfo;->getMetaData()Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcn/com/smartdevices/bracelet/weather/OriginalCityInfos$MetaData;->getAreaCode()Ljava/lang/String;
 
     move-result-object v4
 
@@ -887,7 +951,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
-    goto :goto_1
+    goto/16 :goto_1
 .end method
 
 .method public requestWeather(Ljava/lang/String;)V

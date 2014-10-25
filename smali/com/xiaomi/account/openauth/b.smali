@@ -1,61 +1,230 @@
 .class Lcom/xiaomi/account/openauth/b;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
+.super Landroid/os/AsyncTask;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
+        "Landroid/os/AsyncTask",
         "<",
-        "Lorg/apache/http/NameValuePair;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Landroid/os/Bundle;",
         ">;"
     }
 .end annotation
 
 
+# instance fields
+.field final synthetic a:Lcom/xiaomi/account/openauth/XiaomiOAuthorize;
+
+.field private b:Z
+
+.field private final synthetic c:Landroid/app/Activity;
+
+.field private final synthetic d:J
+
+.field private final synthetic e:Ljava/lang/String;
+
+.field private final synthetic f:Ljava/lang/String;
+
+.field private final synthetic g:Landroid/os/Bundle;
+
+.field private final synthetic h:I
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/xiaomi/account/openauth/XiaomiOAuthorize;Landroid/app/Activity;JLjava/lang/String;Ljava/lang/String;Landroid/os/Bundle;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/xiaomi/account/openauth/b;->a:Lcom/xiaomi/account/openauth/XiaomiOAuthorize;
+
+    iput-object p2, p0, Lcom/xiaomi/account/openauth/b;->c:Landroid/app/Activity;
+
+    iput-wide p3, p0, Lcom/xiaomi/account/openauth/b;->d:J
+
+    iput-object p5, p0, Lcom/xiaomi/account/openauth/b;->e:Ljava/lang/String;
+
+    iput-object p6, p0, Lcom/xiaomi/account/openauth/b;->f:Ljava/lang/String;
+
+    iput-object p7, p0, Lcom/xiaomi/account/openauth/b;->g:Landroid/os/Bundle;
+
+    iput p8, p0, Lcom/xiaomi/account/openauth/b;->h:I
+
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lorg/apache/http/NameValuePair;Lorg/apache/http/NameValuePair;)I
-    .locals 2
+.method protected varargs a([Ljava/lang/Void;)Landroid/os/Bundle;
+    .locals 3
 
-    invoke-interface {p1}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
+    const/4 v2, 0x1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/xiaomi/account/openauth/b;->a:Lcom/xiaomi/account/openauth/XiaomiOAuthorize;
+
+    iget-object v1, p0, Lcom/xiaomi/account/openauth/b;->c:Landroid/app/Activity;
+
+    invoke-virtual {v0, v1}, Lcom/xiaomi/account/openauth/XiaomiOAuthorize;->tryAddXiaomiAccount(Landroid/app/Activity;)Landroid/os/Bundle;
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/accounts/OperationCanceledException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
     move-result-object v0
 
-    invoke-interface {p2}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
+    :goto_0
+    return-object v0
 
-    move-result-object v1
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v0}, Ljava/lang/SecurityException;->printStackTrace()V
 
-    move-result v0
+    iput-boolean v2, p0, Lcom/xiaomi/account/openauth/b;->b:Z
 
-    return v0
+    :goto_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v0}, Landroid/accounts/OperationCanceledException;->printStackTrace()V
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v0
+
+    invoke-virtual {v0}, Landroid/accounts/AuthenticatorException;->printStackTrace()V
+
+    iput-boolean v2, p0, Lcom/xiaomi/account/openauth/b;->b:Z
+
+    goto :goto_1
+
+    :catch_3
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    goto :goto_1
 .end method
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method protected a(Landroid/os/Bundle;)V
+    .locals 8
 
-    check-cast p1, Lorg/apache/http/NameValuePair;
+    if-eqz p1, :cond_2
 
-    check-cast p2, Lorg/apache/http/NameValuePair;
+    const-string v0, "authAccount"
 
-    invoke-virtual {p0, p1, p2}, Lcom/xiaomi/account/openauth/b;->a(Lorg/apache/http/NameValuePair;Lorg/apache/http/NameValuePair;)I
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/xiaomi/account/openauth/b;->a:Lcom/xiaomi/account/openauth/XiaomiOAuthorize;
+
+    iget-object v1, p0, Lcom/xiaomi/account/openauth/b;->c:Landroid/app/Activity;
+
+    iget-wide v2, p0, Lcom/xiaomi/account/openauth/b;->d:J
+
+    iget-object v4, p0, Lcom/xiaomi/account/openauth/b;->e:Ljava/lang/String;
+
+    iget-object v5, p0, Lcom/xiaomi/account/openauth/b;->f:Ljava/lang/String;
+
+    iget-object v6, p0, Lcom/xiaomi/account/openauth/b;->g:Landroid/os/Bundle;
+
+    iget v7, p0, Lcom/xiaomi/account/openauth/b;->h:I
+
+    invoke-virtual/range {v0 .. v7}, Lcom/xiaomi/account/openauth/XiaomiOAuthorize;->startGetOAuthorizeFromAccount(Landroid/app/Activity;JLjava/lang/String;Ljava/lang/String;Landroid/os/Bundle;I)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const-string v0, "intent"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "XiaomiAuthoricator.addAccount() returns intent for UI action, but we don\'t exptect this because activity is not null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const-string v0, "XiaomiOAuthorize"
+
+    const-string v1, "do nothing after trying to add account, because no valid content in result bundle."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_2
+    iget-boolean v0, p0, Lcom/xiaomi/account/openauth/b;->b:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/xiaomi/account/openauth/b;->a:Lcom/xiaomi/account/openauth/XiaomiOAuthorize;
+
+    iget-object v1, p0, Lcom/xiaomi/account/openauth/b;->c:Landroid/app/Activity;
+
+    iget-wide v2, p0, Lcom/xiaomi/account/openauth/b;->d:J
+
+    iget-object v4, p0, Lcom/xiaomi/account/openauth/b;->e:Ljava/lang/String;
+
+    iget-object v5, p0, Lcom/xiaomi/account/openauth/b;->f:Ljava/lang/String;
+
+    iget-object v6, p0, Lcom/xiaomi/account/openauth/b;->g:Landroid/os/Bundle;
+
+    iget v7, p0, Lcom/xiaomi/account/openauth/b;->h:I
+
+    invoke-virtual/range {v0 .. v7}, Lcom/xiaomi/account/openauth/XiaomiOAuthorize;->startAuthorizeActivityFroResult(Landroid/app/Activity;JLjava/lang/String;Ljava/lang/String;Landroid/os/Bundle;I)V
+
+    goto :goto_0
+
+    :cond_3
+    const-string v0, "XiaomiOAuthorize"
+
+    const-string v1, "do nothing after trying to add account."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method protected varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, [Ljava/lang/Void;
+
+    invoke-virtual {p0, p1}, Lcom/xiaomi/account/openauth/b;->a([Ljava/lang/Void;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Landroid/os/Bundle;
+
+    invoke-virtual {p0, p1}, Lcom/xiaomi/account/openauth/b;->a(Landroid/os/Bundle;)V
+
+    return-void
 .end method

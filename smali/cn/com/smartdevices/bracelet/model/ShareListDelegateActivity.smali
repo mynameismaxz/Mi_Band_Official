@@ -111,7 +111,7 @@
 
     const/4 v0, 0x0
 
-    const v12, 0x7f0c017f
+    const v12, 0x7f0c0187
 
     const v11, 0x7f0c003f
 
@@ -280,7 +280,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const v3, 0x7f0c01e1
+    const v3, 0x7f0c01e9
 
     invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 
@@ -494,7 +494,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const v1, 0x7f0c0180
+    const v1, 0x7f0c0188
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 
@@ -607,7 +607,7 @@
 
     invoke-virtual {v10, v0}, Lcn/com/smartdevices/bracelet/model/ShareData;->setType(I)V
 
-    const v0, 0x7f0c0192
+    const v0, 0x7f0c019a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 
@@ -681,7 +681,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0c0193
+    const v4, 0x7f0c019b
 
     const/4 v5, 0x2
 
@@ -728,7 +728,7 @@
 
     invoke-virtual {v10, v0}, Lcn/com/smartdevices/bracelet/model/ShareData;->setType(I)V
 
-    const v0, 0x7f0c01d0
+    const v0, 0x7f0c01d8
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 
@@ -741,7 +741,7 @@
 
     iget v0, v0, Lcn/com/smartdevices/bracelet/model/ReportData;->continueDays:I
 
-    const v1, 0x7f0c00d7
+    const v1, 0x7f0c00df
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 
@@ -749,7 +749,7 @@
 
     iput-object v1, v10, Lcn/com/smartdevices/bracelet/model/ShareData;->contentUnit:Ljava/lang/String;
 
-    const v1, 0x7f0c01cf
+    const v1, 0x7f0c01d7
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -784,7 +784,7 @@
 
     invoke-virtual {v10, v0}, Lcn/com/smartdevices/bracelet/model/ShareData;->setType(I)V
 
-    const v0, 0x7f0c0194
+    const v0, 0x7f0c019c
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/model/ShareListDelegateActivity;->getString(I)Ljava/lang/String;
 

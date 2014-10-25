@@ -1,49 +1,45 @@
 .class Lcn/com/smartdevices/bracelet/ui/bi;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bi;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bi;->a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onLeftClicked(Landroid/app/DialogFragment;)V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
     .locals 1
 
-    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
+    if-eqz p3, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bi;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    new-instance v0, Ljava/lang/String;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->d(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    return-void
-.end method
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
 
-.method public onRightClicked(Landroid/app/DialogFragment;)V
-    .locals 0
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
 
+    :cond_0
     return-void
 .end method

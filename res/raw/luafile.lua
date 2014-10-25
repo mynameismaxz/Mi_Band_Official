@@ -1,4 +1,4 @@
-__luaVersion=20140924004
+__luaVersion=20141011003
 --[[----------- NOTE: read me first if you want to modify it---------------
 1\
 the first line of this lua file _MUST_ be __luaVersion !!
@@ -319,23 +319,33 @@ function uniqueMsg(listDao,ConfigInfo,table)
     setMessage(listDao,table)
 end
 
---
--- if exist(date,type) del it & insert new
---
-function replaceMsgByType(listDao,ConfigInfo,table)
-    --del old msg
+function delMsgByType (listDao, ConfigInfo, stype)
     qb = listDao:queryBuilder()
+
+    if (ConfigInfo == nil) then
+        log("ConfigInfo = nil ")
+        return
+    end
+
     luaAction = ConfigInfo:getLuaAction()
     Properties = luajava.newInstance("de.greenrobot.daobracelet.LuaListDao$Properties")
 
     today = "" .. os.date("%Y-%m-%d",os.time())
     w1 = Properties.Date:eq(today)
-    w2 = Properties.Type:eq(table.stype)
+    w2 = Properties.Type:eq(stype)
 
 
     luaAction:queryWhere(qb,w1)
     luaAction:queryWhere(qb,w2)
     luaAction:queryDel(qb)
+end
+
+--
+-- if exist(date,type) del it & insert new
+--
+function replaceMsgByType(listDao,ConfigInfo,table)
+    --del old msg
+    delMsgByType(listDao, ConfigInfo, table.stype)
 
     --create new
     setMessage(listDao,table)
@@ -344,9 +354,8 @@ end
 --
 -- if exist(date,startTime,stopTime!=stop) del it & insert new
 --
-function mergeActivityMsg(listDao,ConfigInfo,table)
+function mergeActivityMsg(listDao, luaAction, table)
     t = table
-    luaAction = ConfigInfo:getLuaAction()
 
     --check old msg
     today = "" .. os.date("%Y-%m-%d",os.time())
@@ -355,18 +364,19 @@ function mergeActivityMsg(listDao,ConfigInfo,table)
     qb2 = listDao:queryBuilder()
 
     w1 = Properties.Date:eq(today)
-    --    the date_time MUST be different,so we don't need stype
---    w2 = Properties.Type:eq(t.stype)
+    w2 = Properties.Type:eq(t.stype)
     w3 = Properties.Start:eq(t.start)
     w4 = Properties.Stop:eq(t.stop)
     w5 = Properties.Stop:notEq(t.stop)
 
     --judge unique
     luaAction:queryWhere(qb,w1)
+    luaAction:queryWhere(qb,w2)
     luaAction:queryWhere(qb,w3)
     luaAction:queryWhere(qb,w4)
     n = luaAction:queryCount(qb)
 
+    log(" msg count = "..n)
     --if exist & not _FORCE_ update return;
     if __forceUpdate == false then
         if n > 0 then
@@ -377,6 +387,7 @@ function mergeActivityMsg(listDao,ConfigInfo,table)
 
     --del last item if update
     luaAction:queryWhere(qb2,w1)
+    luaAction:queryWhere(qb,w2)
     luaAction:queryWhere(qb2,w3)
     luaAction:queryWhere(qb2,w5)
     luaAction:queryDel(qb2)
@@ -642,6 +653,21 @@ function dayComplete(listDao,ConfigInfo)
     uniqueMsg(listDao,ConfigInfo,t)
 end
 
+function clearGoalHint(listDao,ConfigInfo)
+    qb = listDao:queryBuilder()
+    luaAction = ConfigInfo:getLuaAction()
+    Properties = luajava.newInstance("de.greenrobot.daobracelet.LuaListDao$Properties")
+
+    today = "" .. os.date("%Y-%m-%d",os.time())
+    stype = "2002" --magic number ,but u know it
+    w1 = Properties.Date:eq(today)
+    w2 = Properties.Type:eq(stype)
+
+    luaAction:queryWhere(qb,w1)
+    luaAction:queryWhere(qb,w2)
+    luaAction:queryDel(qb)
+end
+
 --2003
 function weekComplete(listDao,ConfigInfo)
     t1 = getString('week_continue_reach_goal')
@@ -657,14 +683,21 @@ function weekComplete(listDao,ConfigInfo)
     uniqueMsg(listDao,ConfigInfo,t)
 end
 
+ STATUS_NOT_CONTINUE = 0;
+ STATUS_CONTINUE = 1;
+ STATUS_CONTINUE_ON_SKIP_DAY = 2;
+ STATUS_CONTINUE_USED_SKIP = 3;
 --2004
 function challenge(listDao,ConfigInfo)
     cr = ConfigInfo:getContinueReport()
 
     contiueDays = cr:getContinueDays()
     maxDays = cr:getMaxContinueDays()
+    skips = cr:getSkips()
+    continueStatus = cr:getContinueStatus()
+
+    log("maxDays = ".. maxDays .." continue day = " .. contiueDays..", skips="..skips);
     t1 = string.format(getString('challenge_format'), contiueDays)
-    t2 = string.format(getString('personal_best_format'), maxDays)
 
     -- Notify the incoming challenge:
     needNotify = false
@@ -692,10 +725,39 @@ function challenge(listDao,ConfigInfo)
         t2 = string.format(getString('challenge_to_get'), maxDays - contiueDays + 1)
     end
 
-    if (maxDays == contiueDays) then
-        t2 = getString('record_reach_max')
-    elseif (contiueDays > maxDays) then
-        t2 = getString('new_record_born')
+
+    log("skips = "..skips .. ", status ="..continueStatus)
+    if (skips > 0) then
+        if (continueStatus == STATUS_CONTINUE_ON_SKIP_DAY) then
+
+            t1 = string.format(getString('personal_best_on_skip_day_title'), contiueDays)
+            t2 = string.format(getString('personal_best_on_skip_day_info'))
+            log("on get skip day, t1 = "..t1..", t2 =".. t2)
+        elseif (continueStatus == STATUS_CONTINUE_USED_SKIP) then
+            t1 = getString('continue_with_skips_title')
+            t2 = string.format(getString('continue_used_n_skips_format'), contiueDays, skips)
+        else
+            if (contiueDays > maxDays) then
+                t2 = getString('new_record_born')
+            else
+                t2 = string.format(getString('personal_best_format'), maxDays)..", "
+            end
+            t_skips = string.format(getString('personal_best_with_skips_format'), skips)
+            t2 = t2..t_skips
+        end
+    else
+        if (skips == 0 and continueStatus == STATUS_CONTINUE_USED_SKIP) then
+            t1 = getString('continue_with_skips_title')
+            t2 = string.format(getString('continue_used_0_skips_format'), contiueDays)
+        else
+            if (maxDays == contiueDays) then
+                t2 = getString('record_reach_max')
+            elseif (contiueDays > maxDays) then
+                t2 = getString('new_record_born')
+            else
+                t2 = string.format(getString('personal_best_format'), maxDays)
+            end
+        end
     end
 
     if (contiueDays == 1) then
@@ -774,23 +836,47 @@ function getActivityScript(activityItem, t2)
         local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.DynamicDetailActivity');\
         luaAction:putExtra(intent,'Mode',0x01)\
         luaAction:putExtra(intent,'Action','DynamicView')\
-        luaAction:putExtra(intent,'DynamicStartTime',"..activityItem:getStart()..")\
-        luaAction:putExtra(intent,'DynamicEndTime',"..activityItem:getStop()..")\
-        luaAction:putExtra(intent,'DynamicActiveTime',"..activityItem:getActiveTime()..")\
-        luaAction:putExtra(intent,'DynamicStep',"..activityItem:getSteps()..")\
-        luaAction:putExtra(intent,'DynamicStepDistance',"..activityItem:getDistance()..")\
-        luaAction:putExtra(intent,'DynamicActivitySubTitle','"..t2.."')\
-        luaAction:putExtra(intent,'DynamicActivityMode',"..activityItem:getMode()..")\
+	luaAction:putExtra(intent,'Key',"..activityItem:getKey()..")\
+	luaAction:putExtra(intent,'DynamicActivitySubTitle','"..t2.."')\
         context:startActivity(intent)\
     end"
 
+--	luaAction:putExtra(intent,'DynamicStartTime',"..activityItem:getStart()..")\
+--      luaAction:putExtra(intent,'DynamicEndTime',"..activityItem:getStop()..")\
+--      luaAction:putExtra(intent,'DynamicActiveTime',"..activityItem:getActiveTime()..")\
+--      luaAction:putExtra(intent,'DynamicStep',"..activityItem:getSteps()..")\
+--      luaAction:putExtra(intent,'DynamicStepDistance',"..activityItem:getDistance()..")\
+--      luaAction:putExtra(intent,'DynamicActivityMode',"..activityItem:getMode()..")\
+
     return strScript
 end
+
+function getActivityLabScript(activityItem)
+    sharedata = activityItem:getShareData()
+
+    des = sharedata:getDescription()
+    des = string.gsub(des, '\n', '\\n')
+
+    strScript = "function doAction(context, luaAction) \
+        local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.ShareActivity');\
+        luaAction:putExtra(intent,'type','"..sharedata:getType().."')\
+        luaAction:putExtra(intent,'title','"..sharedata:getTitle().."')\
+        luaAction:putExtra(intent,'content','"..sharedata:getContent().."')\
+        luaAction:putExtra(intent,'unit','"..sharedata:getContentUnit().."')\
+        luaAction:putExtra(intent,'time','"..sharedata:getTime().."')\
+        luaAction:putExtra(intent,'description','"..des.."')\
+        luaAction:putExtra(intent,'time_tips','"..sharedata:getTimeTips().."')\
+        luaAction:putExtra(intent,'color',"..sharedata:getColor()..")\
+        context:startActivity(intent)\
+    end"
+    return strScript
+end
+
 --3001
 function activityRun(listDao,ConfigInfo)
     activityItem = ConfigInfo:getActiveItem()
 
-    time = activityItem:getStop() - activityItem:getStart()
+    time = activityItem:getActiveTime()
     activeTime = nil
     m = time % 60
     h = (time - m) / 60
@@ -827,7 +913,9 @@ function activityRun(listDao,ConfigInfo)
     t.start = "".. activityItem:getStart()
     t.stop = "".. activityItem:getStop()
 
-    mergeActivityMsg(listDao,ConfigInfo,t)
+    luaAction = ConfigInfo:getLuaAction()
+
+    mergeActivityMsg(listDao, luaAction, t)
 end
 
 function getDistanceString(meter)
@@ -844,6 +932,7 @@ function getDistanceString(meter)
         return string.format(getString('get_distance_format'), meter)
     end
 end
+
 --3002
 function activityWalk(listDao,ConfigInfo)
     activityItem = ConfigInfo:getActiveItem()
@@ -865,14 +954,16 @@ function activityWalk(listDao,ConfigInfo)
     t.start = "".. activityItem:getStart()
     t.stop = "".. activityItem:getStop()
 
-    mergeActivityMsg(listDao,ConfigInfo,t)
+    luaAction = ConfigInfo:getLuaAction()
+
+    mergeActivityMsg(listDao, luaAction, t)
 end
 
 --3003
 function activityActivity(listDao,ConfigInfo)
     activityItem = ConfigInfo:getActiveItem()
 
-    timestring1 = getTimeString1(activityItem:getStop() - activityItem:getStart())
+    timestring1 = getTimeString1(activityItem:getActiveTime())
     timestring2 = getTimeString2(activityItem:getStart(),activityItem:getStop()).." "
 
     t1 = string.format(getString('activity_activity_format'), timestring2, timestring1, getDistanceString(activityItem:getDistance()))
@@ -889,9 +980,31 @@ function activityActivity(listDao,ConfigInfo)
     t.start = "".. activityItem:getStart()
     t.stop = "".. activityItem:getStop()
 
-    mergeActivityMsg(listDao,ConfigInfo,t)
+
+    luaAction = ConfigInfo:getLuaAction()
+
+    mergeActivityMsg(listDao, luaAction, t)
 end
 
+
+LAB_ROPESKIP = "Lab_9001"
+LAB_SITUP = "Lab_9002"
+
+function activitySport(listDao, activityItem, title, subtitle)
+    strScript = getActivityLabScript(activityItem)
+
+    t = {}
+    t.t1 = title
+    t.t2 = subtitle
+    t.stype = stype
+    t.strScript = strScript
+    t.start = "".. activityItem:getStart()
+    t.stop = "".. activityItem:getStop()
+
+    luaAction = activityItem:getLuaAction()
+
+    mergeActivityMsg(listDao, luaAction, t)
+end
 
 --4001
 function sleepGood(listDao,ConfigInfo)
@@ -1093,6 +1206,13 @@ callbacks = {
     {index = 5001,func = batteryLow},
     {index = 5002,func = batteryVeryLow},
     {index = 5003,func = notFoud},
+
+    -- Weather
+    -- 6001
+
+    --手环实验室功能
+    {index = 9001,func = skipRope},
+    {index = 9002,func = doSitup},
 }
 ---------------------------------------------------
 --
@@ -1129,6 +1249,7 @@ function getEventMsgs(listDao,ConfigInfo,index)
 end
 
 function getDefaultMsgs(listDao, ConfigInfo)
+
     if (ConfigInfo:getNewUser())then
         welcome(listDao,ConfigInfo)
 --        newUser(listDao,ConfigInfo)
@@ -1190,14 +1311,16 @@ function getActivityMsgs(listDao, ConfigInfo)
     --activity
     if mode == 0 then
         activityActivity(listDao,ConfigInfo)
-    end
     --walk
-    if mode == 1 then
+    elseif mode == 1 then
         activityWalk(listDao,ConfigInfo)
-    end
     --run
-    if mode == 2 then
+    elseif mode == 2 then
         activityRun(listDao,ConfigInfo)
+    elseif mode == 3 then
+        activitySitup(listDao, ConfigInfo)
+    elseif mode == 4 then
+        activitySport(listDao, ConfigInfo)
     end
 
 end
@@ -1480,8 +1603,7 @@ function showGameBanner(listDao, ConfigInfo)
                 end
             end
         else -- Before bonus open
-
-            if (getDayDif(bonusTime) == -1) then
+            if (getDayDif(bonusTime) == 1) then
                 t.t1 = getString("game_bonus_open_tomorrow")
                 t.t2 = getString("game_not_register_info")
             elseif (getDayDif(bonusTime) == 0) then
@@ -1490,7 +1612,6 @@ function showGameBanner(listDao, ConfigInfo)
             else
                 t.t1 = string.format(getString("game_bonus_open"), os.date("%m", bonusTime), os.date("%d", bonusTime))
             end
-
         end
     end
 
@@ -1540,6 +1661,54 @@ function getGameInfo(Cinfo)
     end
 end
 
+function getLabFactoryActivityMsgs(listDao, activityItem)
+    mode = activityItem:getMode()
+
+    timestring = getTimeString2(activityItem:getStart(), activityItem:getStop()).." "
+    t2 = string.format(getString('activity_consumed_format'), activityItem:getCalories(), getCaloriesString(activityItem:getCalories()))
+
+    -- rope-skipping
+    if mode == 1 then
+        t1 = string.format(getString('activity_rope_skipping_format'), timestring, activityItem:getCount())
+        stype = LAB_ROPESKIP
+        activitySport(listDao, activityItem, t1, t2)
+        return;
+    end;
+
+    -- sit-up
+    if mode == 2 then
+        t1 = string.format(getString('activity_situp_format'), timestring, activityItem:getCount())
+        stype = LAB_SITUP
+        activitySport(listDao, activityItem, t1, t2)
+        return;
+    end
+end
+
+------===============Weather tips ==================
+WEATHER_TIPS = "6001"
+DIRTY_AIR_AQI_LEVEL = 5
+VERY_DIRTY_AIR_AQI_LEVEL = 6
+
+function updateWeatherTips(listDao, configInfo)
+    aqi = configInfo:getAQILevel()
+    log("updateWeatherTips AQI = " .. aqi)
+
+    t = {}
+
+    if (aqi < DIRTY_AIR_AQI_LEVEL)  then
+        delMsgByType(listDao, configInfo, WEATHER_TIPS);
+        return
+    elseif (aqi == DIRTY_AIR_AQI_LEVEL) then
+        t.t1 = getString('weather_tips_title_0')
+    elseif (aqi > DIRTY_AIR_AQI_LEVEL) then
+        t.t1 = getString('weather_tips_title_1')
+    end
+
+    t.t2 = getString('weather_tips_info')
+    t.stype = WEATHER_TIPS
+    t.script = ""
+    replaceMsgByType(listDao, configInfo, t)
+end
 
 -----====================== Localization ==============================----
 

@@ -13,7 +13,7 @@ en_US = 'en_US'
 en_GB = 'en_GB'
 en = 'en'
 g_CurLocale = ""
-DEBUG = false
+DEBUG = true
 -------------Globals----------------
 
 __log = nil

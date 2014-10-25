@@ -1,108 +1,49 @@
 .class Lcn/com/smartdevices/bracelet/ui/ag;
-.super Landroid/widget/BaseAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;)V
+.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;Lcn/com/smartdevices/bracelet/ui/ag;)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;Lcn/com/smartdevices/bracelet/ui/ag;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/ag;-><init>(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;)V
-
-    return-void
-.end method
-
-.method private a(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
-    .locals 3
-
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    const-class v2, Lcn/com/smartdevices/bracelet/activity/WebActivity;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    const-string v1, "web_type"
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    const-string v1, "web_url"
-
-    iget-object v2, p1, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->uri:Landroid/net/Uri;
-
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v1, "Label"
-
-    iget-object v2, p1, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->title:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/ag;->a(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/ag;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCount()I
-    .locals 3
+.method public run()V
+    .locals 4
 
-    const-string v0, "Dynamic.List"
+    const-string v0, "DDDD"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "GetCount : "
+    const-string v2, "Gif End : "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;)I
 
     move-result v2
 
@@ -116,120 +57,203 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;)Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;)I
 
     move-result v0
 
-    return v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public getItem(I)Ljava/lang/Object;
-    .locals 1
+    goto :goto_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+    :pswitch_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;)Ljava/util/ArrayList;
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mTip:Landroid/widget/TextSwitcher;
 
-    move-result-object v0
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    const v2, 0x7f0c0195
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getItemId(I)J
-    .locals 2
-
-    int-to-long v0, p1
-
-    return-wide v0
-.end method
-
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 4
-
-    const-string v0, "Dynamic.List"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "GetView : "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/TextSwitcher;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
+
+    const v1, 0x7f020080
+
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->setGifImage(I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    const/4 v1, 0x2
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;I)V
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mTip:Landroid/widget/TextSwitcher;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    const v2, 0x7f0c0196
+
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextSwitcher;->setText(Ljava/lang/CharSequence;)V
 
-    if-nez p2, :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment;->getActivity()Landroid/app/Activity;
+    const v1, 0x7f020081
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->setGifImage(I)V
 
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    move-result-object v0
+    const/4 v1, 0x3
 
-    const v1, 0x7f03002a
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;I)V
 
-    const/4 v2, 0x0
+    goto :goto_0
 
-    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    :pswitch_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    move-result-object p2
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mTip:Landroid/widget/TextSwitcher;
 
-    :cond_0
-    invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/ui/ag;->getItem(I)Ljava/lang/Object;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    move-result-object v0
+    const v2, 0x7f0c0197
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
-
-    const v1, 0x7f0700d7
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/TextView;
+    invoke-virtual {v0, v1}, Landroid/widget/TextSwitcher;->setText(Ljava/lang/CharSequence;)V
 
-    const v2, 0x7f0700d8
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
 
-    move-result-object v2
+    const v1, 0x7f020082
 
-    check-cast v2, Landroid/widget/TextView;
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->setGifImage(I)V
 
-    iget-object v3, v0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->title:Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const/4 v1, 0x4
 
-    iget-object v1, v0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->summary:Ljava/lang/String;
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;I)V
 
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    goto :goto_0
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ah;
+    :pswitch_3
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    invoke-direct {v1, p0, v0}, Lcn/com/smartdevices/bracelet/ui/ah;-><init>(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mTip:Landroid/widget/TextSwitcher;
 
-    invoke-virtual {p2, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
 
-    return-object p2
+    const v2, 0x7f0c0198
+
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextSwitcher;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
+
+    const v1, 0x7f020083
+
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->setGifImage(I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    const/4 v1, 0x5
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ag;
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    invoke-direct {v1, v2}, Lcn/com/smartdevices/bracelet/ui/ag;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;)V
+
+    const-wide/16 v2, 0x7d0
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/xiaomi/hm/view/GifView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto/16 :goto_0
+
+    :pswitch_4
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mTip:Landroid/widget/TextSwitcher;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    const v2, 0x7f0c0194
+
+    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextSwitcher;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->mGifView:Lcom/xiaomi/hm/view/GifView;
+
+    const v1, 0x7f02007f
+
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/view/GifView;->setGifImage(I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ag;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionPage2;I)V
+
+    goto/16 :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method

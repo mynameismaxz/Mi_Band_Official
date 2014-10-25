@@ -1,160 +1,154 @@
 .class Lcn/com/smartdevices/bracelet/ui/aN;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public onFailed(Ljava/lang/Object;)V
+    .locals 4
 
-    return-void
-.end method
+    const/4 v3, 0x1
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+
+    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->mRightButton:Landroid/view/View;
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    const v1, 0x7f0c008a
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->E(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
-    const/4 v1, -0x1
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+    check-cast p1, Ljava/lang/Integer;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->r(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->F(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setX(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->r(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    const v1, 0x7f0c008c
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->G(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->r(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-static {v0, v1, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->H(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->setVPHight()V
+    :goto_0
+    return-void
 
     :cond_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepIsPlayEnterAnimation(Ljava/lang/Boolean;)V
+    const v1, 0x7f0c008b
 
-    return-void
+    invoke-static {v0, v1, v3}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto :goto_0
 .end method
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 4
 
-    return-void
-.end method
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->D(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    const/high16 v1, 0x44480000
+    const v1, 0x7f0c0089
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->E(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
-    const v1, -0xe7673c
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->r(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    const-class v1, Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+    move-result-object v1
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->v(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
+    invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;->notifyDataSetChanged()V
+    const-string v1, "MiliRenameFragment"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "miliFragment = "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aN;->b:Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->dismiss()V
 
     return-void
 .end method

@@ -3,6 +3,8 @@
 
 
 # static fields
+.field public static final BODY:B = 0x2t
+
 .field public static final LEFT:B = 0x0t
 
 .field public static final RIGHT:B = 0x1t

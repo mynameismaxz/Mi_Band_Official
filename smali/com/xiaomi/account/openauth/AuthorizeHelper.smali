@@ -11,11 +11,13 @@
 
 .field protected static final HEADER_FLAG:Ljava/lang/String; = "&&&START&&&"
 
-.field public static final OAUTH2_HOST:Ljava/lang/String; = "https://account.xiaomi.com"
+.field public static final OAUTH2_HOST:Ljava/lang/String;
 
 .field protected static final REFRESH_TOKEN:Ljava/lang/String; = "refresh_token"
 
-.field protected static final TOKEN_PATH:Ljava/lang/String; = "https://account.xiaomi.com/oauth2/token"
+.field protected static final TOKEN_PATH:Ljava/lang/String;
+
+.field public static final USE_PREVIEW:Z
 
 .field private static final a:Ljava/lang/String; = "HmacSHA1"
 
@@ -26,7 +28,50 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v1, "/data/system/oauth_staging_preview"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/xiaomi/account/openauth/AuthorizeHelper;->USE_PREVIEW:Z
+
+    sget-boolean v0, Lcom/xiaomi/account/openauth/AuthorizeHelper;->USE_PREVIEW:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "http://account.preview.n.xiaomi.net"
+
+    :goto_0
+    sput-object v0, Lcom/xiaomi/account/openauth/AuthorizeHelper;->OAUTH2_HOST:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    sget-object v1, Lcom/xiaomi/account/openauth/AuthorizeHelper;->OAUTH2_HOST:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "/oauth2/token"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/xiaomi/account/openauth/AuthorizeHelper;->TOKEN_PATH:Ljava/lang/String;
 
     const-string v0, "com.xiaomi.account.openauth.AuthorizeActivity"
 
@@ -39,6 +84,11 @@
     sput-object v0, Lcom/xiaomi/account/openauth/AuthorizeHelper;->c:Ljava/util/Random;
 
     return-void
+
+    :cond_0
+    const-string v0, "https://account.xiaomi.com"
+
+    goto :goto_0
 .end method
 
 .method public constructor <init>()V
@@ -352,7 +402,7 @@
 
     new-instance v1, Ljava/net/URL;
 
-    const-string v2, "https://account.xiaomi.com/oauth2/token"
+    sget-object v2, Lcom/xiaomi/account/openauth/AuthorizeHelper;->TOKEN_PATH:Ljava/lang/String;
 
     invoke-static {v2, v0}, Lcom/xiaomi/account/openauth/AuthorizeHelper;->generateUrl(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
 
@@ -471,7 +521,7 @@
 
     new-instance v1, Ljava/net/URL;
 
-    const-string v2, "https://account.xiaomi.com/oauth2/token"
+    sget-object v2, Lcom/xiaomi/account/openauth/AuthorizeHelper;->TOKEN_PATH:Ljava/lang/String;
 
     invoke-static {v2, v0}, Lcom/xiaomi/account/openauth/AuthorizeHelper;->generateUrl(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
 
@@ -624,9 +674,9 @@
 
     invoke-static {v2, v3, v4}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/util/List;Ljava/util/Scanner;Ljava/lang/String;)V
 
-    new-instance v3, Lcom/xiaomi/account/openauth/b;
+    new-instance v3, Lcom/xiaomi/account/openauth/a;
 
-    invoke-direct {v3}, Lcom/xiaomi/account/openauth/b;-><init>()V
+    invoke-direct {v3}, Lcom/xiaomi/account/openauth/a;-><init>()V
 
     invoke-static {v2, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 

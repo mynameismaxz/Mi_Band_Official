@@ -798,6 +798,14 @@
     return-object v0
 .end method
 
+.method public getCalendar()Ljava/util/Calendar;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/SportDay;->calendar:Ljava/util/Calendar;
+
+    return-object v0
+.end method
+
 .method public getKey()Ljava/lang/String;
     .locals 1
 
@@ -953,6 +961,30 @@
     invoke-direct {v0, v1}, Lcn/com/smartdevices/bracelet/model/SportDay;-><init>(Ljava/util/Calendar;)V
 
     return-object v0
+.end method
+
+.method public isToday()Z
+    .locals 1
+
+    new-instance v0, Lcn/com/smartdevices/bracelet/model/SportDay;
+
+    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/SportDay;-><init>()V
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/model/SportDay;->offsetDay(Lcn/com/smartdevices/bracelet/model/SportDay;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public offsetDay(Lcn/com/smartdevices/bracelet/model/SportDay;)I

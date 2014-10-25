@@ -22,7 +22,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03003b
+    const v0, 0x7f030048
 
     return v0
 .end method
@@ -48,7 +48,7 @@
 
     move-result-object v15
 
-    const v1, 0x7f070100
+    const v1, 0x7f070139
 
     invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     iget-object v1, v0, Lcn/com/smartdevices/bracelet/ui/PersonInfoSettingWeightFragment;->b:Lkankan/wheel/widget/WheelView;
 
-    const v2, 0x7f0200bb
+    const v2, 0x7f0200da
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 

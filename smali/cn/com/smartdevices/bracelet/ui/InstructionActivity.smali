@@ -12,7 +12,7 @@
 
 .field private c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-.field private d:Lcn/com/smartdevices/bracelet/ui/ax;
+.field private d:Lcn/com/smartdevices/bracelet/ui/af;
 
 .field private e:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -225,19 +225,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/ui/ax;
+    new-instance v0, Lcn/com/smartdevices/bracelet/ui/af;
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/ax;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+    invoke-direct {v0, p0, v1}, Lcn/com/smartdevices/bracelet/ui/af;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/af;
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->b:Landroid/support/v4/view/ViewPager;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/ax;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->d:Lcn/com/smartdevices/bracelet/ui/af;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
@@ -253,9 +253,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->c:Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aw;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ae;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aw;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ae;-><init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)V
 
     invoke-interface {v0, v1}, Lcn/com/smartdevices/bracelet/ui/widget/PageIndicator;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 

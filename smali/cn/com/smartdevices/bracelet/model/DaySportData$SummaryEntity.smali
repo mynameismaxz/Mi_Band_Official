@@ -20,19 +20,23 @@
 
 .field private sleepWakeTime:I
 
-.field private stepActiveTime:I
-
-.field private stepCalorie:I
-
-.field private stepContinueTime:I
+.field private stepCalories:I
 
 .field private stepDistance:I
 
+.field private stepDuration:I
+
+.field private stepRunCalories:I
+
 .field private stepRunDistance:I
 
-.field private stepRunTime:I
+.field private stepRunDuration:I
 
-.field private stepWalkTime:I
+.field private stepWalkCalories:I
+
+.field private stepWalkDistance:I
+
+.field private stepWalkDuration:I
 
 .field private steps:I
 
@@ -112,26 +116,10 @@
     return v0
 .end method
 
-.method public getStepActiveTime()I
+.method public getStepCalories()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepActiveTime:I
-
-    return v0
-.end method
-
-.method public getStepCalorie()I
-    .locals 1
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepCalorie:I
-
-    return v0
-.end method
-
-.method public getStepContinueTime()I
-    .locals 1
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepContinueTime:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepCalories:I
 
     return v0
 .end method
@@ -144,6 +132,22 @@
     return v0
 .end method
 
+.method public getStepDuration()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepDuration:I
+
+    return v0
+.end method
+
+.method public getStepRunCalories()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunCalories:I
+
+    return v0
+.end method
+
 .method public getStepRunDistance()I
     .locals 1
 
@@ -152,18 +156,34 @@
     return v0
 .end method
 
-.method public getStepRunTime()I
+.method public getStepRunDuration()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunTime:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunDuration:I
 
     return v0
 .end method
 
-.method public getStepWalkTime()I
+.method public getStepWalkCalories()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkTime:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkCalories:I
+
+    return v0
+.end method
+
+.method public getStepWalkDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkDistance:I
+
+    return v0
+.end method
+
+.method public getStepWalkDuration()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkDuration:I
 
     return v0
 .end method
@@ -256,26 +276,10 @@
     return-void
 .end method
 
-.method public setStepActiveTime(I)V
+.method public setStepCalories(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepActiveTime:I
-
-    return-void
-.end method
-
-.method public setStepCalorie(I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepCalorie:I
-
-    return-void
-.end method
-
-.method public setStepContinueTime(I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepContinueTime:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepCalories:I
 
     return-void
 .end method
@@ -288,6 +292,22 @@
     return-void
 .end method
 
+.method public setStepDuration(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepDuration:I
+
+    return-void
+.end method
+
+.method public setStepRunCalories(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunCalories:I
+
+    return-void
+.end method
+
 .method public setStepRunDistance(I)V
     .locals 0
 
@@ -296,18 +316,34 @@
     return-void
 .end method
 
-.method public setStepRunTime(I)V
+.method public setStepRunDuration(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunTime:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepRunDuration:I
 
     return-void
 .end method
 
-.method public setStepWalkTime(I)V
+.method public setStepWalkCalories(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkTime:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkCalories:I
+
+    return-void
+.end method
+
+.method public setStepWalkDistance(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkDistance:I
+
+    return-void
+.end method
+
+.method public setStepWalkDuration(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/model/DaySportData$SummaryEntity;->stepWalkDuration:I
 
     return-void
 .end method

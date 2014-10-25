@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aC;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aC;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,24 +22,30 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 1
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aC;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->dismiss()V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Ljava/lang/Float;
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    return-void
-.end method
+    move-result v0
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/aC;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->F(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v1
+
+    const/high16 v2, 0x44480000
+
+    sub-float v0, v2, v0
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 .end method

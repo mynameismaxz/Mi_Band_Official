@@ -61,27 +61,15 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->callback:Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
-
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->getDefaultPeripheral()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback;
+    invoke-static {}, Lcn/com/smartdevices/bracelet/BLEManager;->getMiLiProfile()Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
     move-result-object v0
 
-    check-cast v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
-    goto :goto_0
+    return-void
 .end method
 
 
@@ -118,7 +106,7 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Utils;->isBraceletConnected()Z
+    invoke-static {}, Lcn/com/smartdevices/bracelet/BLEManager;->isMiliConnected()Z
 
     move-result v0
 

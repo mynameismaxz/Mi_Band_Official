@@ -9,6 +9,8 @@
 
 .field public static final LEFT_HAND:Ljava/lang/String; = "LEFT_HAND"
 
+.field public static final ONBODY:Ljava/lang/String; = "ONBODY"
+
 .field public static final ORANGE:Ljava/lang/String; = "ORANGE"
 
 .field public static final RED:Ljava/lang/String; = "RED"

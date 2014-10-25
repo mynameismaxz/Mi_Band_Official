@@ -26,7 +26,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030033
+    const v0, 0x7f030040
 
     return v0
 .end method
@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0700e8
+    const v0, 0x7f070121
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -138,9 +138,9 @@
     :goto_0
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDeviceNameTask;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aX;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/aN;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aX;-><init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/aN;-><init>(Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;)V
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/MiliRenameFragment;->c:Ljava/lang/String;
 

@@ -162,7 +162,7 @@
 
     invoke-direct {v1}, Lcn/com/smartdevices/bracelet/model/PicUrl;-><init>()V
 
-    const-string v2, "drawable://2130837598"
+    const-string v2, "drawable://2130837599"
 
     iput-object v2, v1, Lcn/com/smartdevices/bracelet/model/PicUrl;->thumbUrl:Ljava/lang/String;
 

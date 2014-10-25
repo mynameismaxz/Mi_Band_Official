@@ -2,22 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-.field private final synthetic b:Landroid/view/View;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/U;->b:Landroid/view/View;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +22,24 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/U;->b:Landroid/view/View;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->e(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/U;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    return-void
+.end method
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->j(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Landroid/view/View;
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    move-result-object v2
+    return-void
+.end method
 
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;Landroid/view/View;Landroid/view/View;)V
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
 
     return-void
 .end method

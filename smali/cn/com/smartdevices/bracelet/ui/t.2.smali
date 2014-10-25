@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/s;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/s;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/s;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,15 +25,31 @@
 .method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/s;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/s;->a(Lcn/com/smartdevices/bracelet/ui/s;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    move-result-object v0
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->j(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Ljava/lang/String;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->updateDynamicList(Z)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->b(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;Ljava/lang/String;)Z
 
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->k(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
+
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/t;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
+
+    goto :goto_0
 .end method

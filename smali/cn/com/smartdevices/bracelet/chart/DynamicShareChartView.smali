@@ -71,7 +71,7 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;",
+            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;",
             ">;)V"
         }
     .end annotation
@@ -110,17 +110,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;
+    check-cast v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;
 
     new-instance v3, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;
 
     invoke-direct {v3}, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;-><init>()V
 
-    iget v4, v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;->step:I
+    iget v4, v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;->step:I
 
     iput v4, v3, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;->value:I
 
-    iget v0, v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;->index:I
+    iget v0, v0, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;->index:I
 
     iput v0, v3, Lcn/com/smartdevices/bracelet/chart/DynamicShareChart$DynamicShareBarItem;->index:I
 
@@ -277,11 +277,11 @@
     goto :goto_1
 
     :cond_3
-    new-instance v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;
+    new-instance v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;
 
-    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;-><init>()V
+    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;-><init>()V
 
-    iput v2, v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;->index:I
+    iput v2, v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;->index:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -307,7 +307,7 @@
 
     move-result v0
 
-    iput v0, v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;->step:I
+    iput v0, v5, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;->step:I
 
     :cond_4
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z

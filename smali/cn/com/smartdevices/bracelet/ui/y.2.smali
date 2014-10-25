@@ -2,26 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-.field private final synthetic b:I
-
-.field private final synthetic c:I
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;II)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/y;->b:I
-
-    iput p3, p0, Lcn/com/smartdevices/bracelet/ui/y;->c:I
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,45 +22,12 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
-    invoke-static {}, Landroid/os/Looper;->prepare()V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/DataManager;->getInstance()Lcn/com/smartdevices/bracelet/DataManager;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->onEmptyAreaClicked()V
 
-    move-result-object v0
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/y;->b:I
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/y;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->load(II)V
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/y;->b:I
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/y;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->setCurDay(II)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/y;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->n(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/16 v1, 0x1002
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    :cond_0
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 .field public static final EVENT_ALARM_SETTING:Ljava/lang/String; = "AlarmSetting"
 
-.field public static final EVENT_BINDED_USER_START:Ljava/lang/String; = "BindedUserStart"
+.field public static final EVENT_BINDED_USER_START:Ljava/lang/String; = "User_BindedStart"
 
 .field public static final EVENT_BLE_CONNECT:Ljava/lang/String; = "BleConnect"
 
@@ -43,6 +43,16 @@
 
 .field public static final EVENT_BTACELET_UNBIND:Ljava/lang/String; = "BraceletUnbind"
 
+.field public static final EVENT_CALL_IDLE:Ljava/lang/String; = "Call_Idle"
+
+.field public static final EVENT_CALL_NOTIFY:Ljava/lang/String; = "Call_Notify"
+
+.field public static final EVENT_CALL_NOTIFY_USER_START:Ljava/lang/String; = "User_CallNotifyStart"
+
+.field public static final EVENT_CALL_OFFHOOK:Ljava/lang/String; = "Call_Offhook"
+
+.field public static final EVENT_CALL_RING:Ljava/lang/String; = "Call_Ring"
+
 .field public static final EVENT_CLICK_MAIN_MENU:Ljava/lang/String; = "ClickMainMenu"
 
 .field public static final EVENT_CLICK_MAIN_MENU_ITEM:Ljava/lang/String; = "ClickMainMenuItem"
@@ -55,6 +65,8 @@
 
 .field public static final EVENT_DYNAMIC_REALSTEP_UPDATE:Ljava/lang/String; = "DynamicRealStepUpdate"
 
+.field public static final EVENT_EXCEPT_DEVICE_REBOOT:Ljava/lang/String; = "ExceptDeviceReboot"
+
 .field public static final EVENT_EXCEPT_REALTIME_LESS_DETAIL_STEP:Ljava/lang/String; = "ExceptRealtimeLessDetailStep"
 
 .field public static final EVENT_EXCEPT_REALTIME_MORE_DETAIL_STEP:Ljava/lang/String; = "ExceptRealtimeMoreDetailStep"
@@ -65,9 +77,9 @@
 
 .field public static final EVENT_GAME_VIEW_SIGNUP:Ljava/lang/String; = "Game_ViewSignup"
 
-.field public static final EVENT_INCOMING_CALL:Ljava/lang/String; = "IncomingCall"
-
 .field public static final EVENT_LOCATION_EXCEPTION:Ljava/lang/String; = "LocationException"
+
+.field public static final EVENT_LOCATION_OK:Ljava/lang/String; = "LocationOK"
 
 .field public static final EVENT_LOCATION_START:Ljava/lang/String; = "LocationStart"
 
@@ -165,6 +177,8 @@
 
 .field public static final PAGE_INSTRUCTION:Ljava/lang/String; = "PageInstruction"
 
+.field public static final PAGE_LAB_SPORT_TIMEOUT:Ljava/lang/String; = "PageLabSportTimeout"
+
 .field public static final PAGE_PERSON_GUIDE_AGE:Ljava/lang/String; = "PagePersonGuideAge"
 
 .field public static final PAGE_PERSON_GUIDE_FINISH:Ljava/lang/String; = "PagePersonGuideFinish"
@@ -217,14 +231,6 @@
 
 .field public static final VALUE_BIND_WECHART_QRCODE:Ljava/lang/String; = "BindWeChatQrcode"
 
-.field public static final VALUE_CALL_IDLE:Ljava/lang/String; = "CallIdle"
-
-.field public static final VALUE_CALL_NOTIFY:Ljava/lang/String; = "CallNotify"
-
-.field public static final VALUE_CALL_OFFHOOK:Ljava/lang/String; = "CallOffhook"
-
-.field public static final VALUE_CALL_RING:Ljava/lang/String; = "CallRing"
-
 .field public static final VALUE_CANCELED:Ljava/lang/String; = "Canceled"
 
 .field public static final VALUE_CONFIRMED:Ljava/lang/String; = "Confirmed"
@@ -259,7 +265,13 @@
 
 .field public static final VALUE_SHARE_FROM_DYNAMIC_LIST:Ljava/lang/String; = "ShareFromDynamicList"
 
+.field public static final VALUE_SHARE_FROM_LAB_SPORT:Ljava/lang/String; = "ShareFromLabSport"
+
 .field public static final VALUE_SHARE_FROM_STATISTIC:Ljava/lang/String; = "ShareFromStatistic"
+
+.field public static final VALUE_SHARE_TO_FACEBOOK:Ljava/lang/String; = "ShareToFaceBook"
+
+.field public static final VALUE_SHARE_TO_LINE:Ljava/lang/String; = "ShareToLine"
 
 .field public static final VALUE_SHARE_TO_MICHAT:Ljava/lang/String; = "ShareToMiChat"
 
@@ -319,6 +331,8 @@
 
 .field private static b:Z
 
+.field private static c:Landroid/content/Context;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -339,7 +353,7 @@
     return-void
 .end method
 
-.method public static config(ZZZ)V
+.method public static config(ZZZLandroid/content/Context;)V
     .locals 0
 
     sput-boolean p0, Lcn/com/smartdevices/bracelet/UmengAnalytics;->b:Z
@@ -347,6 +361,8 @@
     invoke-static {p1}, Lcom/umeng/analytics/MobclickAgent;->setDebugMode(Z)V
 
     invoke-static {p2}, Lcom/umeng/analytics/MobclickAgent;->openActivityDurationTrack(Z)V
+
+    sput-object p3, Lcn/com/smartdevices/bracelet/UmengAnalytics;->c:Landroid/content/Context;
 
     return-void
 .end method
@@ -762,6 +778,16 @@
     invoke-static {p0, p1, p2, p3}, Lcom/umeng/analytics/MobclickAgent;->onEventValue(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;I)V
 
     goto :goto_0
+.end method
+
+.method public static event(Ljava/lang/String;)V
+    .locals 1
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/UmengAnalytics;->c:Landroid/content/Context;
+
+    invoke-static {v0, p0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public static exception(Landroid/content/Context;Ljava/lang/Exception;)V

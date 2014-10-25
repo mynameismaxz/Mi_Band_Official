@@ -1,154 +1,52 @@
 .class Lcn/com/smartdevices/bracelet/ui/ac;
-.super Landroid/os/Handler;
+.super Landroid/webkit/WebViewClient;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+    .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
-    packed-switch v0, :pswitch_data_0
-
-    :goto_0
-    :pswitch_0
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    const-string v1, "\u52a0\u8f7d\u8fd0\u52a8\u6570\u636e"
-
-    const-string v2, "\u6b63\u5728\u52a0\u8f7d\u8fd0\u52a8\u6570\u636e\uff0c\u8bf7\u7a0d\u5019..."
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
-
-    const-string v0, "DDDD"
-
-    const-string v1, "Dynamic Update : Data Loaded,Prev/Next Day,Animation"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;Z)V
-
-    goto :goto_0
-
-    :pswitch_3
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->d(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)I
-
-    move-result v0
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->getActivity()Landroid/app/Activity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)Landroid/widget/ProgressBar;
 
     move-result-object v0
 
-    const-string v1, "DynamicRealStepUpdate"
+    const/4 v1, 0x4
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+    return-void
+.end method
 
-    iget v1, p1, Landroid/os/Message;->arg1:I
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    .locals 2
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->c(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;I)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/HelpFragment;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/HelpFragment;->a(Lcn/com/smartdevices/bracelet/ui/HelpFragment;)Landroid/widget/ProgressBar;
 
-    move-result-wide v0
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Keeper;->keepSyncRealStepTime(J)V
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->d(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)I
-
-    move-result v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepRealtimeSteps(I)V
-
-    const-string v0, "DDDD"
-
-    const-string v1, "Dynamic Update : Real Steps."
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->a(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;Z)V
-
-    goto :goto_0
-
-    :pswitch_4
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->e(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
-
-    goto :goto_0
-
-    :pswitch_5
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->f(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
-
-    goto :goto_0
-
-    :pswitch_6
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ac;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->g(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;)V
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1011
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-    .end packed-switch
+    return-void
 .end method

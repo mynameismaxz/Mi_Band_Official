@@ -1,53 +1,54 @@
 .class Lcn/com/smartdevices/bracelet/ui/bb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onLeftClicked(Landroid/app/DialogFragment;)V
-    .locals 0
-
-    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
-
-    return-void
-.end method
-
-.method public onRightClicked(Landroid/app/DialogFragment;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->setResult(I)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->a(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;Z)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->finish()V
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 2
+
+    invoke-static {p3}, Lcn/com/smartdevices/bracelet/Utils;->getStringFromBytes([B)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bb;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+
+    move-result v0
+
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->a(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;Z)V
 
     return-void
 .end method

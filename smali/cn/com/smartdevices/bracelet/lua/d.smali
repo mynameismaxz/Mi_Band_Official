@@ -9,7 +9,9 @@
 
 .field c:Landroid/widget/ImageView;
 
-.field final synthetic d:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
+.field d:Landroid/widget/ImageView;
+
+.field final synthetic e:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
 
 
 # direct methods
@@ -18,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/d;->d:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lua/d;->e:Lcn/com/smartdevices/bracelet/lua/LuaListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

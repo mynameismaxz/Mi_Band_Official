@@ -160,7 +160,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f0700a0
+    .packed-switch 0x7f0700c8
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -207,7 +207,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700a0
+    const v1, 0x7f0700c8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -215,7 +215,7 @@
 
     iput-object v1, p0, Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;->mLeftButton:Landroid/view/View;
 
-    const v1, 0x7f0700a2
+    const v1, 0x7f0700ca
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    const v1, 0x7f0700a3
+    const v1, 0x7f0700cb
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -257,9 +257,9 @@
 
     if-eqz v1, :cond_2
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/ui/Q;
+    new-instance v2, Lcn/com/smartdevices/bracelet/ui/y;
 
-    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/Q;-><init>(Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;)V
+    invoke-direct {v2, p0}, Lcn/com/smartdevices/bracelet/ui/y;-><init>(Lcn/com/smartdevices/bracelet/ui/DimPanelFragment;)V
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

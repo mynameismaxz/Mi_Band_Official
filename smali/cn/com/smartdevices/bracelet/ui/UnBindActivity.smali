@@ -21,7 +21,7 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f0c0151
+    const v0, 0x7f0c0159
 
     invoke-static {p0, v0}, Lcn/com/smartdevices/bracelet/Utils;->showProgressDialog(Landroid/app/Activity;I)V
 
@@ -49,9 +49,9 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ch;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/ca;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ch;-><init>(Lcn/com/smartdevices/bracelet/ui/UnBindActivity;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/ca;-><init>(Lcn/com/smartdevices/bracelet/ui/UnBindActivity;)V
 
     const-wide/16 v2, 0xbb8
 
@@ -99,8 +99,8 @@
     :sswitch_data_0
     .sparse-switch
         0x7f070034 -> :sswitch_1
-        0x7f0700a0 -> :sswitch_0
-        0x7f0700a2 -> :sswitch_1
+        0x7f0700c8 -> :sswitch_0
+        0x7f0700ca -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -109,7 +109,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030034
+    const v0, 0x7f030041
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->setContentView(I)V
 
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0700a0
+    const v0, 0x7f0700c8
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0700a2
+    const v0, 0x7f0700ca
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 
@@ -143,7 +143,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0700eb
+    const v0, 0x7f070124
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/UnBindActivity;->findViewById(I)Landroid/view/View;
 

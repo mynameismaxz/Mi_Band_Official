@@ -384,7 +384,7 @@
 
     array-length v0, v1
 
-    if-gt v0, v8, :cond_21
+    if-gt v0, v8, :cond_22
 
     array-length v0, v1
 
@@ -395,7 +395,7 @@
 
     iget-boolean v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->enableClearData:Z
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_21
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -722,7 +722,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_15
 
     sget-object v2, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -828,10 +828,35 @@
 
     invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
+    iget-object v0, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/Calendar;
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Date;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "1970"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    const-string v0, "ExceptDeviceReboot"
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Ljava/lang/String;)V
+
+    :cond_d
     :goto_3
     iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
 
-    if-eq v0, v12, :cond_10
+    if-eq v0, v12, :cond_11
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -839,7 +864,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_15
+    if-lez v0, :cond_16
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -889,13 +914,13 @@
 
     move-result v0
 
-    if-lt v7, v0, :cond_16
+    if-lt v7, v0, :cond_17
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -903,7 +928,7 @@
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/MiliConfig;->lightColor:Ljava/lang/String;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -919,11 +944,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_19
 
     const/16 v0, 0x606
 
-    :cond_d
+    :cond_e
     :goto_6
     shr-int/lit8 v1, v0, 0x10
 
@@ -985,7 +1010,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -993,13 +1018,13 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_e
+    :cond_f
     :goto_7
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/PersonInfo;->miliConfig:Lcn/com/smartdevices/bracelet/model/MiliConfig;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1e
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -1007,7 +1032,7 @@
 
     iget-object v0, v0, Lcn/com/smartdevices/bracelet/model/MiliConfig;->wearHand:Ljava/lang/String;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1e
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->b:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
@@ -1021,7 +1046,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1d
 
     move v0, v10
 
@@ -1050,7 +1075,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -1058,14 +1083,14 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_f
+    :cond_10
     :goto_9
     iput v12, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->type:I
 
-    :cond_10
+    :cond_11
     iget-boolean v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->enableSteps:Z
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
     iget-object v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->date:Ljava/lang/String;
 
@@ -1081,7 +1106,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_12
 
     iput v10, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
@@ -1123,13 +1148,13 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_11
+    :cond_12
     iget v0, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->steps:I
 
-    if-ge v0, v9, :cond_1e
+    if-ge v0, v9, :cond_1f
 
     :goto_a
-    if-nez v9, :cond_12
+    if-nez v9, :cond_13
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
@@ -1183,10 +1208,10 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_12
+    :cond_13
     iput-boolean v10, v11, Lcn/com/smartdevices/bracelet/model/SwitchOperator;->enableSteps:Z
 
-    :cond_13
+    :cond_14
     invoke-static {v11}, Lcn/com/smartdevices/bracelet/Keeper;->keepSwitchOperator(Lcn/com/smartdevices/bracelet/model/SwitchOperator;)V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
@@ -1279,7 +1304,7 @@
 
     goto/16 :goto_2
 
-    :cond_14
+    :cond_15
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     const-string v1, "can not get bracelet time after _setDateTime"
@@ -1294,7 +1319,7 @@
 
     goto/16 :goto_3
 
-    :cond_15
+    :cond_16
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     const-string v1, "day sport goals is inValid!"
@@ -1303,7 +1328,7 @@
 
     goto/16 :goto_4
 
-    :cond_16
+    :cond_17
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -1388,7 +1413,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_18
 
     move v2, v9
 
@@ -1417,26 +1442,13 @@
 
     goto/16 :goto_5
 
-    :cond_17
+    :cond_18
     move v2, v10
 
     goto :goto_b
 
-    :cond_18
-    const-string v2, "GREEN"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_19
-
-    const v0, 0x40500
-
-    goto/16 :goto_6
-
     :cond_19
-    const-string v2, "RED"
+    const-string v2, "GREEN"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1444,24 +1456,37 @@
 
     if-eqz v2, :cond_1a
 
-    const v0, 0x60102
+    const v0, 0x40500
 
     goto/16 :goto_6
 
     :cond_1a
+    const-string v2, "RED"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1b
+
+    const v0, 0x60102
+
+    goto/16 :goto_6
+
+    :cond_1b
     const-string v2, "ORANGE"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_e
 
     const v0, 0x60200
 
     goto/16 :goto_6
 
-    :cond_1b
+    :cond_1c
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     const-string v1, "miliConfig is null or lightColor is null"
@@ -1470,20 +1495,20 @@
 
     goto/16 :goto_7
 
-    :cond_1c
+    :cond_1d
     const-string v1, "RIGHT_HAND"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_20
 
     move v0, v9
 
     goto/16 :goto_8
 
-    :cond_1d
+    :cond_1e
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     const-string v1, "miliConfig is null or wearHand is null"
@@ -1492,7 +1517,7 @@
 
     goto/16 :goto_9
 
-    :cond_1e
+    :cond_1f
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTogglePairTask;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1543,17 +1568,17 @@
 
     goto/16 :goto_a
 
-    :cond_1f
+    :cond_20
     move v0, v10
 
     goto/16 :goto_8
 
-    :cond_20
+    :cond_21
     move v6, v10
 
     goto/16 :goto_1
 
-    :cond_21
+    :cond_22
     move v0, v8
 
     goto/16 :goto_0

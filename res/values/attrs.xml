@@ -144,4 +144,11 @@
         <enum name="FILL" value="1" />
     </attr>
     <attr name="centerImg" format="reference" />
+    <attr name="labCircleSrc" format="reference" />
+    <attr name="labCircleBackground" format="reference" />
+    <attr name="labCircleText" format="string" />
+    <attr name="labCircleWidth" format="dimension" />
+    <attr name="labCircleHeight" format="dimension" />
+    <attr name="labCircleStroke" format="boolean" />
+    <attr name="labCircleStrokeWidth" format="float" />
 </resources>

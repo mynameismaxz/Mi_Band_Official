@@ -265,6 +265,26 @@
     return-void
 .end method
 
+.method public static getServerTime(Lcn/com/smartdevices/bracelet/model/LoginData;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+    .locals 3
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getSysRp(Lcn/com/smartdevices/bracelet/model/LoginData;)Lcom/loopj/android/http/RequestParams;
+
+    move-result-object v0
+
+    const-string v1, "huami.health.getSysTime.json"
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+
+    invoke-virtual {v2, v1, v0, p1}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    return-void
+.end method
+
 .method public static getUserInfo(Lcn/com/smartdevices/bracelet/model/LoginData;JLcom/loopj/android/http/AsyncHttpResponseHandler;)V
     .locals 3
 
@@ -321,6 +341,26 @@
     sget-object v2, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-virtual {v2, v1, v0, p2}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    return-void
+.end method
+
+.method public static loginOut(Lcn/com/smartdevices/bracelet/model/LoginData;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+    .locals 3
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getSysRp(Lcn/com/smartdevices/bracelet/model/LoginData;)Lcom/loopj/android/http/RequestParams;
+
+    move-result-object v0
+
+    const-string v1, "huami.health.loginout.json"
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+
+    invoke-virtual {v2, v1, v0, p1}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
     return-void
 .end method
@@ -564,6 +604,62 @@
     sget-object v2, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-virtual {v2, v1, v0, p3}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    return-void
+.end method
+
+.method public static syncFromServerBeyondDays(Lcn/com/smartdevices/bracelet/model/LoginData;Ljava/lang/String;IIJJLcom/loopj/android/http/AsyncHttpResponseHandler;)V
+    .locals 3
+
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getSysRp(Lcn/com/smartdevices/bracelet/model/LoginData;)Lcom/loopj/android/http/RequestParams;
+
+    move-result-object v0
+
+    const-string v1, "deviceid"
+
+    invoke-virtual {v0, v1, p1}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "data_type"
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "source"
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "fromDate"
+
+    invoke-static {p4, p5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "toDate"
+
+    invoke-static {p6, p7}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "huami.health.getDataNew.json"
+
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->getUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/BraceletHttpClient;->syncClient:Lcom/loopj/android/http/SyncHttpClient;
+
+    invoke-virtual {v2, v1, v0, p8}, Lcom/loopj/android/http/SyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
     return-void
 .end method

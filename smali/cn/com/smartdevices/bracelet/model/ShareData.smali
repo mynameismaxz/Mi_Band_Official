@@ -16,6 +16,10 @@
 
 .field private static final COLOR_GOAL_SUCC:I = -0xa8ed0
 
+.field private static final COLOR_LAB_SPORT_ACCUMULATE:I = -0xff98c8
+
+.field private static final COLOR_LAB_SPORT_NEW_RECORD:I = -0xa8ed0
+
 .field private static final COLOR_LAST_NIGHT_SLEEP:I = -0xc8c28c
 
 .field private static final COLOR_MONTH_SLEEP:I = -0xb6d594
@@ -51,6 +55,14 @@
 
 .field public static final SHARE_TYPE_GOAL_SUCC:I = 0x0
 
+.field public static final SHARE_TYPE_LAB_ROPE_SKIPPING_ACCUMULATE:I = 0x65
+
+.field public static final SHARE_TYPE_LAB_ROPE_SKIPPING_NEW_RECORD:I = 0x64
+
+.field public static final SHARE_TYPE_LAB_SITUP_ACCUMULATE:I = 0x67
+
+.field public static final SHARE_TYPE_LAB_SITUP_NEW_RECORD:I = 0x66
+
 .field public static final SHARE_TYPE_LAST_NIGHT_SLEEP:I = 0x2
 
 .field public static final SHARE_TYPE_MONTH_AVE_STEPS:I = 0x6
@@ -58,6 +70,8 @@
 .field public static final SHARE_TYPE_MONTH_SLEEP:I = 0x4
 
 .field public static final SHARE_TYPE_NEW_RECORD:I = 0x5
+
+.field public static final SHARE_TYPE_SPORT_INFO:I = 0xc
 
 .field public static final SHARE_TYPE_WEEK_AVE_STEPS:I = 0x7
 
@@ -72,6 +86,8 @@
 .field public contentUnit:Ljava/lang/String;
 
 .field public description:Ljava/lang/String;
+
+.field public mExtraData:Landroid/os/Bundle;
 
 .field public time:Ljava/lang/String;
 
@@ -130,6 +146,10 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->mExtraData:Landroid/os/Bundle;
+
     return-void
 .end method
 
@@ -168,6 +188,10 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->mExtraData:Landroid/os/Bundle;
+
     invoke-virtual {p0, p1}, Lcn/com/smartdevices/bracelet/model/ShareData;->setType(I)V
 
     return-void
@@ -179,6 +203,70 @@
     .locals 1
 
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getColor()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+
+    return v0
+.end method
+
+.method public getContent()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->content:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getContentUnit()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->contentUnit:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getDescription()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->description:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getTime()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->time:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getTimeTips()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->time_tips:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getTitle()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->title:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getType()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
 
     return v0
 .end method
@@ -218,96 +306,114 @@
 .method public setType(I)V
     .locals 4
 
-    const v3, -0xa8ed0
+    const v3, -0xb6d594
 
-    const v2, -0xb6d594
+    const v2, -0xe7673c
 
-    const v1, -0xe7673c
+    const v1, -0xe85d9e
 
-    const v0, -0xe85d9e
+    const v0, -0xa8ed0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
 
-    packed-switch p1, :pswitch_data_0
+    sparse-switch p1, :sswitch_data_0
 
     :goto_0
     return-void
 
-    :pswitch_0
-    iput v3, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_0
+    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_1
-    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_1
+    iput v2, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_2
+    :sswitch_2
     const v0, -0xc8c28c
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_3
-    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_3
+    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_4
-    iput v2, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_4
+    iput v3, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_5
+    :sswitch_5
     const v0, -0x11a8cc
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_6
-    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_6
+    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_7
-    iput v2, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_7
+    iput v3, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_8
+    :sswitch_8
     const v0, -0x1ac3bc
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_9
-    iput v3, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_9
+    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_a
-    iput v1, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+    :sswitch_a
+    iput v2, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
 
     goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_7
-        :pswitch_4
-        :pswitch_5
-        :pswitch_3
-        :pswitch_6
-        :pswitch_8
-        :pswitch_a
-        :pswitch_9
-    .end packed-switch
+    :sswitch_b
+    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+
+    goto :goto_0
+
+    :sswitch_c
+    const v0, -0xff98c8
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->color:I
+
+    goto :goto_0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x3 -> :sswitch_7
+        0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
+        0x6 -> :sswitch_3
+        0x7 -> :sswitch_6
+        0x8 -> :sswitch_8
+        0x9 -> :sswitch_a
+        0xa -> :sswitch_9
+        0x64 -> :sswitch_b
+        0x65 -> :sswitch_c
+        0x66 -> :sswitch_b
+        0x67 -> :sswitch_c
+    .end sparse-switch
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -492,6 +598,10 @@
     iget v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/ShareData;->mExtraData:Landroid/os/Bundle;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
     return-void
 .end method

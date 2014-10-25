@@ -14,11 +14,15 @@
 
 .field private static final COMMAND_FETCH_DATA:B = 0x6t
 
+.field private static final COMMAND_GET_SENSOR_DATA:B = 0x12t
+
 .field private static final COMMAND_REBOOT:B = 0xct
 
 .field private static final COMMAND_SEND_FIRMWARE_INFO:B = 0x7t
 
 .field private static final COMMAND_SEND_NOTIFICATION:B = 0x8t
+
+.field private static final COMMAND_SET_COLOR_THEME:B = 0xet
 
 .field private static final COMMAND_SET_FITNESS_GOAL:B = 0x5t
 
@@ -27,6 +31,8 @@
 .field private static final COMMAND_SET_REALTIME_STEPS_NOTIFICATION:B = 0x3t
 
 .field private static final COMMAND_SET_TIMER:B = 0x4t
+
+.field private static final COMMAND_SET_WEAR_LOCATION:B = 0xft
 
 .field private static final COMMAND_STOP_MOTOR_VIBRATE:B = 0x13t
 
@@ -54,6 +60,8 @@
 
 .field private static final INTENT_PREFIX:Ljava/lang/String;
 
+.field public static final MAC_ADDRESS_FILTER:Ljava/lang/String; = "88:0F:10"
+
 .field public static final MODE_REGULAR_DATA_LEN_BYTE:B = 0x0t
 
 .field public static final MODE_REGULAR_DATA_LEN_MINITE:B = 0x1t
@@ -80,6 +88,8 @@
 
 
 # instance fields
+.field private mLastSensorDataIndex:I
+
 .field private final m_ActivitySyncingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
 .field private m_CacheBatteryInfo:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
@@ -104,6 +114,8 @@
 
 .field private m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
+.field private m_CharSensorData:Landroid/bluetooth/BluetoothGattCharacteristic;
+
 .field private m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
 .field private m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
@@ -120,9 +132,19 @@
 
 .field private m_ProfileState:I
 
+.field private m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+.field private m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
 .field private m_enableRealtimeStepNotification:Z
 
+.field private m_enableSensorDataNotification:Z
+
 .field private m_onRealtimeStepsChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
+
+.field private m_onSensorDataChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
+
+.field private miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
 .field private modeRegularDataType:I
 
@@ -161,7 +183,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-class v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
@@ -346,14 +368,14 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;Landroid/os/Handler;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;)V
     .locals 3
 
     const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/xiaomi/hm/bleservice/gatt/GattPeripheral;-><init>(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;Landroid/os/Handler;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/xiaomi/hm/bleservice/gatt/GattPeripheral;-><init>(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;)V
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -381,9 +403,15 @@
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharSensorData:Landroid/bluetooth/BluetoothGattCharacteristic;
+
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceInputStream:Ljava/io/PipedInputStream;
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
 
     new-instance v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -405,11 +433,23 @@
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CacheBatteryInfo:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
 
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+
     iput-boolean v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableRealtimeStepNotification:Z
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_onRealtimeStepsChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    iput-boolean v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableSensorDataNotification:Z
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_onSensorDataChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
+
+    iput-object p3, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
     return-void
 .end method
@@ -426,7 +466,15 @@
     return-void
 .end method
 
-.method static synthetic access$1(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
+.method static synthetic access$1(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+    .locals 1
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->onRealtimeStepsChanged(I)V
@@ -434,10 +482,34 @@
     return-void
 .end method
 
-.method static synthetic access$2(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
+.method static synthetic access$3(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
     .locals 1
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    return-object v0
+.end method
+
+.method static synthetic access$4(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)I
+    .locals 1
+
+    iget v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+
+    return v0
+.end method
+
+.method static synthetic access$5(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
+    .locals 0
+
+    iput p1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+
+    return-void
+.end method
+
+.method static synthetic access$6(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
+    .locals 1
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
 
     return-object v0
 .end method
@@ -451,7 +523,7 @@
 
     const/4 v10, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     invoke-virtual {p1, v10}, Ljava/util/Calendar;->get(I)I
 
@@ -553,122 +625,145 @@
 .end method
 
 .method private initCharacteristics()Z
-    .locals 4
+    .locals 5
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
         }
     .end annotation
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_SERVICE_MILI_SERVICE:Ljava/util/UUID;
 
     invoke-virtual {p0, v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getService(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-nez v0, :cond_0
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_SERVICE_MILI_SERVICE128:Ljava/util/UUID;
-
-    invoke-virtual {p0, v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getService(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;
-
-    move-result-object v0
+    if-nez v3, :cond_1
 
     :cond_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
-
-    if-nez v0, :cond_2
+    :goto_0
+    return v2
 
     :cond_1
-    :goto_0
-    return v3
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DEVICE_INFO:Ljava/util/UUID;
 
-    :cond_2
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_TEST:Ljava/util/UUID;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    move-result-object v0
 
-    move-result-object v1
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-nez v1, :cond_3
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    const-string v1, "LIMITED COMPATIBLE MODE, PRE 2.0 PROFILE VERSION."
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    const-string v1, "FF01"
+    if-eqz v0, :cond_0
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID16(Ljava/lang/String;)Ljava/util/UUID;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    move-result v0
 
-    move-result-object v1
+    and-int/lit8 v0, v0, 0x2
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
+    if-lez v0, :cond_3
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
+    move v0, v1
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    :goto_1
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DEVICE_NAME:Ljava/util/UUID;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    const-string v1, "FF03"
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID16(Ljava/lang/String;)Ljava/util/UUID;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    move-result v0
 
-    if-eqz v1, :cond_1
+    and-int/lit8 v0, v0, 0x2
 
-    const-string v1, "FF05"
+    if-lez v0, :cond_4
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID16(Ljava/lang/String;)Ljava/util/UUID;
+    move v0, v1
 
-    move-result-object v1
+    :goto_2
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    move-result v0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    and-int/lit8 v0, v0, 0x8
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    if-lez v0, :cond_5
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    move v0, v1
 
-    if-eqz v1, :cond_1
+    :goto_3
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    const-string v1, "FF07"
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_NOTIFICATION:Ljava/util/UUID;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID16(Ljava/lang/String;)Ljava/util/UUID;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x10
+
+    if-lez v0, :cond_6
+
+    move v0, v1
+
+    :goto_4
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
+
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_USER_INFO:Ljava/util/UUID;
+
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v0
 
@@ -676,511 +771,368 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;
-
-    invoke-direct {v1, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_1
+    if-lez v0, :cond_7
 
-    move v3, v2
-
-    goto :goto_0
-
-    :cond_3
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DEVICE_INFO:Ljava/util/UUID;
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-lez v1, :cond_4
-
-    move v1, v2
-
-    :goto_1
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DEVICE_NAME:Ljava/util/UUID;
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-lez v1, :cond_5
-
-    move v1, v2
-
-    :goto_2
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x8
-
-    if-lez v1, :cond_6
-
-    move v1, v2
-
-    :goto_3
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_NOTIFICATION:Ljava/util/UUID;
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x10
-
-    if-lez v1, :cond_7
-
-    move v1, v2
-
-    :goto_4
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_USER_INFO:Ljava/util/UUID;
-
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-lez v1, :cond_8
-
-    move v1, v2
+    move v0, v1
 
     :goto_5
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-lez v1, :cond_9
+    if-lez v0, :cond_8
 
-    move v1, v2
+    move v0, v1
 
     :goto_6
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_CONTROL_POINT:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_CONTROL_POINT:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-lez v1, :cond_a
+    if-lez v0, :cond_9
 
-    move v1, v2
+    move v0, v1
 
     :goto_7
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_REALTIME_STEPS:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_REALTIME_STEPS:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-lez v1, :cond_b
+    if-lez v0, :cond_a
 
-    move v1, v2
+    move v0, v1
 
     :goto_8
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x10
+    and-int/lit8 v0, v0, 0x10
 
-    if-lez v1, :cond_c
+    if-lez v0, :cond_b
 
-    move v1, v2
+    move v0, v1
 
     :goto_9
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_ACTIVITY_DATA:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_ACTIVITY_DATA:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x20
+    and-int/lit8 v0, v0, 0x20
 
-    if-lez v1, :cond_d
+    if-lez v0, :cond_c
 
-    move v1, v2
+    move v0, v1
 
     :goto_a
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_FIRMWARE_DATA:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_FIRMWARE_DATA:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharFirmwareData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x4
+    and-int/lit8 v0, v0, 0x4
 
-    if-lez v1, :cond_e
+    if-lez v0, :cond_d
 
-    move v1, v2
+    move v0, v1
 
     :goto_b
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_LE_PARAMS:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_LE_PARAMS:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-lez v1, :cond_f
+    if-lez v0, :cond_e
 
-    move v1, v2
+    move v0, v1
 
     :goto_c
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-lez v1, :cond_10
+    if-lez v0, :cond_f
 
-    move v1, v2
+    move v0, v1
 
     :goto_d
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DATE_TIME:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_DATE_TIME:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-lez v1, :cond_11
+    if-lez v0, :cond_10
 
-    move v1, v2
+    move v0, v1
 
     :goto_e
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-lez v1, :cond_12
+    if-lez v0, :cond_11
 
-    move v1, v2
+    move v0, v1
 
     :goto_f
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_STATISTICS:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_STATISTICS:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-lez v1, :cond_13
+    if-lez v0, :cond_12
 
-    move v1, v2
+    move v0, v1
 
     :goto_10
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-lez v1, :cond_14
+    if-lez v0, :cond_13
 
-    move v1, v2
+    move v0, v1
 
     :goto_11
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_BATTERY:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_BATTERY:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-lez v1, :cond_15
+    if-lez v0, :cond_14
 
-    move v1, v2
+    move v0, v1
 
     :goto_12
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothGattCharacteristic;->getProperties()I
 
-    move-result v1
+    move-result v0
 
-    and-int/lit8 v1, v1, 0x10
+    and-int/lit8 v0, v0, 0x10
 
-    if-lez v1, :cond_16
+    if-lez v0, :cond_15
 
-    move v1, v2
+    move v0, v1
 
     :goto_13
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_TEST:Ljava/util/UUID;
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_TEST:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v0
 
@@ -1188,11 +1140,11 @@
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -1202,178 +1154,199 @@
 
     and-int/lit8 v0, v0, 0x8
 
-    if-lez v0, :cond_17
+    if-lez v0, :cond_16
 
-    move v0, v2
+    move v0, v1
 
     :goto_14
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$2;
+    new-instance v4, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;
 
-    invoke-direct {v1, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$2;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
+    invoke-direct {v4, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$1;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+    invoke-virtual {p0, v0, v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$3;
+    new-instance v4, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$2;
 
-    invoke-direct {v1, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$3;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
+    invoke-direct {v4, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$2;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+    invoke-virtual {p0, v0, v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharActivityData:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$4;
+    new-instance v4, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$3;
 
-    invoke-direct {v1, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$4;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
+    invoke-direct {v4, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$3;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+    invoke-virtual {p0, v0, v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;
+    new-instance v4, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$4;
 
-    invoke-direct {v1, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
+    invoke-direct {v4, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$4;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
 
-    invoke-virtual {p0, v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+    invoke-virtual {p0, v0, v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    move v3, v2
+    sget-object v0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->UUID_CHARACTERISTIC_SENSOR_DATA:Ljava/util/UUID;
+
+    invoke-virtual {v3, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharSensorData:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharSensorData:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharSensorData:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    new-instance v2, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;
+
+    invoke-direct {v2, p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;-><init>(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)V
+
+    invoke-virtual {p0, v0, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->registerNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$INotifyCallback;)Z
+
+    :cond_2
+    move v2, v1
 
     goto/16 :goto_0
 
-    :cond_4
-    move v1, v3
+    :cond_3
+    move v0, v2
 
     goto/16 :goto_1
 
-    :cond_5
-    move v1, v3
+    :cond_4
+    move v0, v2
 
     goto/16 :goto_2
 
-    :cond_6
-    move v1, v3
+    :cond_5
+    move v0, v2
 
     goto/16 :goto_3
 
-    :cond_7
-    move v1, v3
+    :cond_6
+    move v0, v2
 
     goto/16 :goto_4
 
-    :cond_8
-    move v1, v3
+    :cond_7
+    move v0, v2
 
     goto/16 :goto_5
 
-    :cond_9
-    move v1, v3
+    :cond_8
+    move v0, v2
 
     goto/16 :goto_6
 
-    :cond_a
-    move v1, v3
+    :cond_9
+    move v0, v2
 
     goto/16 :goto_7
 
-    :cond_b
-    move v1, v3
+    :cond_a
+    move v0, v2
 
     goto/16 :goto_8
 
-    :cond_c
-    move v1, v3
+    :cond_b
+    move v0, v2
 
     goto/16 :goto_9
 
-    :cond_d
-    move v1, v3
+    :cond_c
+    move v0, v2
 
     goto/16 :goto_a
 
-    :cond_e
-    move v1, v3
+    :cond_d
+    move v0, v2
 
     goto/16 :goto_b
 
-    :cond_f
-    move v1, v3
+    :cond_e
+    move v0, v2
 
     goto/16 :goto_c
 
-    :cond_10
-    move v1, v3
+    :cond_f
+    move v0, v2
 
     goto/16 :goto_d
 
-    :cond_11
-    move v1, v3
+    :cond_10
+    move v0, v2
 
     goto/16 :goto_e
 
-    :cond_12
-    move v1, v3
+    :cond_11
+    move v0, v2
 
     goto/16 :goto_f
 
-    :cond_13
-    move v1, v3
+    :cond_12
+    move v0, v2
 
     goto/16 :goto_10
 
-    :cond_14
-    move v1, v3
+    :cond_13
+    move v0, v2
 
     goto/16 :goto_11
 
-    :cond_15
-    move v1, v3
+    :cond_14
+    move v0, v2
 
     goto/16 :goto_12
 
-    :cond_16
-    move v1, v3
+    :cond_15
+    move v0, v2
 
     goto/16 :goto_13
 
-    :cond_17
-    move v0, v3
+    :cond_16
+    move v0, v2
 
-    goto :goto_14
+    goto/16 :goto_14
 .end method
 
 .method private onRealtimeStepsChanged(I)V
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-boolean v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableRealtimeStepNotification:Z
 
@@ -1395,12 +1368,35 @@
     goto :goto_0
 .end method
 
+.method private onSensorDataChanged(SSS)V
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableSensorDataNotification:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_onSensorDataChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_onSensorDataChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
+
+    invoke-interface {v0, p1, p2, p3}, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;->process(SSS)V
+
+    goto :goto_0
+.end method
+
 .method private parseActivityData()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ActivityDataFragment;
     .locals 8
 
     const/4 v7, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceInputStream:Ljava/io/PipedInputStream;
 
@@ -1470,7 +1466,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceInputStream:Ljava/io/PipedInputStream;
 
@@ -1521,7 +1517,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ActivitySyncingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -1576,7 +1572,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     new-instance v3, Ljava/util/ArrayList;
 
@@ -1661,7 +1657,7 @@
 .method public _factoryReset()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -1693,7 +1689,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharBattery:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -1723,7 +1719,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     aget-byte v0, v3, v2
 
@@ -1832,7 +1828,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDateTime:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -1860,7 +1856,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-instance v3, Ljava/util/GregorianCalendar;
 
@@ -1957,7 +1953,7 @@
 .method public _getDeviceName()Ljava/lang/String;
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -1989,7 +1985,7 @@
 
     const v8, 0xffff
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2019,7 +2015,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     aget-byte v0, v6, v2
 
@@ -2142,7 +2138,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharStatistics:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2167,7 +2163,7 @@
     const/4 v0, 0x1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     invoke-static {v5, v1}, Lcom/xiaomi/hm/bleservice/util/Helper;->bytesToInt([BI)I
 
@@ -2226,7 +2222,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharUserInfo:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2234,7 +2230,7 @@
 
     move-result-object v8
 
-    invoke-static {v8}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v8}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-eqz v8, :cond_0
 
@@ -2258,7 +2254,7 @@
     const/4 v0, 0x1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-array v2, v5, [B
 
@@ -2388,7 +2384,7 @@
 .method public _notify(B)Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2416,7 +2412,7 @@
 .method public _reboot()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2442,7 +2438,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2462,7 +2458,7 @@
 .method public _resetBatteryInfo()Z
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     const/4 v0, 0x1
 
@@ -2472,7 +2468,7 @@
 .method public _resetUsage()Z
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     const/4 v0, 0x1
 
@@ -2482,7 +2478,7 @@
 .method public _selfTest()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharTest:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2506,7 +2502,7 @@
 .method public _sendNotification(B)Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2544,7 +2540,7 @@
 
     const/4 v9, -0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     invoke-virtual {p1, v10}, Ljava/util/Calendar;->get(I)I
 
@@ -2644,7 +2640,7 @@
 .method public _setDeviceName(Ljava/lang/String;)Z
     .locals 2
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharDeviceName:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2662,7 +2658,7 @@
 .method public _setLEParams(IIIII)Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharLEParams:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2770,7 +2766,7 @@
 .method public _stopMotorVibrate()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2794,7 +2790,7 @@
 .method public _sync()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2829,7 +2825,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     const/16 v0, 0x11
 
@@ -2872,13 +2868,13 @@
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     invoke-virtual {p0, p1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setUserInfo(Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;)Z
 
     move-result v1
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v1, :cond_1
 
@@ -2895,7 +2891,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-eqz v1, :cond_0
 
@@ -2907,7 +2903,7 @@
 .method public cleanup()V
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharNotification:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -2984,6 +2980,122 @@
     goto :goto_0
 .end method
 
+.method public disconnect(Z)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->setAutoReconnect(Z)V
+
+    invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->disconnect()V
+
+    return-void
+.end method
+
+.method public enableGetSensorData(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;)Z
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const/4 v0, 0x0
+
+    iput-boolean p1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableSensorDataNotification:Z
+
+    iput-object p2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_onSensorDataChangedCB:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
+
+    const/4 v1, -0x1
+
+    iput v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+
+    if-eqz p1, :cond_1
+
+    :try_start_0
+    new-instance v1, Ljava/io/PipedInputStream;
+
+    invoke-direct {v1}, Ljava/io/PipedInputStream;-><init>()V
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    new-instance v1, Ljava/io/PipedOutputStream;
+
+    invoke-direct {v1}, Ljava/io/PipedOutputStream;-><init>()V
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v1, v2}, Ljava/io/PipedOutputStream;->connect(Ljava/io/PipedInputStream;)V
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [B
+
+    fill-array-data v2, :array_0
+
+    invoke-virtual {p0, v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
+
+    move-result v0
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [B
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0x12
+
+    aput-byte v4, v2, v3
+
+    invoke-virtual {p0, v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->write(Landroid/bluetooth/BluetoothGattCharacteristic;[B)Z
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v1}, Ljava/io/PipedInputStream;->close()V
+
+    :cond_2
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    invoke-virtual {v1}, Ljava/io/PipedOutputStream;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    iput-object v5, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    iput-object v5, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    goto :goto_0
+
+    :array_0
+    .array-data 1
+        0x12t
+        0x1t
+    .end array-data
+.end method
+
 .method public enableRealtimeStepNotification(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;)Z
     .locals 5
 
@@ -2991,7 +3103,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iput-boolean p1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_enableRealtimeStepNotification:Z
 
@@ -3043,7 +3155,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -3101,7 +3213,7 @@
 
     move-result v2
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v2, :cond_2
 
@@ -3172,13 +3284,13 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     if-ne v2, v8, :cond_4
 
     const-string v2, "Unexpected \'EOF\' detected..."
 
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     :cond_4
     :goto_2
@@ -3216,7 +3328,7 @@
 .method public getActivitySyncingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ActivitySyncingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -3234,7 +3346,7 @@
 .method public getCachedDeviceInfo()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DeviceInfo:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
 
@@ -3254,7 +3366,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DeviceInfo:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$DeviceInfo;
 
@@ -3272,7 +3384,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-nez v3, :cond_1
 
@@ -3290,7 +3402,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     new-array v0, v7, [B
 
@@ -3353,7 +3465,7 @@
     move v0, v1
 
     :goto_2
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     aget-byte v0, v3, v7
 
@@ -3363,7 +3475,7 @@
 
     const-string v0, "DeviceInfo CRC verification failed"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->WARN(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -3492,7 +3604,7 @@
 .method public getFirmwareUpdatingProgress()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -3514,7 +3626,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharRealtimeSteps:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -3522,7 +3634,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     if-eqz v3, :cond_0
 
@@ -3546,7 +3658,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     aget-byte v0, v3, v2
 
@@ -3569,11 +3681,11 @@
 .end method
 
 .method public init()Z
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     new-instance v1, Ljava/io/PipedInputStream;
 
@@ -3587,10 +3699,28 @@
 
     iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceOutputStream:Ljava/io/PipedOutputStream;
 
+    new-instance v1, Ljava/io/PipedInputStream;
+
+    invoke-direct {v1}, Ljava/io/PipedInputStream;-><init>()V
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    new-instance v1, Ljava/io/PipedOutputStream;
+
+    invoke-direct {v1}, Ljava/io/PipedOutputStream;-><init>()V
+
+    iput-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
     :try_start_0
     iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceOutputStream:Ljava/io/PipedOutputStream;
 
     iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_DataSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v1, v2}, Ljava/io/PipedOutputStream;->connect(Ljava/io/PipedInputStream;)V
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+
+    iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
 
     invoke-virtual {v1, v2}, Ljava/io/PipedOutputStream;->connect(Ljava/io/PipedInputStream;)V
     :try_end_0
@@ -3601,47 +3731,40 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v1, :cond_0
 
     :cond_0
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const-string v1, "================================================="
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v1, "============= INITIALIZATION SUCCESS ============"
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     const-string v1, "================================================="
 
-    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/util/Debug;->INFO(Ljava/lang/String;)V
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Debug;->INFO(Ljava/lang/String;)V
 
     iput v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ProfileState:I
 
-    new-instance v1, Landroid/content/Intent;
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
-    sget-object v2, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_INITIALIZATION_SUCCESS:Ljava/lang/String;
+    if-eqz v1, :cond_1
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_DEVICE:Ljava/lang/String;
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
     invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->getBroadcastManager()Landroid/support/v4/content/LocalBroadcastManager;
-
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Landroid/support/v4/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)Z
+    invoke-virtual {v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;->sendOnInitializationSuccessMsg(Landroid/bluetooth/BluetoothDevice;)V
 
+    :cond_1
     :goto_1
     return v0
 
@@ -3652,46 +3775,65 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     const-string v0, "============= INITIALIZATION FAILED ============="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     const-string v0, "================================================="
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ERROR(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ERROR(Ljava/lang/String;)V
 
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ProfileState:I
 
-    new-instance v0, Landroid/content/Intent;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
-    sget-object v1, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_INITIALIZATION_FAILED:Ljava/lang/String;
+    if-eqz v0, :cond_3
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    sget-object v1, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_DEVICE:Ljava/lang/String;
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->miliCallback:Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;
 
     invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->getBroadcastManager()Landroid/support/v4/content/LocalBroadcastManager;
-
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/support/v4/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)Z
+    invoke-virtual {v0, v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiCallback;->sendOnInitializationFailedMsg(Landroid/bluetooth/BluetoothDevice;)V
 
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_1
+.end method
+
+.method public isConnected()Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    iget v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_ProfileState:I
+
+    if-ne v1, v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getState()Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;->CONNECTED:Lcom/xiaomi/hm/bleservice/gatt/IGattCallback$STATE;
+
+    if-ne v1, v2, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public bridge synthetic refreshGatt()V
@@ -3747,7 +3889,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     array-length v5, p1
 
@@ -3767,7 +3909,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_FirmwareUpdatingProgress:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$Progress;
 
@@ -3792,7 +3934,7 @@
 
     const-string v0, "transferFirmwareData: complete"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     move v1, v2
 
@@ -3814,7 +3956,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-eqz v0, :cond_0
 
@@ -3842,7 +3984,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     const/16 v4, 0x3e8
 
@@ -3890,7 +4032,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-eqz v0, :cond_0
 
@@ -3922,13 +4064,13 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_sync()Z
 
     const-string v0, "transferFirmwareData: complete"
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->DEBUG(Ljava/lang/String;)V
 
     move v1, v2
 
@@ -3953,7 +4095,7 @@
 
     const/4 v4, 0x7
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -4099,7 +4241,7 @@
 .method public setGoal(BI)Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -4145,7 +4287,7 @@
 .method public setRealtimeSteps(I)Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -4187,7 +4329,7 @@
 .method public setTimer(BBLjava/util/Calendar;BB)Z
     .locals 10
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     const/4 v0, 0x1
 
@@ -4307,7 +4449,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     const/16 v2, 0x14
 
@@ -4387,7 +4529,7 @@
 
     iget-object v3, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->alias:[B
 
-    invoke-static {v3}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_NOT_NULL(Ljava/lang/Object;)V
 
     iget-object v3, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$UserInfo;->alias:[B
 
@@ -4398,7 +4540,7 @@
     if-gt v3, v4, :cond_0
 
     :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     move v0, v1
 
@@ -4526,6 +4668,97 @@
     return v0
 .end method
 
+.method public startParseSensorData()V
+    .locals 6
+
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v0}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v1}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v2}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v3}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v4}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceInputStream:Ljava/io/PipedInputStream;
+
+    invoke-virtual {v5}, Ljava/io/PipedInputStream;->read()I
+
+    move-result v5
+
+    shl-int/lit8 v1, v1, 0x8
+
+    or-int/2addr v0, v1
+
+    shl-int/lit8 v1, v3, 0x8
+
+    or-int/2addr v1, v2
+
+    shl-int/lit8 v2, v5, 0x8
+
+    or-int/2addr v2, v4
+
+    and-int/lit16 v0, v0, 0xfff
+
+    shl-int/lit8 v0, v0, 0x14
+
+    shr-int/lit8 v0, v0, 0x14
+
+    int-to-short v0, v0
+
+    and-int/lit16 v1, v1, 0xfff
+
+    shl-int/lit8 v1, v1, 0x14
+
+    shr-int/lit8 v1, v1, 0x14
+
+    int-to-short v1, v1
+
+    and-int/lit16 v2, v2, 0xfff
+
+    shl-int/lit8 v2, v2, 0x14
+
+    shr-int/lit8 v2, v2, 0x14
+
+    int-to-short v2, v2
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->onSensorDataChanged(SSS)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    return-void
+.end method
+
 .method public stopGetActivities()V
     .locals 1
 
@@ -4564,7 +4797,7 @@
 .method public stopSyncData()Z
     .locals 4
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     iget-object v0, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_CharControlPoint:Landroid/bluetooth/BluetoothGattCharacteristic;
 
@@ -4588,7 +4821,7 @@
 .method public updateFirmware(III[B)Z
     .locals 1
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     array-length v0, p4
 
@@ -4596,7 +4829,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     if-nez v0, :cond_0
 
@@ -4610,7 +4843,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Debug;->ASSERT_TRUE(Z)V
 
     goto :goto_0
 .end method

@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/ao;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/ao;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ap;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ap;->a:Lcn/com/smartdevices/bracelet/ui/ao;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,30 +22,18 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ap;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ap;->a:Lcn/com/smartdevices/bracelet/ui/ao;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->h(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/ao;->a(Lcn/com/smartdevices/bracelet/ui/ao;)Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->updateDynamicList(Z)V
 
     return-void
 .end method

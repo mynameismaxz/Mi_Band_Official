@@ -83,6 +83,12 @@
 
     iput v1, v0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
 
+    invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/ShareData;->mExtraData:Landroid/os/Bundle;
+
     return-object v0
 .end method
 

@@ -89,8 +89,17 @@ localization_Chinese_table = {
     new_record_format="新纪录, %d步, %d月%d日",
     today_goal_reached="恭喜, 今天已达成目标",
     week_continue_reach_goal="连续一周达成目标, 赞！",
+
+    -- Continue reach goals string
     challenge_format="你已连续%d天达成目标",
     personal_best_format="个人历史最高记录%d天",
+    continue_with_skips_title="昨天未达标, 环环已经帮你使用假条过关啦！",
+    personal_best_with_skips_format="剩余%d张假条",
+    continue_used_n_skips_format="连续达标%d天, 还有%d张假条可用",
+    continue_used_0_skips_format="连续达标%d天, 假条已经用完了要加油咯～",
+    personal_best_on_skip_day_title="恭喜获得假条一张, 你已连续%d天达标",
+    personal_best_on_skip_day_info="连续达标每满7天即可获得假条, 未达标时会自动使用",
+
     active_time_format_0="%d分钟",
     active_time_format_1="%d小时",
     active_time_format_2="%d小时%d分钟",
@@ -102,6 +111,10 @@ localization_Chinese_table = {
     get_distance_format="%d米",
     activity_walk_format="%s走了%d步, 共%s",
     activity_walk_consumed_format="消耗了%d千卡%s",
+
+    activity_rope_skipping_format="%s跳绳%d次",
+    activity_situp_format="%s做了%d个仰卧起坐",
+    activity_consumed_format="消耗了%d千卡%s",
 
     activity_activity_format="%s活动了%s, 共%s",
     last_night_sleeped_good_format="昨晚睡了%s, 睡得不错哦",
@@ -126,7 +139,7 @@ localization_Chinese_table = {
     game_playing_done="国庆七天日行万步, 第%s天达成",
     game_playing_lastday="最后一天即将完成日行万步挑战, 加油",
     game_playing_lastday_done="恭喜, 国庆七天日行万步挑战成功",
-    game_playing_bonus_info="中将结果将在%s月%s日揭晓",
+    game_playing_bonus_info="中奖结果将在%s月%s日揭晓",
     click_to_show_result="点击查看活动进展",
     game_fail_title_ytd="很遗憾, 昨天未达成10000步",
     game_fail_title="很遗憾, %s月%s日未达成10000步",
@@ -150,5 +163,10 @@ localization_Chinese_table = {
     game_share_to_success="挑战成功！一共走了%s步",
     game_share_to_hit_bonus="一个不小心中奖了，快来围观给我点赞吧",
     game_share_to_not_hit_bonus="没有抽中，就当是给下次中奖攒人品了",
-    less_than_one="小于1"
+    less_than_one="小于1",
+
+    ---====== Weather tips ===============
+    weather_tips_title_0 = "空气重度污染, 请尽量减少室外活动",
+    weather_tips_title_1 = "空气严重污染, 请尽量减少室外活动",
+    weather_tips_info = "仰卧起坐、跳绳、平板支撑都是很棒的室内活动哦",
 }

@@ -65,6 +65,22 @@
 
 .field public static final JazzyListView_simulate_grid_with_list:I = 0x3
 
+.field public static final LabCircleView:[I
+
+.field public static final LabCircleView_labCircleBackground:I = 0x1
+
+.field public static final LabCircleView_labCircleHeight:I = 0x4
+
+.field public static final LabCircleView_labCircleSrc:I = 0x0
+
+.field public static final LabCircleView_labCircleStroke:I = 0x5
+
+.field public static final LabCircleView_labCircleStrokeWidth:I = 0x6
+
+.field public static final LabCircleView_labCircleText:I = 0x2
+
+.field public static final LabCircleView_labCircleWidth:I = 0x3
+
 .field public static final PagerSlidingTabStrip:[I
 
 .field public static final PagerSlidingTabStrip_pstsDividerColor:I = 0x2
@@ -246,7 +262,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 6
+
+    const/4 v5, 0x7
 
     const/4 v4, 0x1
 
@@ -288,11 +306,17 @@
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->JazzyListView:[I
 
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->LabCircleView:[I
+
     const/16 v0, 0xb
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_4
+    fill-array-data v0, :array_5
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->PagerSlidingTabStrip:[I
 
@@ -300,7 +324,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5
+    fill-array-data v0, :array_6
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->ParallaxScroll:[I
 
@@ -308,7 +332,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_6
+    fill-array-data v0, :array_7
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->PullToRefresh:[I
 
@@ -316,7 +340,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7
+    fill-array-data v0, :array_8
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->RoundProgressBar:[I
 
@@ -324,7 +348,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8
+    fill-array-data v0, :array_9
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->SlideMenu:[I
 
@@ -336,11 +360,9 @@
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->SlideMenu_Layout:[I
 
-    const/4 v0, 0x7
+    new-array v0, v5, [I
 
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_9
+    fill-array-data v0, :array_a
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->SlidingUpPanelLayout:[I
 
@@ -348,7 +370,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_b
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->TitlePageIndicator:[I
 
@@ -356,13 +378,11 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_b
+    fill-array-data v0, :array_c
 
     sput-object v0, Lcom/xiaomi/hm/health/R$styleable;->ViewPagerIndicator:[I
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -407,6 +427,17 @@
 
     :array_4
     .array-data 4
+        0x7f010067
+        0x7f010068
+        0x7f010069
+        0x7f01006a
+        0x7f01006b
+        0x7f01006c
+        0x7f01006d
+    .end array-data
+
+    :array_5
+    .array-data 4
         0x7f01000a
         0x7f01000b
         0x7f01000c
@@ -420,7 +451,7 @@
         0x7f010014
     .end array-data
 
-    :array_5
+    :array_6
     .array-data 4
         0x7f010048
         0x7f010049
@@ -428,7 +459,7 @@
         0x7f01004b
     .end array-data
 
-    :array_6
+    :array_7
     .array-data 4
         0x7f010015
         0x7f010016
@@ -451,7 +482,7 @@
         0x7f010027
     .end array-data
 
-    :array_7
+    :array_8
     .array-data 4
         0x7f01005e
         0x7f01005f
@@ -464,7 +495,7 @@
         0x7f010066
     .end array-data
 
-    :array_8
+    :array_9
     .array-data 4
         0x7f010002
         0x7f010003
@@ -476,7 +507,7 @@
         0x7f010009
     .end array-data
 
-    :array_9
+    :array_a
     .array-data 4
         0x7f010057
         0x7f010058
@@ -487,7 +518,7 @@
         0x7f01005d
     .end array-data
 
-    :array_a
+    :array_b
     .array-data 4
         0x1010095
         0x1010098
@@ -506,7 +537,7 @@
         0x7f01003c
     .end array-data
 
-    :array_b
+    :array_c
     .array-data 4
         0x7f010028
         0x7f010029

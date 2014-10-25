@@ -53,17 +53,17 @@
 
 .field public static final counter_text_bg:I = 0x7f080002
 
-.field public static final default_circle_indicator_fill_color:I = 0x7f080053
+.field public static final default_circle_indicator_fill_color:I = 0x7f08005b
 
-.field public static final default_circle_indicator_page_color:I = 0x7f080054
+.field public static final default_circle_indicator_page_color:I = 0x7f08005c
 
-.field public static final default_circle_indicator_stroke_color:I = 0x7f080055
+.field public static final default_circle_indicator_stroke_color:I = 0x7f08005d
 
-.field public static final default_title_indicator_footer_color:I = 0x7f080050
+.field public static final default_title_indicator_footer_color:I = 0x7f080058
 
-.field public static final default_title_indicator_selected_color:I = 0x7f080051
+.field public static final default_title_indicator_selected_color:I = 0x7f080059
 
-.field public static final default_title_indicator_text_color:I = 0x7f080052
+.field public static final default_title_indicator_text_color:I = 0x7f08005a
 
 .field public static final disable_text_color_dark:I = 0x7f080043
 
@@ -104,6 +104,22 @@
 .field public static final item_stroke:I = 0x7f08001b
 
 .field public static final item_stroke_disable:I = 0x7f08001c
+
+.field public static final lab_favorite_btn_selected_state:I = 0x7f080054
+
+.field public static final lab_favorite_btn_unselected_state:I = 0x7f080053
+
+.field public static final lab_operation_btn_text_normal_bg:I = 0x7f080051
+
+.field public static final lab_operation_btn_text_pressed_bg:I = 0x7f080050
+
+.field public static final lab_operation_unenable_text_state:I = 0x7f080052
+
+.field public static final lab_record_broken_bg:I = 0x7f080057
+
+.field public static final lab_ropeskipping_bg:I = 0x7f080055
+
+.field public static final lab_situp_bg:I = 0x7f080056
 
 .field public static final list_header:I = 0x7f080001
 
@@ -167,13 +183,13 @@
 
 .field public static final statistic_data_item_value_step:I = 0x7f080032
 
-.field public static final tab_host_title:I = 0x7f080056
+.field public static final tab_host_title:I = 0x7f08005e
 
 .field public static final title_color:I = 0x7f080004
 
 .field public static final trans:I = 0x7f080023
 
-.field public static final txt_with_drawable:I = 0x7f080057
+.field public static final txt_with_drawable:I = 0x7f08005f
 
 .field public static final wheel_band_bg:I = 0x7f080047
 

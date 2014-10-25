@@ -156,9 +156,9 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;->g:Landroid/app/ProgressDialog;
 
-    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bJ;
+    new-instance v1, Lcn/com/smartdevices/bracelet/ui/bC;
 
-    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bJ;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;)V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/ui/bC;-><init>(Lcn/com/smartdevices/bracelet/ui/SettingFirmwareActivity$SettingFirmwareFragment$DownloadFirmwareHandler;)V
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 

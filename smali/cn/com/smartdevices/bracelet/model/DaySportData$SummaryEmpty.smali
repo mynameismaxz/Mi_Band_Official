@@ -72,23 +72,7 @@
     return v0
 .end method
 
-.method public getStepActiveTime()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getStepCalorie()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getStepContinueTime()I
+.method public getStepCalories()I
     .locals 1
 
     const/4 v0, 0x0
@@ -104,6 +88,22 @@
     return v0
 .end method
 
+.method public getStepDuration()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getStepRunCalories()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public getStepRunDistance()I
     .locals 1
 
@@ -112,7 +112,7 @@
     return v0
 .end method
 
-.method public getStepRunTime()I
+.method public getStepRunDuration()I
     .locals 1
 
     const/4 v0, 0x0
@@ -120,7 +120,23 @@
     return v0
 .end method
 
-.method public getStepWalkTime()I
+.method public getStepWalkCalories()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getStepWalkDistance()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getStepWalkDuration()I
     .locals 1
 
     const/4 v0, 0x0

@@ -80,7 +80,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0001
+    const v1, 0x7f0f0002
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
@@ -112,7 +112,7 @@
 
     move-result v0
 
-    const v1, 0x7f070208
+    const v1, 0x7f070251
 
     if-ne v0, v1, :cond_1
 

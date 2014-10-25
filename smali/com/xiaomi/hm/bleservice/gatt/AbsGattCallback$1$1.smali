@@ -25,7 +25,7 @@
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/util/Debug;->TRACE()V
+    invoke-static {}, Lcn/com/smartdevices/bracelet/Debug;->TRACE()V
 
     invoke-virtual {p2}, Ljava/lang/Throwable;->printStackTrace()V
 

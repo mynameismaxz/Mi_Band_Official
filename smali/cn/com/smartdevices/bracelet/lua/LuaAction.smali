@@ -463,7 +463,7 @@
     :cond_2
     instance-of v0, p3, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
     check-cast p3, Ljava/lang/Integer;
 
@@ -472,6 +472,17 @@
     move-result v0
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    goto :goto_0
+
+    :cond_3
+    instance-of v0, p3, Landroid/os/Parcelable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p3, Landroid/os/Parcelable;
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     goto :goto_0
 .end method

@@ -36,7 +36,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0c00da
+    const v0, 0x7f0c00e2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -153,7 +153,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0c00da
+    const v0, 0x7f0c00e2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticDailyFragment;->getString(I)Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 .method protected updateSleepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f07014c
+    const v1, 0x7f070187
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -362,7 +362,7 @@
 .method protected updateSleepRiseTime(I)V
     .locals 2
 
-    const v1, 0x7f07014a
+    const v1, 0x7f070185
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -406,7 +406,7 @@
 .method protected updateSleepStartTime(I)V
     .locals 2
 
-    const v1, 0x7f070148
+    const v1, 0x7f070183
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -450,7 +450,7 @@
 .method protected updateStepAchievement(I)V
     .locals 2
 
-    const v1, 0x7f07013d
+    const v1, 0x7f070178
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 
@@ -502,7 +502,7 @@
 .method protected updateStepContinueTime(I)V
     .locals 2
 
-    const v1, 0x7f07013a
+    const v1, 0x7f070175
 
     sget v0, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->sMode:I
 

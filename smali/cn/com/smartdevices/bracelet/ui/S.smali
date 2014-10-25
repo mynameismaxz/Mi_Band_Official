@@ -1,125 +1,51 @@
 .class Lcn/com/smartdevices/bracelet/ui/S;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/GestureDetector$OnGestureListener;
+.super Landroid/os/Handler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDown(Landroid/view/MotionEvent;)Z
+.method public handleMessage(Landroid/os/Message;)V
     .locals 1
 
-    const/4 v0, 0x0
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    return v0
-.end method
-
-.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 2
-
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_0
-
-    const/high16 v0, 0x447a0000
-
-    cmpl-float v0, p3, v0
-
-    if-lez v0, :cond_0
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x1017
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    packed-switch v0, :pswitch_data_0
 
     :goto_0
-    const/4 v0, 0x1
+    return-void
 
-    :goto_1
-    return v0
+    :pswitch_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    :cond_0
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_1
-
-    const/high16 v0, -0x3b860000
-
-    cmpg-float v0, p3, v0
-
-    if-gez v0, :cond_1
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x1018
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->a(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
+    :pswitch_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/S;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    goto :goto_1
-.end method
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->finishAnimation()V
 
-.method public onLongPress(Landroid/view/MotionEvent;)V
-    .locals 0
+    goto :goto_0
 
-    return-void
-.end method
-
-.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onShowPress(Landroid/view/MotionEvent;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

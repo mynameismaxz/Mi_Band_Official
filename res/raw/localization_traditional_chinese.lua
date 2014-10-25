@@ -89,8 +89,17 @@ localization_zh_rTW_table = {
     new_record_format="新紀錄, %d步, %d月%d日",
     today_goal_reached="恭喜, 今天已達成目標",
     week_continue_reach_goal="連續一周達成目標, 贊！",
+
+    -- Continue reach goals string
     challenge_format="你已連續%d天達成目標。",
     personal_best_format="個人歷史最高記錄%d天",
+    continue_with_skips_title="昨天未達標, 環環已經幫你使用假單過關啦！",
+    personal_best_with_skips_format="個人歷史最高記錄%d天, 剩餘%d張假單",
+    continue_used_n_skips_format="連續達標%d天, 還有%d張假單可用",
+    continue_used_0_skips_format="連續達標%d天, 假單已經用完了要加油囉～",
+    personal_best_on_skip_day_title="恭喜獲得假單一張, 你已連續%d天達標",
+    personal_best_on_skip_day_info="連續達標每滿7天即可獲得假單, 未達標時會自動使用",
+
     active_time_format_0="%d分鐘",
     active_time_format_1="%d小時",
     active_time_format_2="%d小時%d分鐘",
@@ -102,6 +111,10 @@ localization_zh_rTW_table = {
     get_distance_format="%d公尺",
     activity_walk_format="%s走了%d步, 共%s",
     activity_walk_consumed_format="消耗了%d千卡%s",
+
+    activity_rope_skipping_format="%s跳繩%d次",
+    activity_situp_format="%s做了%d個仰臥起坐",
+    activity_consumed_format="消耗了%d千卡%s",
 
     activity_activity_format="%s活動了%s, 共%s",
     last_night_sleeped_good_format="昨晚睡了%s, 睡得不錯哦",
@@ -150,4 +163,9 @@ localization_zh_rTW_table = {
     game_share_to_hit_bonus="一个不小心中奖了，快来围观给我点赞吧",
     game_share_to_not_hit_bonus="没有抽中，就当是给下次中奖攒人品了",
     less_than_one="不到1",
+
+    ---====== Weather tips ===============
+    weather_tips_title_0 = "空氣重度污染, 請儘量減少室外活動",
+    weather_tips_title_1 = "空氣嚴重污染, 請儘量減少室外活動",
+    weather_tips_info = "仰臥起坐、跳繩、平板支撐都是很棒的室內活動哦",
 }

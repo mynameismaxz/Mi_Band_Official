@@ -5,15 +5,9 @@
 .implements Landroid/content/ServiceConnection;
 
 
-# instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/BraceletApp;
-
-
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/BraceletApp;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/a;->a:Lcn/com/smartdevices/bracelet/BraceletApp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,17 +19,13 @@
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 1
 
-    instance-of v0, p2, Lcom/xiaomi/hm/bleservice/BLEService$BLEServiceBinder;
+    instance-of v0, p2, Lcom/xiaomi/hm/bleservice/BLEServiceBinder;
 
     if-eqz v0, :cond_0
 
-    check-cast p2, Lcom/xiaomi/hm/bleservice/BLEService$BLEServiceBinder;
+    check-cast p2, Lcom/xiaomi/hm/bleservice/IBLEService;
 
-    invoke-virtual {p2}, Lcom/xiaomi/hm/bleservice/BLEService$BLEServiceBinder;->getService()Lcom/xiaomi/hm/bleservice/BLEService;
-
-    move-result-object v0
-
-    sput-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
+    invoke-static {p2}, Lcn/com/smartdevices/bracelet/BLEManager;->a(Lcom/xiaomi/hm/bleservice/IBLEService;)V
 
     :cond_0
     return-void
@@ -46,7 +36,7 @@
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcn/com/smartdevices/bracelet/BraceletApp;->BLEService:Lcom/xiaomi/hm/bleservice/BLEService;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/BLEManager;->a(Lcom/xiaomi/hm/bleservice/IBLEService;)V
 
     return-void
 .end method

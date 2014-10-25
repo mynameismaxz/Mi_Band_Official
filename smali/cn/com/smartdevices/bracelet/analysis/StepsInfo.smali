@@ -7,13 +7,13 @@
 
 .field public static KEY_CALORIES:Ljava/lang/String; = null
 
-.field public static KEY_CONTINUS_ACTIVE_TIME:Ljava/lang/String; = null
-
 .field public static KEY_DISTANCE:Ljava/lang/String; = null
 
 .field public static KEY_STEPS:Ljava/lang/String; = null
 
 .field public static KEY_STEP_INFO:Ljava/lang/String; = null
+
+.field public static KEY_STEP_RUN_CALORIES:Ljava/lang/String; = null
 
 .field public static KEY_STEP_RUN_DISTANCE:Ljava/lang/String; = null
 
@@ -22,6 +22,8 @@
 .field public static KEY_STEP_WALK_TIME:Ljava/lang/String; = null
 
 .field private static final a:Ljava/lang/String; = "StepsInfo"
+
+.field private static m:I
 
 
 # instance fields
@@ -39,7 +41,13 @@
 
 .field private h:I
 
-.field private i:Ljava/util/ArrayList;
+.field private i:I
+
+.field private j:I
+
+.field private k:I
+
+.field private l:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -50,13 +58,11 @@
     .end annotation
 .end field
 
-.field private j:I
+.field private n:I
 
-.field private k:I
+.field private o:I
 
-.field private l:I
-
-.field private m:Ljava/util/ArrayList;
+.field private p:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -88,10 +94,6 @@
 
     sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_CALORIES:Ljava/lang/String;
 
-    const-string v0, "conAct"
-
-    sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_CONTINUS_ACTIVE_TIME:Ljava/lang/String;
-
     const-string v0, "wk"
 
     sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_STEP_WALK_TIME:Ljava/lang/String;
@@ -104,9 +106,17 @@
 
     sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_STEP_RUN_DISTANCE:Ljava/lang/String;
 
+    const-string v0, "runCal"
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_STEP_RUN_CALORIES:Ljava/lang/String;
+
     const-string v0, "actives"
 
     sput-object v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_ACTIVITY_LIST:Ljava/lang/String;
+
+    const/4 v0, -0x1
+
+    sput v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:I
 
     return-void
 .end method
@@ -134,25 +144,27 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:I
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:Ljava/util/ArrayList;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:I
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:Ljava/util/ArrayList;
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->n:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->o:I
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->p:Ljava/util/ArrayList;
 
     new-instance v0, Lcn/com/smartdevices/bracelet/model/SportDay;
 
@@ -186,27 +198,45 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:I
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:Ljava/util/ArrayList;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:I
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:Ljava/util/ArrayList;
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->n:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->o:I
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->p:Ljava/util/ArrayList;
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->b:Lcn/com/smartdevices/bracelet/model/SportDay;
+
+    return-void
+.end method
+
+.method public static getRealtimeSteps()I
+    .locals 1
+
+    sget v0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:I
+
+    return v0
+.end method
+
+.method public static setRealtimeSteps(I)V
+    .locals 0
+
+    sput p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:I
 
     return-void
 .end method
@@ -216,7 +246,7 @@
 .method public getActMinutes()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->n:I
 
     return v0
 .end method
@@ -233,7 +263,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->p:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -241,7 +271,7 @@
 .method public getCalories()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:I
 
     return v0
 .end method
@@ -249,7 +279,7 @@
 .method public getContinuesActive()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->o:I
 
     return v0
 .end method
@@ -262,7 +292,7 @@
     return v0
 .end method
 
-.method public getRealtimeSteps()I
+.method public getRunCalories()I
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
@@ -306,7 +336,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -328,7 +358,7 @@
 .end method
 
 .method public getSummaryJson()Lorg/json/JSONObject;
-    .locals 4
+    .locals 3
 
     new-instance v0, Lorg/json/JSONObject;
 
@@ -349,13 +379,7 @@
 
     sget-object v1, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_CALORIES:Ljava/lang/String;
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_CONTINUS_ACTIVE_TIME:Ljava/lang/String;
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:I
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
@@ -377,25 +401,11 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string v1, "StepsInfo"
+    sget-object v1, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->KEY_STEP_RUN_CALORIES:Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget v2, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
 
-    const-string v3, "rundist = "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v3, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->g:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -408,10 +418,26 @@
     goto :goto_0
 .end method
 
+.method public getWalkCalories()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
+
+    return v0
+.end method
+
+.method public getWalkDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
+
+    return v0
+.end method
+
 .method public setActMinutes(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->n:I
 
     return-void
 .end method
@@ -428,11 +454,11 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->p:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->m:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->p:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
@@ -442,7 +468,7 @@
 .method public setCalories(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:I
 
     return-void
 .end method
@@ -450,7 +476,7 @@
 .method public setContinuesActive(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->o:I
 
     return-void
 .end method
@@ -463,7 +489,7 @@
     return-void
 .end method
 
-.method public setRealtimeSteps(I)V
+.method public setRunCalories(I)V
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->j:I
@@ -499,11 +525,11 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->i:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->l:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
@@ -522,6 +548,22 @@
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->d:I
+
+    return-void
+.end method
+
+.method public setWalkCalories(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->k:I
+
+    return-void
+.end method
+
+.method public setWalkDistance(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/StepsInfo;->h:I
 
     return-void
 .end method

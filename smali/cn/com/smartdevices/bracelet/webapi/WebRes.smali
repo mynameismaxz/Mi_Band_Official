@@ -752,111 +752,7 @@
     goto/16 :goto_0
 .end method
 
-.method private static c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-    .locals 4
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "getWebStatus:"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-
-    invoke-direct {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;-><init>()V
-
-    :try_start_0
-    const-string v0, "code"
-
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->code:I
-
-    const-string v0, "message"
-
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->message:Ljava/lang/String;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->isAuthInvalid()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c:Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b:Landroid/content/Context;
-
-    const-class v3, Lcn/com/smartdevices/bracelet/activity/LoginActivity;
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    const v2, 0x10008000
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b:Landroid/content/Context;
-
-    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    :cond_0
-    sput-object v1, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c:Lcn/com/smartdevices/bracelet/webapi/WebStatus;
-
-    return-object v1
-
-    :catch_0
-    move-exception v0
-
-    const/4 v2, 0x2
-
-    iput v2, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->code:I
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-.end method
-
-.method private static d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
+.method private static c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
     .locals 7
 
     const/4 v1, 0x0
@@ -1196,7 +1092,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
 
     move-result-object v4
 
@@ -1269,7 +1165,7 @@
     goto/16 :goto_1
 .end method
 
-.method private static e(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
+.method private static d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/CommentItem;
     .locals 3
 
     sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
@@ -1457,6 +1353,110 @@
     goto :goto_0
 .end method
 
+.method public static getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    .locals 4
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "getWebStatus:"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    invoke-direct {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;-><init>()V
+
+    :try_start_0
+    const-string v0, "code"
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->code:I
+
+    const-string v0, "message"
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->message:Ljava/lang/String;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->isAuthInvalid()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c:Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b:Landroid/content/Context;
+
+    const-class v3, Lcn/com/smartdevices/bracelet/activity/LoginActivity;
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+
+    const v2, 0x10008000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->b:Landroid/content/Context;
+
+    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :cond_0
+    sput-object v1, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c:Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    return-object v1
+
+    :catch_0
+    move-exception v0
+
+    const/4 v2, 0x2
+
+    iput v2, v1, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->code:I
+
+    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
 .method public static init(Landroid/content/Context;)V
     .locals 0
 
@@ -1479,7 +1479,7 @@
 
     invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -1606,11 +1606,11 @@
     goto :goto_0
 .end method
 
-.method public static parseDownload(Ljava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+.method public static parseDownload(ILjava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
+            "(I",
             "Ljava/lang/String;",
             "Ljava/util/ArrayList",
             "<",
@@ -1637,7 +1637,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -1645,17 +1645,13 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcn/com/smartdevices/bracelet/Debug;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
-
-    invoke-static {v0, p0}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v3, Lorg/json/JSONObject;
 
-    invoke-direct {v3, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v3}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v3}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -1699,9 +1695,9 @@
 
     move-result-object v4
 
-    new-instance v5, Lcn/com/smartdevices/bracelet/model/NetDataInfo;
+    new-instance v5, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;
 
-    invoke-direct {v5}, Lcn/com/smartdevices/bracelet/model/NetDataInfo;-><init>()V
+    invoke-direct {v5, p0}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;-><init>(I)V
 
     invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
 
@@ -1711,7 +1707,7 @@
 
     const/4 v6, 0x2
 
-    iput v6, v5, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
+    invoke-virtual {v5, v6}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setState(I)V
 
     const/4 v6, 0x0
 
@@ -1719,7 +1715,7 @@
 
     move-result-object v6
 
-    iput-object v6, v5, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->startDate:Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setStartDate(Ljava/lang/String;)V
 
     const/4 v6, 0x1
 
@@ -1727,10 +1723,10 @@
 
     move-result-object v4
 
-    iput-object v4, v5, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->stopDate:Ljava/lang/String;
+    invoke-virtual {v5, v4}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setStopDate(Ljava/lang/String;)V
 
     :goto_1
-    invoke-static {v5}, Lcn/com/smartdevices/bracelet/Keeper;->keepNetInfo(Lcn/com/smartdevices/bracelet/model/NetDataInfo;)V
+    invoke-virtual {v5}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->saveInfo()V
 
     :cond_2
     const-string v4, "list"
@@ -1767,28 +1763,6 @@
 
     sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
 
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "parseDownload:"
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v2, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
-
     invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -1801,7 +1775,7 @@
     const/4 v4, 0x1
 
     :try_start_2
-    iput v4, v5, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
+    invoke-virtual {v5, v4}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setState(I)V
 
     goto :goto_1
 
@@ -1810,33 +1784,15 @@
 
     move-result v3
 
-    sget-object v1, Lcn/com/smartdevices/bracelet/webapi/WebRes;->a:Ljava/lang/String;
+    new-instance v1, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;
 
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "list Size:"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v1, v5}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v1, Lcn/com/smartdevices/bracelet/model/NetDataInfo;
-
-    invoke-direct {v1}, Lcn/com/smartdevices/bracelet/model/NetDataInfo;-><init>()V
+    invoke-direct {v1, p0}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;-><init>(I)V
 
     if-lez v3, :cond_5
 
     const/4 v5, 0x2
 
-    iput v5, v1, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
+    invoke-virtual {v1, v5}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setState(I)V
 
     const/4 v5, 0x0
 
@@ -1850,7 +1806,7 @@
 
     move-result-object v5
 
-    iput-object v5, v1, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->startDate:Ljava/lang/String;
+    invoke-virtual {v1, v5}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setStartDate(Ljava/lang/String;)V
 
     add-int/lit8 v5, v3, -0x1
 
@@ -1864,12 +1820,12 @@
 
     move-result-object v5
 
-    iput-object v5, v1, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->stopDate:Ljava/lang/String;
+    invoke-virtual {v1, v5}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setStopDate(Ljava/lang/String;)V
 
     :goto_3
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/Keeper;->keepNetInfo(Lcn/com/smartdevices/bracelet/model/NetDataInfo;)V
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->saveInfo()V
 
-    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->ensureCapacity(I)V
+    invoke-virtual {p2, v3}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
     move v1, v2
 
@@ -1884,7 +1840,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
 
@@ -1893,7 +1849,7 @@
     :cond_5
     const/4 v5, 0x1
 
-    iput v5, v1, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
+    invoke-virtual {v1, v5}, Lcn/com/smartdevices/bracelet/model/SyncServerDataInfo;->setState(I)V
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -1908,7 +1864,7 @@
 
     move-object v1, v8
 
-    goto/16 :goto_2
+    goto :goto_2
 .end method
 
 .method public static parseFriendList(Ljava/lang/String;Ljava/util/ArrayList;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
@@ -1952,7 +1908,7 @@
 
     invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2088,7 +2044,7 @@
 
     invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2131,7 +2087,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
+    invoke-static {v4}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
 
     move-result-object v4
 
@@ -2318,7 +2274,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->d(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/model/MicroBlogItem;
 
     move-result-object v1
 
@@ -2366,7 +2322,7 @@
 
     invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -2484,7 +2440,7 @@
 
     invoke-direct {v2, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -2555,7 +2511,7 @@
 
     invoke-direct {v2, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -2646,7 +2602,7 @@
 
     invoke-direct {v1, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->c(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Lorg/json/JSONObject;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
 
     move-result-object v2
 

@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f020079
+    const v5, 0x7f02007a
 
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -97,11 +97,11 @@
 
     packed-switch v0, :pswitch_data_0
 
-    const v5, 0x7f04000e
+    const v5, 0x7f040010
 
-    const v0, 0x7f040010
+    const v0, 0x7f040012
 
-    const v6, 0x7f02007b
+    const v6, 0x7f02007c
 
     invoke-virtual {p0, v6}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 
@@ -189,11 +189,11 @@
     return-void
 
     :pswitch_0
-    const v5, 0x7f04000d
+    const v5, 0x7f04000f
 
-    const v0, 0x7f04000f
+    const v0, 0x7f040011
 
-    const v7, 0x7f02007a
+    const v7, 0x7f02007b
 
     invoke-virtual {p0, v7}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->setBackgroundResource(I)V
 

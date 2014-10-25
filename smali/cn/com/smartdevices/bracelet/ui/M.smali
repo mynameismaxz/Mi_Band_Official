@@ -1,86 +1,70 @@
 .class Lcn/com/smartdevices/bracelet/ui/M;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
+
+.field private final synthetic b:Z
+
+.field private final synthetic c:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicFragment;ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/M;->a:Lcn/com/smartdevices/bracelet/ui/DynamicFragment;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    iput-boolean p2, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Z
+
+    iput-object p3, p0, Lcn/com/smartdevices/bracelet/ui/M;->c:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailed(Ljava/lang/Object;)V
+.method public run()V
     .locals 3
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/view/Util;->hideProgressDialog()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
+    invoke-static {}, Lcn/com/smartdevices/bracelet/BLEManager;->getMiLiProfile()Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    const v2, 0x7f0c0049
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;Ljava/lang/String;I)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
+    :goto_0
     return-void
-.end method
 
-.method public onFinish(Ljava/lang/Object;)V
-    .locals 0
+    :cond_0
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Z
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
+    if-eqz v1, :cond_1
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/view/Util;->hideProgressDialog()V
+    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getRealtimeSteps()I
 
-    return-void
-.end method
+    move-result v1
 
-.method public onStart()V
-    .locals 3
+    const/4 v2, -0x1
 
-    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+    if-eq v1, v2, :cond_1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/M;->c:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BraceletSettingsFragment;->getActivity()Landroid/app/Activity;
+    invoke-interface {v2, v1}, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;->process(I)V
 
-    move-result-object v0
+    :cond_1
+    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/ui/M;->b:Z
 
-    const-string v1, "\u6b63\u5728\u91cd\u7f6e\u624b\u73af"
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/M;->c:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;
 
-    const-string v2, "\u8bf7\u7a0d\u7b49\uff01"
+    invoke-virtual {v0, v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->enableRealtimeStepNotification(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$IRealtimeStepsChangedCB;)Z
 
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/Util;->showProgressDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    goto :goto_0
 .end method

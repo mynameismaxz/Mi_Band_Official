@@ -1,5 +1,5 @@
 version: 2.0.0-Beta8-b13fe7f690
-apkFileName: Mi-Band_1.1.162_218.apk
+apkFileName: Mi-Band_1.1.312_228.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -12,8 +12,8 @@ packageInfo:
   cur_package_id: '127'
   orig_package: com.xiaomi.hm.health
 versionInfo:
-  versionCode: '218'
-  versionName: 1.1.162
+  versionCode: '228'
+  versionName: 1.1.312
 compressionType: false
 unknownFiles:
   org/achartengine/image/zoom-1.png: '8'

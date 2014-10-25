@@ -36,6 +36,36 @@
 
 
 # virtual methods
+.method protected initViews()V
+    .locals 1
+
+    const v0, 0x7f0700ca
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->b:Landroid/view/View;
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->b:Landroid/view/View;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const v0, 0x7f0700c8
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->c:Landroid/view/View;
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->c:Landroid/view/View;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    return-void
+.end method
+
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 4
 
@@ -187,7 +217,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f0700a0
+    .packed-switch 0x7f0700c8
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -204,30 +234,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->mPersonInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
-
-    const v0, 0x7f0700a2
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->b:Landroid/view/View;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->b:Landroid/view/View;
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v0, 0x7f0700a0
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->c:Landroid/view/View;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->c:Landroid/view/View;
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

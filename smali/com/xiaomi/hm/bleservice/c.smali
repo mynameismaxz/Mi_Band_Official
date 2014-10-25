@@ -1,47 +1,48 @@
 .class Lcom/xiaomi/hm/bleservice/c;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field final synthetic a:Lcom/xiaomi/hm/bleservice/BLEService;
 
+.field private final synthetic b:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/xiaomi/hm/bleservice/BLEService;)V
+.method constructor <init>(Lcom/xiaomi/hm/bleservice/BLEService;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-boolean p2, p0, Lcom/xiaomi/hm/bleservice/c;->b:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic a(Lcom/xiaomi/hm/bleservice/c;)Lcom/xiaomi/hm/bleservice/BLEService;
-    .locals 1
-
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+.method public run()V
+    .locals 3
 
-    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;
-
-    # getter for: Lcom/xiaomi/hm/bleservice/BLEService;->m_Handler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$1(Lcom/xiaomi/hm/bleservice/BLEService;)Landroid/os/Handler;
+    invoke-static {}, Lcom/xiaomi/hm/bleservice/DynamicManager;->getInstance()Lcom/xiaomi/hm/bleservice/DynamicManager;
 
     move-result-object v0
 
-    new-instance v1, Lcom/xiaomi/hm/bleservice/d;
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/xiaomi/hm/bleservice/d;-><init>(Lcom/xiaomi/hm/bleservice/c;Landroid/content/Context;Landroid/content/Intent;)V
+    iget-boolean v2, p0, Lcom/xiaomi/hm/bleservice/c;->b:Z
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1, v2}, Lcom/xiaomi/hm/bleservice/DynamicManager;->analysisDynamic(Landroid/content/Context;Z)V
+
+    iget-object v0, p0, Lcom/xiaomi/hm/bleservice/c;->a:Lcom/xiaomi/hm/bleservice/BLEService;
+
+    # invokes: Lcom/xiaomi/hm/bleservice/BLEService;->notifyDynamicStatusChanged()V
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/BLEService;->access$22(Lcom/xiaomi/hm/bleservice/BLEService;)V
 
     return-void
 .end method

@@ -27,33 +27,11 @@
 
 .field public static final BLANK_STEP:B = 0x0t
 
-.field public static final BLE_CONN_STATUS_CONNECTED_SUCC:I = 0x8
-
-.field public static final BLE_CONN_STATUS_CONNECTING:I = 0x3
-
-.field public static final BLE_CONN_STATUS_CONNECT_FAILED:I = 0x5
-
-.field public static final BLE_CONN_STATUS_DISCONNECTED:I = 0x7
-
-.field public static final BLE_CONN_STATUS_INITIALIZATION_FAILED:I = 0x6
-
-.field public static final BLE_CONN_STATUS_SEARCHING:I = 0x2
-
-.field public static final BLE_CONN_STATUS_SEARCH_FAILED:I = 0x4
-
-.field public static final BLE_CONN_STATUS_SYNC_DATA_PROGRESS:I = 0xa
-
-.field public static final BLE_CONN_STATUS_SYNC_DATA_START:I = 0x9
-
-.field public static final BLE_CONN_STATUS_SYNC_DATA_STOP:I = 0xb
-
-.field public static final BLE_CONN_STATUS_UNBINDED:I = 0x1
-
-.field public static final BLE_CONN_STATUS_UNKNOWN:I = -0x1
-
 .field public static final CHECK_PCB_VERSION:Z = true
 
 .field public static final CYCLE_METER:F = 400.0f
+
+.field public static final DEFAULT_LUA_VERSION:Ljava/lang/String; = "20990101001"
 
 .field public static final DEFAULT_WHEEL_ITEM_H:I = 0x20
 
@@ -70,20 +48,6 @@
 .field public static final DEVICE_BATTERY_LOW:B = 0x1t
 
 .field public static final DEVICE_BATTERY_NORMAL:B = 0x0t
-
-.field public static final DEVICE_STATUS_DeviceConnected:I = 0x4
-
-.field public static final DEVICE_STATUS_DeviceConnecting:I = 0x7
-
-.field public static final DEVICE_STATUS_DeviceConnectionFailed:I = 0x5
-
-.field public static final DEVICE_STATUS_DeviceDisconnected:I = 0x6
-
-.field public static final DEVICE_STATUS_InitializationFailed:I = 0x1
-
-.field public static final DEVICE_STATUS_InitializationSuccess:I = 0x0
-
-.field public static final DEVICE_STATUS_Unknown:I = -0x1
 
 .field public static final DISLIKE:Ljava/lang/String; = "dislike"
 

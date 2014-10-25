@@ -3,6 +3,8 @@
 
 
 # static fields
+.field private static final TAG:Ljava/lang/String; = "LuaManager"
+
 .field private static __instance:Lcn/com/smartdevices/bracelet/lua/LuaManager;
 
 
@@ -186,7 +188,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f060004
+    const v2, 0x7f060005
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
@@ -305,12 +307,21 @@
     return-object v0
 .end method
 
-.method private getLatestDBLuaFile()Ljava/lang/String;
+.method private getLatestDBLuaFile()Ljava/util/ArrayList;
     .locals 7
-
-    const/4 v1, 0x0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
     const/4 v6, 0x0
+
+    const/4 v1, 0x0
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/DaoManager;->getInstance()Lcn/com/smartdevices/bracelet/DaoManager;
 
@@ -412,27 +423,25 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object v0, v1
-
     :goto_0
-    return-object v0
+    return-object v1
 
     :cond_0
-    const-string v1, "chenee"
+    const-string v4, "chenee"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v5, "use latest script, version:"
+    const-string v6, "use latest script, version:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v4, " (default version is:"
+    const-string v5, " (default version is:"
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -450,17 +459,34 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    :try_start_0
     invoke-virtual {v0}, Lde/greenrobot/daobracelet/LuaZipFile;->getZipFile()[B
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->unzip([B)Ljava/lang/String;
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v2}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->unZipFolder([BLjava/lang/String;)Ljava/util/ArrayList;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
+    :goto_1
+    move-object v1, v0
+
     goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    move-object v0, v1
+
+    goto :goto_1
 
     :cond_1
     const-string v0, "chenee"
@@ -468,8 +494,6 @@
     const-string v2, "read DB zip file failed"
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v0, v1
 
     goto :goto_0
 .end method
@@ -656,42 +680,46 @@
     goto :goto_0
 .end method
 
-.method private initLocalizationLua()V
-    .locals 5
+.method private loadLocalLua()Z
+    .locals 6
 
-    const-string v0, "/localization_chinese.lua"
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "/localization_english.lua"
+    const-string v1, "/localization_chinese.lua"
 
     invoke-direct {p0, v1}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "/localization_traditional_chinese.lua"
+    const-string v2, "/localization_english.lua"
 
     invoke-direct {p0, v2}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "/localization.lua"
+    const-string v3, "/localization_traditional_chinese.lua"
 
     invoke-direct {p0, v3}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-eqz v3, :cond_1
+    const-string v4, "/localization.lua"
 
-    if-eqz v0, :cond_1
+    invoke-direct {p0, v4}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "/luafile.lua"
+
+    invoke-direct {p0, v5}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardLuaFile(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v4, :cond_1
 
     if-eqz v1, :cond_1
 
-    iget-object v4, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
-
-    invoke-virtual {v4, v0}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
+    if-eqz v2, :cond_1
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
 
@@ -705,103 +733,155 @@
 
     invoke-virtual {v0, v3}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
 
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
+
+    invoke-virtual {v0, v4}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
+
+    invoke-virtual {v0, v5}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
+
+    const/4 v0, 0x1
+
     :cond_0
-    return-void
+    const-string v1, "LuaManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "testLuaLoaded = "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    return v0
 
     :cond_1
-    const/4 v0, 0x4
+    const/4 v1, 0x5
 
-    new-array v1, v0, [I
+    new-array v2, v1, [I
 
-    fill-array-data v1, :array_0
+    fill-array-data v2, :array_0
 
-    array-length v2, v1
+    array-length v3, v2
 
-    const/4 v0, 0x0
+    move v1, v0
 
     :goto_0
-    if-ge v0, v2, :cond_0
+    if-ge v1, v3, :cond_0
 
-    aget v3, v1, v0
+    aget v4, v2, v1
 
-    iget-object v4, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->context:Landroid/content/Context;
+    iget-object v5, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->context:Landroid/content/Context;
 
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
     move-result-object v4
 
-    invoke-virtual {v4, v3}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-direct {p0, v4}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->readStream(Ljava/io/InputStream;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {p0, v3}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->readStream(Ljava/io/InputStream;)Ljava/lang/String;
+    iget-object v5, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
 
-    move-result-object v3
+    invoke-virtual {v5, v4}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
 
-    iget-object v4, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
-
-    invoke-virtual {v4, v3}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
-
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    nop
-
     :array_0
     .array-data 4
-        0x7f060001
         0x7f060002
         0x7f060003
-        0x7f060000
+        0x7f060004
+        0x7f060001
+        0x7f060005
     .end array-data
 .end method
 
 .method private loadScriptFile()V
-    .locals 2
+    .locals 5
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getSDCardZipLuaFile()Ljava/lang/String;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->loadLocalLua()Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getLatestDBLuaFile()Ljava/lang/String;
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getLatestDBLuaFile()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    :cond_0
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->initLocalizationLua()V
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->context:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f060004
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->readStream(Ljava/io/InputStream;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_1
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
-
-    invoke-virtual {v1, v0}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->luaSendVersion()V
+    :cond_0
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->luaSendApkVersion()V
 
     return-void
+
+    :cond_1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const-string v2, "LuaManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "\n\nLoad lua:"
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "\n"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/lua/LuaManager;->mLuaState:Lorg/keplerproject/luajava/LuaState;
+
+    invoke-virtual {v2, v0}, Lorg/keplerproject/luajava/LuaState;->LdoString(Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
-.method private luaSendVersion()V
+.method private luaSendApkVersion()V
     .locals 5
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->getInstance()Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;
@@ -990,6 +1070,193 @@
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->loadScriptFile()V
 
     return-void
+.end method
+
+.method public unZipFolder([BLjava/lang/String;)Ljava/util/ArrayList;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([B",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v7, 0x0
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v2, Ljava/util/zip/ZipInputStream;
+
+    new-instance v0, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    invoke-direct {v2, v0}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
+
+    const-string v0, ""
+
+    :goto_0
+    invoke-virtual {v2}, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v2}, Ljava/util/zip/ZipInputStream;->close()V
+
+    return-object v1
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->isDirectory()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-virtual {v3, v7, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v3, Ljava/io/File;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    sget-object v5, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    new-instance v4, Ljava/io/File;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    sget-object v5, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v4, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Ljava/io/File;->createNewFile()Z
+
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    invoke-direct {v0, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    :cond_2
+    const/16 v3, 0x400
+
+    new-array v3, v3, [B
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    :goto_1
+    invoke-virtual {v2, v3}, Ljava/util/zip/ZipInputStream;->read([B)I
+
+    move-result v5
+
+    const/4 v6, -0x1
+
+    if-ne v5, v6, :cond_4
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+
+    :cond_3
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    :cond_4
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_5
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v0, v3, v7, v5}, Ljava/io/FileOutputStream;->write([BII)V
+
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
+
+    :cond_5
+    new-instance v5, Ljava/lang/String;
+
+    invoke-direct {v5, v3}, Ljava/lang/String;-><init>([B)V
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
 .end method
 
 .method public unzip([B)Ljava/lang/String;

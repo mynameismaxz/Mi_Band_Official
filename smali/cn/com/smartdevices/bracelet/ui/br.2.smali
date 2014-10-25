@@ -1,30 +1,31 @@
 .class Lcn/com/smartdevices/bracelet/ui/br;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
+
 
 # instance fields
-.field a:Landroid/bluetooth/BluetoothDevice;
-
-.field b:I
-
-.field final synthetic c:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
-    .locals 1
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;)V
+    .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/br;->c:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/br;->a:Lcn/com/smartdevices/bracelet/ui/SettingAboutActivity$SettingAboutFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/br;->a:Landroid/bluetooth/BluetoothDevice;
 
-    const/4 v0, 0x0
+# virtual methods
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/ui/br;->b:I
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

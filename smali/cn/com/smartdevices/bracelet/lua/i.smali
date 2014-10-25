@@ -191,6 +191,16 @@
 
     invoke-virtual {v0, v2, v3}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->callLua(II)V
 
+    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
+
+    move-result-object v0
+
+    new-instance v2, Lcn/com/smartdevices/bracelet/eventbus/EventLuaUpdated;
+
+    invoke-direct {v2}, Lcn/com/smartdevices/bracelet/eventbus/EventLuaUpdated;-><init>()V
+
+    invoke-virtual {v0, v2}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
+
     const-string v0, "chenee"
 
     new-instance v2, Ljava/lang/StringBuilder;

@@ -77,6 +77,8 @@
 
 .field public static final UUID_CHARACTERISTIC_REALTIME_STEPS:Ljava/util/UUID;
 
+.field public static final UUID_CHARACTERISTIC_SENSOR_DATA:Ljava/util/UUID;
+
 .field public static final UUID_CHARACTERISTIC_STATISTICS:Ljava/util/UUID;
 
 .field public static final UUID_CHARACTERISTIC_TEST:Ljava/util/UUID;
@@ -85,20 +87,10 @@
 
 .field public static final UUID_SERVICE_MILI_SERVICE:Ljava/util/UUID;
 
-.field public static final UUID_SERVICE_MILI_SERVICE128:Ljava/util/UUID;
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
-
-    const-string v0, "2c7de9fb-f2f1-4a72-9d6d-8922db3f1550"
-
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID128(Ljava/lang/String;)Ljava/util/UUID;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile;->UUID_SERVICE_MILI_SERVICE128:Ljava/util/UUID;
 
     const-string v0, "FEE0"
 
@@ -211,6 +203,14 @@
     move-result-object v0
 
     sput-object v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile;->UUID_CHARACTERISTIC_TEST:Ljava/util/UUID;
+
+    const-string v0, "FF0E"
+
+    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Helper;->UUID16(Ljava/lang/String;)Ljava/util/UUID;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile;->UUID_CHARACTERISTIC_SENSOR_DATA:Ljava/util/UUID;
 
     return-void
 .end method

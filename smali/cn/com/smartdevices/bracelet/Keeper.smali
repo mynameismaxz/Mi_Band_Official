@@ -567,38 +567,6 @@
     return-void
 .end method
 
-.method public static keepNetInfo(Lcn/com/smartdevices/bracelet/model/NetDataInfo;)V
-    .locals 3
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "net_data_state"
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "net_start_day"
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->startDate:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "net_stop_day"
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->stopDate:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    return-void
-.end method
-
 .method public static keepPersonInfo(Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
     .locals 4
 
@@ -1458,50 +1426,6 @@
     move-result v0
 
     return v0
-.end method
-
-.method public static readNetInfo()Lcn/com/smartdevices/bracelet/model/NetDataInfo;
-    .locals 5
-
-    const/4 v4, 0x0
-
-    new-instance v0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;
-
-    invoke-direct {v0}, Lcn/com/smartdevices/bracelet/model/NetDataInfo;-><init>()V
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    const-string v2, "net_data_state"
-
-    const/4 v3, 0x0
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, v0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->dataState:I
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    const-string v2, "net_start_day"
-
-    invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->startDate:Ljava/lang/String;
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/Keeper;->c:Landroid/content/SharedPreferences;
-
-    const-string v2, "net_stop_day"
-
-    invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcn/com/smartdevices/bracelet/model/NetDataInfo;->stopDate:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public static readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;

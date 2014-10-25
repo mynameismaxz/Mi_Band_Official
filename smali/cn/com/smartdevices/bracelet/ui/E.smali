@@ -1,75 +1,42 @@
 .class Lcn/com/smartdevices/bracelet/ui/E;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public onColorChanged(I)V
+    .locals 1
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
 
-    packed-switch v0, :pswitch_data_0
-
-    :goto_0
-    :pswitch_0
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-
-    const v1, 0x7f0c017a
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+    check-cast v0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->b(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->applyStatusBarTint(I)V
 
-    goto :goto_0
-
-    :pswitch_3
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/E;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->b(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+    :cond_0
+    return-void
 .end method

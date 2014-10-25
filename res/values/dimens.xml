@@ -99,7 +99,7 @@
     <dimen name="goal_step_left_inner">77.0dip</dimen>
     <dimen name="person_total_title_padding_l">42.0dip</dimen>
     <dimen name="person_total_title_padding_l_2">45.0dip</dimen>
-    <dimen name="main_ui_dialog_title_size">19.0sp</dimen>
+    <dimen name="main_ui_dialog_title_size">15.0sp</dimen>
     <dimen name="stroke_width_minus">-0.30000007dip</dimen>
     <dimen name="person_avatar_size">103.0dip</dimen>
     <dimen name="login_ui_margin_side">15.0dip</dimen>
@@ -125,8 +125,7 @@
     <dimen name="mili_light_round_radius">7.0dip</dimen>
     <dimen name="setting_dlg_padding_top">30.0dip</dimen>
     <dimen name="select_item_padding_left">11.0dip</dimen>
-    <dimen name="share_item_size">33.0dip</dimen>
-    <dimen name="share_item_padding">11.0dip</dimen>
     <dimen name="select_item_txt_padding_left">5.0dip</dimen>
     <dimen name="single_button_padding">35.0dip</dimen>
+    <dimen name="lab_factory_sport_progress_state">100.0dip</dimen>
 </resources>

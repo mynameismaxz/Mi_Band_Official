@@ -13,19 +13,11 @@
 
 .field public static final KEY_ACTION:Ljava/lang/String; = "Action"
 
-.field public static final KEY_DYNAMIC_ACTIVE_TIME:Ljava/lang/String; = "DynamicActiveTime"
+.field public static final KEY_DYNAMIC_ACTIVITY_KEY:Ljava/lang/String; = "Key"
 
 .field public static final KEY_DYNAMIC_ACTIVITY_MODE:Ljava/lang/String; = "DynamicActivityMode"
 
 .field public static final KEY_DYNAMIC_ACTIVITY_SUB_TITLE:Ljava/lang/String; = "DynamicActivitySubTitle"
-
-.field public static final KEY_DYNAMIC_END_TIME:Ljava/lang/String; = "DynamicEndTime"
-
-.field public static final KEY_DYNAMIC_START_TIME:Ljava/lang/String; = "DynamicStartTime"
-
-.field public static final KEY_DYNAMIC_STEP:Ljava/lang/String; = "DynamicStep"
-
-.field public static final KEY_DYNAMIC_STEP_DISTANCE:Ljava/lang/String; = "DynamicStepDistance"
 
 .field public static final MINUTES:I = 0x5a0
 
@@ -314,7 +306,7 @@
 
     if-nez v1, :cond_0
 
-    const v1, 0x7f0c0121
+    const v1, 0x7f0c012a
 
     const/4 v2, 0x2
 
@@ -336,7 +328,7 @@
     return-object v0
 
     :cond_0
-    const v1, 0x7f0c0122
+    const v1, 0x7f0c012b
 
     new-array v2, v5, [Ljava/lang/Object;
 
@@ -372,7 +364,7 @@
 
     if-nez v1, :cond_0
 
-    const v1, 0x7f0c0121
+    const v1, 0x7f0c012a
 
     const/4 v2, 0x2
 
@@ -394,7 +386,7 @@
     return-object v0
 
     :cond_0
-    const v1, 0x7f0c0122
+    const v1, 0x7f0c012b
 
     new-array v2, v5, [Ljava/lang/Object;
 
@@ -475,7 +467,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0121
+    const v1, 0x7f0c012a
 
     const/4 v2, 0x2
 

@@ -9,6 +9,8 @@
 
 
 # instance fields
+.field private AQILevel:I
+
 .field private activeItem:Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
 
 .field private activeItems:Ljava/util/ArrayList;
@@ -387,6 +389,14 @@
     .locals 0
 
     return-void
+.end method
+
+.method public getAQILevel()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->AQILevel:I
+
+    return v0
 .end method
 
 .method public getActiveItem()Lcn/com/smartdevices/bracelet/analysis/ActiveItem;
@@ -842,6 +852,14 @@
     move-result-object v0
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepConfigDynamicDataInfo(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public setAQILevel(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;->AQILevel:I
 
     return-void
 .end method

@@ -80,6 +80,14 @@
     <color name="btn_blue_stroke_color">#ff52b2d3</color>
     <color name="game_color">#ff0096d5</color>
     <color name="game_color_info">#b20096d5</color>
+    <color name="lab_operation_btn_text_pressed_bg">#ffffffff</color>
+    <color name="lab_operation_btn_text_normal_bg">#ff191919</color>
+    <color name="lab_operation_unenable_text_state">#ffa3a3a3</color>
+    <color name="lab_favorite_btn_unselected_state">#ffeee5de</color>
+    <color name="lab_favorite_btn_selected_state">#fff08080</color>
+    <color name="lab_ropeskipping_bg">#ff009450</color>
+    <color name="lab_situp_bg">#ff1898c5</color>
+    <color name="lab_record_broken_bg">#fff57130</color>
     <color name="default_title_indicator_footer_color">#ff33b5e5</color>
     <color name="default_title_indicator_selected_color">#ffffffff</color>
     <color name="default_title_indicator_text_color">#bbffffff</color>

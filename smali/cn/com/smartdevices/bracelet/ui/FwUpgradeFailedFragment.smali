@@ -16,7 +16,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03002d
+    const v0, 0x7f030038
 
     return v0
 .end method

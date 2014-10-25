@@ -31,7 +31,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
 
-    const v1, 0x7f070097
+    const v1, 0x7f0700bf
 
     invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 

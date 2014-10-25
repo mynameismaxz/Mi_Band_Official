@@ -250,6 +250,42 @@
     return-void
 .end method
 
+.method public luaLabFactoryActivityMsg(Lcn/com/smartdevices/bracelet/lab/sportmode/LabFactoryActiveItem;)V
+    .locals 4
+
+    invoke-static {}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getInstance()Lcn/com/smartdevices/bracelet/lua/LuaManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->getLuaState()Lorg/keplerproject/luajava/LuaState;
+
+    move-result-object v1
+
+    sget-object v2, Lorg/keplerproject/luajava/LuaState;->LUA_GLOBALSINDEX:Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    const-string v3, "getLabFactoryActivityMsgs"
+
+    invoke-virtual {v1, v2, v3}, Lorg/keplerproject/luajava/LuaState;->getField(ILjava/lang/String;)V
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/lua/LuaEventMsgs;->listDao:Lde/greenrobot/daobracelet/LuaListDao;
+
+    invoke-virtual {v1, v2}, Lorg/keplerproject/luajava/LuaState;->pushJavaObject(Ljava/lang/Object;)V
+
+    invoke-virtual {v1, p1}, Lorg/keplerproject/luajava/LuaState;->pushJavaObject(Ljava/lang/Object;)V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/lua/LuaManager;->callLua(II)V
+
+    return-void
+.end method
+
 .method public testLuaImp(ILcn/com/smartdevices/bracelet/lua/ConfigDynamicDataInfo;)V
     .locals 4
 

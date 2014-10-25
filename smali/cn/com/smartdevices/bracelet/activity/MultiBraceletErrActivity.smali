@@ -112,9 +112,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f070098 -> :sswitch_2
-        0x7f070170 -> :sswitch_1
-        0x7f070171 -> :sswitch_0
+        0x7f0700c0 -> :sswitch_2
+        0x7f0701b3 -> :sswitch_1
+        0x7f0701b4 -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -123,7 +123,7 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030052
+    const v0, 0x7f030060
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->setContentView(I)V
 
@@ -159,7 +159,7 @@
 
     if-lez v1, :cond_0
 
-    const v0, 0x7f07016f
+    const v0, 0x7f0701b2
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     :cond_0
-    const v0, 0x7f070171
+    const v0, 0x7f0701b4
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070170
+    const v0, 0x7f0701b3
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070098
+    const v0, 0x7f0700c0
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const v2, 0x7f0c0141
+    const v2, 0x7f0c014a
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/activity/MultiBraceletErrActivity;->getString(I)Ljava/lang/String;
 

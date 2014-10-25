@@ -141,13 +141,15 @@
 
     const/16 v11, 0xf
 
-    const v0, 0x7f03000a
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCreate(Landroid/os/Bundle;)V
+
+    const v0, 0x7f030013
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->setContentView(I)V
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoBaseActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->initViews()V
 
-    const v0, 0x7f070050
+    const v0, 0x7f070084
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->findViewById(I)Landroid/view/View;
 
@@ -163,13 +165,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200b9
+    const v1, 0x7f0200d8
 
     invoke-virtual {v0, v1}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v0
 
-    const v1, 0x7f0c0102
+    const v1, 0x7f0c010b
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/ui/person/PersonInfoSetAgeActivity;->getString(I)Ljava/lang/String;
 

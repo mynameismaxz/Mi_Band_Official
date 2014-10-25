@@ -1,128 +1,59 @@
 .class Lcn/com/smartdevices/bracelet/h;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/xiaomi/market/sdk/XiaomiUpdateListener;
 
 
 # instance fields
-.field private final synthetic a:Z
+.field private final synthetic a:Landroid/app/Activity;
+
+.field private final synthetic b:Z
 
 
 # direct methods
-.method constructor <init>(Z)V
+.method constructor <init>(Landroid/app/Activity;Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/h;->a:Z
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    iput-boolean p2, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method private a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
-
-    const-string v0, ""
-
-    :try_start_0
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "data"
-
-    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    const-string v2, "list"
-
-    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    :try_start_1
-    const-string v0, "\\n"
-
-    const-string v2, "\n"
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_1
-    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result-object v0
-
-    :try_start_2
-    const-string v1, "Utils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "TODO: use mi apk push after publish. get changelog:"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_2
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :catch_0
-    move-exception v1
-
-    :goto_1
-    invoke-virtual {v1}, Lorg/json/JSONException;->printStackTrace()V
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    move-object v4, v0
-
-    move-object v0, v1
-
-    move-object v1, v4
-
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
-    .locals 0
+.method public onUpdateReturned(ILcom/xiaomi/market/sdk/UpdateResponse;)V
+    .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
+    const v1, 0x7f0c0026
+
+    const/4 v2, 0x1
+
+    packed-switch p1, :pswitch_data_0
+
+    :cond_0
+    :goto_0
     return-void
-.end method
 
-.method public onSuccess(I[Lorg/apache/http/Header;[B)V
-    .locals 4
-
+    :pswitch_0
     const-string v0, "Utils"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "get changelog onSuccess: "
+    const-string v2, "\u6709\u66f4\u65b0\uff0c UpdateResponse\u4e3a\u672c\u6b21\u66f4\u65b0\u7684\u8be6\u7ec6\u4fe1\u606f: "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/String;
-
-    invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -132,36 +63,106 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+    move-result v0
 
-    move-result-object v1
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
 
-    move-result v1
+    invoke-static {p2, v0}, Lcn/com/smartdevices/bracelet/Utils;->a(Lcom/xiaomi/market/sdk/UpdateResponse;Landroid/app/Activity;)V
 
-    if-eqz v1, :cond_0
+    goto :goto_0
 
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/h;->a(Ljava/lang/String;)Ljava/lang/String;
+    :pswitch_1
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
+
+    const v1, 0x7f0c010e
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v0
 
-    invoke-static {}, Lde/greenrobot/event/EventBus;->getDefault()Lde/greenrobot/event/EventBus;
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    move-result-object v1
+    goto :goto_0
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/eventbus/EventApkupgrade;
+    :pswitch_2
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
 
-    iget-boolean v3, p0, Lcn/com/smartdevices/bracelet/h;->a:Z
+    if-eqz v0, :cond_0
 
-    invoke-direct {v2, v3, v0}, Lcn/com/smartdevices/bracelet/eventbus/EventApkupgrade;-><init>(ZLjava/lang/String;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
 
-    invoke-virtual {v1, v2}, Lde/greenrobot/event/EventBus;->post(Ljava/lang/Object;)V
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    :cond_0
-    return-void
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto :goto_0
+
+    :pswitch_3
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto :goto_0
+
+    :pswitch_4
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto :goto_0
+
+    :pswitch_5
+    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/h;->b:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/h;->a:Landroid/app/Activity;
+
+    const v1, 0x7f0c010f
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/view/CustomToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+    .end packed-switch
 .end method

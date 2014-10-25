@@ -16,7 +16,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03003d
+    const v0, 0x7f03004a
 
     return v0
 .end method
@@ -40,7 +40,7 @@
 
     move-result-object v2
 
-    const v0, 0x7f070107
+    const v0, 0x7f070142
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -140,7 +140,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0c00d1
+    const v5, 0x7f0c00d9
 
     invoke-virtual {v4, v5}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->getString(I)Ljava/lang/String;
 

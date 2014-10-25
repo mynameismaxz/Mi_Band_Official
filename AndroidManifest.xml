@@ -22,6 +22,8 @@
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="com.xiaomi.market.sdk.UPDATE"/>
     <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:logo="@drawable/app_icon" android:name="cn.com.smartdevices.bracelet.BraceletApp" android:theme="@style/AppTheme">
         <activity android:exported="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.hm.cheneehealth.wxapi.WXEntryActivity"/>
@@ -30,7 +32,7 @@
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="tencent222222"/>
+                <data android:scheme="1103177325"/>
             </intent-filter>
         </activity>
         <activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait"/>
@@ -95,6 +97,8 @@
             <intent-filter>
                 <action android:name="com.xiaomi.hm.health.ACTION_DEVICE_BIND_APPLICATION"/>
                 <action android:name="com.xiaomi.hm.health.ACTION_DEVICE_UNBIND_APPLICATION"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
         <activity android:label="@string/action_pop_person_info" android:name="cn.com.smartdevices.bracelet.ui.PersonInfoActivity" android:screenOrientation="portrait"/>
@@ -113,6 +117,31 @@
         </receiver>
         <activity android:name="cn.com.smartdevices.bracelet.ui.UnlockScreenInvalidHelperActivity" android:screenOrientation="portrait"/>
         <activity android:name="cn.com.smartdevices.bracelet.model.ShareListDelegateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="cn.com.smartdevices.bracelet.lab.ui.SportAnalyserActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="cn.com.smartdevices.bracelet.action.START_LAB_SPORT_ANALYSE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="cn.com.smartdevices.bracelet.lab.ui.SportFactoryMainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="cn.com.smartdevices.bracelet.action.START_LAB_FACTORY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="cn.com.smartdevices.bracelet.lab.ui.SportFavoriteVoteGridActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="cn.com.smartdevices.bracelet.lab.ui.LabFactoryTestActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cn.com.smartdevices.bracele.action.START_LAB_FACTORY_TEST_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="cn.com.smartdevices.bracelet.lab.ui.SportResultShareActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cn.com.smartdevices.bracele.action.SHOW_SPORT_RESULT_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <service android:enabled="true" android:name="com.baidu.location.f" android:process=":remote"/>
         <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="dMGlsmpHOollXfGZ8jKfMpjQ"/>
         <meta-data android:name="com.amap.api.v2.apikey" android:value="af5f309b18993079b3744d05520e364b"/>

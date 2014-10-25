@@ -43,6 +43,16 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/location/c;->a:Lcn/com/smartdevices/bracelet/location/LocationManager;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/location/LocationManager;->a(Lcn/com/smartdevices/bracelet/location/LocationManager;)Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "LocationOK"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.xiaomi.hm.health.LocationReceived"

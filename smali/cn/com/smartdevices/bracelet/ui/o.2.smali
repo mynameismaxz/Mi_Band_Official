@@ -1,78 +1,55 @@
 .class Lcn/com/smartdevices/bracelet/ui/o;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/n;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/n;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/o;->b:Lcn/com/smartdevices/bracelet/ui/n;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/o;->a:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailed(Ljava/lang/Object;)V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 0
-
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public onFinish(Ljava/lang/Object;)V
-    .locals 3
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 2
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
+    if-eqz p3, :cond_0
 
-    if-nez p1, :cond_0
+    new-instance v0, Ljava/lang/String;
 
-    :goto_0
-    return-void
+    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->getWebStatus(Ljava/lang/String;)Lcn/com/smartdevices/bracelet/webapi/WebStatus;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Keeper;->keepBraceletStatisticTime(J)V
 
     :cond_0
-    check-cast p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
-
-    const/4 v0, 0x5
-
-    iget v1, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;->status:I
-
-    const/4 v2, 0x2
-
-    if-ne v1, v2, :cond_1
-
-    const/16 v0, 0xa
-
-    :cond_1
-    iget v1, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;->level:I
-
-    if-gt v1, v0, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/o;->b:Lcn/com/smartdevices/bracelet/ui/n;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/n;->a(Lcn/com/smartdevices/bracelet/ui/n;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->d(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/o;->b:Lcn/com/smartdevices/bracelet/ui/n;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/n;->a(Lcn/com/smartdevices/bracelet/ui/n;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->e(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-
-    goto :goto_0
+    return-void
 .end method

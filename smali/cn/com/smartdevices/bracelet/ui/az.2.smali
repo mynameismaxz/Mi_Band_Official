@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+.implements Lcn/com/smartdevices/bracelet/ui/MainMenuFragment$MenuListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,14 +22,30 @@
 
 
 # virtual methods
-.method public onPreDraw()Z
-    .locals 1
+.method public onDismiss()V
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->a(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
+    const/4 v1, 0x0
 
-    const/4 v0, 0x1
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->e(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;Z)V
 
-    return v0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->A(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/az;->a:Lcn/com/smartdevices/bracelet/ui/MainUIActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainUIActivity;->B(Lcn/com/smartdevices/bracelet/ui/MainUIActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
+
+    return-void
 .end method

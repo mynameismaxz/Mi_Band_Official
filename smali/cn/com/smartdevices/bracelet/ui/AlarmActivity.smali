@@ -543,7 +543,7 @@
 .method private d()V
     .locals 2
 
-    const v0, 0x7f070091
+    const v0, 0x7f0700b9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->findViewById(I)Landroid/view/View;
 
@@ -587,7 +587,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f070090
+    const v0, 0x7f0700b8
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->findViewById(I)Landroid/view/View;
 
@@ -1014,28 +1014,23 @@
     return-void
 .end method
 
-.method public onBleStatusChanged(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;)V
-    .locals 2
+.method public onBleStatusChanged(Lcom/xiaomi/hm/bleservice/HwConnStatus;)V
+    .locals 1
 
-    const/16 v1, 0x8
+    invoke-virtual {p1}, Lcom/xiaomi/hm/bleservice/HwConnStatus;->isConnectedSucc()Z
 
-    iget v0, p1, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;->a:I
+    move-result v0
 
-    if-ne v0, v1, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->a()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->applyStatusBarTintAuto()V
 
-    :cond_0
     :goto_0
     return-void
 
-    :cond_1
-    iget v0, p1, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;->a:I
-
-    if-ge v0, v1, :cond_0
-
+    :cond_0
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->b()V
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->applyStatusBarTintAuto()V
@@ -1077,7 +1072,7 @@
 
     const-string v1, "onBleStatusChanged"
 
-    const-class v2, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity$ConnStatus;
+    const-class v2, Lcom/xiaomi/hm/bleservice/HwConnStatus;
 
     const/4 v3, 0x0
 
@@ -1085,7 +1080,7 @@
 
     invoke-virtual {v0, p0, v1, v2, v3}, Lde/greenrobot/event/EventBus;->register(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)V
 
-    const v0, 0x7f030015
+    const v0, 0x7f03001e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->setContentView(I)V
 
@@ -1109,7 +1104,7 @@
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/ui/AlarmActivity;->c()V
 
-    invoke-static {}, Lcn/com/smartdevices/bracelet/Utils;->isBraceletConnected()Z
+    invoke-static {}, Lcn/com/smartdevices/bracelet/BLEManager;->isMiliConnected()Z
 
     move-result v0
 

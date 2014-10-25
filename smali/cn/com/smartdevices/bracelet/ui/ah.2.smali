@@ -2,22 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/ag;
-
-.field private final synthetic b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/ag;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,21 +22,14 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
+.method public onPreDraw()Z
+    .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;
 
-    iget-object v0, v0, Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;->uri:Landroid/net/Uri;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;->a(Lcn/com/smartdevices/bracelet/ui/MainMenuFragment;)V
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/ah;->a:Lcn/com/smartdevices/bracelet/ui/ag;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/ah;->b:Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/ag;->a(Lcn/com/smartdevices/bracelet/ui/ag;Lcn/com/smartdevices/bracelet/ui/DynamicListFragment$DynamicItem;)V
-
-    :cond_0
-    return-void
+    return v0
 .end method

@@ -32,7 +32,7 @@
 
     const/4 v2, 0x1
 
-    const v0, 0x7f070174
+    const v0, 0x7f0701b7
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 
@@ -76,11 +76,11 @@
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f030053
+    const v0, 0x7f030061
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->setContentView(I)V
 
-    const v0, 0x7f070176
+    const v0, 0x7f0701b9
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
 

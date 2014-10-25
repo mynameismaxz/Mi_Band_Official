@@ -515,7 +515,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0c0146
+    const v1, 0x7f0c014f
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -533,7 +533,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0c01c7
+    const v1, 0x7f0c01cf
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -551,7 +551,7 @@
 
     invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment$FragmentTab;-><init>(Lcn/com/smartdevices/bracelet/chart/deprecated/TabsFragment;)V
 
-    const v1, 0x7f0c01c8
+    const v1, 0x7f0c01d0
 
     invoke-virtual {p0, v1}, Lcn/com/smartdevices/bracelet/chart/deprecated/StatisticHostFragment;->getString(I)Ljava/lang/String;
 
@@ -571,7 +571,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f03004a
+    const v0, 0x7f030057
 
     return v0
 .end method
@@ -617,7 +617,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700aa
+    const v1, 0x7f070069
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -633,7 +633,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700d7
+    const v1, 0x7f070107
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -647,7 +647,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07014f
+    const v1, 0x7f07018a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -659,7 +659,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070150
+    const v1, 0x7f07018b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -671,7 +671,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070152
+    const v1, 0x7f07018d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -683,7 +683,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070153
+    const v1, 0x7f07018e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -771,11 +771,11 @@
     :sswitch_data_0
     .sparse-switch
         0x7f070034 -> :sswitch_0
-        0x7f0700aa -> :sswitch_1
-        0x7f07014f -> :sswitch_2
-        0x7f070150 -> :sswitch_3
-        0x7f070152 -> :sswitch_4
-        0x7f070153 -> :sswitch_5
+        0x7f070069 -> :sswitch_1
+        0x7f07018a -> :sswitch_2
+        0x7f07018b -> :sswitch_3
+        0x7f07018d -> :sswitch_4
+        0x7f07018e -> :sswitch_5
     .end sparse-switch
 .end method
 

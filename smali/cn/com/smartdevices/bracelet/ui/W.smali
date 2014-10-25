@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcn/com/smartdevices/bracelet/chart/util/AnimUtil$AnimColorListener;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,21 +22,30 @@
 
 
 # virtual methods
-.method public onColorChanged(I)V
-    .locals 1
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/W;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->getActivity()Landroid/app/Activity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->g(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x4
 
-    check-cast v0, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    invoke-virtual {v0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->applyStatusBarTint(I)V
+    return-void
+.end method
 
-    :cond_0
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
+
     return-void
 .end method

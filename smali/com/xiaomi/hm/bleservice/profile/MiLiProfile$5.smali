@@ -23,115 +23,118 @@
 
 # virtual methods
 .method public notify([B)V
-    .locals 5
+    .locals 4
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    array-length v0, p1
-
-    const/16 v2, 0xa
-
-    if-ne v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->ASSERT_TRUE(Z)V
-
-    const/16 v0, 0x9
-
+    :try_start_0
     aget-byte v0, p1, v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    const/4 v1, 0x1
 
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
 
-    packed-switch v0, :pswitch_data_0
+    shl-int/lit8 v1, v1, 0x8
 
-    const-string v0, ">>> UNEXPECTED <<<"
+    or-int/2addr v0, v1
 
-    invoke-static {v0}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
+    const v1, 0xffff
 
-    :goto_1
+    if-ne v0, v1, :cond_0
+
+    const-string v0, "xxx"
+
+    const-string v1, "sensor data notify packages index is -1 !!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "sensor data notify packages index is -1 !!!"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catch_0
+    move-exception v0
+
+    :goto_0
     return-void
 
     :cond_0
-    move v0, v1
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    # getter for: Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$4(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)I
+
+    move-result v1
+
+    const v2, 0xfffe
+
+    if-ne v1, v2, :cond_1
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    # getter for: Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->mLastSensorDataIndex:I
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$4(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    if-eq v1, v0, :cond_2
+
+    const-string v1, "xxx"
+
+    const-string v2, "sensor data notify packages index is not continuous!!!"
+
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_2
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    invoke-static {v1, v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$5(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;I)V
+
+    array-length v0, p1
+
+    add-int/lit8 v0, v0, -0x2
+
+    new-array v0, v0, [B
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x0
+
+    array-length v3, p1
+
+    add-int/lit8 v3, v3, -0x2
+
+    invoke-static {p1, v1, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget-object v1, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    # getter for: Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->m_SensorSourceOutputStream:Ljava/io/PipedOutputStream;
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->access$6(Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;)Ljava/io/PipedOutputStream;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/io/PipedOutputStream;->write([B)V
+
+    const-string v0, "Lab"
+
+    const-string v1, ""
+
+    invoke-static {v0, p1, v1}, Lcn/com/smartdevices/bracelet/lab/debug/RawDataGetter;->saveLog(Ljava/lang/String;[BLjava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
-
-    :pswitch_0
-    const-string v2, ">>> UNEXPECTED <<<"
-
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->WARN(Ljava/lang/String;)V
-
-    :goto_2
-    new-instance v2, Landroid/content/Intent;
-
-    sget-object v3, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->INTENT_ACTION_DEVICE_BATTERY_STATUS_CHANGED:Ljava/lang/String;
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    sget-object v3, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_DEVICE:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile$5;->this$0:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    invoke-virtual {v4}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->getDevice()Landroid/bluetooth/BluetoothDevice;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    sget-object v3, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_PARAM:Ljava/lang/String;
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;B)Landroid/content/Intent;
-
-    sget-object v0, Lcom/xiaomi/hm/bleservice/BLEService;->INTENT_EXTRA_PARAM_EXT:Ljava/lang/String;
-
-    invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    invoke-static {}, Lcom/xiaomi/hm/bleservice/BLEService;->getBroadcastManager()Landroid/support/v4/content/LocalBroadcastManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/support/v4/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)Z
-
-    goto :goto_1
-
-    :pswitch_1
-    const-string v2, "Battery low"
-
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :pswitch_2
-    const-string v2, "Battery charging"
-
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :pswitch_3
-    const-string v2, "Battery full (charging)"
-
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :pswitch_4
-    const-string v2, "Battery charger off"
-
-    invoke-static {v2}, Lcom/xiaomi/hm/bleservice/util/Debug;->DEBUG(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-    .end packed-switch
 .end method

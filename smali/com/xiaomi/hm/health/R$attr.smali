@@ -51,6 +51,20 @@
 
 .field public static final interpolator:I = 0x7f010009
 
+.field public static final labCircleBackground:I = 0x7f010068
+
+.field public static final labCircleHeight:I = 0x7f01006b
+
+.field public static final labCircleSrc:I = 0x7f010067
+
+.field public static final labCircleStroke:I = 0x7f01006c
+
+.field public static final labCircleStrokeWidth:I = 0x7f01006d
+
+.field public static final labCircleText:I = 0x7f010069
+
+.field public static final labCircleWidth:I = 0x7f01006a
+
 .field public static final layout_role:I = 0x7f010001
 
 .field public static final leftPadding:I = 0x7f01003b

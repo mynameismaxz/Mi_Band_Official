@@ -95,12 +95,12 @@
 
     move-result-object v0
 
-    const v1, 0x7f030057
+    const v1, 0x7f030065
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     :goto_0
-    const v0, 0x7f070191
+    const v0, 0x7f0701d4
 
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->findViewById(I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070194
+    const v1, 0x7f0701d7
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070193
+    const v1, 0x7f0701d6
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070195
+    const v1, 0x7f0701d8
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f070192
+    const v1, 0x7f0701d5
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -362,7 +362,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030056
+    const v1, 0x7f030064
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

@@ -137,6 +137,8 @@
 
 .field public static final item_value_margin_right:I = 0x7f09006f
 
+.field public static final lab_factory_sport_progress_state:I = 0x7f09007f
+
 .field public static final light_color_w:I = 0x7f090079
 
 .field public static final like_person_avatar_margin:I = 0x7f09003f
@@ -205,7 +207,7 @@
 
 .field public static final select_item_padding_left:I = 0x7f09007c
 
-.field public static final select_item_txt_padding_left:I = 0x7f09007f
+.field public static final select_item_txt_padding_left:I = 0x7f09007d
 
 .field public static final setting_dlg_margin_left:I = 0x7f09005c
 
@@ -213,13 +215,9 @@
 
 .field public static final setting_title_size:I = 0x7f090050
 
-.field public static final share_item_padding:I = 0x7f09007e
-
-.field public static final share_item_size:I = 0x7f09007d
-
 .field public static final single_alarm_h:I = 0x7f090052
 
-.field public static final single_button_padding:I = 0x7f090080
+.field public static final single_button_padding:I = 0x7f09007e
 
 .field public static final statistic_data_item_margin_bottom:I = 0x7f09000f
 

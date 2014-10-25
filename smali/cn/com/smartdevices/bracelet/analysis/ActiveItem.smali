@@ -23,6 +23,10 @@
 
 .field public mode:I
 
+.field public runCalories:I
+
+.field public runDistance:I
+
 .field public runtime:I
 
 .field public start:I
@@ -30,6 +34,10 @@
 .field public steps:I
 
 .field public stop:I
+
+.field public walkCalories:I
+
+.field public walkDistance:I
 
 
 # direct methods
@@ -57,6 +65,14 @@
     iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->flag:I
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->activeTime:I
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkDistance:I
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkCalories:I
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runDistance:I
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runCalories:I
 
     const/4 v0, 0x0
 
@@ -99,10 +115,40 @@
     return v0
 .end method
 
+.method public getKey()I
+    .locals 2
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->start:I
+
+    shl-int/lit8 v0, v0, 0x10
+
+    iget v1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
+
+    or-int/2addr v0, v1
+
+    return v0
+.end method
+
 .method public getMode()I
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->mode:I
+
+    return v0
+.end method
+
+.method public getRunCalories()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runCalories:I
+
+    return v0
+.end method
+
+.method public getRunDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runDistance:I
 
     return v0
 .end method
@@ -135,6 +181,22 @@
     .locals 1
 
     iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
+
+    return v0
+.end method
+
+.method public getWalkCalories()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkCalories:I
+
+    return v0
+.end method
+
+.method public getWalkDistance()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkDistance:I
 
     return v0
 .end method
@@ -179,6 +241,22 @@
     return-void
 .end method
 
+.method public setRunCalories(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runCalories:I
+
+    return-void
+.end method
+
+.method public setRunDistance(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->runDistance:I
+
+    return-void
+.end method
+
 .method public setRuntime(I)V
     .locals 0
 
@@ -207,6 +285,22 @@
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->stop:I
+
+    return-void
+.end method
+
+.method public setWalkCalories(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkCalories:I
+
+    return-void
+.end method
+
+.method public setWalkDistance(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/analysis/ActiveItem;->walkDistance:I
 
     return-void
 .end method

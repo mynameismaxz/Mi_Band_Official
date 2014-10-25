@@ -12,7 +12,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartSleepData;",
+            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$SleepDetailItem;",
             ">;"
         }
     .end annotation
@@ -23,7 +23,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$DynamicDetailChartStepData;",
+            "Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView$StepDetailItem;",
             ">;"
         }
     .end annotation
