@@ -26,7 +26,7 @@
 .method protected inflateLayout()I
     .locals 1
 
-    const v0, 0x7f030054
+    const v0, 0x7f030055
 
     return v0
 .end method
@@ -52,7 +52,7 @@
 
     move-result-object v15
 
-    const v1, 0x7f0a0163
+    const v1, 0x7f070164
 
     invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -74,13 +74,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200d3
+    const v2, 0x7f0200bd
 
     invoke-virtual {v1, v2}, Lkankan/wheel/widget/WheelView;->setCenterDrawable(I)Lkankan/wheel/widget/WheelView;
 
     move-result-object v1
 
-    const v2, 0x7f0d018a
+    const v2, 0x7f0c01c7
 
     move-object/from16 v0, p0
 
@@ -112,7 +112,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f090027
+    const v7, 0x7f08000c
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -122,7 +122,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f090040
+    const v8, 0x7f080011
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColor(I)I
 
