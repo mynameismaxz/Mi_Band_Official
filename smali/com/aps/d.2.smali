@@ -25,10 +25,6 @@
 
 .field private d:J
 
-.field private final e:I
-
-.field private final f:I
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -43,8 +39,6 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 4
-
-    const/4 v2, 0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -61,12 +55,6 @@
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/aps/d;->d:J
-
-    const/high16 v0, 0x100000
-
-    iput v0, p0, Lcom/aps/d;->e:I
-
-    iput v2, p0, Lcom/aps/d;->f:I
 
     :try_start_0
     invoke-direct {p0, p1}, Lcom/aps/d;->b(Landroid/content/Context;)Ljava/io/File;
@@ -1013,9 +1001,9 @@
 .method a(Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Lcom/aps/c;
     .locals 6
 
-    const/4 v3, 0x0
-
     const/4 v1, -0x1
+
+    const/4 v3, 0x0
 
     const-string v0, "mem"
 
@@ -1036,6 +1024,8 @@
 
     :cond_0
     const-string v0, ""
+
+    if-eqz p1, :cond_6
 
     const-string v0, "#cellwifi"
 
@@ -1077,46 +1067,57 @@
     :cond_2
     iget-object v0, p0, Lcom/aps/d;->c:Lcom/aps/p;
 
+    if-eqz v0, :cond_10
+
+    iget-object v0, p0, Lcom/aps/d;->c:Lcom/aps/p;
+
     invoke-virtual {v0, p1}, Lcom/aps/p;->a(Ljava/lang/String;)Ljava/util/Map;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-eqz v4, :cond_4
+    :goto_2
+    if-eqz v0, :cond_4
 
-    invoke-interface {v4}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v4
 
-    :goto_2
-    if-eqz v5, :cond_4
+    :goto_3
+    if-eqz v4, :cond_4
 
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/aps/d;->a(Ljava/lang/String;Ljava/lang/String;)Z
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {p0, v1, v5}, Lcom/aps/d;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_f
 
-    invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1140,7 +1141,7 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
     invoke-virtual {v1, v0}, Lcom/aps/K;->a(Lcom/aps/c;)V
@@ -1163,7 +1164,7 @@
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_5
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
     :cond_3
     if-nez p1, :cond_a
@@ -1171,12 +1172,12 @@
     move-object v2, v1
 
     :cond_4
-    :goto_3
+    :goto_4
     if-nez v2, :cond_e
 
     move-object v0, v3
 
-    :goto_4
+    :goto_5
     move-object v3, v0
 
     goto/16 :goto_0
@@ -1187,6 +1188,8 @@
     goto :goto_1
 
     :cond_6
+    if-eqz p1, :cond_8
+
     const-string v0, "#wifi"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -1213,13 +1216,15 @@
     goto/16 :goto_1
 
     :cond_8
+    if-eqz p1, :cond_12
+
     const-string v0, "#cell"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_12
 
     const-string v0, "mem"
 
@@ -1227,7 +1232,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     iget-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
 
@@ -1237,13 +1242,13 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-lez v1, :cond_10
+    if-lez v1, :cond_11
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1259,7 +1264,7 @@
 
     move-object v2, v0
 
-    :goto_5
+    :goto_6
     if-eqz v2, :cond_9
 
     const-string v0, "found#cell"
@@ -1315,10 +1320,10 @@
     :cond_c
     move-object v0, v1
 
-    :goto_6
+    :goto_7
     move-object v2, v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_d
     new-instance v0, Ljava/util/ArrayList;
@@ -1333,66 +1338,71 @@
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_5
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
     move-object v0, v1
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_e
     invoke-virtual {v2}, Lcom/aps/K;->a()Lcom/aps/c;
 
     move-result-object v0
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :catch_0
     move-exception v0
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_1
     move-exception v0
 
     move-object v2, v1
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_2
     move-exception v0
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_3
     move-exception v0
 
     move-object v2, v1
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_4
     move-exception v0
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_5
     move-exception v0
 
     move-object v2, v1
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_f
     move-object v0, v2
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_10
-    move-object v2, v3
+    move-object v0, v3
 
-    goto :goto_5
+    goto/16 :goto_2
 
     :cond_11
+    move-object v2, v3
+
+    goto :goto_6
+
+    :cond_12
     move-object v2, v3
 
     goto/16 :goto_1
@@ -1413,7 +1423,7 @@
 .end method
 
 .method a(Ljava/lang/String;Lcom/aps/c;Ljava/lang/StringBuilder;)V
-    .locals 6
+    .locals 7
 
     const/4 v2, 0x0
 
@@ -1446,7 +1456,7 @@
 
     if-nez v0, :cond_0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_e
 
     const-string v0, "wifi"
 
@@ -1454,7 +1464,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_e
 
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1470,19 +1480,50 @@
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_0
+    if-ltz v0, :cond_d
 
-    invoke-virtual {p2}, Lcom/aps/c;->f()F
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v0
 
-    const/high16 v1, 0x41200000
+    const-string v1, "#"
 
-    cmpg-float v0, v0, v1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    if-lez v0, :cond_0
+    move-result-object v3
+
+    array-length v4, v3
+
+    move v1, v2
+
+    move v0, v2
+
+    :goto_1
+    if-ge v1, v4, :cond_3
+
+    aget-object v5, v3, v1
+
+    const-string v6, ","
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    add-int/lit8 v0, v0, 0x1
 
     :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v1, 0x3
+
+    if-ge v0, v1, :cond_0
+
+    :cond_4
     invoke-static {}, Lcom/aps/t;->a()J
 
     move-result-wide v0
@@ -1499,15 +1540,18 @@
 
     invoke-virtual {v1, p2}, Lcom/aps/K;->a(Lcom/aps/c;)V
 
+    if-eqz p3, :cond_5
+
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Lcom/aps/K;->a(Ljava/lang/String;)V
 
+    :cond_5
     iget-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_6
 
     new-instance v0, Ljava/util/LinkedHashMap;
 
@@ -1515,7 +1559,7 @@
 
     iput-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
 
-    :cond_3
+    :cond_6
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
@@ -1524,7 +1568,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
 
@@ -1534,18 +1578,18 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_7
 
     invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_7
 
     invoke-interface {v0, v2, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    :cond_4
-    if-eqz v0, :cond_5
+    :cond_7
+    if-eqz v0, :cond_8
 
     iget-object v1, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
 
@@ -1555,40 +1599,40 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_5
-    :goto_1
-    if-eqz p3, :cond_6
+    :cond_8
+    :goto_2
+    if-eqz p3, :cond_9
 
     :try_start_0
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_a
 
-    :cond_6
+    :cond_9
     new-instance p3, Ljava/lang/StringBuilder;
 
     const-string v0, "cell#"
 
     invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :cond_7
+    :cond_a
     iget-object v0, p0, Lcom/aps/d;->c:Lcom/aps/p;
 
     invoke-virtual {v0, p1}, Lcom/aps/p;->a(Ljava/lang/String;)Ljava/util/Map;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_8
+    if-eqz v4, :cond_b
 
-    invoke-interface {v3}, Ljava/util/Map;->size()I
+    invoke-interface {v4}, Ljava/util/Map;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_10
 
-    :cond_8
+    :cond_b
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -1610,8 +1654,8 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    :cond_9
-    :goto_2
+    :cond_c
+    :goto_3
     const-string v0, ""
 
     iget-object v0, p0, Lcom/aps/d;->b:Ljava/util/LinkedHashMap;
@@ -1660,8 +1704,21 @@
 
     goto/16 :goto_0
 
-    :cond_a
-    if-eqz p1, :cond_2
+    :cond_d
+    invoke-virtual {p2}, Lcom/aps/c;->f()F
+
+    move-result v0
+
+    const/high16 v1, 0x41200000
+
+    cmpg-float v0, v0, v1
+
+    if-gtz v0, :cond_4
+
+    goto/16 :goto_0
+
+    :cond_e
+    if-eqz p1, :cond_4
 
     const-string v0, "cell"
 
@@ -1669,7 +1726,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     const-string v0, ","
 
@@ -1679,11 +1736,11 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_4
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_f
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1694,60 +1751,56 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
-    :cond_c
+    :cond_10
     :try_start_1
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v5
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    :cond_d
-    if-eqz v4, :cond_e
+    :cond_11
+    if-eqz v5, :cond_12
 
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_12
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v0, v5}, Lcom/aps/d;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_d
-
-    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    new-instance v4, Lorg/json/JSONObject;
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v4, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    move-result-object v6
 
-    new-instance v1, Lcom/aps/c;
+    invoke-direct {p0, v1, v6}, Lcom/aps/d;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-direct {v1, v4}, Lcom/aps/c;-><init>(Lorg/json/JSONObject;)V
+    move-result v1
 
-    invoke-interface {v3, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v1, :cond_11
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1757,16 +1810,16 @@
 
     move-result-object v1
 
-    invoke-interface {v3, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/aps/d;->c:Lcom/aps/p;
 
-    invoke-virtual {v0, p1, v3}, Lcom/aps/p;->b(Ljava/lang/String;Ljava/util/Map;)V
+    invoke-virtual {v0, p1, v4}, Lcom/aps/p;->b(Ljava/lang/String;Ljava/util/Map;)V
 
     move v0, v2
 
-    :goto_3
-    if-eqz v0, :cond_9
+    :goto_4
+    if-eqz v0, :cond_c
 
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1776,31 +1829,31 @@
 
     move-result-object v1
 
-    invoke-interface {v3, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/aps/d;->c:Lcom/aps/p;
 
-    invoke-virtual {v0, p1, v3}, Lcom/aps/p;->b(Ljava/lang/String;Ljava/util/Map;)V
+    invoke-virtual {v0, p1, v4}, Lcom/aps/p;->b(Ljava/lang/String;Ljava/util/Map;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :catch_0
     move-exception v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :catch_1
     move-exception v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_e
-    move v0, v1
+    :cond_12
+    move v0, v3
 
-    goto :goto_3
+    goto :goto_4
 .end method
 
 .method a(Ljava/lang/String;Lcom/aps/c;)Z

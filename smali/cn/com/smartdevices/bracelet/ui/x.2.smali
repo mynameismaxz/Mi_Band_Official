@@ -1,78 +1,71 @@
 .class Lcn/com/smartdevices/bracelet/ui/x;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailed(Ljava/lang/Object;)V
-    .locals 1
+.method public run()V
+    .locals 3
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->c(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
-
-    return-void
-.end method
-
-.method public onFinish(Ljava/lang/Object;)V
-    .locals 2
-
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->g(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)Landroid/os/Handler;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;->a(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;)Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->logout()V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
-    :goto_0
-    return-void
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;->b(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;)Landroid/widget/Button;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->c(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+    move-result-object v1
 
-    goto :goto_0
-.end method
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
 
-.method public onStart()V
-    .locals 1
+    invoke-static {v2}, Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;->c(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;)Landroid/widget/TextView;
 
-    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
+    move-result-object v2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;->a(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->f(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;->a(Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;)Lcn/com/smartdevices/bracelet/tencent/QQLogin;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
+
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->login(Landroid/app/Activity;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/x;->a:Lcn/com/smartdevices/bracelet/ui/BindQQHealthActivity;
+
+    const-string v1, "QQ_Login"
+
+    const-string v2, "FromQQ"
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

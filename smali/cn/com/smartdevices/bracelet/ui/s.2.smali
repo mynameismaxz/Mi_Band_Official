@@ -1,82 +1,74 @@
 .class Lcn/com/smartdevices/bracelet/ui/s;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
+.field final synthetic a:I
+
+.field final synthetic b:I
+
+.field final synthetic c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;II)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/s;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    iput p2, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:I
+
+    iput p3, p0, Lcn/com/smartdevices/bracelet/ui/s;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
-
-    return-void
-.end method
-
-.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+.method public run()V
     .locals 3
 
-    const/4 v2, 0x1
+    invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    if-eqz p3, :cond_0
+    invoke-static {}, Lcn/com/smartdevices/bracelet/DataManager;->getInstance()Lcn/com/smartdevices/bracelet/DataManager;
 
-    array-length v0, p3
+    move-result-object v0
 
-    if-ge v0, v2, :cond_1
+    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:I
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/s;->b:I
+
+    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->load(II)V
+
+    iget v1, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:I
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/ui/s;->b:I
+
+    invoke-virtual {v0, v1, v2}, Lcn/com/smartdevices/bracelet/DataManager;->setCurDay(II)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->f(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->c:Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->f(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const/16 v1, 0x1002
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
-
-    :goto_0
     return-void
-
-    :cond_1
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->parseWeixinQR(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
-
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->h(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/s;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
-
-    goto :goto_0
 .end method

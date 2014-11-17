@@ -110,34 +110,33 @@
 
     const/4 v8, 0x2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->getActionCount()I
 
     move-result v2
 
-    const/16 v3, 0xa
+    const/16 v3, 0xf
 
-    if-gt v2, v3, :cond_1
+    if-gt v2, v3, :cond_0
+
+    :goto_0
+    return v1
 
     :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_basic_features:[[D
 
-    aget-object v2, v2, v0
+    aget-object v2, v2, v1
 
-    aget-wide v2, v2, v0
+    aget-wide v2, v2, v1
 
     iget-object v4, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_basic_features:[[D
 
-    aget-object v4, v4, v1
+    aget-object v4, v4, v0
 
-    aget-wide v4, v4, v0
+    aget-wide v4, v4, v1
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(DD)D
 
@@ -147,7 +146,7 @@
 
     aget-object v4, v4, v8
 
-    aget-wide v4, v4, v0
+    aget-wide v4, v4, v1
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(DD)D
 
@@ -155,15 +154,15 @@
 
     iget-object v4, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_basic_features:[[D
 
-    aget-object v4, v4, v0
+    aget-object v4, v4, v1
 
-    aget-wide v4, v4, v0
+    aget-wide v4, v4, v1
 
     iget-object v6, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_basic_features:[[D
 
-    aget-object v6, v6, v1
+    aget-object v6, v6, v0
 
-    aget-wide v6, v6, v0
+    aget-wide v6, v6, v1
 
     invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(DD)D
 
@@ -173,7 +172,7 @@
 
     aget-object v6, v6, v8
 
-    aget-wide v6, v6, v0
+    aget-wide v6, v6, v1
 
     invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(DD)D
 
@@ -181,130 +180,133 @@
 
     div-double v2, v4, v2
 
-    const-wide/high16 v4, 0x4000000000000000L
+    const-wide/high16 v4, 0x4004000000000000L
 
     cmpl-double v2, v2, v4
 
-    if-ltz v2, :cond_0
+    if-ltz v2, :cond_1
 
-    move v0, v1
+    :goto_1
+    move v1, v0
 
     goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method
 
 .method protected isPossibleValidAction(I)Z
-    .locals 9
+    .locals 8
 
-    const/16 v8, 0xa
+    const/16 v7, 0x10
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    const-wide v5, 0x3fd3333333333333L
 
-    const-wide v6, 0x3fd3333333333333L
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_firstWindows:[Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_firstWindows:[Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+    aget-object v1, v1, p1
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_secondWindows:[Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
 
     aget-object v2, v2, p1
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_secondWindows:[Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->isPositive()I
 
-    aget-object v3, v3, p1
+    move-result v3
 
     invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->isPositive()I
 
     move-result v4
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->isPositive()I
+    mul-int/2addr v3, v4
 
-    move-result v5
+    if-gez v3, :cond_2
 
-    mul-int/2addr v4, v5
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->absMaxValue()D
 
-    if-gez v4, :cond_3
+    move-result-wide v3
+
+    cmpl-double v3, v3, v5
+
+    if-gez v3, :cond_0
 
     invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->absMaxValue()D
 
-    move-result-wide v4
+    move-result-wide v3
 
-    cmpl-double v4, v4, v6
+    cmpl-double v3, v3, v5
 
-    if-gez v4, :cond_0
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->absMaxValue()D
-
-    move-result-wide v4
-
-    cmpl-double v4, v4, v6
-
-    if-ltz v4, :cond_3
+    if-ltz v3, :cond_2
 
     :cond_0
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->bandwidth()I
+
+    move-result v3
+
+    if-gt v3, v7, :cond_2
+
     invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->bandwidth()I
 
-    move-result v4
+    move-result v3
 
-    if-gt v4, v8, :cond_3
-
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->bandwidth()I
-
-    move-result v4
-
-    if-gt v4, v8, :cond_3
+    if-gt v3, v7, :cond_2
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSport;->isPossibleValidAction(I)Z
 
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_empiricalFeatures:Ljava/util/ArrayList;
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_possible_pattern_similarity_scores:[D
+
     iget-object v4, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_empiricalFeatures:Ljava/util/ArrayList;
 
-    if-eqz v4, :cond_1
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->getFeatures()Ljava/util/ArrayList;
 
-    iget-object v4, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_possible_pattern_similarity_scores:[D
+    move-result-object v1
 
-    iget-object v5, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_empiricalFeatures:Ljava/util/ArrayList;
+    invoke-static {v4, v1}, Lcn/com/smartdevices/bracelet/algorithm/data/Utils;->getEuclideanSimilarity(Ljava/util/ArrayList;Ljava/util/ArrayList;)D
+
+    move-result-wide v4
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_empiricalFeatures:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->getFeatures()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    invoke-static {v5, v2}, Lcn/com/smartdevices/bracelet/algorithm/data/Utils;->getEuclideanSimilarity(Ljava/util/ArrayList;Ljava/util/ArrayList;)D
+    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/algorithm/data/Utils;->getEuclideanSimilarity(Ljava/util/ArrayList;Ljava/util/ArrayList;)D
 
-    move-result-wide v5
+    move-result-wide v1
 
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_empiricalFeatures:Ljava/util/ArrayList;
+    mul-double/2addr v1, v4
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->getFeatures()Ljava/util/ArrayList;
+    aput-wide v1, v3, p1
 
-    move-result-object v3
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_possible_pattern_similarity_scores:[D
 
-    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/algorithm/data/Utils;->getEuclideanSimilarity(Ljava/util/ArrayList;Ljava/util/ArrayList;)D
+    aget-wide v1, v1, p1
 
-    move-result-wide v2
+    const-wide v3, 0x3fcae147ae147ae1L
 
-    mul-double/2addr v2, v5
+    cmpl-double v1, v1, v3
 
-    aput-wide v2, v4, p1
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineRopeSkipping;->_possible_pattern_similarity_scores:[D
-
-    aget-wide v2, v2, p1
-
-    const-wide v4, 0x3fcae147ae147ae1L
-
-    cmpl-double v2, v2, v4
-
-    if-ltz v2, :cond_2
+    if-ltz v1, :cond_2
 
     :cond_1
     :goto_0
     return v0
 
     :cond_2
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

@@ -33,7 +33,7 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f070039
+    const v0, 0x7f0a0039
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -46,7 +46,7 @@
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionBasePage;->mGifView:Lcom/xiaomi/hm/view/GifView;
 
     :cond_0
-    const v0, 0x7f070038
+    const v0, 0x7f0a0038
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030007
+    const v1, 0x7f030008
 
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/ui/InstructionActivity$InstructionBasePage;->mTip:Landroid/widget/TextSwitcher;
 

@@ -33,7 +33,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -41,7 +41,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -58,9 +58,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Request UserInfo Complete : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -78,7 +82,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -86,7 +90,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -103,9 +107,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "Request UserInfo : "
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v2, "Request UserInfo Error : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -117,9 +125,26 @@
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    if-eqz p1, :cond_1
+
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "QQ_Request_UserInfo_Error"
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -127,7 +152,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->c(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Lcom/tencent/tauth/IUiListener;
 
     move-result-object v0
 
@@ -135,4 +160,17 @@
 
     :cond_0
     return-void
+
+    :cond_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/tencent/b;->a:Lcn/com/smartdevices/bracelet/tencent/QQLogin;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/tencent/QQLogin;->b(Lcn/com/smartdevices/bracelet/tencent/QQLogin;)Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "QQ_Request_UserInfo_Error"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

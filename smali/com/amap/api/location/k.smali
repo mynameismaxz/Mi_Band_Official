@@ -16,10 +16,10 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/amap/api/location/b;)V
+.method constructor <init>(Lcom/amap/api/location/b;Landroid/os/Looper;)V
     .locals 1
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     :try_start_0
     new-instance v0, Ljava/lang/ref/WeakReference;

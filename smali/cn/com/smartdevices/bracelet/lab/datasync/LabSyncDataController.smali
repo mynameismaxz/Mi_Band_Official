@@ -2,6 +2,10 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final SWITCH_ON:Z = true
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -29,6 +33,11 @@
 
     if-nez v0, :cond_1
 
-    :cond_1
+    :goto_0
     return-void
+
+    :cond_1
+    invoke-static {p0}, Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;->syncFromOrToServerIfNeeded(Landroid/content/Context;)Z
+
+    goto :goto_0
 .end method

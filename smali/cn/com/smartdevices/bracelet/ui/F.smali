@@ -1,81 +1,78 @@
 .class Lcn/com/smartdevices/bracelet/ui/F;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/F;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/F;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public onFailed(Ljava/lang/Object;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->c(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
 
     return-void
 .end method
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+.method public onFinish(Ljava/lang/Object;)V
+    .locals 2
 
-    const/4 v2, 0x1
+    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
 
-    const-string v0, "DynamicView"
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/F;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->k(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->j(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_1
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;->g(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->g(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/chart/DynamicDetailChartView;->setScrollable(Z)V
+    const/4 v1, 0x0
 
-    :cond_1
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->c(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
+
+    goto :goto_0
 .end method
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+.method public onStart()V
+    .locals 1
 
-    return-void
-.end method
+    invoke-super {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onStart()V
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/F;->b:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;
+
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;->f(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivityNew;)V
 
     return-void
 .end method

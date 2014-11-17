@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,52 +22,34 @@
 
 
 # virtual methods
-.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
-    .locals 0
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    .locals 2
 
-    return-void
-.end method
+    if-eqz p2, :cond_0
 
-.method public onLeftClicked(Landroid/app/DialogFragment;)V
-    .locals 3
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
-    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->c(Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->a(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
 
     move-result-object v0
 
-    const-string v1, "UserLogout"
+    const/16 v1, 0x1e
 
-    const-string v2, "Confirmed"
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->setDuration(I)V
 
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
+    :goto_0
     return-void
-.end method
 
-.method public onRightClicked(Landroid/app/DialogFragment;)V
-    .locals 3
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;
 
-    invoke-virtual {p1}, Landroid/app/DialogFragment;->dismiss()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/aX;->a:Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/PersonInfoFragment;->getActivity()Landroid/app/Activity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;->a(Lcn/com/smartdevices/bracelet/ui/NewAlarmActivity;)Lcn/com/smartdevices/bracelet/model/AlarmClockItem;
 
     move-result-object v0
 
-    const-string v1, "UserLogout"
+    const/4 v1, 0x0
 
-    const-string v2, "Canceled"
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/model/AlarmClockItem;->setDuration(I)V
 
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/UmengAnalytics;->event(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    goto :goto_0
 .end method

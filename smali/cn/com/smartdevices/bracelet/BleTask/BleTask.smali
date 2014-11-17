@@ -20,6 +20,8 @@
 
 .field private static b:Ljava/util/concurrent/ExecutorService;
 
+.field private static c:Ljava/util/concurrent/ExecutorService;
+
 
 # instance fields
 .field protected callback:Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
@@ -46,6 +48,14 @@
     move-result-object v0
 
     sput-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->b:Ljava/util/concurrent/ExecutorService;
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->c:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
@@ -84,9 +94,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "BleTask Run..........................................in:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -122,9 +136,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "BleTask Run..........................................out:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -174,7 +192,17 @@
     return-void
 .end method
 
-.method public workX()V
+.method public workImmediately()V
+    .locals 1
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->c:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0, p0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public workOrderly()V
     .locals 1
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleTask;->b:Ljava/util/concurrent/ExecutorService;

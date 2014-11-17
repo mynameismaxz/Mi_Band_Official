@@ -15,7 +15,7 @@
 
 .field public static final EVENT_ALARM_SETTING:Ljava/lang/String; = "AlarmSetting"
 
-.field public static final EVENT_BINDED_USER_START:Ljava/lang/String; = "User_BindedStart"
+.field public static final EVENT_BINDED_USER_START:Ljava/lang/String; = "User_Binded_Start"
 
 .field public static final EVENT_BLE_CONNECT:Ljava/lang/String; = "BleConnect"
 
@@ -47,7 +47,7 @@
 
 .field public static final EVENT_CALL_NOTIFY:Ljava/lang/String; = "Call_Notify"
 
-.field public static final EVENT_CALL_NOTIFY_USER_START:Ljava/lang/String; = "User_CallNotifyStart"
+.field public static final EVENT_CALL_NOTIFY_USER_START:Ljava/lang/String; = "User_CallNotify_Start"
 
 .field public static final EVENT_CALL_OFFHOOK:Ljava/lang/String; = "Call_Offhook"
 
@@ -77,11 +77,41 @@
 
 .field public static final EVENT_GAME_VIEW_SIGNUP:Ljava/lang/String; = "Game_ViewSignup"
 
+.field public static final EVENT_LAB_SPORT_VOTE:Ljava/lang/String; = "SportVote"
+
 .field public static final EVENT_LOCATION_EXCEPTION:Ljava/lang/String; = "LocationException"
 
 .field public static final EVENT_LOCATION_OK:Ljava/lang/String; = "LocationOK"
 
 .field public static final EVENT_LOCATION_START:Ljava/lang/String; = "LocationStart"
+
+.field public static final EVENT_QQ_HEALTH_SYNC_DATA:Ljava/lang/String; = "QQ_Health_SyncData"
+
+.field public static final EVENT_QQ_HEALTH_SYNC_DATA_FAIL:Ljava/lang/String; = "QQ_Health_SyncData_Fail"
+
+.field public static final EVENT_QQ_HEALTH_SYNC_DATA_SUCCESS:Ljava/lang/String; = "QQ_Health_SyncData_Success"
+
+.field public static final EVENT_QQ_HEALTH_USER_START:Ljava/lang/String; = "User_QQ_Health_Start"
+
+.field public static final EVENT_QQ_LOGIN:Ljava/lang/String; = "QQ_Login"
+
+.field public static final EVENT_QQ_LOGIN_CANCEL:Ljava/lang/String; = "QQ_Login_Cancel"
+
+.field public static final EVENT_QQ_LOGIN_ERROR:Ljava/lang/String; = "QQ_Login_Error"
+
+.field public static final EVENT_QQ_LOGIN_FAIL:Ljava/lang/String; = "QQ_Login_Fail"
+
+.field public static final EVENT_QQ_LOGIN_SUCCESS:Ljava/lang/String; = "QQ_Login_Success"
+
+.field public static final EVENT_QQ_LOGOUT:Ljava/lang/String; = "QQ_Logout"
+
+.field public static final EVENT_QQ_REQUEST_USER_INFO:Ljava/lang/String; = "QQ_Request_UserInfo"
+
+.field public static final EVENT_QQ_REQUEST_USER_INFO_ERROR:Ljava/lang/String; = "QQ_Request_UserInfo_Error"
+
+.field public static final EVENT_QQ_REQUEST_USER_INFO_FAIL:Ljava/lang/String; = "QQ_Request_UserInfo_Fail"
+
+.field public static final EVENT_QQ_REQUEST_USER_INFO_SUCCESS:Ljava/lang/String; = "QQ_Request_UserInfo_Success"
 
 .field public static final EVENT_SHARE:Ljava/lang/String; = "Share"
 
@@ -119,9 +149,21 @@
 
 .field public static final EVENT_VIEW_DYNAMIC:Ljava/lang/String; = "ViewDynamic"
 
-.field public static final EVENT_VIEW_DYNAMIC_DETAIL:Ljava/lang/String; = "ViewDynamicDetail"
+.field public static final EVENT_VIEW_DYNAMIC_DETAIL_SLEEP:Ljava/lang/String; = "View_DynamicDetail_Sleep"
 
-.field public static final EVENT_VIEW_STATISTIC:Ljava/lang/String; = "ViewStatistic"
+.field public static final EVENT_VIEW_DYNAMIC_DETAIL_STEP:Ljava/lang/String; = "View_DynamicDetail_Step"
+
+.field public static final EVENT_VIEW_DYNAMIC_DETAIL_SWITCH_TO_SLEEP:Ljava/lang/String; = "View_DynamicDetail_SwitchTo_Sleep"
+
+.field public static final EVENT_VIEW_DYNAMIC_DETAIL_SWITCH_TO_STEP:Ljava/lang/String; = "View_DynamicDetail_SwitchTo_Step"
+
+.field public static final EVENT_VIEW_STATISTIC_SLEEP:Ljava/lang/String; = "View_Statistic_Sleep"
+
+.field public static final EVENT_VIEW_STATISTIC_STEP:Ljava/lang/String; = "View_Statistic_Step"
+
+.field public static final EVENT_VIEW_STATISTIC_SWITCH_TO_SLEEP:Ljava/lang/String; = "View_Statistic_SwitchTo_Sleep"
+
+.field public static final EVENT_VIEW_STATISTIC_SWITCH_TO_STEP:Ljava/lang/String; = "View_Statistic_SwitchTo_Step"
 
 .field public static final EVENT_WEATHER_EXCEPTION:Ljava/lang/String; = "WeatherException"
 
@@ -144,6 +186,8 @@
 .field public static final PAGE_ALARM_NEW_REPEAT:Ljava/lang/String; = "PageAlarmNewRepeat"
 
 .field public static final PAGE_ALARM_NEW_REPEAT_CUSTOM:Ljava/lang/String; = "PageAlarmNewRepeatCustom"
+
+.field public static final PAGE_BIND_QQ_Health:Ljava/lang/String; = "PageBindQQHealth"
 
 .field public static final PAGE_BIND_WECHAT:Ljava/lang/String; = "PageBindWeChat"
 
@@ -392,9 +436,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -443,9 +491,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Page : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -477,9 +529,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "End Session : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -511,9 +567,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -555,9 +615,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -599,9 +663,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -685,9 +753,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -741,9 +813,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -831,9 +907,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Event : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -882,9 +962,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Page : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -916,9 +1000,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "Start Session : "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

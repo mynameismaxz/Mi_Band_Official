@@ -33,7 +33,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/h;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->j(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->k(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)V
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/h;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->j(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->k(Lcn/com/smartdevices/bracelet/activity/LoginActivity;)V
 
     return-void
 .end method

@@ -1,47 +1,28 @@
 .class Lcn/com/smartdevices/bracelet/ui/bm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/Comparator;
-
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+.field a:Landroid/widget/TextView;
+
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/PickAdapter;
 
 
 # direct methods
-.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+.method private constructor <init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bm;->a:Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bm;->b:Lcn/com/smartdevices/bracelet/ui/PickAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;Lcn/com/smartdevices/bracelet/ui/bm;)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;Lcn/com/smartdevices/bracelet/ui/bl;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bm;-><init>(Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;)V
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/ui/bm;-><init>(Lcn/com/smartdevices/bracelet/ui/PickAdapter;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
-
-    check-cast p1, Lcn/com/smartdevices/bracelet/ui/bk;
-
-    check-cast p2, Lcn/com/smartdevices/bracelet/ui/bk;
-
-    iget v0, p2, Lcn/com/smartdevices/bracelet/ui/bk;->b:I
-
-    iget v1, p1, Lcn/com/smartdevices/bracelet/ui/bk;->b:I
-
-    sub-int/2addr v0, v1
-
-    return v0
 .end method

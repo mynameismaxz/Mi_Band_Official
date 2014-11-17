@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->f(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
+    invoke-static {v0}, Lcom/aps/a;->d(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
 
     move-result-object v0
 
@@ -64,7 +64,7 @@
 
     iget-object v1, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v1}, Lcom/aps/a;->f(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
+    invoke-static {v1}, Lcom/aps/a;->d(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
 
     move-result-object v1
 
@@ -76,7 +76,7 @@
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->g(Lcom/aps/a;)Ljava/util/List;
+    invoke-static {v0}, Lcom/aps/a;->e(Lcom/aps/a;)Ljava/util/List;
 
     move-result-object v0
 
@@ -113,7 +113,7 @@
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->f(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
+    invoke-static {v0}, Lcom/aps/a;->d(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -126,7 +126,7 @@
     :try_start_2
     iget-object v1, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v1}, Lcom/aps/a;->f(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
+    invoke-static {v1}, Lcom/aps/a;->d(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
 
     move-result-object v1
 
@@ -147,21 +147,21 @@
     :try_start_3
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->h(Lcom/aps/a;)V
+    invoke-static {v0}, Lcom/aps/a;->f(Lcom/aps/a;)V
 
     goto :goto_0
 
     :pswitch_2
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->h(Lcom/aps/a;)V
+    invoke-static {v0}, Lcom/aps/a;->f(Lcom/aps/a;)V
 
     goto :goto_0
 
     :pswitch_3
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->h(Lcom/aps/a;)V
+    invoke-static {v0}, Lcom/aps/a;->f(Lcom/aps/a;)V
 
     goto :goto_0
 
@@ -178,7 +178,7 @@
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->i(Lcom/aps/a;)V
+    invoke-static {v0}, Lcom/aps/a;->g(Lcom/aps/a;)V
 
     const-wide/16 v0, 0x2710
 
@@ -201,7 +201,7 @@
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->j(Lcom/aps/a;)I
+    invoke-static {v0}, Lcom/aps/a;->h(Lcom/aps/a;)I
 
     move-result v0
 
@@ -243,7 +243,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     const-string v0, "level"
 
@@ -301,61 +301,31 @@
 
     packed-switch v2, :pswitch_data_1
 
-    iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/aps/a;->b(Lcom/aps/a;Z)Z
-
     goto/16 :goto_0
 
     :pswitch_4
     const/16 v1, 0xf
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->j(Lcom/aps/a;)I
+    invoke-static {v0}, Lcom/aps/a;->h(Lcom/aps/a;)I
 
     move-result v0
 
-    if-lt v0, v5, :cond_7
-
-    iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/aps/a;->b(Lcom/aps/a;Z)Z
+    if-lt v0, v5, :cond_0
 
     goto/16 :goto_0
 
     :cond_7
-    iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/aps/a;->b(Lcom/aps/a;Z)Z
-
-    goto/16 :goto_0
-
-    :cond_8
-    iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/aps/a;->b(Lcom/aps/a;Z)Z
-
-    goto/16 :goto_0
-
-    :cond_9
     const-string v1, "android.location.GPS_FIX_CHANGE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
@@ -363,18 +333,18 @@
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_8
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     iget-object v0, p0, Lcom/aps/r;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->k(Lcom/aps/a;)Z
+    invoke-static {v0}, Lcom/aps/a;->i(Lcom/aps/a;)Z
 
     move-result v0
 
@@ -390,7 +360,7 @@
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_9
     const-string v1, "android.location.PROVIDERS_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

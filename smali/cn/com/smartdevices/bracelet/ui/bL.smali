@@ -1,122 +1,76 @@
 .class Lcn/com/smartdevices/bracelet/ui/bL;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/bK;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/bK;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
+    const-string v0, "SettingFragment"
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bK;->a(Lcn/com/smartdevices/bracelet/ui/bK;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
+    const-string v2, "updateProfile onFailed: "
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bK;->a(Lcn/com/smartdevices/bracelet/ui/bK;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/ProgressDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bK;->a(Lcn/com/smartdevices/bracelet/ui/bK;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;Landroid/app/ProgressDialog;)V
-
-    :cond_0
-    const-class v0, Landroid/bluetooth/BluetoothDevice;
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/BLEManager;->getMiliDevice()Landroid/bluetooth/BluetoothDevice;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Utils;->removeBond(Ljava/lang/Class;Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
+    move-result-object v1
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/bK;->a(Lcn/com/smartdevices/bracelet/ui/bK;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->b(Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;)Landroid/app/Activity;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, ""
-
-    const-string v1, "getActivity is null! System.exit(-1) now!"
+    move-result-object v1
 
     invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/System;->exit(I)V
-
-    :goto_0
     return-void
+.end method
 
-    :cond_1
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/bK;
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 2
 
-    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/bK;->a(Lcn/com/smartdevices/bracelet/ui/bK;)Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    move-result-object v1
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/ui/SettingResetBraceletFragment;->dismiss()V
+    move-result-object v0
 
-    new-instance v1, Landroid/content/Intent;
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->clearNeedSyncServer()V
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bL;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
 
-    const-class v2, Lcn/com/smartdevices/bracelet/ui/SearchSingleBraceletActivity;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    move-result-object v0
 
-    const v2, 0x10008000
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->keepPersonInfo(Lcn/com/smartdevices/bracelet/model/PersonInfo;)V
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    const-string v0, "SettingFragment"
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    const-string v1, "send person info to server ok!"
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 .end method

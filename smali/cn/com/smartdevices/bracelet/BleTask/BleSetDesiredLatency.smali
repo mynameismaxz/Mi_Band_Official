@@ -3,8 +3,6 @@
 
 
 # static fields
-.field public static TAG:Ljava/lang/String; = null
-
 .field private static final b:I = 0x2
 
 .field private static c:Ljava/lang/Object;
@@ -19,10 +17,6 @@
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
-
-    const-string v0, "BleTaskX"
-
-    sput-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/Object;
 
@@ -51,154 +45,6 @@
     iput p1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
     return-void
-.end method
-
-.method private a(I)V
-    .locals 7
-
-    const/16 v1, 0x27
-
-    const/4 v6, -0x1
-
-    const/16 v4, 0x1f4
-
-    const/4 v3, 0x0
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v5, "value:"
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v5, "value:"
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    sput-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
-
-    if-ne p1, v1, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    const/16 v2, 0x31
-
-    move v5, v3
-
-    invoke-virtual/range {v0 .. v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_setLEParams(IIIII)Z
-
-    move-result v3
-
-    :cond_0
-    :goto_0
-    if-eqz v3, :cond_1
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-ne v0, v6, :cond_1
-
-    const-wide/16 v0, 0x2710
-
-    invoke-direct {p0, v0, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a(J)V
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_getLEParams()Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;
-
-    move-result-object v0
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "out setLatency!\n"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "out setLatency!\n"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_2
-    const/16 v0, 0x1e0
-
-    if-ne p1, v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    const/16 v1, 0x1cc
-
-    move v2, v4
-
-    move v5, v3
-
-    invoke-virtual/range {v0 .. v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_setLEParams(IIIII)Z
-
-    move-result v3
-
-    goto :goto_0
 .end method
 
 .method private a(J)V
@@ -231,9 +77,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "after waiting..."
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     sget-object v3, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
 
@@ -273,9 +123,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "waitingNotify:"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -315,11 +169,17 @@
 
 # virtual methods
 .method public doWork(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
-    .locals 6
+    .locals 14
 
-    const/16 v5, 0x27
+    const/4 v13, -0x1
 
-    const/16 v4, 0x8
+    const/16 v12, 0x8
+
+    const/16 v1, 0x27
+
+    const/16 v4, 0x1f4
+
+    const/4 v3, 0x0
 
     if-eqz p1, :cond_0
 
@@ -332,142 +192,156 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    sget-object v2, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
 
-    sget-object v1, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "set latency:"
+    const-string v6, "set latency:"
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v6, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
-    move-result-object v2
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, "\n"
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, "\ncurrent latency:\n"
 
-    move-result-object v2
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v2
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v2
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v5
 
-    sget-object v1, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+    invoke-static {v2, v5}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_4
 
-    const-string v3, "set latency:"
+    iget v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-ne v2, v1, :cond_2
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+    iget v2, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
-
-    if-ne v1, v5, :cond_2
-
-    iget v1, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
-
-    if-lt v1, v5, :cond_3
+    if-lt v2, v1, :cond_4
 
     iget v0, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
 
-    const/16 v1, 0x31
+    const/16 v2, 0x31
 
-    if-gt v0, v1, :cond_3
+    if-gt v0, v2, :cond_4
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->sendOnFinishMessage(Ljava/lang/Object;)V
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+
+    const-string v1, "same latency,return now!!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     :goto_0
     return-void
 
     :cond_2
-    iget v1, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
-    const/16 v2, 0x1e0
+    const/16 v5, 0x1e0
 
-    if-ne v1, v2, :cond_3
+    if-ne v2, v5, :cond_3
 
-    iget v1, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
+    iget v2, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
 
-    const/16 v2, 0x1cc
+    const/16 v5, 0x1cc
 
-    if-lt v1, v2, :cond_3
+    if-lt v2, v5, :cond_4
 
     iget v0, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
 
-    const/16 v1, 0x1f4
+    if-gt v0, v4, :cond_4
 
-    if-gt v0, v1, :cond_3
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->sendOnFinishMessage(Ljava/lang/Object;)V
 
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+
+    const-string v1, "same latency,return now!!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    iget v0, v0, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$LEParams;->connInt:I
 
-    :goto_1
-    add-int/lit8 v1, v0, 0x1
+    iget v2, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
-    const/4 v2, 0x2
+    if-ne v0, v2, :cond_4
 
-    if-lt v0, v2, :cond_5
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
 
-    :cond_4
-    if-eqz p1, :cond_1
+    const-string v1, "same latency,return now!!!"
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
-
-    invoke-virtual {p1, v0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->sendOnFinishMessage(Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+
+    const-string v2, "======================do set latency  in======================"
+
+    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    move v0, v3
+
+    :goto_1
+    add-int/lit8 v11, v0, 0x1
+
+    const/4 v2, 0x2
+
+    if-ge v0, v2, :cond_6
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    sput-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
+
     iget v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
 
-    invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a(I)V
+    if-ne v0, v1, :cond_7
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    const/16 v2, 0x31
+
+    move v5, v3
+
+    invoke-virtual/range {v0 .. v5}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_setLEParams(IIIII)Z
+
+    move-result v0
+
+    :goto_2
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
 
@@ -477,9 +351,93 @@
 
     move-result v0
 
-    if-eq v0, v4, :cond_4
+    if-ne v0, v13, :cond_5
 
-    move v0, v1
+    const-wide/16 v5, 0x2710
+
+    invoke-direct {p0, v5, v6}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a(J)V
+
+    :cond_5
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-ne v0, v12, :cond_9
+
+    :cond_6
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->TAG:Ljava/lang/String;
+
+    const-string v1, "======================do set latency out======================"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-eqz p1, :cond_1
+
+    sget-object v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->waitingResult:Ljava/lang/Object;
+
+    invoke-virtual {p1, v0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->sendOnFinishMessage(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_7
+    iget v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+
+    const/16 v2, 0x1e0
+
+    if-ne v0, v2, :cond_8
+
+    iget-object v5, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    const/16 v6, 0x1cc
+
+    move v7, v4
+
+    move v8, v3
+
+    move v9, v4
+
+    move v10, v3
+
+    invoke-virtual/range {v5 .. v10}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_setLEParams(IIIII)Z
+
+    move-result v0
+
+    goto :goto_2
+
+    :cond_8
+    iget v0, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+
+    if-lez v0, :cond_a
+
+    iget-object v5, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->gattPeripheral:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+
+    iget v6, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+
+    iget v7, p0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->a:I
+
+    move v8, v3
+
+    move v9, v4
+
+    move v10, v3
+
+    invoke-virtual/range {v5 .. v10}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->_setLEParams(IIIII)Z
+
+    move-result v0
+
+    goto :goto_2
+
+    :cond_9
+    move v0, v11
 
     goto :goto_1
+
+    :cond_a
+    move v0, v3
+
+    goto :goto_2
 .end method

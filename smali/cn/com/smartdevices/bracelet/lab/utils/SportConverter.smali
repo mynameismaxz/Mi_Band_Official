@@ -11,12 +11,12 @@
     return-void
 .end method
 
-.method public static convertRopeSkippingCounts2Steps(II)I
+.method public static convertRopeSkippingCounts2Steps(IJ)I
     .locals 4
 
     int-to-double v0, p0
 
-    int-to-double v2, p1
+    long-to-double v2, p1
 
     div-double/2addr v0, v2
 

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,22 +22,14 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 2
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/m;->a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->g(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;)Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;
+    const/4 v1, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->cleanStorage()V
-
-    invoke-static {}, Lcn/com/smartdevices/bracelet/lab/debug/RawDataGetter;->cleanStorageFile()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/m;->a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
-
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->update_storage()V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->a(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;Z)V
 
     return-void
 .end method

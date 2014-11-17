@@ -9,6 +9,8 @@
 
 .field public static final API_TYPE_CREATE_WEIXIN_QR_IF:Ljava/lang/String; = "huami.health.createwxqr.json"
 
+.field public static final API_TYPE_FETCH_DATA_OF_LAB:Ljava/lang/String; = "huami.health.fetchInitSportData.json"
+
 .field public static final API_TYPE_GET_DATA_NEW_IF:Ljava/lang/String; = "huami.health.getDataNew.json"
 
 .field public static final API_TYPE_GET_GAME_BRIEFINFO_IF:Ljava/lang/String; = "huami.health.gethuodongconfig.json"
@@ -35,6 +37,8 @@
 
 .field public static final API_TYPE_STATISTIC_BRACELET_IF:Ljava/lang/String; = "huami.health.uploadcollectdata.json"
 
+.field public static final API_TYPE_STORE_DATA_OF_LAB:Ljava/lang/String; = "huami.health.storeSportData.json"
+
 .field public static final API_TYPE_UPDATE_DEVICE_INFO_IF:Ljava/lang/String; = "huami.health.updatedevicedata.json"
 
 .field public static final API_TYPE_UPLOAD_ACTIVITY_DATA_IF:Ljava/lang/String; = "huami.health.receiveData.json"
@@ -46,6 +50,8 @@
 .field public static final BASE_URL:Ljava/lang/String; = "https://hm.xiaomi.com/"
 
 .field public static final BASE_URL_NO_HTTPS:Ljava/lang/String; = "http://hm.xiaomi.com/"
+
+.field public static final BASE_URL_OF_LAB:Ljava/lang/String; = "https://hm.xiaomi.com/"
 
 .field public static final CLIENT_ID:Ljava/lang/Long;
 
@@ -178,6 +184,8 @@
 .field public static final RESPONSE_FORMAT:Ljava/lang/String; = "json"
 
 .field public static final TIMEOUT:I = 0x4e20
+
+.field public static final USER_AGREEMENT_URL:Ljava/lang/String; = "https://hm.xiaomi.com/huami.health.agreement.do"
 
 .field public static final VALUE_SYS_IE:Ljava/lang/String; = "utf-8"
 

@@ -149,21 +149,8 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->a:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    return-void
-
-    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -175,6 +162,19 @@
     iput-boolean v2, v0, Lcn/com/smartdevices/bracelet/model/BasePushItem;->hasRead:Z
 
     goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->a:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/PushMsgManager;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    return-void
 .end method
 
 .method public sizeOfUnreadMsgs()I

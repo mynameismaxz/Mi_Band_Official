@@ -21,6 +21,8 @@
 
 
 # instance fields
+.field public disconnectedReminder:I
+
 .field public firstUseDate:Ljava/util/Calendar;
 
 .field public goalStepsCount:I
@@ -53,6 +55,10 @@
     const/16 v0, 0x114
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/model/MiliConfig;->inComingCallNotifyTime:I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/model/MiliConfig;->disconnectedReminder:I
 
     return-void
 .end method
@@ -137,9 +143,13 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "isValid="
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

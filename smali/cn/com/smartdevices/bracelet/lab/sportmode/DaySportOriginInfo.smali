@@ -5,17 +5,17 @@
 # static fields
 .field public static final KEY_CAL_OF_DAY:Ljava/lang/String; = "cal"
 
-.field public static final KEY_GROUP_BR:Ljava/lang/String; = "gbr"
-
 .field public static final KEY_TOTAL_COUNT_OF_DAY:Ljava/lang/String; = "cnt"
 
 
 # instance fields
-.field protected mBRCount:I
-
-.field protected mCalOfBR:I
-
 .field protected mCalOfDay:I
+
+.field protected mCntOfBR:I
+
+.field protected mGroupListCntOfBR:I
+
+.field protected mGroupListSpanTimeOfBR:J
 
 .field protected mGroupPBCntOfDay:I
 
@@ -27,9 +27,11 @@
 
 .field protected mLatestArrayGExSTime:I
 
+.field protected mLatestArrayRealSpanTime:I
+
 .field protected mLatestGExTotalCnt:I
 
-.field protected mSpanTimeOfBR:I
+.field protected mSpanTimeOfBR:J
 
 .field protected mSportType:I
 
@@ -38,7 +40,9 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .locals 2
+    .locals 4
+
+    const-wide/16 v2, 0x0
 
     const/4 v1, -0x1
 
@@ -48,11 +52,13 @@
 
     iput v1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSportType:I
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:I
+    iput-wide v2, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:J
 
-    iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCalOfBR:I
+    iput-wide v2, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListSpanTimeOfBR:J
 
-    iput v1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mBRCount:I
+    iput v1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCntOfBR:I
+
+    iput v1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListCntOfBR:I
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCalOfDay:I
 
@@ -63,6 +69,8 @@
     iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestGExTotalCnt:I
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestArrayGExCnt:I
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestArrayRealSpanTime:I
 
     iput v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestArrayGExSTime:I
 
@@ -77,14 +85,6 @@
 
 
 # virtual methods
-.method public getBestRecord()I
-    .locals 1
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mBRCount:I
-
-    return v0
-.end method
-
 .method public getCalOfDay()I
     .locals 1
 
@@ -93,10 +93,10 @@
     return v0
 .end method
 
-.method public getConsumeCalOfBR()I
+.method public getCountOfBR()I
     .locals 1
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCalOfBR:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCntOfBR:I
 
     return v0
 .end method
@@ -107,6 +107,22 @@
     iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupPBCntOfDay:I
 
     return v0
+.end method
+
+.method public getGroupListCntOfBR()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListCntOfBR:I
+
+    return v0
+.end method
+
+.method public getGroupListSpanTimeOfBR()J
+    .locals 2
+
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListSpanTimeOfBR:J
+
+    return-wide v0
 .end method
 
 .method public getLatestArrayGExCal()I
@@ -141,6 +157,14 @@
     return v0
 .end method
 
+.method public getLatestArrayRealSpanTime()I
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestArrayRealSpanTime:I
+
+    return v0
+.end method
+
 .method public getLatestGExTotalCnt()I
     .locals 1
 
@@ -149,12 +173,12 @@
     return v0
 .end method
 
-.method public getSpendTimeOfBR()I
-    .locals 1
+.method public getSpanTimeOfBR()J
+    .locals 2
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:I
+    iget-wide v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:J
 
-    return v0
+    return-wide v0
 .end method
 
 .method public getSportType()I
@@ -166,7 +190,7 @@
 .end method
 
 .method public getSummeryJson()Lorg/json/JSONObject;
-    .locals 4
+    .locals 5
 
     new-instance v1, Lorg/json/JSONObject;
 
@@ -185,37 +209,33 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string v0, "gbr"
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupPBCntOfDay:I
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mBRCount:I
-
-    if-ltz v0, :cond_0
-
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
     const-string v2, "br"
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mBRCount:I
+    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCntOfBR:I
 
     invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     const-string v2, "tc"
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:I
+    iget-wide v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:J
+
+    invoke-virtual {v0, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+
+    const-string v2, "glbr"
+
+    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListCntOfBR:I
 
     invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string v2, "cal"
+    const-string v2, "gltc"
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCalOfBR:I
+    iget-wide v3, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListSpanTimeOfBR:J
 
-    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
     const-string v2, "pb"
 
@@ -223,7 +243,6 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
     :goto_0
     return-object v1
 
@@ -249,14 +268,6 @@
     return v0
 .end method
 
-.method public setCalOfBR(I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCalOfBR:I
-
-    return-void
-.end method
-
 .method public setCalOfDay(I)V
     .locals 0
 
@@ -265,26 +276,34 @@
     return-void
 .end method
 
-.method public setConsumeTimeOfBR(I)V
-    .locals 0
-
-    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:I
-
-    return-void
-.end method
-
 .method public setCountOfBR(I)V
     .locals 0
 
-    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mBRCount:I
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mCntOfBR:I
 
     return-void
 .end method
 
-.method public setGroupBestRecordOfDay(I)V
+.method public setGroupBRCntOfDay(I)V
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupPBCntOfDay:I
+
+    return-void
+.end method
+
+.method public setGroupListCntOfBR(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListCntOfBR:I
+
+    return-void
+.end method
+
+.method public setGroupListSpanTimeOfBR(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mGroupListSpanTimeOfBR:J
 
     return-void
 .end method
@@ -321,10 +340,26 @@
     return-void
 .end method
 
+.method public setLatestArrayRealSpanTime(I)V
+    .locals 0
+
+    iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestArrayRealSpanTime:I
+
+    return-void
+.end method
+
 .method public setLatestGExTotalCnt(I)V
     .locals 0
 
     iput p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mLatestGExTotalCnt:I
+
+    return-void
+.end method
+
+.method public setSpanTimeOfBR(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lcn/com/smartdevices/bracelet/lab/sportmode/DaySportOriginInfo;->mSpanTimeOfBR:J
 
     return-void
 .end method

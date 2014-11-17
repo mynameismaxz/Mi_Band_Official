@@ -142,7 +142,9 @@
     const-string p1, "null"
 
     :cond_0
-    const-string v0, "http://apilocate.amap.com/mobile/binary"
+    invoke-static {}, Lcom/amap/api/location/core/c;->j()Ljava/lang/String;
+
+    move-result-object v0
 
     const-string v3, "test"
 
@@ -192,7 +194,9 @@
     :cond_3
     const/4 v0, 0x0
 
-    const-string v3, "http://apilocate.amap.com/mobile/binary"
+    invoke-static {}, Lcom/amap/api/location/core/c;->j()Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -200,7 +204,9 @@
 
     if-lez v3, :cond_4
 
-    const-string v0, "http://apilocate.amap.com/mobile/binary"
+    invoke-static {}, Lcom/amap/api/location/core/c;->j()Ljava/lang/String;
+
+    move-result-object v0
 
     const/4 v3, 0x7
 

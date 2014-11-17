@@ -2,30 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/AdapterView$OnItemSelectedListener;
 
 
 # instance fields
 .field final synthetic a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
 
-.field private final synthetic b:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-.field private final synthetic c:Z
-
-.field private final synthetic d:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
-
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
-
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->b:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    iput-boolean p3, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->c:Z
-
-    iput-object p4, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->d:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,57 +22,54 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->b:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
-
-    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->c:Z
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->d:Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
-
-    invoke-virtual {v0, v1, v2}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->enableGetSensorData(ZLcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;)Z
-
-    move-result v0
-
-    const-string v1, "Lab"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "isSucceeded = "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-static {}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->b()[Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "   enable = "
+    aget-object v0, v0, p3
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
 
-    move-result-object v0
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->b(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    iget-boolean v2, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->c:Z
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->a:Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;->o(Lcn/com/smartdevices/bracelet/lab/ui/LabFactoryTestActivity;)Landroid/widget/EditText;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, ""
 
-    iget-boolean v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->c:Z
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/l;->b:Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;
+    invoke-virtual {p1, v0}, Landroid/widget/AdapterView;->setVisibility(I)V
 
-    invoke-virtual {v0}, Lcom/xiaomi/hm/bleservice/profile/MiLiProfile;->startParseSensorData()V
+    return-void
+.end method
 
-    :cond_0
+.method public onNothingSelected(Landroid/widget/AdapterView;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;)V"
+        }
+    .end annotation
+
     return-void
 .end method

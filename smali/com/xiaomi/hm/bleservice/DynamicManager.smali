@@ -150,6 +150,23 @@
 
     move-result-object v1
 
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->isValid()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const-string v0, "DynamicManager"
+
+    const-string v1, "generateLastWeekReport inValid!!!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     const-string v2, "DynamicManager"
 
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->toString()Ljava/lang/String;
@@ -158,15 +175,9 @@
 
     invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p2, :cond_1
+    if-nez p2, :cond_2
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->isValid()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v2, v1, Lcn/com/smartdevices/bracelet/model/ReportData;->timeFrom:Ljava/lang/String;
 
@@ -174,13 +185,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
+    :cond_2
     iget-object v0, v1, Lcn/com/smartdevices/bracelet/model/ReportData;->timeFrom:Ljava/lang/String;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->KeepLastWeekReportDate(Ljava/lang/String;)V
@@ -258,6 +265,23 @@
 
     move-result-object v1
 
+    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->isValid()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const-string v0, "DynamicManager"
+
+    const-string v1, "generateLastMonthReport inValid!!!!!!!"
+
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     const-string v2, "DynamicManager"
 
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->toString()Ljava/lang/String;
@@ -266,15 +290,9 @@
 
     invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p2, :cond_1
+    if-nez p2, :cond_2
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/ReportData;->isValid()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v2, v1, Lcn/com/smartdevices/bracelet/model/ReportData;->timeFrom:Ljava/lang/String;
 
@@ -282,13 +300,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
+    :cond_2
     iget-object v0, v1, Lcn/com/smartdevices/bracelet/model/ReportData;->timeFrom:Ljava/lang/String;
 
     invoke-static {v0}, Lcn/com/smartdevices/bracelet/Keeper;->KeepLastMonthReportDate(Ljava/lang/String;)V
@@ -424,13 +438,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     iget-object v5, v0, Lcn/com/smartdevices/bracelet/model/ReportInfo;->reportDate:Ljava/lang/String;
 
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v4
 
     const-string v5, ","
 
@@ -553,9 +567,13 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v5, "steps:"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

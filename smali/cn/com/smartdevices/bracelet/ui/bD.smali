@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcn/com/smartdevices/bracelet/lua/SlidingUpPanelLayout$PanelSlideListener;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,105 +22,30 @@
 
 
 # virtual methods
-.method public onGetPullDownDistance()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onGetPullDownDockEnable()Ljava/lang/Boolean;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public onGetThreshhold()F
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onGetThreshhold2()F
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onLastSlideOffset(Landroid/view/View;F)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onPanelAnchored(Landroid/view/View;)V
+.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 2
 
-    const-string v0, "SettingFragment"
+    const/4 v0, 0x6
 
-    const-string v1, "onPanelAnchored"
+    if-ne v0, p2, :cond_0
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
-    return-void
-.end method
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;
 
-.method public onPanelCollapsed(Landroid/view/View;)V
-    .locals 2
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;)Landroid/view/View;
 
-    const-string v0, "SettingFragment"
+    move-result-object v1
 
-    const-string v1, "onPanelCollapsed"
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/ui/SettingFeedbackFragment;->onClick(Landroid/view/View;)V
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v0, 0x1
 
-    return-void
-.end method
-
-.method public onPanelExpanded(Landroid/view/View;)V
-    .locals 2
-
-    const-string v0, "SettingFragment"
-
-    const-string v1, "onPanelExpanded"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;)Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
-
-    return-void
-.end method
-
-.method public onPanelSlide(Landroid/view/View;Ljava/lang/Boolean;F)V
-    .locals 1
-
-    const/high16 v0, 0x3f800000
-
-    cmpg-float v0, p3, v0
-
-    if-gtz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/bD;->a:Lcn/com/smartdevices/bracelet/ui/SettingFragment;
-
-    invoke-static {v0, p3}, Lcn/com/smartdevices/bracelet/ui/SettingFragment;->a(Lcn/com/smartdevices/bracelet/ui/SettingFragment;F)V
+    :goto_0
+    return v0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

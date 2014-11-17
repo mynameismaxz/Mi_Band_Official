@@ -173,8 +173,11 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    if-eqz v1, :cond_0
+
     invoke-virtual {v1}, Ljava/io/ObjectInputStream;->close()V
 
+    :cond_0
     return-object v0
 
     :catch_0
@@ -196,8 +199,11 @@
     move-exception v0
 
     :goto_1
+    if-eqz v1, :cond_1
+
     invoke-virtual {v1}, Ljava/io/ObjectInputStream;->close()V
 
+    :cond_1
     throw v0
 
     :catchall_1
@@ -326,7 +332,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, p0, v0, v1, v3}, Lcom/aps/T;-><init>(Lcom/aps/p;Ljava/io/OutputStream;Lcom/aps/g$a;Lcom/aps/S;)V
+    invoke-direct {v2, v0, v1, v3}, Lcom/aps/T;-><init>(Ljava/io/OutputStream;Lcom/aps/g$a;Lcom/aps/S;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

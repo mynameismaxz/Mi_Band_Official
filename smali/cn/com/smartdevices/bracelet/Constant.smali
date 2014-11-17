@@ -143,11 +143,11 @@
 
 .field public static final LOAD_DATA_COMPLETE:I = 0x0
 
-.field public static final LOCALE_CHN_PARAM:Ljava/lang/String; = "&_locale=zh_CN"
+.field public static final LOCALE_CHN_PARAM:Ljava/lang/String; = "_locale=zh_CN"
 
-.field public static final LOCALE_EN_PARAM:Ljava/lang/String; = "&_locale=en"
+.field public static final LOCALE_EN_PARAM:Ljava/lang/String; = "_locale=en"
 
-.field public static final LOCALE_TW_PARAM:Ljava/lang/String; = "&_locale=zh_TW"
+.field public static final LOCALE_TW_PARAM:Ljava/lang/String; = "_locale=zh_TW"
 
 .field public static final LOW_BATTERY_LEVEL:I = 0x5
 
@@ -205,6 +205,8 @@
 
 .field public static final PIE_CHART_MODE_NORMAL:I = 0x0
 
+.field public static final REF_AGREE_USER_AGREEMENT:Ljava/lang/String; = "agree_user_agreement"
+
 .field public static final REF_DAYS:Ljava/lang/String; = "Days"
 
 .field public static final REF_GAME_FAILED:Ljava/lang/String; = "REF_GAME_FAILED"
@@ -245,6 +247,8 @@
 
 .field public static final UNBIND_WATI_MS:J = 0xbb8L
 
+.field public static final WEBTYPE_DOWNLOAD_HTML_FILE:I = 0x3
+
 .field public static final WEBTYPE_LOGIN:I = 0x1
 
 .field public static final WEBTYPE_REGISTER:I = 0x0
@@ -265,7 +269,7 @@
 
 .field public static final WHEEL_CENTER_TEXT_SIZE_LARGE:I = 0x10
 
-.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f08003c
+.field public static final WHEEL_CENTER_UNIT_TEXT_COLOR:I = 0x7f090003
 
 .field public static final WHEEL_CENTER_UNIT_TEXT_SIZE:I = 0xa
 

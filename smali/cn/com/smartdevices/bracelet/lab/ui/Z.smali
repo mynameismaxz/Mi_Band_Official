@@ -1,102 +1,67 @@
-.class final Lcn/com/smartdevices/bracelet/lab/ui/Z;
+.class final Lcn/com/smartdevices/bracelet/lab/ui/z;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field a:I
-
-.field b:Landroid/content/Context;
-
-.field c:Landroid/net/Uri;
-
-.field d:Z
-
-.field e:I
-
-.field f:F
-
-.field g:J
+.field final synthetic a:Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;
 
 
 # direct methods
-.method private constructor <init>()V
+.method private constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;)V
     .locals 0
+
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/ui/z;->a:Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/Z;)V
+.method synthetic constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;Lcn/com/smartdevices/bracelet/lab/ui/u;)V
     .locals 0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/Z;-><init>()V
+    invoke-direct {p0, p1}, Lcn/com/smartdevices/bracelet/lab/ui/z;-><init>(Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/z;->a:Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;
 
-    const-string v1, "{ code="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Z;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;->b(Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;)Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView;
 
     move-result-object v0
 
-    const-string v1, " looping="
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/z;->a:Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;->a(Lcn/com/smartdevices/bracelet/lab/ui/SportAnalyserActivity;)I
 
-    move-result-object v0
+    move-result v1
 
-    iget-boolean v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Z;->d:Z
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView;->setStateText(Ljava/lang/String;)V
 
-    const-string v1, " stream="
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    iget v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Z;->e:I
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " uri="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Z;->c:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " }"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

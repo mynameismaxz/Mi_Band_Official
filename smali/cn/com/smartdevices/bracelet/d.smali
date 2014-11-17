@@ -1,9 +1,9 @@
-.class Lcn/com/smartdevices/bracelet/d;
+.class final Lcn/com/smartdevices/bracelet/d;
 .super Ljava/util/TimerTask;
 
 
 # instance fields
-.field private final synthetic a:Ljava/lang/ref/WeakReference;
+.field final synthetic a:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
@@ -51,13 +51,13 @@
 
     invoke-direct {v0, v1, v2}, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;-><init>(Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;I)V
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a(Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a(Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;)Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
     invoke-static {}, Lcn/com/smartdevices/bracelet/PhoneStateReceiver;->a()Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;->work()V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleInComingCallTask;->workImmediately()V
 
     return-void
 .end method

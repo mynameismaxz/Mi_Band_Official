@@ -1,78 +1,49 @@
 .class Lcn/com/smartdevices/bracelet/ui/k;
-.super Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/j;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BaseActivity$BindQQHealthTipFragment;
+
+.field final synthetic b:Lcn/com/smartdevices/bracelet/ui/BaseActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/j;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BaseActivity;Lcn/com/smartdevices/bracelet/ui/BaseActivity$BindQQHealthTipFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/k;->b:Lcn/com/smartdevices/bracelet/ui/j;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/k;->b:Lcn/com/smartdevices/bracelet/ui/BaseActivity;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
+    iput-object p2, p0, Lcn/com/smartdevices/bracelet/ui/k;->a:Lcn/com/smartdevices/bracelet/ui/BaseActivity$BindQQHealthTipFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailed(Ljava/lang/Object;)V
+.method public onEmptyAreaClicked(Landroid/app/DialogFragment;)V
     .locals 0
-
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public onFinish(Ljava/lang/Object;)V
-    .locals 3
+.method public onLeftClicked(Landroid/app/DialogFragment;)V
+    .locals 0
 
-    invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFinish(Ljava/lang/Object;)V
-
-    if-nez p1, :cond_0
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    check-cast p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;
+.method public onRightClicked(Landroid/app/DialogFragment;)V
+    .locals 1
 
-    const/4 v0, 0x5
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/k;->a:Lcn/com/smartdevices/bracelet/ui/BaseActivity$BindQQHealthTipFragment;
 
-    iget v1, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;->status:I
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/ui/BaseActivity$BindQQHealthTipFragment;->dismiss()V
 
-    const/4 v2, 0x2
-
-    if-ne v1, v2, :cond_1
-
-    const/16 v0, 0xa
-
-    :cond_1
-    iget v1, p1, Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$BatteryInfo;->level:I
-
-    if-gt v1, v0, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/k;->b:Lcn/com/smartdevices/bracelet/ui/j;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/j;->a(Lcn/com/smartdevices/bracelet/ui/j;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->b(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/k;->b:Lcn/com/smartdevices/bracelet/ui/j;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/j;->a(Lcn/com/smartdevices/bracelet/ui/j;)Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;->c(Lcn/com/smartdevices/bracelet/ui/BaseSCActivity;)V
-
-    goto :goto_0
+    return-void
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcn/com/smartdevices/bracelet/lab/e;
+.implements Lcn/com/smartdevices/bracelet/lab/g;
 .implements Lcom/xiaomi/hm/bleservice/profile/IMiLiProfile$ISensorDataChangedCB;
 
 
@@ -13,7 +13,7 @@
 
 
 # instance fields
-.field private a:Lcn/com/smartdevices/bracelet/lab/b;
+.field private a:Lcn/com/smartdevices/bracelet/lab/c;
 
 .field private b:Ljava/io/File;
 
@@ -50,7 +50,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->d:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -117,11 +117,8 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    return-void
-
-    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -137,6 +134,9 @@
     invoke-interface {v0, p1}, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;->onDeviceOpStateChanged(I)V
 
     goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
 .method static synthetic a(Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;I)V
@@ -148,7 +148,7 @@
 .end method
 
 .method private a(SSS)V
-    .locals 10
+    .locals 6
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->d:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -159,21 +159,17 @@
     :try_start_0
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v9
+    move-result-object v4
 
     :cond_0
     :goto_0
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
-    :goto_1
-    return-void
-
-    :cond_1
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -181,47 +177,45 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    move-object v8, v0
+    move-object v2, v0
 
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;
+    move-object v0, v1
 
-    int-to-double v2, p1
+    check-cast v0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;
 
-    int-to-double v4, p2
+    move-object v3, v0
 
-    int-to-double v6, p3
+    invoke-virtual {v3, p1, p2, p3}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->receive(SSS)Z
 
-    invoke-virtual/range {v1 .. v7}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->receive(DDD)Z
+    move-result v1
 
-    move-result v2
+    if-eqz v1, :cond_0
 
-    if-eqz v2, :cond_0
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    move-result-object v1
+
+    check-cast v1, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;
 
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->getActionCount()I
 
-    move-result-object v3
+    move-result v5
 
-    check-cast v3, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->checkCheat()Z
 
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->getActionCount()I
+    move-result v3
 
-    move-result v4
-
-    invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->checkCheat()Z
-
-    move-result v1
-
-    invoke-interface {v2, v3, v4, v1}, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;->onExercisedCountChanged(Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;IZ)V
+    invoke-interface {v1, v2, v5, v3}, Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;->onExerciseCountChanged(Lcn/com/smartdevices/bracelet/lab/SportAnalyserObserver;IZ)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -230,15 +224,8 @@
     :catch_0
     move-exception v1
 
-    const-string v2, "Lab"
-
-    invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Lcn/com/smartdevices/bracelet/Debug;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1
+    :cond_1
+    return-void
 .end method
 
 .method private b()Z
@@ -336,7 +323,7 @@
 .method public getDeviceOpState()I
     .locals 1
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     if-nez v0, :cond_0
 
@@ -346,9 +333,9 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/b;->b()I
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/c;->b()I
 
     move-result v0
 
@@ -383,9 +370,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "SportAnalyserObserver "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -463,9 +454,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "SportAnalyserObserver "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -503,15 +498,15 @@
     monitor-enter v1
 
     :try_start_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     if-nez v0, :cond_2
 
-    new-instance v0, Lcn/com/smartdevices/bracelet/lab/b;
+    new-instance v0, Lcn/com/smartdevices/bracelet/lab/c;
 
-    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/lab/b;-><init>(Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;)V
+    invoke-direct {v0, p0}, Lcn/com/smartdevices/bracelet/lab/c;-><init>(Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;)V
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     :cond_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->d:Ljava/util/concurrent/ConcurrentHashMap;
@@ -522,9 +517,9 @@
 
     if-eq v0, v2, :cond_3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/b;->b()I
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/c;->b()I
 
     move-result v0
 
@@ -535,13 +530,17 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "wanna enable sensor last opState = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/lab/b;->b()I
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/lab/c;->b()I
 
     move-result v3
 
@@ -555,11 +554,11 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/lab/b;->a(Z)V
+    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/lab/c;->a(Z)V
 
     :cond_4
     monitor-exit v1
@@ -641,25 +640,7 @@
 .end method
 
 .method public setLatency(I)V
-    .locals 3
-
-    const-string v0, "Lab"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "current latency level set level:"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
     new-instance v0, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;
 
@@ -669,7 +650,7 @@
 
     invoke-direct {v0, p1, v1}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;-><init>(ILcn/com/smartdevices/bracelet/BleTask/BleCallBack;)V
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->workX()V
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/BleTask/BleSetDesiredLatency;->workOrderly()V
 
     return-void
 .end method
@@ -797,12 +778,6 @@
     invoke-static {}, Lcn/com/smartdevices/bracelet/Keeper;->readPersonInfo()Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
     move-result-object v1
-
-    const-string v2, "Lab"
-
-    const-string v3, "startSampling"
-
-    invoke-static {v2, v3}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Lcn/com/smartdevices/bracelet/model/PersonInfo;->getMiliWearHand()Ljava/lang/String;
 
@@ -942,9 +917,13 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "SportAnalyserObserver "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -978,7 +957,7 @@
     monitor-enter v1
 
     :try_start_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     if-eqz v0, :cond_4
 
@@ -990,9 +969,9 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
-    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/b;->b()I
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/lab/c;->b()I
 
     move-result v0
 
@@ -1003,13 +982,17 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "wanna disable sensor last opState = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/lab/b;->b()I
+    iget-object v3, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
+
+    invoke-virtual {v3}, Lcn/com/smartdevices/bracelet/lab/c;->b()I
 
     move-result v3
 
@@ -1023,11 +1006,11 @@
 
     invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/b;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->a:Lcn/com/smartdevices/bracelet/lab/c;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/lab/b;->a(Z)V
+    invoke-virtual {v0, v2}, Lcn/com/smartdevices/bracelet/lab/c;->a(Z)V
 
     :cond_4
     monitor-exit v1
@@ -1042,4 +1025,57 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+.end method
+
+.method public zeroCleaning()V
+    .locals 3
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->checkCheat()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v0}, Lcn/com/smartdevices/bracelet/algorithm/factory/OnlineSportManager;->zeroClearing()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :cond_1
+    return-void
 .end method

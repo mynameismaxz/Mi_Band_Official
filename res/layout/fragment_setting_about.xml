@@ -45,5 +45,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:text="@string/about_copyright" />
 </LinearLayout>

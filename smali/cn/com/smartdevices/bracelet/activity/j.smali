@@ -1,51 +1,37 @@
 .class Lcn/com/smartdevices/bracelet/activity/j;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Landroid/webkit/WebChromeClient;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
-
-.field private final synthetic b:Landroid/webkit/WebView;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;Landroid/webkit/WebView;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/activity/WebActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
-    iput-object p2, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Landroid/webkit/WebView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->a:Lcn/com/smartdevices/bracelet/activity/WebActivity;
 
-    const v1, 0x7f0700bf
-
-    invoke-virtual {v0, v1}, Lcn/com/smartdevices/bracelet/activity/PersonInfoFinishedActivity;->findViewById(I)Landroid/view/View;
+    # getter for: Lcn/com/smartdevices/bracelet/activity/WebActivity;->mWebViewProgress:Landroid/widget/ProgressBar;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/activity/WebActivity;->access$000(Lcn/com/smartdevices/bracelet/activity/WebActivity;)Landroid/widget/ProgressBar;
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    add-int/lit8 v1, p2, 0x5
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/j;->b:Landroid/webkit/WebView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     return-void
 .end method

@@ -3,22 +3,22 @@
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/lab/datasync/a;
+.field final synthetic a:I
 
-.field private final synthetic b:I
+.field final synthetic b:Landroid/content/Context;
 
-.field private final synthetic c:Landroid/content/Context;
+.field final synthetic c:Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/lab/datasync/a;ILandroid/content/Context;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;ILandroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:Lcn/com/smartdevices/bracelet/lab/datasync/a;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->c:Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;
 
-    iput p2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:I
+    iput p2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
 
-    iput-object p3, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->c:Landroid/content/Context;
+    iput-object p3, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:Landroid/content/Context;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
@@ -34,21 +34,25 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:Lcn/com/smartdevices/bracelet/lab/datasync/a;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->c:Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:I
+    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3}, Lcn/com/smartdevices/bracelet/lab/datasync/a;->a(Lcn/com/smartdevices/bracelet/lab/datasync/a;IZ)V
+    invoke-static {v1, v2, v3}, Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;->a(Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;IZ)V
 
     const-string v1, "Lab"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v3, "syncFromServer onFailure statusCode = "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -64,11 +68,23 @@
 
     move-result-object v0
 
+    const-string v2, ", type = "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -80,7 +96,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:I
+    iget v0, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
 
     new-instance v2, Ljava/lang/String;
 
@@ -98,30 +114,55 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->c:Landroid/content/Context;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:Landroid/content/Context;
 
-    const/4 v3, 0x1
+    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
 
-    iget v4, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:I
+    const/4 v4, 0x1
 
     invoke-static {v0, v1, v3, v4}, Lcn/com/smartdevices/bracelet/lab/datasync/LabSportDBDataCreator;->updateDBOfDayFromServer(Landroid/content/Context;Ljava/util/ArrayList;II)Z
 
     move-result v0
 
     :cond_0
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:Lcn/com/smartdevices/bracelet/lab/datasync/a;
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->c:Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;
 
-    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:I
+    iget v3, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
 
-    invoke-static {v1, v3, v0}, Lcn/com/smartdevices/bracelet/lab/datasync/a;->a(Lcn/com/smartdevices/bracelet/lab/datasync/a;IZ)V
+    invoke-static {v1, v3, v0}, Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;->a(Lcn/com/smartdevices/bracelet/lab/datasync/SyncLabSportDataService;IZ)V
 
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->b:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/xiaomi/hm/bleservice/BLEService;->notifyDynamicStatusChanged(Landroid/content/Context;)V
+
+    :cond_1
     const-string v1, "Lab"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "syncFromServer onSuccess:"
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v4, "syncFromServer onSuccess = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v2}, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->success()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", w.code ="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     iget v2, v2, Lcn/com/smartdevices/bracelet/webapi/WebStatus;->code:I
 
@@ -129,7 +170,7 @@
 
     move-result-object v2
 
-    const-string v3, " isSucceeded = "
+    const-string v3, ", isSucceeded = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -139,11 +180,23 @@
 
     move-result-object v0
 
+    const-string v2, ", type = "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/datasync/b;->a:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/Debug;->fi(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

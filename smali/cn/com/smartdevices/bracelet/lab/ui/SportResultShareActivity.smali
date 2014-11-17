@@ -204,92 +204,76 @@
 .end method
 
 .method private a()V
-    .locals 4
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->o:Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
 
-    invoke-static {v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->p:Landroid/graphics/Bitmap;
+    const-string v1, "/"
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->p:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    const v0, 0x7f07009d
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    const-string v1, "share.jpg"
 
-    new-instance v1, Ljava/text/SimpleDateFormat;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v2, 0x7f0c001f
+    move-result-object v0
 
-    invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
 
-    new-instance v2, Ljava/util/Date;
+    new-instance v0, Ljava/io/File;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result v1
 
-    const v3, 0x7f0c018a
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->q:Z
-
+    :cond_1
     return-void
 .end method
 
@@ -312,7 +296,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->f()V
 
     :cond_0
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->c:Landroid/widget/TextView;
@@ -363,10 +347,102 @@
     return-void
 .end method
 
+.method static synthetic a(Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->q:Z
+
+    return p1
+.end method
+
 .method private b()V
+    .locals 1
+
+    const v0, 0x7f0a0072
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->c()V
+
+    const v0, 0x7f0a0073
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    return-void
+.end method
+
+.method private c()V
     .locals 2
 
-    const v0, 0x7f070063
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->k:Lcn/com/smartdevices/bracelet/model/ShareData;
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->k:Lcn/com/smartdevices/bracelet/model/ShareData;
+
+    iget v0, v0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
+
+    const v1, 0x7f0d0119
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
+
+    const v1, 0x7f0d011a
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x64
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method private d()V
+    .locals 2
+
+    const v0, 0x7f0a006d
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -376,7 +452,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->d:Landroid/widget/ImageView;
 
-    const v0, 0x7f070064
+    const v0, 0x7f0a006e
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -400,7 +476,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f07005d
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -410,7 +486,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->f:Landroid/widget/TextView;
 
-    const v0, 0x7f070060
+    const v0, 0x7f0a006a
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -420,7 +496,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->g:Landroid/widget/TextView;
 
-    const v0, 0x7f070065
+    const v0, 0x7f0a006f
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -430,7 +506,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->h:Landroid/widget/TextView;
 
-    const v0, 0x7f070059
+    const v0, 0x7f0a0063
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -438,7 +514,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->i:Landroid/view/View;
 
-    const v0, 0x7f07005b
+    const v0, 0x7f0a0065
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -448,7 +524,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->j:Landroid/widget/TextView;
 
-    const v0, 0x7f070040
+    const v0, 0x7f0a0045
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -458,7 +534,7 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f070066
+    const v0, 0x7f0a0070
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
@@ -478,90 +554,6 @@
 
     :cond_0
     return-void
-.end method
-
-.method private c()V
-    .locals 1
-
-    const v0, 0x7f070068
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->d()V
-
-    const v0, 0x7f070069
-
-    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    return-void
-.end method
-
-.method private d()V
-    .locals 2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->k:Lcn/com/smartdevices/bracelet/model/ShareData;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->k:Lcn/com/smartdevices/bracelet/model/ShareData;
-
-    iget v0, v0, Lcn/com/smartdevices/bracelet/model/ShareData;->type:I
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
-
-    const v1, 0x7f0c0209
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a:Landroid/widget/TextView;
-
-    const v1, 0x7f0c0208
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x64
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method private e()V
@@ -585,76 +577,84 @@
 .end method
 
 .method private f()V
-    .locals 2
+    .locals 4
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->o:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/io/File;
-
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v1, "/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    const-string v1, "share.jpg"
+    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->p:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->p:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    const v0, 0x7f0a00a7
+
+    invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v0, Landroid/widget/TextView;
 
-    move-result-object v0
+    new-instance v1, Ljava/text/SimpleDateFormat;
 
-    iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
+    const v2, 0x7f0d0057
 
-    new-instance v0, Ljava/io/File;
+    invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->m:Ljava/lang/String;
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    new-instance v2, Ljava/util/Date;
 
-    move-result v1
+    invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+    move-result-object v1
 
-    :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const v3, 0x7f0d004a
+
+    invoke-virtual {p0, v3}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     return-void
 .end method
 
@@ -731,7 +731,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f070066
+    .packed-switch 0x7f0a0070
         :pswitch_2
         :pswitch_0
         :pswitch_1
@@ -739,12 +739,12 @@
     .end packed-switch
 .end method
 
-.method protected onCreate(Landroid/os/Bundle;)V
+.method public onCreate(Landroid/os/Bundle;)V
     .locals 3
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f03000f
+    const v0, 0x7f030011
 
     invoke-virtual {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->setContentView(I)V
 
@@ -776,9 +776,9 @@
 
     iput-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->r:Ljava/lang/String;
 
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->c()V
-
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->b()V
+
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->d()V
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->k:Lcn/com/smartdevices/bracelet/model/ShareData;
 
@@ -787,7 +787,7 @@
     return-void
 .end method
 
-.method protected onDestroy()V
+.method public onDestroy()V
     .locals 2
 
     const/4 v1, 0x0
@@ -842,14 +842,14 @@
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     :cond_3
-    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->f()V
+    invoke-direct {p0}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->a()V
 
     invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onDestroy()V
 
     return-void
 .end method
 
-.method protected onPause()V
+.method public onPause()V
     .locals 1
 
     invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onPause()V
@@ -875,7 +875,7 @@
     return-void
 .end method
 
-.method protected onResume()V
+.method public onResume()V
     .locals 4
 
     invoke-super {p0}, Lcn/com/smartdevices/bracelet/ui/SystemBarTintActivity;->onResume()V
@@ -890,7 +890,7 @@
 
     const-string v1, "operation"
 
-    const v2, 0x7f0c00a8
+    const v2, 0x7f0d004b
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
 
@@ -900,7 +900,7 @@
 
     const-string v1, "mainNotice"
 
-    const v2, 0x7f0c0211
+    const v2, 0x7f0d0100
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
 
@@ -910,7 +910,7 @@
 
     const-string v1, "extraNotice"
 
-    const v2, 0x7f0c0235
+    const v2, 0x7f0d00f2
 
     invoke-virtual {p0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;->getString(I)Ljava/lang/String;
 
@@ -920,11 +920,11 @@
 
     const-class v1, Lcn/com/smartdevices/bracelet/lab/ui/SportTimeoutFragment;
 
-    new-instance v2, Lcn/com/smartdevices/bracelet/lab/ui/ab;
+    new-instance v2, Lcn/com/smartdevices/bracelet/lab/ui/U;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, p0, v3}, Lcn/com/smartdevices/bracelet/lab/ui/ab;-><init>(Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;Lcn/com/smartdevices/bracelet/lab/ui/ab;)V
+    invoke-direct {v2, p0, v3}, Lcn/com/smartdevices/bracelet/lab/ui/U;-><init>(Lcn/com/smartdevices/bracelet/lab/ui/SportResultShareActivity;Lcn/com/smartdevices/bracelet/lab/ui/T;)V
 
     invoke-static {p0, v1, v0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/SportTimeoutFragment;->showPanel(Landroid/app/Activity;Ljava/lang/Class;Landroid/os/Bundle;Lcn/com/smartdevices/bracelet/ui/DimPanelFragment$OpClickListener;)V
 

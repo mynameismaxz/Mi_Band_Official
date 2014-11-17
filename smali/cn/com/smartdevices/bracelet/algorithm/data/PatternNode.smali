@@ -17,6 +17,32 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->a:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->b:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->c:I
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->d:Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;
+
+    iput-object v1, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->e:Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->f:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;)V
     .locals 2
 
@@ -125,6 +151,43 @@
     return-object v0
 .end method
 
+.method public getSampleSizeOfTwoWindows()D
+    .locals 4
+
+    const/4 v3, 0x2
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->a:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->b:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    :goto_0
+    return-wide v0
+
+    :cond_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->a:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    invoke-virtual {v0, v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->getFeature(I)D
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->b:Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
+
+    invoke-virtual {v2, v3}, Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;->getFeature(I)D
+
+    move-result-wide v2
+
+    add-double/2addr v0, v2
+
+    goto :goto_0
+.end method
+
 .method public getSecondWindow()Lcn/com/smartdevices/bracelet/algorithm/data/PeakWindow;
     .locals 1
 
@@ -210,6 +273,18 @@
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->d:Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;
 
     return-object v0
+.end method
+
+.method public plusActionCount(I)V
+    .locals 1
+
+    iget v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->c:I
+
+    add-int/2addr v0, p1
+
+    iput v0, p0, Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;->c:I
+
+    return-void
 .end method
 
 .method public setFormerNode(Lcn/com/smartdevices/bracelet/algorithm/data/PatternNode;)V

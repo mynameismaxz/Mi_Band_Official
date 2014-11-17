@@ -7,7 +7,11 @@
 
 .field public static final KEY_BEST_RECORD_SIT_UP:Ljava/lang/String; = "sitUpBestRecord"
 
-.field public static final KEY_DEFAULT_TONE:Ljava/lang/String; = "sportTone"
+.field public static final KEY_DEFAULT_RHYTHM_NEW_PB_TONE:Ljava/lang/String; = "sportRhythmNewPBTone"
+
+.field public static final KEY_DEFAULT_RHYTHM_PITCH_TONE:Ljava/lang/String; = "sportRhythmPitchTone"
+
+.field public static final KEY_DEFAULT_RHYTHM_TONE:Ljava/lang/String; = "sportRhythmTone"
 
 .field public static final KEY_USER_CONFIRMED_PLAY_RULES:Ljava/lang/String; = "isUserConfirmAutoCounter"
 
@@ -43,14 +47,74 @@
 
 
 # virtual methods
-.method public geToneUri()Landroid/net/Uri;
+.method public getRhythmNewPBUri()Landroid/net/Uri;
     .locals 3
 
     const/4 v0, 0x0
 
     iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
 
-    const-string v2, "sportTone"
+    const-string v2, "sportRhythmNewPBTone"
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public getRhythmPitchToneUri()Landroid/net/Uri;
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
+
+    const-string v2, "sportRhythmPitchTone"
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public getRhythmToneUri()Landroid/net/Uri;
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
+
+    const-string v2, "sportRhythmTone"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -121,6 +185,105 @@
     return v0
 .end method
 
+.method public setRhythmNewPBUri(Landroid/net/Uri;)Z
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "sportRhythmNewPBTone"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public setRhythmPitchToneUri(Landroid/net/Uri;)Z
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "sportRhythmPitchTone"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public setRhythmToneUri(Landroid/net/Uri;)Z
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "sportRhythmTone"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public setRopeSkippingBestRecord(I)Z
     .locals 2
 
@@ -171,39 +334,6 @@
     const-string v1, "sitUpBestRecord"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public setToneUri(Landroid/net/Uri;)Z
-    .locals 3
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/PBRecordPref;->a:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "sportTone"
-
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 

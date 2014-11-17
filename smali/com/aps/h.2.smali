@@ -40,47 +40,8 @@
 
     iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->b(Lcom/aps/a;)Landroid/telephony/TelephonyManager;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    :try_start_1
-    iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
-
-    iget-object v1, p0, Lcom/aps/h;->a:Lcom/aps/a;
-
-    invoke-static {v1}, Lcom/aps/a;->b(Lcom/aps/a;)Landroid/telephony/TelephonyManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/aps/a;->a(Lcom/aps/a;Landroid/telephony/CellLocation;)Landroid/telephony/CellLocation;
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-
-    :cond_2
-    :goto_1
-    :try_start_2
-    iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
-
-    invoke-static {v0}, Lcom/aps/a;->c(Lcom/aps/a;)Landroid/telephony/CellLocation;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
-
     invoke-static {v0, p1}, Lcom/aps/a;->a(Lcom/aps/a;Landroid/telephony/CellLocation;)Landroid/telephony/CellLocation;
 
-    :cond_3
     iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
 
     invoke-static {}, Lcom/aps/t;->a()J
@@ -88,8 +49,8 @@
     move-result-wide v1
 
     invoke-static {v0, v1, v2}, Lcom/aps/a;->a(Lcom/aps/a;J)J
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
@@ -99,16 +60,6 @@
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    :try_start_3
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-    :try_end_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
-
-    goto :goto_1
 .end method
 
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
@@ -127,7 +78,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/aps/h;->a:Lcom/aps/a;
 
-    invoke-static {v0}, Lcom/aps/a;->e(Lcom/aps/a;)Ljava/util/List;
+    invoke-static {v0}, Lcom/aps/a;->c(Lcom/aps/a;)Ljava/util/List;
 
     move-result-object v0
 
@@ -164,7 +115,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/aps/h;->a:Lcom/aps/a;
 
-    invoke-static {v1}, Lcom/aps/a;->d(Lcom/aps/a;)I
+    invoke-static {v1}, Lcom/aps/a;->b(Lcom/aps/a;)I
 
     move-result v1
 
@@ -216,7 +167,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/aps/h;->a:Lcom/aps/a;
 
-    invoke-static {v1}, Lcom/aps/a;->d(Lcom/aps/a;)I
+    invoke-static {v1}, Lcom/aps/a;->b(Lcom/aps/a;)I
 
     move-result v1
 

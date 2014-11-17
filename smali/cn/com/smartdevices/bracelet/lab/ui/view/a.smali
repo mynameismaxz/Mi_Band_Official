@@ -53,7 +53,7 @@
 
     int-to-float v0, v0
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView$CircleView;->a(Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView$CircleView;F)V
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView$CircleView;->a(Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView$CircleView;F)F
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/view/a;->a:Lcn/com/smartdevices/bracelet/lab/ui/view/LabCircleView$CircleView;
 

@@ -9,13 +9,9 @@
 
 .field private c:Lcom/amap/api/location/j;
 
-.field private d:Lcom/amap/api/location/core/c;
+.field private d:Lcom/amap/api/location/a;
 
-.field private e:Ljava/lang/String;
-
-.field private f:Lcom/amap/api/location/a;
-
-.field private g:Landroid/content/Context;
+.field private e:Landroid/content/Context;
 
 
 # direct methods
@@ -34,27 +30,13 @@
 
     iput-object v0, p0, Lcom/amap/api/location/d;->b:Landroid/location/LocationListener;
 
-    iput-object p1, p0, Lcom/amap/api/location/d;->g:Landroid/content/Context;
+    iput-object p1, p0, Lcom/amap/api/location/d;->e:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/amap/api/location/d;->a:Landroid/location/LocationManager;
 
-    iput-object p4, p0, Lcom/amap/api/location/d;->f:Lcom/amap/api/location/a;
+    iput-object p4, p0, Lcom/amap/api/location/d;->d:Lcom/amap/api/location/a;
 
     iput-object p3, p0, Lcom/amap/api/location/d;->c:Lcom/amap/api/location/j;
-
-    invoke-static {p1}, Lcom/amap/api/location/core/c;->a(Landroid/content/Context;)Lcom/amap/api/location/core/c;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/amap/api/location/d;->d:Lcom/amap/api/location/core/c;
-
-    iget-object v0, p0, Lcom/amap/api/location/d;->d:Lcom/amap/api/location/core/c;
-
-    invoke-virtual {v0, p1}, Lcom/amap/api/location/core/c;->c(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/amap/api/location/d;->e:Ljava/lang/String;
 
     return-void
 .end method
@@ -62,28 +44,12 @@
 .method static synthetic a(Lcom/amap/api/location/d;)Lcom/amap/api/location/a;
     .locals 1
 
-    iget-object v0, p0, Lcom/amap/api/location/d;->f:Lcom/amap/api/location/a;
+    iget-object v0, p0, Lcom/amap/api/location/d;->d:Lcom/amap/api/location/a;
 
     return-object v0
 .end method
 
-.method static synthetic b(Lcom/amap/api/location/d;)Lcom/amap/api/location/core/c;
-    .locals 1
-
-    iget-object v0, p0, Lcom/amap/api/location/d;->d:Lcom/amap/api/location/core/c;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lcom/amap/api/location/d;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/amap/api/location/d;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcom/amap/api/location/d;)Lcom/amap/api/location/j;
+.method static synthetic b(Lcom/amap/api/location/d;)Lcom/amap/api/location/j;
     .locals 1
 
     iget-object v0, p0, Lcom/amap/api/location/d;->c:Lcom/amap/api/location/j;
@@ -103,7 +69,7 @@
     .locals 7
 
     :try_start_0
-    iget-object v0, p0, Lcom/amap/api/location/d;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/amap/api/location/d;->e:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 

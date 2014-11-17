@@ -1,54 +1,51 @@
 .class Lcn/com/smartdevices/bracelet/ui/af;
-.super Landroid/support/v13/app/FragmentPagerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;Landroid/app/FragmentManager;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/af;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/af;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    invoke-direct {p0, p2}, Landroid/support/v13/app/FragmentPagerAdapter;-><init>(Landroid/app/FragmentManager;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCount()I
-    .locals 1
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 2
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/af;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/af;->a:Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;->g(Lcn/com/smartdevices/bracelet/ui/FwUpgradeActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    const/4 v1, 0x4
 
-    move-result v0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    return v0
+    return-void
 .end method
 
-.method public getItem(I)Landroid/app/Fragment;
-    .locals 1
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/af;->a:Lcn/com/smartdevices/bracelet/ui/InstructionActivity;
+    return-void
+.end method
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/InstructionActivity;->a(Lcn/com/smartdevices/bracelet/ui/InstructionActivity;)Ljava/util/ArrayList;
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Fragment;
-
-    return-object v0
+    return-void
 .end method

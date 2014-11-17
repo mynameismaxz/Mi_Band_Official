@@ -682,7 +682,9 @@
 
     if-eqz p0, :cond_0
 
-    const-string v1, "http://apilocate.amap.com/mobile/binary"
+    invoke-static {}, Lcom/amap/api/location/core/c;->j()Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -726,12 +728,6 @@
     move-result-object v4
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_3
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
@@ -827,7 +823,7 @@
 
 # virtual methods
 .method public a(Landroid/content/Context;Ljava/lang/String;[BLjava/lang/String;)Ljava/lang/String;
-    .locals 16
+    .locals 14
 
     invoke-static/range {p2 .. p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -845,7 +841,7 @@
     return-object v1
 
     :cond_2
-    invoke-static/range {p1 .. p1}, Lcom/aps/t;->b(Landroid/content/Context;)Landroid/net/NetworkInfo;
+    invoke-static {p1}, Lcom/aps/t;->b(Landroid/content/Context;)Landroid/net/NetworkInfo;
 
     move-result-object v7
 
@@ -874,23 +870,21 @@
 
     const/4 v1, 0x0
 
-    new-instance v10, Ljava/lang/StringBuffer;
+    new-instance v9, Ljava/lang/StringBuffer;
 
-    invoke-direct {v10}, Ljava/lang/StringBuffer;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuffer;-><init>()V
 
     const-string v8, ""
 
     :try_start_0
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v7}, Lcom/aps/l;->a(Landroid/content/Context;Landroid/net/NetworkInfo;)Lorg/apache/http/client/HttpClient;
+    invoke-static {p1, v7}, Lcom/aps/l;->a(Landroid/content/Context;Landroid/net/NetworkInfo;)Lorg/apache/http/client/HttpClient;
     :try_end_0
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_2b
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_27
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_6
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     move-result-object v7
 
@@ -901,12 +895,12 @@
 
     invoke-direct {v6, v0}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
-    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_2c
-    .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_25
-    .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_1f
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_19
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_13
-    .catchall {:try_start_1 .. :try_end_1} :catchall_3
+    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_28
+    .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_21
+    .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_1b
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_15
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_f
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     :try_start_2
     new-instance v5, Lorg/apache/http/entity/ByteArrayEntity;
@@ -915,31 +909,31 @@
 
     invoke-direct {v5, v0}, Lorg/apache/http/entity/ByteArrayEntity;-><init>([B)V
 
-    const-string v9, "Content-Type"
+    const-string v10, "Content-Type"
 
     const-string v11, "application/x-www-form-urlencoded"
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "User-Agent"
+    const-string v10, "User-Agent"
 
-    const-string v11, "AMAP Location SDK Android 1.2.0"
+    const-string v11, "AMAP Location SDK Android 1.3.0"
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "Accept-Encoding"
+    const-string v10, "Accept-Encoding"
 
     const-string v11, "gzip"
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "Connection"
+    const-string v10, "Connection"
 
     const-string v11, "Keep-Alive"
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "X-INFO"
+    const-string v10, "X-INFO"
 
     const/4 v11, 0x0
 
@@ -949,41 +943,41 @@
 
     move-object/from16 v0, p4
 
-    invoke-virtual {v11, v0}, Lcom/amap/api/location/core/c;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v11, v0}, Lcom/amap/api/location/core/c;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "ia"
+    const-string v10, "ia"
 
     const-string v11, "1"
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "key"
+    const-string v10, "key"
 
     invoke-static {}, Lcom/amap/api/location/core/c;->a()Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-virtual {v6, v9, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v10, v11}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    invoke-virtual {v10}, Ljava/lang/StringBuffer;->length()I
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->length()I
 
     move-result v11
 
-    invoke-virtual {v10, v9, v11}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
+    invoke-virtual {v9, v10, v11}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
 
     invoke-virtual {v6, v5}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
     invoke-interface {v7, v6}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
-    move-result-object v11
+    move-result-object v10
 
-    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-interface {v10}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v5
 
@@ -991,27 +985,27 @@
 
     move-result v5
 
-    const/16 v9, 0xc8
+    const/16 v11, 0xc8
 
-    if-ne v5, v9, :cond_13
+    if-ne v5, v11, :cond_13
 
-    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v10}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v5
 
     invoke-interface {v5}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
     :try_end_2
     .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_26
-    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_20
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_1a
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_14
-    .catchall {:try_start_2 .. :try_end_2} :catchall_4
+    .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_22
+    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_1c
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_16
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_10
+    .catchall {:try_start_2 .. :try_end_2} :catchall_5
 
     move-result-object v5
 
     :try_start_3
-    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v10}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v4
 
@@ -1021,54 +1015,54 @@
 
     invoke-interface {v4}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     const-string v4, ""
 
-    const-string v12, "charset="
+    const-string v11, "charset="
 
-    invoke-virtual {v9, v12}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v8, v11}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v12
+    move-result v11
 
-    const/4 v13, -0x1
+    const/4 v12, -0x1
 
-    if-eq v12, v13, :cond_4
+    if-eq v11, v12, :cond_4
 
-    add-int/lit8 v4, v12, 0x8
+    add-int/lit8 v4, v11, 0x8
 
-    invoke-virtual {v9, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v8, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
     :cond_4
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_1b
+    if-eqz v8, :cond_16
 
     const-string v4, "UTF-8"
 
-    move-object v9, v4
+    move-object v8, v4
 
     :goto_1
-    invoke-static {v11}, Lcom/aps/l;->a(Lorg/apache/http/HttpResponse;)Z
+    invoke-static {v10}, Lcom/aps/l;->a(Lorg/apache/http/HttpResponse;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_15
 
     new-instance v4, Ljava/util/zip/GZIPInputStream;
 
     invoke-direct {v4, v5}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
     :try_end_3
-    .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_3} :catch_2d
-    .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_27
-    .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_3} :catch_21
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_1b
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_15
-    .catchall {:try_start_3 .. :try_end_3} :catchall_5
+    .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_3} :catch_29
+    .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_23
+    .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_3} :catch_1d
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_17
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_11
+    .catchall {:try_start_3 .. :try_end_3} :catchall_6
 
     :goto_2
     if-eqz v4, :cond_b
@@ -1076,29 +1070,29 @@
     :try_start_4
     new-instance v3, Ljava/io/InputStreamReader;
 
-    invoke-direct {v3, v4, v9}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-direct {v3, v4, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_4
     .catch Ljava/net/UnknownHostException; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Ljava/net/SocketException; {:try_start_4 .. :try_end_4} :catch_28
-    .catch Ljava/net/SocketTimeoutException; {:try_start_4 .. :try_end_4} :catch_22
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_4 .. :try_end_4} :catch_1c
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_16
-    .catchall {:try_start_4 .. :try_end_4} :catchall_6
+    .catch Ljava/net/SocketException; {:try_start_4 .. :try_end_4} :catch_24
+    .catch Ljava/net/SocketTimeoutException; {:try_start_4 .. :try_end_4} :catch_1e
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_4 .. :try_end_4} :catch_18
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_12
+    .catchall {:try_start_4 .. :try_end_4} :catchall_7
 
     :goto_3
     :try_start_5
     new-instance v2, Ljava/io/BufferedReader;
 
-    const/16 v9, 0x800
+    const/16 v8, 0x800
 
-    invoke-direct {v2, v3, v9}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    invoke-direct {v2, v3, v8}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
     :try_end_5
-    .catch Ljava/net/UnknownHostException; {:try_start_5 .. :try_end_5} :catch_2e
-    .catch Ljava/net/SocketException; {:try_start_5 .. :try_end_5} :catch_29
-    .catch Ljava/net/SocketTimeoutException; {:try_start_5 .. :try_end_5} :catch_23
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_5 .. :try_end_5} :catch_1d
-    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_17
-    .catchall {:try_start_5 .. :try_end_5} :catchall_7
+    .catch Ljava/net/UnknownHostException; {:try_start_5 .. :try_end_5} :catch_2a
+    .catch Ljava/net/SocketException; {:try_start_5 .. :try_end_5} :catch_25
+    .catch Ljava/net/SocketTimeoutException; {:try_start_5 .. :try_end_5} :catch_1f
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_5 .. :try_end_5} :catch_19
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_13
+    .catchall {:try_start_5 .. :try_end_5} :catchall_8
 
     :try_start_6
     const-string v1, ""
@@ -1110,14 +1104,14 @@
 
     if-eqz v1, :cond_c
 
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_6
     .catch Ljava/net/UnknownHostException; {:try_start_6 .. :try_end_6} :catch_0
-    .catch Ljava/net/SocketException; {:try_start_6 .. :try_end_6} :catch_2a
-    .catch Ljava/net/SocketTimeoutException; {:try_start_6 .. :try_end_6} :catch_24
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_6 .. :try_end_6} :catch_1e
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_18
-    .catchall {:try_start_6 .. :try_end_6} :catchall_8
+    .catch Ljava/net/SocketException; {:try_start_6 .. :try_end_6} :catch_26
+    .catch Ljava/net/SocketTimeoutException; {:try_start_6 .. :try_end_6} :catch_20
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_6 .. :try_end_6} :catch_1a
+    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_14
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     goto :goto_4
 
@@ -1151,7 +1145,7 @@
     :catchall_0
     move-exception v7
 
-    move-object v14, v7
+    move-object v13, v7
 
     move-object v7, v6
 
@@ -1165,7 +1159,7 @@
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     :goto_6
     if-eqz v6, :cond_5
@@ -1187,7 +1181,7 @@
     :try_start_8
     invoke-virtual {v4}, Ljava/util/zip/GZIPInputStream;->close()V
     :try_end_8
-    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_8
+    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_7
 
     :cond_7
     :goto_7
@@ -1196,7 +1190,7 @@
     :try_start_9
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_9
-    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_9
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_8
 
     :cond_8
     :goto_8
@@ -1205,7 +1199,7 @@
     :try_start_a
     invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_a
-    .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_a
+    .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_9
 
     :cond_9
     :goto_9
@@ -1214,7 +1208,7 @@
     :try_start_b
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_b
-    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_b
+    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_a
 
     :cond_a
     :goto_a
@@ -1224,14 +1218,14 @@
     :try_start_c
     new-instance v3, Ljava/io/InputStreamReader;
 
-    invoke-direct {v3, v5, v9}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-direct {v3, v5, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_c
     .catch Ljava/net/UnknownHostException; {:try_start_c .. :try_end_c} :catch_1
-    .catch Ljava/net/SocketException; {:try_start_c .. :try_end_c} :catch_28
-    .catch Ljava/net/SocketTimeoutException; {:try_start_c .. :try_end_c} :catch_22
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_c .. :try_end_c} :catch_1c
-    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_16
-    .catchall {:try_start_c .. :try_end_c} :catchall_6
+    .catch Ljava/net/SocketException; {:try_start_c .. :try_end_c} :catch_24
+    .catch Ljava/net/SocketTimeoutException; {:try_start_c .. :try_end_c} :catch_1e
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_c .. :try_end_c} :catch_18
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_12
+    .catchall {:try_start_c .. :try_end_c} :catchall_7
 
     goto :goto_3
 
@@ -1250,26 +1244,24 @@
 
     :cond_c
     :try_start_d
-    invoke-virtual {v10}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    const/4 v1, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v10}, Ljava/lang/StringBuffer;->length()I
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->length()I
 
-    move-result v9
+    move-result v10
 
-    invoke-virtual {v10, v1, v9}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
+    invoke-virtual {v9, v8, v10}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
     :try_end_d
     .catch Ljava/net/UnknownHostException; {:try_start_d .. :try_end_d} :catch_0
-    .catch Ljava/net/SocketException; {:try_start_d .. :try_end_d} :catch_2a
-    .catch Ljava/net/SocketTimeoutException; {:try_start_d .. :try_end_d} :catch_24
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_d .. :try_end_d} :catch_1e
-    .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_18
-    .catchall {:try_start_d .. :try_end_d} :catchall_8
-
-    move-object v1, v8
+    .catch Ljava/net/SocketException; {:try_start_d .. :try_end_d} :catch_26
+    .catch Ljava/net/SocketTimeoutException; {:try_start_d .. :try_end_d} :catch_20
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_d .. :try_end_d} :catch_1a
+    .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_14
+    .catchall {:try_start_d .. :try_end_d} :catchall_2
 
     :goto_b
     if-eqz v6, :cond_d
@@ -1291,7 +1283,7 @@
     :try_start_e
     invoke-virtual {v4}, Ljava/util/zip/GZIPInputStream;->close()V
     :try_end_e
-    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_f
+    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_b
 
     :cond_f
     :goto_c
@@ -1300,7 +1292,7 @@
     :try_start_f
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_f
-    .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_10
+    .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_c
 
     :cond_10
     :goto_d
@@ -1309,7 +1301,7 @@
     :try_start_10
     invoke-virtual {v3}, Ljava/io/InputStreamReader;->close()V
     :try_end_10
-    .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_11
+    .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_d
 
     :cond_11
     :goto_e
@@ -1318,7 +1310,7 @@
     :try_start_11
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_11
-    .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_12
+    .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_e
 
     :cond_12
     :goto_f
@@ -1335,23 +1327,23 @@
     :cond_13
     const/16 v9, 0x194
 
-    if-ne v5, v9, :cond_19
+    if-ne v5, v9, :cond_14
 
     :try_start_12
     new-instance v5, Lcom/amap/api/location/core/AMapLocException;
 
-    const-string v9, "\u670d\u52a1\u5668\u8fde\u63a5\u5931\u8d25 - UnknownServiceException"
+    const-string v8, "\u670d\u52a1\u5668\u8fde\u63a5\u5931\u8d25 - UnknownServiceException"
 
-    invoke-direct {v5, v9}, Lcom/amap/api/location/core/AMapLocException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v8}, Lcom/amap/api/location/core/AMapLocException;-><init>(Ljava/lang/String;)V
 
     throw v5
     :try_end_12
     .catch Ljava/net/UnknownHostException; {:try_start_12 .. :try_end_12} :catch_2
-    .catch Ljava/net/SocketException; {:try_start_12 .. :try_end_12} :catch_26
-    .catch Ljava/net/SocketTimeoutException; {:try_start_12 .. :try_end_12} :catch_20
-    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_12 .. :try_end_12} :catch_1a
-    .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_14
-    .catchall {:try_start_12 .. :try_end_12} :catchall_4
+    .catch Ljava/net/SocketException; {:try_start_12 .. :try_end_12} :catch_22
+    .catch Ljava/net/SocketTimeoutException; {:try_start_12 .. :try_end_12} :catch_1c
+    .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_12 .. :try_end_12} :catch_16
+    .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_10
+    .catchall {:try_start_12 .. :try_end_12} :catchall_5
 
     :catch_2
     move-exception v5
@@ -1382,7 +1374,7 @@
     :catchall_1
     move-exception v5
 
-    move-object v14, v5
+    move-object v13, v5
 
     move-object v5, v4
 
@@ -1392,7 +1384,7 @@
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
@@ -1433,161 +1425,97 @@
     :catch_6
     move-exception v7
 
-    move-object v14, v7
+    move-object v13, v7
 
-    move-object v7, v5
+    move-object v7, v6
 
-    move-object v5, v3
+    move-object v6, v5
 
-    move-object v3, v1
+    move-object v5, v4
 
-    move-object v1, v8
+    move-object v4, v3
 
-    move-object v8, v6
+    move-object v3, v2
 
-    move-object v6, v4
+    move-object v2, v1
 
-    move-object v4, v2
-
-    move-object v2, v14
+    move-object v1, v13
 
     :goto_13
     :try_start_14
-    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+
+    new-instance v1, Lcom/amap/api/location/core/AMapLocException;
+
+    const-string v8, "\u672a\u77e5\u7684\u9519\u8bef"
+
+    invoke-direct {v1, v8}, Lcom/amap/api/location/core/AMapLocException;-><init>(Ljava/lang/String;)V
+
+    throw v1
     :try_end_14
-    .catchall {:try_start_14 .. :try_end_14} :catchall_9
+    .catchall {:try_start_14 .. :try_end_14} :catchall_2
 
-    if-eqz v7, :cond_14
+    :catchall_2
+    move-exception v1
 
-    invoke-virtual {v7}, Lorg/apache/http/client/methods/HttpPost;->abort()V
-
-    :cond_14
-    if-eqz v8, :cond_15
-
-    invoke-interface {v8}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
-
-    :cond_15
-    if-eqz v5, :cond_16
-
-    :try_start_15
-    invoke-virtual {v5}, Ljava/util/zip/GZIPInputStream;->close()V
-    :try_end_15
-    .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_15} :catch_c
-
-    :cond_16
-    :goto_14
-    if-eqz v6, :cond_17
-
-    :try_start_16
-    invoke-virtual {v6}, Ljava/io/InputStream;->close()V
-    :try_end_16
-    .catch Ljava/lang/Throwable; {:try_start_16 .. :try_end_16} :catch_d
-
-    :cond_17
-    :goto_15
-    if-eqz v4, :cond_18
-
-    :try_start_17
-    invoke-virtual {v4}, Ljava/io/InputStreamReader;->close()V
-    :try_end_17
-    .catch Ljava/lang/Throwable; {:try_start_17 .. :try_end_17} :catch_e
-
-    :cond_18
-    :goto_16
-    if-eqz v3, :cond_12
-
-    :try_start_18
-    invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
-    :try_end_18
-    .catch Ljava/lang/Throwable; {:try_start_18 .. :try_end_18} :catch_7
-
-    goto :goto_f
+    goto/16 :goto_6
 
     :catch_7
-    move-exception v2
-
-    :goto_17
-    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_f
-
-    :catch_8
     move-exception v4
 
     goto/16 :goto_7
 
-    :catch_9
+    :catch_8
     move-exception v4
 
     invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_8
 
-    :catch_a
+    :catch_9
     move-exception v3
 
     invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_9
 
-    :catch_b
+    :catch_a
     move-exception v2
 
     invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto/16 :goto_a
 
-    :catch_c
-    move-exception v2
+    :catch_b
+    move-exception v4
 
-    goto :goto_14
+    goto :goto_c
+
+    :catch_c
+    move-exception v4
+
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_d
 
     :catch_d
-    move-exception v2
+    move-exception v3
 
-    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto :goto_15
+    goto :goto_e
 
     :catch_e
     move-exception v2
 
     invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto :goto_16
+    goto :goto_f
 
-    :catch_f
-    move-exception v4
-
-    goto/16 :goto_c
-
-    :catch_10
-    move-exception v4
-
-    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto/16 :goto_d
-
-    :catch_11
-    move-exception v3
-
-    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto/16 :goto_e
-
-    :catch_12
-    move-exception v2
-
-    goto :goto_17
-
-    :catchall_2
+    :catchall_3
     move-exception v7
 
-    move-object v14, v7
+    move-object v13, v7
 
     move-object v7, v6
 
@@ -1601,33 +1529,16 @@
 
     move-object v2, v1
 
-    move-object v1, v14
-
-    goto/16 :goto_6
-
-    :catchall_3
-    move-exception v6
-
-    move-object v14, v6
-
-    move-object v6, v5
-
-    move-object v5, v4
-
-    move-object v4, v3
-
-    move-object v3, v2
-
-    move-object v2, v1
-
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
     :catchall_4
-    move-exception v5
+    move-exception v6
 
-    move-object v14, v5
+    move-object v13, v6
+
+    move-object v6, v5
 
     move-object v5, v4
 
@@ -1637,14 +1548,16 @@
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
     :catchall_5
-    move-exception v4
+    move-exception v5
 
-    move-object v14, v4
+    move-object v13, v5
+
+    move-object v5, v4
 
     move-object v4, v3
 
@@ -1652,183 +1565,53 @@
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
     :catchall_6
-    move-exception v3
+    move-exception v4
 
-    move-object v14, v3
+    move-object v13, v4
+
+    move-object v4, v3
 
     move-object v3, v2
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
     :catchall_7
-    move-exception v2
+    move-exception v3
 
-    move-object v14, v2
+    move-object v13, v3
+
+    move-object v3, v2
 
     move-object v2, v1
 
-    move-object v1, v14
+    move-object v1, v13
 
     goto/16 :goto_6
 
     :catchall_8
-    move-exception v1
-
-    goto/16 :goto_6
-
-    :catchall_9
-    move-exception v1
-
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    move-object v5, v6
-
-    move-object v6, v7
-
-    move-object v7, v8
-
-    goto/16 :goto_6
-
-    :catch_13
-    move-exception v6
-
-    move-object v14, v6
-
-    move-object v6, v4
-
-    move-object v4, v2
-
-    move-object v2, v14
-
-    move-object v15, v8
-
-    move-object v8, v7
-
-    move-object v7, v5
-
-    move-object v5, v3
-
-    move-object v3, v1
-
-    move-object v1, v15
-
-    goto/16 :goto_13
-
-    :catch_14
-    move-exception v5
-
-    move-object v14, v5
-
-    move-object v5, v3
-
-    move-object v3, v1
-
-    move-object v1, v8
-
-    move-object v8, v7
-
-    move-object v7, v6
-
-    move-object v6, v4
-
-    move-object v4, v2
-
-    move-object v2, v14
-
-    goto/16 :goto_13
-
-    :catch_15
-    move-exception v4
-
-    move-object v14, v4
-
-    move-object v4, v2
-
-    move-object v2, v14
-
-    move-object v15, v1
-
-    move-object v1, v8
-
-    move-object v8, v7
-
-    move-object v7, v6
-
-    move-object v6, v5
-
-    move-object v5, v3
-
-    move-object v3, v15
-
-    goto/16 :goto_13
-
-    :catch_16
-    move-exception v3
-
-    move-object v14, v3
-
-    move-object v3, v1
-
-    move-object v1, v8
-
-    move-object v8, v7
-
-    move-object v7, v6
-
-    move-object v6, v5
-
-    move-object v5, v4
-
-    move-object v4, v2
-
-    move-object v2, v14
-
-    goto/16 :goto_13
-
-    :catch_17
     move-exception v2
 
-    move-object v14, v8
+    move-object v13, v2
 
-    move-object v8, v7
+    move-object v2, v1
 
-    move-object v7, v6
+    move-object v1, v13
 
-    move-object v6, v5
+    goto/16 :goto_6
 
-    move-object v5, v4
+    :catch_f
+    move-exception v6
 
-    move-object v4, v3
-
-    move-object v3, v1
-
-    move-object v1, v14
-
-    goto/16 :goto_13
-
-    :catch_18
-    move-exception v1
-
-    move-object v14, v1
-
-    move-object v1, v8
-
-    move-object v8, v7
-
-    move-object v7, v6
+    move-object v13, v6
 
     move-object v6, v5
 
@@ -1838,39 +1621,154 @@
 
     move-object v3, v2
 
-    move-object v2, v14
+    move-object v2, v1
+
+    move-object v1, v13
+
+    goto :goto_13
+
+    :catch_10
+    move-exception v5
+
+    move-object v13, v5
+
+    move-object v5, v4
+
+    move-object v4, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
+
+    move-object v1, v13
+
+    goto :goto_13
+
+    :catch_11
+    move-exception v4
+
+    move-object v13, v4
+
+    move-object v4, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
+
+    move-object v1, v13
+
+    goto :goto_13
+
+    :catch_12
+    move-exception v3
+
+    move-object v13, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
+
+    move-object v1, v13
 
     goto/16 :goto_13
 
-    :catch_19
+    :catch_13
+    move-exception v2
+
+    move-object v13, v2
+
+    move-object v2, v1
+
+    move-object v1, v13
+
+    goto/16 :goto_13
+
+    :catch_14
+    move-exception v1
+
+    goto/16 :goto_13
+
+    :catch_15
     move-exception v6
 
     move-object v6, v5
+
+    goto/16 :goto_12
+
+    :catch_16
+    move-exception v5
+
+    goto/16 :goto_12
+
+    :catch_17
+    move-exception v4
+
+    move-object v4, v5
+
+    goto/16 :goto_12
+
+    :catch_18
+    move-exception v3
+
+    move-object v3, v4
+
+    move-object v4, v5
+
+    goto/16 :goto_12
+
+    :catch_19
+    move-exception v2
+
+    move-object v2, v3
+
+    move-object v3, v4
+
+    move-object v4, v5
 
     goto/16 :goto_12
 
     :catch_1a
-    move-exception v5
+    move-exception v1
+
+    move-object v1, v2
+
+    move-object v2, v3
+
+    move-object v3, v4
+
+    move-object v4, v5
 
     goto/16 :goto_12
 
     :catch_1b
+    move-exception v6
+
+    move-object v6, v5
+
+    goto/16 :goto_11
+
+    :catch_1c
+    move-exception v5
+
+    goto/16 :goto_11
+
+    :catch_1d
     move-exception v4
 
     move-object v4, v5
 
-    goto/16 :goto_12
+    goto/16 :goto_11
 
-    :catch_1c
+    :catch_1e
     move-exception v3
 
     move-object v3, v4
 
     move-object v4, v5
 
-    goto/16 :goto_12
+    goto/16 :goto_11
 
-    :catch_1d
+    :catch_1f
     move-exception v2
 
     move-object v2, v3
@@ -1878,62 +1776,10 @@
     move-object v3, v4
 
     move-object v4, v5
-
-    goto/16 :goto_12
-
-    :catch_1e
-    move-exception v1
-
-    move-object v1, v2
-
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    goto/16 :goto_12
-
-    :catch_1f
-    move-exception v6
-
-    move-object v6, v5
 
     goto/16 :goto_11
 
     :catch_20
-    move-exception v5
-
-    goto/16 :goto_11
-
-    :catch_21
-    move-exception v4
-
-    move-object v4, v5
-
-    goto/16 :goto_11
-
-    :catch_22
-    move-exception v3
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    goto/16 :goto_11
-
-    :catch_23
-    move-exception v2
-
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    goto/16 :goto_11
-
-    :catch_24
     move-exception v1
 
     move-object v1, v2
@@ -1946,26 +1792,26 @@
 
     goto/16 :goto_11
 
-    :catch_25
+    :catch_21
     move-exception v6
 
     move-object v6, v5
 
     goto/16 :goto_10
 
-    :catch_26
+    :catch_22
     move-exception v5
 
     goto/16 :goto_10
 
-    :catch_27
+    :catch_23
     move-exception v4
 
     move-object v4, v5
 
     goto/16 :goto_10
 
-    :catch_28
+    :catch_24
     move-exception v3
 
     move-object v3, v4
@@ -1974,7 +1820,7 @@
 
     goto/16 :goto_10
 
-    :catch_29
+    :catch_25
     move-exception v2
 
     move-object v2, v3
@@ -1985,7 +1831,7 @@
 
     goto/16 :goto_10
 
-    :catch_2a
+    :catch_26
     move-exception v1
 
     move-object v1, v2
@@ -1998,19 +1844,19 @@
 
     goto/16 :goto_10
 
-    :catch_2b
+    :catch_27
     move-exception v7
 
     goto/16 :goto_5
 
-    :catch_2c
+    :catch_28
     move-exception v6
 
     move-object v6, v7
 
     goto/16 :goto_5
 
-    :catch_2d
+    :catch_29
     move-exception v4
 
     move-object v4, v5
@@ -2021,7 +1867,7 @@
 
     goto/16 :goto_5
 
-    :catch_2e
+    :catch_2a
     move-exception v2
 
     move-object v2, v3
@@ -2036,7 +1882,7 @@
 
     goto/16 :goto_5
 
-    :cond_19
+    :cond_14
     move-object v5, v4
 
     move-object v4, v3
@@ -2049,13 +1895,13 @@
 
     goto/16 :goto_b
 
-    :cond_1a
+    :cond_15
     move-object v4, v3
 
     goto/16 :goto_2
 
-    :cond_1b
-    move-object v9, v4
+    :cond_16
+    move-object v8, v4
 
     goto/16 :goto_1
 .end method
@@ -3012,7 +2858,7 @@
 .end method
 
 .method public a([BLandroid/content/Context;Lorg/json/JSONObject;)Ljava/lang/String;
-    .locals 18
+    .locals 19
 
     invoke-static/range {p2 .. p2}, Lcom/aps/t;->b(Landroid/content/Context;)Landroid/net/NetworkInfo;
 
@@ -3108,7 +2954,9 @@
 
     new-instance v6, Lorg/apache/http/client/methods/HttpPost;
 
-    const-string v14, "http://apilocate.amap.com/mobile/binary"
+    invoke-static {}, Lcom/amap/api/location/core/c;->j()Ljava/lang/String;
+
+    move-result-object v14
 
     invoke-direct {v6, v14}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
     :try_end_1
@@ -3208,11 +3056,55 @@
 
     const/16 v16, 0x4
 
-    aget-object v13, v13, v16
+    aget-object v16, v13, v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v6, v14, v0}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_4
+    invoke-static {}, Lcom/amap/api/location/core/d;->a()Ljava/lang/String;
+
+    move-result-object v14
+
+    new-instance v16, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v17, "key="
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const/16 v17, 0x1
+
+    aget-object v13, v13, v17
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v14, v13}, Lcom/amap/api/location/core/d;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v13
+
+    const-string v16, "ts"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v6, v0, v14}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v14, "scode"
 
     invoke-virtual {v6, v14, v13}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_4
     const/4 v13, 0x0
 
     invoke-virtual {v10}, Ljava/lang/StringBuffer;->length()I
@@ -3470,7 +3362,7 @@
 
     const/4 v2, 0x1
 
-    move-object/from16 v17, v7
+    move-object/from16 v18, v7
 
     move-object v7, v4
 
@@ -3480,7 +3372,7 @@
 
     move-object v5, v3
 
-    move-object/from16 v3, v17
+    move-object/from16 v3, v18
 
     :goto_8
     if-eqz v6, :cond_f
@@ -3549,7 +3441,7 @@
 
     move-object v6, v8
 
-    move-object/from16 v17, v5
+    move-object/from16 v18, v5
 
     move-object v5, v9
 
@@ -3559,7 +3451,7 @@
 
     move-object v1, v3
 
-    move-object/from16 v3, v17
+    move-object/from16 v3, v18
 
     goto/16 :goto_0
 
@@ -3696,11 +3588,11 @@
     :catchall_2
     move-exception v2
 
-    move-object/from16 v17, v2
+    move-object/from16 v18, v2
 
     move-object v2, v1
 
-    move-object/from16 v1, v17
+    move-object/from16 v1, v18
 
     goto/16 :goto_5
 
@@ -3841,7 +3733,7 @@
 
     move-object v4, v10
 
-    move-object/from16 v17, v1
+    move-object/from16 v18, v1
 
     move-object v1, v2
 
@@ -3851,7 +3743,7 @@
 
     move-object v5, v3
 
-    move-object/from16 v3, v17
+    move-object/from16 v3, v18
 
     goto/16 :goto_8
 

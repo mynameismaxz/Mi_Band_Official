@@ -5,14 +5,30 @@
 # static fields
 .field static a:I
 
+.field static b:Ljava/lang/String;
+
+.field private static c:Landroid/content/SharedPreferences;
+
+.field private static d:Landroid/content/SharedPreferences$Editor;
+
+.field private static e:Ljava/lang/reflect/Method;
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
 
     const/16 v0, 0x800
 
     sput v0, Lcom/amap/api/location/core/d;->a:I
+
+    sput-object v1, Lcom/amap/api/location/core/d;->c:Landroid/content/SharedPreferences;
+
+    sput-object v1, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
+    sput-object v1, Lcom/amap/api/location/core/d;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -25,10 +41,176 @@
     return-void
 .end method
 
+.method public static a()Ljava/lang/String;
+    .locals 6
+
+    :try_start_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "1"
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v4, 0x0
+
+    add-int/lit8 v5, v2, -0x2
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    sget-object v1, Lcom/amap/api/location/core/d;->b:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcom/amap/api/location/core/d;->b:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lcom/amap/api/location/core/c;->a(Landroid/content/Context;)Lcom/amap/api/location/core/c;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/amap/api/location/core/c;->i()Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/amap/api/location/core/d;->b:Ljava/lang/String;
+
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lcom/amap/api/location/core/d;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ":"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x3
+
+    invoke-virtual {p0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ":"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/amap/api/location/core/g;->a(Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
 .method public static a(Landroid/content/Context;Lcom/amap/api/location/AMapLocation;)V
     .locals 4
 
     :try_start_0
+    sget-object v0, Lcom/amap/api/location/core/d;->c:Landroid/content/SharedPreferences;
+
+    if-nez v0, :cond_0
+
     const-string v0, "last_know_location"
 
     const/4 v1, 0x0
@@ -37,9 +219,23 @@
 
     move-result-object v0
 
+    sput-object v0, Lcom/amap/api/location/core/d;->c:Landroid/content/SharedPreferences;
+
+    :cond_0
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lcom/amap/api/location/core/d;->c:Landroid/content/SharedPreferences;
+
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
+
+    sput-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
+    :cond_1
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
 
     const-string v1, "last_know_lat"
 
@@ -53,6 +249,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
     const-string v1, "last_know_lng"
 
     invoke-virtual {p1}, Lcom/amap/api/location/AMapLocation;->getLongitude()D
@@ -65,6 +263,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
     const-string v1, "province"
 
     invoke-virtual {p1}, Lcom/amap/api/location/AMapLocation;->getProvince()Ljava/lang/String;
@@ -72,6 +272,8 @@
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
 
     const-string v1, "city"
 
@@ -81,6 +283,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
     const-string v1, "district"
 
     invoke-virtual {p1}, Lcom/amap/api/location/AMapLocation;->getDistrict()Ljava/lang/String;
@@ -88,6 +292,8 @@
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
 
     const-string v1, "cityCode"
 
@@ -97,6 +303,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
     const-string v1, "adCode"
 
     invoke-virtual {p1}, Lcom/amap/api/location/AMapLocation;->getAdCode()Ljava/lang/String;
@@ -104,6 +312,8 @@
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
 
     const-string v1, "accuracy"
 
@@ -113,6 +323,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
     const-string v1, "time"
 
     invoke-virtual {p1}, Lcom/amap/api/location/AMapLocation;->getTime()J
@@ -121,7 +333,9 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    sget-object v0, Lcom/amap/api/location/core/d;->d:Landroid/content/SharedPreferences$Editor;
+
+    invoke-static {v0}, Lcom/amap/api/location/core/d;->a(Landroid/content/SharedPreferences$Editor;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -132,6 +346,68 @@
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method private static a(Landroid/content/SharedPreferences$Editor;)V
+    .locals 3
+
+    if-nez p0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x9
+
+    if-lt v0, v1, :cond_2
+
+    :try_start_0
+    sget-object v0, Lcom/amap/api/location/core/d;->e:Ljava/lang/reflect/Method;
+
+    if-nez v0, :cond_1
+
+    const-class v0, Landroid/content/SharedPreferences$Editor;
+
+    const-string v1, "apply"
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Class;
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/amap/api/location/core/d;->e:Ljava/lang/reflect/Method;
+
+    :cond_1
+    sget-object v0, Lcom/amap/api/location/core/d;->e:Ljava/lang/reflect/Method;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     goto :goto_0
 .end method
@@ -210,6 +486,14 @@
     if-nez v1, :cond_2
 
     const-string v1, "USERKEY_PLAT_NOMATCH"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "INVALID_USER_SCODE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

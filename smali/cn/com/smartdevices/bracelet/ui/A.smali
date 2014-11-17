@@ -1,125 +1,82 @@
 .class Lcn/com/smartdevices/bracelet/ui/A;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/GestureDetector$OnGestureListener;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
 
 # instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+.field final synthetic a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;)V
+.method constructor <init>(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/DynamicDetailFragment;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDown(Landroid/view/MotionEvent;)Z
+.method public onFailure(I[Lorg/apache/http/Header;[BLjava/lang/Throwable;)V
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    return v0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
+
+    return-void
 .end method
 
-.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 2
+.method public onSuccess(I[Lorg/apache/http/Header;[B)V
+    .locals 3
 
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+    const/4 v2, 0x1
 
-    move-result v0
+    if-eqz p3, :cond_0
 
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+    array-length v0, p3
 
-    move-result v1
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_0
-
-    const/high16 v0, 0x447a0000
-
-    cmpl-float v0, p3, v0
-
-    if-lez v0, :cond_0
-
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x1017
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
+    if-ge v0, v2, :cond_1
 
     :cond_0
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    move-result v0
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
 
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+    :goto_0
+    return-void
 
-    move-result v1
+    :cond_1
+    new-instance v0, Ljava/lang/String;
 
-    cmpl-float v0, v0, v1
+    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    if-lez v0, :cond_1
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/webapi/WebRes;->parseWeixinQR(Ljava/lang/String;)Ljava/lang/String;
 
-    const/high16 v0, -0x3b860000
+    move-result-object v0
 
-    cmpg-float v0, p3, v0
+    if-eqz v0, :cond_2
 
-    if-gez v0, :cond_1
+    iget-object v1, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    sget-object v0, Lcn/com/smartdevices/bracelet/ui/DynamicFragment;->mHandler:Landroid/os/Handler;
+    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->a(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    const/16 v1, 0x1018
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->h(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
+    :cond_2
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/ui/A;->a:Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;
 
-    goto :goto_1
-.end method
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;->i(Lcn/com/smartdevices/bracelet/ui/BindWeixinActivity;)V
 
-.method public onLongPress(Landroid/view/MotionEvent;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onShowPress(Landroid/view/MotionEvent;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+    goto :goto_0
 .end method

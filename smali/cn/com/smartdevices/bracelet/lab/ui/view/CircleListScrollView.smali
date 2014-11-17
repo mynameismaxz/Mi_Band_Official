@@ -325,7 +325,7 @@
 
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/view/CircleListScrollView;->e:Landroid/content/Context;
 
-    const v1, 0x7f03000e
+    const v1, 0x7f030010
 
     const/4 v2, 0x0
 
@@ -333,7 +333,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f070057
+    const v0, 0x7f0a0061
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -359,7 +359,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f070056
+    const v0, 0x7f0a0060
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -388,7 +388,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .locals 2
+    .locals 1
 
     invoke-super/range {p0 .. p5}, Landroid/widget/HorizontalScrollView;->onLayout(ZIIII)V
 
@@ -403,12 +403,6 @@
     invoke-direct {p0, v0}, Lcn/com/smartdevices/bracelet/lab/ui/view/CircleListScrollView;->b(I)V
 
     :cond_0
-    const-string v0, "Lab"
-
-    const-string v1, "onLayout"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     return-void
 .end method
 
@@ -432,60 +426,8 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-lt v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
-    :cond_0
-    const-string v0, "Lab"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onScrollChanged l = "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " t = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "  oldl = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " oldt = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_1
     iget-object v2, p0, Lcn/com/smartdevices/bracelet/lab/ui/view/CircleListScrollView;->a:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -497,6 +439,9 @@
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
 .method public setScroll(I)V

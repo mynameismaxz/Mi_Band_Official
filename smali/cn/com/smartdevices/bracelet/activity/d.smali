@@ -20,21 +20,11 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 3
+    .locals 1
 
-    const-string v0, "file:///android_asset/useragreement.html"
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/activity/d;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
 
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/activity/d;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
-
-    const v2, 0x7f0c00d8
-
-    invoke-virtual {v1, v2}, Lcn/com/smartdevices/bracelet/activity/LoginActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcn/com/smartdevices/bracelet/activity/d;->a:Lcn/com/smartdevices/bracelet/activity/LoginActivity;
-
-    invoke-static {v0, v1, v2}, Lcn/com/smartdevices/bracelet/Utils;->gotoWeb(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
+    invoke-static {v0}, Lcn/com/smartdevices/bracelet/Utils;->showUserAgreement(Landroid/content/Context;)V
 
     return-void
 .end method

@@ -80,10 +80,6 @@
 
 .field private k:Lcom/amap/api/location/e;
 
-.field private l:Lcom/amap/api/location/core/c;
-
-.field private m:Ljava/lang/String;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -218,10 +214,6 @@
 
     invoke-static {p1}, Lcom/amap/api/location/core/c;->a(Landroid/content/Context;)Lcom/amap/api/location/core/c;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
     const-string v0, "location"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -243,14 +235,6 @@
     invoke-direct {v0, v1, v2}, Lcom/amap/api/location/a;-><init>(Landroid/content/Context;Landroid/location/LocationManager;)V
 
     iput-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->c:Lcom/amap/api/location/a;
-
-    iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
-    invoke-virtual {v0, p1}, Lcom/amap/api/location/core/c;->c(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->m:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -266,7 +250,7 @@
 .end method
 
 .method private a(Ljava/lang/String;JFLcom/amap/api/location/AMapLocationListener;Z)V
-    .locals 10
+    .locals 11
 
     :try_start_0
     iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->c:Lcom/amap/api/location/a;
@@ -293,16 +277,6 @@
     const-string v5, "lbs"
 
     :goto_0
-    iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
-    iget-object v1, p0, Lcom/amap/api/location/LocationManagerProxy;->m:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/amap/api/location/core/c;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
     const-string v0, "lbs"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -310,27 +284,6 @@
     move-result v0
 
     if-eqz v0, :cond_1
-
-    const-string v5, "network"
-
-    :cond_1
-    const-string v0, "lbs"
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
-    iget-object v1, p0, Lcom/amap/api/location/LocationManagerProxy;->m:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/amap/api/location/core/c;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->c:Lcom/amap/api/location/a;
 
@@ -340,7 +293,7 @@
 
     move v3, p4
 
-    move-object v4, p5
+    move-object/from16 v4, p5
 
     move/from16 v6, p6
 
@@ -349,14 +302,14 @@
     :goto_1
     return-void
 
-    :cond_2
+    :cond_1
     const-string v0, "gps"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->c:Lcom/amap/api/location/a;
 
@@ -366,7 +319,7 @@
 
     move v3, p4
 
-    move-object v4, p5
+    move-object/from16 v4, p5
 
     move/from16 v6, p6
 
@@ -383,8 +336,23 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     :try_start_1
+    iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->d:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v10
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3
+
+    invoke-static {}, Landroid/os/Looper;->prepare()V
+
+    :cond_3
     new-instance v0, Lcom/amap/api/location/g;
 
     const/4 v6, 0x0
@@ -393,7 +361,7 @@
 
     move v3, p4
 
-    move-object v4, p5
+    move-object/from16 v4, p5
 
     invoke-direct/range {v0 .. v6}, Lcom/amap/api/location/g;-><init>(JFLcom/amap/api/location/AMapLocationListener;Ljava/lang/String;Z)V
 
@@ -409,7 +377,7 @@
 
     move v8, p4
 
-    invoke-virtual/range {v4 .. v9}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    invoke-virtual/range {v4 .. v10}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -1124,16 +1092,6 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
-    iget-object v2, p0, Lcom/amap/api/location/LocationManagerProxy;->m:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lcom/amap/api/location/core/c;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
     iget-object v1, p0, Lcom/amap/api/location/LocationManagerProxy;->c:Lcom/amap/api/location/a;
 
     invoke-virtual {v1}, Lcom/amap/api/location/a;->a()Lcom/amap/api/location/AMapLocation;
@@ -1367,7 +1325,7 @@
     .locals 1
 
     :try_start_0
-    const-string v0, "V1.2.0"
+    const-string v0, "V1.3.0"
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1714,16 +1672,6 @@
     const-string v0, "lbs"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/amap/api/location/LocationManagerProxy;->l:Lcom/amap/api/location/core/c;
-
-    iget-object v1, p0, Lcom/amap/api/location/LocationManagerProxy;->m:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/amap/api/location/core/c;->a(Ljava/lang/String;)Z
 
     move-result v0
 

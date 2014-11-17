@@ -1,309 +1,58 @@
-.class final Lcn/com/smartdevices/bracelet/lab/ui/Y;
-.super Ljava/lang/Thread;
+.class Lcn/com/smartdevices/bracelet/lab/ui/y;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lcn/com/smartdevices/bracelet/lab/ui/X;
+# static fields
+.field static final a:I = 0x7d0
+
+.field static b:J
 
 
 # direct methods
-.method constructor <init>(Lcn/com/smartdevices/bracelet/lab/ui/X;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
+    const-wide/16 v0, 0x0
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SportTonePlayer-"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcn/com/smartdevices/bracelet/lab/ui/X;->b(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    sput-wide v0, Lcn/com/smartdevices/bracelet/lab/ui/y;->b:J
 
     return-void
 .end method
 
+.method private constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public run()V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    :goto_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->c(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/util/LinkedList;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->c(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/util/LinkedList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcn/com/smartdevices/bracelet/lab/ui/Z;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget v1, v0, Lcn/com/smartdevices/bracelet/lab/ui/Z;->a:I
-
-    packed-switch v1, :pswitch_data_0
-
-    :cond_0
-    :goto_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->c(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/util/LinkedList;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->c(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/util/LinkedList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;Lcn/com/smartdevices/bracelet/lab/ui/Y;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->f(Lcn/com/smartdevices/bracelet/lab/ui/X;)V
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method static a()Z
+    .locals 6
 
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    throw v0
+    move-result-wide v0
 
-    :pswitch_0
-    iget-object v1, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
+    sget-wide v2, Lcn/com/smartdevices/bracelet/lab/ui/y;->b:J
 
-    invoke-static {v1, v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;Lcn/com/smartdevices/bracelet/lab/ui/Z;)V
+    sub-long v2, v0, v2
 
-    goto :goto_1
+    const-wide/16 v4, 0x7d0
 
-    :pswitch_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
+    cmp-long v2, v2, v4
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
+    if-gtz v2, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_1
+    :goto_0
+    return v0
 
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
+    :cond_0
+    sput-wide v0, Lcn/com/smartdevices/bracelet/lab/ui/y;->b:J
 
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;Landroid/media/MediaPlayer;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->d(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/AudioManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0, v2}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;Landroid/media/AudioManager;)V
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->e(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->e(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->getState()Ljava/lang/Thread$State;
-
-    move-result-object v0
-
-    sget-object v1, Ljava/lang/Thread$State;->TERMINATED:Ljava/lang/Thread$State;
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->e(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Looper;->quit()V
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->b(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "STOP command without a player"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_1
-
-    :pswitch_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->pause()V
-
-    goto/16 :goto_1
-
-    :cond_2
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->b(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "PAUSE command without a player"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_1
-
-    :pswitch_3
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->a(Lcn/com/smartdevices/bracelet/lab/ui/X;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
-
-    goto/16 :goto_1
-
-    :cond_3
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/lab/ui/Y;->a:Lcn/com/smartdevices/bracelet/lab/ui/X;
-
-    invoke-static {v0}, Lcn/com/smartdevices/bracelet/lab/ui/X;->b(Lcn/com/smartdevices/bracelet/lab/ui/X;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "RESUME command without a player"
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_1
-
-    :cond_4
-    :try_start_3
-    monitor-exit v1
-
-    goto/16 :goto_0
-
-    :catchall_1
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+    goto :goto_0
 .end method

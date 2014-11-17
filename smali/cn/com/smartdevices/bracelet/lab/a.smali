@@ -3,18 +3,18 @@
 
 
 # instance fields
-.field final synthetic b:Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;
+.field final synthetic b:I
 
-.field private final synthetic c:I
+.field final synthetic c:Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;
 
 
 # direct methods
 .method constructor <init>(Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;I)V
     .locals 0
 
-    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/a;->b:Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;
+    iput-object p1, p0, Lcn/com/smartdevices/bracelet/lab/a;->c:Lcn/com/smartdevices/bracelet/lab/LabSportAnalyserController;
 
-    iput p2, p0, Lcn/com/smartdevices/bracelet/lab/a;->c:I
+    iput p2, p0, Lcn/com/smartdevices/bracelet/lab/a;->b:I
 
     invoke-direct {p0}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;-><init>()V
 
@@ -24,29 +24,9 @@
 
 # virtual methods
 .method public onFailed(Ljava/lang/Object;)V
-    .locals 3
+    .locals 0
 
     invoke-super {p0, p1}, Lcn/com/smartdevices/bracelet/BleTask/BleCallBack;->onFailed(Ljava/lang/Object;)V
-
-    const-string v0, "Lab"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "setLatency failed......"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/a;->c:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -70,11 +50,15 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "setLatency success......"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/a;->c:I
+    move-result-object v1
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/a;->b:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -84,7 +68,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -94,11 +78,15 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v2, "setLatency failed......"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/a;->c:I
+    move-result-object v1
+
+    iget v2, p0, Lcn/com/smartdevices/bracelet/lab/a;->b:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -108,7 +96,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->f(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcn/com/smartdevices/bracelet/Debug;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

@@ -162,7 +162,7 @@
 
     invoke-direct {v1}, Lcn/com/smartdevices/bracelet/model/PicUrl;-><init>()V
 
-    const-string v2, "drawable://2130837599"
+    const-string v2, "drawable://2130837602"
 
     iput-object v2, v1, Lcn/com/smartdevices/bracelet/model/PicUrl;->thumbUrl:Ljava/lang/String;
 
@@ -220,14 +220,8 @@
     move v2, v0
 
     :goto_0
-    if-lt v2, v1, :cond_2
+    if-ge v2, v1, :cond_1
 
-    :cond_1
-    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->allComments:Ljava/lang/String;
-
-    return-object v0
-
-    :cond_2
     iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->comments:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -236,21 +230,21 @@
 
     check-cast v0, Lcn/com/smartdevices/bracelet/model/CommentItem;
 
-    iget-object v3, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->allComments:Ljava/lang/String;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v4, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->allComments:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v4, v0, Lcn/com/smartdevices/bracelet/model/CommentItem;->userInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
 
-    iget-object v3, v0, Lcn/com/smartdevices/bracelet/model/CommentItem;->userInfo:Lcn/com/smartdevices/bracelet/model/PersonInfo;
+    iget-object v4, v4, Lcn/com/smartdevices/bracelet/model/PersonInfo;->nickname:Ljava/lang/String;
 
-    iget-object v3, v3, Lcn/com/smartdevices/bracelet/model/PersonInfo;->nickname:Ljava/lang/String;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -283,4 +277,9 @@
     move v2, v0
 
     goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcn/com/smartdevices/bracelet/model/MicroBlogItem;->allComments:Ljava/lang/String;
+
+    return-object v0
 .end method

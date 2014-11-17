@@ -8,57 +8,49 @@
 # instance fields
 .field private A:J
 
-.field private B:J
+.field private B:Lcom/aps/l;
 
-.field private C:J
+.field private C:I
 
-.field private D:Lcom/aps/l;
+.field private D:Ljava/lang/String;
 
-.field private E:I
+.field private E:Lcom/aps/y;
 
-.field private F:Ljava/lang/String;
+.field private F:Ljava/lang/StringBuilder;
 
-.field private G:Lcom/aps/y;
+.field private G:J
 
-.field private H:Lcom/aps/ae;
+.field private H:J
 
-.field private I:Ljava/lang/StringBuilder;
+.field private I:Landroid/telephony/CellLocation;
 
-.field private J:J
+.field private J:Ljava/lang/String;
 
-.field private K:J
+.field private K:Ljava/lang/String;
 
-.field private L:Landroid/telephony/CellLocation;
+.field private L:Z
 
-.field private M:Ljava/lang/String;
+.field a:J
 
-.field private N:Ljava/lang/String;
+.field b:Ljava/util/TimerTask;
 
-.field private O:Z
+.field c:Ljava/util/Timer;
 
-.field a:I
+.field d:Lcom/aps/ae;
 
-.field b:J
+.field e:I
 
-.field c:Ljava/util/TimerTask;
+.field private f:Landroid/content/Context;
 
-.field d:Ljava/util/Timer;
+.field private g:I
 
-.field e:Lcom/aps/ae;
+.field private h:Landroid/net/ConnectivityManager;
 
-.field f:I
+.field private i:Landroid/net/wifi/WifiManager;
 
-.field private g:Landroid/content/Context;
+.field private j:Landroid/telephony/TelephonyManager;
 
-.field private h:I
-
-.field private i:Landroid/net/ConnectivityManager;
-
-.field private j:Landroid/net/wifi/WifiManager;
-
-.field private k:Landroid/telephony/TelephonyManager;
-
-.field private l:Ljava/util/List;
+.field private k:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -69,13 +61,27 @@
     .end annotation
 .end field
 
-.field private m:Ljava/util/List;
+.field private l:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
             "Landroid/net/wifi/ScanResult;",
             ">;"
+        }
+    .end annotation
+.end field
+
+.field private m:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Landroid/app/PendingIntent;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/aps/j;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -94,41 +100,29 @@
     .end annotation
 .end field
 
-.field private o:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Landroid/app/PendingIntent;",
-            "Ljava/util/List",
-            "<",
-            "Lcom/aps/j;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field private o:Lcom/aps/b;
 
-.field private p:Lcom/aps/b;
+.field private p:Landroid/telephony/PhoneStateListener;
 
-.field private q:Landroid/telephony/PhoneStateListener;
+.field private q:I
 
-.field private r:I
+.field private r:Lcom/aps/r;
 
-.field private s:Lcom/aps/r;
+.field private s:Landroid/net/wifi/WifiInfo;
 
-.field private t:Landroid/net/wifi/WifiInfo;
+.field private t:Lorg/json/JSONObject;
 
-.field private u:Lorg/json/JSONObject;
+.field private u:Ljava/lang/String;
 
-.field private v:Ljava/lang/String;
+.field private v:Lcom/aps/c;
 
-.field private w:Lcom/aps/c;
+.field private w:J
 
-.field private x:J
+.field private x:Z
 
-.field private y:Z
+.field private y:J
 
-.field private z:Z
+.field private z:J
 
 
 # direct methods
@@ -143,17 +137,23 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iput-object v1, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
-    iput-object v1, p0, Lcom/aps/a;->i:Landroid/net/ConnectivityManager;
+    iput-object v1, p0, Lcom/aps/a;->h:Landroid/net/ConnectivityManager;
 
-    iput-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iput-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
-    iput-object v1, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iput-object v1, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -161,11 +161,11 @@
 
     iput-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iput-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -173,91 +173,77 @@
 
     iput-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
-
     new-instance v0, Lcom/aps/b;
 
     invoke-direct {v0}, Lcom/aps/b;-><init>()V
 
-    iput-object v0, p0, Lcom/aps/a;->p:Lcom/aps/b;
+    iput-object v0, p0, Lcom/aps/a;->o:Lcom/aps/b;
 
-    iput-object v1, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iput-object v1, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     const/16 v0, -0x71
 
-    iput v0, p0, Lcom/aps/a;->r:I
+    iput v0, p0, Lcom/aps/a;->q:I
 
     new-instance v0, Lcom/aps/r;
 
     invoke-direct {v0, p0, v1}, Lcom/aps/r;-><init>(Lcom/aps/a;Lcom/aps/h;)V
 
-    iput-object v0, p0, Lcom/aps/a;->s:Lcom/aps/r;
+    iput-object v0, p0, Lcom/aps/a;->r:Lcom/aps/r;
 
-    iput-object v1, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iput-object v1, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
-    iput-object v1, p0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iput-object v1, p0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
-    iput-object v1, p0, Lcom/aps/a;->v:Ljava/lang/String;
+    iput-object v1, p0, Lcom/aps/a;->u:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iput-object v1, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
-    iput-wide v2, p0, Lcom/aps/a;->x:J
+    iput-wide v2, p0, Lcom/aps/a;->w:J
 
-    iput-boolean v4, p0, Lcom/aps/a;->y:Z
+    iput-boolean v4, p0, Lcom/aps/a;->x:Z
 
-    const/4 v0, 0x1
+    iput-wide v2, p0, Lcom/aps/a;->y:J
 
-    iput-boolean v0, p0, Lcom/aps/a;->z:Z
+    iput-wide v2, p0, Lcom/aps/a;->z:J
 
     iput-wide v2, p0, Lcom/aps/a;->A:J
-
-    iput-wide v2, p0, Lcom/aps/a;->B:J
-
-    iput-wide v2, p0, Lcom/aps/a;->C:J
 
     invoke-static {}, Lcom/aps/l;->a()Lcom/aps/l;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aps/a;->D:Lcom/aps/l;
+    iput-object v0, p0, Lcom/aps/a;->B:Lcom/aps/l;
 
-    iput v4, p0, Lcom/aps/a;->E:I
+    iput v4, p0, Lcom/aps/a;->C:I
 
     const-string v0, "00:00:00:00:00:00"
 
-    iput-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iput-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/aps/a;->G:Lcom/aps/y;
-
-    iput-object v1, p0, Lcom/aps/a;->H:Lcom/aps/ae;
+    iput-object v1, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput-object v0, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
-    iput-wide v2, p0, Lcom/aps/a;->J:J
+    iput-wide v2, p0, Lcom/aps/a;->G:J
 
-    iput-wide v2, p0, Lcom/aps/a;->K:J
+    iput-wide v2, p0, Lcom/aps/a;->H:J
 
-    iput v4, p0, Lcom/aps/a;->a:I
+    iput-wide v2, p0, Lcom/aps/a;->a:J
 
-    iput-wide v2, p0, Lcom/aps/a;->b:J
+    iput-object v1, p0, Lcom/aps/a;->I:Landroid/telephony/CellLocation;
 
-    iput-object v1, p0, Lcom/aps/a;->L:Landroid/telephony/CellLocation;
+    iput-object v1, p0, Lcom/aps/a;->J:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/aps/a;->M:Ljava/lang/String;
+    iput-object v1, p0, Lcom/aps/a;->K:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/aps/a;->N:Ljava/lang/String;
+    iput-boolean v4, p0, Lcom/aps/a;->L:Z
 
-    iput-boolean v4, p0, Lcom/aps/a;->O:Z
-
-    iput v4, p0, Lcom/aps/a;->f:I
+    iput v4, p0, Lcom/aps/a;->e:I
 
     return-void
 .end method
@@ -265,7 +251,7 @@
 .method static synthetic a(Lcom/aps/a;J)J
     .locals 0
 
-    iput-wide p1, p0, Lcom/aps/a;->A:J
+    iput-wide p1, p0, Lcom/aps/a;->y:J
 
     return-wide p1
 .end method
@@ -273,7 +259,7 @@
 .method static synthetic a(Lcom/aps/a;Landroid/telephony/CellLocation;)Landroid/telephony/CellLocation;
     .locals 0
 
-    iput-object p1, p0, Lcom/aps/a;->L:Landroid/telephony/CellLocation;
+    iput-object p1, p0, Lcom/aps/a;->I:Landroid/telephony/CellLocation;
 
     return-object p1
 .end method
@@ -285,7 +271,7 @@
 
     const/4 v5, 0x0
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     if-nez v0, :cond_1
 
@@ -300,11 +286,11 @@
 
     invoke-direct {v1}, Lcom/aps/m;-><init>()V
 
-    iget-object v0, p0, Lcom/aps/a;->D:Lcom/aps/l;
+    iget-object v0, p0, Lcom/aps/a;->B:Lcom/aps/l;
 
-    iget-object v2, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v2, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iget-object v3, p0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
     invoke-virtual {v0, p1, v2, v3}, Lcom/aps/l;->a([BLandroid/content/Context;Lorg/json/JSONObject;)Ljava/lang/String;
 
@@ -319,7 +305,7 @@
     :goto_1
     const-string v2, ""
 
-    iget-object v2, p0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iget-object v2, p0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
     invoke-static {v2}, Lcom/aps/l;->a(Lorg/json/JSONObject;)[Ljava/lang/String;
 
@@ -341,7 +327,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/aps/a;->p:Lcom/aps/b;
+    iget-object v2, p0, Lcom/aps/a;->o:Lcom/aps/b;
 
     const-string v3, "GBK"
 
@@ -413,11 +399,11 @@
     if-eqz v1, :cond_5
 
     :cond_5
-    iget-object v1, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -425,13 +411,13 @@
 
     if-lez v1, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/aps/a;->v:Ljava/lang/String;
+    iput-object v1, p0, Lcom/aps/a;->u:Ljava/lang/String;
 
     goto :goto_0
 
@@ -463,7 +449,7 @@
 
     invoke-direct {v1}, Lcom/aps/e;-><init>()V
 
-    iget-object v2, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v2, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-static {v2}, Lcom/aps/t;->a(Landroid/telephony/TelephonyManager;)[Ljava/lang/String;
 
@@ -546,37 +532,42 @@
 .method static synthetic a(Lcom/aps/a;Ljava/util/List;)Ljava/util/List;
     .locals 0
 
-    iput-object p1, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iput-object p1, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     return-object p1
 .end method
 
 .method private a(Landroid/telephony/CellLocation;)V
-    .locals 1
+    .locals 2
 
-    iget-boolean v0, p0, Lcom/aps/a;->y:Z
+    const/4 v0, 0x0
 
-    if-nez v0, :cond_0
+    iget-boolean v1, p0, Lcom/aps/a;->x:Z
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    if-nez v1, :cond_0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    if-eqz v1, :cond_0
+
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
 
-    move-result-object p1
+    move-result-object v0
 
     :cond_0
+    if-nez v0, :cond_3
+
+    :goto_0
     if-nez p1, :cond_2
 
     :cond_1
-    :goto_0
+    :goto_1
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {p1, v0}, Lcom/aps/t;->a(Landroid/telephony/CellLocation;Landroid/content/Context;)I
 
@@ -584,23 +575,26 @@
 
     packed-switch v0, :pswitch_data_0
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_0
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     if-eqz v0, :cond_1
 
     invoke-direct {p0, p1}, Lcom/aps/a;->c(Landroid/telephony/CellLocation;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/aps/a;->d(Landroid/telephony/CellLocation;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    nop
+    :cond_3
+    move-object p1, v0
+
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1064,11 +1058,11 @@
 
     const-wide/16 v1, 0x0
 
-    iget-object v5, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v5, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     if-eqz v5, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v1, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v1}, Lcom/aps/c;->g()J
 
@@ -1207,7 +1201,7 @@
 .method static synthetic a(Lcom/aps/a;Z)Z
     .locals 0
 
-    iput-boolean p1, p0, Lcom/aps/a;->y:Z
+    iput-boolean p1, p0, Lcom/aps/a;->x:Z
 
     return p1
 .end method
@@ -1224,13 +1218,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v3, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
@@ -1282,7 +1276,7 @@
 
     move-object/from16 v0, p0
 
-    iget v8, v0, Lcom/aps/a;->h:I
+    iget v8, v0, Lcom/aps/a;->g:I
 
     const/4 v15, 0x2
 
@@ -1295,13 +1289,13 @@
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v7, v0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     if-eqz v7, :cond_7
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->M:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->J:Ljava/lang/String;
 
     if-nez v7, :cond_0
 
@@ -1320,7 +1314,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v7, v0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v7}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
@@ -1347,11 +1341,11 @@
 
     move-object/from16 v0, p0
 
-    iput-object v7, v0, Lcom/aps/a;->M:Ljava/lang/String;
+    iput-object v7, v0, Lcom/aps/a;->J:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->N:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->K:Ljava/lang/String;
 
     if-nez v7, :cond_2
 
@@ -1380,7 +1374,13 @@
     :try_start_3
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v7, v0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
+
+    if-eqz v7, :cond_4
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v7}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
 
@@ -1407,7 +1407,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v7, v0, Lcom/aps/a;->N:Ljava/lang/String;
+    iput-object v7, v0, Lcom/aps/a;->K:Ljava/lang/String;
 
     sget-object v7, Lcom/aps/f;->c:Ljava/lang/String;
 
@@ -1438,7 +1438,7 @@
     :try_start_5
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/aps/a;->i:Landroid/net/ConnectivityManager;
+    iget-object v15, v0, Lcom/aps/a;->h:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v15}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
     :try_end_5
@@ -1459,7 +1459,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v5, v0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-static {v5}, Lcom/aps/l;->a(Landroid/telephony/TelephonyManager;)Ljava/lang/String;
 
@@ -1473,7 +1473,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v5, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     move-object/from16 v0, p0
 
@@ -1489,7 +1489,7 @@
     :goto_4
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iget-object v7, v0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
     invoke-static {v7}, Lcom/aps/l;->a(Lorg/json/JSONObject;)[Ljava/lang/String;
 
@@ -1534,7 +1534,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->M:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->J:Ljava/lang/String;
 
     iput-object v7, v9, Lcom/aps/o;->p:Ljava/lang/String;
 
@@ -1544,13 +1544,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->N:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->K:Ljava/lang/String;
 
     iput-object v7, v9, Lcom/aps/o;->q:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->D:Ljava/lang/String;
 
     iput-object v7, v9, Lcom/aps/o;->z:Ljava/lang/String;
 
@@ -1596,7 +1596,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v15, "<?xml version=\"1.0\" encoding=\""
 
@@ -1604,7 +1604,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v15, "GBK"
 
@@ -1618,7 +1618,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v15, "<Cell_Req ver=\"3.0\"><HDR version=\"3.0\" cdma=\""
 
@@ -1626,13 +1626,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "\" gtype=\""
 
@@ -1644,7 +1644,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "\" glong=\""
 
@@ -1656,7 +1656,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "\" glat=\""
 
@@ -1668,7 +1668,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "\" precision=\""
 
@@ -1680,7 +1680,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "\"><src>"
 
@@ -1694,7 +1694,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "</src><license>"
 
@@ -1708,7 +1708,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v8, "</license><key>"
 
@@ -1720,7 +1720,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "</key><clientid>"
 
@@ -1734,7 +1734,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "</clientid><imei>"
 
@@ -1748,7 +1748,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "</imei><imsi>"
 
@@ -1762,7 +1762,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "</imsi><smac>"
 
@@ -1772,13 +1772,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/aps/a;->F:Ljava/lang/String;
+    iget-object v7, v0, Lcom/aps/a;->D:Ljava/lang/String;
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "</smac></HDR><DRR phnum=\""
 
@@ -1792,7 +1792,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v7, "\" nettype=\""
 
@@ -1804,7 +1804,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v4, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v6, "\" inftype=\""
 
@@ -1822,7 +1822,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v4, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -1836,7 +1836,7 @@
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Lcom/aps/a;->h:I
+    iget v4, v0, Lcom/aps/a;->g:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -1860,7 +1860,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v1, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     move-object/from16 v0, p0
 
@@ -1872,7 +1872,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v1, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
@@ -1888,7 +1888,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v1, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiInfo;->getRssi()I
 
@@ -1904,7 +1904,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v1, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
 
@@ -1928,7 +1928,7 @@
     :goto_7
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1938,7 +1938,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2017,14 +2017,14 @@
     :try_start_7
     move-object/from16 v0, p0
 
-    iput-object v7, v0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iput-object v7, v0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     goto/16 :goto_4
 
     :pswitch_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     const/4 v4, 0x0
 
@@ -2129,7 +2129,7 @@
     :goto_8
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -2150,7 +2150,7 @@
     :cond_f
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2184,7 +2184,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -2208,7 +2208,7 @@
     :pswitch_1
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, v0, Lcom/aps/a;->k:Ljava/util/List;
 
     const/4 v4, 0x0
 
@@ -2359,13 +2359,13 @@
     :cond_13
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v4, "<nb>%s</nb>"
 
@@ -2391,7 +2391,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v4, "<macs><![CDATA[%s]]></macs>"
 
@@ -2412,7 +2412,7 @@
     :goto_a
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v4, "<mmac><![CDATA[%s]]></mmac>"
 
@@ -2432,7 +2432,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v4, "</DRR></Cell_Req>"
 
@@ -2440,7 +2440,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
@@ -2477,7 +2477,7 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/aps/a;->h:I
+    iget v3, v0, Lcom/aps/a;->g:I
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -2531,7 +2531,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     const-string v4, "<macs><![CDATA[%s]]></macs>"
 
@@ -2592,20 +2592,20 @@
     .end packed-switch
 .end method
 
+.method static synthetic b(Lcom/aps/a;)I
+    .locals 1
+
+    iget v0, p0, Lcom/aps/a;->g:I
+
+    return v0
+.end method
+
 .method static synthetic b(Lcom/aps/a;I)I
     .locals 0
 
-    iput p1, p0, Lcom/aps/a;->r:I
+    iput p1, p0, Lcom/aps/a;->q:I
 
     return p1
-.end method
-
-.method static synthetic b(Lcom/aps/a;)Landroid/telephony/TelephonyManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
-
-    return-object v0
 .end method
 
 .method private b(Landroid/telephony/CellLocation;)Lcom/aps/e;
@@ -2617,7 +2617,7 @@
 
     invoke-direct {v0}, Lcom/aps/e;-><init>()V
 
-    iget-object v1, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v1, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-static {v1}, Lcom/aps/t;->a(Landroid/telephony/TelephonyManager;)[Ljava/lang/String;
 
@@ -2647,7 +2647,7 @@
 
     iput v1, v0, Lcom/aps/e;->d:I
 
-    iget v1, p0, Lcom/aps/a;->r:I
+    iget v1, p0, Lcom/aps/a;->q:I
 
     iput v1, v0, Lcom/aps/e;->j:I
 
@@ -2661,23 +2661,23 @@
 
     if-ne p1, v0, :cond_1
 
-    iput v0, p0, Lcom/aps/a;->r:I
+    iput v0, p0, Lcom/aps/a;->q:I
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iput p1, p0, Lcom/aps/a;->r:I
+    iput p1, p0, Lcom/aps/a;->q:I
 
-    iget v0, p0, Lcom/aps/a;->h:I
+    iget v0, p0, Lcom/aps/a;->g:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -2685,7 +2685,7 @@
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -2695,7 +2695,7 @@
 
     check-cast v0, Lcom/aps/e;
 
-    iget v1, p0, Lcom/aps/a;->r:I
+    iget v1, p0, Lcom/aps/a;->q:I
 
     iput v1, v0, Lcom/aps/e;->j:I
 
@@ -2710,18 +2710,10 @@
     .end packed-switch
 .end method
 
-.method static synthetic b(Lcom/aps/a;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/aps/a;->z:Z
-
-    return p1
-.end method
-
-.method static synthetic c(Lcom/aps/a;)Landroid/telephony/CellLocation;
+.method static synthetic c(Lcom/aps/a;)Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/aps/a;->L:Landroid/telephony/CellLocation;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     return-object v0
 .end method
@@ -2734,7 +2726,7 @@
 
     move-result-wide v0
 
-    iget-wide v2, p0, Lcom/aps/a;->J:J
+    iget-wide v2, p0, Lcom/aps/a;->G:J
 
     sub-long/2addr v0, v2
 
@@ -2755,7 +2747,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->f()I
 
@@ -2768,7 +2760,7 @@
     :cond_2
     invoke-direct {p0}, Lcom/aps/a;->x()V
 
-    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iget-object v0, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     if-nez v0, :cond_3
 
@@ -2776,10 +2768,10 @@
 
     invoke-direct {v0, p0, p1}, Lcom/aps/i;-><init>(Lcom/aps/a;I)V
 
-    iput-object v0, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iput-object v0, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     :cond_3
-    iget-object v0, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
     if-nez v0, :cond_0
 
@@ -2789,11 +2781,11 @@
 
     invoke-direct {v0, v1}, Ljava/util/Timer;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iput-object v0, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
-    iget-object v0, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
-    iget-object v1, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iget-object v1, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     const-wide/16 v2, 0xbb8
 
@@ -2826,13 +2818,13 @@
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     if-nez v0, :cond_1
 
@@ -2841,7 +2833,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
@@ -2862,7 +2854,7 @@
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     new-array v0, v3, [Ljava/lang/Object;
 
@@ -2932,9 +2924,9 @@
     goto :goto_1
 
     :cond_7
-    iput v3, p0, Lcom/aps/a;->h:I
+    iput v3, p0, Lcom/aps/a;->g:I
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-direct {p0, p1}, Lcom/aps/a;->b(Landroid/telephony/CellLocation;)Lcom/aps/e;
 
@@ -2942,7 +2934,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNeighboringCellInfo()Ljava/util/List;
 
@@ -2991,7 +2983,7 @@
 
     if-eqz v0, :cond_8
 
-    iget-object v1, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -3082,12 +3074,12 @@
     return-void
 .end method
 
-.method static synthetic d(Lcom/aps/a;)I
+.method static synthetic d(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
     .locals 1
 
-    iget v0, p0, Lcom/aps/a;->h:I
+    iget-object v0, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
-    return v0
+    return-object v0
 .end method
 
 .method private d(I)V
@@ -3115,7 +3107,7 @@
 
     :goto_1
     :pswitch_0
-    iget-object v1, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v1, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     const/4 v2, 0x0
 
@@ -3129,27 +3121,27 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/aps/y;->a(Lcom/aps/ae;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v1, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v1}, Lcom/aps/y;->d()Lcom/aps/ae;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/aps/a;->e:Lcom/aps/ae;
+    iput-object v1, p0, Lcom/aps/a;->d:Lcom/aps/ae;
 
-    iget-object v1, p0, Lcom/aps/a;->e:Lcom/aps/ae;
+    iget-object v1, p0, Lcom/aps/a;->d:Lcom/aps/ae;
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/aps/a;->e:Lcom/aps/ae;
+    iget-object v1, p0, Lcom/aps/a;->d:Lcom/aps/ae;
 
     invoke-virtual {v1}, Lcom/aps/ae;->a()[B
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/aps/a;->D:Lcom/aps/l;
+    iget-object v2, p0, Lcom/aps/a;->B:Lcom/aps/l;
 
-    iget-object v3, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v3, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-virtual {v2, v1, v3}, Lcom/aps/l;->a([BLandroid/content/Context;)Ljava/lang/String;
 
@@ -3175,9 +3167,9 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v1, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
-    iget-object v2, p0, Lcom/aps/a;->e:Lcom/aps/ae;
+    iget-object v2, p0, Lcom/aps/a;->d:Lcom/aps/ae;
 
     const/4 v3, 0x1
 
@@ -3199,7 +3191,7 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->f()I
 
@@ -3245,15 +3237,15 @@
     goto :goto_1
 
     :cond_4
-    iget v1, p0, Lcom/aps/a;->f:I
+    iget v1, p0, Lcom/aps/a;->e:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/aps/a;->f:I
+    iput v1, p0, Lcom/aps/a;->e:I
 
-    iget-object v1, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v1, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
-    iget-object v2, p0, Lcom/aps/a;->e:Lcom/aps/ae;
+    iget-object v2, p0, Lcom/aps/a;->d:Lcom/aps/ae;
 
     const/4 v3, 0x1
 
@@ -3268,7 +3260,7 @@
     goto :goto_2
 
     :cond_5
-    iget v0, p0, Lcom/aps/a;->f:I
+    iget v0, p0, Lcom/aps/a;->e:I
 
     const/4 v1, 0x3
 
@@ -3293,7 +3285,7 @@
 .method private d(Landroid/telephony/CellLocation;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
@@ -3320,7 +3312,7 @@
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     const/4 v0, 0x1
 
@@ -3355,7 +3347,7 @@
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     const/4 v0, 0x1
 
@@ -3380,7 +3372,7 @@
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     const/4 v0, 0x1
 
@@ -3399,9 +3391,9 @@
     :cond_3
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-static {v0}, Lcom/aps/t;->a(Landroid/telephony/TelephonyManager;)[Ljava/lang/String;
 
@@ -3441,7 +3433,7 @@
 
     iput v0, v1, Lcom/aps/e;->i:I
 
-    iget v0, p0, Lcom/aps/a;->r:I
+    iget v0, p0, Lcom/aps/a;->q:I
 
     iput v0, v1, Lcom/aps/e;->j:I
 
@@ -3457,7 +3449,7 @@
 
     iput v0, v1, Lcom/aps/e;->f:I
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_1
@@ -3474,18 +3466,10 @@
     return-object v0
 .end method
 
-.method static synthetic f(Lcom/aps/a;)Landroid/net/wifi/WifiManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
-
-    return-object v0
-.end method
-
 .method private f()V
     .locals 3
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const-string v1, "wifi"
 
@@ -3495,7 +3479,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    iput-object v0, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iput-object v0, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -3537,9 +3521,9 @@
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v1, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/aps/a;->s:Lcom/aps/r;
+    iget-object v2, p0, Lcom/aps/a;->r:Lcom/aps/r;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -3548,12 +3532,12 @@
     return-void
 .end method
 
-.method static synthetic g(Lcom/aps/a;)Ljava/util/List;
-    .locals 1
+.method static synthetic f(Lcom/aps/a;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    invoke-direct {p0}, Lcom/aps/a;->n()V
 
-    return-object v0
+    return-void
 .end method
 
 .method private g()V
@@ -3565,7 +3549,7 @@
 
     const-string v0, "connectivity"
 
-    iget-object v2, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v2, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v2, v0}, Lcom/aps/t;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -3573,7 +3557,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    iput-object v0, p0, Lcom/aps/a;->i:Landroid/net/ConnectivityManager;
+    iput-object v0, p0, Lcom/aps/a;->h:Landroid/net/ConnectivityManager;
 
     invoke-static {}, Landroid/telephony/CellLocation;->requestLocationUpdate()V
 
@@ -3581,9 +3565,9 @@
 
     move-result-wide v2
 
-    iput-wide v2, p0, Lcom/aps/a;->B:J
+    iput-wide v2, p0, Lcom/aps/a;->z:J
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const-string v2, "phone"
 
@@ -3593,17 +3577,9 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    iput-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iput-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/aps/a;->L:Landroid/telephony/CellLocation;
-
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getPhoneType()I
 
@@ -3613,14 +3589,14 @@
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     :goto_0
     new-instance v0, Lcom/aps/h;
 
     invoke-direct {v0, p0}, Lcom/aps/h;-><init>(Lcom/aps/a;)V
 
-    iput-object v0, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iput-object v0, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     invoke-static {}, Lcom/aps/t;->b()I
 
@@ -3635,9 +3611,9 @@
     :goto_1
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     invoke-virtual {v0, v1, v4}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
@@ -3647,12 +3623,12 @@
     :pswitch_0
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
     goto :goto_0
 
     :pswitch_1
-    iput v1, p0, Lcom/aps/a;->h:I
+    iput v1, p0, Lcom/aps/a;->g:I
 
     goto :goto_0
 
@@ -3663,9 +3639,9 @@
 
     :cond_1
     :try_start_0
-    iget-object v1, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v1, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
-    iget-object v2, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iget-object v2, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     or-int/2addr v0, v4
 
@@ -3687,6 +3663,22 @@
         :pswitch_0
         :pswitch_1
     .end packed-switch
+.end method
+
+.method static synthetic g(Lcom/aps/a;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/aps/a;->o()V
+
+    return-void
+.end method
+
+.method static synthetic h(Lcom/aps/a;)I
+    .locals 1
+
+    iget v0, p0, Lcom/aps/a;->C:I
+
+    return v0
 .end method
 
 .method private h()Ljava/lang/String;
@@ -3712,18 +3704,18 @@
 
     if-eqz v3, :cond_2
 
-    iget-object v3, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v3, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iput-object v3, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     :goto_0
     const-string v3, ""
 
-    iget v3, p0, Lcom/aps/a;->h:I
+    iget v3, p0, Lcom/aps/a;->g:I
 
     sparse-switch v3, :sswitch_data_0
 
@@ -3740,7 +3732,7 @@
     goto :goto_0
 
     :sswitch_0
-    iget-object v1, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -3748,7 +3740,7 @@
 
     if-lez v1, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3808,7 +3800,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3833,7 +3825,7 @@
     goto :goto_2
 
     :sswitch_1
-    iget-object v1, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v1, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -3841,7 +3833,7 @@
 
     if-lez v1, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3911,7 +3903,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3946,7 +3938,7 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3954,7 +3946,7 @@
 
     if-ne v0, v5, :cond_5
 
-    iget-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-direct {p0, v0}, Lcom/aps/a;->a(Landroid/net/wifi/WifiInfo;)Z
 
@@ -3963,7 +3955,7 @@
     if-eqz v0, :cond_1
 
     :cond_5
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3971,7 +3963,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3979,7 +3971,7 @@
 
     if-ne v0, v5, :cond_6
 
-    iget-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-direct {p0, v0}, Lcom/aps/a;->a(Landroid/net/wifi/WifiInfo;)Z
 
@@ -3987,7 +3979,7 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3997,7 +3989,7 @@
 
     if-eqz v0, :cond_7
 
-    iget-object v3, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v3, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v3}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
@@ -4052,14 +4044,6 @@
     .end sparse-switch
 .end method
 
-.method static synthetic h(Lcom/aps/a;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/aps/a;->n()V
-
-    return-void
-.end method
-
 .method private i()Ljava/lang/StringBuilder;
     .locals 10
 
@@ -4075,16 +4059,16 @@
 
     invoke-direct {v6, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget v0, p0, Lcom/aps/a;->h:I
+    iget v0, p0, Lcom/aps/a;->g:I
 
     packed-switch v0, :pswitch_data_0
 
     :cond_0
-    iget-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iget-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iget-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
     const-string v1, "00:00:00:00:00:00"
 
@@ -4095,25 +4079,25 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getMacAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iput-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iget-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
     if-nez v0, :cond_2
 
     const-string v0, "00:00:00:00:00:00"
 
-    iput-object v0, p0, Lcom/aps/a;->F:Ljava/lang/String;
+    iput-object v0, p0, Lcom/aps/a;->D:Ljava/lang/String;
 
     :cond_2
     invoke-direct {p0}, Lcom/aps/a;->s()Z
@@ -4124,7 +4108,7 @@
 
     const-string v0, ""
 
-    iget-object v1, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v1, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-direct {p0, v1}, Lcom/aps/a;->a(Landroid/net/wifi/WifiInfo;)Z
 
@@ -4132,7 +4116,7 @@
 
     if-eqz v1, :cond_a
 
-    iget-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
@@ -4146,7 +4130,7 @@
     move v4, v2
 
     :goto_1
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -4154,7 +4138,7 @@
 
     if-ge v3, v0, :cond_6
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -4210,7 +4194,7 @@
     move v1, v2
 
     :goto_2
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -4228,7 +4212,7 @@
     goto :goto_2
 
     :cond_5
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -4320,18 +4304,12 @@
     .end packed-switch
 .end method
 
-.method static synthetic i(Lcom/aps/a;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/aps/a;->o()V
-
-    return-void
-.end method
-
-.method static synthetic j(Lcom/aps/a;)I
+.method static synthetic i(Lcom/aps/a;)Z
     .locals 1
 
-    iget v0, p0, Lcom/aps/a;->E:I
+    invoke-direct {p0}, Lcom/aps/a;->m()Z
+
+    move-result v0
 
     return v0
 .end method
@@ -4354,7 +4332,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->B:J
+    iput-wide v0, p0, Lcom/aps/a;->z:J
 
     :cond_0
     invoke-direct {p0}, Lcom/aps/a;->l()Z
@@ -4393,7 +4371,7 @@
 
     const/4 v1, 0x1
 
-    iget-boolean v2, p0, Lcom/aps/a;->y:Z
+    iget-boolean v2, p0, Lcom/aps/a;->x:Z
 
     if-eqz v2, :cond_1
 
@@ -4402,7 +4380,7 @@
     return v0
 
     :cond_1
-    iget-wide v2, p0, Lcom/aps/a;->B:J
+    iget-wide v2, p0, Lcom/aps/a;->z:J
 
     const-wide/16 v4, 0x0
 
@@ -4414,7 +4392,7 @@
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/aps/a;->B:J
+    iget-wide v4, p0, Lcom/aps/a;->z:J
 
     sub-long/2addr v2, v4
 
@@ -4427,16 +4405,6 @@
     move v0, v1
 
     goto :goto_0
-.end method
-
-.method static synthetic k(Lcom/aps/a;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/aps/a;->m()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method private l()Z
@@ -4457,7 +4425,7 @@
     return v0
 
     :cond_1
-    iget-wide v2, p0, Lcom/aps/a;->C:J
+    iget-wide v2, p0, Lcom/aps/a;->A:J
 
     const-wide/16 v4, 0x0
 
@@ -4469,7 +4437,7 @@
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/aps/a;->C:J
+    iget-wide v4, p0, Lcom/aps/a;->A:J
 
     sub-long/2addr v2, v4
 
@@ -4489,7 +4457,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     if-nez v1, :cond_1
 
@@ -4507,11 +4475,11 @@
     const/4 v1, 0x0
 
     :try_start_0
-    iget-object v2, p0, Lcom/aps/a;->i:Landroid/net/ConnectivityManager;
+    iget-object v2, p0, Lcom/aps/a;->h:Landroid/net/ConnectivityManager;
 
     if-eqz v2, :cond_2
 
-    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/ConnectivityManager;
+    iget-object v1, p0, Lcom/aps/a;->h:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -4526,7 +4494,7 @@
 
     if-eq v1, v2, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
@@ -4561,13 +4529,13 @@
 .method private n()V
     .locals 1
 
-    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/aps/a;->t:Landroid/net/wifi/WifiInfo;
+    iput-object v0, p0, Lcom/aps/a;->s:Landroid/net/wifi/WifiInfo;
 
     return-void
 .end method
@@ -4582,7 +4550,7 @@
     if-eqz v0, :cond_0
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->startScan()Z
 
@@ -4590,7 +4558,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->C:J
+    iput-wide v0, p0, Lcom/aps/a;->A:J
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -4609,7 +4577,7 @@
 
     const/4 v0, 0x0
 
-    iget-wide v1, p0, Lcom/aps/a;->A:J
+    iget-wide v1, p0, Lcom/aps/a;->y:J
 
     const-wide/16 v3, 0x0
 
@@ -4626,7 +4594,7 @@
 
     move-result-wide v1
 
-    iget-wide v3, p0, Lcom/aps/a;->A:J
+    iget-wide v3, p0, Lcom/aps/a;->y:J
 
     sub-long/2addr v1, v3
 
@@ -4648,11 +4616,11 @@
 
     const/4 v10, 0x0
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -4664,7 +4632,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -4760,7 +4728,7 @@
 
     const/4 v7, 0x2
 
-    iget-object v8, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v8, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v8}, Lcom/aps/c;->e()D
 
@@ -4770,7 +4738,7 @@
 
     const/4 v7, 0x3
 
-    iget-object v8, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v8, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v8}, Lcom/aps/c;->d()D
 
@@ -4803,7 +4771,7 @@
     invoke-virtual {v3, v4}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const/4 v6, 0x0
 
@@ -4826,7 +4794,7 @@
 
     const/16 v1, 0x9
 
-    iget v0, p0, Lcom/aps/a;->h:I
+    iget v0, p0, Lcom/aps/a;->g:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -4835,7 +4803,7 @@
     return-void
 
     :pswitch_0
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -4843,12 +4811,12 @@
 
     if-nez v0, :cond_0
 
-    iput v1, p0, Lcom/aps/a;->h:I
+    iput v1, p0, Lcom/aps/a;->g:I
 
     goto :goto_0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -4856,7 +4824,7 @@
 
     if-nez v0, :cond_0
 
-    iput v1, p0, Lcom/aps/a;->h:I
+    iput v1, p0, Lcom/aps/a;->g:I
 
     goto :goto_0
 
@@ -4872,7 +4840,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     if-nez v1, :cond_1
 
@@ -4882,7 +4850,7 @@
 
     :cond_1
     :try_start_0
-    iget-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
     :try_end_0
@@ -4902,7 +4870,7 @@
     if-le v1, v2, :cond_0
 
     :try_start_1
-    iget-object v1, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
     const-string v2, "isScanAlwaysAvailable"
 
@@ -4946,17 +4914,17 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->I:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/aps/a;->F:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/aps/a;->v:Ljava/lang/String;
+    iget-object v2, p0, Lcom/aps/a;->u:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4964,7 +4932,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v1, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     if-eqz v1, :cond_0
 
@@ -4972,9 +4940,9 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->x:J
+    iput-wide v0, p0, Lcom/aps/a;->w:J
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     :goto_0
     return-object v0
@@ -4992,15 +4960,15 @@
 .method private u()V
     .locals 1
 
-    iget-boolean v0, p0, Lcom/aps/a;->y:Z
+    iget-boolean v0, p0, Lcom/aps/a;->x:Z
 
     if-eqz v0, :cond_0
 
     const/16 v0, 0x9
 
-    iput v0, p0, Lcom/aps/a;->h:I
+    iput v0, p0, Lcom/aps/a;->g:I
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
@@ -5018,26 +4986,26 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
-    iput-object v1, p0, Lcom/aps/a;->d:Ljava/util/Timer;
+    iput-object v1, p0, Lcom/aps/a;->c:Ljava/util/Timer;
 
     :cond_0
-    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iget-object v0, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iget-object v0, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     invoke-virtual {v0}, Ljava/util/TimerTask;->cancel()Z
 
-    iput-object v1, p0, Lcom/aps/a;->c:Ljava/util/TimerTask;
+    iput-object v1, p0, Lcom/aps/a;->b:Ljava/util/TimerTask;
 
     :cond_1
     return-void
@@ -5057,7 +5025,7 @@
 
     :cond_0
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     const/16 v1, 0x300
 
@@ -5091,7 +5059,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->f()I
 
@@ -5100,7 +5068,7 @@
     if-gtz v0, :cond_0
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->e()Z
     :try_end_0
@@ -5136,7 +5104,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->f()I
 
@@ -5159,18 +5127,16 @@
 .method public declared-synchronized a()Lcom/aps/c;
     .locals 9
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     const/4 v1, 0x1
-
-    const/4 v2, 0x0
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v3, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     new-instance v0, Lcom/amap/api/location/core/AMapLocException;
 
@@ -5191,13 +5157,13 @@
 
     :cond_0
     :try_start_1
-    sget-object v3, Lcom/aps/f;->d:Ljava/lang/String;
+    sget-object v0, Lcom/aps/f;->d:Ljava/lang/String;
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
     new-instance v0, Lcom/amap/api/location/core/AMapLocException;
 
@@ -5208,13 +5174,13 @@
     throw v0
 
     :cond_1
-    sget-object v3, Lcom/aps/f;->e:Ljava/lang/String;
+    sget-object v0, Lcom/aps/f;->e:Ljava/lang/String;
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_2
+    if-eqz v0, :cond_2
 
     new-instance v0, Lcom/amap/api/location/core/AMapLocException;
 
@@ -5225,23 +5191,23 @@
     throw v0
 
     :cond_2
-    iget-object v3, p0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iget-object v0, p0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
-    invoke-static {v3}, Lcom/aps/l;->a(Lorg/json/JSONObject;)[Ljava/lang/String;
+    invoke-static {v0}, Lcom/aps/l;->a(Lorg/json/JSONObject;)[Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "false"
+    const-string v3, "false"
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    aget-object v3, v3, v5
+    aget-object v0, v0, v4
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_3
+    if-eqz v0, :cond_3
 
     const-string v0, "AuthLocation"
 
@@ -5258,38 +5224,11 @@
     throw v0
 
     :cond_3
-    iget v3, p0, Lcom/aps/a;->a:I
-
-    if-lez v3, :cond_4
-
-    invoke-static {}, Lcom/aps/t;->a()J
-
-    move-result-wide v3
-
-    iget-wide v5, p0, Lcom/aps/a;->b:J
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    sub-long/2addr v3, v5
-
-    const-wide/16 v5, 0x7530
-
-    cmp-long v3, v3, v5
-
-    if-gez v3, :cond_4
-
-    :goto_0
-    monitor-exit p0
-
-    return-object v0
-
-    :cond_4
-    :try_start_2
     invoke-direct {p0}, Lcom/aps/a;->k()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-static {}, Landroid/telephony/CellLocation;->requestLocationUpdate()V
 
@@ -5297,151 +5236,153 @@
 
     move-result-wide v3
 
-    iput-wide v3, p0, Lcom/aps/a;->B:J
+    iput-wide v3, p0, Lcom/aps/a;->z:J
 
-    :cond_5
+    :cond_4
     invoke-direct {p0}, Lcom/aps/a;->l()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-direct {p0}, Lcom/aps/a;->o()V
 
-    :cond_6
-    iget v3, p0, Lcom/aps/a;->E:I
+    :cond_5
+    iget v0, p0, Lcom/aps/a;->C:I
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v3, p0, Lcom/aps/a;->E:I
+    iput v0, p0, Lcom/aps/a;->C:I
 
-    iget v3, p0, Lcom/aps/a;->E:I
+    iget v0, p0, Lcom/aps/a;->C:I
 
-    if-le v3, v1, :cond_7
+    if-le v0, v1, :cond_6
 
     invoke-virtual {p0}, Lcom/aps/a;->c()V
 
-    :cond_7
-    iget v3, p0, Lcom/aps/a;->E:I
+    :cond_6
+    iget v0, p0, Lcom/aps/a;->C:I
 
-    if-ne v3, v1, :cond_8
+    if-ne v0, v1, :cond_7
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    iput-wide v3, p0, Lcom/aps/a;->K:J
+    iput-wide v3, p0, Lcom/aps/a;->H:J
 
-    iget-object v3, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    invoke-static {v3}, Lcom/aps/t;->a(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/aps/t;->a(Landroid/content/Context;)Z
 
-    move-result v3
+    move-result v0
 
-    iput-boolean v3, p0, Lcom/aps/a;->y:Z
+    iput-boolean v0, p0, Lcom/aps/a;->x:Z
 
-    iget-object v3, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
-    if-eqz v3, :cond_8
+    if-eqz v0, :cond_7
 
-    iget-object v3, p0, Lcom/aps/a;->j:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/aps/a;->i:Landroid/net/wifi/WifiManager;
 
-    invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iput-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+
+    :cond_7
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+
+    if-nez v0, :cond_8
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
     :cond_8
-    iget-object v3, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget v0, p0, Lcom/aps/a;->C:I
 
-    if-nez v3, :cond_9
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v3, p0, Lcom/aps/a;->m:Ljava/util/List;
-
-    :cond_9
-    iget v3, p0, Lcom/aps/a;->E:I
-
-    if-ne v3, v1, :cond_a
+    if-ne v0, v1, :cond_9
 
     invoke-direct {p0}, Lcom/aps/a;->s()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_a
+    if-eqz v0, :cond_9
 
-    iget-wide v3, p0, Lcom/aps/a;->K:J
+    iget-wide v3, p0, Lcom/aps/a;->H:J
 
-    iget-wide v5, p0, Lcom/aps/a;->J:J
+    iget-wide v5, p0, Lcom/aps/a;->G:J
 
     sub-long/2addr v3, v5
 
     const-wide/16 v5, 0x7d0
 
-    cmp-long v3, v3, v5
+    cmp-long v0, v3, v5
 
-    if-gez v3, :cond_a
+    if-gez v0, :cond_9
 
-    const/4 v3, 0x4
+    const/4 v0, 0x4
 
-    :goto_1
-    if-lez v3, :cond_a
+    :goto_0
+    if-lez v0, :cond_9
 
-    iget-object v4, p0, Lcom/aps/a;->m:Ljava/util/List;
+    iget-object v3, p0, Lcom/aps/a;->l:Ljava/util/List;
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    if-nez v4, :cond_a
-
-    const-wide/16 v4, 0x1f4
-
-    invoke-static {v4, v5}, Landroid/os/SystemClock;->sleep(J)V
-
-    add-int/lit8 v3, v3, -0x1
-
-    goto :goto_1
-
-    :cond_a
-    iget-wide v3, p0, Lcom/aps/a;->x:J
-
-    invoke-direct {p0, v3, v4}, Lcom/aps/a;->a(J)Z
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-nez v3, :cond_9
 
-    iget-object v3, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    const-wide/16 v3, 0x1f4
 
-    if-eqz v3, :cond_b
+    invoke-static {v3, v4}, Landroid/os/SystemClock;->sleep(J)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_9
+    iget-wide v3, p0, Lcom/aps/a;->w:J
+
+    invoke-direct {p0, v3, v4}, Lcom/aps/a;->a(J)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
+
+    if-eqz v0, :cond_a
 
     invoke-static {}, Lcom/aps/t;->a()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->x:J
+    iput-wide v0, p0, Lcom/aps/a;->w:J
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput v0, p0, Lcom/aps/a;->a:I
+    :goto_1
+    monitor-exit p0
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    return-object v0
 
-    goto/16 :goto_0
+    :cond_a
+    :try_start_2
+    iget-object v0, p0, Lcom/aps/a;->I:Landroid/telephony/CellLocation;
 
-    :cond_b
-    iget-object v3, p0, Lcom/aps/a;->L:Landroid/telephony/CellLocation;
+    invoke-direct {p0, v0}, Lcom/aps/a;->a(Landroid/telephony/CellLocation;)V
 
-    invoke-direct {p0, v3}, Lcom/aps/a;->a(Landroid/telephony/CellLocation;)V
+    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
 
-    iget-object v3, p0, Lcom/aps/a;->m:Ljava/util/List;
-
-    invoke-direct {p0, v3}, Lcom/aps/a;->a(Ljava/util/List;)V
+    invoke-direct {p0, v0}, Lcom/aps/a;->a(Ljava/util/List;)V
 
     invoke-direct {p0}, Lcom/aps/a;->h()Ljava/lang/String;
 
@@ -5449,24 +5390,20 @@
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_c
+    if-eqz v0, :cond_b
 
-    iget v1, p0, Lcom/aps/a;->a:I
+    const/4 v0, 0x0
 
-    add-int/lit8 v1, v1, 0x1
+    goto :goto_1
 
-    iput v1, p0, Lcom/aps/a;->a:I
-
-    goto/16 :goto_0
-
-    :cond_c
+    :cond_b
     invoke-direct {p0}, Lcom/aps/a;->i()Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/aps/d;->a(Landroid/content/Context;)Lcom/aps/d;
 
@@ -5478,7 +5415,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
     invoke-virtual {v0}, Lcom/aps/c;->g()J
 
@@ -5496,14 +5433,14 @@
 
     cmp-long v5, v5, v7
 
-    if-lez v5, :cond_11
+    if-lez v5, :cond_f
 
     :goto_2
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_e
 
-    :cond_d
+    :cond_c
     :try_start_3
     invoke-direct {p0}, Lcom/aps/a;->t()Lcom/aps/c;
     :try_end_3
@@ -5512,18 +5449,18 @@
 
     move-result-object v0
 
-    :cond_e
+    :cond_d
     :try_start_4
-    iput-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iput-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     :goto_3
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/aps/d;->a(Landroid/content/Context;)Lcom/aps/d;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v1, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v0, v3, v1, v4}, Lcom/aps/d;->a(Ljava/lang/String;Lcom/aps/c;Ljava/lang/StringBuilder;)V
 
@@ -5539,55 +5476,37 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->x:J
+    iput-wide v0, p0, Lcom/aps/a;->w:J
 
     invoke-direct {p0}, Lcom/aps/a;->q()V
 
     invoke-virtual {p0}, Lcom/aps/a;->d()V
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
-
-    if-nez v0, :cond_10
-
-    iget v0, p0, Lcom/aps/a;->a:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/aps/a;->a:I
-
-    :goto_4
     invoke-static {}, Lcom/aps/t;->a()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->b:J
+    iput-wide v0, p0, Lcom/aps/a;->a:J
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
-    goto/16 :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v1
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_d
 
     throw v1
 
-    :cond_f
-    iput-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
-
-    goto :goto_3
-
-    :cond_10
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/aps/a;->a:I
+    :cond_e
+    iput-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_11
+    :cond_f
     move v1, v2
 
     goto :goto_2
@@ -5602,7 +5521,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5619,7 +5538,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
@@ -5627,9 +5546,9 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iput-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const-string v1, "in debug mode, only for test"
 
@@ -5643,7 +5562,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/aps/a;->J:J
+    iput-wide v0, p0, Lcom/aps/a;->G:J
 
     goto :goto_0
 .end method
@@ -5657,7 +5576,7 @@
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -5669,7 +5588,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -5830,7 +5749,7 @@
     invoke-virtual {v3, v4}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const/4 v6, 0x0
 
@@ -5879,7 +5798,7 @@
     if-ltz v0, :cond_0
 
     :cond_2
-    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5887,7 +5806,7 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5897,7 +5816,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v1, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5910,7 +5829,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/aps/a;->n:Ljava/util/Map;
+    iget-object v1, p0, Lcom/aps/a;->m:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5967,7 +5886,7 @@
 
     if-nez v1, :cond_2
 
-    iget-object v1, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v1, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/aps/d;->a(Landroid/content/Context;)Lcom/aps/d;
 
@@ -5992,7 +5911,7 @@
 .method public a(Lorg/json/JSONObject;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/aps/a;->u:Lorg/json/JSONObject;
+    iput-object p1, p0, Lcom/aps/a;->t:Lorg/json/JSONObject;
 
     return-void
 .end method
@@ -6005,32 +5924,30 @@
     const/4 v3, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->c()V
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/aps/a;->O:Z
+    iput-boolean v0, p0, Lcom/aps/a;->L:Z
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_0
     :goto_0
-    iput-object v3, p0, Lcom/aps/a;->H:Lcom/aps/ae;
-
     :try_start_1
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/aps/a;->s:Lcom/aps/r;
+    iget-object v1, p0, Lcom/aps/a;->r:Lcom/aps/r;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_1
@@ -6039,22 +5956,22 @@
 
     :cond_1
     :goto_1
-    iput-object v3, p0, Lcom/aps/a;->s:Lcom/aps/r;
+    iput-object v3, p0, Lcom/aps/a;->r:Lcom/aps/r;
 
     invoke-direct {p0}, Lcom/aps/a;->v()V
 
     :try_start_2
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iget-object v0, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/aps/a;->q:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/aps/a;->p:Landroid/telephony/PhoneStateListener;
 
     const/4 v2, 0x0
 
@@ -6064,7 +5981,7 @@
 
     :cond_2
     :goto_2
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/aps/d;->a(Landroid/content/Context;)Lcom/aps/d;
 
@@ -6076,33 +5993,33 @@
 
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/aps/a;->x:J
+    iput-wide v0, p0, Lcom/aps/a;->w:J
 
-    iget-object v0, p0, Lcom/aps/a;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/aps/a;->k:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    iget-object v0, p0, Lcom/aps/a;->m:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
-
     const/16 v0, -0x71
 
-    iput v0, p0, Lcom/aps/a;->r:I
+    iput v0, p0, Lcom/aps/a;->q:I
 
     invoke-direct {p0}, Lcom/aps/a;->n()V
 
-    iput-object v3, p0, Lcom/aps/a;->v:Ljava/lang/String;
+    iput-object v3, p0, Lcom/aps/a;->u:Ljava/lang/String;
 
-    iput-object v3, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iput-object v3, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
-    iput-object v3, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iput-object v3, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
-    iput-object v3, p0, Lcom/aps/a;->k:Landroid/telephony/TelephonyManager;
+    iput-object v3, p0, Lcom/aps/a;->j:Landroid/telephony/TelephonyManager;
 
     return-void
 
@@ -6116,7 +6033,7 @@
     :catchall_0
     move-exception v0
 
-    iput-object v3, p0, Lcom/aps/a;->s:Lcom/aps/r;
+    iput-object v3, p0, Lcom/aps/a;->r:Lcom/aps/r;
 
     throw v0
 
@@ -6144,7 +6061,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6182,7 +6099,7 @@
     if-ltz v0, :cond_0
 
     :cond_2
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6190,7 +6107,7 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6200,7 +6117,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v1, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6213,7 +6130,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v1, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6224,34 +6141,34 @@
     .locals 2
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/aps/y;->a(Landroid/content/Context;)Lcom/aps/y;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iput-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     const/16 v1, 0x100
 
     invoke-virtual {v0, v1}, Lcom/aps/y;->a(I)V
 
     :cond_0
-    iget-boolean v0, p0, Lcom/aps/a;->O:Z
+    iget-boolean v0, p0, Lcom/aps/a;->L:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/aps/a;->O:Z
+    iput-boolean v0, p0, Lcom/aps/a;->L:Z
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     invoke-virtual {v0}, Lcom/aps/y;->a()V
     :try_end_0
@@ -6276,11 +6193,11 @@
 
     const/4 v10, 0x1
 
-    iget-object v0, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v0, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -6292,7 +6209,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/aps/a;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/aps/a;->n:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -6388,7 +6305,7 @@
 
     const/4 v7, 0x2
 
-    iget-object v8, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v8, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v8}, Lcom/aps/c;->e()D
 
@@ -6398,7 +6315,7 @@
 
     const/4 v7, 0x3
 
-    iget-object v8, p0, Lcom/aps/a;->w:Lcom/aps/c;
+    iget-object v8, p0, Lcom/aps/a;->v:Lcom/aps/c;
 
     invoke-virtual {v8}, Lcom/aps/c;->d()D
 
@@ -6457,7 +6374,7 @@
     invoke-virtual {v3, v4}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
     :try_start_0
-    iget-object v0, p0, Lcom/aps/a;->g:Landroid/content/Context;
+    iget-object v0, p0, Lcom/aps/a;->f:Landroid/content/Context;
 
     const/4 v6, 0x0
 
@@ -6478,7 +6395,7 @@
 .method e()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/aps/a;->G:Lcom/aps/y;
+    iget-object v0, p0, Lcom/aps/a;->E:Lcom/aps/y;
 
     if-nez v0, :cond_0
 
